@@ -13,7 +13,7 @@
 <!-- CARÁTULA -->
 <div align="center">
 
-<img src="<url-logo-upc>" alt="Logo UPC" width="180"/>
+<img src="assets/UPC_logo_transparente.png" alt="Logo UPC" width="180"/>
 
 **Universidad Peruana de Ciencias Aplicadas (UPC)**
 
@@ -223,9 +223,27 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 > _Guía:_ Introducción del capítulo: en base al análisis, se especifican los requisitos de los productos digitales. Incluye To-Be Scenario Mapping, User Stories, Impact Map y Product Backlog.
 
 ### 3.1. To-Be Scenario Mapping
-> _Guía:_ **(Crear desde cero — no existe en el material reciclado.)** Uno por User Persona (LucidChart/Miro). Filas Phases, Doing, Thinking, Feeling. Comparar explícitamente contra el As-Is Scenario Mapping, identificando los cambios que introduce la solución.
+> _Nota:_ **Borrador textual para diagramar** en LucidChart/Miro (uno por User Persona). **Pendiente:** insertar la captura del diagrama y comparar contra el As-Is Scenario Mapping (Cap. II, aún no elaborado) para resaltar los cambios que introduce CareConnect.
 
-<!-- Insertar captura por User Persona + explicación -->
+Se presenta la situación futura (To-Be) de cada User Persona con la solución implementada. Filas: Phases, Doing, Thinking, Feeling.
+
+**User Persona 1 — Valeria Huamán (Cuidadora informal)**
+
+| | Fase 1: Onboarding | Fase 2: Registro de rutina | Fase 3: Seguimiento diario | Fase 4: Coordinación familiar | Fase 5: Revisión |
+|---|---|---|---|---|---|
+| **Doing** | Crea su cuenta y registra al paciente | Registra medicación y citas en la agenda | Recibe alertas de incumplimiento y confirma tareas | Comparte el perfil con otro familiar y revisa el diario compartido | Consulta el historial de eventos y documentos |
+| **Thinking** | "¿Es fácil de configurar?" | "Ahora todo queda en un solo lugar" | "Me avisa si algo no se cumplió" | "Mi hermana también puede ver el estado" | "Puedo mostrar esto al médico" |
+| **Feeling** | Expectante | Aliviada, en control | Segura, respaldada | Acompañada, menos sola | Confiada |
+
+**User Persona 2 — Don Rafael Medina (Paciente geriátrico)**
+
+| | Fase 1: Onboarding | Fase 2: Recordatorio | Fase 3: Confirmación | Fase 4: Consulta | Fase 5: Compartir |
+|---|---|---|---|---|---|
+| **Doing** | Un familiar le configura la cuenta | Recibe un recordatorio claro de su medicación | Confirma que tomó su medicamento con un toque | Revisa su agenda del día en letra grande | Comparte su estado con su cuidadora |
+| **Thinking** | "No quiero algo complicado" | "Me avisa a tiempo" | "Fue fácil confirmar" | "Entiendo qué me toca hoy" | "Mi hija sabe cómo estoy" |
+| **Feeling** | Inseguro al inicio | Tranquilo | Autónomo | Orientado, sin confusión | Acompañado |
+
+<!-- Insertar captura del diagrama por User Persona + comparación con el As-Is -->
 
 ### 3.2. User Stories
 > _Nota:_ Contenido reciclado del informe del ciclo anterior (CareConnect). Acceptance Criteria en Gherkin (Dado-Cuando-Entonces). **Pendiente:** agregar US del landing (rol *visitante*) y US de la Frontend Web Application (según decisión de stack). Revisar redacción menor de algunos AC.
@@ -370,6 +388,84 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 | **Epic** | Gestión de Consentimiento |
 | **Description** | Como paciente, quiero revocar el acceso a mi perfil para controlar quién puede ver mi información. |
 | **Acceptance Criteria** | Escenario 1: Revocación exitosa <br> Dado que el paciente otorgó los permisos <br> Cuando revoca el acceso <br> Entonces el sistema quita los privilegios al cuidador <br><br> Escenario 2: Acción no permitida <br> Dado que el paciente ya revocó el permiso al cuidador <br> Cuando intenta revocar nuevamente <br> Entonces el sistema muestra un mensaje de error |
+
+**User Stories — Landing Page** (rol Visitante)
+> _Borrador propuesto por el statement (sitio estático con secciones por segmento). Revisar con el equipo._
+
+| **Story ID** | USL01 |
+|--------------|------|
+| **User** | Visitante |
+| **Priority** | Alta |
+| **Epic** | Landing Page |
+| **Description** | Como visitante, deseo conocer la propuesta de valor de CareConnect para entender cómo la solución me ayuda a coordinar el cuidado. |
+| **Acceptance Criteria** | Escenario 1: Presentación de la propuesta <br> Dado que el visitante ingresa a la landing <br> Cuando visualiza la sección principal <br> Entonces se presenta la propuesta de valor y su beneficio principal |
+
+| **Story ID** | USL02 |
+|--------------|------|
+| **User** | Visitante (cuidador / paciente) |
+| **Priority** | Alta |
+| **Epic** | Landing Page |
+| **Description** | Como visitante, deseo explorar los beneficios dirigidos a mi segmento para evaluar si la solución responde a mi necesidad. |
+| **Acceptance Criteria** | Escenario 1: Contenido por segmento <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de segmentos <br> Entonces se presentan beneficios diferenciados para cuidadores y pacientes |
+
+| **Story ID** | USL03 |
+|--------------|------|
+| **User** | Visitante |
+| **Priority** | Media |
+| **Epic** | Landing Page |
+| **Description** | Como visitante, deseo ver testimonios de usuarios para generar confianza en la solución. |
+| **Acceptance Criteria** | Escenario 1: Visualización de testimonios <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de testimonios <br> Entonces se muestran al menos un testimonio por segmento objetivo |
+
+| **Story ID** | USL04 |
+|--------------|------|
+| **User** | Visitante |
+| **Priority** | Alta |
+| **Epic** | Landing Page |
+| **Description** | Como visitante, deseo iniciar mi registro desde la landing para comenzar a usar la plataforma. |
+| **Acceptance Criteria** | Escenario 1: Llamado a la acción <br> Dado que el visitante decide registrarse <br> Cuando activa el llamado a la acción de registro <br> Entonces el sistema lo dirige al flujo de creación de cuenta |
+
+| **Story ID** | USL05 |
+|--------------|------|
+| **User** | Visitante |
+| **Priority** | Media |
+| **Epic** | Landing Page |
+| **Description** | Como visitante, deseo cambiar el idioma del sitio (English / Español) para leer el contenido en mi idioma preferido. |
+| **Acceptance Criteria** | Escenario 1: Cambio de idioma <br> Dado que el visitante selecciona un idioma disponible (en_US / es_419) <br> Cuando confirma la selección <br> Entonces el contenido del sitio se muestra en el idioma elegido |
+
+| **Story ID** | USL06 |
+|--------------|------|
+| **User** | Visitante |
+| **Priority** | Media |
+| **Epic** | Landing Page |
+| **Description** | Como visitante, deseo consultar los Términos y Condiciones desde el footer para conocer los derechos y obligaciones del servicio. |
+| **Acceptance Criteria** | Escenario 1: Acceso a Términos y Condiciones <br> Dado que el visitante está en la landing <br> Cuando accede al enlace de Términos y Condiciones del footer <br> Entonces el sistema muestra el Acuerdo de Servicio (SaaS) |
+
+**User Stories — Frontend Web Application** (roles Paciente / Cuidador)
+> _Borrador propuesto: la experiencia web replica el core del producto sobre responsive web. Confirmar tras la decisión de stack (Vue + PrimeVue)._
+
+| **Story ID** | USW01 |
+|--------------|------|
+| **User** | Cuidador |
+| **Priority** | Alta |
+| **Epic** | Gestión de Agenda |
+| **Description** | Como cuidador, deseo gestionar la agenda del paciente desde el navegador para coordinar el cuidado sin depender del móvil. |
+| **Acceptance Criteria** | Escenario 1: Gestión web de eventos <br> Dado que el cuidador inició sesión en la web application <br> Cuando registra o edita un evento de salud <br> Entonces el sistema persiste el cambio y lo refleja en la agenda |
+
+| **Story ID** | USW02 |
+|--------------|------|
+| **User** | Cuidador |
+| **Priority** | Media |
+| **Epic** | Diario de Seguimiento |
+| **Description** | Como cuidador, deseo consultar el diario y los documentos compartidos del paciente desde la web para dar seguimiento en pantalla amplia. |
+| **Acceptance Criteria** | Escenario 1: Consulta web autorizada <br> Dado que el cuidador tiene acceso autorizado <br> Cuando consulta el diario o los documentos compartidos en la web application <br> Entonces el sistema muestra la información correspondiente |
+
+| **Story ID** | USW03 |
+|--------------|------|
+| **User** | Paciente / Cuidador |
+| **Priority** | Media |
+| **Epic** | Gestión de Notificaciones |
+| **Description** | Como usuario, deseo visualizar mis notificaciones en la web application para dar seguimiento a los eventos desde cualquier dispositivo. |
+| **Acceptance Criteria** | Escenario 1: Notificaciones en web <br> Dado que existen notificaciones para el usuario <br> Cuando accede a la sección de notificaciones en la web application <br> Entonces el sistema muestra la lista ordenada por fecha o prioridad |
 
 **Technical Stories** (rol Developer)
 
@@ -558,15 +654,24 @@ Orden por valor para el negocio. Los User Stories incluyen su estimación en Sto
 
 
 ### 3.4. Impact Mapping
-> _Nota:_ El ciclo anterior solo incluía la imagen del Impact Map (sin tabla textual ni Business Goals SMART explícitos). **Pendiente:** verificar que los Business Goals cumplan SMART y completar la tabla Goal/Actor/Impact/Deliverable enlazada a User Stories. Copiar el asset `assets/impact-map.png`.
+> _Nota:_ Business Goals SMART y tabla **propuestos** a partir de las epics/US existentes (el ciclo anterior solo tenía la imagen). **Pendiente:** validar metas y cifras con el equipo, y regenerar el Impact Map en UXPressia si cambian. Asset `assets/impact-map.png` ya incluido.
 
 El Impact Map permite visualizar cómo las funcionalidades clave de la aplicación se alinean con los objetivos de negocio, considerando a los actores involucrados y los impactos esperados en su comportamiento.
 
 ![Impact Mapping](assets/impact-map.png)
 
-| Business Goal (SMART) | Actor / Persona | Impact | Deliverable | User Stories |
-|-----------------------|-----------------|--------|-------------|--------------|
-| \<goal SMART>         | \<persona>      | \<impact> | \<deliverable> | \<US ids> |
+**Business Goals (SMART)** _(propuestos, verificar cifras)_
+- **BG1:** Alcanzar 500 cuidadores activos que registren al menos 3 eventos de salud por semana en los primeros 6 meses post-lanzamiento.
+- **BG2:** Lograr una tasa de confirmación de eventos de medicación del 70% por parte de los pacientes en los primeros 3 meses.
+- **BG3:** Conseguir que el 60% de los pacientes comparta su perfil con al menos un cuidador durante el primer trimestre.
+
+| Business Goal | Actor / Persona | Impact | Deliverable | User Stories |
+|---------------|-----------------|--------|-------------|--------------|
+| BG1 | Cuidador (Valeria Huamán) | Registra y coordina los eventos de salud de forma regular | Módulo de Agenda con registro y reprogramación de eventos | US01, US03 |
+| BG1 | Cuidador (Valeria Huamán) | Actúa a tiempo ante incumplimientos | Notificaciones y alertas de incumplimiento | US05, US06 |
+| BG2 | Paciente (Rafael Medina) | Confirma su medicación al recibir el recordatorio | Recordatorios push + confirmación de eventos | US02, US04 |
+| BG3 | Paciente (Rafael Medina) | Comparte su perfil con un familiar/cuidador | Gestión de Consentimiento (compartir y revocar) | US14, US16 |
+| BG3 | Cuidador (Valeria Huamán) | Consulta el perfil y diario compartidos | Vistas de perfil y diario compartido | US13, US15 |
 
 <!-- ===== FIN CAPÍTULO ASIGNADO ===== -->
 
