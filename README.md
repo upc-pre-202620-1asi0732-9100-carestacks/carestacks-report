@@ -39,11 +39,10 @@ Producto: **CareConnect**
 
 | Código      | Apellidos y Nombres |
 |-------------|---------------------|
-| \<código>   | \<Apellidos, Nombres> |
-| \<código>   | \<Apellidos, Nombres> |
-| \<código>   | \<Apellidos, Nombres> |
-| \<código>   | \<Apellidos, Nombres> |
-| \<código>   | \<Apellidos, Nombres> |
+| U20221G099  | Nikaido Vargas, Javier Masaru |
+| U202319563  | Muñiz Huayanca, Percy Alonso |
+| U202415495  | Espinoza Cruz, Angela Milagros |
+| U202319881  | Baldeon Armas, Santiago Armando |
 
 **\<Mes> \<Año>**
 
