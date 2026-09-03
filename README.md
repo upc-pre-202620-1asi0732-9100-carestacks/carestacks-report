@@ -39,6 +39,7 @@ Producto: **CareConnect**
 
 | Código      | Apellidos y Nombres |
 |-------------|---------------------|
+| U202319698  | Salcedo Champi, Matias Rodolfo |
 | U20221G099  | Nikaido Vargas, Javier Masaru |
 | U202319563  | Muñiz Huayanca, Percy Alonso |
 | U202415495  | Espinoza Cruz, Angela Milagros |
