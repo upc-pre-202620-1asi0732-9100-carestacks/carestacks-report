@@ -13,7 +13,7 @@
 <!-- CARÁTULA -->
 <div align="center">
 
-<img src="<url-logo-upc>" alt="Logo UPC" width="180"/>
+<img src="assets/UPC_logo_transparente.png" alt="Logo UPC" width="180"/>
 
 **Universidad Peruana de Ciencias Aplicadas (UPC)**
 
@@ -39,11 +39,11 @@ Producto: **CareConnect**
 
 | Código      | Apellidos y Nombres |
 |-------------|---------------------|
-| \<código>   | \<Apellidos, Nombres> |
-| \<código>   | \<Apellidos, Nombres> |
-| \<código>   | \<Apellidos, Nombres> |
-| \<código>   | \<Apellidos, Nombres> |
-| \<código>   | \<Apellidos, Nombres> |
+| U202319698  | Salcedo Champi, Matias Rodolfo |
+| U20221G099  | Nikaido Vargas, Javier Masaru |
+| U202319563  | Muñiz Huayanca, Percy Alonso |
+| U202415495  | Espinoza Cruz, Angela Milagros |
+| U202319881  | Baldeon Armas, Santiago Armando |
 
 **\<Mes> \<Año>**
 
