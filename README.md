@@ -23,9 +23,9 @@ Ciclo académico: **2026-20**
 
 Curso: **1ASI0732 — Diseño de Experimentos de Ingeniería de Software**
 
-NRC: **\<NRC>**
+NRC: **9100**
 
-Profesor: **\<Apellidos, Nombres del profesor>**
+Profesor: **Sanchez Ponce, Alex Humberto**
 
 **Informe de Trabajo Final**
 
@@ -45,7 +45,7 @@ Producto: **CareConnect**
 | U202415495  | Espinoza Cruz, Angela Milagros |
 | U202319881  | Baldeon Armas, Santiago Armando |
 
-**\<Mes> \<Año>**
+**Septiembre 2026**
 
 ---
 
