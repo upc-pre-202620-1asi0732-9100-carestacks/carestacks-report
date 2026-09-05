@@ -213,6 +213,10 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 #### 2.3.3. User Journey Mapping
 > _Guía:_ Versión As-Is, uno por User Persona (UXPressia).
 
+![User Journey Map - Valeria](assets/chapter-2/journey-maps/journey-map-valeria.png)
+
+![User Journey Map - Rafael](assets/chapter-2/journey-maps/journey-map-rafael.png)
+
 #### 2.3.4. Empathy Mapping
 
 ![Empathy Map - Valeria](assets/chapter-2/empathy-maps/empathy-map-valeria.png)
