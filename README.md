@@ -215,6 +215,10 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 
 #### 2.3.4. Empathy Mapping
 
+![Empathy Map - Valeria](assets/chapter-2/empathy-maps/empathy-map-valeria.png)
+
+![Empathy Map - Rafael](assets/chapter-2/empathy-maps/empathy-map-rafael.png)
+
 #### 2.3.5. As-is Scenario Mapping
 > _Guía:_ Uno por User Persona (LucidChart/Miro). Filas Phases, Doing, Thinking, Feeling + áreas positivas/negativas/blank.
 
