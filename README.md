@@ -202,26 +202,78 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 ### 2.3. Needfinding
 
 #### 2.3.1. User Personas
-> _Guía:_ Una ficha por segmento (UXPressia).
+
+En esta sección presentamos los arquetipos construidos a partir de los hallazgos recogidos en el análisis de competencia y en el análisis de entrevistas. Cada ficha concentra datos demográficos, hábitos, objetivos, frustraciones y nivel de adopción tecnológica observados durante la investigación, y sirve de referencia para las decisiones de diseño de CareConnect. Elaboramos una ficha por cada segmento objetivo definido en el Capítulo I, el cuidador de pacientes geriátricos y el paciente geriátrico con autonomía parcial o acompañada.
+
+Los atributos destacados son los que aparecieron de forma transversal en las entrevistas: uso intensivo del celular como herramienta principal, dependencia de soluciones no especializadas como WhatsApp, pastilleros y cuadernos, alta carga mental en cuidadores y necesidad de simplicidad extrema en pacientes. Estos rasgos orientan el tono, la jerarquía de información y las prioridades funcionales del producto.
+
+**Segmento 1: Cuidadores de pacientes geriátricos**
 
 ![User Persona - Valeria](assets/chapter-2/personas/persona-valeria.png)
+
+**Segmento 2: Pacientes geriátricos**   
 
 ![User Persona - Rafael](assets/chapter-2/personas/persona-rafael.png)
 
 #### 2.3.2. User Task Matrix
 
+A partir de los dos User Personas definidos, Valeria Huamán como cuidadora informal y Rafael Medina como paciente geriátrico, consolidamos las tareas que ambos segmentos realizan en su día a día para llevar adelante el cuidado geriátrico. Es importante precisar que estas tareas se identifican con independencia de la existencia de CareConnect: representan actividades que los usuarios ya ejecutan con las herramientas que tienen a mano, como WhatsApp, cuadernos, alarmas, llamadas y memoria, y que cualquier solución de software debería facilitar, no reemplazar.
+
+Para cada tarea indicamos la frecuencia con la que el segmento la realiza y la importancia que tiene dentro del proceso de cuidado. La escala se apoya en los porcentajes obtenidos en el análisis de entrevistas.
+
+| Tarea | Valeria (cuidadora)<br>Frecuencia | Valeria (cuidadora)<br>Importancia | Rafael (paciente)<br>Frecuencia | Rafael (paciente)<br>Importancia |
+|---|:---:|:---:|:---:|:---:|
+| Administrar o tomar la medicación según horario | Alta | Alta | Alta | Alta |
+| Recordar y confirmar si una dosis ya fue administrada | Alta | Alta | Alta | Alta |
+| Registrar observaciones del paciente como síntomas, ánimo y signos | Alta | Alta | Media | Media |
+| Consultar la rutina y actividades del día, controles y terapias | Alta | Alta | Alta | Alta |
+| Agendar y asistir a citas médicas | Media | Alta | Media | Alta |
+| Coordinar el cambio de turno entre cuidadores | Alta | Alta | N/A | N/A |
+| Comunicar cambios o malestares del paciente a familiares o médicos | Alta | Alta | Media | Alta |
+| Consultar historial clínico y evolución del paciente | Media | Alta | Baja | Media |
+| Gestionar documentos médicos como recetas, resultados y comprobantes | Media | Alta | Baja | Media |
+| Buscar información sobre tratamiento o medicamentos | Media | Media | Baja | Media |
+| Solicitar apoyo a cuidador o familiar ante una duda | Media | Media | Alta | Alta |
+| Reportar que una actividad del día fue completada | Alta | Media | Alta | Alta |
+
+**Análisis del User Task Matrix**
+
+Las tareas con mayor frecuencia e importancia en ambos segmentos son la administración y confirmación de la medicación, la consulta de la rutina diaria y el reporte de actividades completadas. Esto es consistente con el 100 % de entrevistados que mencionó la medicación como eje del cuidado y con las funcionalidades más solicitadas en el análisis de entrevistas: recordatorios, confirmación de medicación y visualización simple de actividades.
+
+Respecto a las coincidencias, ambos User Personas necesitan certeza sobre el estado del tratamiento. Valeria necesita saber si alguien más ya administró una dosis, y Rafael necesita saber si él mismo ya la tomó. Ambos usan el celular como herramienta principal y valoran la rapidez para acceder a información crítica. También comparten la tarea de consultar la rutina diaria y reportar su cumplimiento, aunque con matices: Valeria la vive como responsabilidad operativa y Rafael como una forma de participar en su propio cuidado.
+
+Respecto a las diferencias, las tareas vinculadas a la coordinación, es decir el cambio de turno, la gestión documental y la comunicación con múltiples actores, concentran alta frecuencia e importancia solo para Valeria. En Rafael aparecen con baja frecuencia porque las delega en su hija o en su esposa. En contraste, solicitar apoyo es una tarea de alta frecuencia para Rafael y media para Valeria, lo que refleja la asimetría de autonomía entre ambos: el paciente busca apoyo y el cuidador lo provee.
+
+En cuanto a las implicaciones para el diseño, las tareas con alta frecuencia y alta importancia en ambos segmentos deben resolverse con flujos mínimos, de uno o dos toques, y con visibilidad inmediata en la pantalla principal. Las tareas asimétricas, es decir la coordinación para el cuidador y la solicitud de apoyo para el paciente, justifican vistas diferenciadas por rol dentro de una misma aplicación compartida. El resto de tareas, como la consulta de historial, la gestión documental y la búsqueda de información, puede vivir detrás de un segundo nivel de navegación sin perjudicar la experiencia.  
+
 #### 2.3.3. User Journey Mapping
-> _Guía:_ Versión As-Is, uno por User Persona (UXPressia).
+
+**Segmento 1: Cuidadores de pacientes geriátricos**
 
 ![User Journey Map - Valeria](assets/chapter-2/journey-maps/journey-map-valeria.png)
 
+El recorrido de Valeria muestra una caída emocional progresiva a lo largo del día. Arranca con incertidumbre sobre si está olvidando algo, se estabiliza brevemente al administrar la medicación y vuelve a caer en los momentos críticos de cambio de turno y consulta médica, donde la falta de una herramienta centralizada hace que la información dependa de la memoria y del cuaderno. El punto más bajo aparece en la consulta médica, cuando el doctor pide historial y evolución, Valeria debe reconstruirlo a mano. La fase de registro de evolución cierra el día con frustración por no tener un registro fiel de lo ocurrido.
+
+**Segmento 2: Pacientes geriátricos**
+
 ![User Journey Map - Rafael](assets/chapter-2/journey-maps/journey-map-rafael.png)
+
+El recorrido de Rafael es más plano pero tiene un valle claro en la fase de malestar o cambio pues debido a su intención de no molestar a la familia, tarda en avisar cuando algo está fuera de lo normal. Al momento de tomar la medicación también baja la curva porque, ante la duda de haberla tomado, prefiere omitirla. La fase de actividades del día es la más positiva, dado que se trata de una rutina conocida que le da sensación de autonomía y la consulta médica recupera cierta estabilidad porque está acompañado, aunque persiste la frustración de no tener su historial al alcance.
+
 
 #### 2.3.4. Empathy Mapping
 
+**Segmento 1: Cuidadores de pacientes geriátricos**
+
 ![Empathy Map - Valeria](assets/chapter-2/empathy-maps/empathy-map-valeria.png)
 
+En Valeria destaca una tensión entre el alto nivel de responsabilidad asumido y la falta de herramientas que la acompañen. Lo que dice y lo que piensa convergen en la misma preocupación: olvidar un medicamento o una indicación. Lo que hace muestra un patrón claro de uso intensivo del celular combinado con cuaderno físico, lo que refleja la ausencia de una solución centralizada. Lo que siente combina ansiedad y culpa con momentos puntuales de alivio cuando otro familiar confirma una acción. El mapa evidencia que CareConnect debe reducir la carga mental antes que sumar nuevas funciones.
+
+**Segmento 2: Pacientes geriátricos**
+
 ![Empathy Map - Rafael](assets/chapter-2/empathy-maps/empathy-map-rafael.png)
+
+En Rafael el eje emocional dominante es la pérdida progresiva de autonomía. Lo que dice muestra su deseo de resolver lo cotidiano sin tener que llamar a su hija por cada detalle. Lo que piensa revela una regla de decisión riesgosa: ante la duda, prefiere omitir la dosis. Lo que hace confirma un uso muy acotado del celular y un rechazo natural a aplicaciones nuevas si no fueron instaladas por alguien de confianza. Lo que siente mezcla frustración y gratitud, con tranquilidad cuando la información se presenta de forma clara. El mapa refuerza que la interfaz debe priorizar legibilidad, confirmación simple y lenguaje directo.
 
 #### 2.3.5. As-is Scenario Mapping
 > _Guía:_ Uno por User Persona (LucidChart/Miro). Filas Phases, Doing, Thinking, Feeling + áreas positivas/negativas/blank.
