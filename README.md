@@ -204,6 +204,10 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 #### 2.3.1. User Personas
 > _Guía:_ Una ficha por segmento (UXPressia).
 
+![User Persona - Valeria](assets/chapter-2/personas/persona-valeria.png)
+
+![User Persona - Rafael](assets/chapter-2/personas/persona-rafael.png)
+
 #### 2.3.2. User Task Matrix
 
 #### 2.3.3. User Journey Mapping
