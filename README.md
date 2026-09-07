@@ -317,7 +317,66 @@ Sabremos que nuestra solución funciona cuando la configuración inicial no tome
 | 8 | **What is the least amount of work we need to do to learn the next most important thing?** | Realizar entrevistas con al menos seis cuidadores, tres formales y tres informales, para entender cómo trabajan hoy y dónde sienten más fricción en la gestión del cuidado. |
 
 ### 1.3. Segmentos objetivo
-> _Guía:_ Descripción de segmentos con características demográficas e información estadística de sustento.
+
+CareConnect apunta a dos segmentos bien diferenciados, definidos a partir del análisis del problema y de las personas que lo viven de cerca.
+
+### Segmento Objetivo 1: Cuidadores de pacientes geriátricos
+
+Nuestro primer segmento objetivo incluye tanto a cuidadores formales, es decir enfermeros, técnicos de salud y asistentes geriátricos en atención domiciliaria o centros de cuidado, como a cuidadores informales, es decir familiares que asumen el rol principal en casa, muchas veces sin formación especializada pero con responsabilidad directa sobre la rutina del paciente.
+
+**Aspectos demográficos:**
+
+- Sexo: masculino y femenino, con presencia mayoritaria de mujeres en labores de cuidado.
+- Edades: 25 a 60 años.
+- Nivel socioeconómico: sectores B, C y D.
+- Nivel educativo: variable, desde secundaria completa hasta educación superior técnica o universitaria en el caso de cuidadores formales.
+- Ocupación: cuidador o cuidadora formal con experiencia en atención geriátrica, o cuidador o cuidadora informal responsable del acompañamiento diario.
+
+**Aspectos geográficos:**
+
+- Nacionalidad: peruana.
+- Zona geográfica: urbana y periurbana, donde existe mayor acceso a smartphones y servicios de atención domiciliaria.
+
+**Aspectos psicográficos:**
+
+- Valores: responsabilidad, continuidad del cuidado, seguridad del paciente.
+- Estilos de vida: usan el celular con frecuencia para organizar su vida diaria y acceden principalmente desde dispositivos móviles de gama media. Viven bajo presión constante, porque deben controlar medicación, citas, cambios de estado y comunicación con otros actores del cuidado.
+- Intereses: organización del tiempo, seguimiento del estado del paciente, comunicación con familiares y personal de salud.
+- Personalidad: dispuestos a incorporar aplicaciones que realmente les faciliten el trabajo, pero exigentes con la simplicidad. Si una herramienta les toma demasiado tiempo o esfuerzo, dejan de usarla.
+- Frustraciones: perder información en los cambios de turno, no poder confirmar si otra persona ya administró una dosis y depender de múltiples herramientas no integradas.
+
+**Datos estadísticos de sustento:**
+
+Se trata de un segmento en crecimiento debido al aumento sostenido de la población adulta mayor. El 13,9 % de la población peruana tiene 60 años o más y se proyecta que esa proporción supere el 22 % hacia 2050, lo que amplía de forma directa la base de personas que requieren un cuidador [1]. La relevancia del segmento también se explica por la carga que asume: cerca del 50 % de los pacientes crónicos no adhiere correctamente a su tratamiento por olvidos y desorganización, situación que recae sobre quien acompaña la rutina diaria [2].
+
+### Segmento Objetivo 2: Pacientes geriátricos
+
+Nuestro segundo segmento objetivo son adultos mayores que requieren seguimiento frecuente de su estado de salud, medicación y actividades diarias. Algunos conservan autonomía parcial y pueden interactuar por sí mismos con la aplicación, mientras que otros necesitan apoyo de un cuidador, pero igualmente se benefician de una herramienta que haga visible su rutina y su progreso.
+
+**Aspectos demográficos:**
+
+- Sexo: masculino y femenino, sin predominancia específica.
+- Edades: 60 años a más.
+- Nivel socioeconómico: sectores B, C y D.
+- Nivel educativo: variable, desde educación básica hasta educación superior.
+- Condición de uso: pacientes con autonomía parcial o acompañada que necesitan recordatorios, seguimiento y visualización simple de su cuidado.
+
+**Aspectos geográficos:**
+
+- Nacionalidad: peruana.
+- Zona geográfica: urbana y periurbana, donde el acceso a smartphones o al apoyo digital es más viable.
+
+**Aspectos psicográficos:**
+
+- Valores: autonomía, tranquilidad, no representar una carga para la familia.
+- Estilos de vida: uso básico del celular, orientado a llamadas, mensajería y alarmas simples.
+- Intereses: mantener su salud bajo control y conservar la mayor independencia posible en su rutina.
+- Personalidad: valoran especialmente la claridad, la legibilidad y la simplicidad. Se incomodan con navegación compleja o formularios extensos.
+- Frustraciones: dudar si ya tomaron una dosis, no encontrar sus documentos clínicos y depender de otra persona para resolver asuntos cotidianos de su cuidado.
+
+**Datos estadísticos de sustento:**
+
+La relevancia de este segmento está directamente asociada al envejecimiento de la población peruana, donde el 13,9 % ya tiene 60 años o más con proyección superior al 22 % hacia 2050 [1]. A ello se suma la necesidad de promover mayor adherencia a los tratamientos: el 50 % de los pacientes crónicos no cumple correctamente sus indicaciones, principalmente por olvidos y falta de soporte continuo, lo que incrementa complicaciones y reingresos hospitalarios [2]. Es un segmento que requiere soluciones digitales con barreras de uso mínimas y utilidad inmediata.
 
 ## Capítulo II: Requirements Elicitation & Analysis
 
