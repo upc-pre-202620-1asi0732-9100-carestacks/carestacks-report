@@ -183,8 +183,35 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 
 ### 2.1. Competidores
 
+El mercado de aplicaciones móviles orientadas a la salud personal presenta una oferta consolidada a nivel global, con actores que abordan el seguimiento del tratamiento desde distintos ángulos: recordatorios de medicación, monitoreo de hábitos o almacenamiento de información médica familiar. Sin embargo, ninguno de los productos existentes resuelve la coordinación entre varios cuidadores que atienden a un mismo paciente geriátrico, que es precisamente el espacio que CareConnect busca ocupar. Tras el proceso de investigación del landscape competitivo, identificamos tres competidores cuyas propuestas de valor se solapan parcialmente con la nuestra.
+
+**Medisafe** es una aplicación enfocada en recordatorios de medicación para pacientes individuales. Su propuesta central es la alta especialización en el control de la toma de medicamentos, con un modelo freemium y distribución exclusivamente móvil.
+
+**MyTherapy** es una aplicación orientada al seguimiento de salud, hábitos y tratamientos médicos. Su diferencial es una interfaz simple y el monitoreo continuo del estado de salud, dirigido principalmente a personas con enfermedades crónicas. Opera bajo modelo freemium y canal móvil.
+
+**CareZone** es una plataforma que permite organizar información médica y documentos de pacientes. Está orientada a familias que gestionan información médica y es el único competidor con presencia tanto web como móvil, también bajo modelo freemium.
+
 #### 2.1.1. Análisis competitivo
 > _Guía:_ Competitive Analysis Landscape (mín. 3 competidores directos) + SWOT enfocado en la competencia.
+>
+
+| Competitive Analysis Landscape | | | | |
+| --- | --- | --- | --- | --- |
+| **¿Por qué llevar a cabo este análisis?** | ¿Cómo podemos diseñar una solución digital eficiente, confiable y diferenciada que permita a los cuidadores y familiares coordinar el cuidado de pacientes geriátricos en tiempo real, reduciendo errores, mejorando la comunicación y brindando visibilidad completa del estado del paciente? | | | |
+| **Nombre y logo** | **CareConnect** <br> *Insertar logo* | **Medisafe** <br> *Insertar logo* | **MyTherapy** <br> *Insertar logo* | **CareZone** <br> *Insertar logo* |
+| **Perfil: Overview** | Aplicación móvil enfocada en la gestión integral del cuidado de pacientes geriátricos. Permite coordinar tratamientos, registrar la evolución del paciente y compartir información entre múltiples cuidadores en tiempo real. | Aplicación enfocada en recordatorios de medicación para pacientes individuales. | Aplicación orientada al seguimiento de salud, hábitos y tratamientos médicos. | Plataforma que permite organizar información médica y documentos de pacientes. |
+| **Perfil: Ventaja competitiva** | Integración completa del cuidado colaborativo en una sola plataforma con múltiples usuarios vinculados a un mismo paciente. | Alta especialización en recordatorios de medicación. | Interfaz simple y monitoreo continuo de salud. | Organización de información médica familiar. |
+| **Perfil: ¿Qué valor ofrece a los clientes?** | Mejora la coordinación entre cuidadores, reduce errores en el cuidado y permite acceso centralizado a información crítica del paciente. | Reduce olvidos en la toma de medicamentos. | Permite seguimiento de tratamientos y hábitos de salud. | Facilita el almacenamiento y acceso a información médica. |
+| **Perfil de Marketing: Mercado objetivo** | Cuidadores y familiares de pacientes geriátricos en entornos domiciliarios. | Pacientes individuales con tratamientos médicos. | Personas con enfermedades crónicas. | Familias que gestionan información médica. |
+| **Perfil de Marketing: Estrategias de marketing** | Marketing digital con enfoque en bienestar, confianza y facilidad de uso. | Marketing orientado a la salud personal. | Promoción en bienestar y seguimiento de salud. | Enfoque en organización familiar. |
+| **Perfil de Producto: Productos y servicios** | Aplicación móvil multiplataforma con calendario, alertas, historial clínico, carpeta de documentos y perfiles compartidos. | Aplicación móvil de recordatorios de medicación. | Aplicación móvil de seguimiento de salud. | Plataforma web y móvil para organización médica. |
+| **Perfil de Producto: Precios y costos** | Modelo freemium con funcionalidades premium. | Freemium. | Freemium. | Freemium. |
+| **Perfil de Producto: Canales de distribución** | Móvil. | Móvil. | Móvil. | Web y móvil. |
+| **SWOT: Fortalezas** | Es la única de las cuatro que resuelve el cuidado colaborativo: vincula varios cuidadores a un mismo paciente con historial compartido. Frente a Medisafe y MyTherapy, que resuelven bien la dimensión individual, CareConnect cubre la dimensión que ninguna de las dos aborda. | Su especialización en medicación supera en profundidad a la de CareConnect en esa función puntual, ya que concentra todo su desarrollo en ese único caso de uso. | Su interfaz intuitiva es superior en madurez a la de CareConnect, que se encuentra en etapa inicial, y constituye una referencia de usabilidad para nuestro diseño. | Su organización de datos médicos es la más consolidada del grupo en el eje documental y es el único que ofrece experiencia web, cubriendo un canal que CareConnect no atiende. |
+| **SWOT: Debilidades** | Aplicación en etapa inicial sin posicionamiento consolidado, frente a tres competidores con base de usuarios establecida. Además, a diferencia de CareZone, no ofrece canal web. | No permite colaboración entre múltiples usuarios, lo que la deja fuera de los escenarios de cambio de turno que CareConnect sí resuelve. | No integra completamente la información médica, por lo que el usuario debe recurrir a otras herramientas para documentos y evolución, fragmentación que CareConnect elimina. | Sus funcionalidades son limitadas y no ofrece comunicación dinámica entre usuarios, únicamente centraliza información. |
+| **SWOT: Oportunidades** | Crecimiento del sector salud digital y necesidad no cubierta de soluciones colaborativas de cuidado geriátrico en Latinoamérica. | Expansión hacia la gestión integral del cuidado, movimiento que la acercaría directamente a nuestro terreno. | Integración con nuevas tecnologías de monitoreo, que ampliaría su alcance más allá del seguimiento manual. | Mejora de funcionalidades y expansión hacia la coordinación entre usuarios. |
+| **SWOT: Amenazas** | Competidores ya posicionados y barreras de adopción inicial en usuarios con baja alfabetización digital. | Aparición de nuevas aplicaciones más completas que superen su enfoque de función única. | Saturación del mercado de aplicaciones de seguimiento de salud. | Falta de innovación frente a competidores que avanzan hacia la coordinación en tiempo real. |
+
 
 #### 2.1.2. Estrategias y tácticas frente a competidores
 
