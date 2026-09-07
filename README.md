@@ -289,14 +289,214 @@ Los competidores presentan un alcance limitado en Latinoamérica y limitaciones 
   
 ### 2.2. Entrevistas
 
+Esta sección presenta el diseño, el registro y el análisis de las entrevistas realizadas a los segmentos objetivo, con el fin de comprender sus necesidades, sus problemas actuales y las oportunidades de mejora en la gestión del cuidado geriátrico.
+
 #### 2.2.1. Diseño de entrevistas
 > _Guía:_ Preguntas principales y complementarias por segmento.
+
+Diseñamos entrevistas semiestructuradas con preguntas diferenciadas según cada segmento objetivo, organizadas en bloques temáticos que permiten recopilar información sobre el perfil del usuario, sus hábitos actuales y la validación de las funcionalidades propuestas. Los bloques fueron definidos de modo que la información recogida alimente directamente la construcción de los arquetipos: el bloque de perfil captura características demográficas, el bloque de hábitos captura comportamientos, herramientas y canales de interacción, y el bloque de validación captura objetivos y expectativas.
+
+#### Segmento 1: Cuidadores de pacientes geriátricos
+
+El objetivo es entender cómo gestionan actualmente el cuidado diario, qué herramientas utilizan y qué dificultades enfrentan.
+
+**Bloque 1: Perfil y biografía**
+
+1. ¿Nos podría indicar su nombre, edad y cuánto tiempo lleva realizando actividades de cuidado?
+2. ¿En qué distrito reside y en qué distrito realiza sus actividades de cuidado?
+3. ¿A qué se dedica además del cuidado y cuál es su situación familiar actual?
+4. ¿El cuidado que realiza es formal o informal, y a cuántas personas atiende?
+
+**Bloque 2: Gestión actual del cuidado y herramientas**
+
+5. ¿Cómo organiza actualmente la medicación y las terapias del paciente?
+6. ¿Qué herramientas utiliza en su día a día?
+7. ¿Qué dispositivo usa principalmente y qué aplicaciones abre con más frecuencia durante su jornada?
+8. ¿Ha tenido problemas por falta de coordinación o de información?
+9. ¿Cómo se comunica con otros cuidadores o familiares y por qué canal?
+10. ¿Qué aspectos considera más difíciles en el cuidado diario?
+
+**Bloque 3: Validación de funcionalidades y expectativas**
+
+11. ¿Qué funcionalidades le gustaría tener en una aplicación de apoyo?
+12. Si una aplicación permitiera que varios cuidadores registren y confirmen en tiempo real la medicación administrada, ¿la usaría? ¿Por qué?
+13. ¿Qué espera mejorar con una solución digital?
+14. ¿Qué tendría que ocurrir para que dejara de usar una aplicación de este tipo?
+
+#### Segmento 2: Pacientes geriátricos
+
+El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué dificultades tienen para seguir sus tratamientos y qué tipo de apoyo digital necesitan para mejorar su autonomía.
+
+**Bloque 1: Perfil y biografía**
+
+1. ¿Nos podría indicar su nombre, edad y si actualmente recibe apoyo de un cuidador?
+2. ¿En qué distrito vive y con quiénes vive actualmente?
+3. ¿A qué se dedicaba antes y cómo describiría su rutina de un día normal?
+4. ¿Qué tan independiente se siente para resolver sus actividades diarias?
+
+**Bloque 2: Gestión actual del cuidado y uso de tecnología**
+
+5. ¿Cómo recuerda tomar sus medicamentos o asistir a sus citas médicas?
+6. ¿Ha tenido dificultades para seguir su tratamiento o su rutina diaria?
+7. ¿Qué es lo que más le cuesta recordar o controlar en su día a día?
+8. ¿Utiliza celular o alguna aplicación actualmente? ¿Para qué?
+9. ¿Utiliza algún otro dispositivo, como tablet o computadora?
+10. ¿Qué tan fácil o difícil le resulta usar aplicaciones móviles?
+11. ¿Dónde guarda actualmente sus recetas, resultados y documentos médicos?
+
+**Bloque 3: Validación de funcionalidades y expectativas**
+
+12. ¿Qué tipo de recordatorios le ayudarían más: alarmas, notificaciones o mensajes?
+13. ¿Le gustaría poder ver sus actividades o medicamentos en una sola pantalla?
+14. ¿Qué le haría sentir más seguro o tranquilo respecto a su cuidado?
+15. ¿Qué funcionalidades le gustaría tener en una aplicación que le ayude en su cuidado?
 
 #### 2.2.2. Registro de entrevistas
 > _Guía:_ **3 a 5 entrevistas por segmento.** Nombres, apellidos, edad, distrito, screenshot y URL de Microsoft Stream con timing y duración. Resumen por entrevista.
 
+#### Segmento 1: Cuidadores de pacientes geriátricos
+
+| Segmento: Cuidadores | Entrevista #1 |
+| --- | --- |
+| **Nombres y Apellidos** | Giancarlo Castañeda |
+| **Edad** | 20 |
+| **Distrito** | *Pendiente. El documento base registra únicamente Perú como procedencia.* |
+| **Ocupación** | Cuidador de adultos mayores a domicilio |
+| **Tiempo como cuidador** | 1 año |
+| **Timing inicio** | *Pendiente* |
+| **Duración** | *Pendiente* |
+| **URL** | *Pendiente* |
+| **Screenshot** | *Insertar captura del video* |
+| **Resumen** | Giancarlo gestiona el cuidado del paciente mediante herramientas mayormente manuales. Para la medicación utiliza pastilleros semanales organizados con base en recetas médicas, complementados con alarmas en su celular para recordar los horarios. Las terapias y citas médicas las registra en un cuaderno físico junto con el historial del paciente. Entre sus herramientas cotidianas menciona dispositivos médicos básicos como tensiómetro, oxímetro y termómetro, además de un cuaderno de bitácora para registrar eventos relevantes. A nivel digital emplea principalmente alarmas y WhatsApp para comunicarse con los familiares. Señaló que uno de los principales problemas es la falta de coordinación durante los cambios de turno, donde la información no siempre se transmite correctamente, lo que puede generar pérdida de datos importantes sobre el estado del paciente. Respecto a las dificultades del cuidado diario, mencionó el manejo de cambios de humor y episodios de confusión del paciente, así como la falta de apoyo inmediato de profesionales de salud para resolver dudas. En relación con una posible solución digital, destacó la necesidad de registro compartido en tiempo real entre cuidadores, confirmación de administración de medicamentos, recordatorios automáticos, historial de signos vitales y una sección de notas para el relevo de turno. Espera que una solución digital le permita reducir la carga mental, mejorar la organización del cuidado y generar mayor confianza con los familiares al brindarles visibilidad del estado del paciente en tiempo real. |
+
+| Segmento: Cuidadores | Entrevista #2 |
+| --- | --- |
+| **Nombres y Apellidos** | Renzo Uribe |
+| **Edad** | 20 |
+| **Distrito** | *Pendiente. El documento base registra únicamente Perú como procedencia.* |
+| **Ocupación** | Cuidador de adultos mayores a domicilio |
+| **Tiempo como cuidador** | 2 años |
+| **Timing inicio** | *Pendiente* |
+| **Duración** | *Pendiente* |
+| **URL** | *Pendiente* |
+| **Screenshot** | *Insertar captura del video* |
+| **Resumen** | Renzo gestiona el cuidado del paciente mediante una combinación de herramientas manuales y digitales. Para la medicación utiliza un pastillero semanal organizado por horarios de mañana, tarde y noche. Para terapias y citas médicas emplea tanto un calendario físico como Google Calendar. Entre las herramientas de su día a día mencionó hojas de papel, aplicaciones de notas y múltiples alarmas en su celular, donde además registra información relevante como alimentación, signos vitales y cambios de ánimo. Indicó que uno de los principales problemas es la falta de coordinación e información, especialmente durante los cambios de turno o cuando los familiares no comunican cambios en la medicación, lo que genera incertidumbre sobre si el paciente ya recibió una dosis o si hubo modificaciones en el tratamiento. Para comunicarse utiliza principalmente WhatsApp, aunque considera que no es eficiente porque la información se pierde entre mensajes y dificulta la búsqueda de datos importantes en situaciones críticas. Entre las principales dificultades del cuidado diario destacó la responsabilidad de manejar múltiples pacientes, el control del stock de medicamentos y suministros, la necesidad de recordar citas y tareas, la gestión de cambios de ánimo en los pacientes y la dependencia de la memoria ante la falta de un sistema centralizado. Propuso funcionalidades como registro compartido de medicación con confirmación de dosis, alertas automáticas en caso de olvido, bitácora de salud con registro de signos vitales, visualización gráfica para seguimiento médico y un botón de emergencia con notificación a familiares y envío de ubicación. Espera que una solución digital le permita mejorar la organización, reducir errores en el cuidado y contar con un historial claro del paciente, evitando depender únicamente de la memoria o de la comunicación informal. |
+
+| Segmento: Cuidadores | Entrevista #3 |
+| --- | --- |
+| **Nombres y Apellidos** | Sebastián Rubio Ortiz |
+| **Edad** | 20 |
+| **Distrito** | *Pendiente. El documento base registra únicamente Perú como procedencia.* |
+| **Ocupación** | Cuidador informal, con inicio familiar y experiencia progresiva |
+| **Tiempo como cuidador** | Aproximadamente 1 año |
+| **Timing inicio** | *Pendiente* |
+| **Duración** | *Pendiente* |
+| **URL** | *Pendiente* |
+| **Screenshot** | *Insertar captura del video* |
+| **Resumen** | Sebastián organiza el cuidado del paciente utilizando principalmente herramientas digitales. Para la programación de citas y terapias emplea aplicaciones como Google Calendar, mientras que para la medicación combina pastilleros físicos con recordatorios digitales en su celular. Mencionó el uso constante del teléfono móvil para alarmas, cronómetros, notas y comunicación mediante WhatsApp, y señaló que estas herramientas son útiles pero no están integradas entre sí. Destacó que uno de los principales problemas es la falta de coordinación entre cuidadores, especialmente por el uso de métodos distintos, digitales y manuales. Indicó que el choque generacional dificulta la organización, ya que algunos cuidadores prefieren registrar información en papel, lo que puede generar pérdida de datos o falta de actualización ante cambios de medicación. La comunicación se realiza principalmente a través de grupos de WhatsApp, lo cual genera desorden y dificulta el acceso rápido a información relevante. Entre las principales dificultades del cuidado diario mencionó la alta carga mental asociada a la responsabilidad del cuidado, el riesgo de cometer errores en la administración de medicación, la dificultad para organizar información de manera eficiente y la falta de un sistema unificado entre cuidadores. Propuso funcionalidades como una interfaz intuitiva y de uso rápido, un sistema de checklist sincronizado entre cuidadores, la centralización de la información médica del paciente y la gestión del stock de medicamentos. Espera que una solución digital le permita centralizar toda la información del paciente en un solo lugar, mejorar la coordinación entre cuidadores y facilitar la organización del cuidado diario de manera más eficiente. |
+
+#### Segmento 2: Pacientes geriátricos
+
+| Segmento: Pacientes geriátricos | Entrevista #1 |
+| --- | --- |
+| **Nombres y Apellidos** | Rosa María Quispe |
+| **Edad** | 68 |
+| **Distrito** | *Pendiente. El documento base registra únicamente Lima, Perú.* |
+| **Apoyo de cuidador** | Sí, su hija |
+| **Nivel de autonomía** | Media |
+| **Uso de celular** | Sí, uso básico |
+| **Timing inicio** | *Pendiente* |
+| **Duración** | *Pendiente* |
+| **URL** | *Pendiente* |
+| **Screenshot** | *Pendiente. No existe captura en el documento base.* |
+| **Resumen** | Rosa María depende parcialmente de su hija para organizar su medicación y sus citas médicas. Utiliza alarmas en su celular para recordar algunos medicamentos, pero en ocasiones olvida si ya los tomó, y las citas médicas las anota en un cuaderno. Entre sus dificultades identificó el olvido de medicación en algunos momentos, la confusión sobre si ya tomó una dosis y la dependencia de otra persona para confirmar información. Utiliza el celular principalmente para llamadas, WhatsApp y alarmas, e indica que no está familiarizada con aplicaciones complejas. Le gustaría contar con una herramienta simple que le indique claramente qué medicamentos debe tomar y en qué momento, sin generar confusión. Entre las funcionalidades sugeridas mencionó recordatorios claros con sonido, confirmación visual de la medicación tomada y una pantalla simple con las actividades del día. Espera que una solución digital le ayude a sentirse más segura y menos dependiente, especialmente para recordar su medicación diaria. |
+
+| Segmento: Pacientes geriátricos | Entrevista #2 |
+| --- | --- |
+| **Nombres y Apellidos** | Luis Alberto Rojas |
+| **Edad** | 74 |
+| **Distrito** | *Pendiente. El documento base registra únicamente Arequipa, Perú.* |
+| **Apoyo de cuidador** | No, vive con su esposa |
+| **Nivel de autonomía** | Alta |
+| **Uso de celular** | Sí |
+| **Timing inicio** | *Pendiente* |
+| **Duración** | *Pendiente* |
+| **URL** | *Pendiente* |
+| **Screenshot** | *Pendiente. No existe captura en el documento base.* |
+| **Resumen** | Luis Alberto gestiona su cuidado de forma independiente, apoyándose principalmente en su memoria y en algunos recordatorios del celular, aunque reconoce que en ocasiones olvida detalles de su tratamiento o de sus citas médicas. Las citas las anota en un calendario físico. Entre sus dificultades identificó el olvido ocasional de medicamentos, la falta de organización centralizada y la dificultad para llevar un historial de su salud. Utiliza el celular para llamadas, WhatsApp y ocasionalmente para alarmas, y se siente relativamente cómodo con tecnología básica. Busca una herramienta que le permita tener todo organizado en un solo lugar y evitar olvidos. Entre las funcionalidades sugeridas mencionó recordatorios automáticos, registro de medicamentos tomados e historial simple de salud. Espera mejorar su organización diaria y reducir los errores en su tratamiento mediante una herramienta fácil de usar. |
+
+| Segmento: Pacientes geriátricos | Entrevista #3 |
+| --- | --- |
+| **Nombres y Apellidos** | Laura Marcela Rios |
+| **Edad** | 78 |
+| **Distrito** | Magdalena, Lima |
+| **Apoyo de cuidador** | No, pero vive con su familia |
+| **Nivel de autonomía** | Alta |
+| **Uso de celular** | Sí, junto con tablet |
+| **Timing inicio** | *Pendiente* |
+| **Duración** | *Pendiente* |
+| **URL** | *Pendiente* |
+| **Screenshot** | *Insertar captura del video* |
+| **Resumen** | Laura Marcela gestiona su cuidado de forma independiente, apoyándose principalmente en alarmas y recordatorios de su celular y de su tablet. Reconoce que en ocasiones olvida, y son sus hijos o las propias alarmas quienes le recuerdan los medicamentos que debe tomar. Camina y asiste a sus citas de manera presencial y sin ayuda en la mayoría de casos. Entre sus dificultades identificó el olvido ocasional de fechas, la discapacidad física en ciertos momentos y la dificultad para guardar sus documentos de manera centralizada. Utiliza el celular para llamadas, WhatsApp y de forma intensiva para alarmas y calendario, además de usar frecuentemente la tablet para entretenimiento y comunicación, por lo que se siente cómoda con la tecnología. Busca una herramienta que le permita tener todo organizado en un solo lugar, evitar olvidos y transmitir información rápidamente a sus hijos en caso necesiten ayudarla. Entre las funcionalidades sugeridas mencionó recordatorios automáticos, agendado de citas acompañada e historial de documentos y citas pasadas. Espera mejorar su organización diaria y reducir los errores y accidentes que pueda sufrir en su tratamiento o en el camino hacia este, mediante una herramienta fácil de usar. |
+
 #### 2.2.3. Análisis de entrevistas
 > _Guía:_ Análisis por segmento con sustento estadístico (porcentajes).
+
+Realizamos un total de seis entrevistas, tres al segmento de cuidadores y tres al segmento de pacientes geriátricos. A partir de ellas identificamos patrones claros en la gestión del cuidado, las dificultades actuales y las necesidades de cada segmento.
+
+#### Segmento 1: Cuidadores de pacientes geriátricos
+
+**Características objetivas**
+
+Los tres entrevistados de este segmento, es decir el 100 %, tienen 20 años y residen en el Perú. La experiencia acumulada en actividades de cuidado varía entre uno y dos años: el 67 %, correspondiente a Giancarlo y Sebastián, lleva aproximadamente un año, mientras que el 33 %, correspondiente a Renzo, acumula dos años. Respecto al tipo de cuidado, el 67 %, es decir Giancarlo y Renzo, se desempeña como cuidador de adultos mayores a domicilio, y el 33 %, es decir Sebastián, ejerce como cuidador informal que inició en el ámbito familiar y fue ganando experiencia de manera progresiva.
+
+En cuanto a la infraestructura de trabajo, el 100 % utiliza el celular como herramienta principal de su jornada y el 100 % utiliza alarmas para recordar la medicación. El 100 % combina herramientas físicas, como pastilleros y cuadernos, con herramientas digitales, sin que ninguna de ellas esté integrada con las demás. El 100 % utiliza WhatsApp como canal de comunicación con familiares y con otros cuidadores. El 67 %, Renzo y Sebastián, incorpora además una herramienta de calendario digital, específicamente Google Calendar, mientras que el 33 %, Giancarlo, se apoya exclusivamente en un cuaderno de bitácora. Un 33 %, Giancarlo, emplea también dispositivos médicos básicos como tensiómetro, oxímetro y termómetro.
+
+**Características subjetivas**
+
+Respecto a los problemas de coordinación, el 100 % declara enfrentarlos y el 100 % ha experimentado pérdida de información. El 67 %, Giancarlo y Renzo, sitúa el momento crítico específicamente en los cambios de turno: Giancarlo señala que la información no siempre se transmite correctamente al relevo, y Renzo indica que la incertidumbre sobre si el paciente ya recibió una dosis se agrava cuando los familiares no comunican cambios en la medicación. Sebastián identifica como causa el choque generacional entre cuidadores que registran en papel y cuidadores que registran de forma digital, lo que produce datos desactualizados.
+
+En cuanto al canal de comunicación, el 67 %, Renzo y Sebastián, califica explícitamente a WhatsApp como insuficiente: Renzo indica que la información se pierde entre mensajes y dificulta encontrar datos importantes en situaciones críticas, mientras que Sebastián describe los grupos como desordenados y poco útiles para acceder rápido a lo relevante. Esto confirma que el problema no es la ausencia de un canal, sino la ausencia de una estructura que preserve la información.
+
+Sobre la carga del rol, el 100 % menciona una alta carga mental y el 100 % expresa preocupación por cometer errores en la medicación. El 67 % refiere dificultades para organizar la información de manera eficiente, y el 33 %, Giancarlo, señala además la falta de apoyo profesional inmediato para resolver dudas clínicas. Renzo agrega dos cargas específicas de su perfil: la responsabilidad de manejar múltiples pacientes y el control del stock de medicamentos y suministros.
+
+Respecto a las funcionalidades solicitadas de forma espontánea, el 100 % pidió registro compartido en tiempo real, confirmación de medicación administrada, alertas automáticas e historial del paciente. El 67 % solicitó una sección de notas o relevo de turno, mientras que el 33 % mencionó un botón de emergencia con envío de ubicación, propuesto por Renzo, y el control de stock de medicamentos, propuesto por Renzo y Sebastián. Sebastián enfatizó además que la interfaz debe ser intuitiva y de uso rápido, condición que aparece como requisito de adopción y no como preferencia estética.
+
+**Conclusión del segmento**
+
+Este grupo no busca simplemente una alarma más. Existe una fuerte dependencia de herramientas manuales y no especializadas, y la coordinación entre cuidadores emerge como el problema más crítico, por encima incluso del olvido individual. La carga mental es alta debido a la responsabilidad que asumen, y por eso valoran una solución que centralice la información y automatice procesos sin añadir pasos a su jornada. La simplicidad y la rapidez son factores determinantes para la adopción: si la herramienta les cuesta tiempo, vuelven al cuaderno.
+
+#### Segmento 2: Pacientes geriátricos
+
+**Características objetivas**
+
+Los tres entrevistados de este segmento tienen entre 68 y 78 años, con un promedio de 73,3 años: Rosa María de 68 años, Luis Alberto de 74 años y Laura Marcela de 78 años. En cuanto a ubicación, el 67 %, Rosa María y Laura Marcela, reside en Lima, y el 33 %, Luis Alberto, en Arequipa. Respecto al apoyo recibido, el 33 %, Rosa María, cuenta con apoyo directo de un cuidador, específicamente su hija, mientras que el 67 %, Luis Alberto y Laura Marcela, no cuenta con cuidador asignado aunque convive con su familia. Coherentemente, el 67 % declara un nivel de autonomía alta y el 33 % un nivel de autonomía media.
+
+El 100 % utiliza celular. En cuanto al nivel de manejo, el 67 %, Rosa María y Luis Alberto, se limita a funciones básicas de llamadas, WhatsApp y alarmas, y el 33 %, Laura Marcela, presenta un uso más intensivo que incluye calendario y el uso frecuente de una tablet para entretenimiento y comunicación. El 33 %, Rosa María, declara explícitamente no estar familiarizada con aplicaciones complejas.
+
+**Características subjetivas**
+
+Respecto a la gestión actual del tratamiento, el 100 % presenta dificultades para recordar la medicación o las actividades del día y el 100 % se apoya en métodos básicos como la memoria, el cuaderno o alarmas simples. Las estrategias difieren: Rosa María combina alarmas con la confirmación de su hija y anota las citas en un cuaderno, Luis Alberto se apoya en su memoria y registra las citas en un calendario físico, y Laura Marcela utiliza alarmas y recordatorios tanto en celular como en tablet.
+
+En cuanto al riesgo asociado, el 100 % presenta riesgo de olvido y el 100 % carece de un sistema centralizado. El 33 %, Rosa María, reporta específicamente confusión sobre si ya tomó una dosis, lo que la lleva a dudar del estado real de su tratamiento. El 33 %, Laura Marcela, identifica además la dificultad para guardar sus documentos de manera centralizada, y menciona la discapacidad física en ciertos momentos como una limitación adicional.
+
+Respecto a las funcionalidades solicitadas, el 100 % pidió recordatorios claros y automáticos, y el 100 % expresó la necesidad de una interfaz sencilla con visualización simple de las actividades. El 67 %, Rosa María y Luis Alberto, solicitó algún mecanismo de confirmación o registro de la medicación tomada. El 67 %, Luis Alberto y Laura Marcela, pidió un historial, orientado al estado de salud en el primer caso y a documentos y citas pasadas en el segundo. El 33 %, Laura Marcela, añadió el agendado de citas acompañada y la posibilidad de transmitir información rápidamente a sus hijos en caso necesiten ayudarla.
+
+**Conclusión del segmento**
+
+Este grupo requiere soluciones extremadamente simples. Existe una dependencia variable de apoyo externo, que va desde la confirmación puntual de un familiar hasta la gestión completa por parte de una hija, pero en los tres casos aparece el mismo deseo de conservar autonomía. La claridad visual y la facilidad de uso son fundamentales, y la solución debe orientarse a reducir la confusión antes que a añadir funciones. Es relevante que la disposición hacia la tecnología no sea uniforme dentro del segmento, lo que obliga a diseñar para el perfil de menor alfabetización digital sin limitar al de mayor manejo.
+
+#### Conclusión general del análisis
+
+A partir de ambos segmentos identificamos los siguientes hallazgos clave. El 100 % de los entrevistados presenta problemas de organización del cuidado y el 100 % utiliza herramientas no especializadas que no conversan entre sí. El 100 % requiere algún grado de centralización de la información. La coordinación entre cuidadores aparece como el mayor problema del primer segmento, mientras que la certeza sobre la dosis ya tomada aparece como el mayor problema del segundo. Ambos segmentos convergen en un mismo punto: necesitan saber con seguridad qué se hizo y qué falta hacer, aunque lo formulen desde posiciones distintas.
+
+**Implicaciones para el diseño de CareConnect**
+
+- Implementar un sistema centralizado de información que sustituya la combinación de cuaderno, alarma y mensajería.
+- Diseñar una interfaz simple y accesible, con flujos cortos y textos legibles, dimensionada para el perfil de menor alfabetización digital.
+- Incorporar alertas y recordatorios con confirmación explícita de cumplimiento.
+- Permitir la colaboración entre múltiples usuarios vinculados a un mismo paciente, con visibilidad del relevo de turno.
+- Reducir la dependencia de herramientas externas concentrando historial, documentos y agenda en un solo lugar.
 
 ### 2.3. Needfinding
 
