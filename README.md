@@ -509,7 +509,7 @@ El bounded context Agenda controla los eventos de salud asociados a un paciente.
 
 > **[INSERTAR AQUÍ EL CLASS DIAGRAM DE AGENDA]**
 
-![Class Diagram - Agenda](assets/Diagrama-clases-Agenda.PNG)
+![Class Diagram - Agenda](assets/careconnect-agenda-class-diagram.png)
 
 *Figura X. Diagrama de clases del bounded context Agenda.*
 
@@ -519,7 +519,7 @@ El bounded context Notificaciones administra las comunicaciones generadas por Ca
 
 > **[INSERTAR AQUÍ EL CLASS DIAGRAM DE NOTIFICACIONES]**
 
-![Class Diagram - Notificaciones](assets/notificaciones-class-diagram.png)
+![Class Diagram - Notificaciones](assets/careconnect-notifications-class-diagram.png)
 
 *Figura X. Diagrama de clases del bounded context Notificaciones.*
 
@@ -529,7 +529,7 @@ El bounded context Diario de Seguimiento gestiona las notas registradas sobre la
 
 > **[INSERTAR AQUÍ EL CLASS DIAGRAM DE DIARIO DE SEGUIMIENTO]**
 
-![Class Diagram - Diario](assets/daigram.png)
+![Class Diagram - Diario](assets/careconnect-diary-class-diagram.png)
 
 *Figura X. Diagrama de clases del bounded context Diario de Seguimiento.*
 
@@ -539,7 +539,7 @@ Este bounded context controla el ciclo de vida de los accesos compartidos entre 
 
 > **[INSERTAR AQUÍ EL CLASS DIAGRAM DE GESTIÓN DE CONSENTIMIENTO]**
 
-![Class Diagram - Consentimiento](assets/diag_sharing_domain_class.png)
+![Class Diagram - Consentimiento](assets/careconnect-consent-class-diagram.png)
 
 *Figura X. Diagrama de clases del bounded context Gestión de Consentimiento.*
 
@@ -549,7 +549,7 @@ El bounded context Documentos administra la información asociada a documentos m
 
 > **[INSERTAR AQUÍ EL CLASS DIAGRAM DE DOCUMENTOS]**
 
-![Class Diagram - Documentos](assets/Class_Diagram_Documents.png)
+![Class Diagram - Documentos](assets/careconnect-documents-class-diagram.png)
 
 *Figura X. Diagrama de clases del bounded context Documentos.*
 
@@ -571,7 +571,7 @@ La entidad principal es `User`, que contiene información relacionada con el cor
 > - REST Controller.
 > - Relaciones principales entre dichos elementos.
 
-![Class Diagram - IAM](assets/iam-class-diagram.png)
+![Class Diagram - IAM](assets/careconnect-iam-class-diagram.png)
 
 *Figura X. Diagrama de clases del bounded context Autenticación / IAM.*
 
