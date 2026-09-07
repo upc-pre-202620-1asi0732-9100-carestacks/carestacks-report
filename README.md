@@ -155,10 +155,25 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 ### 1.1. Startup Profile
 
 #### 1.1.1. Descripción de la Startup
-> _Guía:_ Descripción de CareStacks.
+CareStacks es una startup de tecnología orientada al sector salud y bienestar social, fundada por estudiantes de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas. Nacimos para resolver una necesidad concreta y cotidiana: los cuidadores y los pacientes geriátricos no cuentan con herramientas digitales realmente pensadas para organizar el cuidado diario, dar seguimiento a los tratamientos y mantener una comunicación clara entre todos los involucrados. Competimos en un mercado donde las soluciones existentes se concentran en recordatorios individuales de medicación o en el almacenamiento aislado de información médica, y nos diferenciamos al integrar la coordinación entre múltiples cuidadores dentro de una misma plataforma.
+
+Nuestra misión es brindar a cuidadores y pacientes geriátricos una herramienta móvil accesible que facilite el seguimiento del bienestar del paciente y mejore la coordinación de las actividades de cuidado.
+
+Nuestra visión es consolidarnos como la plataforma de referencia en Latinoamérica para la gestión del cuidado geriátrico, apostando por soluciones tecnológicas que pongan a las personas en el centro.
+
+Nuestro producto, CareConnect, es una aplicación móvil nativa y multiplataforma pensada para el día a día del cuidado. Integra un calendario de medicación y terapias programadas, un sistema de alertas y recordatorios en tiempo real, una carpeta digital para documentos clínicos y tratamientos, un historial de notas y registro de evolución del paciente, y la compartición de perfiles entre cuidadores para garantizar continuidad en la atención. Todas estas capacidades conviven en una sola interfaz, de modo que la información crítica del paciente deja de estar dispersa entre cuadernos, alarmas y conversaciones de mensajería.
 
 #### 1.1.2. Perfiles de integrantes del equipo
 > _Guía:_ Por integrante: foto, nombres y apellidos, código, descripción de carrera y párrafo de conocimientos técnicos/habilidades que aporta.
+>
+| Integrantes | Descripción |
+| --- | --- |
+| *Insertar foto* | **Nombres y Apellidos:** Matias Rodolfo Salcedo Champi <br> **Código:** U202319698 <br> **Carrera:** Ingeniería de Software <br> Soy una persona orientada a la construcción de producto, con experiencia en el desarrollo de aplicaciones móviles y web y participación previa en proyectos de investigación y desarrollo. Cuento con conocimientos en Flutter, Dart, Node.js, Express.js, MongoDB, PostgreSQL, Git y GitHub, lo que me permite aportar tanto en la capa móvil como en los servicios que la soportan. Me motiva llevar una idea desde el prototipo hasta una versión funcional y desplegada. |
+| *Insertar foto* | **Nombres y Apellidos:** <br> **Código:** U202 <br> **Carrera:** Ingeniería de Software <br> Soy una persona organizada y proactiva, enfocada en el análisis de requerimientos y en el cumplimiento de los procesos ágiles del equipo. Aporto habilidades organizativas para estructurar el trabajo, dar seguimiento a los acuerdos y asegurar que cada entrega mantenga coherencia con lo planificado. Considero que la comunicación clara y la trazabilidad de las decisiones son fundamentales para que el proyecto avance de forma sostenida. |
+| *Insertar foto* | **Nombres y Apellidos:** Javier Masaru Nikaido Vargas <br> **Código:** U20221G099 <br> **Carrera:** Ingeniería de Software <br> Soy estudiante del séptimo ciclo de Ingeniería de Software y contribuyo al equipo en el desarrollo estructural de la solución y en la validación funcional de lo implementado. Me enfoco en verificar que lo construido responda efectivamente a los requisitos definidos y en detectar inconsistencias antes de que lleguen a la entrega. Me motiva el trabajo metódico y la mejora continua del producto. |
+| *Insertar foto* | **Nombres y Apellidos:**  <br> **Código:** U202 <br> **Carrera:** Ingeniería de Software <br> Soy una persona comprometida con la entrega de valor dentro de los plazos establecidos por el equipo. Apoyo en las etapas de codificación y en el trabajo colaborativo, con un énfasis particular en la experiencia de usuario. Cuento además con conocimientos en despliegue en la nube con Railway y Render y en integración continua con GitHub Actions, lo que me permite sostener el producto en sus entornos de ejecución. |
+| *Insertar foto* | **Nombres y Apellidos:**  <br> **Código:** U202 <br> **Carrera:** Ingeniería de Software <br> Soy una persona comprometida con la entrega de valor dentro de los plazos establecidos por el equipo. Apoyo en las etapas de codificación y en el trabajo colaborativo, con un énfasis particular en la experiencia de usuario. Cuento además con conocimientos en despliegue en la nube con Railway y Render y en integración continua con GitHub Actions, lo que me permite sostener el producto en sus entornos de ejecución. |
+
 
 ### 1.2. Solution Profile
 
