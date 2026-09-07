@@ -1148,7 +1148,9 @@ La base relacional conserva únicamente la información necesaria para identific
 >
 > Antes de insertar la figura definitiva, verificar los nombres de tablas y columnas contra el esquema vigente del backend para evitar diferencias entre el diagrama y la implementación.
 
-![Integrated Database Diagram](assets/careconnect-database-diagram.png)
+![Integrated Database Diagram](assets/careconnect-database-1-diagram.png)
+![Integrated Database Diagram](assets/careconnect-database-2-diagram.png)
+
 
 *Figura X. Relational/Non-Relational Database Diagram integrado de CareConnect.*
 
