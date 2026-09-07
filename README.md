@@ -180,12 +180,102 @@ Nuestro producto, CareConnect, es una aplicación móvil nativa y multiplataform
 #### 1.2.1. Antecedentes y problemática
 > _Guía:_ Enunciado del problema aplicando 5W+2H (Who, What, Where, When, Why, How, How Much). Objetivos y restricciones que delimitan el alcance.
 
+**Antecedentes**
+
+En el Perú, el crecimiento de la población adulta mayor ha hecho más visible la necesidad de soluciones que permitan organizar mejor el cuidado geriátrico, tanto en casa como en entornos de atención especializada. Según el Instituto Nacional de Estadística e Informática, el 13,9 % de la población peruana tiene 60 años o más, y se proyecta que para 2050 esta proporción supere el 22 %, lo que evidencia un envejecimiento sostenido de la pirámide poblacional [1]. Muchos pacientes geriátricos requieren seguimiento continuo de medicación, citas médicas, signos de alerta y rutinas de apoyo diario, pero ese control todavía suele manejarse de forma manual, fragmentada y dependiente de la memoria de los cuidadores.
+
+A nivel práctico, esta situación genera desgaste en los cuidadores y reduce la autonomía de los propios pacientes geriátricos. La Organización Mundial de la Salud estima que cerca del 50 % de los pacientes crónicos no adhieren correctamente a sus tratamientos, principalmente por olvidos, desorganización y falta de soporte continuo, lo que incrementa el riesgo de complicaciones y reingresos hospitalarios [2]. Adicionalmente, un estudio publicado en The Lancet advierte que el envejecimiento poblacional global exige nuevos modelos de cuidado integrados que combinen tecnología y soporte comunitario [3]. Aunque existen herramientas orientadas a clínicas y hospitales, todavía falta una solución centrada en el cuidado cotidiano, domiciliario y compartido que caracteriza a este segmento.
+
+**Fuentes consultadas:**
+
+- [1] INEI. Situación de la Población Adulta Mayor. Informe técnico N.° 01 de 2024. Lima, Perú.
+- [2] World Health Organization. Ageing and health. Ginebra: WHO. Disponible en https://www.who.int/news-room/fact-sheets/detail/ageing-and-health
+- [3] Beard, J. R., Officer, A., de Carvalho, I. A., et al. The World report on ageing and health: a policy framework for healthy ageing. The Lancet, 387, 2145 a 2154.
+
+**Problemática**
+
+Aplicamos la técnica de las 5W y 2H para examinar los antecedentes y la problemática que aborda nuestro proyecto.
+
+| 5W / 2H | Pregunta | Descripción |
+| --- | --- | --- |
+| **Who?** | ¿Quién es afectado? | Los más afectados son los cuidadores formales e informales y los pacientes geriátricos que dependen de una rutina de atención constante. Ambos segmentos viven de forma directa las consecuencias de una mala coordinación, ya sea por sobrecarga en el cuidado o por falta de seguimiento oportuno. |
+| **What?** | ¿Cuál es el problema? | No existe una plataforma que centralice de forma práctica los tratamientos, rutinas, recordatorios, documentos clínicos e historial de evolución de un paciente geriátrico. Esa ausencia hace que coordinarse entre varios cuidadores sea difícil y que el propio paciente tenga poca visibilidad de su proceso de cuidado. |
+| **Where?** | ¿Dónde sucede el problema? | El problema ocurre principalmente en entornos de cuidado domiciliario, comunitario y de atención particular en el Perú, aunque la situación es comparable en otros países de Latinoamérica, donde gran parte del cuidado geriátrico también recae en las familias y cuidadores externos. |
+| **When?** | ¿Cuándo sucede el problema? | No es algo que ocurra de vez en cuando. Se presenta todos los días: al coordinar la medicación, al hacer el cambio de turno entre cuidadores, al buscar el historial clínico o al intentar registrar si el paciente mejoró o empeoró. |
+| **Why?** | ¿Cuál es la causa del problema? | El cuidado geriátrico involucra a varios actores, entre ellos el paciente, los familiares, enfermeros, médicos y cuidadores contratados, pero no hay herramientas móviles accesibles que conecten esa información y la mantengan actualizada. El resultado es que muchas decisiones se toman con datos incompletos o tardíos, lo que incrementa el riesgo para el paciente. |
+| **How?** | ¿Cómo se manifiesta el problema? | Se traduce en situaciones concretas: medicamentos olvidados o duplicados, citas médicas mal registradas, signos de alerta que no se comunican a tiempo, documentos clínicos dispersos y una dependencia excesiva de llamadas o mensajes informales para coordinar el cuidado. |
+| **How much?** | ¿Cuál es la magnitud del problema? | La magnitud es significativa y creciente. El 13,9 % de la población peruana tiene 60 años o más y se proyecta que supere el 22 % hacia 2050, lo que amplía de forma sostenida la base de personas que requieren seguimiento continuo [1]. Sobre esa base, cerca del 50 % de los pacientes crónicos no adhiere correctamente a su tratamiento por olvidos y desorganización, con el consiguiente aumento de complicaciones y reingresos hospitalarios [2]. En el plano cotidiano, el impacto se refleja en tiempo perdido, errores evitables en la administración del cuidado, mayor carga física y emocional para los cuidadores y un seguimiento menos seguro para los pacientes. Cuando no existe una herramienta común de coordinación, aumentan los costos asociados a consultas repetidas, omisiones en tratamientos y desorganización en la atención diaria. |
+
+**Restricciones del proyecto**
+
+- El alcance se limita a una aplicación móvil nativa y multiplataforma acompañada de los servicios necesarios para su funcionamiento. No contempla integración con historias clínicas electrónicas de instituciones de salud.
+- La solución está dirigida a entornos de cuidado domiciliario, comunitario y de atención particular en el Perú. No cubre la gestión operativa de clínicas u hospitales.
+- El diseño debe ajustarse a dispositivos móviles de gama media, que son los de mayor uso entre los segmentos objetivo.
+- Los usuarios de ambos segmentos presentan niveles heterogéneos de alfabetización digital, por lo que los flujos deben resolverse con un número mínimo de pasos y sin requerir formación técnica previa.
+  
+- El modelo de negocio previsto es freemium, lo que condiciona qué funcionalidades se ofrecen de forma gratuita y cuáles quedan reservadas al plan de pago.
+
 #### 1.2.2. Lean UX Process
 
 ##### 1.2.2.1. Lean UX Problem Statements
 > _Guía:_ Domain, customer segments, pain points, gap, vision/strategy, initial segment.
 
+**Problem Statement 1**
+
+CareConnect ofrece una aplicación móvil que centraliza la gestión del cuidado geriátrico, integrando calendario de medicación y controles, alertas en tiempo real, historial del paciente y coordinación entre múltiples cuidadores.
+
+Hemos observado que los cuidadores formales e informales de pacientes geriátricos gestionan rutinas complejas de medicación, controles, citas y seguimiento médico con lo que tienen a la mano: libretas, grupos de mensajería, hojas de cálculo o recordatorios dispersos. Son herramientas útiles, pero no fueron diseñadas para un entorno donde la continuidad y la precisión importan tanto. El punto más crítico es la falta de una plataforma que les permita sincronizar información con otros cuidadores, acceder rápido al historial del paciente y recibir alertas a tiempo sin aumentar su carga operativa.
+
+¿Cómo podríamos diseñar una solución móvil que centralice la gestión del cuidado geriátrico, facilite la comunicación entre cuidadores y reduzca los riesgos que genera la descoordinación diaria?
+
+**Problem Statement 2**
+
+CareConnect ofrece al paciente geriátrico una vista simple de sus actividades del día, recordatorios claros y un registro de evolución que le permite participar activamente en su propio cuidado.
+
+Hemos observado que los pacientes geriátricos suelen enfrentar dificultades para seguir sus tratamientos, recordar indicaciones médicas y mantener organizada su información de salud, especialmente cuando dependen de apoyo parcial o alternado de distintos cuidadores. Lo que falta es una herramienta simple que les permita visualizar sus rutinas, entender qué actividades tienen pendientes y registrar cómo se sienten, sin depender por completo de llamadas, papeles o recordatorios aislados.
+
+¿Cómo podríamos darle al paciente geriátrico mayor visibilidad y participación en su propio cuidado mediante una herramienta simple, clara y fácil de usar?
+
+**Problem Statement 3**
+
+CareConnect ofrece un modelo freemium que permite el acceso gratuito a las funciones esenciales de seguimiento y reserva al plan de pago las capacidades de coordinación avanzada entre múltiples cuidadores e instituciones.
+
+Hemos observado que la adopción de herramientas digitales en el cuidado geriátrico se ve frenada cuando la configuración inicial resulta larga o cuando la herramienta exige formación técnica previa. Al mismo tiempo, la descoordinación entre cuidadores genera costos concretos y evitables, tanto para las familias como para las instituciones de salud, lo que abre espacio para una propuesta de valor de pago claramente diferenciada.
+
+¿Cómo podríamos estructurar una oferta freemium que permita a un cuidador empezar a usar la plataforma sin fricción y que, al mismo tiempo, comunique con claridad el valor de las funciones de coordinación compartida?
+
 ##### 1.2.2.2. Lean UX Assumptions
+
+**Business Assumptions**
+
+- Creemos que hay demanda real de aplicaciones móviles especializadas en la gestión del cuidado geriátrico en el Perú y Latinoamérica.
+- Creemos que los cuidadores adoptarán herramientas digitales si son fáciles de configurar y no exigen formación técnica previa.
+- Creemos que un modelo freemium permitirá llegar tanto a usuarios individuales como a instituciones de salud, capturando distintos perfiles de uso.
+- Creemos que la descoordinación entre cuidadores genera costos concretos y evitables que justifican adoptar una solución como la nuestra.
+
+**¿Quién es el usuario?**
+
+Nuestros usuarios se agrupan en dos segmentos claramente definidos. El primero está compuesto por cuidadores formales e informales de pacientes geriátricos: enfermeros, técnicos de salud y asistentes geriátricos que trabajan en atención domiciliaria o en centros de cuidado, junto con familiares que asumen el rol principal en casa, muchas veces sin formación especializada pero con responsabilidad directa sobre la rutina del paciente. El segundo segmento está compuesto por pacientes geriátricos con capacidad de participar activamente en el seguimiento de su cuidado, ya sea con autonomía parcial o acompañada.
+
+**¿Dónde encaja nuestro producto en su vida?**
+
+Para el primer segmento, CareConnect encaja en la rutina diaria de cuidado: cuando se administran medicamentos, se revisan citas, se registran observaciones o se consulta el historial del paciente. Para el segundo segmento, encaja en los momentos en que el paciente necesita saber qué actividades tiene pendientes, confirmar que ya cumplió una indicación o comunicar cómo se siente.
+
+**¿Cuándo y cómo se usa?**
+
+Desde el celular, varias veces al día: al iniciar una jornada de cuidado, al cumplir una indicación médica, al reportar cambios y al revisar recordatorios. El uso es fragmentado y ocurre en momentos breves, por lo que cada flujo debe resolverse en pocos pasos.
+
+**¿Qué características importan más?**
+
+Las alertas de medicación, el calendario de controles, las notas de evolución, la compartición de perfiles entre cuidadores y el acceso rápido a información clínica relevante.
+
+**¿Cómo debe verse el producto?**
+
+Simple, claro y confiable, con una interfaz fácil de entender tanto para cuidadores con poco tiempo como para pacientes mayores que requieren flujos directos y textos legibles.
+
+**¿Qué problemas puede tener nuestro producto y cómo se resolverían?**
+
+Hemos identificado varias limitaciones potenciales. La primera es la brecha de alfabetización digital dentro del segmento de pacientes geriátricos, donde conviven perfiles cómodos con la tecnología y perfiles que solo manejan llamadas, mensajería y alarmas. Esto puede mitigarse ofreciendo vistas diferenciadas por rol y permitiendo que un cuidador de confianza realice la configuración inicial del perfil del paciente. La segunda limitación es el riesgo de que el registro dentro de la aplicación sea percibido como una carga adicional sobre una jornada ya saturada. Puede abordarse reduciendo la confirmación de un evento de salud a una sola acción y evitando formularios extensos. La tercera limitación es la convivencia de métodos digitales y manuales entre cuidadores de distintas generaciones, situación reportada en las entrevistas, que puede provocar que parte de la información quede fuera del sistema. Esto se atiende priorizando la simplicidad del registro compartido de modo que resulte más rápido que anotar en papel.
 
 ##### 1.2.2.3. Lean UX Hypothesis Statements
 
