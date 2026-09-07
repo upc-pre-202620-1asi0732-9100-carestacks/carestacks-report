@@ -279,7 +279,42 @@ Hemos identificado varias limitaciones potenciales. La primera es la brecha de a
 
 ##### 1.2.2.3. Lean UX Hypothesis Statements
 
+**Hypothesis Statement 1**
+
+Creemos que los cuidadores podrán gestionar los tratamientos de sus pacientes de forma más segura y coordinada si ofrecemos un calendario integrado de medicación y controles con alertas en tiempo real para cuidadores formales e informales de pacientes geriátricos.
+
+Sabremos que nuestra solución funciona cuando el 70 % de los usuarios activos utilice la función de alertas de medicación al menos una vez por día durante las primeras cuatro semanas.
+
+**Hypothesis Statement 2**
+
+Creemos que los pacientes geriátricos se sentirán más orientados y participarán mejor en su cuidado si tienen acceso claro a sus actividades, recordatorios y registro de evolución, para pacientes geriátricos con autonomía parcial o acompañada.
+
+Sabremos que nuestra solución funciona cuando el 60 % de los pacientes activos consulte o confirme al menos una actividad diaria dentro de la plataforma durante el primer mes.
+
+**Hypothesis Statement 3**
+
+Creemos que la transición entre turnos de cuidado será más fluida si implementamos una función de compartición de perfiles de pacientes con historial completo, para cuidadores que se alternan en la atención de un mismo paciente geriátrico.
+
+Sabremos que nuestra solución funciona cuando el tiempo promedio de transferencia de información entre cuidadores al cambio de turno baje un 50 % respecto al proceso manual, según los registros de actividad de la aplicación.
+
+**Hypothesis Statement 4**
+
+Creemos que la adopción inicial de la plataforma aumentará si la configuración del perfil del paciente puede completarse sin apoyo técnico externo, para cuidadores que se acercan por primera vez a una herramienta digital de cuidado.
+
+Sabremos que nuestra solución funciona cuando la configuración inicial no tome más de 10 minutos a los cuidadores que la realizan por primera vez.
+
 ##### 1.2.2.4. Lean UX Canvas
+
+| # | Sección | Contenido |
+| --- | --- | --- |
+| 1 | **Business Problem** | Los cuidadores de pacientes geriátricos manejan información crítica de salud de forma desordenada y sin herramientas pensadas para eso, lo que genera riesgos para el paciente y agotamiento en quien cuida. Las soluciones disponibles en el mercado atienden la medicación individual o el almacenamiento de información, pero no la coordinación entre varias personas que cuidan a un mismo paciente. |
+| 2 | **Business Outcomes** | Reducción de los errores de medicación reportados por los usuarios. Mejor coordinación entre cuidadores medida por el tiempo de transferencia de información al cambio de turno. Tasas de retención superiores al 60 % al tercer mes de uso. Uso diario de la función de alertas de medicación por parte del 70 % de los usuarios activos durante las primeras cuatro semanas. Confirmación de al menos una actividad diaria por parte del 60 % de los pacientes activos durante el primer mes. |
+| 3 | **Users & Customers** | Segmento 1: cuidadores formales e informales de pacientes geriátricos. <br> Segmento 2: pacientes geriátricos que necesitan seguimiento simple y claro de su cuidado diario. |
+| 4 | **User Benefits** | Gestión centralizada de tratamientos y rutinas. Historial completo siempre disponible. Alertas oportunas y coordinación real con otros cuidadores. Para el paciente, mayor visibilidad de su rutina, certeza sobre las dosis ya tomadas y participación en su propio cuidado. |
+| 5 | **Solution Ideas** | Aplicación móvil multiplataforma con calendario de medicación y terapias, sistema de alertas y recordatorios en tiempo real, carpeta digital de documentos clínicos, historial de notas y registro de evolución, y compartición de perfiles entre cuidadores. |
+| 6 | **Hypotheses** | Los cuidadores adoptarán la aplicación si la configuración inicial no les toma más de 10 minutos. Los pacientes geriátricos valorarán una interfaz simple y comprensible. Compartir perfiles mejorará la coordinación entre turnos. Un calendario con alertas en tiempo real hará más segura la gestión de tratamientos. |
+| 7 | **What is the most important thing we need to learn first?** | Si los cuidadores están dispuestos a registrar información durante su jornada o si lo perciben como una carga extra. De esta respuesta depende toda la propuesta de valor, porque la coordinación compartida solo funciona si la información llega efectivamente al sistema. |
+| 8 | **What is the least amount of work we need to do to learn the next most important thing?** | Realizar entrevistas con al menos seis cuidadores, tres formales y tres informales, para entender cómo trabajan hoy y dónde sienten más fricción en la gestión del cuidado. |
 
 ### 1.3. Segmentos objetivo
 > _Guía:_ Descripción de segmentos con características demográficas e información estadística de sustento.
