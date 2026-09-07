@@ -874,7 +874,8 @@ La Frontend Web Application se plantea con **Vue + PrimeVue**, de acuerdo con el
 >
 > También deben mostrarse las relaciones y protocolos principales.
 
-![Software Architecture Container Diagram](assets/careconnect-container-diagram.png)
+![Software Architecture Container Diagram](assets/careconnect-container-1-diagram.png)
+![Software Architecture Container Diagram](assets/careconnect-container-2-diagram.png)
 
 *Figura X. Software Architecture Container Diagram de CareConnect.*
 
@@ -928,7 +929,9 @@ El Software Architecture Components Diagram representa la organización interna 
 >
 > También deben mostrarse las relaciones principales entre los bounded contexts.
 
-![Software Architecture Components Diagram](assets/careconnect-components-diagram.png)
+![Software Architecture Components Diagram](assets/careconnect-components-1-diagram.png)
+![Software Architecture Components Diagram](assets/careconnect-components-2-diagram.png)
+
 
 *Figura X. Software Architecture Components Diagram del Backend RESTful API de CareConnect.*
 
