@@ -215,6 +215,78 @@ El mercado de aplicaciones móviles orientadas a la salud personal presenta una 
 
 #### 2.1.2. Estrategias y tácticas frente a competidores
 
+A partir del análisis competitivo realizado en la sección anterior, identificamos oportunidades y debilidades concretas en Medisafe, MyTherapy y CareZone. Sobre esos hallazgos planteamos las siguientes estrategias y tácticas para posicionar a CareConnect como una solución diferenciada.
+
+**1. Diferenciación mediante coordinación en tiempo real**
+
+Medisafe y MyTherapy se enfocan principalmente en recordatorios individuales, sin permitir la interacción o coordinación entre múltiples usuarios, mientras que CareZone solo centraliza información sin ofrecer comunicación dinámica.
+
+*Estrategia:* implementar un sistema de coordinación en tiempo real entre cuidadores y familiares.
+
+*Tácticas:*
+- Sistema de notificaciones en tiempo real sobre medicación y eventos.
+- Confirmación de actividades realizadas, por ejemplo la medicación administrada.
+- Alertas automáticas en caso de incumplimiento o eventos críticos.
+
+**2. Plataforma integral de cuidado**
+
+Los competidores actuales ofrecen soluciones parciales: Medisafe se enfoca en medicación, MyTherapy en seguimiento de salud y CareZone en almacenamiento de información.
+
+*Estrategia:* ofrecer una plataforma integral que centralice todos los aspectos del cuidado en una sola aplicación.
+
+*Tácticas:*
+- Integración de calendario de medicación y terapias.
+- Registro de historial clínico y evolución del paciente.
+- Almacenamiento de documentos médicos en una carpeta digital.
+- Unificación de todas las funcionalidades en una sola interfaz.
+
+**3. Enfoque en el cuidado colaborativo**
+
+Ninguno de los competidores analizados permite una gestión eficiente entre múltiples cuidadores y familiares vinculados a un mismo paciente.
+
+*Estrategia:* permitir la gestión colaborativa del cuidado mediante perfiles compartidos.
+
+*Tácticas:*
+- Sistema de usuarios múltiples vinculados a un mismo paciente.
+- Acceso compartido a historial, eventos y registros.
+- Control de permisos según tipo de usuario, cuidador o familiar.
+
+**4. Mejora de la experiencia de usuario**
+
+Varias de las soluciones existentes no están diseñadas para contextos de uso bajo presión ni para usuarios con bajo conocimiento tecnológico, aspecto que las entrevistas confirmaron como determinante para la adopción.
+
+*Estrategia:* desarrollar una interfaz intuitiva, rápida y centrada en el usuario.
+
+*Tácticas:*
+- Diseño mobile first enfocado en dispositivos Android de gama media.
+- Navegación simple con flujos cortos.
+- Interfaces claras para tareas críticas como registro, consulta y alertas.
+- Pruebas de usabilidad con cuidadores reales.
+
+**5. Especialización en el cuidado geriátrico**
+
+Ninguno de los competidores está especializado en el cuidado de pacientes geriátricos ni en las rutinas de acompañamiento que ese perfil exige.
+
+*Estrategia:* posicionar a CareConnect como una solución especializada en el segmento geriátrico.
+
+*Tácticas:*
+- Adaptación de funcionalidades a rutinas complejas de cuidado con múltiples actores.
+- Diseño accesible y legible pensado para adultos mayores.
+- Comunicación centrada en el bienestar del paciente y el apoyo al cuidador.
+
+**6. Crecimiento, adopción y mejora continua basada en datos**
+
+Los competidores presentan un alcance limitado en Latinoamérica y limitaciones en personalización y evolución del producto.
+
+*Estrategia:* expandir la plataforma mediante estrategias digitales y alianzas, sosteniendo la evolución del producto con datos de uso.
+
+*Tácticas:*
+- Campañas en redes sociales dirigidas a cuidadores y familias.
+- Alianzas con centros de salud y organizaciones de apoyo.
+- Modelo freemium para facilitar la adopción inicial y programas de recomendación entre usuarios.
+- Recolección de métricas de uso dentro de la aplicación y análisis del comportamiento del usuario.
+- Iteraciones frecuentes del producto incorporando feedback directo de cuidadores y familiares.
+  
 ### 2.2. Entrevistas
 
 #### 2.2.1. Diseño de entrevistas
