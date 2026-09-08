@@ -266,360 +266,60 @@ Las historias de usuario se organizaron por producto digital y se redactaron con
 | EP06 | Autenticación | Como paciente o cuidador, quiero acceder al sistema de forma segura para proteger mi información personal. |
 | EP07 | Landing Page | Como visitante, quiero conocer la propuesta de valor y las características de CareConnect para decidir si la solución responde a mis necesidades de cuidado. |
 
-**User Stories**
+**Historias de usuario, historias técnicas y spikes**
 
-| **Story ID** | US01 |
-|--------------|------|
-| **User** | Paciente / Cuidador |
-| **Priority** | Alta |
-| **Epic** | Gestión de Agenda |
-| **Description** | Como paciente o cuidador, deseo registrar un evento de salud (medicación o cita) para organizar las actividades médicas en un calendario. |
-| **Acceptance Criteria** | Escenario 1: Registro exitoso de evento <br> Dado que el paciente o cuidador ingresa datos válidos del evento <br> Cuando registra el evento de salud <br> Entonces el sistema almacena el evento correctamente en la agenda <br><br> Escenario 2: Validación de datos obligatorios <br> Dado que el paciente o cuidador omite datos obligatorios <br> Cuando intenta registrar el evento <br> Entonces el sistema muestra un mensaje de error indicando los campos requeridos <br><br> Escenario 3: Visualización del evento <br> Dado que el evento fue registrado correctamente <br> Cuando el paciente o cuidador accede al calendario <br> Entonces el evento se visualiza en la fecha correspondiente |
+El siguiente cuadro consolida todos los elementos especificados para los productos digitales de CareConnect. Las User Stories y Technical Stories incluyen criterios de aceptación comprobables en formato Gherkin, mientras que los spikes indican su timebox y resultado esperado.
 
-| **Story ID** | US02 |
-|--------------|------|
-| **User** | Paciente |
-| **Priority** | Alta |
-| **Epic** | Gestión de Agenda |
-| **Description** | Como paciente, deseo confirmar un evento de salud para registrar el cumplimiento de mi tratamiento. |
-| **Acceptance Criteria** | Escenario 1: Confirmación exitosa <br> Dado que existe un evento programado <br> Cuando el paciente confirma el evento <br> Entonces el sistema actualiza su estado a "confirmado" <br><br> Escenario 2: Visualización del estado <br> Dado que el evento fue confirmado <br> Cuando el paciente accede al calendario <br> Entonces el estado del evento se muestra como confirmado |
-
-| **Story ID** | US03 |
-|--------------|------|
-| **User** | Paciente / Cuidador |
-| **Priority** | Media |
-| **Epic** | Gestión de Agenda |
-| **Description** | Como paciente o cuidador, deseo reprogramar un evento de salud para ajustarlo a cambios en la disponibilidad. |
-| **Acceptance Criteria** | Escenario 1: Reprogramación exitosa <br> Dado que existe un evento previamente registrado <br> Cuando el paciente o cuidador modifica la fecha u hora <br> Entonces el sistema actualiza el evento correctamente <br><br> Escenario 2: Validación de conflicto <br> Dado que existe otro evento en el mismo horario <br> Cuando el paciente o cuidador intenta reprogramar <br> Entonces el sistema evita el conflicto y muestra una advertencia |
-
-| **Story ID** | US04 |
-|--------------|------|
-| **User** | Paciente |
-| **Priority** | Alta |
-| **Epic** | Gestión de Notificaciones |
-| **Description** | Como paciente, deseo recibir recordatorios de mis eventos de salud para cumplir con mis actividades programadas. |
-| **Acceptance Criteria** | Escenario 1: Envío de recordatorio <br> Dado que existe un evento programado <br> Cuando se aproxima la hora del evento <br> Entonces el paciente recibe una notificación <br><br> Escenario 2: Contenido de la notificación <br> Dado que se genera una notificación <br> Cuando el paciente la visualiza <br> Entonces esta contiene información relevante del evento |
-
-| **Story ID** | US05 |
-|--------------|------|
-| **User** | Cuidador |
-| **Priority** | Alta |
-| **Epic** | Gestión de Notificaciones |
-| **Description** | Como cuidador, deseo recibir alertas cuando un evento no es confirmado para supervisar al paciente. |
-| **Acceptance Criteria** | Escenario 1: Generación de alerta <br> Dado que un evento no ha sido confirmado <br> Cuando se supera el tiempo límite establecido <br> Entonces el cuidador recibe una alerta de incumplimiento <br><br> Escenario 2: Validación de permisos <br> Dado que el cuidador no tiene acceso al paciente <br> Cuando se genera la alerta <br> Entonces el sistema no envía la notificación |
-
-| **Story ID** | US06 |
-|--------------|------|
-| **User** | Cuidador |
-| **Priority** | Media |
-| **Epic** | Gestión de Notificaciones |
-| **Description** | Como cuidador, deseo visualizar las notificaciones recibidas para monitorear el estado del paciente. |
-| **Acceptance Criteria** | Escenario 1: Consulta de notificaciones <br> Dado que existen notificaciones registradas <br> Cuando el cuidador accede a la sección de notificaciones <br> Entonces el sistema muestra la lista de notificaciones <br><br> Escenario 2: Orden de visualización <br> Dado que existen múltiples notificaciones <br> Cuando el cuidador las visualiza <br> Entonces se muestran ordenadas por fecha o prioridad |
-
-| **Story ID** | US07 |
-|--------------|------|
-| **User** | Paciente / Cuidador |
-| **Priority** | Alta |
-| **Epic** | Gestión de Documentos |
-| **Description** | Como paciente o cuidador, deseo subir documentos médicos para mantener un registro digital accesible. |
-| **Acceptance Criteria** | Escenario 1: Carga exitosa <br> Dado que el paciente o cuidador selecciona un archivo válido <br> Cuando lo sube al sistema <br> Entonces el documento se almacena correctamente <br><br> Escenario 2: Validación de archivo <br> Dado que el archivo no cumple con formato o tamaño permitido <br> Cuando el paciente o cuidador intenta subirlo <br> Entonces el sistema muestra un mensaje de error |
-
-| **Story ID** | US08 |
-|--------------|------|
-| **User** | Paciente / Cuidador |
-| **Priority** | Media |
-| **Epic** | Gestión de Documentos |
-| **Description** | Como paciente o cuidador, deseo consultar los documentos almacenados para revisar información médica. |
-| **Acceptance Criteria** | Escenario 1: Visualización de documentos <br> Dado que existen documentos almacenados <br> Cuando el paciente o cuidador accede a la sección correspondiente <br> Entonces el sistema muestra la lista de documentos disponibles |
-
-| **Story ID** | US09 |
-|--------------|------|
-| **User** | Cuidador |
-| **Priority** | Media |
-| **Epic** | Gestión de Documentos |
-| **Description** | Como cuidador, deseo acceder a los documentos del paciente para apoyar en su seguimiento. |
-| **Acceptance Criteria** | Escenario 1: Acceso autorizado <br> Dado que el cuidador tiene permisos de acceso <br> Cuando consulta los documentos del paciente <br> Entonces el sistema permite su visualización <br><br> Escenario 2: Acceso denegado <br> Dado que el cuidador no tiene permisos <br> Cuando intenta acceder a los documentos <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
-
-| **Story ID** | US10 |
-|--------------|------|
-| **User** | Paciente / Cuidador |
-| **Priority** | Alta |
-| **Epic** | Autenticación |
-| **Description** | Como usuario, quiero registrar mi propia cuenta para acceder a la plataforma. |
-| **Acceptance Criteria** | Escenario 1: Creación de cuenta <br> Dado que el usuario ingresa datos válidos <br> Cuando registra su cuenta <br> Entonces el sistema crea la cuenta del usuario <br><br> Escenario 2: Creación denegada <br> Dado que el correo ya existe <br> Cuando el usuario intenta registrarse <br> Entonces el sistema bloquea el registro y muestra "el usuario con este correo ya existe" |
-
-| **Story ID** | US11 |
-|--------------|------|
-| **User** | Paciente / Cuidador |
-| **Priority** | Alta |
-| **Epic** | Autenticación |
-| **Description** | Como usuario, quiero validar el acceso según el rol que poseo. |
-| **Acceptance Criteria** | Escenario 1: Acceso permitido <br> Dado que el usuario tiene permisos válidos <br> Cuando abre la aplicación <br> Entonces el sistema le muestra lo que le corresponde según su rol <br><br> Escenario 2: Acceso denegado <br> Dado que el usuario no tiene permisos <br> Cuando intenta acceder a otra sección <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
-
-| **Story ID** | US12 |
-|--------------|------|
-| **User** | Paciente / Cuidador |
-| **Priority** | Media |
-| **Epic** | Diario de Seguimiento |
-| **Description** | Como paciente o cuidador, quiero escribir notas en mi diario para registrar mi estado o el de mi familiar. |
-| **Acceptance Criteria** | Escenario 1: Nota registrada <br> Dado que el paciente o cuidador ingresa contenido válido <br> Cuando guarda la nota <br> Entonces la nota se almacena correctamente <br><br> Escenario 2: Nota vacía <br> Dado que el paciente o cuidador no ingresa contenido <br> Cuando intenta guardar <br> Entonces el sistema muestra un mensaje de error |
-
-| **Story ID** | US13 |
-|--------------|------|
-| **User** | Cuidador |
-| **Priority** | Media |
-| **Epic** | Diario de Seguimiento |
-| **Description** | Como cuidador, quiero consultar el diario compartido del paciente para conocer su estado. |
-| **Acceptance Criteria** | Escenario 1: Consulta exitosa <br> Dado que el cuidador posee acceso autorizado <br> Cuando consulta el diario del paciente <br> Entonces el sistema le muestra las notas <br><br> Escenario 2: Acceso denegado <br> Dado que el cuidador no tiene permisos <br> Cuando intenta acceder a las notas <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
-
-| **Story ID** | US14 |
-|--------------|------|
-| **User** | Paciente |
-| **Priority** | Alta |
-| **Epic** | Gestión de Consentimiento |
-| **Description** | Como paciente, quiero compartir mi perfil con familiares para que puedan ver mi información. |
-| **Acceptance Criteria** | Escenario 1: Compartir exitoso <br> Dado que el familiar es un usuario válido <br> Cuando comparto mi perfil <br> Entonces el sistema otorga el acceso al familiar <br><br> Escenario 2: Error al compartir <br> Dado que el familiar no es un usuario válido <br> Cuando intento compartir el perfil <br> Entonces el sistema muestra un mensaje de usuario no existe |
-
-| **Story ID** | US15 |
-|--------------|------|
-| **User** | Cuidador |
-| **Priority** | Media |
-| **Epic** | Gestión de Consentimiento |
-| **Description** | Como cuidador, quiero consultar el perfil compartido del paciente para acceder a su información. |
-| **Acceptance Criteria** | Escenario 1: Consulta exitosa <br> Dado que el paciente me dio permiso <br> Cuando consulto el perfil <br> Entonces se muestra la información <br><br> Escenario 2: Acceso inválido <br> Dado que el paciente no otorgó permisos <br> Cuando intento consultar el perfil <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
-
-| **Story ID** | US16 |
-|--------------|------|
-| **User** | Paciente |
-| **Priority** | Media |
-| **Epic** | Gestión de Consentimiento |
-| **Description** | Como paciente, quiero revocar el acceso a mi perfil para controlar quién puede ver mi información. |
-| **Acceptance Criteria** | Escenario 1: Revocación exitosa <br> Dado que el paciente otorgó los permisos <br> Cuando revoca el acceso <br> Entonces el sistema quita los privilegios al cuidador <br><br> Escenario 2: Acción no permitida <br> Dado que el paciente ya revocó el permiso al cuidador <br> Cuando intenta revocar nuevamente <br> Entonces el sistema muestra un mensaje de error |
-
-**User Stories — Landing Page** (rol Visitante)
-
-| **Story ID** | USL01 |
-|--------------|------|
-| **User** | Visitante |
-| **Priority** | Alta |
-| **Epic** | Landing Page |
-| **Description** | Como visitante, deseo conocer la propuesta de valor de CareConnect para entender cómo la solución me ayuda a coordinar el cuidado. |
-| **Acceptance Criteria** | Escenario 1: Presentación de la propuesta <br> Dado que el visitante ingresa a la landing <br> Cuando visualiza la sección principal <br> Entonces se presenta la propuesta de valor y su beneficio principal |
-
-| **Story ID** | USL02 |
-|--------------|------|
-| **User** | Visitante (cuidador / paciente) |
-| **Priority** | Alta |
-| **Epic** | Landing Page |
-| **Description** | Como visitante, deseo explorar los beneficios dirigidos a mi segmento para evaluar si la solución responde a mi necesidad. |
-| **Acceptance Criteria** | Escenario 1: Contenido por segmento <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de segmentos <br> Entonces se presentan beneficios diferenciados para cuidadores y pacientes |
-
-| **Story ID** | USL03 |
-|--------------|------|
-| **User** | Visitante |
-| **Priority** | Media |
-| **Epic** | Landing Page |
-| **Description** | Como visitante, deseo ver testimonios de usuarios para generar confianza en la solución. |
-| **Acceptance Criteria** | Escenario 1: Visualización de testimonios <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de testimonios <br> Entonces se muestran al menos un testimonio por segmento objetivo |
-
-| **Story ID** | USL04 |
-|--------------|------|
-| **User** | Visitante |
-| **Priority** | Alta |
-| **Epic** | Landing Page |
-| **Description** | Como visitante, deseo iniciar mi registro desde la landing para comenzar a usar la plataforma. |
-| **Acceptance Criteria** | Escenario 1: Llamado a la acción <br> Dado que el visitante decide registrarse <br> Cuando activa el llamado a la acción de registro <br> Entonces el sistema lo dirige al flujo de creación de cuenta |
-
-| **Story ID** | USL05 |
-|--------------|------|
-| **User** | Visitante |
-| **Priority** | Media |
-| **Epic** | Landing Page |
-| **Description** | Como visitante, deseo cambiar el idioma del sitio (English / Español) para leer el contenido en mi idioma preferido. |
-| **Acceptance Criteria** | Escenario 1: Cambio de idioma <br> Dado que el visitante selecciona un idioma disponible (en_US / es_419) <br> Cuando confirma la selección <br> Entonces el contenido del sitio se muestra en el idioma elegido |
-
-| **Story ID** | USL06 |
-|--------------|------|
-| **User** | Visitante |
-| **Priority** | Media |
-| **Epic** | Landing Page |
-| **Description** | Como visitante, deseo consultar los Términos y Condiciones desde el footer para conocer los derechos y obligaciones del servicio. |
-| **Acceptance Criteria** | Escenario 1: Acceso a Términos y Condiciones <br> Dado que el visitante está en la landing <br> Cuando accede al enlace de Términos y Condiciones del footer <br> Entonces el sistema muestra el Acuerdo de Servicio (SaaS) |
-
-**User Stories — Frontend Web Application** (roles Paciente / Cuidador)
-
-| **Story ID** | USW01 |
-|--------------|------|
-| **User** | Cuidador |
-| **Priority** | Alta |
-| **Epic** | Gestión de Agenda |
-| **Description** | Como cuidador, deseo gestionar la agenda del paciente desde el navegador para coordinar el cuidado sin depender del móvil. |
-| **Acceptance Criteria** | Escenario 1: Gestión web de eventos <br> Dado que el cuidador inició sesión en la web application <br> Cuando registra o edita un evento de salud <br> Entonces el sistema persiste el cambio y lo refleja en la agenda |
-
-| **Story ID** | USW02 |
-|--------------|------|
-| **User** | Cuidador |
-| **Priority** | Media |
-| **Epic** | Diario de Seguimiento |
-| **Description** | Como cuidador, deseo consultar el diario y los documentos compartidos del paciente desde la web para dar seguimiento en pantalla amplia. |
-| **Acceptance Criteria** | Escenario 1: Consulta web autorizada <br> Dado que el cuidador tiene acceso autorizado <br> Cuando consulta el diario o los documentos compartidos en la web application <br> Entonces el sistema muestra la información correspondiente |
-
-| **Story ID** | USW03 |
-|--------------|------|
-| **User** | Paciente / Cuidador |
-| **Priority** | Media |
-| **Epic** | Gestión de Notificaciones |
-| **Description** | Como usuario, deseo visualizar mis notificaciones en la web application para dar seguimiento a los eventos desde cualquier dispositivo. |
-| **Acceptance Criteria** | Escenario 1: Notificaciones en web <br> Dado que existen notificaciones para el usuario <br> Cuando accede a la sección de notificaciones en la web application <br> Entonces el sistema muestra la lista ordenada por fecha o prioridad |
-
-**Technical Stories** (rol Developer)
-
-| **Story ID** | TS01 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Alta |
-| **Description** | Como desarrollador, quiero implementar la persistencia de eventos de salud (citas y medicación) para garantizar su almacenamiento y consulta eficiente. |
-| **Acceptance Criteria** | Escenario 1: Almacenamiento exitoso <br> Dado que se recibe un evento válido <br> Cuando el sistema lo procesa <br> Entonces el evento se almacena correctamente en la base de datos <br><br> Escenario 2: Integridad de datos <br> Dado que ocurre un error en el almacenamiento <br> Cuando el sistema intenta guardar el evento <br> Entonces se evita la persistencia de datos incompletos |
-
-| **Story ID** | TS02 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Alta |
-| **Description** | Como desarrollador, quiero implementar la lógica de cambio de estado de los eventos (pendiente, confirmado, incumplido) para reflejar el seguimiento del paciente. |
-| **Acceptance Criteria** | Escenario 1: Cambio de estado válido <br> Dado que existe un evento registrado <br> Cuando se actualiza su estado <br> Entonces el sistema persiste el nuevo estado correctamente <br><br> Escenario 2: Validación de transición <br> Dado un estado inválido <br> Cuando se intenta actualizar <br> Entonces el sistema rechaza la operación |
-
-| **Story ID** | TS03 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Alta |
-| **Description** | Como desarrollador, quiero implementar un servicio de programación que genere notificaciones basadas en la fecha y hora de los eventos registrados. |
-| **Acceptance Criteria** | Escenario 1: Programación correcta <br> Dado que existe un evento con fecha definida <br> Cuando se agenda la notificación <br> Entonces el sistema programa su envío correctamente <br><br> Escenario 2: Reprogramación <br> Dado que el evento cambia de horario <br> Cuando se actualiza <br> Entonces la notificación se reprograma automáticamente |
-
-| **Story ID** | TS04 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Alta |
-| **Description** | Como desarrollador, quiero implementar el mecanismo de envío de notificaciones push hacia pacientes y cuidadores según reglas de negocio. |
-| **Acceptance Criteria** | Escenario 1: Envío exitoso <br> Dado que existe una notificación programada <br> Cuando se cumple la condición de envío <br> Entonces el sistema envía la notificación al destinatario <br><br> Escenario 2: Manejo de fallos <br> Dado que falla el envío <br> Cuando ocurre el error <br> Entonces el sistema registra el incidente y reintenta según configuración |
-
-| **Story ID** | TS05 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Media |
-| **Description** | Como desarrollador, quiero implementar validaciones de permisos para asegurar que solo usuarios autorizados reciban notificaciones. |
-| **Acceptance Criteria** | Escenario 1: Acceso autorizado <br> Dado que el usuario tiene permisos <br> Cuando se genera una notificación <br> Entonces el sistema permite su envío <br><br> Escenario 2: Acceso restringido <br> Dado que el usuario no tiene permisos <br> Cuando se genera una notificación <br> Entonces el sistema bloquea el envío |
-
-| **Story ID** | TS06 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Alta |
-| **Description** | Como desarrollador, quiero implementar el almacenamiento de documentos médicos en un sistema seguro para garantizar su disponibilidad. |
-| **Acceptance Criteria** | Escenario 1: Almacenamiento correcto <br> Dado que se recibe un archivo válido <br> Cuando el sistema lo procesa <br> Entonces el documento se almacena correctamente <br><br> Escenario 2: Validación de archivo <br> Dado un archivo inválido <br> Cuando se intenta almacenar <br> Entonces el sistema rechaza la operación |
-
-| **Story ID** | TS07 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Media |
-| **Description** | Como desarrollador, quiero implementar el registro de metadatos (tipo, fecha, paciente, descripción) asociados a cada documento. |
-| **Acceptance Criteria** | Escenario 1: Registro de metadatos <br> Dado que se almacena un documento <br> Cuando se registran sus atributos <br> Entonces el sistema guarda correctamente los metadatos <br><br> Escenario 2: Consistencia <br> Dado datos incompletos <br> Cuando se intenta registrar <br> Entonces el sistema valida y rechaza la operación |
-
-| **Story ID** | TS08 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Alta |
-| **Description** | Como desarrollador, quiero implementar mecanismos de autorización para controlar el acceso a documentos entre paciente y cuidador. |
-| **Acceptance Criteria** | Escenario 1: Acceso permitido <br> Dado que el cuidador tiene permisos <br> Cuando solicita acceso <br> Entonces el sistema permite visualizar el documento <br><br> Escenario 2: Acceso denegado <br> Dado que no tiene permisos <br> Cuando intenta acceder <br> Entonces el sistema bloquea la operación |
-
-| **Story ID** | TS09 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Alta |
-| **Description** | Como desarrollador, quiero implementar la persistencia de usuarios para garantizar el registro correcto en la base de datos. |
-| **Acceptance Criteria** | Escenario 1: Registro exitoso <br> Dado que el usuario envía datos válidos <br> Cuando el sistema procesa el registro <br> Entonces el usuario se almacena correctamente en la base de datos <br><br> Escenario 2: Usuario duplicado <br> Dado que el correo ya existe <br> Cuando el sistema intenta registrar el usuario <br> Entonces se evita el registro duplicado y se muestra un error |
-
-| **Story ID** | TS10 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Alta |
-| **Description** | Como desarrollador, quiero implementar validación de acceso por roles para garantizar seguridad en los recursos. |
-| **Acceptance Criteria** | Escenario 1: Acceso autorizado <br> Dado que el usuario tiene el rol correcto <br> Cuando intenta acceder a un recurso <br> Entonces el sistema permite el acceso <br><br> Escenario 2: Acceso denegado <br> Dado que el usuario no tiene permisos <br> Cuando intenta acceder <br> Entonces el sistema bloquea el acceso |
-
-| **Story ID** | TS11 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Alta |
-| **Description** | Como desarrollador, quiero almacenar notas del diario para asegurar su disponibilidad. |
-| **Acceptance Criteria** | Escenario 1: Guardado exitoso <br> Dado que la nota tiene contenido válido <br> Cuando el sistema guarda la nota <br> Entonces se almacena correctamente <br><br> Escenario 2: Nota inválida <br> Dado que la nota está vacía <br> Cuando el sistema intenta guardarla <br> Entonces se rechaza la operación |
-
-| **Story ID** | TS12 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Media |
-| **Description** | Como desarrollador, quiero implementar la consulta de diarios compartidos para permitir acceso a cuidadores. |
-| **Acceptance Criteria** | Escenario 1: Consulta autorizada <br> Dado que el usuario tiene acceso <br> Cuando consulta el diario <br> Entonces se muestran las notas <br><br> Escenario 2: Acceso denegado <br> Dado que no tiene permisos <br> Cuando intenta consultar <br> Entonces el sistema bloquea el acceso |
-
-| **Story ID** | TS13 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Media |
-| **Description** | Como desarrollador, quiero permitir la visualización de perfiles compartidos. |
-| **Acceptance Criteria** | Escenario 1: Consulta exitosa <br> Dado que el usuario tiene acceso <br> Cuando consulta el perfil <br> Entonces se muestra la información <br><br> Escenario 2: Acceso inválido <br> Dado que no tiene permisos <br> Cuando intenta acceder <br> Entonces se bloquea el acceso |
-
-| **Story ID** | TS14 |
-|--------------|------|
-| **User** | Desarrollador |
-| **Priority** | Media |
-| **Description** | Como desarrollador, quiero implementar la revocación de accesos para controlar permisos. |
-| **Acceptance Criteria** | Escenario 1: Revocación exitosa <br> Dado que existe acceso activo <br> Cuando el propietario revoca acceso <br> Entonces se elimina el permiso <br><br> Escenario 2: Usuario sin permiso <br> Dado que no es propietario <br> Cuando intenta revocar <br> Entonces se rechaza la acción |
-
-**Spike Stories**
-
-Investigaciones técnicas acotadas en el tiempo, orientadas a reducir la incertidumbre antes de comprometer una User Story o decisión de arquitectura.
-
-| **Story ID** | SP01 |
-|--------------|------|
-| **Tipo** | Spike (técnico) |
-| **Priority** | Alta |
-| **Timebox** | 2 días |
-| **Description** | Como equipo de desarrollo, queremos investigar cómo entregar notificaciones push de medicación en dispositivos con conectividad intermitente, comparando Firebase Cloud Messaging vs. AlarmManager local, para decidir la estrategia del Bounded Context de Notificaciones. |
-| **Resultado esperado** | Documento corto con recomendación, prototipo mínimo y criterios de decisión (latencia, batería, costo, complejidad). |
-
-| **Story ID** | SP02 |
-|--------------|------|
-| **Tipo** | Spike (técnico + legal) |
-| **Priority** | Alta |
-| **Timebox** | 3 días |
-| **Description** | Como equipo, queremos investigar patrones técnicos (tokens firmados con expiración + lista de revocación) y requisitos legales (Ley N° 29733, HIPAA-like) para implementar el otorgamiento y revocación de consentimiento del paciente sobre su información clínica. |
-| **Resultado esperado** | Documento con esquema técnico, validación con caso de uso de revocación inmediata y referencias normativas aplicables. |
-
-| **Story ID** | SP03 |
-|--------------|------|
-| **Tipo** | Spike (arquitectura) |
-| **Priority** | Media |
-| **Timebox** | 2 días |
-| **Description** | Como equipo, queremos comparar Flutter y Kotlin Multiplatform en términos de productividad, performance, soporte de notificaciones nativas y curva de aprendizaje para decidir el stack móvil del MVP. |
-| **Resultado esperado** | Matriz comparativa, prototipos en cada tecnología consumiendo un endpoint REST y recomendación final. |
-
-| **Story ID** | SP04 |
-|--------------|------|
-| **Tipo** | Spike (técnico) |
-| **Priority** | Media |
-| **Timebox** | 2 días |
-| **Description** | Como equipo, queremos investigar opciones de almacenamiento cifrado en reposo y en tránsito para documentos clínicos del paciente (recetas, resultados), comparando S3 con SSE-KMS, GCS y un esquema local cifrado. |
-| **Resultado esperado** | Recomendación de servicio, esquema de cifrado y plan de manejo de claves. |
-
-| **Story ID** | SP05 |
-|--------------|------|
-| **Tipo** | Spike (arquitectura) |
-| **Priority** | Media |
-| **Timebox** | 2 días |
-| **Description** | Como equipo, queremos definir cómo sincronizar Diario y Agenda entre el dispositivo (SQLite/Room) y el backend tras periodos sin conexión, evitando conflictos y pérdidas de información. |
-| **Resultado esperado** | Documento de estrategia de sincronización con manejo de conflictos y prototipo mínimo. |
-
+| Story ID | Tipo | Usuario | Prioridad | Épica | Título | Descripción | Criterios de aceptación / Resultado esperado |
+|----------|------|---------|-----------|--------|--------|-------------|-----------------------------------------------|
+| US01 | User Story | Paciente / Cuidador | Alta | Gestión de Agenda | Registrar evento de salud | Como paciente o cuidador, deseo registrar un evento de salud (medicación o cita) para organizar las actividades médicas en un calendario. | Escenario 1: Registro exitoso de evento <br> Dado que el paciente o cuidador ingresa datos válidos del evento <br> Cuando registra el evento de salud <br> Entonces el sistema almacena el evento correctamente en la agenda <br><br> Escenario 2: Validación de datos obligatorios <br> Dado que el paciente o cuidador omite datos obligatorios <br> Cuando intenta registrar el evento <br> Entonces el sistema muestra un mensaje de error indicando los campos requeridos <br><br> Escenario 3: Visualización del evento <br> Dado que el evento fue registrado correctamente <br> Cuando el paciente o cuidador accede al calendario <br> Entonces el evento se visualiza en la fecha correspondiente |
+| US02 | User Story | Paciente | Alta | Gestión de Agenda | Confirmar evento de salud | Como paciente, deseo confirmar un evento de salud para registrar el cumplimiento de mi tratamiento. | Escenario 1: Confirmación exitosa <br> Dado que existe un evento programado <br> Cuando el paciente confirma el evento <br> Entonces el sistema actualiza su estado a "confirmado" <br><br> Escenario 2: Visualización del estado <br> Dado que el evento fue confirmado <br> Cuando el paciente accede al calendario <br> Entonces el estado del evento se muestra como confirmado |
+| US03 | User Story | Paciente / Cuidador | Media | Gestión de Agenda | Reprogramar evento de salud | Como paciente o cuidador, deseo reprogramar un evento de salud para ajustarlo a cambios en la disponibilidad. | Escenario 1: Reprogramación exitosa <br> Dado que existe un evento previamente registrado <br> Cuando el paciente o cuidador modifica la fecha u hora <br> Entonces el sistema actualiza el evento correctamente <br><br> Escenario 2: Validación de conflicto <br> Dado que existe otro evento en el mismo horario <br> Cuando el paciente o cuidador intenta reprogramar <br> Entonces el sistema evita el conflicto y muestra una advertencia |
+| US04 | User Story | Paciente | Alta | Gestión de Notificaciones | Recibir recordatorios de eventos | Como paciente, deseo recibir recordatorios de mis eventos de salud para cumplir con mis actividades programadas. | Escenario 1: Envío de recordatorio <br> Dado que existe un evento programado <br> Cuando se aproxima la hora del evento <br> Entonces el paciente recibe una notificación <br><br> Escenario 2: Contenido de la notificación <br> Dado que se genera una notificación <br> Cuando el paciente la visualiza <br> Entonces esta contiene información relevante del evento |
+| US05 | User Story | Cuidador | Alta | Gestión de Notificaciones | Recibir alertas de incumplimiento | Como cuidador, deseo recibir alertas cuando un evento no es confirmado para supervisar al paciente. | Escenario 1: Generación de alerta <br> Dado que un evento no ha sido confirmado <br> Cuando se supera el tiempo límite establecido <br> Entonces el cuidador recibe una alerta de incumplimiento <br><br> Escenario 2: Validación de permisos <br> Dado que el cuidador no tiene acceso al paciente <br> Cuando se genera la alerta <br> Entonces el sistema no envía la notificación |
+| US06 | User Story | Cuidador | Media | Gestión de Notificaciones | Visualizar notificaciones | Como cuidador, deseo visualizar las notificaciones recibidas para monitorear el estado del paciente. | Escenario 1: Consulta de notificaciones <br> Dado que existen notificaciones registradas <br> Cuando el cuidador accede a la sección de notificaciones <br> Entonces el sistema muestra la lista de notificaciones <br><br> Escenario 2: Orden de visualización <br> Dado que existen múltiples notificaciones <br> Cuando el cuidador las visualiza <br> Entonces se muestran ordenadas por fecha o prioridad |
+| US07 | User Story | Paciente / Cuidador | Alta | Gestión de Documentos | Subir documento médico | Como paciente o cuidador, deseo subir documentos médicos para mantener un registro digital accesible. | Escenario 1: Carga exitosa <br> Dado que el paciente o cuidador selecciona un archivo válido <br> Cuando lo sube al sistema <br> Entonces el documento se almacena correctamente <br><br> Escenario 2: Validación de archivo <br> Dado que el archivo no cumple con formato o tamaño permitido <br> Cuando el paciente o cuidador intenta subirlo <br> Entonces el sistema muestra un mensaje de error |
+| US08 | User Story | Paciente / Cuidador | Media | Gestión de Documentos | Consultar documentos | Como paciente o cuidador, deseo consultar los documentos almacenados para revisar información médica. | Escenario 1: Visualización de documentos <br> Dado que existen documentos almacenados <br> Cuando el paciente o cuidador accede a la sección correspondiente <br> Entonces el sistema muestra la lista de documentos disponibles |
+| US09 | User Story | Cuidador | Media | Gestión de Documentos | Acceder a documentos compartidos | Como cuidador, deseo acceder a los documentos del paciente para apoyar en su seguimiento. | Escenario 1: Acceso autorizado <br> Dado que el cuidador tiene permisos de acceso <br> Cuando consulta los documentos del paciente <br> Entonces el sistema permite su visualización <br><br> Escenario 2: Acceso denegado <br> Dado que el cuidador no tiene permisos <br> Cuando intenta acceder a los documentos <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
+| US10 | User Story | Paciente / Cuidador | Alta | Autenticación | Registrar cuenta | Como usuario, quiero registrar mi propia cuenta para acceder a la plataforma. | Escenario 1: Creación de cuenta <br> Dado que el usuario ingresa datos válidos <br> Cuando registra su cuenta <br> Entonces el sistema crea la cuenta del usuario <br><br> Escenario 2: Creación denegada <br> Dado que el correo ya existe <br> Cuando el usuario intenta registrarse <br> Entonces el sistema bloquea el registro y muestra "el usuario con este correo ya existe" |
+| US11 | User Story | Paciente / Cuidador | Alta | Autenticación | Validar acceso por rol | Como usuario, quiero validar el acceso según el rol que poseo. | Escenario 1: Acceso permitido <br> Dado que el usuario tiene permisos válidos <br> Cuando abre la aplicación <br> Entonces el sistema le muestra lo que le corresponde según su rol <br><br> Escenario 2: Acceso denegado <br> Dado que el usuario no tiene permisos <br> Cuando intenta acceder a otra sección <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
+| US12 | User Story | Paciente / Cuidador | Media | Diario de Seguimiento | Escribir nota | Como paciente o cuidador, quiero escribir notas en mi diario para registrar mi estado o el de mi familiar. | Escenario 1: Nota registrada <br> Dado que el paciente o cuidador ingresa contenido válido <br> Cuando guarda la nota <br> Entonces la nota se almacena correctamente <br><br> Escenario 2: Nota vacía <br> Dado que el paciente o cuidador no ingresa contenido <br> Cuando intenta guardar <br> Entonces el sistema muestra un mensaje de error |
+| US13 | User Story | Cuidador | Media | Diario de Seguimiento | Consultar diarios compartidos | Como cuidador, quiero consultar el diario compartido del paciente para conocer su estado. | Escenario 1: Consulta exitosa <br> Dado que el cuidador posee acceso autorizado <br> Cuando consulta el diario del paciente <br> Entonces el sistema le muestra las notas <br><br> Escenario 2: Acceso denegado <br> Dado que el cuidador no tiene permisos <br> Cuando intenta acceder a las notas <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
+| US14 | User Story | Paciente | Alta | Gestión de Consentimiento | Compartir perfil | Como paciente, quiero compartir mi perfil con familiares para que puedan ver mi información. | Escenario 1: Compartir exitoso <br> Dado que el familiar es un usuario válido <br> Cuando comparto mi perfil <br> Entonces el sistema otorga el acceso al familiar <br><br> Escenario 2: Error al compartir <br> Dado que el familiar no es un usuario válido <br> Cuando intento compartir el perfil <br> Entonces el sistema muestra un mensaje de usuario no existe |
+| US15 | User Story | Cuidador | Media | Gestión de Consentimiento | Consultar perfil compartido | Como cuidador, quiero consultar el perfil compartido del paciente para acceder a su información. | Escenario 1: Consulta exitosa <br> Dado que el paciente me dio permiso <br> Cuando consulto el perfil <br> Entonces se muestra la información <br><br> Escenario 2: Acceso inválido <br> Dado que el paciente no otorgó permisos <br> Cuando intento consultar el perfil <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
+| US16 | User Story | Paciente | Media | Gestión de Consentimiento | Revocar acceso | Como paciente, quiero revocar el acceso a mi perfil para controlar quién puede ver mi información. | Escenario 1: Revocación exitosa <br> Dado que el paciente otorgó los permisos <br> Cuando revoca el acceso <br> Entonces el sistema quita los privilegios al cuidador <br><br> Escenario 2: Acción no permitida <br> Dado que el paciente ya revocó el permiso al cuidador <br> Cuando intenta revocar nuevamente <br> Entonces el sistema muestra un mensaje de error |
+| USL01 | User Story | Visitante | Alta | Landing Page | Conocer la propuesta de valor | Como visitante, deseo conocer la propuesta de valor de CareConnect para entender cómo la solución me ayuda a coordinar el cuidado. | Escenario 1: Presentación de la propuesta <br> Dado que el visitante ingresa a la landing <br> Cuando visualiza la sección principal <br> Entonces se presenta la propuesta de valor y su beneficio principal |
+| USL02 | User Story | Visitante (cuidador / paciente) | Alta | Landing Page | Explorar beneficios por segmento | Como visitante, deseo explorar los beneficios dirigidos a mi segmento para evaluar si la solución responde a mi necesidad. | Escenario 1: Contenido por segmento <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de segmentos <br> Entonces se presentan beneficios diferenciados para cuidadores y pacientes |
+| USL03 | User Story | Visitante | Media | Landing Page | Ver testimonios | Como visitante, deseo ver testimonios de usuarios para generar confianza en la solución. | Escenario 1: Visualización de testimonios <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de testimonios <br> Entonces se muestran al menos un testimonio por segmento objetivo |
+| USL04 | User Story | Visitante | Alta | Landing Page | Iniciar registro desde la landing | Como visitante, deseo iniciar mi registro desde la landing para comenzar a usar la plataforma. | Escenario 1: Llamado a la acción <br> Dado que el visitante decide registrarse <br> Cuando activa el llamado a la acción de registro <br> Entonces el sistema lo dirige al flujo de creación de cuenta |
+| USL05 | User Story | Visitante | Media | Landing Page | Cambiar idioma del sitio | Como visitante, deseo cambiar el idioma del sitio (English / Español) para leer el contenido en mi idioma preferido. | Escenario 1: Cambio de idioma <br> Dado que el visitante selecciona un idioma disponible (en_US / es_419) <br> Cuando confirma la selección <br> Entonces el contenido del sitio se muestra en el idioma elegido |
+| USL06 | User Story | Visitante | Media | Landing Page | Consultar Términos y Condiciones | Como visitante, deseo consultar los Términos y Condiciones desde el footer para conocer los derechos y obligaciones del servicio. | Escenario 1: Acceso a Términos y Condiciones <br> Dado que el visitante está en la landing <br> Cuando accede al enlace de Términos y Condiciones del footer <br> Entonces el sistema muestra el Acuerdo de Servicio (SaaS) |
+| USW01 | User Story | Cuidador | Alta | Gestión de Agenda | Gestionar agenda desde la web | Como cuidador, deseo gestionar la agenda del paciente desde el navegador para coordinar el cuidado sin depender del móvil. | Escenario 1: Gestión web de eventos <br> Dado que el cuidador inició sesión en la web application <br> Cuando registra o edita un evento de salud <br> Entonces el sistema persiste el cambio y lo refleja en la agenda |
+| USW02 | User Story | Cuidador | Media | Diario de Seguimiento | Consultar diario y documentos desde la web | Como cuidador, deseo consultar el diario y los documentos compartidos del paciente desde la web para dar seguimiento en pantalla amplia. | Escenario 1: Consulta web autorizada <br> Dado que el cuidador tiene acceso autorizado <br> Cuando consulta el diario o los documentos compartidos en la web application <br> Entonces el sistema muestra la información correspondiente |
+| USW03 | User Story | Paciente / Cuidador | Media | Gestión de Notificaciones | Visualizar notificaciones desde la web | Como usuario, deseo visualizar mis notificaciones en la web application para dar seguimiento a los eventos desde cualquier dispositivo. | Escenario 1: Notificaciones en web <br> Dado que existen notificaciones para el usuario <br> Cuando accede a la sección de notificaciones en la web application <br> Entonces el sistema muestra la lista ordenada por fecha o prioridad |
+| TS01 | Technical Story | Desarrollador | Alta | Gestión de Agenda | Persistencia de eventos de agenda | Como desarrollador, quiero implementar la persistencia de eventos de salud (citas y medicación) para garantizar su almacenamiento y consulta eficiente. | Escenario 1: Almacenamiento exitoso <br> Dado que se recibe un evento válido <br> Cuando el sistema lo procesa <br> Entonces el evento se almacena correctamente en la base de datos <br><br> Escenario 2: Integridad de datos <br> Dado que ocurre un error en el almacenamiento <br> Cuando el sistema intenta guardar el evento <br> Entonces se evita la persistencia de datos incompletos |
+| TS02 | Technical Story | Desarrollador | Alta | Gestión de Agenda | Gestión de estado de eventos | Como desarrollador, quiero implementar la lógica de cambio de estado de los eventos (pendiente, confirmado, incumplido) para reflejar el seguimiento del paciente. | Escenario 1: Cambio de estado válido <br> Dado que existe un evento registrado <br> Cuando se actualiza su estado <br> Entonces el sistema persiste el nuevo estado correctamente <br><br> Escenario 2: Validación de transición <br> Dado un estado inválido <br> Cuando se intenta actualizar <br> Entonces el sistema rechaza la operación |
+| TS03 | Technical Story | Desarrollador | Alta | Gestión de Notificaciones | Programación de notificaciones | Como desarrollador, quiero implementar un servicio de programación que genere notificaciones basadas en la fecha y hora de los eventos registrados. | Escenario 1: Programación correcta <br> Dado que existe un evento con fecha definida <br> Cuando se agenda la notificación <br> Entonces el sistema programa su envío correctamente <br><br> Escenario 2: Reprogramación <br> Dado que el evento cambia de horario <br> Cuando se actualiza <br> Entonces la notificación se reprograma automáticamente |
+| TS04 | Technical Story | Desarrollador | Alta | Gestión de Notificaciones | Envío de notificaciones | Como desarrollador, quiero implementar el mecanismo de envío de notificaciones push hacia pacientes y cuidadores según reglas de negocio. | Escenario 1: Envío exitoso <br> Dado que existe una notificación programada <br> Cuando se cumple la condición de envío <br> Entonces el sistema envía la notificación al destinatario <br><br> Escenario 2: Manejo de fallos <br> Dado que falla el envío <br> Cuando ocurre el error <br> Entonces el sistema registra el incidente y reintenta según configuración |
+| TS05 | Technical Story | Desarrollador | Media | Gestión de Notificaciones | Control de acceso a notificaciones | Como desarrollador, quiero implementar validaciones de permisos para asegurar que solo usuarios autorizados reciban notificaciones. | Escenario 1: Acceso autorizado <br> Dado que el usuario tiene permisos <br> Cuando se genera una notificación <br> Entonces el sistema permite su envío <br><br> Escenario 2: Acceso restringido <br> Dado que el usuario no tiene permisos <br> Cuando se genera una notificación <br> Entonces el sistema bloquea el envío |
+| TS06 | Technical Story | Desarrollador | Alta | Gestión de Documentos | Almacenamiento de documentos | Como desarrollador, quiero implementar el almacenamiento de documentos médicos en un sistema seguro para garantizar su disponibilidad. | Escenario 1: Almacenamiento correcto <br> Dado que se recibe un archivo válido <br> Cuando el sistema lo procesa <br> Entonces el documento se almacena correctamente <br><br> Escenario 2: Validación de archivo <br> Dado un archivo inválido <br> Cuando se intenta almacenar <br> Entonces el sistema rechaza la operación |
+| TS07 | Technical Story | Desarrollador | Media | Gestión de Documentos | Gestión de metadatos de documentos | Como desarrollador, quiero implementar el registro de metadatos (tipo, fecha, paciente, descripción) asociados a cada documento. | Escenario 1: Registro de metadatos <br> Dado que se almacena un documento <br> Cuando se registran sus atributos <br> Entonces el sistema guarda correctamente los metadatos <br><br> Escenario 2: Consistencia <br> Dado datos incompletos <br> Cuando se intenta registrar <br> Entonces el sistema valida y rechaza la operación |
+| TS08 | Technical Story | Desarrollador | Alta | Gestión de Documentos | Control de acceso a documentos | Como desarrollador, quiero implementar mecanismos de autorización para controlar el acceso a documentos entre paciente y cuidador. | Escenario 1: Acceso permitido <br> Dado que el cuidador tiene permisos <br> Cuando solicita acceso <br> Entonces el sistema permite visualizar el documento <br><br> Escenario 2: Acceso denegado <br> Dado que no tiene permisos <br> Cuando intenta acceder <br> Entonces el sistema bloquea la operación |
+| TS09 | Technical Story | Desarrollador | Alta | Autenticación | Persistencia de usuarios | Como desarrollador, quiero implementar la persistencia de usuarios para garantizar el registro correcto en la base de datos. | Escenario 1: Registro exitoso <br> Dado que el usuario envía datos válidos <br> Cuando el sistema procesa el registro <br> Entonces el usuario se almacena correctamente en la base de datos <br><br> Escenario 2: Usuario duplicado <br> Dado que el correo ya existe <br> Cuando el sistema intenta registrar el usuario <br> Entonces se evita el registro duplicado y se muestra un error |
+| TS10 | Technical Story | Desarrollador | Alta | Autenticación | Autorización basada en roles | Como desarrollador, quiero implementar validación de acceso por roles para garantizar seguridad en los recursos. | Escenario 1: Acceso autorizado <br> Dado que el usuario tiene el rol correcto <br> Cuando intenta acceder a un recurso <br> Entonces el sistema permite el acceso <br><br> Escenario 2: Acceso denegado <br> Dado que el usuario no tiene permisos <br> Cuando intenta acceder <br> Entonces el sistema bloquea el acceso |
+| TS11 | Technical Story | Desarrollador | Alta | Diario de Seguimiento | Persistencia de notas | Como desarrollador, quiero almacenar notas del diario para asegurar su disponibilidad. | Escenario 1: Guardado exitoso <br> Dado que la nota tiene contenido válido <br> Cuando el sistema guarda la nota <br> Entonces se almacena correctamente <br><br> Escenario 2: Nota inválida <br> Dado que la nota está vacía <br> Cuando el sistema intenta guardarla <br> Entonces se rechaza la operación |
+| TS12 | Technical Story | Desarrollador | Media | Diario de Seguimiento | Consulta de diario compartido | Como desarrollador, quiero implementar la consulta de diarios compartidos para permitir acceso a cuidadores. | Escenario 1: Consulta autorizada <br> Dado que el usuario tiene acceso <br> Cuando consulta el diario <br> Entonces se muestran las notas <br><br> Escenario 2: Acceso denegado <br> Dado que no tiene permisos <br> Cuando intenta consultar <br> Entonces el sistema bloquea el acceso |
+| TS13 | Technical Story | Desarrollador | Media | Gestión de Consentimiento | Consulta de perfil compartido | Como desarrollador, quiero permitir la visualización de perfiles compartidos. | Escenario 1: Consulta exitosa <br> Dado que el usuario tiene acceso <br> Cuando consulta el perfil <br> Entonces se muestra la información <br><br> Escenario 2: Acceso inválido <br> Dado que no tiene permisos <br> Cuando intenta acceder <br> Entonces se bloquea el acceso |
+| TS14 | Technical Story | Desarrollador | Media | Gestión de Consentimiento | Revocación de acceso | Como desarrollador, quiero implementar la revocación de accesos para controlar permisos. | Escenario 1: Revocación exitosa <br> Dado que existe acceso activo <br> Cuando el propietario revoca acceso <br> Entonces se elimina el permiso <br><br> Escenario 2: Usuario sin permiso <br> Dado que no es propietario <br> Cuando intenta revocar <br> Entonces se rechaza la acción |
+| SP01 | Spike | Equipo de desarrollo | Alta | Investigación técnica | Estrategia de notificaciones sin conexión | Como equipo de desarrollo, queremos investigar cómo entregar notificaciones push de medicación en dispositivos con conectividad intermitente, comparando Firebase Cloud Messaging vs. AlarmManager local, para decidir la estrategia del Bounded Context de Notificaciones. | Timebox: 2 días.<br>Resultado esperado: Documento corto con recomendación, prototipo mínimo y criterios de decisión (latencia, batería, costo, complejidad). |
+| SP02 | Spike | Equipo de desarrollo | Alta | Investigación técnica | Consentimiento y requisitos legales | Como equipo, queremos investigar patrones técnicos (tokens firmados con expiración + lista de revocación) y requisitos legales (Ley N° 29733, HIPAA-like) para implementar el otorgamiento y revocación de consentimiento del paciente sobre su información clínica. | Timebox: 3 días.<br>Resultado esperado: Documento con esquema técnico, validación con caso de uso de revocación inmediata y referencias normativas aplicables. |
+| SP03 | Spike | Equipo de desarrollo | Media | Investigación técnica | Evaluación del stack móvil | Como equipo, queremos comparar Flutter y Kotlin Multiplatform en términos de productividad, performance, soporte de notificaciones nativas y curva de aprendizaje para decidir el stack móvil del MVP. | Timebox: 2 días.<br>Resultado esperado: Matriz comparativa, prototipos en cada tecnología consumiendo un endpoint REST y recomendación final. |
+| SP04 | Spike | Equipo de desarrollo | Media | Investigación técnica | Almacenamiento cifrado de documentos | Como equipo, queremos investigar opciones de almacenamiento cifrado en reposo y en tránsito para documentos clínicos del paciente (recetas, resultados), comparando S3 con SSE-KMS, GCS y un esquema local cifrado. | Timebox: 2 días.<br>Resultado esperado: Recomendación de servicio, esquema de cifrado y plan de manejo de claves. |
+| SP05 | Spike | Equipo de desarrollo | Media | Investigación técnica | Sincronización offline | Como equipo, queremos definir cómo sincronizar Diario y Agenda entre el dispositivo (SQLite/Room) y el backend tras periodos sin conexión, evitando conflictos y pérdidas de información. | Timebox: 2 días.<br>Resultado esperado: Documento de estrategia de sincronización con manejo de conflictos y prototipo mínimo. |
 ### 3.3. Product Backlog
-El Product Backlog integra las historias funcionales de la aplicación, el Landing Page y la Frontend Web Application, además de las historias técnicas necesarias para su implementación. El orden considera primero la comunicación y captación inicial del Landing Page y, a continuación, el acceso web y las capacidades principales de seguimiento y cuidado.
+El Product Backlog integra las historias funcionales de la aplicación, el Landing Page y la Frontend Web Application, además de las historias técnicas y los spikes necesarios para reducir incertidumbre antes de la implementación. El orden considera primero la comunicación y captación inicial del Landing Page y, a continuación, el acceso web y las capacidades principales de seguimiento y cuidado.
 
-Orden por valor para el negocio. Los User Stories incluyen su estimación en Story Points.
+Los elementos se ordenan por valor para el negocio e incluyen su estimación en Story Points.
 
 | # Orden | User Story ID | Título | Descripción | Story Points (1/2/3/5/8) |
 |--------:|---------------|--------|-------------|:------------------------:|
@@ -662,6 +362,11 @@ Orden por valor para el negocio. Los User Stories incluyen su estimación en Sto
 | 37 | TS12 | Consulta de diario compartido | Como desarrollador, quiero implementar la consulta de diarios compartidos para permitir acceso a cuidadores. | 3 |
 | 38 | TS13 | Consulta de perfil compartido | Como desarrollador, quiero permitir la visualización de perfiles compartidos. | 3 |
 | 39 | TS14 | Revocación de acceso | Como desarrollador, quiero implementar la revocación de accesos para controlar permisos. | 5 |
+| 40 | SP01 | Estrategia de notificaciones sin conexión | Como equipo de desarrollo, queremos investigar cómo entregar notificaciones push de medicación en dispositivos con conectividad intermitente, comparando Firebase Cloud Messaging vs. AlarmManager local, para decidir la estrategia del Bounded Context de Notificaciones. | 3 |
+| 41 | SP02 | Consentimiento y requisitos legales | Como equipo, queremos investigar patrones técnicos (tokens firmados con expiración + lista de revocación) y requisitos legales (Ley N° 29733, HIPAA-like) para implementar el otorgamiento y revocación de consentimiento del paciente sobre su información clínica. | 5 |
+| 42 | SP03 | Evaluación del stack móvil | Como equipo, queremos comparar Flutter y Kotlin Multiplatform en términos de productividad, performance, soporte de notificaciones nativas y curva de aprendizaje para decidir el stack móvil del MVP. | 3 |
+| 43 | SP04 | Almacenamiento cifrado de documentos | Como equipo, queremos investigar opciones de almacenamiento cifrado en reposo y en tránsito para documentos clínicos del paciente (recetas, resultados), comparando S3 con SSE-KMS, GCS y un esquema local cifrado. | 3 |
+| 44 | SP05 | Sincronización offline | Como equipo, queremos definir cómo sincronizar Diario y Agenda entre el dispositivo (SQLite/Room) y el backend tras periodos sin conexión, evitando conflictos y pérdidas de información. | 3 |
 
 - URL del Product Backlog: https://trello.com/b/slxEXro5/careconnect-product-backlog
 
@@ -669,7 +374,7 @@ Orden por valor para el negocio. Los User Stories incluyen su estimación en Sto
 
 
 ### 3.4. Impact Mapping
-El Impact Mapping conserva el artefacto elaborado durante el ciclo anterior y lo complementa con objetivos SMART y una trazabilidad explícita entre actores, impactos, entregables e historias de usuario.
+El Impact Mapping representa la relación entre las tres metas SMART de CareConnect, los actores que influyen en ellas, los cambios de comportamiento esperados y los entregables que los habilitan. La versión actual incorpora las experiencias móvil, web y Landing Page.
 
 El Impact Map permite visualizar cómo las funcionalidades clave de la aplicación se alinean con los objetivos de negocio, considerando a los actores involucrados y los impactos esperados en su comportamiento.
 
@@ -682,12 +387,12 @@ El Impact Map permite visualizar cómo las funcionalidades clave de la aplicaci�
 
 | Business Goal | Actor / Persona | Impact | Deliverable | User Stories |
 |---------------|-----------------|--------|-------------|--------------|
-| BG1 | Cuidador (Valeria Huamán) | Registra y coordina los eventos de salud de forma regular | Módulo de Agenda con registro y reprogramación de eventos | US01, US03 |
-| BG1 | Cuidador (Valeria Huamán) | Actúa a tiempo ante incumplimientos | Notificaciones y alertas de incumplimiento | US05, US06 |
-| BG2 | Paciente (Rafael Medina) | Confirma su medicación al recibir el recordatorio | Recordatorios push + confirmación de eventos | US02, US04 |
-| BG3 | Paciente (Rafael Medina) | Comparte su perfil con un familiar/cuidador | Gestión de Consentimiento (compartir y revocar) | US14, US16 |
-| BG3 | Cuidador (Valeria Huamán) | Consulta el perfil y diario compartidos | Vistas de perfil y diario compartido | US13, US15 |
-
+| BG1 | Visitante (cuidador potencial) | Comprende el valor de la solución e inicia su registro | Landing Page con beneficios por segmento y llamado a la acción | USL01, USL02, USL04 |
+| BG1 | Cuidador (Valeria Huamán) | Registra y coordina los eventos de salud de forma regular | Agenda multiplataforma con registro y reprogramación de eventos | US01, US03, USW01 |
+| BG1 | Cuidador (Valeria Huamán) | Actúa a tiempo ante incumplimientos | Centro de notificaciones y alertas de incumplimiento | US05, US06, USW03 |
+| BG2 | Paciente (Rafael Medina) | Confirma su medicación al recibir el recordatorio | Recordatorios y confirmación simple de eventos | US02, US04 |
+| BG3 | Paciente (Rafael Medina) | Comparte su perfil con un familiar o cuidador | Gestión de consentimiento para compartir y revocar accesos | US14, US16 |
+| BG3 | Cuidador (Valeria Huamán) | Consulta el perfil, los documentos y el diario compartidos | Vistas compartidas en la aplicación móvil y web | US13, US15, USW02 |
 <!-- ===== FIN CAPÍTULO ASIGNADO ===== -->
 
 ## Capítulo IV: Product Design
