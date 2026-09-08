@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#F4F8F7"/>
+  <rect x="32" y="28" width="1536" height="844" rx="28" fill="#FFFFFF" stroke="#D6E6E2" stroke-width="2"/>
+  <text x="70" y="82" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#173B3F">To-Be Scenario Mapping</text>
+  <text x="70" y="116" font-family="Inter, Arial, sans-serif" font-size="21" fill="#527075">Valeria Huamán · Cuidadora informal · Escenario futuro con CareConnect</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="58" y="148" width="1484" height="66" rx="14" fill="#146C73"/>
+    <text x="86" y="189" font-size="18" font-weight="700" fill="#FFFFFF">DIMENSIÓN</text>
+    <text x="220" y="177" font-size="15" font-weight="600" fill="#BFE9E4">FASE 1</text><text x="220" y="199" font-size="19" font-weight="700" fill="#FFFFFF">Onboarding</text>
+    <text x="490" y="177" font-size="15" font-weight="600" fill="#BFE9E4">FASE 2</text><text x="490" y="199" font-size="19" font-weight="700" fill="#FFFFFF">Registro de rutina</text>
+    <text x="760" y="177" font-size="15" font-weight="600" fill="#BFE9E4">FASE 3</text><text x="760" y="199" font-size="19" font-weight="700" fill="#FFFFFF">Seguimiento diario</text>
+    <text x="1030" y="177" font-size="15" font-weight="600" fill="#BFE9E4">FASE 4</text><text x="1030" y="199" font-size="19" font-weight="700" fill="#FFFFFF">Coordinación familiar</text>
+    <text x="1300" y="177" font-size="15" font-weight="600" fill="#BFE9E4">FASE 5</text><text x="1300" y="199" font-size="19" font-weight="700" fill="#FFFFFF">Revisión</text>
+    <rect x="58" y="226" width="1484" height="238" rx="14" fill="#EAF6F3"/><rect x="58" y="226" width="140" height="238" rx="14" fill="#CDEBE5"/>
+    <text x="84" y="274" font-size="20" font-weight="700" fill="#155C61">DOING</text><text x="84" y="302" font-size="15" fill="#3C666A">Qué hace</text>
+    <g font-size="18" fill="#203C40">
+      <text x="220" y="270"><tspan x="220">Crea su cuenta y</tspan><tspan x="220" dy="26">registra al paciente.</tspan></text>
+      <text x="490" y="270"><tspan x="490">Registra medicación</tspan><tspan x="490" dy="26">y citas en una</tspan><tspan x="490" dy="26">agenda centralizada.</tspan></text>
+      <text x="760" y="270"><tspan x="760">Recibe alertas de</tspan><tspan x="760" dy="26">incumplimiento y</tspan><tspan x="760" dy="26">confirma tareas.</tspan></text>
+      <text x="1030" y="270"><tspan x="1030">Comparte el perfil</tspan><tspan x="1030" dy="26">con otro familiar y</tspan><tspan x="1030" dy="26">revisa el diario.</tspan></text>
+      <text x="1300" y="270"><tspan x="1300">Consulta el historial</tspan><tspan x="1300" dy="26">de eventos y</tspan><tspan x="1300" dy="26">documentos.</tspan></text>
+    </g>
+    <rect x="58" y="476" width="1484" height="198" rx="14" fill="#F5F1E8"/><rect x="58" y="476" width="140" height="198" rx="14" fill="#EDE2C8"/>
+    <text x="84" y="524" font-size="20" font-weight="700" fill="#705D2F">THINKING</text><text x="84" y="552" font-size="15" fill="#786B4B">Qué piensa</text>
+    <g font-size="18" font-style="italic" fill="#443C2A">
+      <text x="220" y="524"><tspan x="220">“¿Es fácil de</tspan><tspan x="220" dy="26">configurar?”</tspan></text>
+      <text x="490" y="524"><tspan x="490">“Ahora todo queda</tspan><tspan x="490" dy="26">en un solo lugar.”</tspan></text>
+      <text x="760" y="524"><tspan x="760">“Me avisa si algo</tspan><tspan x="760" dy="26">no se cumplió.”</tspan></text>
+      <text x="1030" y="524"><tspan x="1030">“Mi hermana también</tspan><tspan x="1030" dy="26">puede ver el estado.”</tspan></text>
+      <text x="1300" y="524"><tspan x="1300">“Puedo mostrar esto</tspan><tspan x="1300" dy="26">al médico.”</tspan></text>
+    </g>
+    <rect x="58" y="686" width="1484" height="136" rx="14" fill="#EEF1FA"/><rect x="58" y="686" width="140" height="136" rx="14" fill="#DDE3F5"/>
+    <text x="84" y="734" font-size="20" font-weight="700" fill="#40548B">FEELING</text><text x="84" y="762" font-size="15" fill="#60709A">Cómo se siente</text>
+    <g font-size="19" font-weight="600" fill="#354469">
+      <text x="220" y="754">Expectante</text><text x="490" y="742"><tspan x="490">Aliviada,</tspan><tspan x="490" dy="27">en control</tspan></text>
+      <text x="760" y="742"><tspan x="760">Segura,</tspan><tspan x="760" dy="27">respaldada</tspan></text><text x="1030" y="742"><tspan x="1030">Acompañada,</tspan><tspan x="1030" dy="27">menos sola</tspan></text><text x="1300" y="754">Confiada</text>
+    </g>
+  </g>
+</svg>
