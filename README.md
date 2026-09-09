@@ -1407,6 +1407,48 @@ La configuración de despliegue debe actualizarse conforme se implementen nuevos
 
 #### 5.2.2. Implemented Landing Page Evidence
 
+La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada mediante **Vercel**.
+
+**Repositorio:** `https://github.com/CareStacks/Landing-Page`  
+**Landing Page:** `https://landing-page-lovat-ten.vercel.app/`
+
+##### Deployment Evidence
+
+![CareConnect Landing Page Deployment](assets/chapter5/careconnect-landing-deployment.png)
+
+*Figura X. Evidencia del despliegue de la Landing Page de CareConnect.*
+
+---
+
+##### Home and Problem Section
+
+![CareConnect Landing Page Home](assets/chapter5/careconnect-landing-home.png)
+
+*Figura X. Home y presentación de la problemática de CareConnect.*
+
+---
+
+##### Features Section
+
+![CareConnect Landing Page Features](assets/chapter5/careconnect-landing-features.png)
+
+*Figura X. Funcionalidades principales presentadas en la Landing Page.*
+
+---
+
+##### Product, Benefits and How It Works
+
+![CareConnect Landing Page Product](assets/chapter5/careconnect-landing-product.png)
+
+*Figura X. Presentación del producto, beneficios y funcionamiento de CareConnect.*
+
+---
+
+##### Plans, Contact and Footer
+
+![CareConnect Landing Page Footer](assets/chapter5/careconnect-landing-footer.png)
+
+*Figura X. Planes, llamada a la acción y footer de la Landing Page.*
 #### 5.2.3. Implemented Frontend-Web Application Evidence
 
 #### 5.2.4. Acuerdo de Servicio - SaaS
