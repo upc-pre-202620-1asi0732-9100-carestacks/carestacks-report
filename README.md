@@ -43,7 +43,7 @@ Producto: **CareConnect**
 | U20221G099  | Nikaido Vargas, Javier Masaru |
 | U202319563  | Muñiz Huayanca, Percy Alonso |
 | U202415495  | Espinoza Cruz, Angela Milagros |
-| U202319881  | Baldeon Armas, Santiago Armando |
+| U202319881  | Baldeon Vivar, Santiago Armando |
 
 **Septiembre 2026**
 
