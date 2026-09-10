@@ -183,54 +183,135 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 
 ### 2.1. Competidores
 
-El mercado de aplicaciones móviles orientadas a la salud personal presenta una oferta consolidada a nivel global, con actores que abordan el seguimiento del tratamiento desde distintos ángulos: recordatorios de medicación, monitoreo de hábitos o almacenamiento de información médica familiar. Sin embargo, ninguno de los productos existentes resuelve la coordinación entre varios cuidadores que atienden a un mismo paciente geriátrico, que es precisamente el espacio que CareConnect busca ocupar. Tras el proceso de investigación del landscape competitivo, identificamos tres competidores cuyas propuestas de valor se solapan parcialmente con la nuestra.
+El mercado de aplicaciones móviles orientadas a la salud personal presenta una oferta consolidada a nivel global, con actores que abordan el seguimiento del tratamiento desde distintos ángulos: recordatorios de medicación, monitoreo de hábitos o almacenamiento de información médica familiar. Sin embargo, ninguno de los productos existentes resuelve la coordinación entre varios cuidadores que atienden a un mismo paciente geriátrico, que es precisamente el espacio que **CareConnect** busca ocupar. Tras el proceso de investigación del landscape competitivo, identificamos tres competidores cuyas propuestas de valor se solapan parcialmente con la nuestra.
 
 **Medisafe** es una aplicación enfocada en recordatorios de medicación para pacientes individuales. Su propuesta central es la alta especialización en el control de la toma de medicamentos, con un modelo freemium y distribución exclusivamente móvil.
 
 **MyTherapy** es una aplicación orientada al seguimiento de salud, hábitos y tratamientos médicos. Su diferencial es una interfaz simple y el monitoreo continuo del estado de salud, dirigido principalmente a personas con enfermedades crónicas. Opera bajo modelo freemium y canal móvil.
 
-**CareZone** es una plataforma que permite organizar información médica y documentos de pacientes. Está orientada a familias que gestionan información médica y es el único competidor con presencia tanto web como móvil, también bajo modelo freemium.
+**Caring Village** es una plataforma orientada a la coordinación y comunicación entre familiares y cuidadores que atienden a un mismo paciente. Su diferencial es facilitar la organización de tareas, actualizaciones y comunicación entre los miembros de la red de cuidado. Opera bajo un modelo freemium y cuenta con presencia web y móvil.
 
 #### 2.1.1. Análisis competitivo
-> _Guía:_ Competitive Analysis Landscape (mín. 3 competidores directos) + SWOT enfocado en la competencia.
->
 
-| Competitive Analysis Landscape | | | | |
-| --- | --- | --- | --- | --- |
-| **¿Por qué llevar a cabo este análisis?** | ¿Cómo podemos diseñar una solución digital eficiente, confiable y diferenciada que permita a los cuidadores y familiares coordinar el cuidado de pacientes geriátricos en tiempo real, reduciendo errores, mejorando la comunicación y brindando visibilidad completa del estado del paciente? | | | |
-| **Nombre y logo** | **CareConnect** <br> *Insertar logo* | **Medisafe** <br> *Insertar logo* | **MyTherapy** <br> *Insertar logo* | **CareZone** <br> *Insertar logo* |
-| **Perfil: Overview** | Aplicación móvil enfocada en la gestión integral del cuidado de pacientes geriátricos. Permite coordinar tratamientos, registrar la evolución del paciente y compartir información entre múltiples cuidadores en tiempo real. | Aplicación enfocada en recordatorios de medicación para pacientes individuales. | Aplicación orientada al seguimiento de salud, hábitos y tratamientos médicos. | Plataforma que permite organizar información médica y documentos de pacientes. |
-| **Perfil: Ventaja competitiva** | Integración completa del cuidado colaborativo en una sola plataforma con múltiples usuarios vinculados a un mismo paciente. | Alta especialización en recordatorios de medicación. | Interfaz simple y monitoreo continuo de salud. | Organización de información médica familiar. |
-| **Perfil: ¿Qué valor ofrece a los clientes?** | Mejora la coordinación entre cuidadores, reduce errores en el cuidado y permite acceso centralizado a información crítica del paciente. | Reduce olvidos en la toma de medicamentos. | Permite seguimiento de tratamientos y hábitos de salud. | Facilita el almacenamiento y acceso a información médica. |
-| **Perfil de Marketing: Mercado objetivo** | Cuidadores y familiares de pacientes geriátricos en entornos domiciliarios. | Pacientes individuales con tratamientos médicos. | Personas con enfermedades crónicas. | Familias que gestionan información médica. |
-| **Perfil de Marketing: Estrategias de marketing** | Marketing digital con enfoque en bienestar, confianza y facilidad de uso. | Marketing orientado a la salud personal. | Promoción en bienestar y seguimiento de salud. | Enfoque en organización familiar. |
-| **Perfil de Producto: Productos y servicios** | Aplicación móvil multiplataforma con calendario, alertas, historial clínico, carpeta de documentos y perfiles compartidos. | Aplicación móvil de recordatorios de medicación. | Aplicación móvil de seguimiento de salud. | Plataforma web y móvil para organización médica. |
-| **Perfil de Producto: Precios y costos** | Modelo freemium con funcionalidades premium. | Freemium. | Freemium. | Freemium. |
-| **Perfil de Producto: Canales de distribución** | Móvil. | Móvil. | Móvil. | Web y móvil. |
-| **SWOT: Fortalezas** | Es la única de las cuatro que resuelve el cuidado colaborativo: vincula varios cuidadores a un mismo paciente con historial compartido. Frente a Medisafe y MyTherapy, que resuelven bien la dimensión individual, CareConnect cubre la dimensión que ninguna de las dos aborda. | Su especialización en medicación supera en profundidad a la de CareConnect en esa función puntual, ya que concentra todo su desarrollo en ese único caso de uso. | Su interfaz intuitiva es superior en madurez a la de CareConnect, que se encuentra en etapa inicial, y constituye una referencia de usabilidad para nuestro diseño. | Su organización de datos médicos es la más consolidada del grupo en el eje documental y es el único que ofrece experiencia web, cubriendo un canal que CareConnect no atiende. |
-| **SWOT: Debilidades** | Aplicación en etapa inicial sin posicionamiento consolidado, frente a tres competidores con base de usuarios establecida. Además, a diferencia de CareZone, no ofrece canal web. | No permite colaboración entre múltiples usuarios, lo que la deja fuera de los escenarios de cambio de turno que CareConnect sí resuelve. | No integra completamente la información médica, por lo que el usuario debe recurrir a otras herramientas para documentos y evolución, fragmentación que CareConnect elimina. | Sus funcionalidades son limitadas y no ofrece comunicación dinámica entre usuarios, únicamente centraliza información. |
-| **SWOT: Oportunidades** | Crecimiento del sector salud digital y necesidad no cubierta de soluciones colaborativas de cuidado geriátrico en Latinoamérica. | Expansión hacia la gestión integral del cuidado, movimiento que la acercaría directamente a nuestro terreno. | Integración con nuevas tecnologías de monitoreo, que ampliaría su alcance más allá del seguimiento manual. | Mejora de funcionalidades y expansión hacia la coordinación entre usuarios. |
-| **SWOT: Amenazas** | Competidores ya posicionados y barreras de adopción inicial en usuarios con baja alfabetización digital. | Aparición de nuevas aplicaciones más completas que superen su enfoque de función única. | Saturación del mercado de aplicaciones de seguimiento de salud. | Falta de innovación frente a competidores que avanzan hacia la coordinación en tiempo real. |
-
+<table>
+  <tr>
+    <td colspan="6" align="center"><b>Competitive analysis landscape</b></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>¿Por qué llevar a cabo este análisis?</b></td>
+    <td colspan="4">¿Qué ofrecen los principales competidores del mercado de gestión de medicación y coordinación del cuidado, y en qué aspectos CareConnect puede diferenciarse para capturar a cuidadores y pacientes geriátricos en el mercado peruano y latinoamericano?</td>
+  </tr>
+  <tr>
+    <td colspan="2"><i>Nombre y Logo</i></td>
+    <td align="center"><i>[Insertar logo de CareConnect]</i><br><b>CareConnect</b></td>
+    <td align="center"><i>[Insertar logo de Medisafe]</i><br><b>Medisafe</b></td>
+    <td align="center"><i>[Insertar logo de MyTherapy]</i><br><b>MyTherapy</b></td>
+    <td align="center"><i>[Insertar logo de Caring Village]</i><br><b>Caring Village</b></td>
+  </tr>
+  <tr>
+    <td rowspan="2" align="center"><b>Perfil</b></td>
+    <td><b>Overview</b></td>
+    <td>Aplicación móvil nativa y multiplataforma en etapa de desarrollo, orientada al cuidado colaborativo de pacientes geriátricos. Integra calendario de medicación y terapias programadas, alertas y recordatorios en tiempo real, carpeta digital de documentos clínicos, historial de notas y registro de evolución, y compartición de perfiles entre cuidadores, dirigida a cuidadores de 25 a 60 años y pacientes geriátricos de 60 años a más en el Perú.</td>
+    <td>Aplicación de recordatorios de medicación con más de una década en el mercado, disponible para iOS y Android. Cuenta con más de 101 000 calificaciones en App Store con un promedio de 4.7 estrellas, y su función Medfriends permite notificar a un familiar o cuidador cuando el usuario omite una dosis.</td>
+    <td>Aplicación desarrollada por smartpatient GmbH, disponible para iOS y Android en múltiples idiomas, con una calificación de 4.8 en Google Play. Combina recordatorios de medicación con seguimiento de peso, presión arterial, oxígeno en sangre y glucosa, además de un diario de síntomas y estado de ánimo.</td>
+    <td>Aplicación de coordinación familiar del cuidado organizada en torno al concepto de Village, donde el usuario principal invita a familiares, amigos y cuidadores profesionales a colaborar en el cuidado de una misma persona. Incluye asistente con inteligencia artificial llamado Julia, calendario compartido sincronizable con Google Calendar, Apple Calendar y Outlook, almacenamiento de documentos y mensajería segura, con una calificación de 4.6 sobre 5 en App Store.</td>
+  </tr>
+  <tr>
+    <td><b>Ventaja competitiva</b><br><i>¿Qué valor ofrece a los clientes?</i></td>
+    <td>Permite que varios cuidadores compartan en tiempo real el estado y la evolución de un mismo paciente geriátrico dentro de una sola aplicación, cubriendo la coordinación de turnos que ninguno de los tres competidores investigados ofrece de forma nativa.</td>
+    <td>Ofrece seguridad en la administración de medicamentos mediante su verificador de interacciones entre fármacos y la alerta Medfriends, aunque ese aviso llega a una sola persona designada y no sostiene una coordinación continua entre varios cuidadores a la vez.</td>
+    <td>Da al propio paciente una visión clara y exportable de su tratamiento y de sus signos vitales a lo largo del tiempo mediante su reporte mensual, pensado para que lo revise el usuario y su médico, y no para que lo compartan varios cuidadores en simultáneo.</td>
+    <td>Ofrece a la familia un espacio único de coordinación con calendario, documentos y mensajería compartidos entre todos los miembros de un mismo Village, apoyado en el asistente Julia, aunque su plan gratuito limita ese círculo a solo 2 miembros y no incluye recordatorios de medicación.</td>
+  </tr>
+  <tr>
+    <td rowspan="2" align="center"><b>Perfil de Marketing</b></td>
+    <td><b>Mercado Objetivo</b></td>
+    <td>Cuidadores formales e informales de 25 a 60 años y pacientes geriátricos de 60 años a más, en zonas urbanas y periurbanas del Perú que hoy coordinan el cuidado mediante herramientas no especializadas.</td>
+    <td>Personas que gestionan tratamientos médicos individuales, incluidos pacientes con enfermedades crónicas que toman varios medicamentos a la vez, con fuerte presencia en Estados Unidos y otros mercados donde ya opera su plan de pago.</td>
+    <td>Personas con tratamientos médicos y enfermedades crónicas que buscan registrar su medicación y sus signos vitales de forma autónoma, con alcance en múltiples países gracias a su disponibilidad en distintos idiomas.</td>
+    <td>Familias que coordinan el cuidado de un adulto mayor o de un familiar con una condición de salud, incluidos cuidadores principales, familiares a distancia, amigos y cuidadores profesionales invitados a un mismo Village.</td>
+  </tr>
+  <tr>
+    <td><b>Estrategias de Marketing</b></td>
+    <td>Aún no ha desplegado campañas de marketing por encontrarse en etapa de desarrollo como proyecto universitario, aunque contempla campañas en redes sociales y alianzas con centros de salud según lo definido en la sección de estrategias frente a competidores.</td>
+    <td>Sostiene su visibilidad principalmente en las tiendas de aplicaciones, apoyada en más de una década de trayectoria y en una calificación promedio de 4.7 sobre 5 en más de 101 000 reseñas de usuarios.</td>
+    <td>Se posiciona como una aplicación reconocida para el manejo de medicación, apoyada en una calificación de 4.8 en Google Play y en su disponibilidad en múltiples idiomas para llegar a audiencias de distintos países.</td>
+    <td>Construye su reputación mediante testimonios reales de familias publicados en su propio sitio y en las tiendas de aplicaciones, sostenida en una calificación de 4.6 sobre 5 en App Store y en contenido de blog orientado a distintos perfiles de cuidadores, como familias con hijos y padres mayores a la vez.</td>
+  </tr>
+  <tr>
+    <td rowspan="3" align="center"><b>Perfil de Producto</b></td>
+    <td><b>Productos &amp; Servicios</b></td>
+    <td>Calendario de medicación y terapias programadas, alertas y recordatorios en tiempo real, carpeta digital de documentos clínicos, historial de notas y registro de evolución del paciente, y compartición de perfiles entre cuidadores.</td>
+    <td>Recordatorios de medicación, verificador de interacciones entre fármacos, alertas de reposición, función Medfriends para notificar a un cuidador ante una dosis omitida, y sincronización con Apple HealthKit.</td>
+    <td>Recordatorios de medicación y de reposición de recetas, registro de peso, presión arterial, oxígeno en sangre y glucosa, diario de síntomas y estado de ánimo, seguimiento de rachas de cumplimiento y reporte mensual de salud exportable.</td>
+    <td>Calendario compartido sincronizable con Google Calendar, Apple Calendar y Outlook, listas de tareas, almacenamiento de documentos, mensajería segura, planes de cuidado personalizables y exportación de un diario de bienestar, todo organizado en torno a un Village por persona cuidada, con el asistente de inteligencia artificial Julia como soporte adicional.</td>
+  </tr>
+  <tr>
+    <td><b>Precios &amp; Costos</b></td>
+    <td>Modelo freemium con funcionalidades premium orientadas a la coordinación entre múltiples cuidadores, sin montos definidos aún por encontrarse en etapa de desarrollo.</td>
+    <td>Desde enero de 2026 el nivel gratuito quedó limitado a 2 medicamentos, y el acceso completo requiere una suscripción de 4.99 dólares al mes o 39.99 dólares al año.</td>
+    <td>Se mantiene completamente gratuita para iOS y Android, sostenida mediante publicidad dentro de la aplicación en lugar de un plan de pago.</td>
+    <td>Ofrece un plan gratuito limitado a un Village de hasta 2 miembros, un plan Circle de 14.99 dólares al mes con hasta 2 Villages de 5 miembros cada uno, y un plan Village de 24.99 dólares al mes con hasta 5 Villages de 50 miembros cada uno, con descuento del 17 % en facturación anual.</td>
+  </tr>
+  <tr>
+    <td><b>Canales de distribución</b><br><i>(Web y/o Móvil)</i></td>
+    <td>Móvil. Aplicación nativa multiplataforma para iOS y Android, sin versión web contemplada en el alcance actual.</td>
+    <td>Móvil. Disponible en App Store y Google Play, sin versión web.</td>
+    <td>Móvil. Disponible en App Store y Google Play, sin versión web.</td>
+    <td>Web y móvil. Disponible en App Store y Google Play, con un portal web propio para la gestión de la cuenta y la suscripción.</td>
+  </tr>
+  <tr>
+    <td rowspan="5" align="center"><b>Análisis SWOT</b></td>
+    <td colspan="5"><i>Realice esto para su startup y sus competidores. Sus fortalezas deberían apoyar sus oportunidades y contribuir a lo que ustedes definen como su posible ventaja competitiva.</i></td>
+  </tr>
+  <tr>
+    <td><b>Fortalezas</b></td>
+    <td>Coordinación en tiempo real entre múltiples cuidadores dentro de una sola plataforma. Al comparar esta fortaleza con la competencia, se observa que Medisafe solo notifica a un cuidador designado mediante Medfriends, que MyTherapy concentra el seguimiento en el propio paciente sin compartirlo activamente, y que Caring Village sí coordina a varios miembros de la familia pero sin integrar el seguimiento clínico de medicación como parte central de su producto, por lo que CareConnect es el único que combina ambas dimensiones.</td>
+    <td>Verificador de interacciones entre medicamentos y alerta Medfriends, respaldados por más de una década de trayectoria y una calificación de 4.7 sobre más de 101 000 reseñas. Al comparar esta fortaleza con la competencia, se observa que ese nivel de validación y confianza de usuarios supera al de CareConnect, que aún no cuenta con historial de uso real.</td>
+    <td>Seguimiento integral de signos vitales junto con la medicación, con reporte mensual exportable y calificación de 4.8 en Google Play. Al comparar esta fortaleza con la competencia, se observa que ese nivel de detalle clínico individual es mayor al que ofrece hoy CareConnect, aunque no incluye coordinación entre distintos cuidadores.</td>
+    <td>Coordinación familiar organizada por Villages, con asistente de inteligencia artificial Julia, calendario sincronizable con Google, Apple y Outlook, y una calificación de 4.6 sobre 5 en App Store. Al comparar esta fortaleza con la competencia, se observa que su enfoque en coordinación familiar es el más cercano al de CareConnect, aunque no incluye recordatorios ni verificación de medicación como parte de su producto principal.</td>
+  </tr>
+  <tr>
+    <td><b>Debilidades</b></td>
+    <td>Al ser un proyecto en etapa de desarrollo, no cuenta aún con usuarios activos, calificaciones ni validación de mercado. Al comparar esta debilidad con la competencia, se observa que Medisafe, MyTherapy y Caring Village ya tienen miles de reseñas y presencia consolidada, lo que exige a CareConnect construir confianza desde cero.</td>
+    <td>Desde 2026 su nivel gratuito quedó limitado a solo 2 medicamentos, lo que la vuelve poco viable para pacientes geriátricos con regímenes de tratamiento más complejos. Al comparar esta debilidad con la competencia, se observa que esa restricción abre una oportunidad concreta para el modelo freemium de CareConnect, pensado para regímenes de cuidado más amplios.</td>
+    <td>No ofrece verificador de interacciones entre medicamentos ni mecanismos de coordinación entre múltiples cuidadores. Al comparar esta debilidad con la competencia, se observa que ambas funciones sí forman parte del alcance de Medisafe y de CareConnect respectivamente, lo que deja a MyTherapy enfocada únicamente en el autoseguimiento individual.</td>
+    <td>Su plan gratuito limita el Village a solo 2 miembros y no incluye recordatorios de medicación, que quedan fuera incluso de sus planes pagos según su propia página de precios. Al comparar esta debilidad con la competencia, se observa que Caring Village resuelve la coordinación familiar pero no el seguimiento clínico de medicamentos, brecha que sí cubre CareConnect dentro de una sola aplicación.</td>
+  </tr>
+  <tr>
+    <td><b>Oportunidades</b></td>
+    <td>La fragmentación entre soluciones de coordinación familiar como Caring Village y soluciones de medicación como Medisafe deja sin cubrir a los usuarios que buscan ambas funciones en una sola aplicación. Al comparar esta oportunidad con la competencia, se observa que ninguno de los tres competidores investigados ofrece hoy esa combinación, lo que deja a CareConnect en posición de capturar primero ese espacio en Latinoamérica.</td>
+    <td>Podría extender su función Medfriends para notificar a varios cuidadores a la vez en lugar de a uno solo. Al comparar esta oportunidad con la competencia, se observa que si lo hiciera se acercaría directamente a la propuesta de coordinación que hoy diferencia a CareConnect.</td>
+    <td>Podría integrar alertas dirigidas a un cuidador externo a partir de los datos que ya recopila del paciente. Al comparar esta oportunidad con la competencia, se observa que esa integración la acercaría a un modelo más colaborativo similar al de CareConnect.</td>
+    <td>Podría incorporar recordatorios y verificación de medicación dentro de sus planes Circle o Village. Al comparar esta oportunidad con la competencia, se observa que si lo hiciera competiría de forma directa con CareConnect en el eje que hoy nos diferencia, la integración de coordinación familiar y seguimiento clínico en un solo producto.</td>
+  </tr>
+  <tr>
+    <td><b>Amenazas</b></td>
+    <td>Medisafe, MyTherapy y Caring Village ya cuentan con miles de usuarios y calificaciones consolidadas en las tiendas de aplicaciones. Al comparar esta amenaza con la competencia, se observa que CareConnect debe superar esa barrera de confianza inicial además de la baja alfabetización digital de parte de su segmento de pacientes geriátricos.</td>
+    <td>El endurecimiento de su modelo de pago en 2026 generó una ola de usuarios buscando alternativas gratuitas, lo que puede favorecer tanto a aplicaciones gratuitas como MyTherapy como a nuevas propuestas como CareConnect. Al comparar esta amenaza con la competencia, se observa que Medisafe corre el riesgo de perder usuarios frente a alternativas mejor valoradas en precio.</td>
+    <td>La saturación del mercado de aplicaciones de seguimiento de salud gratuitas, incluidas alternativas que surgieron tras el cambio de modelo de Medisafe. Al comparar esta amenaza con la competencia, se observa que MyTherapy compite por el mismo usuario individual que buscan captar varias aplicaciones similares, mientras que CareConnect se diferencia al dirigirse a la coordinación entre cuidadores.</td>
+    <td>Su plan gratuito limitado a 2 miembros puede empujar a familias con más de un cuidador hacia alternativas que resuelvan coordinación y medicación en un solo pago. Al comparar esta amenaza con la competencia, se observa que CareConnect puede capturar a esas familias si su propio modelo freemium ofrece un umbral gratuito más amplio que el de Caring Village.</td>
+  </tr>
+</table>
 
 #### 2.1.2. Estrategias y tácticas frente a competidores
 
-A partir del análisis competitivo realizado en la sección anterior, identificamos oportunidades y debilidades concretas en Medisafe, MyTherapy y CareZone. Sobre esos hallazgos planteamos las siguientes estrategias y tácticas para posicionar a CareConnect como una solución diferenciada.
+A partir del análisis competitivo realizado en la sección anterior, se identificaron diversas oportunidades y debilidades en los competidores actuales, Medisafe, MyTherapy y Caring Village. En base a estos hallazgos, se plantean las siguientes estrategias y tácticas para afrontar las fortalezas de la competencia y aprovechar sus debilidades, posicionando a CareConnect como una solución diferenciada en el mercado.
 
-**1. Diferenciación mediante coordinación en tiempo real**
+**1. Diferenciación mediante coordinación en tiempo real con seguimiento clínico integrado**
 
-Medisafe y MyTherapy se enfocan principalmente en recordatorios individuales, sin permitir la interacción o coordinación entre múltiples usuarios, mientras que CareZone solo centraliza información sin ofrecer comunicación dinámica.
+Se identificó que Medisafe notifica únicamente a un cuidador designado a través de su función Medfriends, que MyTherapy concentra el seguimiento en el propio paciente sin coordinación activa entre terceros, y que Caring Village coordina bien a la familia mediante calendarios y mensajería compartida pero no incluye recordatorios ni verificación de medicación dentro de su producto.
 
-*Estrategia:* implementar un sistema de coordinación en tiempo real entre cuidadores y familiares.
+*Estrategia:* implementar un sistema de coordinación en tiempo real entre cuidadores y familiares que integre, en la misma aplicación, el seguimiento de la medicación que Caring Village no ofrece.
 
 *Tácticas:*
-- Sistema de notificaciones en tiempo real sobre medicación y eventos.
+- Sistema de notificaciones en tiempo real sobre medicación y eventos, enviado a todos los cuidadores vinculados y no solo a uno.
 - Confirmación de actividades realizadas, por ejemplo la medicación administrada.
 - Alertas automáticas en caso de incumplimiento o eventos críticos.
 
 **2. Plataforma integral de cuidado**
 
-Los competidores actuales ofrecen soluciones parciales: Medisafe se enfoca en medicación, MyTherapy en seguimiento de salud y CareZone en almacenamiento de información.
+Los competidores actuales ofrecen soluciones parciales: Medisafe se enfoca en medicación con verificación de interacciones, MyTherapy en seguimiento de salud y signos vitales del propio paciente, y Caring Village en coordinación familiar mediante calendarios, documentos y mensajería, sin que ninguno integre las tres dimensiones a la vez.
 
 *Estrategia:* ofrecer una plataforma integral que centralice todos los aspectos del cuidado en una sola aplicación.
 
@@ -240,22 +321,22 @@ Los competidores actuales ofrecen soluciones parciales: Medisafe se enfoca en me
 - Almacenamiento de documentos médicos en una carpeta digital.
 - Unificación de todas las funcionalidades en una sola interfaz.
 
-**3. Enfoque en el cuidado colaborativo**
+**3. Enfoque en el cuidado colaborativo accesible**
 
-Ninguno de los competidores analizados permite una gestión eficiente entre múltiples cuidadores y familiares vinculados a un mismo paciente.
+Caring Village resuelve bien la coordinación entre varios miembros de la familia, pero limita su plan gratuito a un solo Village de hasta 2 miembros, y sus planes de pago parten en 14.99 dólares al mes, una barrera de adopción para familias con más cuidadores o con menor capacidad de pago.
 
-*Estrategia:* permitir la gestión colaborativa del cuidado mediante perfiles compartidos.
+*Estrategia:* permitir la gestión colaborativa del cuidado mediante perfiles compartidos, con un umbral gratuito más amplio que el de Caring Village para familias con varios cuidadores.
 
 *Tácticas:*
 - Sistema de usuarios múltiples vinculados a un mismo paciente.
 - Acceso compartido a historial, eventos y registros.
 - Control de permisos según tipo de usuario, cuidador o familiar.
 
-**4. Mejora de la experiencia de usuario**
+**4. Mejora de la experiencia del usuario**
 
-Varias de las soluciones existentes no están diseñadas para contextos de uso bajo presión ni para usuarios con bajo conocimiento tecnológico, aspecto que las entrevistas confirmaron como determinante para la adopción.
+Se observó que Medisafe restringió su nivel gratuito a solo 2 medicamentos desde 2026, lo que la vuelve poco viable para regímenes de cuidado geriátrico más complejos, y que varias soluciones no están diseñadas para contextos de uso bajo presión ni para usuarios con bajo conocimiento tecnológico.
 
-*Estrategia:* desarrollar una interfaz intuitiva, rápida y centrada en el usuario.
+*Estrategia:* desarrollar una interfaz intuitiva, rápida y centrada en el usuario, con un nivel gratuito que cubra realmente las necesidades de un paciente geriátrico con múltiples medicamentos.
 
 *Tácticas:*
 - Diseño mobile first enfocado en dispositivos Android de gama media.
@@ -263,29 +344,40 @@ Varias de las soluciones existentes no están diseñadas para contextos de uso b
 - Interfaces claras para tareas críticas como registro, consulta y alertas.
 - Pruebas de usabilidad con cuidadores reales.
 
-**5. Especialización en el cuidado geriátrico**
+**5. Enfoque en un nicho específico**
 
-Ninguno de los competidores está especializado en el cuidado de pacientes geriátricos ni en las rutinas de acompañamiento que ese perfil exige.
+Ninguno de los tres competidores está especializado en el cuidado de pacientes geriátricos: Medisafe y MyTherapy se dirigen al paciente individual sin distinción etaria, y Caring Village se dirige a la coordinación familiar en general, sin distinguir entre tipos de condición de salud ni especializarse en el cuidado geriátrico.
 
-*Estrategia:* posicionar a CareConnect como una solución especializada en el segmento geriátrico.
+*Estrategia:* posicionar a CareConnect como una solución especializada en el cuidado geriátrico compartido entre varios cuidadores.
 
 *Tácticas:*
 - Adaptación de funcionalidades a rutinas complejas de cuidado con múltiples actores.
-- Diseño accesible y legible pensado para adultos mayores.
-- Comunicación centrada en el bienestar del paciente y el apoyo al cuidador.
+- Diseño accesible y comprensible para pacientes de 60 años a más.
+- Comunicación centrada en el bienestar del paciente y en el apoyo al cuidador.
 
-**6. Crecimiento, adopción y mejora continua basada en datos**
+**6. Estrategia de crecimiento y adopción**
 
-Los competidores presentan un alcance limitado en Latinoamérica y limitaciones en personalización y evolución del producto.
+Se identificó que Medisafe, MyTherapy y Caring Village tienen alcance internacional pero no están enfocados específicamente en Latinoamérica, y que los planes pagos de Caring Village, desde 14.99 dólares al mes, resultan menos accesibles para el poder adquisitivo de familias en la región.
 
-*Estrategia:* expandir la plataforma mediante estrategias digitales y alianzas, sosteniendo la evolución del producto con datos de uso.
+*Estrategia:* expandir la plataforma mediante estrategias digitales y alianzas estratégicas, capturando primero el mercado peruano y latinoamericano con precios adaptados a la región.
 
 *Tácticas:*
 - Campañas en redes sociales dirigidas a cuidadores y familias.
 - Alianzas con centros de salud y organizaciones de apoyo.
-- Modelo freemium para facilitar la adopción inicial y programas de recomendación entre usuarios.
-- Recolección de métricas de uso dentro de la aplicación y análisis del comportamiento del usuario.
-- Iteraciones frecuentes del producto incorporando feedback directo de cuidadores y familiares.
+- Modelo freemium para facilitar la adopción inicial, con un nivel gratuito más amplio que el de Medisafe y de Caring Village.
+- Programas de recomendación entre usuarios.
+
+**7. Mejora continua basada en datos**
+
+Los competidores presentan limitaciones distintas en personalización y evolución del producto: Medisafe endureció su modelo de pago en 2026, MyTherapy no ofrece coordinación entre cuidadores, y Caring Village no integra el seguimiento de medicación dentro de su propuesta principal.
+
+*Estrategia:* implementar un modelo de mejora continua basado en datos y en el feedback de los usuarios, cerrando de forma iterativa las brechas que dejan los tres competidores.
+
+*Tácticas:*
+- Recolección de métricas de uso dentro de la aplicación.
+- Análisis del comportamiento del usuario.
+- Iteraciones frecuentes del producto.
+- Incorporación de feedback directo de cuidadores y familiares.
   
 ### 2.2. Entrevistas
 
