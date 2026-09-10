@@ -155,20 +155,16 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 ### 1.1. Startup Profile
 
 #### 1.1.1. Descripción de la Startup
-> _Guía:_ Descripción de CareStacks.
 
 #### 1.1.2. Perfiles de integrantes del equipo
-> _Guía:_ Por integrante: foto, nombres y apellidos, código, descripción de carrera y párrafo de conocimientos técnicos/habilidades que aporta.
 
 ### 1.2. Solution Profile
 
 #### 1.2.1. Antecedentes y problemática
-> _Guía:_ Enunciado del problema aplicando 5W+2H (Who, What, Where, When, Why, How, How Much). Objetivos y restricciones que delimitan el alcance.
 
 #### 1.2.2. Lean UX Process
 
 ##### 1.2.2.1. Lean UX Problem Statements
-> _Guía:_ Domain, customer segments, pain points, gap, vision/strategy, initial segment.
 
 ##### 1.2.2.2. Lean UX Assumptions
 
@@ -177,14 +173,12 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 ##### 1.2.2.4. Lean UX Canvas
 
 ### 1.3. Segmentos objetivo
-> _Guía:_ Descripción de segmentos con características demográficas e información estadística de sustento.
 
 ## Capítulo II: Requirements Elicitation & Analysis
 
 ### 2.1. Competidores
 
 #### 2.1.1. Análisis competitivo
-> _Guía:_ Competitive Analysis Landscape (mín. 3 competidores directos) + SWOT enfocado en la competencia.
 
 #### 2.1.2. Estrategias y tácticas frente a competidores
 
@@ -194,28 +188,22 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 > _Guía:_ Preguntas principales y complementarias por segmento.
 
 #### 2.2.2. Registro de entrevistas
-> _Guía:_ **3 a 5 entrevistas por segmento.** Nombres, apellidos, edad, distrito, screenshot y URL de Microsoft Stream con timing y duración. Resumen por entrevista.
 
 #### 2.2.3. Análisis de entrevistas
-> _Guía:_ Análisis por segmento con sustento estadístico (porcentajes).
 
 ### 2.3. Needfinding
 
 #### 2.3.1. User Personas
-> _Guía:_ Una ficha por segmento (UXPressia).
 
 #### 2.3.2. User Task Matrix
 
 #### 2.3.3. User Journey Mapping
-> _Guía:_ Versión As-Is, uno por User Persona (UXPressia).
 
 #### 2.3.4. Empathy Mapping
 
 #### 2.3.5. As-is Scenario Mapping
-> _Guía:_ Uno por User Persona (LucidChart/Miro). Filas Phases, Doing, Thinking, Feeling + áreas positivas/negativas/blank.
 
 ### 2.4. Ubiquitous Language
-> _Guía:_ Glosario del dominio, términos en inglés, sin términos técnicos de ingeniería de software.
 
 ## Capítulo III: Requirements Specification
 
@@ -669,17 +657,7 @@ CareConnect también interactúa con diferentes servicios externos:
 | CareConnect | Identity Provider | Solicita o verifica identidad federada. |
 | CareConnect | Supabase Storage | Almacena y recupera archivos médicos privados. |
 
-> **[INSERTAR AQUÍ EL SOFTWARE ARCHITECTURE CONTEXT DIAGRAM]**
->
-> El diagrama debe mostrar:
-> - Paciente geriátrico.
-> - Cuidador.
-> - CareConnect como sistema central.
-> - Firebase Cloud Messaging.
-> - SendGrid.
-> - Identity Provider.
-> - Supabase Storage.
-> - Las relaciones entre los actores, CareConnect y los sistemas externos.
+
 
 ![Software Architecture Context Diagram](assets/careconnect-context-diagram.png)
 
@@ -727,23 +705,6 @@ Por lo tanto, existe una diferencia entre el producto actualmente implementado y
 
 La Frontend Web Application se plantea con **Vue + PrimeVue**, de acuerdo con el stack requerido para el proyecto.
 
-> **[INSERTAR AQUÍ EL SOFTWARE ARCHITECTURE CONTAINER DIAGRAM]**
->
-> Dentro de CareConnect se deben representar:
-> - Landing Page.
-> - Frontend Web Application.
-> - Mobile Application.
-> - Backend RESTful API.
-> - PostgreSQL Database.
-> - Local Storage.
->
-> Fuera de CareConnect:
-> - Firebase Cloud Messaging.
-> - SendGrid.
-> - Identity Provider.
-> - Supabase Storage.
->
-> También deben mostrarse las relaciones y protocolos principales.
 
 ![Software Architecture Container Diagram](assets/careconnect-container-1-diagram.png)
 ![Software Architecture Container Diagram](assets/careconnect-container-2-diagram.png)
@@ -878,17 +839,7 @@ El bounded context Autenticación gestiona las cuentas de usuario, autenticació
 
 La entidad principal es `User`, que contiene información relacionada con el correo electrónico, hash de contraseña, nombre completo, rol, estado de la cuenta, intentos fallidos de autenticación y bloqueo temporal.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE AUTENTICACIÓN / IAM]**
->
-> Debe incluir los elementos reales del módulo IAM, entre ellos:
-> - `User`.
-> - `UserRole`.
-> - Contrato del servicio de autenticación.
-> - Implementación del servicio de autenticación.
-> - Repositorio de usuarios.
-> - Mapper.
-> - REST Controller.
-> - Relaciones principales entre dichos elementos.
+
 
 ![Class Diagram - IAM](assets/careconnect-iam-class-diagram.png)
 
@@ -1006,18 +957,6 @@ Los archivos médicos se almacenan en **Supabase Storage** y no como datos binar
 
 La base relacional conserva únicamente la información necesaria para identificar el documento y recuperar de forma segura el archivo correspondiente.
 
-> **[INSERTAR AQUÍ EL RELATIONAL/NON-RELATIONAL DATABASE DIAGRAM INTEGRADO]**
->
-> El diagrama debe:
-> - Representar las tablas reales del esquema implementado.
-> - Identificar claramente a qué bounded context pertenece cada conjunto de tablas.
-> - Mostrar Primary Keys.
-> - Mostrar Foreign Keys.
-> - Mostrar cardinalidades.
-> - Mostrar los tipos de datos principales.
-> - Representar la referencia entre la metadata documental y Supabase Storage cuando corresponda.
->
-> Antes de insertar la figura definitiva, verificar los nombres de tablas y columnas contra el esquema vigente del backend para evitar diferencias entre el diagrama y la implementación.
 
 ![Integrated Database Diagram](assets/careconnect-database-1-diagram.png)
 ![Integrated Database Diagram](assets/careconnect-database-2-diagram.png)
