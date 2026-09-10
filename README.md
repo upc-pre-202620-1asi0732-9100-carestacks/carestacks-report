@@ -595,8 +595,25 @@ El prototipo fue ejecutado y validado en un simulador de iOS, correspondiente a 
 
 #### 4.6.4. Web Applications User Flow Diagrams
 
-### 4.7. Web Applications Prototyping
-> _Guía:_ Prototipo navegable Desktop + Mobile Web Browser. Screenshot + video en Microsoft Stream.
+## 4.7. Web Applications Prototyping
+
+A diferencia del prototipado en Figma (4.6), esta sección documenta el **prototipo funcional** de la aplicación web de CareStacks: una adaptación a escritorio de la base Flutter del segmento cuidador, ejecutada en navegador (`flutter run -d chrome`) y conectada al backend real de CareConnect API, con datos de prueba reales.
+
+El prototipo reemplaza el layout móvil original (bottom nav, columna única) por un sistema responsive de tres anchos con sidebar de navegación, jerarquía visual en tarjetas (hero/standard/quiet/flat) y un panel de detalle lateral, manteniendo intacta la paleta de colores definida en `app_colors.dart`.
+
+| Pantalla | Captura |
+|---|---|
+| Perfil | ![Perfil Web](assets/perfil_web.png) |
+| Inicio de sesión | ![Login Web](assets/login_web.png) |
+| Registro | ![Registro Web](assets/registro_web.png) |
+| Home (Cuidador) | ![Home Web](assets/home_web.png) |
+| Agenda | ![Agenda Web](assets/agenda_web.png) |
+| Diario | ![Diario Web](assets/diario_web.png) |
+| Documentos | ![Documentos Web](assets/documentos_web.png) |
+| Notificaciones | ![Notificaciones Web](assets/notificaciones_web.png) |
+
+**Video del prototipo (Web):** [Ver video](https://youtu.be/050WhJadiuY)
+
 
 ### 4.8. Domain-Driven Software Architecture
 
