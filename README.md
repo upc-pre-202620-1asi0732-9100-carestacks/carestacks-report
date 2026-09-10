@@ -544,12 +544,43 @@ Un user flow por objetivo de usuario, contemplando *happy path* y *unhappy path*
    - *Unhappy path*: hora del evento en conflicto con otro ya registrado → el sistema advierte el solapamiento antes de guardar → usuario ajusta el horario y confirma.
 
 
-### 4.5. Mobile Applications Prototyping
+## 4.5. Mobile Applications Prototyping
 
-#### 4.5.1. Android Mobile Applications Prototyping
-> _Guía:_ Screenshot de video + enlace a Microsoft Stream.
+Esta sección documenta el prototipado interactivo de la aplicación móvil de CareStacks, desarrollada en Flutter y validada en ambas plataformas objetivo (Android e iOS) a partir de los wireframes y mockups definidos en el apartado anterior.
 
-#### 4.5.2. iOS Mobile Applications Prototyping
+### 4.5.1. Android Mobile Applications Prototyping
+
+El prototipo de la aplicación fue ejecutado y validado en un emulador/dispositivo Android, permitiendo comprobar la navegación entre los flujos principales: inicio de sesión, agenda, diario, documentos y notificaciones.
+
+| Pantalla | Captura |
+|---|---|
+| Perfil | ![Perfil Android](assets/perfil_android.png) |
+| Inicio de sesión | ![Login Android](assets/login_android.png) |
+| Registro | ![Registro Android](assets/registro_android.png) |
+| Home (Cuidador) | ![Home Android](assets/home_android.png) |
+| Agenda | ![Agenda Android](assets/agenda_android.png) |
+| Diario | ![Diario Android](assets/diario_android.png) |
+| Documentos | ![Documentos Android](assets/documentos_android.png) |
+| Notificaciones | ![Notificaciones Android](assets/notificaciones_android.png) |
+
+**Video del prototipo (Android):** [Enlace al video](PENDIENTE)
+
+### 4.5.2. iOS Mobile Applications Prototyping
+
+Gracias a que la aplicación está desarrollada en Flutter, el mismo código base fue ejecutado en un simulador de iOS, manteniendo consistencia visual y funcional respecto a la versión Android. Las capturas fueron tomadas con el backend local (CareConnect API) conectado y datos de prueba reales (un paciente vinculado a un cuidador mediante el módulo de Gestión de Consentimiento).
+
+| Pantalla | Captura |
+|---|---|
+| Perfil | ![Perfil iOS](assets/perfil_ios.png) |
+| Inicio de sesión | ![Login iOS](assets/login_ios.png) |
+| Registro | ![Registro iOS](assets/registro_ios.png) |
+| Home (Cuidador) | ![Home iOS](assets/home_ios.png) |
+| Agenda | ![Agenda iOS](assets/agenda_ios.png) |
+| Diario | ![Diario iOS](assets/diario_ios.png) |
+| Documentos | ![Documentos iOS](assets/documentos_ios.png) |
+| Notificaciones | ![Notificaciones iOS](assets/notificaciones_ios.png) |
+
+**Video del prototipo (iOS):** [Enlace al video](PENDIENTE)
 
 ### 4.6. Web Applications UX/UI Design
 
