@@ -1,16 +1,6 @@
-<!--
-=====================================================================
- PLANTILLA — Informe de Trabajo Final · 1ASI0732 Diseño de Experimentos
- Un solo archivo README.md (archivo principal del repositorio del informe).
- Estructura completa según el statement: 3 Partes, 8 Capítulos + anexos.
- Reemplazar cada <placeholder> y cada bloque > _Guía:_ con el contenido real.
- Recordar: actualizar y VERIFICAR la Tabla de Contenidos antes de cada entrega.
-=====================================================================
--->
-
 # Informe de Trabajo Final
 
-<!-- CARÁTULA -->
+
 <div align="center">
 
 <img src="assets/UPC_logo_transparente.png" alt="Logo UPC" width="180"/>
@@ -51,7 +41,6 @@ Producto: **CareConnect**
 
 ## Registro de Versiones del Informe
 
-> _Guía:_ Resumen de modificaciones relevantes durante el ciclo de vida. Una línea por versión, **un solo autor por línea**. La primera línea es la versión inicial. Modificaciones relevantes: adición/eliminación de secciones, correcciones/mejoras por feedback del docente o autocrítica del equipo.
 
 | Versión | Fecha (YYYY-MM-DD) | Autor | Descripción de modificación |
 |---------|--------------------|-------|-----------------------------|
@@ -61,7 +50,6 @@ Producto: **CareConnect**
 
 ## Project Report Collaboration Insights
 
-> _Guía:_ Indicar el URL del repositorio del Project Report en la organización GitHub del equipo. Por cada entrega, explicar cómo se desarrollaron las actividades del informe e incluir **capturas de los analíticos de colaboración y commits** en GitHub. Todos los integrantes deben participar. Debe ser coherente con el Registro de Versiones.
 
 - Repositorio del informe: \<url-repo-github>
 
@@ -69,7 +57,6 @@ Producto: **CareConnect**
 
 ## Tabla de Contenidos
 
-<!-- 4 niveles. Verificar los anclajes (#) antes de cada entrega: GitHub genera el ancla a partir del texto del título. -->
 
 - [Student Outcome](#student-outcome)
 - [Part I: As-Is Software Project](#part-i-as-is-software-project)
@@ -134,7 +121,6 @@ Producto: **CareConnect**
 
 ## Student Outcome
 
-> _Guía:_ Colocar el párrafo introductorio idéntico al Anexo A del statement. Una subsección por alumno describiendo la relación outcome–dimensiones–trabajo. En "Acciones realizadas" identificar cada participante y por entrega (AV1, TP, AV2, TB2). "Conclusiones" grupales y acumulables.
 
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
@@ -155,20 +141,16 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 ### 1.1. Startup Profile
 
 #### 1.1.1. Descripción de la Startup
-> _Guía:_ Descripción de CareStacks.
 
 #### 1.1.2. Perfiles de integrantes del equipo
-> _Guía:_ Por integrante: foto, nombres y apellidos, código, descripción de carrera y párrafo de conocimientos técnicos/habilidades que aporta.
 
 ### 1.2. Solution Profile
 
 #### 1.2.1. Antecedentes y problemática
-> _Guía:_ Enunciado del problema aplicando 5W+2H (Who, What, Where, When, Why, How, How Much). Objetivos y restricciones que delimitan el alcance.
 
 #### 1.2.2. Lean UX Process
 
 ##### 1.2.2.1. Lean UX Problem Statements
-> _Guía:_ Domain, customer segments, pain points, gap, vision/strategy, initial segment.
 
 ##### 1.2.2.2. Lean UX Assumptions
 
@@ -177,45 +159,36 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 ##### 1.2.2.4. Lean UX Canvas
 
 ### 1.3. Segmentos objetivo
-> _Guía:_ Descripción de segmentos con características demográficas e información estadística de sustento.
 
 ## Capítulo II: Requirements Elicitation & Analysis
 
 ### 2.1. Competidores
 
 #### 2.1.1. Análisis competitivo
-> _Guía:_ Competitive Analysis Landscape (mín. 3 competidores directos) + SWOT enfocado en la competencia.
 
 #### 2.1.2. Estrategias y tácticas frente a competidores
 
 ### 2.2. Entrevistas
 
 #### 2.2.1. Diseño de entrevistas
-> _Guía:_ Preguntas principales y complementarias por segmento.
 
 #### 2.2.2. Registro de entrevistas
-> _Guía:_ **3 a 5 entrevistas por segmento.** Nombres, apellidos, edad, distrito, screenshot y URL de Microsoft Stream con timing y duración. Resumen por entrevista.
 
 #### 2.2.3. Análisis de entrevistas
-> _Guía:_ Análisis por segmento con sustento estadístico (porcentajes).
 
 ### 2.3. Needfinding
 
 #### 2.3.1. User Personas
-> _Guía:_ Una ficha por segmento (UXPressia).
 
 #### 2.3.2. User Task Matrix
 
 #### 2.3.3. User Journey Mapping
-> _Guía:_ Versión As-Is, uno por User Persona (UXPressia).
 
 #### 2.3.4. Empathy Mapping
 
 #### 2.3.5. As-is Scenario Mapping
-> _Guía:_ Uno por User Persona (LucidChart/Miro). Filas Phases, Doing, Thinking, Feeling + áreas positivas/negativas/blank.
 
 ### 2.4. Ubiquitous Language
-> _Guía:_ Glosario del dominio, términos en inglés, sin términos técnicos de ingeniería de software.
 
 ## Capítulo III: Requirements Specification
 
@@ -232,10 +205,8 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 ### 4.1. Style Guidelines
 
 #### 4.1.1. General Style Guidelines
-> _Guía:_ Branding, Typography, Colors, Spacing + 4 dimensiones de tono (Divertido/Serio, Formal/Casual, Respetuoso/Irreverente, Entusiasta/Sereno).
 
 #### 4.1.2. Web Style Guidelines
-> _Guía:_ Estándares visuales y de interacción para responsive web interfaces (breakpoints, grid, estados, componentes PrimeVue).
 
 #### 4.1.3. Mobile Style Guidelines
 
@@ -250,7 +221,6 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 #### 4.2.2. Labeling Systems
 
 #### 4.2.3. SEO Tags and Meta Tags
-> _Guía:_ Title, Description, Keywords, Author como mínimo, para Landing Page y Web Application.
 
 #### 4.2.4. Searching Systems
 
@@ -259,27 +229,22 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 ### 4.3. Landing Page UI Design
 
 #### 4.3.1. Landing Page Wireframe
-> _Guía:_ Desktop Web Browser y Mobile Web Browser.
 
 #### 4.3.2. Landing Page Mock-up
-> _Guía:_ Desktop y Mobile Web Browser (Figma/Adobe XD).
 
 ### 4.4. Mobile Applications UX/UI Design
 
 #### 4.4.1. Mobile Applications Wireframes
 
 #### 4.4.2. Mobile Applications Wireflow Diagrams
-> _Guía:_ Un Wireflow por User goal.
 
 #### 4.4.3. Mobile Applications Mock-ups
 
 #### 4.4.4. Mobile Applications User Flow Diagrams
-> _Guía:_ Un User Flow por User goal (happy/unhappy paths).
 
 ### 4.5. Mobile Applications Prototyping
 
 #### 4.5.1. Android Mobile Applications Prototyping
-> _Guía:_ Screenshot de video + enlace a Microsoft Stream.
 
 #### 4.5.2. iOS Mobile Applications Prototyping
 
@@ -294,7 +259,6 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 #### 4.6.4. Web Applications User Flow Diagrams
 
 ### 4.7. Web Applications Prototyping
-> _Guía:_ Prototipo navegable Desktop + Mobile Web Browser. Screenshot + video en Microsoft Stream.
 
 ### 4.8. Domain-Driven Software Architecture
 
@@ -350,17 +314,6 @@ CareConnect también interactúa con diferentes servicios externos:
 | CareConnect | Identity Provider | Solicita o verifica identidad federada. |
 | CareConnect | Supabase Storage | Almacena y recupera archivos médicos privados. |
 
-> **[INSERTAR AQUÍ EL SOFTWARE ARCHITECTURE CONTEXT DIAGRAM]**
->
-> El diagrama debe mostrar:
-> - Paciente geriátrico.
-> - Cuidador.
-> - CareConnect como sistema central.
-> - Firebase Cloud Messaging.
-> - SendGrid.
-> - Identity Provider.
-> - Supabase Storage.
-> - Las relaciones entre los actores, CareConnect y los sistemas externos.
 
 ![Software Architecture Context Diagram](assets/careconnect-context-diagram.png)
 
@@ -408,22 +361,7 @@ Por lo tanto, existe una diferencia entre el producto actualmente implementado y
 
 La Frontend Web Application se plantea con **Vue + PrimeVue**, de acuerdo con el stack requerido para el proyecto.
 
-> **[INSERTAR AQUÍ EL SOFTWARE ARCHITECTURE CONTAINER DIAGRAM]**
->
-> Dentro de CareConnect se deben representar:
-> - Landing Page.
-> - Frontend Web Application.
-> - Mobile Application.
-> - Backend RESTful API.
-> - PostgreSQL Database.
-> - Local Storage.
->
-> Fuera de CareConnect:
-> - Firebase Cloud Messaging.
-> - SendGrid.
-> - Identity Provider.
-> - Supabase Storage.
->
+
 > También deben mostrarse las relaciones y protocolos principales.
 
 ![Software Architecture Container Diagram](assets/careconnect-container-1-diagram.png)
@@ -459,27 +397,6 @@ El Software Architecture Components Diagram representa la organización interna 
 - **Notificaciones** concentra la integración con Firebase Cloud Messaging y SendGrid.
 - **Documentos** encapsula la integración con Supabase Storage.
 
-> **[INSERTAR AQUÍ EL SOFTWARE ARCHITECTURE COMPONENTS DIAGRAM]**
->
-> Dentro del Backend RESTful API deben aparecer:
-> - IAM.
-> - Gestión de Consentimiento.
-> - Agenda.
-> - Notificaciones.
-> - Diario de Seguimiento.
-> - Documentos.
-> - Shared Components.
->
-> Fuera del backend se deben representar:
-> - Mobile Application.
-> - Frontend Web Application.
-> - PostgreSQL.
-> - Identity Provider.
-> - Firebase Cloud Messaging.
-> - SendGrid.
-> - Supabase Storage.
->
-> También deben mostrarse las relaciones principales entre los bounded contexts.
 
 ![Software Architecture Components Diagram](assets/careconnect-components-1-diagram.png)
 ![Software Architecture Components Diagram](assets/careconnect-components-2-diagram.png)
@@ -517,7 +434,6 @@ El bounded context Agenda controla los eventos de salud asociados a un paciente.
 
 El bounded context Notificaciones administra las comunicaciones generadas por CareConnect, incluyendo recordatorios, alertas y preferencias de comunicación.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE NOTIFICACIONES]**
 
 ![Class Diagram - Notificaciones](assets/careconnect-notifications-class-diagram.png)
 
@@ -527,17 +443,14 @@ El bounded context Notificaciones administra las comunicaciones generadas por Ca
 
 El bounded context Diario de Seguimiento gestiona las notas registradas sobre la evolución del paciente.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE DIARIO DE SEGUIMIENTO]**
 
 ![Class Diagram - Diario](assets/careconnect-diary-class-diagram.png)
 
 *Figura X. Diagrama de clases del bounded context Diario de Seguimiento.*
 
-##### Bounded Context: Gestión de Consentimiento
 
 Este bounded context controla el ciclo de vida de los accesos compartidos entre pacientes y cuidadores.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE GESTIÓN DE CONSENTIMIENTO]**
 
 ![Class Diagram - Consentimiento](assets/careconnect-consent-class-diagram.png)
 
@@ -547,7 +460,6 @@ Este bounded context controla el ciclo de vida de los accesos compartidos entre 
 
 El bounded context Documentos administra la información asociada a documentos médicos y la referencia necesaria para acceder a los archivos almacenados externamente.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE DOCUMENTOS]**
 
 ![Class Diagram - Documentos](assets/careconnect-documents-class-diagram.png)
 
@@ -559,17 +471,7 @@ El bounded context Autenticación gestiona las cuentas de usuario, autenticació
 
 La entidad principal es `User`, que contiene información relacionada con el correo electrónico, hash de contraseña, nombre completo, rol, estado de la cuenta, intentos fallidos de autenticación y bloqueo temporal.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE AUTENTICACIÓN / IAM]**
->
-> Debe incluir los elementos reales del módulo IAM, entre ellos:
-> - `User`.
-> - `UserRole`.
-> - Contrato del servicio de autenticación.
-> - Implementación del servicio de autenticación.
-> - Repositorio de usuarios.
-> - Mapper.
-> - REST Controller.
-> - Relaciones principales entre dichos elementos.
+
 
 ![Class Diagram - IAM](assets/careconnect-iam-class-diagram.png)
 
@@ -687,18 +589,6 @@ Los archivos médicos se almacenan en **Supabase Storage** y no como datos binar
 
 La base relacional conserva únicamente la información necesaria para identificar el documento y recuperar de forma segura el archivo correspondiente.
 
-> **[INSERTAR AQUÍ EL RELATIONAL/NON-RELATIONAL DATABASE DIAGRAM INTEGRADO]**
->
-> El diagrama debe:
-> - Representar las tablas reales del esquema implementado.
-> - Identificar claramente a qué bounded context pertenece cada conjunto de tablas.
-> - Mostrar Primary Keys.
-> - Mostrar Foreign Keys.
-> - Mostrar cardinalidades.
-> - Mostrar los tipos de datos principales.
-> - Representar la referencia entre la metadata documental y Supabase Storage cuando corresponda.
->
-> Antes de insertar la figura definitiva, verificar los nombres de tablas y columnas contra el esquema vigente del backend para evitar diferencias entre el diagrama y la implementación.
 
 ![Integrated Database Diagram](assets/careconnect-database-1-diagram.png)
 ![Integrated Database Diagram](assets/careconnect-database-2-diagram.png)
@@ -1074,7 +964,6 @@ public class HealthEventService {
     private static final int MAX_RETRIES = 3;
 
     public void confirmHealthEvent(UUID eventId) {
-        // Implementation
     }
 }
 ```
@@ -1097,7 +986,6 @@ Ejemplo:
 class AgendaViewModel : ViewModel() {
 
     fun confirmEvent(eventId: String) {
-        // Implementation
     }
 }
 ```
@@ -1120,7 +1008,6 @@ Ejemplo:
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function loadNotifications() {
-    // Implementation
 }
 ```
 
@@ -1404,7 +1291,6 @@ La configuración de despliegue debe actualizarse conforme se implementen nuevos
 
 ### 5.2.1. Sprint Backlogs
 
-> Nota: esta sección (5.2.1) corresponde a Angela Espinoza según la distribución del equipo. Se incluye aquí como referencia/borrador para que ella lo revise y ajuste.
 
 #### Sprint 1
 
@@ -1503,7 +1389,6 @@ A continuación, evidencia de la aplicación web corriendo localmente contra el 
 | Notificaciones | ![Notificaciones Web](assets/notificaciones_web.png) |
 
 #### 5.2.4. Acuerdo de Servicio - SaaS
-> _Guía:_ Derechos, obligaciones y restricciones. Publicado en "Terms and Conditions" del website y enlazado en footers, con referencia a códigos de ética ACM/IEEE y CIP.
 
 ### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
 
@@ -1540,12 +1425,10 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 *Figura X. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Documents, Diary, Consents, IAM y Agenda.*
 
 #### 5.2.7. RESTful API documentation
-> _Guía:_ OpenAPI vía Swagger. Por acción: verbo HTTP, sintaxis, parámetros, ejemplo y explicación del response.
 
 #### 5.2.8. Team Collaboration Insights
 
 ### 5.3. Video About-the-Product
-> _Guía:_ Screenshot, URL OneDrive del docente + URL YouTube, duración (1–3 min), al menos un testimonio de usuario. Incrustado en el Landing Page.
 
 ---
 
@@ -1560,7 +1443,6 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 #### 6.1.2. Core Integration Tests
 
 #### 6.1.3. Core Behavior-Driven Development
-> _Guía:_ Archivos `.feature` en Gherkin ligados a User Stories + Steps en el lenguaje de programación.
 
 #### 6.1.4. Core System Tests
 
@@ -1571,7 +1453,6 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 ##### 6.2.1.1. Coding standard & Code conventions
 
 ##### 6.2.1.2. Code Quality & Code Security
-> _Guía:_ Complejidad, duplicación, mantenibilidad + vulnerabilidades (SQLi, XSS, datos sensibles). SonarQube/ESLint/Checkmarx.
 
 #### 6.2.2. Reviews
 
@@ -1580,10 +1461,8 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 #### 6.3.1. Diseño de Entrevistas
 
 #### 6.3.2. Registro de Entrevistas
-> _Guía:_ 3 a 5 entrevistas por segmento. Nombres, edad, distrito, screenshot, URL Microsoft Stream con timing.
 
 #### 6.3.3. Evaluaciones según heurísticas
-> _Guía:_ Formato del Anexo D (usabilidad, arquitectura de información, inclusive design) con escala de severidad.
 
 ### 6.4. Auditoría de Experiencias de Usuario
 
@@ -1648,37 +1527,28 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 #### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 
 #### 8.1.3. Experiment-Ready Questions
-> _Guía:_ Belief-led vs. Exploratory. Aplicar 5W+H para descubrir premisas ocultas.
 
 #### 8.1.4. Question Backlog
-> _Guía:_ Lista priorizada de **preguntas** (no features). Motivación "por qué" + puntuación Confianza/Riesgo/Impacto/Interés; en empate gana mayor Riesgo.
 
 #### 8.1.5. Experiment Cards
-> _Guía:_ Frontal: Pregunta, Por qué, Hipótesis, Simplest Useful Thing. Posterior: Medidas, Condiciones, Escala.
 
 ### 8.2. Experiment Design
 
 #### 8.2.1. Hypotheses
-> _Guía:_ Falsificables, testables, medibles. Emparejar cada una con su Hipótesis Nula.
 
 #### 8.2.2. Domain Business Metrics
-> _Guía:_ Cada métrica con fórmula, técnica de recolección y meta. Las Experiment Cards solo referencian métricas definidas aquí.
 
 #### 8.2.3. Measures
 
 #### 8.2.4. Conditions
-> _Guía:_ Condición experimental vs. de control.
 
 #### 8.2.5. Scale Calculations and Decisions
-> _Guía:_ Significancia 5%, potencia 80–95%, MDE explícito. Mostrar cálculo del tamaño de muestra.
 
 #### 8.2.6. Methods Selection
-> _Guía:_ Simplest Useful Thing. No ejecutar dos experimentos simultáneos sobre el mismo tema/usuario. Consideración ética de no causar daño.
 
 #### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
 #### 8.2.8. Web and Mobile Tracking Plan
-> _Guía:_ Eventos, propiedades, herramienta y punto de captura por producto.
 
 ### 8.3. Experimentation
 
@@ -1709,7 +1579,6 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 ### 8.4. Experiment Aftermath & Analysis
 
 #### 8.4.1. Analysis and Interpretation of Results
-> _Guía:_ Interpretar datos contra hipótesis e hipótesis nula. La hipótesis se **prueba**, no se "valida".
 
 #### 8.4.2. Re-scored and Re-prioritized Question Backlog
 
@@ -1722,12 +1591,10 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 #### 8.6.1. About-the-Product Intro Video
 
 #### 8.6.2. Resumen usando Gees Framework
-> _Guía:_ Matriz con lentes Global, Economic, Environmental, Social; por cada una: indicador clave, hallazgo del sistema y estándar internacional de referencia (ISO/IEC 27001, 25010, ISO 14001, ISO 26000, WCAG 2.2).
 
 ---
 
 ## Matriz de Evaluación Ética y de Impacto
-> _Guía:_ 7 dimensiones (Anexo F): Salud Pública y Seguridad; Inclusión y Accesibilidad; Impacto Social y Cultural; Impacto Económico; Impacto Ambiental; Enfoque Global; Revelación de Peligros y Responsabilidad. Por cada una: riesgos positivos/negativos, a quién afecta y magnitud, y acciones de mitigación.
 
 | Dimensión / Criterio | Identificación de Riesgos e Impactos | Evaluación del Impacto (¿a quién y magnitud?) | Estrategias de Mitigación y Acciones de Diseño |
 |----------------------|--------------------------------------|-----------------------------------------------|------------------------------------------------|
@@ -1744,23 +1611,18 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 ## Conclusiones
 
 ### Conclusiones y recomendaciones
-> _Guía:_ Contrastar Problem Statements, Assumptions, Hypothesis Statements y criterios de éxito del Lean UX frente a los resultados de las validaciones/experimentos. Recomendaciones sobre el Roadmap.
 
 ### Video App Validation
-> _Guía:_ Evaluación con usuarios vía Firebase App Distribution + video.
 
 ### Video About-the-Team
-> _Guía:_ Pauta de secuencias con timing hh:mm:ss por sección, cuadro de video representativo, URL Stream + YouTube. Testimonio ante cámara de cada participante (outcomes y competencias, alineado al Outcome 4).
 
 ---
 
 ## Bibliografía
-> _Guía:_ Referencias en formato APA 7ma edición (https://normas-apa.org/).
 
 ---
 
 ## Anexos
-> _Guía:_ Cada anexo inicia en nueva página, diferenciado con letra mayúscula (Anexo A, B, …). Incluir el **Anexo: Videos de Exposiciones** con título e hipervínculo por entrega.
 
 ### Anexo: Videos de Exposiciones
 | Entrega | Título | Enlace (Microsoft Stream) |
