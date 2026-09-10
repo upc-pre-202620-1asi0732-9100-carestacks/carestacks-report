@@ -1402,8 +1402,32 @@ La configuración de despliegue debe actualizarse conforme se implementen nuevos
 
 ### 5.2. Product Implementation & Deployment
 
-#### 5.2.1. Sprint Backlogs
-> _Guía:_ Por Sprint: Planning (fecha, hora, asistentes, Sprint Goal), Sprint Backlog, Development/Execution/Services Documentation Evidence, Team Collaboration Insights.
+### 5.2.1. Sprint Backlogs
+
+> Nota: esta sección (5.2.1) corresponde a Angela Espinoza según la distribución del equipo. Se incluye aquí como referencia/borrador para que ella lo revise y ajuste.
+
+#### Sprint 1
+
+Durante el Sprint 1, el equipo se dividió el trabajo por capítulos: documentación de fundamentos del producto (Capítulo I), investigación de usuario y competencia (Capítulo II), especificación de requisitos (Capítulo III), arquitectura y diseño visual (Capítulo IV) y las primeras evidencias de implementación (Capítulo V), reutilizando como base el proyecto CareConnect del ciclo anterior.
+
+| Sprint | Sección del Reporte | Título | Tarea técnica asociada | Description | Estimation (SP) | Assigned To | Status |
+|---|---|---|---|---|---|---|---|
+| 1 | Cap. I completo | Startup Profile, problemática, Lean UX, segmentos objetivo | Redactar descripción de la startup, perfiles de equipo, problem statement, Lean UX Assumptions/Hypothesis/Canvas y segmentos objetivo | Completar el Capítulo I: Introducción. | 8 | Espinoza Cruz, Angela Milagros | Done |
+| 1 | 2.1 | Análisis competitivo | Investigar competidores, landscape, estrategias y tácticas | Completar el análisis competitivo con tabla comparativa y logos. | 5 | Espinoza Cruz, Angela Milagros | Done |
+| 1 | 2.2 – 2.4 | Entrevistas, Needfinding y Ubiquitous Language | Diseñar y registrar entrevistas, elaborar User Personas, Journey Maps, Empathy Maps y glosario ubicuo | Completar el Capítulo II: Requirements Elicitation & Analysis. | 8 | Espinoza Cruz, Angela Milagros | Done |
+| 1 | Cap. III completo | Requirements Specification | Redactar To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping | Completar el Capítulo III. | 8 | Salcedo Champi, Matias Rodolfo | Done |
+| 1 | Avance Conclusiones/Bibliografía/Anexos | — | Redactar avance preliminar de cierre del informe | Iniciar borrador de conclusiones, bibliografía y anexos. | 2 | Salcedo Champi, Matias Rodolfo | Done |
+| 1 | 4.1 – 4.3 | Style Guidelines, Information Architecture, Landing Page UI Design | Definir guías de estilo (general, web, mobile), arquitectura de información y diseño del landing page | Completar las secciones iniciales del Capítulo IV. | 8 | Baldeon Armas, Santiago Armando | Done |
+| 1 | 4.4 | Mobile Applications UX/UI Design | Elaborar wireframes, wireflow diagrams, mock-ups y user flow diagrams de la app móvil | Completar el diseño UX/UI de la aplicación móvil (base para el prototipado Kotlin/Flutter). | 5 | Baldeon Armas, Santiago Armando | Done |
+| 1 | 4.8 – 4.10 | Domain-Driven Software Architecture, OO Design, Database Design | Documentar diagramas de contexto, contenedores y componentes; diagrama y diccionario de clases; diagrama de base de datos | Completar la arquitectura técnica del Capítulo IV. | 8 | Nikaido Vargas, Javier Masaru | Done |
+| 1 | 5.1 | Software Configuration Management | Documentar entorno de desarrollo, gestión de código fuente, convenciones y configuración de despliegue | Completar la sección 5.1 del Capítulo V. | 5 | Nikaido Vargas, Javier Masaru | Done |
+| 1 | 5.2.2 | Implemented Landing Page Evidence | Documentar evidencia de implementación del Landing Page | Completar con capturas del landing desplegado. | 2 | Nikaido Vargas, Javier Masaru | Done |
+| 1 | 4.5 | Mobile Applications Prototyping (Android + iOS) | Registrar cuentas de prueba, conectar Flutter (cuidador) al backend local, capturar 8 pantallas en iOS; preparar app Kotlin (paciente) para Android | Completar 4.5.1 y 4.5.2 con capturas y video del prototipo. | 8 | Muñiz Huayanca, Percy Alonso | Done |
+| 1 | 4.6 – 4.7 | Web Applications UX/UI Design y Prototyping | Adaptar la base Flutter del cuidador a un layout web (breakpoints, sidebar, jerarquía visual) como referencia para el diseño Figma | Completar el diseño y prototipado de la aplicación web. | 8 | Muñiz Huayanca, Percy Alonso | Done |
+
+**Total comprometido:** 75 Story Points.
+
+**Sprint Goal:** Completar la documentación base del informe (Capítulos I al III), la arquitectura y diseño visual del producto (Capítulo IV) y las primeras evidencias de implementación (Landing Page, Software Configuration Management y Mobile Prototyping), reutilizando como punto de partida el proyecto CareConnect del ciclo anterior.
 
 #### 5.2.2. Implemented Landing Page Evidence
 
