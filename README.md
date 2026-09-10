@@ -1454,9 +1454,39 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 #### 5.2.4. Acuerdo de Servicio - SaaS
 > _Guía:_ Derechos, obligaciones y restricciones. Publicado en "Terms and Conditions" del website y enlazado en footers, con referencia a códigos de ética ACM/IEEE y CIP.
 
-#### 5.2.5. Implemented Native-Mobile Application Evidence
+### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
 
-#### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+El backend de CareStacks se implementó con **Spring Boot 4 + Java 25**, reutilizando como base la arquitectura del proyecto anterior (CareConnect), organizado en seis bounded contexts: IAM, Agenda, Notificaciones, Diario, Documentos y Gestión de Consentimiento. Para desarrollo local se utiliza una base de datos **H2 en memoria** (modo compatibilidad PostgreSQL), lo que permite levantar el backend sin dependencias externas.
+
+El backend fue ejecutado y validado localmente, confirmando el correcto arranque del servidor Tomcat embebido, la inicialización de los repositorios JPA y la exposición de la documentación interactiva vía Swagger/OpenAPI, cubriendo todos los endpoints implementados en los seis bounded contexts.
+
+### 5.2.6. RESTful API documentation
+
+La documentación de la API se generó automáticamente mediante **SpringDoc OpenAPI**, disponible en `/swagger-ui.html`. A continuación se detallan los endpoints expuestos por cada bounded context del sistema, así como los esquemas (DTOs y requests) que estructuran los datos intercambiados.
+
+![Endpoints — Gestión de Consentimiento y Documents](assets/swagger_1.png)
+
+*Figura X. Endpoints del módulo Gestión de Consentimiento (`/api/consents`) y Documents (`/api/documents`): compartir perfil, actualizar vistas visibles, validar acceso, y gestión de documentos médicos.*
+
+![Endpoints — Diary y Notifications](assets/swagger_2.png)
+
+*Figura X. Endpoints del módulo Diary (`/api/diary`) y Notifications (`/api/notifications`): entradas de diario, recordatorios, alertas y preferencias de notificación.*
+
+![Endpoints — IAM](assets/swagger_3.png)
+
+*Figura X. Endpoints del módulo IAM (`/api/auth`): registro, login, logout, validación de sesión y consulta de usuario actual.*
+
+![Endpoints — Agenda](assets/swagger_4.png)
+
+*Figura X. Endpoints del módulo Agenda (`/api/agenda`): creación, consulta, reprogramación, confirmación y cancelación de eventos de salud.*
+
+![Esquemas de datos (DTOs y Requests) — parte 1](assets/schema1.png)
+
+*Figura X. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Notifications, Diary, Consents y Agenda.*
+
+![Esquemas de datos (DTOs y Requests) — parte 2](assets/schema2.png)
+
+*Figura X. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Documents, Diary, Consents, IAM y Agenda.*
 
 #### 5.2.7. RESTful API documentation
 > _Guía:_ OpenAPI vía Swagger. Por acción: verbo HTTP, sintaxis, parámetros, ejemplo y explicación del response.
