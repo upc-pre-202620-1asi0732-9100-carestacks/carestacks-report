@@ -1473,7 +1473,34 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 ![CareConnect Landing Page Footer](chapter5/careconnect-landing-footer.png)
 
 *Figura X. Planes, llamada a la acción y footer de la Landing Page.*
-#### 5.2.3. Implemented Frontend-Web Application Evidence
+### 5.2.3. Implemented Frontend-Web Application Evidence
+
+La aplicación web de CareStacks reutiliza como base el código Flutter del segmento cuidador (compartido con la versión móvil iOS, §5.2.4), habilitado para el target web de Flutter y rediseñado específicamente para pantallas de escritorio.
+
+**Cambios de implementación:**
+
+- **Sistema de layout responsive** (`core/layout/care_breakpoints.dart`): tres anchos de referencia resueltos con `MediaQuery`, sin paquetes externos — bottom nav y columna única por debajo de 768px, sidebar en riel de íconos entre 768–1279px, sidebar con etiquetas y panel de detalle desde 1280px.
+- **Shell compartido** (`core/widgets/care_app_shell.dart`): sidebar fijo, cabecera fija, panel de detalle a la derecha en escritorio; barra superior y bottom nav en angosto.
+- **Jerarquía visual en 4 niveles**: `CareCard` ahora tiene variantes *hero*, *standard*, *quiet* y *flat*, reemplazando el uso repetido de una sola tarjeta con el mismo radio y sombra.
+- **Pantallas rediseñadas**: Inicio (grilla con hero del próximo evento, cifras del día y panel de paciente/invitaciones/actividad), Agenda (semana completa en 7 columnas con detalle lateral), Documentos (tabla con filtros y panel de detalle en vez de tarjetas apiladas), Diario (grilla de notas con editor fijo lateral), Perfil (dos columnas) y Login (rediseñado por ser la primera pantalla del producto).
+- **Tipografía**: Inter cargada por `<link>` en `web/index.html`, con la stack del sistema como respaldo; cifras de horas y métricas con `FontFeature.tabularFigures`.
+- **Paleta de colores**: sin modificaciones respecto a `app_colors.dart` — verificado que no existen literales `Color(0x...)` fuera de ese archivo.
+- La capa de datos (`lib/features/*/data/`) no fue modificada; solo se trabajó sobre `presentation/`.
+
+**Verificación:** análisis estático limpio, 27 tests de widget que montan las cinco pantallas principales y el panel de notificaciones en cuatro anchos distintos (detectando y corrigiendo 5 desbordes reales de layout), y build de producción (`flutter build web --release`) exitoso.
+
+A continuación, evidencia de la aplicación web corriendo localmente contra el backend de CareConnect API, con datos de prueba reales (paciente vinculado a cuidador vía el módulo de Gestión de Consentimiento).
+
+| Pantalla | Captura |
+|---|---|
+| Perfil | ![Perfil Web](assets/perfil_web.png) |
+| Inicio de sesión | ![Login Web](assets/login_web.png) |
+| Registro | ![Registro Web](assets/registro_web.png) |
+| Home (Cuidador) | ![Home Web](assets/home_web.png) |
+| Agenda | ![Agenda Web](assets/agenda_web.png) |
+| Diario | ![Diario Web](assets/diario_web.png) |
+| Documentos | ![Documentos Web](assets/documentos_web.png) |
+| Notificaciones | ![Notificaciones Web](assets/notificaciones_web.png) |
 
 #### 5.2.4. Acuerdo de Servicio - SaaS
 > _Guía:_ Derechos, obligaciones y restricciones. Publicado en "Terms and Conditions" del website y enlazado en footers, con referencia a códigos de ética ACM/IEEE y CIP.
