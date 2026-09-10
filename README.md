@@ -203,10 +203,10 @@ El mercado de aplicaciones móviles orientadas a la salud personal presenta una 
   </tr>
   <tr>
     <td colspan="2"><i>Nombre y Logo</i></td>
-    <td align="center"><i>[Insertar logo de CareConnect]</i><br><b>CareConnect</b></td>
-    <td align="center"><i>[Insertar logo de Medisafe]</i><br><b>Medisafe</b></td>
-    <td align="center"><i>[Insertar logo de MyTherapy]</i><br><b>MyTherapy</b></td>
-    <td align="center"><i>[Insertar logo de Caring Village]</i><br><b>Caring Village</b></td>
+    <td align="center"><img src="assets/chapter-2/competitor-logos/careconnect-logo.jpg" alt="Logo CareConnect" width="80" height="80" style="object-fit:contain;"/><br><b>CareConnect</b></td>
+    <td align="center"><img src="assets/chapter-2/competitor-logos/medisafe-logo.jpg" alt="Logo Medisafe" width="80" height="80" style="object-fit:contain;"/><br><b>Medisafe</b></td>
+    <td align="center"><img src="assets/chapter-2/competitor-logos/mytherapy-logo.png" alt="Logo MyTherapy" width="80" height="80" style="object-fit:contain;"/><br><b>MyTherapy</b></td>
+    <td align="center"><img src="assets/chapter-2/competitor-logos/caring-village-logo.jpg" alt="Logo Caring Village" width="80" height="80" style="object-fit:contain;"/><br><b>Caring Village</b></td>
   </tr>
   <tr>
     <td rowspan="2" align="center"><b>Perfil</b></td>
