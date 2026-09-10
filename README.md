@@ -580,7 +580,7 @@ Gracias a que la aplicación está desarrollada en Flutter, el mismo código bas
 | Documentos | ![Documentos iOS](assets/documentos_ios.png) |
 | Notificaciones | ![Notificaciones iOS](assets/notificaciones_ios.png) |
 
-**Video del prototipo (iOS):** [Enlace al video](PENDIENTE)
+**Video del prototipo (iOS):** [Enlace al video](https://youtu.be/050WhJadiuY)
 
 ### 4.6. Web Applications UX/UI Design
 
