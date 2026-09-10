@@ -546,18 +546,21 @@ Un user flow por objetivo de usuario, contemplando *happy path* y *unhappy path*
 
 ## 4.5. Mobile Applications Prototyping
 
-Esta sección documenta el prototipado interactivo de la aplicación móvil de CareStacks, desarrollada en Flutter y validada en ambas plataformas objetivo (Android e iOS) a partir de los wireframes y mockups definidos en el apartado anterior.
+Esta sección documenta el prototipado interactivo de la aplicación móvil de CareStacks. Para cubrir ambos segmentos objetivo (cuidador y paciente) y ambas plataformas nativas, se utilizaron dos bases de código distintas heredadas del proyecto anterior:
+
+- **iOS → segmento Cuidador**, con la aplicación desarrollada en **Flutter**.
+- **Android → segmento Paciente**, con la aplicación nativa desarrollada en **Kotlin + Jetpack Compose**.
 
 ### 4.5.1. Android Mobile Applications Prototyping
 
-El prototipo de la aplicación fue ejecutado y validado en un emulador/dispositivo Android, permitiendo comprobar la navegación entre los flujos principales: inicio de sesión, agenda, diario, documentos y notificaciones.
+El prototipo fue ejecutado y validado en un emulador Android, correspondiente a la aplicación nativa en **Kotlin + Jetpack Compose**, enfocada en el segmento **paciente**: consulta de agenda, diario personal, documentos médicos y notificaciones desde la perspectiva del paciente geriátrico.
 
 | Pantalla | Captura |
 |---|---|
 | Perfil | ![Perfil Android](assets/perfil_android.png) |
 | Inicio de sesión | ![Login Android](assets/login_android.png) |
 | Registro | ![Registro Android](assets/registro_android.png) |
-| Home (Cuidador) | ![Home Android](assets/home_android.png) |
+| Home (Paciente) | ![Home Android](assets/home_android.png) |
 | Agenda | ![Agenda Android](assets/agenda_android.png) |
 | Diario | ![Diario Android](assets/diario_android.png) |
 | Documentos | ![Documentos Android](assets/documentos_android.png) |
@@ -567,7 +570,7 @@ El prototipo de la aplicación fue ejecutado y validado en un emulador/dispositi
 
 ### 4.5.2. iOS Mobile Applications Prototyping
 
-Gracias a que la aplicación está desarrollada en Flutter, el mismo código base fue ejecutado en un simulador de iOS, manteniendo consistencia visual y funcional respecto a la versión Android. Las capturas fueron tomadas con el backend local (CareConnect API) conectado y datos de prueba reales (un paciente vinculado a un cuidador mediante el módulo de Gestión de Consentimiento).
+El prototipo fue ejecutado y validado en un simulador de iOS, correspondiente a la aplicación multiplataforma en **Flutter**, enfocada en el segmento **cuidador**: gestión de pacientes asignados, agenda, diario compartido, documentos médicos y notificaciones. Las capturas fueron tomadas con el backend local (CareConnect API) conectado y datos de prueba reales (un paciente vinculado a un cuidador mediante el módulo de Gestión de Consentimiento).
 
 | Pantalla | Captura |
 |---|---|
@@ -580,7 +583,7 @@ Gracias a que la aplicación está desarrollada en Flutter, el mismo código bas
 | Documentos | ![Documentos iOS](assets/documentos_ios.png) |
 | Notificaciones | ![Notificaciones iOS](assets/notificaciones_ios.png) |
 
-**Video del prototipo (iOS):** [Enlace al video](https://youtu.be/050WhJadiuY)
+**Video del prototipo (iOS):** [Ver video](https://youtu.be/050WhJadiuY)
 
 ### 4.6. Web Applications UX/UI Design
 
