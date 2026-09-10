@@ -1475,7 +1475,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 *Figura X. Planes, llamada a la acción y footer de la Landing Page.*
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
-La aplicación web de CareStacks reutiliza como base el código Flutter del segmento cuidador (compartido con la versión móvil iOS, §5.2.4), habilitado para el target web de Flutter y rediseñado específicamente para pantallas de escritorio.
+La aplicación web de CareStacks reutiliza como base el código Flutter del segmento cuidador (compartido con la versión móvil iOS, 5.2.4), habilitado para el target web de Flutter y rediseñado específicamente para pantallas de escritorio.
 
 **Cambios de implementación:**
 
