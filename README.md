@@ -575,13 +575,41 @@ El prototipo fue ejecutado y validado en un simulador de iOS, correspondiente a 
 
 ### 4.6. Web Applications UX/UI Design
 
+El diseño de la aplicación web de CareConnect contempla los principales recorridos del cuidador: registro e inicio de sesión, consulta del resumen diario, gestión de agenda, revisión de documentos, registro en el diario, consulta del perfil y visualización de notificaciones.
+
+- [Archivo editable de wireframes, flujos y mock-ups en Figma](https://www.figma.com/design/1TzGaaQLzkBu26Ojno1AVU/CareConnect-%E2%80%94-Web-Applications-UX-UI-Design--4.6-?node-id=4-5&p=f)
+
 #### 4.6.1. Web Applications Wireframes
+
+Los wireframes presentan la estructura de baja fidelidad de las ocho vistas principales. Permiten validar la jerarquía, la navegación, la distribución de contenido y las acciones antes de aplicar el sistema visual definitivo. El conjunto incluye las pantallas de iniciar sesión, crear cuenta, inicio, agenda, documentos, diario, perfil y notificaciones; se encuentra organizado en la página **01 Wireframes** del archivo de Figma.
 
 #### 4.6.2. Web Applications Wireflow Diagrams
 
+El Wireflow representa el recorrido de navegación de izquierda a derecha. El cuidador crea una cuenta o accede con sus credenciales y llega a **Inicio**, desde donde puede abrir Agenda, Documentos, Diario, Perfil y Notificaciones. La campana proporciona acceso lateral a las notificaciones y todas las pantallas conservan un retorno claro al inicio.
+
+![Wireflow y User Flow de la aplicación web de CareConnect](assets/ux-flows-original-readable-v2.svg)
+
+*Figura X. Wireflow y User Flow de la aplicación web de CareConnect, organizados para una lectura de izquierda a derecha.*
+
 #### 4.6.3. Web Applications Mock-ups
 
+Los mock-ups de alta fidelidad mantienen una identidad visual serena y accesible, con predominio del morado, fondos cálidos, tarjetas de contraste suave y estados vacíos claramente comunicados. El conjunto completo está disponible en la página **03 Mock-ups** del archivo de Figma.
+
+| Autenticación | Acceso principal |
+|---|---|
+| <img src="assets/login_web.png" alt="Mock-up web de inicio de sesión" width="480"/> | <img src="assets/registro_web.png" alt="Mock-up web de creación de cuenta" width="480"/> |
+| <img src="assets/home_web.png" alt="Mock-up web de la página de inicio" width="480"/> | <img src="assets/agenda_web.png" alt="Mock-up web de agenda" width="480"/> |
+
+| Seguimiento y cuenta | Vistas del portal |
+|---|---|
+| <img src="assets/documentos_web.png" alt="Mock-up web de documentos" width="480"/> | <img src="assets/diario_web.png" alt="Mock-up web del diario" width="480"/> |
+| <img src="assets/perfil_web.png" alt="Mock-up web del perfil" width="480"/> | <img src="assets/notificaciones_web.png" alt="Mock-up web de notificaciones" width="480"/> |
+
 #### 4.6.4. Web Applications User Flow Diagrams
+
+El User Flow, presentado junto al Wireflow en la figura anterior, representa las rutas satisfactorias y de error del cuidador. Incluye las decisiones sobre la existencia de una cuenta, la validez de los datos de registro y de las credenciales, la corrección y el reintento, además de la selección de la tarea principal. Las rutas satisfactorias concluyen con la ejecución de una tarea en Agenda, Documentos, Diario, Perfil o Notificaciones.
+
+[Ver el Wireflow y User Flow editables en la página **02 UX Flows** de Figma](https://www.figma.com/design/1TzGaaQLzkBu26Ojno1AVU/CareConnect-%E2%80%94-Web-Applications-UX-UI-Design--4.6-?node-id=4-5&p=f)
 
 ## 4.7. Web Applications Prototyping
 
@@ -601,7 +629,6 @@ El prototipo reemplaza el layout móvil original (bottom nav, columna única) po
 | Notificaciones | ![Notificaciones Web](assets/notificaciones_web.png) |
 
 **Video del prototipo (Web):** [Ver video](https://youtu.be/050WhJadiuY)
-
 
 ### 4.8. Domain-Driven Software Architecture
 

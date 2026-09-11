@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="720" viewBox="0 0 1900 720">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#747474"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#EF4E33"/></marker>
+    <style>
+      .h{font:700 23px Inter,Arial,sans-serif;fill:#171B2A}.s{font:400 14px Inter,Arial,sans-serif;fill:#706B7E}.t{font:600 14px Inter,Arial,sans-serif;fill:#2B2B31;text-anchor:middle;dominant-baseline:middle}.sm{font:600 12px Inter,Arial,sans-serif;fill:#4F4F58;text-anchor:middle;dominant-baseline:middle}.lab{font:700 12px Inter,Arial,sans-serif;fill:#55515F}.rl{font:700 12px Inter,Arial,sans-serif;fill:#D94A35}
+      .b{fill:#fff;stroke:#747474;stroke-width:2.5}.st{fill:#EEE7FF;stroke:#8758FF;stroke-width:2.5}.d{fill:#FFF6DD;stroke:#F5BC3D;stroke-width:2.5}.er{fill:#FFE8E2;stroke:#FF775F;stroke-width:2.5}.ok{fill:#E9F9EC;stroke:#5DC978;stroke-width:2.5}.no{fill:#FFF3D6;stroke:#F0B234;stroke-width:2.5}.ln{fill:none;stroke:#747474;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#a)}.red{fill:none;stroke:#EF4E33;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#r)}
+    </style>
+  </defs>
+  <rect width="1900" height="720" rx="24" fill="#fff"/>
+
+  <!-- User Flow, left: original branching model -->
+  <rect x="18" y="18" width="1205" height="684" rx="20" fill="#FFFFFF" stroke="#E2DFEC" stroke-width="2"/>
+  <text x="45" y="54" class="h">4.6.4 User Flow · happy/unhappy</text>
+  <text x="45" y="78" class="s">Mismo modelo de decisiones, corrección y selección de tarea</text>
+
+  <rect x="42" y="298" width="150" height="54" rx="27" class="st"/><text x="117" y="325" class="t">Abrir CareConnect</text>
+  <path d="M192 325H235" class="ln"/>
+  <path d="M275 285 315 325 275 365 235 325Z" class="d"/><text x="275" y="318" class="sm">¿Tiene</text><text x="275" y="334" class="sm">cuenta?</text>
+
+  <path d="M275 285V188H350" class="ln"/><text x="286" y="238" class="lab">Sí</text>
+  <rect x="350" y="162" width="145" height="52" rx="10" class="b"/><text x="422.5" y="188" class="t">Iniciar sesión</text>
+  <path d="M495 188H525" class="ln"/>
+  <path d="M565 148 605 188 565 228 525 188Z" class="d"/><text x="565" y="181" class="sm">¿Credenciales</text><text x="565" y="197" class="sm">válidas?</text>
+
+  <path d="M275 365V470H350" class="ln"/><text x="286" y="418" class="lab">No</text>
+  <rect x="350" y="444" width="145" height="52" rx="10" class="b"/><text x="422.5" y="470" class="t">Crear cuenta</text>
+  <path d="M495 470H525" class="ln"/>
+  <path d="M565 430 605 470 565 510 525 470Z" class="d"/><text x="565" y="463" class="sm">¿Datos</text><text x="565" y="479" class="sm">válidos?</text>
+
+  <path d="M565 228V284H500" class="red"/><text x="575" y="260" class="rl">No</text>
+  <path d="M565 510V366H500" class="red"/><text x="575" y="438" class="rl">No</text>
+  <rect x="350" y="284" width="150" height="82" rx="11" class="er"/><text x="425" y="314" class="t">Corregir</text><text x="425" y="336" class="t">información</text>
+  <path d="M350 325H330V188H350" class="red"/>
+
+  <path d="M605 188H635V325H665" class="ln"/><text x="614" y="175" class="lab">Sí</text>
+  <path d="M605 470H635V325H665" class="ln"/><text x="614" y="457" class="lab">Sí</text>
+  <rect x="665" y="298" width="145" height="54" rx="10" class="b"/><text x="737.5" y="325" class="t">Acceder al portal</text>
+  <path d="M810 325H835" class="ln"/>
+  <path d="M875 285 915 325 875 365 835 325Z" class="d"/><text x="875" y="318" class="sm">¿Qué tarea</text><text x="875" y="334" class="sm">necesita?</text>
+
+  <path d="M915 325H935" class="ln"/>
+  <text x="944" y="147" class="lab">Eventos</text><rect x="990" y="124" width="160" height="46" rx="9" class="b"/><text x="1070" y="147" class="t">Gestionar agenda</text>
+  <text x="944" y="232" class="lab">Archivos</text><rect x="990" y="209" width="160" height="46" rx="9" class="b"/><text x="1070" y="232" class="t">Consultar documentos</text>
+  <text x="944" y="317" class="lab">Seguimiento</text><rect x="990" y="294" width="160" height="46" rx="9" class="b"/><text x="1070" y="317" class="t">Registrar seguimiento</text>
+  <text x="944" y="402" class="lab">Cuenta</text><rect x="990" y="379" width="160" height="46" rx="9" class="b"/><text x="1070" y="402" class="t">Revisar perfil</text>
+  <text x="944" y="487" class="lab">Avisos</text><rect x="990" y="464" width="160" height="46" rx="9" class="b"/><text x="1070" y="487" class="t">Consultar avisos</text>
+  <path d="M935 325V147H990 M935 325V232H990 M935 325V317H990 M935 325V402H990 M935 325V487H990" fill="none" stroke="#747474" stroke-width="2.5"/>
+  <path d="M1150 147H1172V325 M1150 232H1172 M1150 317H1172 M1150 402H1172 M1150 487H1172V325H1194" fill="none" stroke="#747474" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="1040" y="558" width="155" height="58" rx="29" class="ok"/><text x="1117.5" y="587" class="t">Tarea completada</text>
+  <path d="M1172 487V542H1118V558" class="ln"/>
+
+  <!-- Wireflow, right: original compact screen map -->
+  <rect x="1242" y="18" width="640" height="684" rx="20" fill="#F8F7FF" stroke="#DDD8F3" stroke-width="2"/>
+  <text x="1272" y="54" class="h">4.6.2 Wireflow</text>
+  <text x="1272" y="78" class="s">Autenticación, Inicio y accesos del portal</text>
+
+  <rect x="1275" y="285" width="145" height="52" rx="10" class="b"/><text x="1347.5" y="311" class="t">Crear cuenta</text>
+  <text x="1347" y="264" class="lab">Sin cuenta</text>
+  <path d="M1420 311H1450" class="ln"/>
+  <rect x="1450" y="285" width="150" height="52" rx="26" class="st"/><text x="1525" y="311" class="t">Acceder al portal</text>
+  <path d="M1600 311H1630" class="ln"/>
+  <rect x="1630" y="285" width="145" height="52" rx="10" class="b"/><text x="1702.5" y="311" class="t">Iniciar sesión</text>
+  <path d="M1703 285V224H1780" class="ln"/><text x="1720" y="245" class="lab">Acceso válido</text>
+  <rect x="1780" y="198" width="80" height="52" rx="10" class="ok"/><text x="1820" y="224" class="t">Inicio</text>
+
+  <path d="M1820 250V285" class="ln"/>
+  <rect x="1280" y="425" width="120" height="46" rx="9" class="b"/><text x="1340" y="448" class="t">Diario</text>
+  <rect x="1415" y="425" width="135" height="46" rx="9" class="b"/><text x="1482.5" y="448" class="t">Documentos</text>
+  <rect x="1565" y="425" width="110" height="46" rx="9" class="b"/><text x="1620" y="448" class="t">Perfil</text>
+  <rect x="1690" y="425" width="110" height="46" rx="9" class="b"/><text x="1745" y="448" class="t">Agenda</text>
+  <rect x="1480" y="535" width="160" height="50" rx="10" class="no"/><text x="1560" y="560" class="t">Notificaciones</text>
+  <path d="M1820 285V380H1340V425 M1820 380H1483V425 M1820 380H1620V425 M1820 380H1745V425" fill="none" stroke="#747474" stroke-width="2.6" marker-end="url(#a)"/>
+  <path d="M1820 250V560H1640" class="ln"/>
+  <path d="M1480 560H1415V380" fill="none" stroke="#747474" stroke-width="2.5" stroke-dasharray="9 7" marker-end="url(#a)"/>
+  <text x="1435" y="544" class="lab">Campana</text>
+  <text x="1340" y="655" class="s">Todas las pantallas conservan navegación lateral y retorno a Inicio.</text>
+</svg>
