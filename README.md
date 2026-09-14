@@ -646,7 +646,7 @@ La selección de herramientas busca mantener una separación clara entre cada pr
 | Email | SendGrid | Enviar correos electrónicos transaccionales. | Configuración privada del backend |
 | Landing Page Development | React + Vite + TypeScript | Implementación actual de la Landing Page. | `CareStacks/Landing-Page` |
 | Landing Page Deployment | Vercel | Publicar la Landing Page. | Proyecto Vercel vinculado al repositorio |
-| Frontend Web Application | Vue + PrimeVue | Stack requerido por 1ASI0732 para la aplicación web funcional. | Pendiente de repositorio/implementación confirmada |
+| Frontend Web Application | Flutter | Stack requerido por 1ASI0732 para la aplicación web funcional. | Pendiente de repositorio/implementación confirmada |
 | Documentation | Markdown | Elaborar el informe principal del proyecto. | `CareStacks/Report/README.md` |
 
 ##### Configuración de la Native Mobile Application
@@ -744,8 +744,8 @@ El alcance de 1ASI0732 requiere una Frontend Web Application independiente de la
 El stack establecido para esta aplicación es:
 
 ```text
-Framework: Vue
-UI Components: PrimeVue
+Framework: Flutter
+UI Components: Flutter
 Package Manager: npm
 Communication: REST over HTTPS/JSON
 ```
