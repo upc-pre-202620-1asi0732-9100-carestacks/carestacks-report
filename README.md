@@ -1,4 +1,4 @@
-# Informe de Trabajo Final
+<img width="1467" height="787" alt="landingpage" src="https://github.com/user-attachments/assets/93e947b8-4255-49b8-8a44-c6660c190cb1" /># Informe de Trabajo Final
 
 
 <div align="center">
@@ -1189,7 +1189,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 La Landing Page se encuentra desplegada públicamente en `https://landing-page-lovat-ten.vercel.app`.
 
-![Landing Page desplegada — Hero](assets/landing_hero_deployed.png)
+![Landing Page desplegada — Hero](assets/landingpage.png)
 
 *Figura X. Hero de la Landing Page de CareConnect, desplegada públicamente en Vercel.*
 
