@@ -1187,11 +1187,6 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 *Figura X. Planes, llamada a la acción y footer de la Landing Page.*
 ### 5.2.3. Implemented Frontend-Web Application Evidence
-La Landing Page se encuentra desplegada públicamente en `https://landing-page-lovat-ten.vercel.app`.
-
-![Landing Page desplegada — Hero](assets/landingpage.png)
-
-*Figura X. Hero de la Landing Page de CareConnect, desplegada públicamente en Vercel.*
 
 **Cambios de implementación:**
 
