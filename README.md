@@ -967,44 +967,197 @@ Feature: Health event confirmation
 - Revisar cambios mediante Pull Requests antes de integrar cuando corresponda.
 
 ---
-
 #### 5.1.4. Software Deployment Configuration
 
-La configuración de despliegue define cómo los productos de CareConnect son construidos y publicados en los entornos correspondientes.
+La configuración de despliegue de CareConnect define los mecanismos utilizados para construir, configurar y publicar los diferentes productos que forman parte de la solución. Debido a que cada componente posee características tecnológicas diferentes, el proceso de despliegue se documenta de manera independiente para la Landing Page, la Frontend Web Application, la Native Mobile Application y la RESTful API.
 
-La solución posee componentes con mecanismos de despliegue diferentes: backend, aplicación móvil, Landing Page y almacenamiento/servicios externos.
+Para la presente entrega, no todos los productos cuentan todavía con un despliegue público en un ambiente de producción. Por ello, esta sección diferencia entre los componentes que poseen evidencia de despliegue verificable y aquellos cuya ejecución ha sido validada únicamente en un ambiente local.
 
-##### Backend RESTful API
+---
 
-El backend actual utiliza **Render** como plataforma de despliegue y se conecta con una base de datos PostgreSQL.
+##### Landing Page
 
-El flujo general es:
+La Landing Page de CareConnect está implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada públicamente mediante **Vercel**.
+
+- **Repositorio:** `https://github.com/CareStacks/Landing-Page`
+- **URL de producción:** `https://landing-page-lovat-ten.vercel.app/`
+- **Proveedor de despliegue:** Vercel
+- **Build Tool:** Vite
+
+El flujo de despliegue utilizado es:
+
+```text
+Cambios en el repositorio
+          |
+          v
+     Push a GitHub
+          |
+          v
+Vercel detecta los cambios
+          |
+          v
+Instalación de dependencias
+          |
+          v
+       Build Vite
+          |
+          v
+Publicación de la nueva versión
+          |
+          v
+      URL pública
+```
+
+Vercel se encuentra vinculado al repositorio de la Landing Page, permitiendo generar una nueva versión desplegada a partir de los cambios integrados en la rama configurada para producción.
+
+La evidencia visual correspondiente al despliegue y funcionamiento de este producto se presenta posteriormente en la sección **5.2.2. Implemented Landing Page Evidence**.
+
+---
+
+##### Frontend Web Application
+
+La Frontend Web Application de CareConnect dispone actualmente de una implementación web basada en Flutter, adaptada a diferentes resoluciones de pantalla.
+
+Durante el desarrollo se validó satisfactoriamente la generación del artefacto web mediante:
+
+```bash
+flutter build web --release
+```
+
+Este comando genera la versión optimizada para producción dentro del directorio:
+
+```text
+build/web/
+```
+
+El flujo de construcción utilizado actualmente es:
+
+```text
+Código fuente Flutter
+        |
+        v
+flutter analyze
+        |
+        v
+Ejecución de tests
+        |
+        v
+flutter build web --release
+        |
+        v
+Artefacto build/web
+```
+
+En la presente entrega, la aplicación web ha sido validada en un entorno local y cuenta con un build de producción exitoso. Sin embargo, todavía no se documenta una URL pública de producción para este producto.
+
+Una vez definido el proveedor de hosting, el proceso de despliegue deberá incorporar:
 
 ```text
 Push al repositorio
         |
         v
-Render obtiene el código
+Integración de cambios
         |
         v
-Build del proyecto
+Análisis y pruebas
         |
         v
-Maven / Docker
+Build de producción
         |
         v
-Inicio de Spring Boot
+Publicación del artefacto web
         |
         v
-Conexión con PostgreSQL
+Smoke Test
         |
         v
-Publicación del RESTful API
+URL pública
 ```
 
-La configuración sensible se mantiene mediante variables de entorno definidas en el proveedor de hosting.
+La configuración deberá incluir, como mínimo:
 
-Las principales variables de persistencia son:
+- repositorio utilizado;
+- rama de producción;
+- proveedor de hosting;
+- URL pública;
+- configuración de la API Base URL;
+- variables de entorno requeridas;
+- evidencia del build;
+- evidencia del despliegue.
+
+> **Nota:** El stack definitivo de la Frontend Web Application debe mantenerse consistente con lo especificado en las demás secciones del informe y con las disposiciones tecnológicas establecidas para el curso.
+
+---
+
+##### RESTful API
+
+La RESTful API de CareConnect está implementada utilizando **Java y Spring Boot** y organiza la lógica del producto mediante seis bounded contexts:
+
+- IAM;
+- Agenda;
+- Notifications;
+- Diary Tracking;
+- Documents;
+- Consent Management.
+
+Para la presente entrega, la evidencia incluida en la sección correspondiente a la implementación de la RESTful API se basa principalmente en una ejecución local del backend.
+
+En el ambiente de desarrollo, el backend puede ser construido mediante Maven:
+
+```bash
+./mvnw clean package
+```
+
+y ejecutado mediante:
+
+```bash
+./mvnw spring-boot:run
+```
+
+El proceso actual de ejecución es:
+
+```text
+Código fuente
+      |
+      v
+Maven Build
+      |
+      v
+Spring Boot Application
+      |
+      v
+Inicialización de persistencia
+      |
+      v
+RESTful API
+      |
+      v
+Swagger / OpenAPI
+```
+
+Para desarrollo y pruebas locales se utiliza una base de datos **H2 en memoria con compatibilidad PostgreSQL**, permitiendo ejecutar y validar el backend sin depender de infraestructura externa.
+
+La documentación interactiva de la API se encuentra disponible durante la ejecución mediante:
+
+```text
+/swagger-ui.html
+```
+
+y la especificación OpenAPI mediante:
+
+```text
+/v3/api-docs
+```
+
+Actualmente, el informe no presenta evidencia suficiente de una URL pública de producción de la RESTful API. Por ello, el deployment del backend deberá completarse antes de ser presentado como un servicio desplegado en producción.
+
+---
+
+##### Configuración objetivo de la RESTful API
+
+Para el ambiente de producción, el backend deberá utilizar una base de datos PostgreSQL y administrar sus credenciales mediante variables de entorno.
+
+Las variables requeridas para la configuración de persistencia son:
 
 ```text
 SPRING_DATASOURCE_URL
@@ -1012,7 +1165,81 @@ SPRING_DATASOURCE_USERNAME
 SPRING_DATASOURCE_PASSWORD
 ```
 
-La configuración de documentos utiliza:
+El flujo objetivo de despliegue es:
+
+```text
+Push al repositorio
+       |
+       v
+Proveedor de hosting
+       |
+       v
+Maven Build
+       |
+       v
+Spring Boot
+       |
+       v
+Variables de entorno
+       |
+       v
+PostgreSQL
+       |
+       v
+RESTful API pública
+```
+
+Una vez implementado el despliegue, esta sección deberá actualizarse incluyendo:
+
+- proveedor utilizado;
+- URL pública del backend;
+- rama desplegada;
+- evidencia del deployment;
+- URL pública de Swagger/OpenAPI;
+- variables de entorno utilizadas, sin revelar secretos;
+- evidencia de conexión con PostgreSQL.
+
+---
+
+##### PostgreSQL
+
+PostgreSQL constituye la tecnología definida para la persistencia relacional de CareConnect en un ambiente desplegado.
+
+La configuración de producción debe mantener de forma privada las credenciales necesarias para establecer la conexión con la base de datos.
+
+Se deben considerar las siguientes medidas:
+
+- almacenamiento seguro de credenciales;
+- conexiones cifradas cuando el proveedor lo permita;
+- separación de credenciales por ambiente;
+- restricción del acceso directo a la base de datos;
+- respaldo de información;
+- control de cambios del esquema;
+- exclusión de credenciales del repositorio Git.
+
+Durante el desarrollo local, la aplicación puede utilizar H2 para facilitar las pruebas. Esto no reemplaza la configuración PostgreSQL definida para un ambiente de producción.
+
+---
+
+##### Supabase Storage
+
+CareConnect contempla el uso de **Supabase Storage** para el almacenamiento de archivos médicos.
+
+La arquitectura evita almacenar archivos médicos directamente como datos binarios dentro de PostgreSQL. En su lugar, la base de datos conserva la metadata y las referencias necesarias para identificar los archivos almacenados externamente.
+
+El flujo definido es:
+
+```text
+Aplicación cliente
+       |
+       v
+RESTful API
+       |
+       v
+Supabase Storage
+```
+
+Las variables de configuración asociadas son:
 
 ```text
 SUPABASE_URL
@@ -1020,171 +1247,179 @@ SUPABASE_SERVICE_ROLE_KEY
 SUPABASE_STORAGE_BUCKET
 ```
 
-La `SUPABASE_SERVICE_ROLE_KEY` debe permanecer exclusivamente en el backend.
-
-##### Base de Datos PostgreSQL
-
-La persistencia central utiliza PostgreSQL.
-
-Para su despliegue se deben considerar:
-
-- Conexiones seguras.
-- Credenciales privadas.
-- Restricción de acceso directo.
-- Backups cuando corresponda.
-- Cambios de esquema controlados.
-- Separación de configuraciones entre ambientes.
-
-##### Supabase Storage
-
-Los archivos médicos se almacenan mediante Supabase Storage.
-
-El backend actúa como intermediario para las operaciones que requieren credenciales privilegiadas.
+La variable:
 
 ```text
-Client Application
-        |
-        v
-Backend RESTful API
-        |
-        v
-Supabase Storage
+SUPABASE_SERVICE_ROLE_KEY
 ```
 
-Las credenciales privilegiadas nunca deben exponerse en la aplicación móvil, Landing Page o Frontend Web Application.
+debe permanecer exclusivamente en el backend y no debe incorporarse en la Landing Page, Frontend Web Application o Native Mobile Application.
+
+---
 
 ##### Native Mobile Application
 
-La aplicación Android se compila mediante Gradle.
+La aplicación móvil Android de CareConnect utiliza un proceso de construcción mediante Gradle.
 
-El proceso general es:
+El flujo general es:
 
 ```text
-Código Kotlin
-     |
-     v
+Código fuente Kotlin
+       |
+       v
 Gradle Build
-     |
-     v
+       |
+       v
+Generación del APK
+       |
+       v
+Instalación en dispositivo/emulador
+       |
+       v
+Pruebas funcionales
+```
+
+Para la distribución de versiones de prueba se contempla **Firebase App Distribution**, permitiendo proporcionar builds controlados a testers sin requerir una publicación inmediata en Google Play Store.
+
+El flujo correspondiente es:
+
+```text
+Código fuente
+      |
+      v
+Gradle Build
+      |
+      v
 APK
-     |
-     v
-Pruebas en emulador/dispositivo
-     |
-     v
+      |
+      v
 Firebase App Distribution
-     |
-     v
-Testers
+      |
+      v
+Testers autorizados
 ```
 
-Firebase App Distribution permite compartir builds privadas antes de una eventual publicación en una tienda de aplicaciones.
+Cuando se realice una distribución mediante Firebase App Distribution, el informe deberá incluir evidencia verificable del build publicado y de los testers asociados.
 
-##### Landing Page
+---
 
-La Landing Page actual utiliza Vercel como plataforma de hosting.
+##### Firebase Cloud Messaging
+
+CareConnect contempla **Firebase Cloud Messaging (FCM)** como servicio para la entrega de notificaciones push.
+
+El flujo esperado es:
 
 ```text
-Push al repositorio
-      |
-      v
-Vercel detecta el cambio
-      |
-      v
-Instala dependencias
-      |
-      v
-Build con Vite
-      |
-      v
-Deploy
-      |
-      v
-URL pública
+CareConnect Backend
+       |
+       v
+Firebase Cloud Messaging
+       |
+       v
+Dispositivo del usuario
 ```
 
-##### Frontend Web Application
+Las credenciales utilizadas para comunicarse con Firebase deben mantenerse en el backend y no deben exponerse en los clientes.
 
-La Frontend Web Application requerida por el curso deberá poseer un pipeline de despliegue propio cuando su implementación sea confirmada.
+---
 
-Un flujo objetivo es:
+##### SendGrid
+
+SendGrid se utiliza como servicio externo previsto para el envío de correos electrónicos transaccionales.
+
+El acceso al servicio debe configurarse mediante variables de entorno y las claves privadas correspondientes no deben almacenarse dentro del repositorio.
+
+---
+
+##### Gestión de variables de entorno
+
+Los datos sensibles y configuraciones que dependen del ambiente no deben almacenarse directamente en el código fuente.
+
+Entre ellos se encuentran:
 
 ```text
-Push al repositorio
-       |
-       v
-npm install
-       |
-       v
-Lint / Tests
-       |
-       v
-npm run build
-       |
-       v
-Artifact Vue
-       |
-       v
-Hosting
-       |
-       v
-Smoke Test
+DATABASE_URL
+DATABASE_USERNAME
+DATABASE_PASSWORD
+SUPABASE_URL
+SUPABASE_SERVICE_ROLE_KEY
+SUPABASE_STORAGE_BUCKET
+API_BASE_URL
+FIREBASE_CREDENTIALS
+SENDGRID_API_KEY
 ```
 
-La documentación deberá actualizarse con el repositorio real, proveedor de hosting, URL pública, API Base URL y variables de entorno una vez que exista evidencia de implementación.
+Los nombres definitivos de las variables deben corresponder con la configuración real implementada por cada producto.
 
-##### Servicios externos
+Los secretos deben mantenerse fuera del repositorio Git y configurarse utilizando los mecanismos proporcionados por cada proveedor de hosting.
 
-| Servicio | Responsabilidad |
-|---|---|
-| Render | Hosting del backend actual. |
-| PostgreSQL | Persistencia relacional central. |
-| Supabase Storage | Almacenamiento privado de documentos médicos. |
-| Firebase Cloud Messaging | Entrega de notificaciones push. |
-| Firebase App Distribution | Distribución privada de builds Android. |
-| SendGrid | Envío de correos electrónicos transaccionales. |
-| Vercel | Hosting de la Landing Page. |
+---
 
-##### Entornos
+##### Entornos de despliegue
 
-Se consideran los siguientes ambientes:
+CareConnect distingue los siguientes entornos:
 
 | Entorno | Propósito |
 |---|---|
-| Development | Desarrollo local de cada integrante. |
-| Testing | Validación funcional y técnica. |
-| Staging | Validación previa a producción cuando se configure. |
-| Production | Entorno destinado al uso final. |
+| Development | Desarrollo y ejecución local realizada por los integrantes del equipo. |
+| Testing | Ejecución de pruebas funcionales y técnicas antes de integrar los cambios. |
+| Staging | Ambiente previo a producción destinado a validación integral cuando sea configurado. |
+| Production | Ambiente público y estable destinado a las versiones de entrega. |
 
-Las variables y credenciales deben mantenerse separadas entre ambientes.
+Cada entorno debe poseer su propia configuración y evitar compartir credenciales sensibles cuando no sea necesario.
+
+---
+
+##### Estado actual del despliegue
+
+El estado de despliegue de los productos de CareConnect para la presente entrega es el siguiente:
+
+| Producto | Build / Ejecución | Deployment público | Evidencia actual |
+|---|---|---|---|
+| Landing Page | Completado | Sí | Vercel + URL pública + capturas |
+| Frontend Web Application | Build de producción completado | Pendiente | Ejecución local + capturas |
+| RESTful API | Ejecución local completada | Pendiente de evidencia pública | Swagger/OpenAPI local + capturas |
+| Native Mobile Application | Build y ejecución en dispositivo/emulador | Pendiente de evidencia de distribución | Prototipo y capturas |
+| PostgreSQL | Definido para producción | Pendiente de integración pública demostrada | Diseño y configuración documentados |
+| Supabase Storage | Configuración contemplada | Pendiente de evidencia completa | Arquitectura documentada |
+| Firebase Cloud Messaging | Configuración contemplada | Pendiente de evidencia completa | Arquitectura documentada |
+
+Esta tabla deberá actualizarse conforme se obtengan evidencias verificables de los despliegues restantes.
+
+---
 
 ##### Criterios de validación del despliegue
 
-| Criterio | Validación |
+Antes de considerar un producto como correctamente desplegado se verifican los siguientes criterios:
+
+| Criterio | Validación esperada |
 |---|---|
-| Backend disponible | El RESTful API responde correctamente. |
-| Swagger / OpenAPI disponible | La documentación puede consultarse y los endpoints pueden verificarse. |
-| PostgreSQL disponible | El backend puede ejecutar operaciones de lectura y escritura. |
-| Mobile Application funcional | El build Android instala y ejecuta correctamente. |
+| Build exitoso | El producto se construye sin errores. |
+| URL accesible | El servicio o aplicación puede accederse desde un entorno externo cuando corresponde. |
+| RESTful API disponible | Los endpoints responden correctamente. |
+| Swagger/OpenAPI disponible | La documentación de la API puede consultarse. |
+| Persistencia disponible | Las operaciones de lectura y escritura funcionan correctamente. |
+| Aplicación móvil funcional | El build se instala y ejecuta correctamente. |
 | Landing Page disponible | La URL pública carga correctamente. |
-| Document Storage funcional | Los documentos pueden almacenarse y recuperarse mediante el backend. |
-| Notificaciones operativas | Firebase entrega mensajes correctamente. |
-| Frontend Web disponible | Se validará cuando exista evidencia de implementación. |
-| Variables protegidas | No existen secretos expuestos en repositorios ni clientes. |
+| Variables protegidas | No existen secretos expuestos en el código fuente ni en el repositorio. |
+| Integraciones externas | Los servicios externos configurados responden correctamente. |
 
-##### Riesgos de despliegue
+---
 
-| Riesgo | Impacto | Mitigación |
-|---|---|---|
-| Variables de entorno incorrectas | El backend puede no iniciar o perder conexión con servicios. | Documentar y validar variables antes del despliegue. |
-| PostgreSQL inaccesible | La solución no puede consultar ni persistir información. | Utilizar configuración segura y verificar conectividad. |
-| Credenciales expuestas | Riesgo de acceso no autorizado. | Mantener secretos fuera de GitHub y del código cliente. |
-| Error en Supabase Storage | Los documentos médicos no pueden almacenarse o recuperarse. | Validar variables, bucket y manejo de errores. |
-| Error en Firebase | Las notificaciones pueden no ser entregadas. | Validar configuración y realizar pruebas en dispositivos físicos. |
-| Build Android incompatible | Algunos dispositivos pueden no ejecutar la aplicación. | Definir requisitos mínimos y probar en distintos dispositivos. |
-| Frontend apuntando al ambiente incorrecto | El cliente no puede consumir correctamente los servicios. | Administrar la API Base URL mediante configuración por ambiente. |
+##### Seguridad de la configuración
 
-La configuración de despliegue debe actualizarse conforme se implementen nuevos productos y ambientes. No se deben documentar repositorios, URLs o pipelines como existentes si todavía no existe evidencia verificable de ellos.
+Las credenciales utilizadas durante el despliegue no deben almacenarse directamente dentro del repositorio.
+
+Se deben aplicar las siguientes prácticas:
+
+- utilizar variables de entorno;
+- excluir archivos locales con secretos mediante `.gitignore`;
+- no incluir API Keys en capturas del informe;
+- no exponer credenciales administrativas en aplicaciones cliente;
+- utilizar diferentes configuraciones para desarrollo y producción;
+- limitar el acceso a las credenciales únicamente a los integrantes autorizados.
+
+La configuración de despliegue deberá mantenerse actualizada durante el desarrollo del proyecto. Un producto solo será identificado como desplegado cuando exista evidencia verificable de su publicación y funcionamiento en el ambiente correspondiente.
 
 
 ### 5.2. Product Implementation & Deployment
