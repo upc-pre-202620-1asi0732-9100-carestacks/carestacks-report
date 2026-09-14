@@ -37,13 +37,13 @@ Producto: **CareConnect**
 
 **Relación de integrantes:**
 
-| Código      | Apellidos y Nombres |
-|-------------|---------------------|
-| U202319698  | Salcedo Champi, Matias Rodolfo |
-| U20221G099  | Nikaido Vargas, Javier Masaru |
-| U202319563  | Muñiz Huayanca, Percy Alonso |
-| U202415495  | Espinoza Cruz, Angela Milagros |
-| U202319881  | Baldeon Vivar, Santiago Armando |
+| Código | Apellidos y Nombres |
+|---|---|
+| U202319881 | Baldeon Vivar, Santiago Armando |
+| U202415495 | Espinoza Cruz, Angela Milagros |
+| U202319563 | Muñiz Huayanca, Percy Alonso |
+| U20221G099 | Nikaido Vargas, Javier Masaru |
+| U202319698 | Salcedo Champi, Matias Rodolfo |
 
 **Septiembre 2026**
 
