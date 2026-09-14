@@ -1324,7 +1324,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ##### Deployment Evidence
 
-![CareConnect Landing Page Deployment](chapter5/careconnect-landing-deployment.png)
+![CareConnect Landing Page Deployment](assets/careconnect-landing-deployment.png)
 
 *Figura X. Evidencia del despliegue de la Landing Page de CareConnect.*
 
@@ -1332,7 +1332,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ##### Home and Problem Section
 
-![CareConnect Landing Page Home](chapter5/careconnect-landing-home.png)
+![CareConnect Landing Page Home](assets/careconnect-landing-home.png)
 
 *Figura X. Home y presentación de la problemática de CareConnect.*
 
@@ -1340,7 +1340,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ##### Features Section
 
-![CareConnect Landing Page Features](chapter5/careconnect-landing-features.png)
+![CareConnect Landing Page Features](assets/careconnect-landing-features.png)
 
 *Figura X. Funcionalidades principales presentadas en la Landing Page.*
 
@@ -1348,7 +1348,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ##### Product, Benefits and How It Works
 
-![CareConnect Landing Page Product](chapter5/careconnect-landing-product.png)
+![CareConnect Landing Page Product](assets/careconnect-landing-product.png)
 
 *Figura X. Presentación del producto, beneficios y funcionamiento de CareConnect.*
 
@@ -1356,7 +1356,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ##### Plans, Contact and Footer
 
-![CareConnect Landing Page Footer](chapter5/careconnect-landing-footer.png)
+![CareConnect Landing Page Footer](assets/careconnect-landing-footer.png)
 
 *Figura X. Planes, llamada a la acción y footer de la Landing Page.*
 ### 5.2.3. Implemented Frontend-Web Application Evidence
