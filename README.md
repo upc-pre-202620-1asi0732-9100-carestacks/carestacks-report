@@ -876,76 +876,141 @@ La entidad principal es `User`, que contiene información relacionada con el cor
 
 #### 4.9.2. Class Dictionary
 
-El Class Dictionary complementa los Class Diagrams describiendo los elementos principales del modelo orientado a objetos, su tipo y su responsabilidad.
+El Diccionario de Clases complementa los Diagramas de Clases mediante la descripción de los principales elementos del diseño orientado a objetos de CareConnect. Para cada bounded context se identifica el tipo de cada elemento, sus atributos relevantes y tipos de datos, sus principales operaciones y su responsabilidad dentro del dominio.
 
-Los atributos y tipos definitivos deben mantenerse consistentes con los Class Diagrams y con el código fuente de cada bounded context.
-
-##### Agenda
-
-| Clase | Tipo | Responsabilidad |
-|---|---|---|
-| `HealthEvent` | Entity | Representa una actividad, cita, medicación u otro evento de salud. |
-| `Reminder` | Entity | Representa un recordatorio asociado a un evento de salud. |
-| `EventStatus` | Enum / Value Object | Representa el estado de un evento. |
-| `EventType` | Enum / Value Object | Clasifica el tipo de evento. |
-| `AgendaRepository` | Repository | Define las operaciones necesarias para persistir información de Agenda. |
-
-##### Notificaciones
-
-| Clase | Tipo | Responsabilidad |
-|---|---|---|
-| `Notification` | Entity | Representa una comunicación generada para un usuario. |
-| `Alert` | Entity | Representa una alerta relacionada con una situación que requiere atención. |
-| `NotificationPreference` | Entity | Mantiene las preferencias de comunicación de un usuario. |
-| `NotificationStatus` | Enum / Value Object | Representa el estado de una notificación. |
-| `DeliveryChannel` | Enum / Value Object | Identifica el canal utilizado para entregar una comunicación. |
-| `NotificationRepository` | Repository | Define las operaciones de persistencia del bounded context. |
-
-##### Diario de Seguimiento
-
-| Clase | Tipo | Responsabilidad |
-|---|---|---|
-| `Diary` | Aggregate Root | Gestiona el conjunto de entradas asociadas al seguimiento del paciente. |
-| `DiaryEntry` | Entity | Representa una entrada individual del diario. |
-| `EntryContent` | Value Object | Encapsula el contenido de una entrada. |
-| `EntryDate` | Value Object | Representa la fecha asociada a una entrada. |
-| `DiaryRepository` | Repository | Define las operaciones de persistencia del diario. |
-
-##### Gestión de Consentimiento
-
-| Clase | Tipo | Responsabilidad |
-|---|---|---|
-| `ProfileSharing` | Aggregate Root | Gestiona el ciclo de vida del acceso compartido a la información de un paciente. |
-| `SharedAccess` | Entity | Representa un acceso otorgado a un cuidador. |
-| `AccessRequest` | Entity | Representa una solicitud de acceso. |
-| `ShareToken` | Value Object | Encapsula el token utilizado para compartir acceso. |
-| `AccessStatus` | Enum / Value Object | Representa el estado de un acceso. |
-| `AccessPermission` | Enum / Value Object | Representa el nivel de permiso otorgado. |
-| `SharedProfileRepository` | Repository | Define las operaciones de persistencia del bounded context. |
-
-##### Documentos
-
-| Clase | Tipo | Responsabilidad |
-|---|---|---|
-| `MedicalDocument` | Aggregate Root / Entity | Representa la información principal de un documento médico. |
-| `DocumentItem` | Entity | Representa un archivo o elemento documental asociado. |
-| `DocumentType` | Enum / Value Object | Clasifica el documento médico. |
-| `DocumentMetadata` | Value Object | Encapsula la información descriptiva del documento. |
-| `DocumentRepository` | Repository | Define las operaciones de persistencia relacionadas con documentos. |
-
-##### Autenticación / IAM
-
-| Clase | Tipo | Atributos principales | Responsabilidad |
-|---|---|---|---|
-| `User` | Entity | `email`, `passwordHash`, `fullName`, `role`, `active`, `failedLoginAttempts`, `lockedUntil` | Representa una cuenta de CareConnect y aplica reglas relacionadas con su estado y bloqueo. |
-| `UserRole` | Enum | Roles de usuario | Identifica el rol funcional del usuario. |
-| `AuthService` | Application Service Contract | — | Define las operaciones de registro, autenticación, cierre de sesión y validación de sesión. |
-| `AuthServiceImpl` | Application Service | — | Implementa los casos de uso asociados a autenticación. |
-| `UserRepository` | Repository | — | Proporciona acceso persistente a las cuentas. |
-| `UserMapper` | Mapper | — | Convierte entre los modelos de dominio y persistencia. |
-| `AuthController` | REST Controller | — | Expone las operaciones de autenticación a través del API. |
+Los atributos y operaciones definidos en esta sección se encuentran alineados con el modelo de dominio representado en los Diagramas de Clases. Asimismo, los atributos relacionados con persistencia mantienen correspondencia con el diseño de base de datos presentado en la sección 4.10.
 
 ---
+
+##### Bounded Context Agenda
+
+El bounded context Agenda administra los eventos de salud asociados a un paciente, incluyendo citas, actividades relacionadas con medicamentos, actividades terapéuticas, recordatorios y reglas de programación.
+
+| Clase | Tipo | Atributos y tipos | Métodos / Operaciones principales | Responsabilidad |
+|---|---|---|---|---|
+| `Agenda` | Raíz de Agregado | `id: UUID`<br>`patientId: UUID` | `addEvent(HealthEvent)`<br>`removeEvent(UUID)`<br>`getEvents()`<br>`findEvent(UUID)` | Actúa como raíz del agregado del bounded context Agenda y administra la colección de eventos de salud asociados a un paciente. |
+| `HealthEvent` | Entidad | `id: UUID`<br>`type: EventType`<br>`dateTime: EventDateTime`<br>`status: EventStatus` | `reschedule(EventDateTime)`<br>`changeStatus(EventStatus)`<br>`createReminder(LocalDateTime)` | Representa una cita, actividad de medicación, actividad terapéutica u otro evento relacionado con la salud del paciente. |
+| `Reminder` | Entidad | `id: UUID`<br>`eventId: UUID`<br>`scheduledAt: LocalDateTime` | `reschedule(LocalDateTime)`<br>`isDue(LocalDateTime)` | Representa un recordatorio asociado a un evento de salud previamente programado. |
+| `EventDateTime` | Objeto de Valor | `value: LocalDateTime` | `value()`<br>`isBefore(EventDateTime)`<br>`isAfter(EventDateTime)` | Encapsula la fecha y hora asignadas a un evento de salud. |
+| `EventType` | Enumeración / Objeto de Valor | Valores que representan citas, medicación y actividades terapéuticas | — | Clasifica el tipo de evento de salud registrado en la agenda. |
+| `EventStatus` | Enumeración / Objeto de Valor | Valores que representan los estados del ciclo de vida de un evento | — | Representa el estado actual de un evento de salud. |
+| `ScheduleValidationService` | Servicio de Dominio | — | `validateSchedule(EventDateTime)` | Valida restricciones horarias y conflictos de programación antes de registrar o reprogramar un evento de salud. |
+| `EventSchedulerService` | Servicio de Dominio | — | `schedule(HealthEvent)`<br>`reschedule(HealthEvent, EventDateTime)` | Aplica las reglas de dominio relacionadas con la programación y reprogramación de eventos de salud. |
+| `AgendaRepository` | Interfaz de Repositorio | — | `save(Agenda)`<br>`findById(UUID)`<br>`findByPatientId(UUID)` | Define el contrato de persistencia requerido por el bounded context Agenda. |
+
+---
+
+##### Bounded Context Notifications
+
+El bounded context Notifications administra las notificaciones, alertas, preferencias de comunicación y canales utilizados por CareConnect para comunicar información relevante a sus usuarios.
+
+| Clase | Tipo | Atributos y tipos | Métodos / Operaciones principales | Responsabilidad |
+|---|---|---|---|---|
+| `NotificationCenter` | Raíz de Agregado | — | `addNotification(Notification)`<br>`addAlert(Alert)`<br>`updatePreference(NotificationPreference)` | Actúa como raíz del agregado responsable de coordinar notificaciones, alertas y preferencias de comunicación de los usuarios. |
+| `Notification` | Entidad | `id: UUID`<br>`content: NotificationContent`<br>`type: NotificationType`<br>`priority: NotificationPriority`<br>`status: NotificationStatus`<br>`scheduledAt: LocalDateTime` | `schedule(LocalDateTime)`<br>`changeStatus(NotificationStatus)`<br>`markAsDelivered()` | Representa una comunicación generada por CareConnect para un usuario. |
+| `Alert` | Entidad | `id: UUID`<br>`recipientId: UUID`<br>`createdAt: LocalDateTime`<br>`resolvedAt: LocalDateTime` | `resolve()`<br>`isResolved()` | Representa una alerta generada cuando una situación requiere atención especial por parte del usuario. |
+| `NotificationPreference` | Entidad | `id: UUID`<br>`userId: UUID`<br>`channel: DeliveryChannel`<br>`enabled: Boolean` | `enable()`<br>`disable()`<br>`changeChannel(DeliveryChannel)` | Almacena las preferencias de comunicación configuradas por un usuario. |
+| `NotificationContent` | Objeto de Valor | `title: String`<br>`message: String` | `title()`<br>`message()` | Encapsula el contenido textual mostrado dentro de una notificación. |
+| `NotificationType` | Enumeración / Objeto de Valor | Valores que representan el tipo funcional de notificación | — | Clasifica las notificaciones según su propósito dentro de CareConnect. |
+| `NotificationPriority` | Enumeración / Objeto de Valor | Valores que representan la prioridad de una notificación | — | Indica el nivel de prioridad asignado a una notificación. |
+| `NotificationStatus` | Enumeración / Objeto de Valor | Valores que representan el ciclo de vida de una notificación | — | Representa el estado actual de una notificación. |
+| `DeliveryChannel` | Enumeración / Objeto de Valor | `PUSH`<br>`EMAIL`<br>`IN_APP` | — | Identifica el canal mediante el cual se entrega una notificación. |
+| `AlertEvaluationService` | Servicio de Dominio | — | `evaluate(Alert)` | Evalúa si una determinada condición del dominio debe generar una alerta. |
+| `NotificationDispatchService` | Servicio de Dominio | — | `dispatch(Notification)` | Coordina el envío de las notificaciones a través del canal configurado. |
+| `NotificationRepository` | Interfaz de Repositorio | — | `save(Notification)`<br>`findById(UUID)`<br>`findByRecipientId(UUID)` | Define el contrato de persistencia para las notificaciones. |
+
+---
+
+##### Bounded Context Diary Tracking
+
+El bounded context Diary Tracking administra la información registrada durante el proceso de cuidado del paciente, permitiendo documentar observaciones y cambios relevantes a lo largo del tiempo.
+
+| Clase | Tipo | Atributos y tipos | Métodos / Operaciones principales | Responsabilidad |
+|---|---|---|---|---|
+| `Diary` | Raíz de Agregado | `id: UUID`<br>`patientId: UUID` | `addEntry(DiaryEntry)`<br>`removeEntry(UUID)`<br>`getEntries()` | Actúa como raíz del agregado responsable de administrar las entradas del diario asociadas a un paciente. |
+| `DiaryEntry` | Entidad | `id: UUID`<br>`content: EntryContent`<br>`date: EntryDate` | `updateContent(EntryContent)`<br>`changeDate(EntryDate)` | Representa una entrada individual registrada dentro del diario del paciente. |
+| `EntryContent` | Objeto de Valor | `value: String` | `value()`<br>`isEmpty()` | Encapsula y valida el contenido textual de una entrada del diario. |
+| `EntryDate` | Objeto de Valor | Valor de fecha asociado a la entrada | `value()` | Encapsula la fecha asociada a una entrada del diario. |
+| `DiaryRepository` | Interfaz de Repositorio | — | `save(Diary)`<br>`findById(UUID)`<br>`findByPatientId(UUID)` | Define las operaciones de persistencia requeridas por el bounded context Diary Tracking. |
+
+---
+
+##### Bounded Context Consent Management
+
+El bounded context Consent Management controla la manera en que los pacientes comparten su información con los cuidadores, incluyendo solicitudes de acceso, permisos, expiración del acceso, revocación y tokens de compartición.
+
+| Clase | Tipo | Atributos y tipos | Métodos / Operaciones principales | Responsabilidad |
+|---|---|---|---|---|
+| `ProfileSharing` | Raíz de Agregado | `id: UUID`<br>`patientId: UUID`<br>`createdAt: LocalDateTime` | `requestAccess(UUID)`<br>`grantAccess(SharedAccess)`<br>`revokeAccess(UUID)` | Actúa como raíz del agregado que administra el ciclo de vida del perfil compartido de un paciente. |
+| `AccessRequest` | Entidad | `id: UUID`<br>`profileSharingId: UUID`<br>`caregiverId: UUID`<br>`status: AccessStatus`<br>`createdAt: LocalDateTime` | `approve()`<br>`reject()`<br>`changeStatus(AccessStatus)` | Representa una solicitud realizada por un cuidador para obtener acceso a la información compartida de un paciente. |
+| `SharedAccess` | Entidad | `id: UUID`<br>`profileSharingId: UUID`<br>`caregiverId: UUID`<br>`userId: UUID`<br>`token: ShareToken`<br>`permission: AccessPermission`<br>`status: AccessStatus`<br>`expiresAt: ExpirationDate` | `activate()`<br>`revoke()`<br>`isExpired()`<br>`changePermission(AccessPermission)` | Representa un permiso de acceso otorgado a un cuidador sobre el perfil compartido de un paciente. |
+| `ShareToken` | Objeto de Valor | Valor del token utilizado para identificar un acceso compartido | `value()` | Encapsula el token único utilizado para compartir de manera segura el acceso a un perfil. |
+| `ExpirationDate` | Objeto de Valor | Fecha y hora de expiración del acceso compartido | `isExpired()`<br>`value()` | Encapsula la fecha de expiración asociada a un acceso compartido. |
+| `AccessStatus` | Enumeración / Objeto de Valor | `PENDING`<br>`ACTIVE`<br>`REVOKED`<br>`EXPIRED` | — | Representa el estado actual de una solicitud o permiso de acceso compartido. |
+| `AccessPermission` | Enumeración / Objeto de Valor | Valores que representan el nivel de permiso otorgado | — | Representa el nivel de permiso asignado a un cuidador. |
+| `ProfileSharingService` | Servicio de Dominio | — | `createSharing(UUID)`<br>`revokeSharing(UUID)` | Aplica las reglas de dominio relacionadas con la creación y revocación del acceso compartido. |
+| `AccessValidationService` | Servicio de Dominio | — | `validateToken(ShareToken)`<br>`validateExpiration(ExpirationDate)`<br>`validateAccess(SharedAccess)` | Valida tokens de compartición, fechas de expiración, estados y condiciones de acceso. |
+| `SharedProfileRepository` | Interfaz de Repositorio | — | `save(ProfileSharing)`<br>`findById(UUID)`<br>`findByPatientId(UUID)` | Define el contrato de persistencia utilizado por la gestión de perfiles compartidos y consentimiento. |
+
+---
+
+##### Bounded Context Documents
+
+El bounded context Documents administra los metadatos y referencias asociados a documentos médicos. Los archivos físicos se almacenan externamente, mientras que el modelo de dominio conserva la información necesaria para identificarlos y recuperarlos.
+
+| Clase | Tipo | Atributos y tipos | Métodos / Operaciones principales | Responsabilidad |
+|---|---|---|---|---|
+| `MedicalDocument` | Raíz de Agregado | `id: UUID`<br>`patientId: UUID`<br>`createdAt: LocalDateTime` | `addItem(DocumentItem)`<br>`removeItem(UUID)`<br>`getItems()` | Actúa como raíz del agregado de la documentación médica asociada a un paciente. |
+| `DocumentItem` | Entidad | `id: UUID`<br>`type: DocumentType`<br>`metadata: DocumentMetadata`<br>`storageKey: String` | `changeMetadata(DocumentMetadata)`<br>`changeType(DocumentType)`<br>`changeStorageKey(String)` | Representa un archivo o elemento documental individual asociado a un paciente. |
+| `DocumentMetadata` | Objeto de Valor | `description: String`<br>`date: Date`<br>`origin: String` | `description()`<br>`date()`<br>`origin()` | Encapsula los metadatos descriptivos asociados a un documento médico. |
+| `DocumentType` | Enumeración / Objeto de Valor | Valores que representan la categoría de documento médico | — | Clasifica los documentos médicos de acuerdo con su tipo funcional. |
+| `DocumentRepository` | Interfaz de Repositorio | — | `save(MedicalDocument)`<br>`findById(UUID)`<br>`findByPatientId(UUID)` | Define las operaciones de persistencia requeridas por el bounded context Documents. |
+
+El atributo `storageKey` hace referencia al archivo externo almacenado en Supabase Storage. De esta manera, CareConnect almacena en PostgreSQL los metadatos del documento y la referencia hacia el almacenamiento externo, en lugar de almacenar directamente el archivo médico como datos binarios dentro de la base de datos relacional.
+
+---
+
+##### Bounded Context Authentication / IAM
+
+El bounded context Authentication / IAM administra las cuentas de usuario de CareConnect, la autenticación, los roles de autorización, la validación de sesiones, el estado de las cuentas y el bloqueo temporal después de intentos de acceso fallidos.
+
+| Clase | Tipo | Atributos y tipos | Métodos / Operaciones principales | Responsabilidad |
+|---|---|---|---|---|
+| `User` | Entidad | `email: String`<br>`passwordHash: String`<br>`fullName: String`<br>`role: UserRole`<br>`active: Boolean`<br>`failedLoginAttempts: Int`<br>`lockedUntil: LocalDateTime` | `activate()`<br>`deactivate()`<br>`registerFailedLogin()`<br>`resetFailedLoginAttempts()`<br>`lockUntil(LocalDateTime)`<br>`isLocked()` | Representa una cuenta de usuario de CareConnect y aplica las reglas de dominio asociadas a la activación y bloqueo temporal de cuentas. |
+| `UserRole` | Enumeración | Valores que representan los roles funcionales disponibles en CareConnect | — | Identifica el rol funcional asignado a un usuario. |
+| `AuthService` | Contrato de Servicio de Aplicación | — | `register(...)`<br>`login(...)`<br>`logout(...)`<br>`validateSession(...)` | Define las operaciones de aplicación requeridas para el registro, autenticación, cierre de sesión y validación de sesiones. |
+| `AuthServiceImpl` | Servicio de Aplicación | — | `register(...)`<br>`login(...)`<br>`logout(...)`<br>`validateSession(...)` | Implementa los casos de uso de autenticación definidos mediante `AuthService`. |
+| `UserRepository` | Interfaz de Repositorio | — | `save(User)`<br>`findByEmail(String)`<br>`findById(UUID)` | Define el contrato de persistencia requerido para almacenar y recuperar cuentas de usuario. |
+| `UserJpaEntity` | Entidad de Persistencia | Representación persistente de la entidad `User` | — | Representa el modelo de persistencia utilizado para almacenar la información de los usuarios en la base de datos relacional. |
+| `UserMapper` | Mapper | — | `toDomain(UserJpaEntity)`<br>`toEntity(User)` | Convierte entre el modelo de dominio `User` y su representación de persistencia. |
+| `AuthController` | Controlador REST | — | `register(...)`<br>`login(...)`<br>`logout(...)`<br>`validateSession(...)` | Expone las operaciones de autenticación mediante la API RESTful. |
+
+La representación persistente asociada a `User` almacena los siguientes datos en PostgreSQL:
+
+| Atributo | Tipo de persistencia |
+|---|---|
+| `id` | `UUID` |
+| `email` | `VARCHAR`, único |
+| `passwordHash` | `VARCHAR` |
+| `fullName` | `VARCHAR` |
+| `role` | `VARCHAR` |
+| `active` | `BOOLEAN` |
+| `failedLoginAttempts` | `INTEGER` |
+| `lockedUntil` | `TIMESTAMP` |
+
+---
+
+##### Resumen del Diccionario de Clases
+
+El diseño orientado a objetos de CareConnect mantiene una separación clara entre los diferentes bounded contexts del sistema.
+
+Las **Raíces de Agregado** coordinan los límites de consistencia de cada agregado. Las **Entidades** poseen una identidad propia que se mantiene durante su ciclo de vida. Los **Objetos de Valor** encapsulan conceptos relevantes del dominio que no requieren una identidad independiente.
+
+Los **Servicios de Dominio** contienen reglas de negocio que no pertenecen naturalmente a una única entidad, mientras que las **Interfaces de Repositorio** abstraen las operaciones de persistencia y permiten mantener desacoplada la capa de dominio de los mecanismos concretos de almacenamiento.
+
+Finalmente, los **Servicios de Aplicación**, controladores y mappers coordinan los casos de uso, la exposición de funcionalidades y la transformación de información entre las diferentes capas de la arquitectura.
+
+De esta forma, el diseño mantiene coherencia entre la arquitectura basada en Domain-Driven Design, los Diagramas de Clases y el modelo de persistencia relacional de CareConnect, reduciendo el acoplamiento entre bounded contexts y facilitando la evolución independiente de sus componentes.
 
 ### 4.10. Database Design
 
