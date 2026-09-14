@@ -726,7 +726,85 @@ Al comparar ambos mapas se observa que la fricción no está en la ejecución de
 
 
 ### 2.4. Ubiquitous Language
-> _Guía:_ Glosario del dominio, términos en inglés, sin términos técnicos de ingeniería de software.
+
+En esta sección se establece el lenguaje ubicuo del dominio de CareConnect, entendido como el conjunto de términos y conceptos que el equipo de desarrollo y los expertos del dominio del cuidado geriátrico utilizan de manera compartida para referirse a la misma realidad. Mantener este glosario completo y sin ambigüedad permite que las conversaciones sobre el producto, la documentación del informe y el modelo de la solución empleen las mismas palabras con el mismo significado, evitando que un mismo concepto reciba nombres distintos según quién lo mencione.
+
+Siguiendo la práctica establecida por Eric Evans en Domain Driven Design, los términos se expresan en inglés, que es el idioma del modelo del dominio, y se acompañan de su equivalente en español en una columna independiente. Las definiciones se redactan en español. El glosario recoge exclusivamente conceptos propios del dominio del cuidado geriátrico, es decir, aquellos que existen en la realidad del paciente y de sus cuidadores con independencia de la solución de software. Los términos técnicos del área de ingeniería de software quedan fuera de esta sección por pertenecer al lenguaje de la solución y no al del problema.
+
+Los términos se organizan en cinco grupos temáticos que corresponden a los aspectos centrales del dominio: los actores del cuidado, la agenda y el seguimiento de eventos de salud, la medicación y la adherencia al tratamiento, la continuidad del cuidado entre turnos, y la documentación y el registro de la evolución del paciente.
+
+<div style="page-break-after: always"></div>
+
+## Actores del cuidado
+
+| Término | Equivalente en español | Definición |
+| :--- | :--- | :--- |
+| **Patient** | Paciente | Persona cuya información de salud se registra y organiza en el marco de un proceso de cuidado, y titular de las decisiones sobre quién puede acceder a dicha información. |
+| **Geriatric Patient** | Paciente geriátrico | Paciente adulto mayor, de sesenta años a más, que requiere seguimiento frecuente de su medicación, controles médicos y actividades diarias. |
+| **Caregiver** | Cuidador | Persona autorizada por el paciente para acompañar su rutina de cuidado, dar seguimiento a su información de salud y ejecutar las actividades previstas en su tratamiento. |
+| **Formal Caregiver** | Cuidador formal | Cuidador con formación o vínculo laboral en la atención de adultos mayores, como un enfermero, un técnico de salud o un asistente geriátrico. |
+| **Informal Caregiver** | Cuidador informal | Familiar o allegado que asume el cuidado del paciente sin formación especializada ni relación contractual, generalmente dentro del hogar. |
+| **Care Network** | Red de cuidado | Conjunto de cuidadores autorizados por un mismo paciente que se coordinan entre sí para sostener la continuidad de su cuidado. |
+| **Health Professional** | Profesional de salud | Médico u otro especialista que evalúa al paciente, establece el tratamiento y conserva la responsabilidad sobre las decisiones clínicas. |
+
+<div style="page-break-after: always"></div>
+
+## Agenda y eventos de salud
+
+| Término | Equivalente en español | Definición |
+| :--- | :--- | :--- |
+| **Health Event** | Evento de salud | Actividad relacionada con la salud del paciente que ocurre en un momento determinado, como la toma de un medicamento o la asistencia a una cita médica. |
+| **Agenda** | Agenda de cuidado | Organización en el tiempo de todos los eventos de salud previstos para un paciente, que permite conocer qué actividades corresponden a cada momento del día. |
+| **Appointment** | Cita médica | Evento de salud programado entre el paciente y un profesional de salud en una fecha y una hora determinadas. |
+| **Care Routine** | Rutina de cuidado | Secuencia habitual de actividades que el paciente y sus cuidadores realizan a lo largo del día para sostener el tratamiento indicado. |
+| **Event Status** | Estado del evento | Condición en la que se encuentra un evento de salud respecto de su cumplimiento, pudiendo estar pendiente, confirmado o no cumplido. |
+| **Event Confirmation** | Confirmación de evento | Registro mediante el cual el paciente o un cuidador dejan constancia de que un evento de salud programado efectivamente ocurrió. |
+| **Reschedule** | Reprogramación | Cambio de la fecha o la hora de un evento de salud previamente registrado en la agenda de cuidado. |
+| **Reminder** | Recordatorio | Aviso anticipado que se comunica al paciente o a sus cuidadores para que un evento de salud próximo se cumpla a tiempo. |
+| **Alert** | Alerta | Aviso de alta prioridad dirigido a los cuidadores cuando se produce un incumplimiento o una situación que requiere atención inmediata. |
+
+<div style="page-break-after: always"></div>
+
+## Medicación y adherencia
+
+| Término | Equivalente en español | Definición |
+| :--- | :--- | :--- |
+| **Prescription** | Prescripción médica | Indicación emitida por un profesional de salud que establece qué medicamentos debe tomar el paciente, en qué dosis y con qué frecuencia. |
+| **Medication Schedule** | Esquema de medicación | Distribución en el tiempo de los medicamentos prescritos al paciente, que define los horarios en que corresponde tomar cada uno. |
+| **Medication Event** | Evento de medicación | Evento de salud que representa la toma o la administración de un medicamento en un horario definido dentro del esquema de medicación. |
+| **Dose** | Dosis | Cantidad de un medicamento que corresponde tomar en un momento determinado, según lo establecido en la prescripción médica. |
+| **Dose Administration** | Administración de dosis | Acto mediante el cual un cuidador entrega al paciente la dosis que corresponde, o el paciente la toma por sí mismo. |
+| **Missed Dose** | Dosis omitida | Dosis que no fue tomada ni administrada dentro del horario previsto en el esquema de medicación. |
+| **Duplicate Dose** | Dosis duplicada | Dosis administrada más de una vez en un mismo horario, generalmente por falta de certeza sobre si ya había sido entregada. |
+| **Treatment Adherence** | Adherencia al tratamiento | Grado en que el paciente cumple las indicaciones médicas recibidas, especialmente en lo referido a horarios y dosis de medicación. |
+
+<div style="page-break-after: always"></div>
+
+## Continuidad del cuidado
+
+| Término | Equivalente en español | Definición |
+| :--- | :--- | :--- |
+| **Care Shift** | Turno de cuidado | Periodo continuo durante el cual un cuidador determinado asume la responsabilidad sobre el paciente. |
+| **Shift Handover** | Relevo de turno | Traspaso de la responsabilidad del cuidado y de la información sobre el estado del paciente entre el cuidador que termina su turno y el que lo inicia. |
+| **Profile Sharing** | Compartición de perfil | Decisión del paciente de autorizar a un cuidador para que acceda a su información de salud y participe de su proceso de cuidado. |
+| **Access Consent** | Consentimiento de acceso | Alcance de la información de salud que el paciente autoriza a conocer a un cuidador determinado, y que puede modificar o retirar en cualquier momento. |
+| **Shared Care** | Cuidado compartido | Modalidad de cuidado en la que varias personas atienden a un mismo paciente de manera alternada y requieren información común sobre lo ya realizado. |
+| **Caregiver Burden** | Carga del cuidador | Desgaste físico y mental que experimenta el cuidador como consecuencia de la responsabilidad sostenida sobre el paciente. |
+
+<div style="page-break-after: always"></div>
+
+## Documentación y evolución
+
+| Término | Equivalente en español | Definición |
+| :--- | :--- | :--- |
+| **Medical Document** | Documento médico | Documento con información clínica del paciente, como un resultado de examen, una receta o un informe emitido por un profesional de salud. |
+| **Diary Entry** | Entrada de diario | Registro descrito por el paciente o por un cuidador sobre el estado, la experiencia o el comportamiento del paciente en un momento determinado. |
+| **Diary** | Diario de seguimiento | Conjunto ordenado de entradas de diario que permite reconstruir cómo transcurrió el cuidado del paciente a lo largo del tiempo. |
+| **Patient Evolution** | Evolución del paciente | Cambio observado en el estado de salud del paciente durante un periodo determinado, y que el profesional de salud consulta para evaluar el tratamiento. |
+| **Vital Signs** | Signos vitales | Mediciones básicas del estado del paciente, como la presión arterial, la temperatura corporal y la saturación de oxígeno, registradas durante el cuidado diario. |
+| **Warning Sign** | Signo de alerta | Manifestación observada en el paciente que indica un posible deterioro de su estado y que debe comunicarse oportunamente a los demás cuidadores o al profesional de salud. |
+
+<div style="page-break-after: always"></div>
 
 ## Capítulo III: Requirements Specification
 
