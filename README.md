@@ -417,11 +417,10 @@ Los valores reales de estas variables deben mantenerse únicamente en los entorn
 La Landing Page actualmente implementada utiliza:
 
 ```text
-Framework: React
-Language: TypeScript
-Build Tool: Vite
-Package Manager: npm
-Hosting: Vercel
+Framework: Flutter
+UI Components: Flutter
+Package Manager: flutter run
+Communication: REST over HTTPS/JSON
 ```
 
 El repositorio correspondiente es:
