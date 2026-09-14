@@ -762,158 +762,58 @@ Estas diferencias deben mantenerse explícitas en la documentación hasta que el
 
 ---
 
-#### 5.1.2. Source Code Management
+### 5.1.2. Source Code Management
 
-CareConnect utiliza **Git** como sistema de control de versiones distribuido y **GitHub** como plataforma central para alojar los repositorios, gestionar ramas, revisar Pull Requests y mantener la trazabilidad de los cambios.
+Para la gestión del código fuente y de los artefactos de documentación de CareConnect, el equipo utiliza **Git** como sistema de control de versiones distribuido y **GitHub** como plataforma colaborativa para el alojamiento de repositorios, administración de ramas, revisión de cambios y trazabilidad del desarrollo.
 
-##### Repositorios del proyecto
+El uso de control de versiones permite mantener un historial de modificaciones, identificar la contribución de cada integrante y controlar la integración progresiva del trabajo realizado durante los diferentes sprints y entregas del proyecto.
 
-| Producto | Repositorio |
-|---|---|
-| Project Report | `https://github.com/CareStacks/Report` |
-| Backend RESTful API | `https://github.com/CareStacks/BackEnd` |
-| Native Mobile Application | `https://github.com/CareStacks/FrontEnd` |
-| Landing Page | `https://github.com/CareStacks/Landing-Page` |
-| Frontend Web Application | Pendiente de creación o confirmación |
+#### Repositorio del informe
 
-La separación por repositorios permite que cada producto mantenga su propio historial, ciclo de desarrollo, Pull Requests y despliegues.
+El informe del proyecto se encuentra alojado en el siguiente repositorio de GitHub:
 
-##### Estrategia GitFlow
+- **Repositorio:** CareStacks Report
+- **Organización:** `upc-pre-202620-1asi0732-9100-carestacks`
+- **URL:** https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report
 
-El flujo de ramas se basa en GitFlow.
+El repositorio contiene la documentación correspondiente a los diferentes capítulos del informe y los recursos gráficos utilizados como evidencia de los artefactos desarrollados.
+
+#### Estrategia de ramas
+
+Para organizar el desarrollo del informe se utiliza una estrategia de ramas basada en una separación entre la versión estable, la versión de integración y las ramas de trabajo correspondientes a cada capítulo.
+
+Las principales ramas son:
 
 | Rama | Propósito |
 |---|---|
-| `main` | Contiene versiones estables o liberables. |
-| `develop` | Integra cambios destinados a la siguiente versión. |
-| `feature/*` | Implementa una funcionalidad específica. |
-| `release/*` | Prepara una versión antes de integrarla a `main`. |
-| `hotfix/*` | Corrige de forma urgente una versión estable. |
+| `main` | Contiene la versión estable y consolidada del informe correspondiente a las entregas oficiales. |
+| `develop` | Rama de integración en la que se consolidan los cambios desarrollados antes de incorporarlos a `main`. |
+| `chapter-1` | Desarrollo y actualización del Capítulo I. |
+| `chapter-2` | Desarrollo y actualización del Capítulo II. |
+| `chapter-3` | Desarrollo y actualización del Capítulo III. |
+| `chapter-4` | Desarrollo y actualización del Capítulo IV. |
+| `chapter-5` | Desarrollo y actualización del Capítulo V. |
+| `chapter-6` | Desarrollo y actualización del Capítulo VI. |
 
-Ejemplos:
+El flujo de integración utilizado para el informe es el siguiente:
 
-```text
-feature/agenda-reminders
-feature/document-upload
-feature/profile-sharing
-release/1.1.0
-hotfix/login-validation
-```
+1. Cada capítulo es desarrollado en su respectiva rama `chapter-*`.
+2. Los cambios realizados se registran mediante commits siguiendo la convención definida por el equipo.
+3. Una vez concluida y revisada una sección, los cambios son integrados hacia `develop`.
+4. La rama `develop` funciona como punto de integración y validación del informe.
+5. Cuando el contenido correspondiente a una entrega se encuentra completo y revisado, se realiza la integración desde `develop` hacia `main`.
+6. `main` mantiene únicamente versiones consideradas estables y listas para entrega.
 
-El flujo general de una funcionalidad es:
+El flujo general puede representarse de la siguiente manera:
 
-```text
-develop
-   |
-   v
-feature/nombre-funcionalidad
-   |
-   v
-Pull Request
-   |
-   v
-develop
-```
+`chapter-*` → `develop` → `main`
 
-Cuando se prepara una versión:
+#### Convenciones para nombres de ramas
+
+Las ramas utilizadas para el desarrollo del informe siguen la siguiente convención:
 
 ```text
-develop
-   |
-   v
-release/x.y.z
-   |
-   v
-main
-```
-
-Una corrección urgente parte desde `main`, utiliza una rama `hotfix/*` y debe reintegrarse posteriormente tanto a `main` como a la línea activa de desarrollo.
-
-##### Semantic Versioning
-
-Las versiones siguen **Semantic Versioning**:
-
-```text
-MAJOR.MINOR.PATCH
-```
-
-| Elemento | Significado |
-|---|---|
-| `MAJOR` | Cambios incompatibles con versiones anteriores. |
-| `MINOR` | Nueva funcionalidad compatible con versiones anteriores. |
-| `PATCH` | Correcciones compatibles con versiones anteriores. |
-
-Ejemplos:
-
-```text
-1.0.0
-1.1.0
-1.1.1
-2.0.0
-```
-
-##### Conventional Commits
-
-Los mensajes de commit utilizan la estructura:
-
-```text
-type(scope): imperative description
-```
-
-Los tipos permitidos son:
-
-| Tipo | Uso |
-|---|---|
-| `feat` | Nueva funcionalidad. |
-| `fix` | Corrección de errores. |
-| `docs` | Cambios de documentación. |
-| `refactor` | Reestructuración interna sin modificar el comportamiento externo. |
-| `style` | Cambios de formato que no afectan la lógica. |
-| `test` | Adición o modificación de pruebas. |
-| `chore` | Mantenimiento general o configuración. |
-| `perf` | Mejoras de rendimiento. |
-| `build` | Cambios relacionados con construcción o dependencias. |
-| `ci` | Cambios relacionados con integración continua. |
-
-Ejemplos:
-
-```text
-feat(agenda): add health event confirmation
-fix(iam): prevent login for locked accounts
-docs(report): add software configuration management
-refactor(notifications): simplify dispatch service
-test(consent): add access revocation tests
-build(backend): update Maven dependencies
-ci(backend): add automated test workflow
-```
-
-Los commits deben:
-
-- Utilizar descripción en inglés.
-- Utilizar un verbo en modo imperativo.
-- Describir un cambio específico.
-- Evitar mensajes genéricos como `update files`.
-- Ser preferentemente menores a 72 caracteres.
-- Separar cambios independientes en commits diferentes.
-
-##### Pull Requests
-
-Las funcionalidades deben integrarse mediante Pull Requests cuando corresponda.
-
-Cada Pull Request debe incluir:
-
-| Elemento | Descripción |
-|---|---|
-| Título | Resume de forma precisa el cambio. |
-| Descripción | Explica qué se modificó y por qué. |
-| Historia o tarea asociada | Relaciona el cambio con la User Story o Technical Story correspondiente. |
-| Evidencia | Incluye pruebas, capturas o resultados cuando corresponda. |
-| Rama origen | Feature, release o hotfix. |
-| Rama destino | Normalmente `develop` o `main`, según el flujo. |
-| Revisión | Validación por otro integrante antes de integrar el cambio. |
-
----
-
+chapter-<número>
 #### 5.1.3. Source Code Style Guide & Conventions
 
 Las convenciones de código permiten mantener consistencia entre los distintos productos y módulos de CareConnect.
