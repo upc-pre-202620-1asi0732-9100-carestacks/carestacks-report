@@ -384,7 +384,6 @@ Los competidores presentan limitaciones distintas en personalización y evoluci�
 Esta sección presenta el diseño, el registro y el análisis de las entrevistas realizadas a los segmentos objetivo, con el fin de comprender sus necesidades, sus problemas actuales y las oportunidades de mejora en la gestión del cuidado geriátrico.
 
 #### 2.2.1. Diseño de entrevistas
-> _Guía:_ Preguntas principales y complementarias por segmento.
 
 Diseñamos entrevistas semiestructuradas con preguntas diferenciadas según cada segmento objetivo, organizadas en bloques temáticos que permiten recopilar información sobre el perfil del usuario, sus hábitos actuales y la validación de las funcionalidades propuestas. Los bloques fueron definidos de modo que la información recogida alimente directamente la construcción de los arquetipos: el bloque de perfil captura características demográficas, el bloque de hábitos captura comportamientos, herramientas y canales de interacción, y el bloque de validación captura objetivos y expectativas.
 
@@ -735,7 +734,7 @@ Los términos se organizan en cinco grupos temáticos que corresponden a los asp
 
 <div style="page-break-after: always"></div>
 
-## Actores del cuidado
+##### Actores del cuidado
 
 | Término | Equivalente en español | Definición |
 | :--- | :--- | :--- |
@@ -749,7 +748,7 @@ Los términos se organizan en cinco grupos temáticos que corresponden a los asp
 
 <div style="page-break-after: always"></div>
 
-## Agenda y eventos de salud
+##### Agenda y eventos de salud
 
 | Término | Equivalente en español | Definición |
 | :--- | :--- | :--- |
@@ -765,7 +764,7 @@ Los términos se organizan en cinco grupos temáticos que corresponden a los asp
 
 <div style="page-break-after: always"></div>
 
-## Medicación y adherencia
+##### Medicación y adherencia
 
 | Término | Equivalente en español | Definición |
 | :--- | :--- | :--- |
@@ -780,7 +779,7 @@ Los términos se organizan en cinco grupos temáticos que corresponden a los asp
 
 <div style="page-break-after: always"></div>
 
-## Continuidad del cuidado
+##### Continuidad del cuidado
 
 | Término | Equivalente en español | Definición |
 | :--- | :--- | :--- |
@@ -793,7 +792,7 @@ Los términos se organizan en cinco grupos temáticos que corresponden a los asp
 
 <div style="page-break-after: always"></div>
 
-## Documentación y evolución
+##### Documentación y evolución
 
 | Término | Equivalente en español | Definición |
 | :--- | :--- | :--- |
