@@ -813,7 +813,6 @@ Se utilizan diagramas de clases independientes para cada bounded context. Esta e
 
 El bounded context Agenda controla los eventos de salud asociados a un paciente. `HealthEvent` representa una cita médica, medicamento o actividad terapéutica, mientras que `Reminder` representa un recordatorio relacionado con un evento programado.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE AGENDA]**
 
 ![Class Diagram - Agenda](assets/careconnect-agenda-class-diagram.png)
 
@@ -823,7 +822,6 @@ El bounded context Agenda controla los eventos de salud asociados a un paciente.
 
 El bounded context Notificaciones administra las comunicaciones generadas por CareConnect, incluyendo recordatorios, alertas y preferencias de comunicación.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE NOTIFICACIONES]**
 
 ![Class Diagram - Notificaciones](assets/careconnect-notifications-class-diagram.png)
 
@@ -833,7 +831,6 @@ El bounded context Notificaciones administra las comunicaciones generadas por Ca
 
 El bounded context Diario de Seguimiento gestiona las notas registradas sobre la evolución del paciente.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE DIARIO DE SEGUIMIENTO]**
 
 ![Class Diagram - Diario](assets/careconnect-diary-class-diagram.png)
 
@@ -843,7 +840,6 @@ El bounded context Diario de Seguimiento gestiona las notas registradas sobre la
 
 Este bounded context controla el ciclo de vida de los accesos compartidos entre pacientes y cuidadores.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE GESTIÓN DE CONSENTIMIENTO]**
 
 ![Class Diagram - Consentimiento](assets/careconnect-consent-class-diagram.png)
 
@@ -853,7 +849,6 @@ Este bounded context controla el ciclo de vida de los accesos compartidos entre 
 
 El bounded context Documentos administra la información asociada a documentos médicos y la referencia necesaria para acceder a los archivos almacenados externamente.
 
-> **[INSERTAR AQUÍ EL CLASS DIAGRAM DE DOCUMENTOS]**
 
 ![Class Diagram - Documentos](assets/careconnect-documents-class-diagram.png)
 
