@@ -532,9 +532,7 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 | **Resumen** | Laura Marcela gestiona su cuidado de forma independiente, apoyándose principalmente en alarmas y recordatorios de su celular y de su tablet. Reconoce que en ocasiones olvida, y son sus hijos o las propias alarmas quienes le recuerdan los medicamentos que debe tomar. Camina y asiste a sus citas de manera presencial y sin ayuda en la mayoría de casos. Entre sus dificultades identificó el olvido ocasional de fechas, la discapacidad física en ciertos momentos y la dificultad para guardar sus documentos de manera centralizada. Utiliza el celular para llamadas, WhatsApp y de forma intensiva para alarmas y calendario, además de usar frecuentemente la tablet para entretenimiento y comunicación, por lo que se siente cómoda con la tecnología. Busca una herramienta que le permita tener todo organizado en un solo lugar, evitar olvidos y transmitir información rápidamente a sus hijos en caso necesiten ayudarla. Entre las funcionalidades sugeridas mencionó recordatorios automáticos, agendado de citas acompañada e historial de documentos y citas pasadas. Espera mejorar su organización diaria y reducir los errores y accidentes que pueda sufrir en su tratamiento o en el camino hacia este, mediante una herramienta fácil de usar. |
 
 #### 2.2.3. Análisis de entrevistas
-> _Guía:_ Análisis por segmento con sustento estadístico (porcentajes).
 
-Realizamos un total de seis entrevistas, tres al segmento de cuidadores y tres al segmento de pacientes geriátricos. A partir de ellas identificamos patrones claros en la gestión del cuidado, las dificultades actuales y las necesidades de cada segmento.
 
 #### Segmento 1: Cuidadores de pacientes geriátricos
 
@@ -667,7 +665,65 @@ En Valeria destaca una tensión entre el alto nivel de responsabilidad asumido y
 En Rafael el eje emocional dominante es la pérdida progresiva de autonomía. Lo que dice muestra su deseo de resolver lo cotidiano sin tener que llamar a su hija por cada detalle. Lo que piensa revela una regla de decisión riesgosa: ante la duda, prefiere omitir la dosis. Lo que hace confirma un uso muy acotado del celular y un rechazo natural a aplicaciones nuevas si no fueron instaladas por alguien de confianza. Lo que siente mezcla frustración y gratitud, con tranquilidad cuando la información se presenta de forma clara. El mapa refuerza que la interfaz debe priorizar legibilidad, confirmación simple y lenguaje directo.
 
 #### 2.3.5. As-is Scenario Mapping
-> _Guía:_ Uno por User Persona (LucidChart/Miro). Filas Phases, Doing, Thinking, Feeling + áreas positivas/negativas/blank.
+
+Se presenta la situación actual (As-Is) de cada User Persona antes de contar con la solución. Cada escenario organiza el recorrido en fases y describe las acciones, pensamientos y emociones que la persona experimenta hoy, apoyándose únicamente en las herramientas que tiene a la mano. Las fases se nombraron de modo que puedan contrastarse una a una con las del To-Be Scenario Mapping.
+
+---
+
+##### User Persona 1 — Valeria Huamán
+
+![As-Is Scenario Mapping de Valeria Huamán](assets/chapter-2/as-is-scenarios/as-is-valeria.png)
+
+###### Recorrido por fases
+
+| | Fase 1: Organización inicial | Fase 2: Registro de rutina | Fase 3: Seguimiento diario | Fase 4: Coordinación familiar | Fase 5: Revisión |
+|---|---|---|---|---|---|
+| **Doing** | Arma el pastillero semanal y crea alarmas etiquetadas en su celular | Anota medicación y citas en un cuaderno de bitácora | Administra la dosis, desactiva la alarma y anota la hora a mano | Avisa al relevo por WhatsApp y repite los datos por seguridad | Reconstruye de memoria el historial de dosis y síntomas ante el médico |
+| **Thinking** | "¿Me estoy olvidando de algo?" | "Si pierdo el cuaderno, pierdo todo" | "No sé si mi mamá le dio la de la mañana" | "Espero haberle dicho todo" | "No tengo la evolución ordenada" |
+| **Feeling** | Incertidumbre | Sobrecargada | Alivio parcial | Ansiedad y duda | Frustración |
+
+###### Áreas identificadas
+
+| Área | Fase | Descripción |
+|---|---|---|
+| **Positiva** | Fase 3: Seguimiento diario | Es el único momento del día con certeza plena, porque la acción es concreta, inmediata y depende solo de ella |
+| **Negativa** | Fase 2: Registro de rutina | Toda la información del tratamiento vive en un soporte único y frágil, sin respaldo ni acceso para el resto de cuidadores |
+| **Negativa** | Fase 4: Coordinación familiar | El relevo depende de la memoria y de mensajes informales. Es el problema que los tres cuidadores entrevistados señalaron como principal |
+| **Negativa** | Fase 5: Revisión | La información existe pero está dispersa entre cuaderno, alarmas y conversaciones, y debe reconstruirse a mano frente al médico |
+| **Blank area** | Fase 1: Organización inicial | No se determinó con qué criterio Valeria decide qué revisar primero cada mañana ni cuánto tiempo le toma. Requiere observación directa |
+
+---
+
+##### User Persona 2 — Rafael Medina
+
+![As-Is Scenario Mapping de Rafael Medina](assets/chapter-2/as-is-scenarios/as-is-rafael.png)
+
+###### Recorrido por fases
+
+| | Fase 1: Organización inicial | Fase 2: Recordatorio | Fase 3: Confirmación | Fase 4: Consulta | Fase 5: Compartir |
+|---|---|---|---|---|---|
+| **Doing** | Su hija le configura las alarmas y le explica las indicaciones médicas | Suena la alarma del celular o su hija lo llama para recordarle | No tiene forma de registrar la toma. Ante la duda, prefiere omitirla | Pregunta a su hija qué le toca o busca entre recetas y papeles | Avisa por teléfono, o calla para no preocupar a la familia |
+| **Thinking** | "No quiero algo complicado" | "Menos mal que sonó la alarma" | "Creo que ya la tomé. Mejor no, no vaya a ser doble" | "Tendría que llamar a mi hija otra vez" | "No quiero molestar a mis hijos" |
+| **Feeling** | Inseguro | Atento | Duda e inseguridad | Dependiente | Resignado |
+
+###### Áreas identificadas
+
+| Área | Fase | Descripción |
+|---|---|---|
+| **Positiva** | Fase 2: Recordatorio | La alarma cumple su función de avisar a tiempo y es el único apoyo que hoy le resulta confiable |
+| **Negativa** | Fase 3: Confirmación | La duda sobre la dosis ya tomada deriva en omitir la medicación. Es un riesgo clínico directo, reportado de forma explícita durante las entrevistas al segmento |
+| **Negativa** | Fase 4: Consulta | Depende de otra persona para saber qué le corresponde hacer, lo que reduce la autonomía que él mismo declara querer conservar |
+| **Blank area** | Fase 1: Organización inicial | No se determinó con qué frecuencia Rafael necesita consultar a su hija ni cuántas de esas consultas podría resolver por sí mismo. Requiere medición |
+| **Blank area** | Fase 5: Compartir | Se desconoce en qué medida desea compartir su estado por iniciativa propia o prefiere que lo haga su cuidadora. De ello depende cuánta información mostrarle en la aplicación |
+
+---
+
+##### Hallazgos transversales
+
+En el caso de Valeria, el escenario actual distribuye la información entre cuadernos, alarmas y conversaciones de WhatsApp. Esta fragmentación incrementa la carga mental, dificulta el relevo entre cuidadores y obliga a reconstruir manualmente el historial durante una consulta médica. En el caso de Rafael, la situación actual genera dudas sobre si ya tomó una dosis y lo lleva a depender de otras personas para consultar su rutina.
+
+Al comparar ambos mapas se observa que la fricción no está en la ejecución de las tareas de cuidado, que ambos resuelven, sino en la certeza sobre lo que ya ocurrió. Valeria no puede confirmar si otra persona administró la dosis y Rafael no puede confirmar si él mismo la tomó, de modo que se trata de la misma carencia expresada desde dos posiciones distintas del mismo proceso. Los momentos de mayor deterioro emocional coinciden además con los de mayor riesgo clínico, esto es el relevo de turno para el cuidador y la duda de dosis para el paciente. Las tres blank areas identificadas quedan registradas como preguntas abiertas para las siguientes iteraciones de investigación.
+
 
 ### 2.4. Ubiquitous Language
 > _Guía:_ Glosario del dominio, términos en inglés, sin términos técnicos de ingeniería de software.
