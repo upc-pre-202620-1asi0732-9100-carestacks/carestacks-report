@@ -705,10 +705,11 @@ Esta decisión permite conservar los límites conceptuales definidos mediante Do
 | Container | Tecnología | Estado | Responsabilidad |
 |---|---|---|---|
 | Landing Page | React + Vite + TypeScript | Implementado | Presenta el producto, la problemática y la propuesta de valor. |
-| Frontend Web Application | Vue + PrimeVue | Objetivo 1ASI0732 | Proporciona una experiencia funcional desde navegador web. |
-| Mobile Application | Kotlin + Jetpack Compose | Implementado | Aplicación Android utilizada por pacientes y cuidadores. |
-| Backend RESTful API | Java 21 + Spring Boot | Implementado | Expone los casos de uso y reglas de los seis bounded contexts. |
-| Relational Database | PostgreSQL | Implementado | Persiste la información estructurada del sistema. |
+| Frontend Web Application | Flutter (Web target) | Implementado | Proporciona una experiencia funcional desde navegador web para el segmento cuidador. |
+| Mobile Application (iOS) | Flutter | Implementado | Aplicación para el segmento cuidador, ejecutada en simulador/dispositivo iOS. |
+| Mobile Application (Android) | Kotlin + Jetpack Compose | Implementado | Aplicación nativa para el segmento paciente. |
+| Backend RESTful API | Java 25 + Spring Boot 4 | Implementado | Expone los casos de uso y reglas de los seis bounded contexts. |
+| Relational Database | PostgreSQL (H2 en desarrollo local) | Implementado | Persiste la información estructurada del sistema. |
 | Local Storage | Room / SQLite | Implementado | Mantiene información local y caché para soporte offline. |
 
 ##### Relaciones entre containers
@@ -726,11 +727,9 @@ Esta decisión permite conservar los límites conceptuales definidos mediante Do
 
 ##### Consideración tecnológica
 
-El backend actualmente implementado utiliza **Java 21 y Spring Boot**. Sin embargo, el Final Project Statement del curso establece **ASP.NET Core y C#** como tecnologías requeridas para Web Services.
+El backend implementado utiliza **Java 25 y Spring Boot 4**. El Final Project Statement del curso establece ASP.NET Core y C# como tecnologías de referencia para Web Services; el equipo optó por conservar el stack Java/Spring heredado del proyecto anterior (CareConnect), decisión que debe ser validada con el docente.
 
-Por lo tanto, existe una diferencia entre el producto actualmente implementado y el stack solicitado por el curso. Si el equipo conserva Spring Boot, esta decisión deberá ser validada con el docente. De lo contrario, será necesario realizar la migración del backend hacia la tecnología solicitada.
-
-La Frontend Web Application se plantea con **Vue + PrimeVue**, de acuerdo con el stack requerido para el proyecto.
+La Frontend Web Application se implementó reutilizando la base **Flutter** ya desarrollada para el segmento cuidador (compilada al target Web de Flutter), en lugar de Vue + PrimeVue. Esta decisión permitió reutilizar el sistema de diseño, componentes y capa de datos ya validados en la aplicación móvil, evitando reescribir la lógica de negocio en un stack distinto. Esta desviación respecto al stack sugerido por el curso debe ser validada con el docente; de no ser aceptada, se evaluará una migración hacia el stack requerido.
 
 
 ![Software Architecture Container Diagram](assets/careconnect-container-1-diagram.png)
