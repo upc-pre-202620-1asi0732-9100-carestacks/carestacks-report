@@ -450,7 +450,7 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 | Segmento: Cuidadores | Entrevista #1 |
 | --- | --- |
 | **Nombres y Apellidos** | Giancarlo Castañeda |
-| **Edad** | 20 |
+| **Edad** | 25 |
 | **Distrito** | *Pendiente. El documento base registra únicamente Perú como procedencia.* |
 | **Ocupación** | Cuidador de adultos mayores a domicilio |
 | **Tiempo como cuidador** | 1 año |
@@ -463,7 +463,7 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 | Segmento: Cuidadores | Entrevista #2 |
 | --- | --- |
 | **Nombres y Apellidos** | Renzo Uribe |
-| **Edad** | 20 |
+| **Edad** | 28 |
 | **Distrito** | *Pendiente. El documento base registra únicamente Perú como procedencia.* |
 | **Ocupación** | Cuidador de adultos mayores a domicilio |
 | **Tiempo como cuidador** | 2 años |
@@ -476,7 +476,7 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 | Segmento: Cuidadores | Entrevista #3 |
 | --- | --- |
 | **Nombres y Apellidos** | Sebastián Rubio Ortiz |
-| **Edad** | 20 |
+| **Edad** | 26 |
 | **Distrito** | *Pendiente. El documento base registra únicamente Perú como procedencia.* |
 | **Ocupación** | Cuidador informal, con inicio familiar y experiencia progresiva |
 | **Tiempo como cuidador** | Aproximadamente 1 año |
