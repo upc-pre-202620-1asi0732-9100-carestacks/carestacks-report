@@ -1,4 +1,4 @@
-<img width="1467" height="787" alt="landingpage" src="https://github.com/user-attachments/assets/93e947b8-4255-49b8-8a44-c6660c190cb1" /># Informe de Trabajo Final
+# Informe de Trabajo Final
 
 
 <div align="center">
