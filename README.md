@@ -451,7 +451,7 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 | --- | --- |
 | **Nombres y Apellidos** | Giancarlo Castañeda |
 | **Edad** | 25 |
-| **Distrito** | *Pendiente. El documento base registra únicamente Perú como procedencia.* |
+| **Distrito** | Lima |
 | **Ocupación** | Cuidador de adultos mayores a domicilio |
 | **Tiempo como cuidador** | 1 año |
 | **Timing inicio** | *Pendiente* |
@@ -464,7 +464,7 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 | --- | --- |
 | **Nombres y Apellidos** | Renzo Uribe |
 | **Edad** | 28 |
-| **Distrito** | *Pendiente. El documento base registra únicamente Perú como procedencia.* |
+| **Distrito** | Lima |
 | **Ocupación** | Cuidador de adultos mayores a domicilio |
 | **Tiempo como cuidador** | 2 años |
 | **Timing inicio** | *Pendiente* |
@@ -477,7 +477,7 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 | --- | --- |
 | **Nombres y Apellidos** | Sebastián Rubio Ortiz |
 | **Edad** | 26 |
-| **Distrito** | *Pendiente. El documento base registra únicamente Perú como procedencia.* |
+| **Distrito** | Lima |
 | **Ocupación** | Cuidador informal, con inicio familiar y experiencia progresiva |
 | **Tiempo como cuidador** | Aproximadamente 1 año |
 | **Timing inicio** | *Pendiente* |
@@ -492,7 +492,7 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 | --- | --- |
 | **Nombres y Apellidos** | Rosa María Quispe |
 | **Edad** | 68 |
-| **Distrito** | *Pendiente. El documento base registra únicamente Lima, Perú.* |
+| **Distrito** | Lima |
 | **Apoyo de cuidador** | Sí, su hija |
 | **Nivel de autonomía** | Media |
 | **Uso de celular** | Sí, uso básico |
@@ -537,7 +537,7 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 
 **Características objetivas**
 
-Los tres entrevistados de este segmento, es decir el 100 %, tienen 20 años y residen en el Perú. La experiencia acumulada en actividades de cuidado varía entre uno y dos años: el 67 %, correspondiente a Giancarlo y Sebastián, lleva aproximadamente un año, mientras que el 33 %, correspondiente a Renzo, acumula dos años. Respecto al tipo de cuidado, el 67 %, es decir Giancarlo y Renzo, se desempeña como cuidador de adultos mayores a domicilio, y el 33 %, es decir Sebastián, ejerce como cuidador informal que inició en el ámbito familiar y fue ganando experiencia de manera progresiva.
+Los tres entrevistados de este segmento, es decir el 100 %, se encuentran dentro del rango de 25 a 60 años definido para cuidadores (Giancarlo 25, Sebastián 26 y Renzo 28 años) y residen en el Perú. La experiencia acumulada en actividades de cuidado varía entre uno y dos años: el 67 %, correspondiente a Giancarlo y Sebastián, lleva aproximadamente un año, mientras que el 33 %, correspondiente a Renzo, acumula dos años. Respecto al tipo de cuidado, el 67 %, es decir Giancarlo y Renzo, se desempeña como cuidador de adultos mayores a domicilio, y el 33 %, es decir Sebastián, ejerce como cuidador informal que inició en el ámbito familiar y fue ganando experiencia de manera progresiva.
 
 En cuanto a la infraestructura de trabajo, el 100 % utiliza el celular como herramienta principal de su jornada y el 100 % utiliza alarmas para recordar la medicación. El 100 % combina herramientas físicas, como pastilleros y cuadernos, con herramientas digitales, sin que ninguna de ellas esté integrada con las demás. El 100 % utiliza WhatsApp como canal de comunicación con familiares y con otros cuidadores. El 67 %, Renzo y Sebastián, incorpora además una herramienta de calendario digital, específicamente Google Calendar, mientras que el 33 %, Giancarlo, se apoya exclusivamente en un cuaderno de bitácora. Un 33 %, Giancarlo, emplea también dispositivos médicos básicos como tensiómetro, oxímetro y termómetro.
 
