@@ -58,11 +58,9 @@ Producto: **CareConnect**
 
 Enlace de la organización para el reporte del proyecto: https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report
 
-<img src="assets/insights_report_contributors.png">
-
 <img src="assets/insights_report_commits.png">
 
-<img src="assets/insights_report_pulse.png">
+<img src="assets/insights_report_branchs.png">
 
 ## Tabla de Contenidos
 
