@@ -48,24 +48,21 @@ Producto: **CareConnect**
 **Septiembre 2026**
 
 ---
+# Registro de Versiones del Informe
 
-## Registro de Versiones del Informe
+| Versión | Fecha | Autor | Descripción de la modificación |
+|----|----|----|----|
+| TB1 | 2026-09-14 | Angela Espinoza Cruz, Matias Salcedo Champi, Javier Nikaido Vargas, Santiago Baldeon Armas, Percy Alonso Muñiz Huayanca | Redacción de los Capítulos I: Introducción, II: Requirements Elicitation & Analysis, III: Requirements Specification, IV: Product Design (Style Guidelines, Information Architecture, Landing Page UI, Mobile/Web UX-UI Design, Prototyping, Domain-Driven Architecture, OO Design, Database Design) y V: Product Implementation (Software Configuration Management, Sprint Backlogs, evidencia de Landing Page, Frontend-Web, Native-Mobile, Backend RESTful y su documentación en Swagger) |
 
-> _Guía:_ Resumen de modificaciones relevantes durante el ciclo de vida. Una línea por versión, **un solo autor por línea**. La primera línea es la versión inicial. Modificaciones relevantes: adición/eliminación de secciones, correcciones/mejoras por feedback del docente o autocrítica del equipo.
+# Project Report Collaboration Insights
 
-| Versión | Fecha (YYYY-MM-DD) | Autor | Descripción de modificación |
-|---------|--------------------|-------|-----------------------------|
-| 1.0     | \<fecha>           | \<Apellidos, Nombres> | \<descripción> |
+Enlace de la organización para el reporte del proyecto: https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report
 
----
+<img src="assets/insights_report_contributors.png">
 
-## Project Report Collaboration Insights
+<img src="assets/insights_report_commits.png">
 
-> _Guía:_ Indicar el URL del repositorio del Project Report en la organización GitHub del equipo. Por cada entrega, explicar cómo se desarrollaron las actividades del informe e incluir **capturas de los analíticos de colaboración y commits** en GitHub. Todos los integrantes deben participar. Debe ser coherente con el Registro de Versiones.
-
-- Repositorio del informe: \<url-repo-github>
-
----
+<img src="assets/insights_report_pulse.png">
 
 ## Tabla de Contenidos
 
