@@ -52,14 +52,14 @@ Producto: **CareConnect**
 
 | Versión | Fecha | Autor | Descripción de la modificación |
 |----|----|----|----|
-| TB1 | 2026-09-14 | Angela Espinoza Cruz, Matias Salcedo Champi, Javier Nikaido Vargas, Santiago Baldeon Armas, Percy Alonso Muñiz Huayanca | Redacción de los Capítulos I: Introducción, II: Requirements Elicitation & Analysis, III: Requirements Specification, IV: Product Design (Style Guidelines, Information Architecture, Landing Page UI, Mobile/Web UX-UI Design, Prototyping, Domain-Driven Architecture, OO Design, Database Design) y V: Product Implementation (Software Configuration Management, Sprint Backlogs, evidencia de Landing Page, Frontend-Web, Native-Mobile, Backend RESTful y su documentación en Swagger) |
+| AV1 | 2026-09-14 | Angela Espinoza Cruz, Matias Salcedo Champi, Javier Nikaido Vargas, Santiago Baldeon Armas, Percy Alonso Muñiz Huayanca | Redacción de los Capítulos I: Introducción, II: Requirements Elicitation & Analysis, III: Requirements Specification, IV: Product Design (Style Guidelines, Information Architecture, Landing Page UI, Mobile/Web UX-UI Design, Prototyping, Domain-Driven Architecture, OO Design, Database Design) y V: Product Implementation (Software Configuration Management, Sprint Backlogs, evidencia de Landing Page, Frontend-Web, Native-Mobile, Backend RESTful y su documentación en Swagger) |
 
 # Project Report Collaboration Insights
 
 Enlace de la organización para el reporte del proyecto: https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report
 
+AV1:
 <img src="assets/insights_report_commits.png">
-
 <img src="assets/insights_report_branchs.png">
 
 ## Tabla de Contenidos
