@@ -1213,7 +1213,39 @@ A continuación, evidencia de la aplicación web corriendo localmente contra el 
 | Documentos | ![Documentos Web](assets/documentos_web.png) |
 | Notificaciones | ![Notificaciones Web](assets/notificaciones_web.png) |
 
-#### 5.2.4. Acuerdo de Servicio - SaaS
+### 5.2.4. Implemented Native-Mobile Application Evidence
+
+La evidencia nativa móvil de CareStacks cubre ambos segmentos objetivo y ambas plataformas: **iOS**, con la aplicación Flutter del segmento cuidador (compartida con la versión web, §5.2.3), y **Android**, con la aplicación nativa Kotlin + Jetpack Compose del segmento paciente. Las capturas se tomaron con el backend local (CareConnect API) conectado y datos de prueba reales (un paciente vinculado a un cuidador mediante el módulo de Gestión de Consentimiento).
+
+**iOS — Segmento Cuidador (Flutter)**
+
+| Pantalla | Captura |
+|---|---|
+| Perfil | ![Perfil iOS](assets/perfil_ios.png) |
+| Inicio de sesión | ![Login iOS](assets/login_ios.png) |
+| Registro | ![Registro iOS](assets/registro_ios.png) |
+| Home (Cuidador) | ![Home iOS](assets/home_ios.png) |
+| Agenda | ![Agenda iOS](assets/agenda_ios.png) |
+| Diario | ![Diario iOS](assets/diario_ios.png) |
+| Documentos | ![Documentos iOS](assets/documentos_ios.png) |
+| Notificaciones | ![Notificaciones iOS](assets/notificaciones_ios.png) |
+
+**Video del prototipo (iOS):** [Ver video](https://youtu.be/050WhJadiuY)
+
+**Android — Segmento Paciente (Kotlin + Jetpack Compose)**
+
+| Pantalla | Captura |
+|---|---|
+| Perfil | ![Perfil Android](assets/perfil_android.png) |
+| Inicio de sesión | ![Login Android](assets/login_android.png) |
+| Registro | ![Registro Android](assets/registro_android.png) |
+| Home (Paciente) | ![Home Android](assets/home_android.png) |
+| Agenda | ![Agenda Android](assets/agenda_android.png) |
+| Diario | ![Diario Android](assets/diario_android.png) |
+| Documentos | ![Documentos Android](assets/documentos_android.png) |
+| Notificaciones | ![Notificaciones Android](assets/notificaciones_android.png) |
+
+**Video del prototipo (Android):** [Enlace al video](PENDIENTE)
 
 ### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
 
@@ -1249,9 +1281,37 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 
 *Figura X. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Documents, Diary, Consents, IAM y Agenda.*
 
-#### 5.2.7. RESTful API documentation
+### 5.2.7. Team Collaboration Insights
 
-#### 5.2.8. Team Collaboration Insights
+Esta sección presenta la evidencia de colaboración del equipo a lo largo de los cuatro repositorios que conforman la solución de CareStacks: el informe del proyecto, el backend, la aplicación móvil y la aplicación web. Los gráficos de contribuciones (GitHub Insights → Contributors) muestran la participación de cada integrante mediante commits realizados durante el sprint.
+
+#### Repositorio del Informe (`carestacks-report`)
+
+![Insights de colaboración — Repositorio del Informe](assets/insights_report.png)
+
+*Figura X. Gráfico de contribuciones del repositorio `carestacks-report`, mostrando los commits de cada integrante del equipo durante la elaboración del informe.*
+
+#### Repositorio del Backend (`carestacks-backend-api`)
+
+![Insights de colaboración — Backend API](assets/insights_backend.png)
+
+*Figura X. Gráfico de contribuciones del repositorio `carestacks-backend-api`, correspondiente al trabajo de implementación y configuración del backend RESTful.*
+
+#### Repositorio de la Aplicación Móvil (`carestacks-mobile-app`)
+
+![Insights de colaboración — Mobile App](assets/insights_mobile.png)
+
+*Figura X. Gráfico de contribuciones del repositorio `carestacks-mobile-app`, correspondiente al trabajo sobre la aplicación Flutter del segmento cuidador.*
+
+#### Repositorio de la Aplicación Web (`carestacks-web`)
+
+![Insights de colaboración — Web App](assets/insights_web.png)
+
+*Figura X. Gráfico de contribuciones del repositorio `carestacks-web`, correspondiente a la adaptación de la base Flutter al segmento cuidador para escritorio.*
+
+#### Interpretación
+
+La distribución de commits entre los cuatro repositorios refleja la división de trabajo definida en el Sprint Backlog (§5.2.1): mientras el repositorio del informe concentra la participación distribuida de los cinco integrantes según la sección del reporte a su cargo, los repositorios de backend, móvil y web muestran una concentración de commits en los integrantes directamente responsables de esas capas de implementación durante este sprint, consistente con la asignación de tareas técnicas del equipo.
 
 ### 5.3. Video About-the-Product
 
