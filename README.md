@@ -1,12 +1,3 @@
-=====================================================================
- PLANTILLA — Informe de Trabajo Final · 1ASI0732 Diseño de Experimentos
- Un solo archivo README.md (archivo principal del repositorio del informe).
- Estructura completa según el statement: 3 Partes, 8 Capítulos + anexos.
- Reemplazar cada <placeholder> y cada bloque > _Guía:_ con el contenido real.
- Recordar: actualizar y VERIFICAR la Tabla de Contenidos antes de cada entrega.
-=====================================================================
--->
-
 # Informe de Trabajo Final
 
 <!-- CARÁTULA -->
