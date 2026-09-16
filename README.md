@@ -710,6 +710,22 @@ El diseño de la aplicación web de CareConnect contempla los principales recorr
 
 Los wireframes presentan la estructura de baja fidelidad de las ocho vistas principales. Permiten validar la jerarquía, la navegación, la distribución de contenido y las acciones antes de aplicar el sistema visual definitivo. El conjunto incluye las pantallas de iniciar sesión, crear cuenta, inicio, agenda, documentos, diario, perfil y notificaciones; se encuentra organizado en la página **01 Wireframes** del archivo de Figma.
 
+| Iniciar sesión | Crear cuenta |
+|---|---|
+| <img src="assets/capitulo4/wireframes-web/iniciar-sesion.png" alt="Wireframe web de inicio de sesión" width="480"/> | <img src="assets/capitulo4/wireframes-web/crear-cuenta.png" alt="Wireframe web de creación de cuenta" width="480"/> |
+
+| Inicio | Agenda |
+|---|---|
+| <img src="assets/capitulo4/wireframes-web/inicio.png" alt="Wireframe web de inicio" width="480"/> | <img src="assets/capitulo4/wireframes-web/agenda.png" alt="Wireframe web de agenda" width="480"/> |
+
+| Documentos | Diario |
+|---|---|
+| <img src="assets/capitulo4/wireframes-web/documentos.png" alt="Wireframe web de documentos" width="480"/> | <img src="assets/capitulo4/wireframes-web/diario.png" alt="Wireframe web de diario" width="480"/> |
+
+| Perfil | Notificaciones |
+|---|---|
+| <img src="assets/capitulo4/wireframes-web/perfil.png" alt="Wireframe web de perfil" width="480"/> | <img src="assets/capitulo4/wireframes-web/notificaciones.png" alt="Wireframe web de notificaciones" width="480"/> |
+
 #### 4.6.2. Web Applications Wireflow Diagrams
 
 El Wireflow representa el recorrido de navegación de izquierda a derecha. El cuidador crea una cuenta o accede con sus credenciales y llega a **Inicio**, desde donde puede abrir Agenda, Documentos, Diario, Perfil y Notificaciones. La campana proporciona acceso lateral a las notificaciones y todas las pantallas conservan un retorno claro al inicio.
