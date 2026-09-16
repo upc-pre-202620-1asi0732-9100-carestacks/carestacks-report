@@ -585,14 +585,14 @@ Un user flow por objetivo de usuario, contemplando *happy path* y *unhappy path*
    - *Unhappy path*: hora del evento en conflicto con otro ya registrado → el sistema advierte el solapamiento antes de guardar → usuario ajusta el horario y confirma.
 
 
-## 4.5. Mobile Applications Prototyping
+### 4.5. Mobile Applications Prototyping
 
 Esta sección documenta el prototipado interactivo de la aplicación móvil de CareStacks. Para cubrir ambos segmentos objetivo (cuidador y paciente) y ambas plataformas nativas, se utilizaron dos bases de código distintas heredadas del proyecto anterior:
 
 - **iOS → segmento Cuidador**, con la aplicación desarrollada en **Flutter**.
 - **Android → segmento Paciente**, con la aplicación nativa desarrollada en **Kotlin + Jetpack Compose**.
 
-### 4.5.1. Android Mobile Applications Prototyping
+#### 4.5.1. Android Mobile Applications Prototyping
 
 | Pantalla | Captura |
 |---|---|
@@ -611,7 +611,7 @@ Esta sección documenta el prototipado interactivo de la aplicación móvil de C
 
 **Video del prototipo (Android):** [Enlace al video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319563_upc_edu_pe/IQCxyxzTeImsTaBVopDNXHyUAdGQYZnmlXXGn62jhU8cayU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=noqJKl)
 
-### 4.5.2. iOS Mobile Applications Prototyping
+#### 4.5.2. iOS Mobile Applications Prototyping
 
 El prototipo fue ejecutado y validado en un simulador de iOS, correspondiente a la aplicación multiplataforma en **Flutter**, enfocada en el segmento **cuidador**: gestión de pacientes asignados, agenda, diario compartido, documentos médicos y notificaciones. Las capturas fueron tomadas con el backend local (CareConnect API) conectado y datos de prueba reales (un paciente vinculado a un cuidador mediante el módulo de Gestión de Consentimiento).
 
@@ -666,7 +666,7 @@ El User Flow, presentado junto al Wireflow en la figura anterior, representa las
 
 [Ver el Wireflow y User Flow editables en la página **02 UX Flows** de Figma](https://www.figma.com/design/1TzGaaQLzkBu26Ojno1AVU/CareConnect-%E2%80%94-Web-Applications-UX-UI-Design--4.6-?node-id=4-5&p=f)
 
-## 4.7. Web Applications Prototyping
+### 4.7. Web Applications Prototyping
 
 A diferencia del prototipado en Figma (4.6), esta sección documenta el **prototipo funcional** de la aplicación web de CareStacks: una adaptación a escritorio de la base Flutter del segmento cuidador, ejecutada en navegador (`flutter run -d chrome`) y conectada al backend real de CareConnect API, con datos de prueba reales.
 
