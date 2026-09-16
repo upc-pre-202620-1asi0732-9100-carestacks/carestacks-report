@@ -1,4 +1,4 @@
-<!--
+<img width="220" height="801" alt="image" src="https://github.com/user-attachments/assets/09d448ff-cdf7-4f46-900a-de7977b6b220" /><!--
 =====================================================================
  PLANTILLA — Informe de Trabajo Final · 1ASI0732 Diseño de Experimentos
  Un solo archivo README.md (archivo principal del repositorio del informe).
@@ -223,8 +223,6 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 
 CareConnect busca un tono que transmita **calidez humana, confianza y claridad**, propio de un producto que media el cuidado de personas mayores o dependientes entre pacientes, cuidadores (familiares o profesionales) y personal médico. La comunicación evita la frialdad clínica de un software hospitalario tradicional y prioriza beneficios emocionales antes que técnicos: la propia landing page abre con "Organiza el cuidado diario de tus seres queridos" y "una herramienta diseñada para brindar **paz mental** a las familias", no con una lista de funciones.
 
-![Landing Page](./assets/capitulo4/4-1-landing-header-hero.png)
-
 **Dimensiones de tono**
 
 | Dimensión | Posición de CareConnect | Justificación |
@@ -296,8 +294,6 @@ La arquitectura se organiza en tres capas:
 2. **Por paciente vinculado**: un cuidador puede tener varios "Pacientes asignados"; el dashboard del cuidador lista cada paciente con su estado ("Activo") y permite entrar a su ficha completa (nombre, condición clínica, movilidad, plan emocional y preferencias).
 3. **Por permiso granular**: el flujo "Compartir perfil" introduce un sistema de permisos explícito por módulo (Agenda, Documentos, Diario), de forma que el paciente decide **qué** puede ver cada cuidador, no solo **quién** tiene acceso.
 
-![Wireframes de Perfil, Compartir perfil y Perfil](./assets/capitulo4/4-10-wireframe-perfil-compartir.png)
-
 #### 4.2.2. Labeling Systems
 
 | Etiqueta | Contenido que representa |
@@ -360,9 +356,10 @@ La estructura de la landing sigue una jerarquía descendente clásica de convers
 5. **Funciones principales**: grilla de 5 tarjetas (una destacada — Acceso compartido).
 6. **Planes** ("Planes simples para tu cuidado diario"): 2 tarjetas de precio comparadas.
 
-#### 4.3.2. Landing Page Mock-up
+![Landing Page Wireframe: sección 1](./assets/capitulo4/figma/landing1.png)
+![Landing Page Wireframe: sección 2](./assets/capitulo4/figma/landing2.png)
 
-![Landing Page: sección 1](./assets/capitulo4/4-2-landing-beneficios-como-funciona.png)
+#### 4.3.2. Landing Page Mock-up
 
 **Elementos del Diseño**
 
@@ -401,12 +398,32 @@ La estructura de la landing sigue una jerarquía descendente clásica de convers
 | P6 – Prioriza el contenido | La tarjeta "Acceso compartido" se destaca cromáticamente sobre el resto de funciones porque es el diferenciador competitivo real del producto (coordinación entre múltiples cuidadores), priorizándola sin necesidad de agrandar su tamaño. |
 | P7 – Agrega valor | Mostrar el resumen del día (pendientes/confirmados/incumplidos) directamente en el hero, antes de que el usuario cree una cuenta, agrega valor al anticipar el tipo de control y tranquilidad que tendrá una vez dentro del producto. |
 
+![Landing Page Mock-up: sección 1](./assets/capitulo4/figma/landing3.png)
+![Landing Page Mock-up: sección 2](./assets/capitulo4/figma/landing4.png)
+
 ### 4.4. Mobile Applications UX/UI Design
 
 #### 4.4.1. Mobile Applications Wireframes
 
-![Wireframe de app mobile](./assets/capitulo4/4-6-wireframe-bienvenida-login.png)
-
+![Wireframe de app mobile: sección 1](./assets/capitulo4/figma/mobile1.png)
+![Wireframe de app mobile: sección 2](./assets/capitulo4/figma/mobile2.png)
+![Wireframe de app mobile: sección 3](./assets/capitulo4/figma/mobile3.png)
+![Wireframe de app mobile: sección 4](./assets/capitulo4/figma/mobile4.png)
+![Wireframe de app mobile: sección 5](./assets/capitulo4/figma/mobile5.png)
+![Wireframe de app mobile: sección 6](./assets/capitulo4/figma/mobile6.png)
+![Wireframe de app mobile: sección 7](./assets/capitulo4/figma/mobile7.png)
+![Wireframe de app mobile: sección 8](./assets/capitulo4/figma/mobile8.png)
+![Wireframe de app mobile: sección 9](./assets/capitulo4/figma/mobile9.png)
+![Wireframe de app mobile: sección 10](./assets/capitulo4/figma/mobile10.png)
+![Wireframe de app mobile: sección 11](./assets/capitulo4/figma/mobile11.png)
+![Wireframe de app mobile: sección 12](./assets/capitulo4/figma/mobile12.png)
+![Wireframe de app mobile: sección 13](./assets/capitulo4/figma/mobile13.png)
+![Wireframe de app mobile: sección 14](./assets/capitulo4/figma/mobile14.png)
+![Wireframe de app mobile: sección 15](./assets/capitulo4/figma/mobile15.png)
+![Wireframe de app mobile: sección 16](./assets/capitulo4/figma/mobile16.png)
+![Wireframe de app mobile: sección 17](./assets/capitulo4/figma/mobile17.png)
+![Wireframe de app mobile: sección 18](./assets/capitulo4/figma/mobile18.png)
+![Wireframe de app mobile: sección 19](./assets/capitulo4/figma/mobile19.png)
 
 **Elementos del Diseño**
 
@@ -457,10 +474,6 @@ Un wireflow por objetivo de usuario (*user goal*):
 
 #### 4.4.3. Mobile Applications Mock-ups
 
-**Mock-ups de diseño (alta fidelidad)**
-
-![Wireframes mobile](./assets/capitulo4/4-11-mockup-perfil-paciente.png)
-
 **Elementos del Diseño**
 
 | Elemento | Justificación |
@@ -495,7 +508,25 @@ Un wireflow por objetivo de usuario (*user goal*):
 
 **Aplicación móvil — pantallas implementadas**
 
-![app mobile implementada](./assets/capitulo4/4-17-app-bienvenida-implementada.png)
+![Mockup de app mobile: sección 1](./assets/capitulo4/figma/mobilemockup1.png)
+![Mockup de app mobile: sección 2](./assets/capitulo4/figma/mobilemockup2.png)
+![Mockup de app mobile: sección 3](./assets/capitulo4/figma/mobilemockup3.png)
+![Mockup de app mobile: sección 4](./assets/capitulo4/figma/mobilemockup4.png)
+![Mockup de app mobile: sección 5](./assets/capitulo4/figma/mobilemockup5.png)
+![Mockup de app mobile: sección 6](./assets/capitulo4/figma/mobilemockup6.png)
+![Mockup de app mobile: sección 7](./assets/capitulo4/figma/mobilemockup7.png)
+![Mockup de app mobile: sección 8](./assets/capitulo4/figma/mobilemockup8.png)
+![Mockup de app mobile: sección 9](./assets/capitulo4/figma/mobilemockup9.png)
+![Mockup de app mobile: sección 10](./assets/capitulo4/figma/mobilemockup10.png)
+![Mockup de app mobile: sección 11](./assets/capitulo4/figma/mobilemockup11.png)
+![Mockup de app mobile: sección 12](./assets/capitulo4/figma/mobilemockup12.png)
+![Mockup de app mobile: sección 13](./assets/capitulo4/figma/mobilemockup13.png)
+![Mockup de app mobile: sección 14](./assets/capitulo4/figma/mobilemockup14.png)
+![Mockup de app mobile: sección 15](./assets/capitulo4/figma/mobilemockup15.png)
+![Mockup de app mobile: sección 16](./assets/capitulo4/figma/mobilemockup16.png)
+![Mockup de app mobile: sección 17](./assets/capitulo4/figma/mobilemockup17.png)
+![Mockup de app mobile: sección 18](./assets/capitulo4/figma/mobilemockup18.png)
+![Mockup de app mobile: sección 19](./assets/capitulo4/figma/mobilemockup19.png)
 
 Estas capturas —correspondientes a un caso de uso con mayor detalle clínico (paciente geriátrica con HTA y diabetes tipo 2, cuidadora con formación de enfermería)— validan que el sistema de diseño definido en 4.1 se sostiene al escalar la complejidad de los datos reales: los mismos badges de estado, la misma paleta y la misma estructura de tarjeta funcionan tanto para un caso simple (Losartán, un solo recordatorio) como para un plan de cuidado geriátrico integral con múltiples medicamentos, controles y notas de bienestar.
 
