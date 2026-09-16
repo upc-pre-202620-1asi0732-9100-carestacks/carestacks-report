@@ -468,15 +468,49 @@ La estructura de la landing sigue una jerarquía descendente clásica de convers
 
 #### 4.4.2. Mobile Applications Wireflow Diagrams
 
-Un wireflow por objetivo de usuario (*user goal*):
+La aplicación móvil cubre siete *user goals*, cada uno documentado con su propio wireflow.
 
-1. **Registro y selección de rol**: Bienvenida → Crear cuenta (datos + rol Paciente/Cuidador + aceptación de términos) → Inicio según rol.
-2. **Inicio de sesión**: Bienvenida → Iniciar sesión (correo/contraseña) → [¿Credenciales válidas?] → Sí: Inicio / No: error + "¿Olvidaste tu contraseña?".
-3. **Confirmar toma de medicación (Cuidador)**: Inicio (Cuidador) → tarjeta "Elena – 8:00 a.m. PENDIENTE" → "Confirmar toma" → resumen de tareas se actualiza (COMPLETADO +1) sin salir del dashboard.
-4. **Compartir el perfil con un nuevo cuidador (Paciente)**: Perfil (Paciente) → "Gestionar accesos"/"Compartir perfil" → ingresar correo del cuidador → seleccionar permisos (Agenda/Documentos/Diario) → "Compartir perfil" → confirmación → el paciente aparece como "Paciente vinculado" en el Perfil del cuidador invitado.
-5. **Revisar y resolver notificaciones (Cuidador)**: Inicio (Cuidador) → ícono de campana → Notificaciones → [tipo de alerta] → Evento no confirmado: "Confirmar" / Alerta de incumplimiento: "Resolver" / Documento actualizado: "Ver" → retorno a Notificaciones con el ítem actualizado.
-6. **Registrar un evento en Agenda**: Agenda → "+ Agregar evento" → completar tipo, hora y detalle → guardar → el evento aparece en "Eventos de hoy" en su posición cronológica correspondiente.
-7. **Subir un documento médico**: Documentos → "Subir documento" → seleccionar archivo → tipo/descripción/fecha → "Subir documento" → documento visible en "Recientes".
+##### User Goal 1: Registro y selección de rol
+
+<!-- Insertar wireflow del User Goal 1 -->
+
+Bienvenida → Crear cuenta (datos + rol Paciente/Cuidador + aceptación de términos) → Inicio según rol.
+
+##### User Goal 2: Inicio de sesión
+
+<!-- Insertar wireflow del User Goal 2 -->
+
+Bienvenida → Iniciar sesión (correo/contraseña) → [¿Credenciales válidas?] → Sí: Inicio / No: error + "¿Olvidaste tu contraseña?".
+
+##### User Goal 3: Confirmar toma de medicación (Cuidador)
+
+<!-- Insertar wireflow del User Goal 3 -->
+
+Inicio (Cuidador) → tarjeta "Elena – 8:00 a.m. PENDIENTE" → "Confirmar toma" → resumen de tareas se actualiza (COMPLETADO +1) sin salir del dashboard.
+
+##### User Goal 4: Compartir el perfil con un nuevo cuidador (Paciente)
+
+<!-- Insertar wireflow del User Goal 4 -->
+
+Perfil (Paciente) → "Gestionar accesos"/"Compartir perfil" → ingresar correo del cuidador → seleccionar permisos (Agenda/Documentos/Diario) → "Compartir perfil" → confirmación → el paciente aparece como "Paciente vinculado" en el Perfil del cuidador invitado.
+
+##### User Goal 5: Revisar y resolver notificaciones (Cuidador)
+
+<!-- Insertar wireflow del User Goal 5 -->
+
+Inicio (Cuidador) → ícono de campana → Notificaciones → [tipo de alerta] → Evento no confirmado: "Confirmar" / Alerta de incumplimiento: "Resolver" / Documento actualizado: "Ver" → retorno a Notificaciones con el ítem actualizado.
+
+##### User Goal 6: Registrar un evento en Agenda
+
+<!-- Insertar wireflow del User Goal 6 -->
+
+Agenda → "+ Agregar evento" → completar tipo, hora y detalle → guardar → el evento aparece en "Eventos de hoy" en su posición cronológica correspondiente.
+
+##### User Goal 7: Subir un documento médico
+
+<!-- Insertar wireflow del User Goal 7 -->
+
+Documentos → "Subir documento" → seleccionar archivo → tipo/descripción/fecha → "Subir documento" → documento visible en "Recientes".
 
 #### 4.4.3. Mobile Applications Mock-ups
 
@@ -514,43 +548,81 @@ Un wireflow por objetivo de usuario (*user goal*):
 
 **Aplicación móvil — pantallas implementadas**
 
-![Mockup de app mobile: sección 1](./assets/capitulo4/figma/mobilemockup1.png)
+**Bienvenida** — *User Goal 1: Registro y selección de rol / User Goal 2: Inicio de sesión*
 
-![Mockup de app mobile: sección 2](./assets/capitulo4/figma/mobilemockup2.png)
+![Bienvenida](./assets/capitulo4/figma/mobilemockup1.png)
 
-![Mockup de app mobile: sección 3](./assets/capitulo4/figma/mobilemockup3.png)
+**Iniciar sesión** — *User Goal 2: Inicio de sesión*
 
-![Mockup de app mobile: sección 4](./assets/capitulo4/figma/mobilemockup4.png)
+![Iniciar sesión](./assets/capitulo4/figma/mobilemockup2.png)
 
-![Mockup de app mobile: sección 5](./assets/capitulo4/figma/mobilemockup5.png)
+**Crear cuenta** — *User Goal 1: Registro y selección de rol*
 
-![Mockup de app mobile: sección 6](./assets/capitulo4/figma/mobilemockup6.png)
+![Crear cuenta](./assets/capitulo4/figma/mobilemockup3.png)
 
-![Mockup de app mobile: sección 7](./assets/capitulo4/figma/mobilemockup7.png)
+**Inicio (Paciente)** — *User Goal 1: Registro y selección de rol / User Goal 2: Inicio de sesión*
 
-![Mockup de app mobile: sección 8](./assets/capitulo4/figma/mobilemockup8.png)
+![Inicio (Paciente)](./assets/capitulo4/figma/mobilemockup4.png)
 
-![Mockup de app mobile: sección 9](./assets/capitulo4/figma/mobilemockup9.png)
+**Inicio (Cuidador)** — *User Goal 3: Confirmar toma de medicación (Cuidador)*
 
-![Mockup de app mobile: sección 10](./assets/capitulo4/figma/mobilemockup10.png)
+![Inicio (Cuidador)](./assets/capitulo4/figma/mobilemockup5.png)
 
-![Mockup de app mobile: sección 11](./assets/capitulo4/figma/mobilemockup11.png)
+**Agenda** — *User Goal 6: Registrar un evento en Agenda*
 
-![Mockup de app mobile: sección 12](./assets/capitulo4/figma/mobilemockup12.png)
+![Agenda](./assets/capitulo4/figma/mobilemockup6.png)
 
-![Mockup de app mobile: sección 13](./assets/capitulo4/figma/mobilemockup13.png)
+**Registrar evento** — *User Goal 6: Registrar un evento en Agenda*
 
-![Mockup de app mobile: sección 14](./assets/capitulo4/figma/mobilemockup14.png)
+![Registrar evento](./assets/capitulo4/figma/mobilemockup7.png)
 
-![Mockup de app mobile: sección 15](./assets/capitulo4/figma/mobilemockup15.png)
+**Detalle del evento** — *Pantalla complementaria de Agenda*
 
-![Mockup de app mobile: sección 16](./assets/capitulo4/figma/mobilemockup16.png)
+![Detalle del evento](./assets/capitulo4/figma/mobilemockup8.png)
 
-![Mockup de app mobile: sección 17](./assets/capitulo4/figma/mobilemockup17.png)
+**Notificaciones (Paciente)** — *User Goal 5: Revisar y resolver notificaciones (Cuidador)*
 
-![Mockup de app mobile: sección 18](./assets/capitulo4/figma/mobilemockup18.png)
+![Notificaciones (Paciente)](./assets/capitulo4/figma/mobilemockup9.png)
 
-![Mockup de app mobile: sección 19](./assets/capitulo4/figma/mobilemockup19.png)
+**Notificaciones (Cuidador)** — *User Goal 5: Revisar y resolver notificaciones (Cuidador)*
+
+![Notificaciones (Cuidador)](./assets/capitulo4/figma/mobilemockup10.png)
+
+**Perfil (Paciente)** — *User Goal 4: Compartir el perfil con un nuevo cuidador (Paciente)*
+
+![Perfil (Paciente)](./assets/capitulo4/figma/mobilemockup11.png)
+
+**Compartir perfil** — *User Goal 4: Compartir el perfil con un nuevo cuidador (Paciente)*
+
+![Compartir perfil](./assets/capitulo4/figma/mobilemockup12.png)
+
+**Perfil (Cuidador)** — *Pantalla complementaria de Perfil*
+
+![Perfil (Cuidador)](./assets/capitulo4/figma/mobilemockup13.png)
+
+**Documentos (Cuidador)** — *User Goal 7: Subir un documento médico*
+
+![Documentos (Cuidador)](./assets/capitulo4/figma/mobilemockup14.png)
+
+**Documentos (Paciente)** — *User Goal 7: Subir un documento médico*
+
+![Documentos (Paciente)](./assets/capitulo4/figma/mobilemockup15.png)
+
+**Subir documento** — *User Goal 7: Subir un documento médico*
+
+![Subir documento](./assets/capitulo4/figma/mobilemockup16.png)
+
+**Diario (Paciente)** — *Pantalla complementaria de Diario*
+
+![Diario (Paciente)](./assets/capitulo4/figma/mobilemockup17.png)
+
+**Nueva nota** — *Pantalla complementaria de Diario*
+
+![Nueva nota](./assets/capitulo4/figma/mobilemockup18.png)
+
+**Diario (Cuidador)** — *Pantalla complementaria de Diario*
+
+![Diario (Cuidador)](./assets/capitulo4/figma/mobilemockup19.png)
 
 #### 4.4.4. Mobile Applications User Flow Diagrams
 
