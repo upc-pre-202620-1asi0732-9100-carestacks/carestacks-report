@@ -698,7 +698,7 @@ El prototipo fue ejecutado y validado en un simulador de iOS, correspondiente a 
 | Documentos | ![Documentos iOS](assets/documentos_ios.png) |
 | Notificaciones | ![Notificaciones iOS](assets/notificaciones_ios.png) |
 
-**Video del prototipo (iOS):** [Ver video](https://youtu.be/050WhJadiuY)
+**Video del prototipo (iOS):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319563_upc_edu_pe/IQD8hwXPwgf_RJSGdsPc4diHAUM7uH7Tff9QItUFv6-Pegw?e=UDYvyk)
 
 ### 4.6. Web Applications UX/UI Design
 
@@ -771,7 +771,7 @@ El prototipo reemplaza el layout móvil original (bottom nav, columna única) po
 | Documentos | ![Documentos Web](assets/documentos_web.png) |
 | Notificaciones | ![Notificaciones Web](assets/notificaciones_web.png) |
 
-**Video del prototipo (Web):** [Ver video](https://youtu.be/050WhJadiuY)
+**Video del prototipo (Web):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319563_upc_edu_pe/IQCe4c3pMvTBRq2J8EtwN-b3AaO8jwiZA8ZkR9gq_FFT60I?e=bigaiv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ### 4.8. Domain-Driven Software Architecture
 
