@@ -506,6 +506,57 @@ Las ramas utilizadas para el desarrollo del informe siguen la siguiente convenci
 
 ```text
 chapter-<número>
+```
+
+#### Repositorios de producto
+
+Además del repositorio del informe, la solución CareConnect se compone de los siguientes repositorios, alojados en la misma organización de GitHub:
+
+| Repositorio | Propósito | URL |
+|---|---|---|
+| `carestacks-report` | Informe del proyecto (este repositorio). | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report |
+| `carestacks-backend-api` | Web Services: API REST del backend (Spring Boot), organizada en los bounded contexts de IAM, Agenda, Notificaciones, Diario, Documentos y Gestión de Consentimiento. | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api |
+| `carestacks-web` | Frontend Web Application: adaptación a escritorio de la aplicación del cuidador (Flutter web). | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web |
+| `Landing-Page` | Landing Page del producto (React + TypeScript + Vite), desplegada en Vercel. | https://github.com/CareStacks/Landing-Page |
+
+#### Convenciones de GitFlow para los repositorios de producto
+
+Los repositorios de producto (`carestacks-backend-api`, `carestacks-web` y `Landing-Page`) siguen el flujo de trabajo **GitFlow**, con las siguientes convenciones de nombrado de ramas:
+
+| Tipo de rama | Convención | Ejemplo |
+|---|---|---|
+| Feature | `feature/<nombre>` | `feature/agenda-confirmar-evento` |
+| Release | `release/<version>` | `release/1.2.0` |
+| Hotfix | `hotfix/<nombre>` | `hotfix/fix-login-token-expirado` |
+
+Las ramas `feature/*` se crean a partir de `develop` y se integran de vuelta a `develop` una vez completada la funcionalidad. Las ramas `release/*` se crean a partir de `develop` para preparar una nueva versión y se integran tanto a `main` como a `develop` al cerrarse. Las ramas `hotfix/*` se crean a partir de `main` para corregir errores críticos en producción y se integran de vuelta a `main` y a `develop`.
+
+#### Versionado Semántico (Semantic Versioning)
+
+Las versiones publicadas (releases) de los productos siguen el formato **Semantic Versioning** `MAJOR.MINOR.PATCH`:
+
+- **MAJOR:** cambios incompatibles con versiones anteriores (breaking changes).
+- **MINOR:** nuevas funcionalidades compatibles con versiones anteriores.
+- **PATCH:** correcciones de errores compatibles con versiones anteriores.
+
+Ejemplo: `1.2.0` corresponde a la segunda funcionalidad agregada sobre la primera versión estable (`1.0.0`), sin cambios incompatibles.
+
+#### Conventional Commits
+
+Los mensajes de commit en los repositorios de producto siguen el formato **Conventional Commits**:
+
+```text
+<tipo>(<scope>): <descripción breve>
+```
+
+Tipos utilizados: `feat`, `fix`, `docs`, `refactor`, `style`, `test`, `chore`, `perf`, `build`, `ci`. Ejemplos:
+
+```text
+feat(agenda): add event confirmation endpoint
+fix(auth): handle expired login token
+docs(readme): update deployment instructions
+```
+
 #### 5.1.3. Source Code Style Guide & Conventions
 
 Las convenciones de código permiten mantener consistencia entre los distintos productos y módulos de CareConnect.
