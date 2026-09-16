@@ -396,24 +396,43 @@ La estructura de la landing sigue una jerarquía descendente clásica de convers
 #### 4.4.1. Mobile Applications Wireframes
 
 ![Wireframe de app mobile: sección 1](./assets/capitulo4/figma/mobile1.png)
+
 ![Wireframe de app mobile: sección 2](./assets/capitulo4/figma/mobile2.png)
+
 ![Wireframe de app mobile: sección 3](./assets/capitulo4/figma/mobile3.png)
+
 ![Wireframe de app mobile: sección 4](./assets/capitulo4/figma/mobile4.png)
+
 ![Wireframe de app mobile: sección 5](./assets/capitulo4/figma/mobile5.png)
+
 ![Wireframe de app mobile: sección 6](./assets/capitulo4/figma/mobile6.png)
+
 ![Wireframe de app mobile: sección 7](./assets/capitulo4/figma/mobile7.png)
+
 ![Wireframe de app mobile: sección 8](./assets/capitulo4/figma/mobile8.png)
+
 ![Wireframe de app mobile: sección 9](./assets/capitulo4/figma/mobile9.png)
+
 ![Wireframe de app mobile: sección 10](./assets/capitulo4/figma/mobile10.png)
+
 ![Wireframe de app mobile: sección 11](./assets/capitulo4/figma/mobile11.png)
+
 ![Wireframe de app mobile: sección 12](./assets/capitulo4/figma/mobile12.png)
+
 ![Wireframe de app mobile: sección 13](./assets/capitulo4/figma/mobile13.png)
+
 ![Wireframe de app mobile: sección 14](./assets/capitulo4/figma/mobile14.png)
+
 ![Wireframe de app mobile: sección 15](./assets/capitulo4/figma/mobile15.png)
+
 ![Wireframe de app mobile: sección 16](./assets/capitulo4/figma/mobile16.png)
+
 ![Wireframe de app mobile: sección 17](./assets/capitulo4/figma/mobile17.png)
+
 ![Wireframe de app mobile: sección 18](./assets/capitulo4/figma/mobile18.png)
+
 ![Wireframe de app mobile: sección 19](./assets/capitulo4/figma/mobile19.png)
+
 
 **Elementos del Diseño**
 
@@ -499,24 +518,43 @@ Un wireflow por objetivo de usuario (*user goal*):
 **Aplicación móvil — pantallas implementadas**
 
 ![Mockup de app mobile: sección 1](./assets/capitulo4/figma/mobilemockup1.png)
+
 ![Mockup de app mobile: sección 2](./assets/capitulo4/figma/mobilemockup2.png)
+
 ![Mockup de app mobile: sección 3](./assets/capitulo4/figma/mobilemockup3.png)
+
 ![Mockup de app mobile: sección 4](./assets/capitulo4/figma/mobilemockup4.png)
+
 ![Mockup de app mobile: sección 5](./assets/capitulo4/figma/mobilemockup5.png)
+
 ![Mockup de app mobile: sección 6](./assets/capitulo4/figma/mobilemockup6.png)
+
 ![Mockup de app mobile: sección 7](./assets/capitulo4/figma/mobilemockup7.png)
+
 ![Mockup de app mobile: sección 8](./assets/capitulo4/figma/mobilemockup8.png)
+
 ![Mockup de app mobile: sección 9](./assets/capitulo4/figma/mobilemockup9.png)
+
 ![Mockup de app mobile: sección 10](./assets/capitulo4/figma/mobilemockup10.png)
+
 ![Mockup de app mobile: sección 11](./assets/capitulo4/figma/mobilemockup11.png)
+
 ![Mockup de app mobile: sección 12](./assets/capitulo4/figma/mobilemockup12.png)
+
 ![Mockup de app mobile: sección 13](./assets/capitulo4/figma/mobilemockup13.png)
+
 ![Mockup de app mobile: sección 14](./assets/capitulo4/figma/mobilemockup14.png)
+
 ![Mockup de app mobile: sección 15](./assets/capitulo4/figma/mobilemockup15.png)
+
 ![Mockup de app mobile: sección 16](./assets/capitulo4/figma/mobilemockup16.png)
+
 ![Mockup de app mobile: sección 17](./assets/capitulo4/figma/mobilemockup17.png)
+
 ![Mockup de app mobile: sección 18](./assets/capitulo4/figma/mobilemockup18.png)
+
 ![Mockup de app mobile: sección 19](./assets/capitulo4/figma/mobilemockup19.png)
+
 
 Estas capturas —correspondientes a un caso de uso con mayor detalle clínico (paciente geriátrica con HTA y diabetes tipo 2, cuidadora con formación de enfermería)— validan que el sistema de diseño definido en 4.1 se sostiene al escalar la complejidad de los datos reales: los mismos badges de estado, la misma paleta y la misma estructura de tarjeta funcionan tanto para un caso simple (Losartán, un solo recordatorio) como para un plan de cuidado geriátrico integral con múltiples medicamentos, controles y notas de bienestar.
 
