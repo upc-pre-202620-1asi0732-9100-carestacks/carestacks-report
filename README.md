@@ -150,7 +150,6 @@ AV1:
     - [8.4. Experiment Aftermath & Analysis](#84-experiment-aftermath--analysis)
     - [8.5. Continuous Learning](#85-continuous-learning)
     - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
-- [Matriz de Evaluación Ética y de Impacto](#matriz-de-evaluación-ética-y-de-impacto)
 - [Conclusiones](#conclusiones)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
@@ -585,43 +584,21 @@ Cada participante del equipo debe sustentar evidencia de cómo las actividades r
 
 ---
 
-## Matriz de Evaluación Ética y de Impacto
-> _Guía:_ 7 dimensiones (Anexo F): Salud Pública y Seguridad; Inclusión y Accesibilidad; Impacto Social y Cultural; Impacto Económico; Impacto Ambiental; Enfoque Global; Revelación de Peligros y Responsabilidad. Por cada una: riesgos positivos/negativos, a quién afecta y magnitud, y acciones de mitigación.
-
-| Dimensión / Criterio | Identificación de Riesgos e Impactos | Evaluación del Impacto (¿a quién y magnitud?) | Estrategias de Mitigación y Acciones de Diseño |
-|----------------------|--------------------------------------|-----------------------------------------------|------------------------------------------------|
-| 1. Salud Pública y Seguridad | \<...> | \<...> | \<...> |
-| 2. Inclusión y Accesibilidad | \<...> | \<...> | \<...> |
-| 3. Impacto Social y Cultural | \<...> | \<...> | \<...> |
-| 4. Impacto Económico | \<...> | \<...> | \<...> |
-| 5. Impacto Ambiental | \<...> | \<...> | \<...> |
-| 6. Enfoque Global | \<...> | \<...> | \<...> |
-| 7. Revelación de Peligros y Responsabilidad | \<...> | \<...> | \<...> |
-
----
-
 ## Conclusiones
 
 ### Conclusiones y recomendaciones
 
-El Problem Statement planteado en 1.2.2.1 identificaba como brecha central la falta de coordinación entre cuidadores que atienden a un mismo paciente geriátrico, con tres consecuencias concretas: imposibilidad de confirmar si otra persona ya administró una dosis, omisión de dosis por parte del paciente ante la duda, y reconstrucción manual del historial de evolución. Las entrevistas realizadas en el Capítulo II confirman esta brecha con evidencia directa: el 100 % de los cuidadores entrevistados (Giancarlo, Sebastián y Renzo) señaló la falta de coordinación en los cambios de turno como su principal problema, y el 100 % de los pacientes entrevistados reportó dudas sobre si ya había tomado una dosis. Esto valida el Gap declarado en el Problem Statement y respalda que la propuesta de valor de CareConnect apunta al problema correcto.
+El Problem Statement planteado en la sección de Lean UX Problem Statements identificaba como brecha central la falta de coordinación entre cuidadores que atienden a un mismo paciente geriátrico, con tres consecuencias concretas: la imposibilidad de confirmar si otra persona ya administró una dosis, la omisión de dosis por parte del paciente ante la duda, y la reconstrucción manual del historial de evolución. Las entrevistas realizadas en el capítulo de Requirements Elicitation & Analysis confirman esta brecha con evidencia directa: la totalidad de los cuidadores entrevistados señaló la falta de coordinación en los cambios de turno como su principal problema, y la totalidad de los pacientes entrevistados reportó dudas sobre si ya había tomado una dosis. Esta evidencia valida el vacío declarado en el Problem Statement y respalda que la propuesta de valor de CareConnect apunta al problema correcto.
 
-Respecto a las Lean UX Assumptions, las evidencias recogidas validan de forma consistente las User Assumptions y las User Outcome and Benefit Assumptions: los tres cuidadores entrevistados usan el celular como herramienta principal de su jornada (confirmando la Business Assumption c) y combinan pastilleros o cuadernos con alarmas del celular sin que ninguna herramienta esté integrada, coincidiendo con los pain points declarados. Sin embargo, dos supuestos siguen sin evidencia propia en esta entrega: la Business Assumption sobre el modelo freemium (d) no fue explorada con los cuidadores ni pacientes entrevistados, y las entrevistas del Segmento 1 solo cubrieron cuidadores informales, dejando pendiente la validación de la Business Assumption a) y c) con cuidadores formales (enfermeros o técnicos de salud en atención domiciliaria).
+Respecto a las Lean UX Assumptions, la evidencia recogida valida de forma consistente las suposiciones referidas a los usuarios y a los beneficios que estos obtendrían del producto: los cuidadores entrevistados emplean el teléfono móvil como herramienta principal de su jornada, confirmando la suposición de negocio correspondiente, y combinan pastilleros o cuadernos con alarmas del celular sin que ninguna herramienta esté integrada, lo cual coincide con los puntos de dolor declarados. Sin embargo, dos supuestos permanecen sin evidencia propia en esta entrega: la suposición de negocio sobre el modelo freemium no fue explorada con los cuidadores ni con los pacientes entrevistados, y las entrevistas del primer segmento cubrieron únicamente a cuidadores informales, de modo que queda pendiente validar las suposiciones de negocio asociadas a los cuidadores formales, tales como enfermeros o técnicos de salud en atención domiciliaria.
 
-En cuanto a los seis Hypothesis Statements, ninguno ha sido sometido todavía a un experimento formal, ya que el Capítulo VIII (Experiment-Driven Development) corresponde a una entrega posterior del ciclo de vida del proyecto. No obstante, el análisis cualitativo de entrevistas (2.2.3) ofrece evidencia de plausibilidad para H1, H2 y H3: el 100 % de los cuidadores solicitó de forma espontánea un registro compartido en tiempo real y confirmación de medicación administrada, funcionalidades que corresponden directamente a las Feature Assumptions a) y b) sobre las que se construyen H1 y H2. H4, H5 y H6 cuentan con menor respaldo directo en esta entrega: solo un cuidador (Giancarlo) mencionó explícitamente la falta de apoyo profesional inmediato, y ningún entrevistado se refirió de forma espontánea a compartir el perfil del paciente con otros cuidadores, por lo que estas hipótesis requieren validación específica antes de asumirse como confirmadas.
+En cuanto a los seis Hypothesis Statements formulados, ninguno ha sido sometido todavía a un experimento formal, dado que el capítulo de Experiment-Driven Development corresponde a una entrega posterior dentro del ciclo de vida del proyecto. No obstante, el análisis cualitativo de las entrevistas ofrece evidencia de plausibilidad para las primeras tres hipótesis: la totalidad de los cuidadores solicitó de manera espontánea contar con un registro compartido en tiempo real y con la confirmación de la medicación administrada, funcionalidades que corresponden directamente a las suposiciones de características sobre las cuales se construyen dichas hipótesis. Las tres hipótesis restantes cuentan con un respaldo menor en esta entrega, pues solo uno de los cuidadores entrevistados mencionó explícitamente la falta de apoyo profesional inmediato, y ninguno de los participantes se refirió de forma espontánea a la posibilidad de compartir el perfil del paciente con otros cuidadores; por ello, estas hipótesis requieren una validación específica antes de poder considerarse confirmadas.
 
-Como recomendación para el roadmap, se propone priorizar en la fase de Experiment-Driven Development (Capítulo VIII) los experimentos asociados a H1, H2 y H3, dado que cuentan con la evidencia cualitativa más sólida de esta entrega, y diseñar un experimento adicional dirigido específicamente a cuidadores formales para cerrar la brecha de validación de las Business Assumptions a) y c). Asimismo, se recomienda incorporar en una futura ronda de entrevistas una pregunta explícita sobre la disposición a compartir el perfil del paciente y a pagar por funcionalidades avanzadas, de modo que H6 y la Business Assumption del modelo freemium cuenten con evidencia propia antes de invertir en su desarrollo.
-
-### Video App Validation
-> _Guía:_ Evaluación con usuarios vía Firebase App Distribution + video.
-
-### Video About-the-Team
-> _Guía:_ Pauta de secuencias con timing hh:mm:ss por sección, cuadro de video representativo, URL Stream + YouTube. Testimonio ante cámara de cada participante (outcomes y competencias, alineado al Outcome 4).
+Como recomendación para el roadmap del proyecto, se propone priorizar durante la fase de Experiment-Driven Development los experimentos asociados a las tres primeras hipótesis, dado que cuentan con la evidencia cualitativa más sólida obtenida en esta entrega, y diseñar un experimento adicional dirigido específicamente a cuidadores formales con el fin de cerrar la brecha de validación de las suposiciones de negocio correspondientes. Asimismo, se recomienda incorporar en una futura ronda de entrevistas una pregunta explícita sobre la disposición de los participantes a compartir el perfil del paciente y a pagar por funcionalidades avanzadas, de manera que la hipótesis relacionada con la compartición de perfil y la suposición de negocio sobre el modelo freemium cuenten con evidencia propia antes de invertir en su desarrollo.
 
 ---
 
 ## Bibliografía
-> _Guía:_ Referencias en formato APA 7ma edición (https://normas-apa.org/).
 
 Beard, J. R., Officer, A., de Carvalho, I. A., et al. (2016). The World report on ageing and health: A policy framework for healthy ageing. *The Lancet*, *387*(10033), 2145–2154. https://doi.org/10.1016/S0140-6736(15)00516-4
 
@@ -657,4 +634,4 @@ The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https:/
 ### Anexo: Videos de Exposiciones
 | Entrega | Título | Enlace (Microsoft Stream) |
 |---------|--------|---------------------------|
-| \<AV1/TP/AV2/TB2> | \<título> | \<url> |
+| AV1 | upc-pre-202620-1asi0732-9100-carestacks-about-the-product-sprint-1 | \<url> |
