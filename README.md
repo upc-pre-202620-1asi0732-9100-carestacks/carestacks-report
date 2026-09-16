@@ -681,7 +681,11 @@ Esta sección documenta el prototipado interactivo de la aplicación móvil de C
 | Notificaciones | ![Notificaciones Android](assets/notificaciones_android.png) |
 | Gestionar accesos | ![Gestionar accesos Android](assets/gestionar_accesos_android.png) |
 
-**Video del prototipo (Android):** [Enlace al video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319563_upc_edu_pe/IQCxyxzTeImsTaBVopDNXHyUAdGQYZnmlXXGn62jhU8cayU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=noqJKl)
+**Video del prototipo (Android)**
+
+| Captura del video | Enlace |
+|:---:|:---:|
+| <img src="assets/capitulo4/videos/prototype-video-android.png" alt="Screenshot del video del prototipo Android" width="480"/> | [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319563_upc_edu_pe/IQCxyxzTeImsTaBVopDNXHyUAdGQYZnmlXXGn62jhU8cayU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=noqJKl) |
 
 #### 4.5.2. iOS Mobile Applications Prototyping
 
@@ -698,7 +702,11 @@ El prototipo fue ejecutado y validado en un simulador de iOS, correspondiente a 
 | Documentos | ![Documentos iOS](assets/documentos_ios.png) |
 | Notificaciones | ![Notificaciones iOS](assets/notificaciones_ios.png) |
 
-**Video del prototipo (iOS):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319563_upc_edu_pe/IQD8hwXPwgf_RJSGdsPc4diHAUM7uH7Tff9QItUFv6-Pegw?e=UDYvyk)
+**Video del prototipo (iOS)**
+
+| Captura del video | Enlace |
+|:---:|:---:|
+| <img src="assets/capitulo4/videos/prototype-video-ios.png" alt="Screenshot del video del prototipo iOS" width="480"/> | [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319563_upc_edu_pe/IQD8hwXPwgf_RJSGdsPc4diHAUM7uH7Tff9QItUFv6-Pegw?e=UDYvyk) |
 
 ### 4.6. Web Applications UX/UI Design
 
@@ -771,7 +779,11 @@ El prototipo reemplaza el layout móvil original (bottom nav, columna única) po
 | Documentos | ![Documentos Web](assets/documentos_web.png) |
 | Notificaciones | ![Notificaciones Web](assets/notificaciones_web.png) |
 
-**Video del prototipo (Web):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319563_upc_edu_pe/IQCe4c3pMvTBRq2J8EtwN-b3AaO8jwiZA8ZkR9gq_FFT60I?e=bigaiv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+**Video del prototipo (Web)**
+
+| Captura del video | Enlace |
+|:---:|:---:|
+| <img src="assets/capitulo4/videos/prototype-video-web.png" alt="Screenshot del video del prototipo Web" width="480"/> | [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319563_upc_edu_pe/IQCe4c3pMvTBRq2J8EtwN-b3AaO8jwiZA8ZkR9gq_FFT60I?e=bigaiv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
 
 ### 4.8. Domain-Driven Software Architecture
 
