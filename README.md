@@ -445,7 +445,6 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 16. ¿Qué funcionalidades le gustaría tener en una aplicación que le ayude en su cuidado?
 
 #### 2.2.2. Registro de entrevistas
-> _Guía:_ **3 a 5 entrevistas por segmento.** Nombres, apellidos, edad, distrito, screenshot y URL de Microsoft Stream con timing y duración. Resumen por entrevista.
 
 #### Segmento 1: Cuidadores de pacientes geriátricos
 
