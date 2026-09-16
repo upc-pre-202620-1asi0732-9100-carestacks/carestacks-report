@@ -1174,6 +1174,38 @@ La configuración de despliegue deberá mantenerse actualizada durante el desarr
 
 Durante el Sprint 1, el equipo se dividió el trabajo por capítulos: documentación de fundamentos del producto (Capítulo I), investigación de usuario y competencia (Capítulo II), especificación de requisitos (Capítulo III), arquitectura y diseño visual (Capítulo IV) y las primeras evidencias de implementación (Capítulo V), reutilizando como base el proyecto CareConnect del ciclo anterior.
 
+##### Sprint Planning 1
+
+A continuación se presenta el resumen de la Sprint Planning Meeting del Sprint 1. La fecha y hora se estiman a partir del historial de commits del repositorio, cuyo primer commit se registró el 2026-08-31.
+
+| | |
+|---|---|
+| **Sprint #** | Sprint 1 |
+| **Date** | 2026-08-31 |
+| **Time** | 7:00 PM |
+| **Location** | Reunión virtual (Google Meet) |
+| **Prepared By** | Muñiz Huayanca, Percy Alonso |
+| **Attendees (to planning meeting)** | Salcedo Champi, Matias Rodolfo / Nikaido Vargas, Javier Masaru / Muñiz Huayanca, Percy Alonso / Espinoza Cruz, Angela Milagros / Baldeon Vivar, Santiago Armando |
+| **Sprint 0 Review Summary** | No hay un Sprint 0 formal con productos de software propios: el equipo partió del proyecto CareConnect desarrollado en el ciclo anterior, que se reutilizó como base de datos, arquitectura y diseño para acelerar el arranque del Sprint 1. |
+| **Sprint 0 Retrospective Summary** | Como aprendizaje previo al Sprint 1, el equipo acordó dividir el trabajo por capítulos del informe según fortalezas individuales y mantener reuniones de seguimiento periódicas para validar avances antes de integrar a `develop`. |
+| **Sprint 1 Goal** | Completar la documentación base del informe (Capítulos I al III), la arquitectura y diseño visual del producto (Capítulo IV) y las primeras evidencias de implementación (Landing Page, Software Configuration Management y Mobile Prototyping), reutilizando como punto de partida el proyecto CareConnect del ciclo anterior. Métrica de cumplimiento: los 42 work items del Sprint Backlog quedan en estado Done. |
+| **Sprint 1 Velocity** | 100 horas (20 horas por integrante, acumuladas en varias reuniones de trabajo y avance individual durante el Sprint 1). |
+| **Sum of Estimated Hours** | 204 horas, correspondientes a los 42 work items incluidos en el Sprint Backlog 1. El equipo superó la Velocity planificada mediante horas adicionales de trabajo individual fuera de las reuniones conjuntas. |
+
+##### Aspect Leaders and Collaborators
+
+Para el Sprint 1 se identificaron cinco aspectos principales dentro del alcance: la documentación de fundamentos del informe, la especificación y cierre de las secciones del informe, el diseño UX/UI y la arquitectura del producto, el backend y la configuración técnica, y el prototipado móvil y web. La siguiente matriz Leadership-and-Collaboration (LACX) indica, por cada aspecto, quién es el líder (L) y quién colabora (C), en relación directa con la asignación de tasks del Sprint Backlog 1.
+
+| Team Member (Last Name, First Name) | GitHub Username | Documentación Cap. I-II | Documentación Cap. III y cierre | Diseño UX/UI y Arquitectura (Cap. IV) | Backend y Configuración (Cap. V) | Prototipado Móvil y Web |
+|---|---|---|---|---|---|---|
+| Salcedo Champi, Matias Rodolfo | matiAAsc | C | L | — | — | — |
+| Nikaido Vargas, Javier Masaru | MassiFlip | — | — | C | L | C |
+| Muñiz Huayanca, Percy Alonso | alomsoo | — | — | — | — | L |
+| Espinoza Cruz, Angela Milagros | Emy127 | L | C | — | — | — |
+| Baldeon Vivar, Santiago Armando | Santibal11 | — | — | L | C | — |
+
+##### Sprint Backlog 1
+
 **Sprint #:** Sprint 1
 
 ![Board del Sprint 1 en Trello](assets/capitulo5/sprint1-trello-board.png)
