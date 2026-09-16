@@ -397,22 +397,23 @@ El objetivo es entender cómo gestionan actualmente el cuidado diario, qué herr
 2. ¿En qué distrito reside y en qué distrito realiza sus actividades de cuidado?
 3. ¿A qué se dedica además del cuidado y cuál es su situación familiar actual?
 4. ¿El cuidado que realiza es formal o informal, y a cuántas personas atiende?
+5. ¿Qué marcas de salud conoce, cómo las conoció, y desde qué dispositivo y navegador navega por internet?
 
 **Bloque 2: Gestión actual del cuidado y herramientas**
 
-5. ¿Cómo organiza actualmente la medicación y las terapias del paciente?
-6. ¿Qué herramientas utiliza en su día a día?
-7. ¿Qué dispositivo usa principalmente y qué aplicaciones abre con más frecuencia durante su jornada?
-8. ¿Ha tenido problemas por falta de coordinación o de información?
-9. ¿Cómo se comunica con otros cuidadores o familiares y por qué canal?
-10. ¿Qué aspectos considera más difíciles en el cuidado diario?
+6. ¿Cómo organiza actualmente la medicación y las terapias del paciente?
+7. ¿Qué herramientas utiliza en su día a día?
+8. ¿Qué dispositivo usa principalmente y qué aplicaciones abre con más frecuencia durante su jornada?
+9. ¿Ha tenido problemas por falta de coordinación o de información?
+10. ¿Cómo se comunica con otros cuidadores o familiares y por qué canal?
+11. ¿Qué aspectos considera más difíciles en el cuidado diario?
 
 **Bloque 3: Validación de funcionalidades y expectativas**
 
-11. ¿Qué funcionalidades le gustaría tener en una aplicación de apoyo?
-12. Si una aplicación permitiera que varios cuidadores registren y confirmen en tiempo real la medicación administrada, ¿la usaría? ¿Por qué?
-13. ¿Qué espera mejorar con una solución digital?
-14. ¿Qué tendría que ocurrir para que dejara de usar una aplicación de este tipo?
+12. ¿Qué funcionalidades le gustaría tener en una aplicación de apoyo?
+13. Si una aplicación permitiera que varios cuidadores registren y confirmen en tiempo real la medicación administrada, ¿la usaría? ¿Por qué?
+14. ¿Qué espera mejorar con una solución digital?
+15. ¿Qué tendría que ocurrir para que dejara de usar una aplicación de este tipo?
 
 #### Segmento 2: Pacientes geriátricos
 
@@ -424,23 +425,24 @@ El objetivo es comprender cómo los pacientes gestionan su propio cuidado, qué 
 2. ¿En qué distrito vive y con quiénes vive actualmente?
 3. ¿A qué se dedicaba antes y cómo describiría su rutina de un día normal?
 4. ¿Qué tan independiente se siente para resolver sus actividades diarias?
+5. ¿Qué marcas de salud conoce, cómo las conoció, y desde qué dispositivo y navegador navega por internet?
 
 **Bloque 2: Gestión actual del cuidado y uso de tecnología**
 
-5. ¿Cómo recuerda tomar sus medicamentos o asistir a sus citas médicas?
-6. ¿Ha tenido dificultades para seguir su tratamiento o su rutina diaria?
-7. ¿Qué es lo que más le cuesta recordar o controlar en su día a día?
-8. ¿Utiliza celular o alguna aplicación actualmente? ¿Para qué?
-9. ¿Utiliza algún otro dispositivo, como tablet o computadora?
-10. ¿Qué tan fácil o difícil le resulta usar aplicaciones móviles?
-11. ¿Dónde guarda actualmente sus recetas, resultados y documentos médicos?
+6. ¿Cómo recuerda tomar sus medicamentos o asistir a sus citas médicas?
+7. ¿Ha tenido dificultades para seguir su tratamiento o su rutina diaria?
+8. ¿Qué es lo que más le cuesta recordar o controlar en su día a día?
+9. ¿Utiliza celular o alguna aplicación actualmente? ¿Para qué?
+10. ¿Utiliza algún otro dispositivo, como tablet o computadora?
+11. ¿Qué tan fácil o difícil le resulta usar aplicaciones móviles?
+12. ¿Dónde guarda actualmente sus recetas, resultados y documentos médicos?
 
 **Bloque 3: Validación de funcionalidades y expectativas**
 
-12. ¿Qué tipo de recordatorios le ayudarían más: alarmas, notificaciones o mensajes?
-13. ¿Le gustaría poder ver sus actividades o medicamentos en una sola pantalla?
-14. ¿Qué le haría sentir más seguro o tranquilo respecto a su cuidado?
-15. ¿Qué funcionalidades le gustaría tener en una aplicación que le ayude en su cuidado?
+13. ¿Qué tipo de recordatorios le ayudarían más: alarmas, notificaciones o mensajes?
+14. ¿Le gustaría poder ver sus actividades o medicamentos en una sola pantalla?
+15. ¿Qué le haría sentir más seguro o tranquilo respecto a su cuidado?
+16. ¿Qué funcionalidades le gustaría tener en una aplicación que le ayude en su cuidado?
 
 #### 2.2.2. Registro de entrevistas
 > _Guía:_ **3 a 5 entrevistas por segmento.** Nombres, apellidos, edad, distrito, screenshot y URL de Microsoft Stream con timing y duración. Resumen por entrevista.
