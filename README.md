@@ -1123,22 +1123,60 @@ La configuración de despliegue deberá mantenerse actualizada durante el desarr
 
 Durante el Sprint 1, el equipo se dividió el trabajo por capítulos: documentación de fundamentos del producto (Capítulo I), investigación de usuario y competencia (Capítulo II), especificación de requisitos (Capítulo III), arquitectura y diseño visual (Capítulo IV) y las primeras evidencias de implementación (Capítulo V), reutilizando como base el proyecto CareConnect del ciclo anterior.
 
-| Sprint | Sección del Reporte | Título | Tarea técnica asociada | Description | Estimation (SP) | Assigned To | Status |
-|---|---|---|---|---|---|---|---|
-| 1 | Cap. I completo | Startup Profile, problemática, Lean UX, segmentos objetivo | Redactar descripción de la startup, perfiles de equipo, problem statement, Lean UX Assumptions/Hypothesis/Canvas y segmentos objetivo | Completar el Capítulo I: Introducción. | 8 | Espinoza Cruz, Angela Milagros | Done |
-| 1 | 2.1 | Análisis competitivo | Investigar competidores, landscape, estrategias y tácticas | Completar el análisis competitivo con tabla comparativa y logos. | 5 | Espinoza Cruz, Angela Milagros | Done |
-| 1 | 2.2 – 2.4 | Entrevistas, Needfinding y Ubiquitous Language | Diseñar y registrar entrevistas, elaborar User Personas, Journey Maps, Empathy Maps y glosario ubicuo | Completar el Capítulo II: Requirements Elicitation & Analysis. | 8 | Espinoza Cruz, Angela Milagros | Done |
-| 1 | Cap. III completo | Requirements Specification | Redactar To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping | Completar el Capítulo III. | 8 | Salcedo Champi, Matias Rodolfo | Done |
-| 1 | Avance Conclusiones/Bibliografía/Anexos | — | Redactar avance preliminar de cierre del informe | Iniciar borrador de conclusiones, bibliografía y anexos. | 2 | Salcedo Champi, Matias Rodolfo | Done |
-| 1 | 4.1 – 4.3 | Style Guidelines, Information Architecture, Landing Page UI Design | Definir guías de estilo (general, web, mobile), arquitectura de información y diseño del landing page | Completar las secciones iniciales del Capítulo IV. | 8 | Baldeon Armas, Santiago Armando | Done |
-| 1 | 4.4 | Mobile Applications UX/UI Design | Elaborar wireframes, wireflow diagrams, mock-ups y user flow diagrams de la app móvil | Completar el diseño UX/UI de la aplicación móvil (base para el prototipado Kotlin/Flutter). | 5 | Baldeon Armas, Santiago Armando | Done |
-| 1 | 4.8 – 4.10 | Domain-Driven Software Architecture, OO Design, Database Design | Documentar diagramas de contexto, contenedores y componentes; diagrama y diccionario de clases; diagrama de base de datos | Completar la arquitectura técnica del Capítulo IV. | 8 | Nikaido Vargas, Javier Masaru | Done |
-| 1 | 5.1 | Software Configuration Management | Documentar entorno de desarrollo, gestión de código fuente, convenciones y configuración de despliegue | Completar la sección 5.1 del Capítulo V. | 5 | Nikaido Vargas, Javier Masaru | Done |
-| 1 | 5.2.2 | Implemented Landing Page Evidence | Documentar evidencia de implementación del Landing Page | Completar con capturas del landing desplegado. | 2 | Nikaido Vargas, Javier Masaru | Done |
-| 1 | 4.5 | Mobile Applications Prototyping (Android + iOS) | Registrar cuentas de prueba, conectar Flutter (cuidador) al backend local, capturar 8 pantallas en iOS; preparar app Kotlin (paciente) para Android | Completar 4.5.1 y 4.5.2 con capturas y video del prototipo. | 8 | Muñiz Huayanca, Percy Alonso | Done |
-| 1 | 4.6 – 4.7 | Web Applications UX/UI Design y Prototyping | Adaptar la base Flutter del cuidador a un layout web (breakpoints, sidebar, jerarquía visual) como referencia para el diseño Figma | Completar el diseño y prototipado de la aplicación web. | 8 | Muñiz Huayanca, Percy Alonso | Done |
+**Sprint #:** Sprint 1
 
-**Total comprometido:** 75 Story Points.
+![Board del Sprint 1 en Trello](assets/capitulo5/sprint1-trello-board.png)
+
+*Figura X. Board del Sprint 1 en Trello, con los work items organizados en las columnas To-do, In Process, To Review y Done.*
+
+La tabla se organiza por los User Stories definidos en la sección 3.2, descompuestos en work items técnicos. Al final se listan los tasks que no dependen de un User Story en particular, correspondientes a la configuración técnica transversal y a la elaboración del informe.
+
+| User Story Id | User Story Title | Work-Item Id | Work-Item Title | Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---|---|---|
+| USL01 | Conocer la propuesta de valor | T01 | Implementar sección hero y problemática | Maquetar en React + TypeScript el hero con la propuesta de valor y la sección de problemática de la Landing Page. | 4 | Nikaido Vargas, Javier Masaru | Done |
+| USL02 | Explorar beneficios por segmento | T02 | Implementar secciones de funcionalidades y beneficios | Maquetar las secciones de funcionalidades, producto, beneficios y funcionamiento de CareConnect. | 4 | Nikaido Vargas, Javier Masaru | Done |
+| USL04 | Iniciar registro desde la landing | T03 | Implementar planes y llamado a la acción | Maquetar la sección de planes y el botón de llamado a la acción hacia el registro. | 3 | Nikaido Vargas, Javier Masaru | Done |
+| USL06 | Consultar Términos y Condiciones | T04 | Implementar footer con enlaces | Maquetar el footer con datos de contacto y enlaces del sitio. | 2 | Nikaido Vargas, Javier Masaru | Done |
+| US10 | Registrar cuenta | T05 | Implementar endpoint de registro de usuarios | Implementar en el bounded context IAM la persistencia de usuarios y el endpoint de registro con validación de correo duplicado. | 4 | Nikaido Vargas, Javier Masaru | Done |
+| US10 | Registrar cuenta | T06 | Implementar pantalla de registro en Flutter | Implementar la pantalla de creación de cuenta de la app del cuidador (web e iOS) consumiendo el endpoint de registro. | 3 | Muñiz Huayanca, Percy Alonso | Done |
+| US10 | Registrar cuenta | T07 | Implementar pantalla de registro en Kotlin | Implementar la pantalla de registro de la app del paciente (Android) con Jetpack Compose. | 3 | Muñiz Huayanca, Percy Alonso | Done |
+| US11 | Validar acceso por rol | T08 | Implementar login, sesión y autorización por roles | Implementar los endpoints de login, logout, validación de sesión y consulta de usuario actual, con validación de acceso por rol. | 5 | Nikaido Vargas, Javier Masaru | Done |
+| US11 | Validar acceso por rol | T09 | Implementar inicio de sesión en Flutter | Implementar la pantalla de inicio de sesión de la app del cuidador y la redirección al inicio según el rol. | 3 | Muñiz Huayanca, Percy Alonso | Done |
+| US11 | Validar acceso por rol | T10 | Implementar inicio de sesión en Kotlin | Implementar las pantallas de bienvenida e inicio de sesión de la app del paciente. | 3 | Muñiz Huayanca, Percy Alonso | Done |
+| US01 | Registrar evento de salud | T11 | Implementar creación y consulta de eventos | Implementar en el bounded context Agenda la persistencia de eventos y los endpoints de creación y consulta. | 5 | Nikaido Vargas, Javier Masaru | Done |
+| US01 | Registrar evento de salud | T12 | Implementar agenda en Kotlin | Implementar las pantallas de agenda y de agregar evento de la app del paciente. | 5 | Muñiz Huayanca, Percy Alonso | Done |
+| US02 | Confirmar evento de salud | T13 | Implementar confirmación y estados de eventos | Implementar el endpoint de confirmación y la lógica de transición de estados (pendiente, confirmado, incumplido). | 3 | Nikaido Vargas, Javier Masaru | Done |
+| US03 | Reprogramar evento de salud | T14 | Implementar reprogramación y cancelación de eventos | Implementar los endpoints de reprogramación y cancelación de eventos de salud. | 3 | Nikaido Vargas, Javier Masaru | Done |
+| US04 | Recibir recordatorios de eventos | T15 | Implementar recordatorios en el backend | Implementar en el bounded context Notificaciones los endpoints de recordatorios y preferencias de notificación. | 4 | Nikaido Vargas, Javier Masaru | Done |
+| US04 | Recibir recordatorios de eventos | T16 | Implementar pantalla de notificaciones en Kotlin | Implementar la pantalla de notificaciones de la app del paciente. | 3 | Muñiz Huayanca, Percy Alonso | Done |
+| US05 | Recibir alertas de incumplimiento | T17 | Implementar endpoints de alertas | Implementar los endpoints de alertas de incumplimiento dirigidas al cuidador. | 3 | Nikaido Vargas, Javier Masaru | Done |
+| US06 | Visualizar notificaciones | T18 | Implementar panel de notificaciones en Flutter | Implementar el panel lateral de notificaciones de la app del cuidador. | 3 | Muñiz Huayanca, Percy Alonso | Done |
+| US07 | Subir documento médico | T19 | Implementar gestión de documentos en el backend | Implementar en el bounded context Documentos la persistencia de documentos, sus metadatos y los endpoints de gestión. | 4 | Nikaido Vargas, Javier Masaru | Done |
+| US08 | Consultar documentos | T20 | Implementar vista de documentos en Flutter | Implementar la vista de documentos de la app del cuidador con tabla, filtros y panel de detalle. | 4 | Muñiz Huayanca, Percy Alonso | Done |
+| US08 | Consultar documentos | T21 | Implementar pantalla de documentos en Kotlin | Implementar la pantalla de documentos de la app del paciente. | 3 | Muñiz Huayanca, Percy Alonso | Done |
+| US12 | Escribir nota | T22 | Implementar entradas de diario en el backend | Implementar en el bounded context Diario la persistencia de notas y los endpoints de entradas de diario. | 3 | Nikaido Vargas, Javier Masaru | Done |
+| US12 | Escribir nota | T23 | Implementar diario en Flutter | Implementar la vista de diario de la app del cuidador con grilla de notas y editor lateral fijo. | 4 | Muñiz Huayanca, Percy Alonso | Done |
+| US12 | Escribir nota | T24 | Implementar diario en Kotlin | Implementar las pantallas de diario y de agregar nota de la app del paciente. | 4 | Muñiz Huayanca, Percy Alonso | Done |
+| US14 | Compartir perfil | T25 | Implementar endpoints de consentimiento | Implementar en el bounded context Gestión de Consentimiento los endpoints para compartir perfil, actualizar vistas visibles y validar acceso. | 4 | Nikaido Vargas, Javier Masaru | Done |
+| US14 | Compartir perfil | T26 | Implementar gestión de accesos en Kotlin | Implementar la pantalla de gestionar accesos de la app del paciente. | 3 | Muñiz Huayanca, Percy Alonso | Done |
+| US15 | Consultar perfil compartido | T27 | Implementar perfil en Flutter | Implementar la vista de perfil en dos columnas con el paciente vinculado y los accesos compartidos. | 3 | Muñiz Huayanca, Percy Alonso | Done |
+| USW01 | Gestionar agenda desde la web | T28 | Implementar layout responsive y shell web | Implementar el sistema de breakpoints y el shell compartido con sidebar, cabecera fija y panel de detalle para escritorio. | 6 | Muñiz Huayanca, Percy Alonso | Done |
+| USW01 | Gestionar agenda desde la web | T29 | Implementar agenda semanal en Flutter web | Implementar la vista de agenda con la semana completa en siete columnas y detalle lateral. | 6 | Muñiz Huayanca, Percy Alonso | Done |
+| — | — | T30 | Configurar entorno local del backend | Configurar Spring Boot con base de datos H2 en memoria y la documentación SpringDoc OpenAPI. | 3 | Nikaido Vargas, Javier Masaru | Done |
+| — | — | T31 | Desplegar Landing Page | Desplegar la Landing Page en Vercel. | 2 | Nikaido Vargas, Javier Masaru | Done |
+| — | — | T32 | Verificar la aplicación web | Ejecutar análisis estático, 27 tests de widget en cuatro anchos y build de producción web. | 4 | Muñiz Huayanca, Percy Alonso | Done |
+| — | — | T33 | Redactar Capítulo I | Redactar Startup Profile, problemática, Lean UX Process y segmentos objetivo. | 12 | Espinoza Cruz, Angela Milagros | Done |
+| — | — | T34 | Redactar análisis competitivo | Elaborar el Competitive Analysis Landscape y las estrategias frente a competidores (2.1). | 6 | Espinoza Cruz, Angela Milagros | Done |
+| — | — | T35 | Redactar entrevistas, needfinding y lenguaje ubicuo | Diseñar y registrar entrevistas, elaborar User Personas, Journey Maps, Empathy Maps, As-Is Scenario Mapping y glosario (2.2 – 2.4). | 14 | Espinoza Cruz, Angela Milagros | Done |
+| — | — | T36 | Redactar Capítulo III | Redactar To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. | 12 | Salcedo Champi, Matias Rodolfo | Done |
+| — | — | T37 | Redactar avance de cierre del informe | Iniciar el borrador de conclusiones, bibliografía y anexos. | 3 | Salcedo Champi, Matias Rodolfo | Done |
+| — | — | T38 | Elaborar guías de estilo, arquitectura de información y diseño del landing | Completar las secciones 4.1 a 4.3. | 10 | Baldeon Armas, Santiago Armando | Done |
+| — | — | T39 | Elaborar diseño UX/UI móvil | Elaborar wireframes, wireflow diagrams, mock-ups y user flow diagrams de la aplicación móvil (4.4). | 8 | Baldeon Armas, Santiago Armando | Done |
+| — | — | T40 | Documentar arquitectura y diseño de software | Documentar diagramas C4, diagrama de clases y diseño de base de datos (4.8 – 4.10). | 10 | Nikaido Vargas, Javier Masaru | Done |
+| — | — | T41 | Documentar Software Configuration Management | Documentar entorno de desarrollo, gestión de código fuente, convenciones y configuración de despliegue (5.1). | 5 | Nikaido Vargas, Javier Masaru | Done |
+| — | — | T42 | Documentar prototipado móvil y web | Documentar capturas y videos de los prototipos (4.5 y 4.7) y el diseño de la aplicación web (4.6). | 8 | Muñiz Huayanca, Percy Alonso | Done |
+
+**Total comprometido:** 204 horas.
 
 **Sprint Goal:** Completar la documentación base del informe (Capítulos I al III), la arquitectura y diseño visual del producto (Capítulo IV) y las primeras evidencias de implementación (Landing Page, Software Configuration Management y Mobile Prototyping), reutilizando como punto de partida el proyecto CareConnect del ciclo anterior.
 
