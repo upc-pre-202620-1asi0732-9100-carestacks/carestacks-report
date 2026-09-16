@@ -59,8 +59,6 @@ Producto: **CareConnect**
 
 ## Tabla de Contenidos
 
-<!-- 4 niveles. Verificar los anclajes (#) antes de cada entrega: GitHub genera el ancla a partir del texto del título. -->
-
 - [Student Outcome](#student-outcome)
 - [Part I: As-Is Software Project](#part-i-as-is-software-project)
   - [Capítulo I: Introducción](#capítulo-i-introducción)
@@ -124,7 +122,6 @@ Producto: **CareConnect**
 
 ## Student Outcome
 
-> _Guía:_ Colocar el párrafo introductorio idéntico al Anexo A del statement. Una subsección por alumno describiendo la relación outcome–dimensiones–trabajo. En "Acciones realizadas" identificar cada participante y por entrega (AV1, TP, AV2, TB2). "Conclusiones" grupales y acumulables.
 
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
@@ -555,9 +552,6 @@ Un wireflow por objetivo de usuario (*user goal*):
 
 ![Mockup de app mobile: sección 19](./assets/capitulo4/figma/mobilemockup19.png)
 
-
-Estas capturas —correspondientes a un caso de uso con mayor detalle clínico (paciente geriátrica con HTA y diabetes tipo 2, cuidadora con formación de enfermería)— validan que el sistema de diseño definido en 4.1 se sostiene al escalar la complejidad de los datos reales: los mismos badges de estado, la misma paleta y la misma estructura de tarjeta funcionan tanto para un caso simple (Losartán, un solo recordatorio) como para un plan de cuidado geriátrico integral con múltiples medicamentos, controles y notas de bienestar.
-
 #### 4.4.4. Mobile Applications User Flow Diagrams
 
 Un user flow por objetivo de usuario, contemplando *happy path* y *unhappy path*:
@@ -599,8 +593,6 @@ Esta sección documenta el prototipado interactivo de la aplicación móvil de C
 - **Android → segmento Paciente**, con la aplicación nativa desarrollada en **Kotlin + Jetpack Compose**.
 
 ### 4.5.1. Android Mobile Applications Prototyping
-
-El prototipo fue ejecutado y validado en un emulador Android, correspondiente a la aplicación nativa en **Kotlin + Jetpack Compose**, enfocada en el segmento **paciente**: consulta de agenda, diario personal, documentos médicos y notificaciones desde la perspectiva del paciente geriátrico.
 
 | Pantalla | Captura |
 |---|---|
@@ -827,28 +819,6 @@ El Software Architecture Components Diagram representa la organización interna 
 - **Diario de Seguimiento** y **Documentos** pueden originar comunicaciones que deben ser procesadas por Notificaciones.
 - **Notificaciones** concentra la integración con Firebase Cloud Messaging y SendGrid.
 - **Documentos** encapsula la integración con Supabase Storage.
-
-> **[INSERTAR AQUÍ EL SOFTWARE ARCHITECTURE COMPONENTS DIAGRAM]**
->
-> Dentro del Backend RESTful API deben aparecer:
-> - IAM.
-> - Gestión de Consentimiento.
-> - Agenda.
-> - Notificaciones.
-> - Diario de Seguimiento.
-> - Documentos.
-> - Shared Components.
->
-> Fuera del backend se deben representar:
-> - Mobile Application.
-> - Frontend Web Application.
-> - PostgreSQL.
-> - Identity Provider.
-> - Firebase Cloud Messaging.
-> - SendGrid.
-> - Supabase Storage.
->
-> También deben mostrarse las relaciones principales entre los bounded contexts.
 
 ![Software Architecture Components Diagram](assets/careconnect-components-1-diagram.png)
 ![Software Architecture Components Diagram](assets/careconnect-components-2-diagram.png)
@@ -1118,10 +1088,10 @@ La base relacional conserva únicamente la información necesaria para identific
 ### 5.1. Software Configuration Management
 
 #### 5.1.1. Software Development Environment Configuration
-> _Guía:_ Productos por actividad (Project/Requirements Mgmt, UX/UI, Development, Testing, Deployment, Documentation) con propósito y ruta.
+
 
 #### 5.1.2. Source Code Management
-> _Guía:_ URLs de repositorios (Landing Page, Web Services, Frontend Web). GitFlow: convenciones de feature/release/hotfix branches. Semantic Versioning. Conventional Commits.
+
 
 #### 5.1.3. Source Code Style Guide & Conventions
 
@@ -1130,26 +1100,25 @@ La base relacional conserva únicamente la información necesaria para identific
 ### 5.2. Product Implementation & Deployment
 
 #### 5.2.1. Sprint Backlogs
-> _Guía:_ Por Sprint: Planning (fecha, hora, asistentes, Sprint Goal), Sprint Backlog, Development/Execution/Services Documentation Evidence, Team Collaboration Insights.
+
 
 #### 5.2.2. Implemented Landing Page Evidence
 
 #### 5.2.3. Implemented Frontend-Web Application Evidence
 
 #### 5.2.4. Acuerdo de Servicio - SaaS
-> _Guía:_ Derechos, obligaciones y restricciones. Publicado en "Terms and Conditions" del website y enlazado en footers, con referencia a códigos de ética ACM/IEEE y CIP.
+
 
 #### 5.2.5. Implemented Native-Mobile Application Evidence
 
 #### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
 #### 5.2.7. RESTful API documentation
-> _Guía:_ OpenAPI vía Swagger. Por acción: verbo HTTP, sintaxis, parámetros, ejemplo y explicación del response.
+
 
 #### 5.2.8. Team Collaboration Insights
 
 ### 5.3. Video About-the-Product
-> _Guía:_ Screenshot, URL OneDrive del docente + URL YouTube, duración (1–3 min), al menos un testimonio de usuario. Incrustado en el Landing Page.
 
 ---
 
@@ -1164,7 +1133,7 @@ La base relacional conserva únicamente la información necesaria para identific
 #### 6.1.2. Core Integration Tests
 
 #### 6.1.3. Core Behavior-Driven Development
-> _Guía:_ Archivos `.feature` en Gherkin ligados a User Stories + Steps en el lenguaje de programación.
+
 
 #### 6.1.4. Core System Tests
 
@@ -1175,7 +1144,7 @@ La base relacional conserva únicamente la información necesaria para identific
 ##### 6.2.1.1. Coding standard & Code conventions
 
 ##### 6.2.1.2. Code Quality & Code Security
-> _Guía:_ Complejidad, duplicación, mantenibilidad + vulnerabilidades (SQLi, XSS, datos sensibles). SonarQube/ESLint/Checkmarx.
+
 
 #### 6.2.2. Reviews
 
@@ -1184,10 +1153,10 @@ La base relacional conserva únicamente la información necesaria para identific
 #### 6.3.1. Diseño de Entrevistas
 
 #### 6.3.2. Registro de Entrevistas
-> _Guía:_ 3 a 5 entrevistas por segmento. Nombres, edad, distrito, screenshot, URL Microsoft Stream con timing.
+
 
 #### 6.3.3. Evaluaciones según heurísticas
-> _Guía:_ Formato del Anexo D (usabilidad, arquitectura de información, inclusive design) con escala de severidad.
+
 
 ### 6.4. Auditoría de Experiencias de Usuario
 
@@ -1252,37 +1221,36 @@ La base relacional conserva únicamente la información necesaria para identific
 #### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 
 #### 8.1.3. Experiment-Ready Questions
-> _Guía:_ Belief-led vs. Exploratory. Aplicar 5W+H para descubrir premisas ocultas.
 
 #### 8.1.4. Question Backlog
-> _Guía:_ Lista priorizada de **preguntas** (no features). Motivación "por qué" + puntuación Confianza/Riesgo/Impacto/Interés; en empate gana mayor Riesgo.
+
 
 #### 8.1.5. Experiment Cards
-> _Guía:_ Frontal: Pregunta, Por qué, Hipótesis, Simplest Useful Thing. Posterior: Medidas, Condiciones, Escala.
+
 
 ### 8.2. Experiment Design
 
 #### 8.2.1. Hypotheses
-> _Guía:_ Falsificables, testables, medibles. Emparejar cada una con su Hipótesis Nula.
+
 
 #### 8.2.2. Domain Business Metrics
-> _Guía:_ Cada métrica con fórmula, técnica de recolección y meta. Las Experiment Cards solo referencian métricas definidas aquí.
+
 
 #### 8.2.3. Measures
 
 #### 8.2.4. Conditions
-> _Guía:_ Condición experimental vs. de control.
+
 
 #### 8.2.5. Scale Calculations and Decisions
-> _Guía:_ Significancia 5%, potencia 80–95%, MDE explícito. Mostrar cálculo del tamaño de muestra.
+
 
 #### 8.2.6. Methods Selection
-> _Guía:_ Simplest Useful Thing. No ejecutar dos experimentos simultáneos sobre el mismo tema/usuario. Consideración ética de no causar daño.
+
 
 #### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
 #### 8.2.8. Web and Mobile Tracking Plan
-> _Guía:_ Eventos, propiedades, herramienta y punto de captura por producto.
+
 
 ### 8.3. Experimentation
 
@@ -1313,7 +1281,7 @@ La base relacional conserva únicamente la información necesaria para identific
 ### 8.4. Experiment Aftermath & Analysis
 
 #### 8.4.1. Analysis and Interpretation of Results
-> _Guía:_ Interpretar datos contra hipótesis e hipótesis nula. La hipótesis se **prueba**, no se "valida".
+
 
 #### 8.4.2. Re-scored and Re-prioritized Question Backlog
 
@@ -1326,12 +1294,11 @@ La base relacional conserva únicamente la información necesaria para identific
 #### 8.6.1. About-the-Product Intro Video
 
 #### 8.6.2. Resumen usando Gees Framework
-> _Guía:_ Matriz con lentes Global, Economic, Environmental, Social; por cada una: indicador clave, hallazgo del sistema y estándar internacional de referencia (ISO/IEC 27001, 25010, ISO 14001, ISO 26000, WCAG 2.2).
+
 
 ---
 
 ## Matriz de Evaluación Ética y de Impacto
-> _Guía:_ 7 dimensiones (Anexo F): Salud Pública y Seguridad; Inclusión y Accesibilidad; Impacto Social y Cultural; Impacto Económico; Impacto Ambiental; Enfoque Global; Revelación de Peligros y Responsabilidad. Por cada una: riesgos positivos/negativos, a quién afecta y magnitud, y acciones de mitigación.
 
 | Dimensión / Criterio | Identificación de Riesgos e Impactos | Evaluación del Impacto (¿a quién y magnitud?) | Estrategias de Mitigación y Acciones de Diseño |
 |----------------------|--------------------------------------|-----------------------------------------------|------------------------------------------------|
@@ -1348,23 +1315,22 @@ La base relacional conserva únicamente la información necesaria para identific
 ## Conclusiones
 
 ### Conclusiones y recomendaciones
-> _Guía:_ Contrastar Problem Statements, Assumptions, Hypothesis Statements y criterios de éxito del Lean UX frente a los resultados de las validaciones/experimentos. Recomendaciones sobre el Roadmap.
+
 
 ### Video App Validation
-> _Guía:_ Evaluación con usuarios vía Firebase App Distribution + video.
+
 
 ### Video About-the-Team
-> _Guía:_ Pauta de secuencias con timing hh:mm:ss por sección, cuadro de video representativo, URL Stream + YouTube. Testimonio ante cámara de cada participante (outcomes y competencias, alineado al Outcome 4).
+
 
 ---
 
 ## Bibliografía
-> _Guía:_ Referencias en formato APA 7ma edición (https://normas-apa.org/).
 
 ---
 
 ## Anexos
-> _Guía:_ Cada anexo inicia en nueva página, diferenciado con letra mayúscula (Anexo A, B, …). Incluir el **Anexo: Videos de Exposiciones** con título e hipervínculo por entrega.
+
 
 ### Anexo: Videos de Exposiciones
 | Entrega | Título | Enlace (Microsoft Stream) |
