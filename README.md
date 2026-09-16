@@ -1,4 +1,3 @@
-<img width="220" height="801" alt="image" src="https://github.com/user-attachments/assets/09d448ff-cdf7-4f46-900a-de7977b6b220" /><!--
 =====================================================================
  PLANTILLA — Informe de Trabajo Final · 1ASI0732 Diseño de Experimentos
  Un solo archivo README.md (archivo principal del repositorio del informe).
