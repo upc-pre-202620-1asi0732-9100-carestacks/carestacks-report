@@ -1237,15 +1237,19 @@ La evidencia nativa móvil de CareStacks cubre ambos segmentos objetivo y ambas 
 | Pantalla | Captura |
 |---|---|
 | Perfil | ![Perfil Android](assets/perfil_android.png) |
+| Inicio / Bienvenida | ![Bienvenida Android](assets/bienvenida_android.png) |
 | Inicio de sesión | ![Login Android](assets/login_android.png) |
 | Registro | ![Registro Android](assets/registro_android.png) |
 | Home (Paciente) | ![Home Android](assets/home_android.png) |
 | Agenda | ![Agenda Android](assets/agenda_android.png) |
+| Agregar evento de agenda | ![Agregar evento Android](assets/agenda_evento_android.png) |
 | Diario | ![Diario Android](assets/diario_android.png) |
+| Agregar nota de diario | ![Agregar nota Android](assets/diario_nota_android.png) |
 | Documentos | ![Documentos Android](assets/documentos_android.png) |
 | Notificaciones | ![Notificaciones Android](assets/notificaciones_android.png) |
+| Gestionar accesos | ![Gestionar accesos Android](assets/gestionar_accesos_android.png) |
 
-**Video del prototipo (Android):** [Enlace al video](PENDIENTE)
+**Video del prototipo (Android):** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319563_upc_edu_pe/IQCxyxzTeImsTaBVopDNXHyUAdGQYZnmlXXGn62jhU8cayU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=noqJKl)
 
 ### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
 
