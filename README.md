@@ -1210,7 +1210,7 @@ Para el Sprint 1 se identificaron cinco aspectos principales dentro del alcance:
 
 ![Board del Sprint 1 en Trello](assets/capitulo5/sprint1-trello-board.png)
 
-*Figura X. Board del Sprint 1 en Trello, con los work items organizados en las columnas To-do, In Process, To Review y Done.*
+*Board del Sprint 1 en Trello, con los work items organizados en las columnas To-do, In Process, To Review y Done.*
 
 La tabla se organiza por los User Stories definidos en la sección 3.2, descompuestos en work items técnicos. Al final se listan los tasks que no dependen de un User Story en particular, correspondientes a la configuración técnica transversal y a la elaboración del informe.
 
