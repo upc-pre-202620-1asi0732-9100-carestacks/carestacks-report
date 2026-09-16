@@ -82,7 +82,7 @@ Septiembre, 2026
 | 0.12.0 | 14/09/2026 | Angela Espinoza | Añadió el As-Is Scenario Mapping, el glosario de ubiquitous language, las referencias en formato APA 7 y reescribió el proceso Lean UX (`chapter-1`, `chapter-2`) |
 | 0.13.0 | 14/09/2026 | Javier Nikaido / Percy Muñiz | Revisaron el class dictionary y el stack tecnológico, migraron el frontend a Flutter y ajustaron la configuración de despliegue (`chapter-4`, `chapter-5`) |
 | 0.14.0 | 15/09/2026 | Santiago Baldeon | Elaboró los wireframes y mockups de la aplicación móvil del Capítulo IV (`chapter-4`) |
-| 1.0.0 | 13/09/2026 | Matias Salcedo | AV1 Report |
+| 1.0.0 | 16/09/2026 | Matias Salcedo | AV1 Report |
 
 # Project Report Collaboration Insights
 
@@ -603,7 +603,14 @@ Cada participante del equipo debe sustentar evidencia de cómo las actividades r
 ## Conclusiones
 
 ### Conclusiones y recomendaciones
-> _Guía:_ Contrastar Problem Statements, Assumptions, Hypothesis Statements y criterios de éxito del Lean UX frente a los resultados de las validaciones/experimentos. Recomendaciones sobre el Roadmap.
+
+El Problem Statement planteado en 1.2.2.1 identificaba como brecha central la falta de coordinación entre cuidadores que atienden a un mismo paciente geriátrico, con tres consecuencias concretas: imposibilidad de confirmar si otra persona ya administró una dosis, omisión de dosis por parte del paciente ante la duda, y reconstrucción manual del historial de evolución. Las entrevistas realizadas en el Capítulo II confirman esta brecha con evidencia directa: el 100 % de los cuidadores entrevistados (Giancarlo, Sebastián y Renzo) señaló la falta de coordinación en los cambios de turno como su principal problema, y el 100 % de los pacientes entrevistados reportó dudas sobre si ya había tomado una dosis. Esto valida el Gap declarado en el Problem Statement y respalda que la propuesta de valor de CareConnect apunta al problema correcto.
+
+Respecto a las Lean UX Assumptions, las evidencias recogidas validan de forma consistente las User Assumptions y las User Outcome and Benefit Assumptions: los tres cuidadores entrevistados usan el celular como herramienta principal de su jornada (confirmando la Business Assumption c) y combinan pastilleros o cuadernos con alarmas del celular sin que ninguna herramienta esté integrada, coincidiendo con los pain points declarados. Sin embargo, dos supuestos siguen sin evidencia propia en esta entrega: la Business Assumption sobre el modelo freemium (d) no fue explorada con los cuidadores ni pacientes entrevistados, y las entrevistas del Segmento 1 solo cubrieron cuidadores informales, dejando pendiente la validación de la Business Assumption a) y c) con cuidadores formales (enfermeros o técnicos de salud en atención domiciliaria).
+
+En cuanto a los seis Hypothesis Statements, ninguno ha sido sometido todavía a un experimento formal, ya que el Capítulo VIII (Experiment-Driven Development) corresponde a una entrega posterior del ciclo de vida del proyecto. No obstante, el análisis cualitativo de entrevistas (2.2.3) ofrece evidencia de plausibilidad para H1, H2 y H3: el 100 % de los cuidadores solicitó de forma espontánea un registro compartido en tiempo real y confirmación de medicación administrada, funcionalidades que corresponden directamente a las Feature Assumptions a) y b) sobre las que se construyen H1 y H2. H4, H5 y H6 cuentan con menor respaldo directo en esta entrega: solo un cuidador (Giancarlo) mencionó explícitamente la falta de apoyo profesional inmediato, y ningún entrevistado se refirió de forma espontánea a compartir el perfil del paciente con otros cuidadores, por lo que estas hipótesis requieren validación específica antes de asumirse como confirmadas.
+
+Como recomendación para el roadmap, se propone priorizar en la fase de Experiment-Driven Development (Capítulo VIII) los experimentos asociados a H1, H2 y H3, dado que cuentan con la evidencia cualitativa más sólida de esta entrega, y diseñar un experimento adicional dirigido específicamente a cuidadores formales para cerrar la brecha de validación de las Business Assumptions a) y c). Asimismo, se recomienda incorporar en una futura ronda de entrevistas una pregunta explícita sobre la disposición a compartir el perfil del paciente y a pagar por funcionalidades avanzadas, de modo que H6 y la Business Assumption del modelo freemium cuenten con evidencia propia antes de invertir en su desarrollo.
 
 ### Video App Validation
 > _Guía:_ Evaluación con usuarios vía Firebase App Distribution + video.
@@ -629,7 +636,23 @@ The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https:/
 ---
 
 ## Anexos
-> _Guía:_ Cada anexo inicia en nueva página, diferenciado con letra mayúscula (Anexo A, B, …). Incluir el **Anexo: Videos de Exposiciones** con título e hipervínculo por entrega.
+
+### Anexo A: Archivo de Figma
+
+[CareConnect — Web Applications UX/UI Design (4.6)](https://www.figma.com/design/1TzGaaQLzkBu26Ojno1AVU/CareConnect-%E2%80%94-Web-Applications-UX-UI-Design--4.6-?node-id=4-5&p=f), con las páginas de wireframes, mock-ups y wireflows de la aplicación web referenciadas en el Capítulo IV.
+
+### Anexo B: Video de Entrevistas
+
+[Video de entrevistas a cuidadores y pacientes geriátricos](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQAd7joONgjbTYJ4N_xUFvPXAcOMtAz8WbmokiYYCP5M3T0), publicado en Microsoft Stream, con las seis entrevistas registradas en 2.2.2.
+
+### Anexo C: Repositorios de Producto
+
+| Repositorio | URL |
+|---|---|
+| Informe del proyecto (`carestacks-report`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report |
+| Backend / Web Services (`carestacks-backend-api`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api |
+| Frontend Web (`carestacks-web`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web |
+| Landing Page (`Landing-Page`) | https://github.com/CareStacks/Landing-Page |
 
 ### Anexo: Videos de Exposiciones
 | Entrega | Título | Enlace (Microsoft Stream) |
