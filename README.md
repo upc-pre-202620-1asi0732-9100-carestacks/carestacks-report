@@ -8,44 +8,57 @@
 =====================================================================
 -->
 
-# Informe de Trabajo Final
-
 <!-- CARÁTULA -->
 <div align="center">
 
 <img src="assets/UPC_logo_transparente.png" alt="Logo UPC" width="180"/>
 
-**Universidad Peruana de Ciencias Aplicadas (UPC)**
+# Universidad Peruana de Ciencias Aplicadas
+---
+## Carrera de Ingeniería de Software
+---
 
-Carrera de Ingeniería de Software
+1ASI0732
 
-Ciclo académico: **2026-20**
+Diseño de Experimentos de Ingeniería de Software
 
-Curso: **1ASI0732 — Diseño de Experimentos de Ingeniería de Software**
+**NRC**
 
-NRC: **9100**
-
-Profesor: **Sanchez Ponce, Alex Humberto**
+9100
 
 **Informe de Trabajo Final**
 
-Startup: **CareStacks**
+**Docente**
 
-Producto: **CareConnect**
+Sanchez Ponce, Alex Humberto
+
+**Startup**
+
+CareStacks
+
+**Producto**
+
+CareConnect
+
+**Integrantes**
+
+<center>
+
+| Código | Apellidos y Nombres |
+|---|---|
+| U202319881 | Baldeon Armas, Santiago Armando |
+| U202415495 | Espinoza Cruz, Angela Milagros |
+| U202319563 | Muñiz Huayanca, Percy Alonso |
+| U20221G099 | Nikaido Vargas, Javier Masaru |
+| U202319698 | Salcedo Champi, Matias Rodolfo |
+
+</center>
+
+**Período 2026-20**
+
+Septiembre, 2026
 
 </div>
-
-**Relación de integrantes:**
-
-| Código      | Apellidos y Nombres |
-|-------------|---------------------|
-| U202319698  | Salcedo Champi, Matias Rodolfo |
-| U20221G099  | Nikaido Vargas, Javier Masaru |
-| U202319563  | Muñiz Huayanca, Percy Alonso |
-| U202415495  | Espinoza Cruz, Angela Milagros |
-| U202319881  | Baldeon Armas, Santiago Armando |
-
-**Septiembre 2026**
 
 ---
 # Registro de Versiones del Informe
