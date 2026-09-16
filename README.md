@@ -840,13 +840,7 @@ La relevancia de este segmento está directamente asociada al envejecimiento de 
 ---
 
 ## Bibliografía
-> _Guía:_ Referencias en formato APA 7ma edición (https://normas-apa.org/).
-
-Beard, J. R., Officer, A., de Carvalho, I. A., et al. (2016). The World report on ageing and health: A policy framework for healthy ageing. *The Lancet*, *387*(10033), 2145–2154. https://doi.org/10.1016/S0140-6736(15)00516-4
-
-Instituto Nacional de Estadística e Informática. (2024). *Situación de la población adulta mayor: Informe técnico N.° 01*. https://www.inei.gob.pe/media/MenuRecursivo/boletines/informe-tecnico-poblacion-adulta-mayor.pdf
-
-Organización Mundial de la Salud. (2025). *Ageing and health*. https://www.who.int/news-room/fact-sheets/detail/ageing-and-health
+> _Guía:_ Referencias consolidadas en la rama `develop` (formato APA 7ma edición, https://normas-apa.org/).
 
 ---
 
