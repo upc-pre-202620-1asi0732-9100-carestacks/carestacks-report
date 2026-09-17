@@ -144,7 +144,7 @@ AV1:
         - [Documentación y evolución](#documentación-y-evolución)
   - [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
     - [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
-        - [Comparación con el As-Is Scenario Mapping (sección [2.3.5](#235-as-is-scenario-mapping))](#comparación-con-el-as-is-scenario-mapping-sección-235235-as-is-scenario-mapping)
+        - [Comparación con el As-Is Scenario Mapping (sección 2.3.5)](#comparación-con-el-as-is-scenario-mapping-sección-235)
     - [3.2. User Stories](#32-user-stories)
     - [3.3. Product Backlog](#33-product-backlog)
     - [3.4. Impact Mapping](#34-impact-mapping)
@@ -3600,9 +3600,6 @@ La distribución de commits entre los cuatro repositorios refleja la división d
 El Video About-the-Product presenta el modelo de negocio de CareConnect y sus características principales, dirigido tanto a los visitantes del Landing Page que buscan conocer la propuesta de valor como a los usuarios de las aplicaciones que desean realizar las tareas soportadas por la solución.
 
 **URL (OneDrive/Stream):** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQD9H0d9sU4tQJuKV5PStHyuAYjfXdpoDfRe-xCc_R1401s
-
-> **Pendiente:** falta el screenshot del video, la URL de la versión publicada en YouTube (usada para incrustarse en el Landing Page), la duración exacta y confirmar que se incluye al menos un testimonio positivo de un usuario que haya participado en las entrevistas de validación, tal como lo exige la rúbrica.
-
 ---
 
 # Part II: Verification, Validation & Pipeline
