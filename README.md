@@ -403,7 +403,12 @@ Cada participante del equipo debe sustentar evidencia de cómo las actividades r
 #### 5.2.8. Team Collaboration Insights
 
 ### 5.3. Video About-the-Product
-> _Guía:_ Screenshot, URL OneDrive del docente + URL YouTube, duración (1–3 min), al menos un testimonio de usuario. Incrustado en el Landing Page.
+
+El Video About-the-Product presenta el modelo de negocio de CareConnect y sus características principales, dirigido tanto a los visitantes del Landing Page que buscan conocer la propuesta de valor como a los usuarios de las aplicaciones que desean realizar las tareas soportadas por la solución.
+
+**URL (OneDrive/Stream):** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQD9H0d9sU4tQJuKV5PStHyuAYjfXdpoDfRe-xCc_R1401s
+
+> **Pendiente:** falta el screenshot del video, la URL de la versión publicada en YouTube (usada para incrustarse en el Landing Page), la duración exacta y confirmar que se incluye al menos un testimonio positivo de un usuario que haya participado en las entrevistas de validación, tal como lo exige la rúbrica.
 
 ---
 
@@ -631,7 +636,8 @@ The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https:/
 | Frontend Web (`carestacks-web`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web |
 | Landing Page (`Landing-Page`) | https://github.com/CareStacks/Landing-Page |
 
-### Anexo: Videos de Exposiciones
+### Anexo: Videos
 | Entrega | Título | Enlace (Microsoft Stream) |
 |---------|--------|---------------------------|
-| AV1 | upc-pre-202620-1asi0732-9100-carestacks-about-the-product-sprint-1 | \<url> |
+| AV1 | Video About-the-Product | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQD9H0d9sU4tQJuKV5PStHyuAYjfXdpoDfRe-xCc_R1401s |
+| AV1 | Video de exposición | \<url> |
