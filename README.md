@@ -1362,7 +1362,7 @@ El siguiente cuadro consolida todos los elementos especificados para los product
 | USL02 | User Story | Visitante (cuidador / paciente) | Alta | Landing Page | Explorar beneficios por segmento | Como visitante, deseo explorar los beneficios dirigidos a mi segmento para evaluar si la solución responde a mi necesidad. | Escenario 1: Contenido por segmento <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de segmentos <br> Entonces se presentan beneficios diferenciados para cuidadores y pacientes |
 | USL03 | User Story | Visitante | Media | Landing Page | Ver testimonios | Como visitante, deseo ver testimonios de usuarios para generar confianza en la solución. | Escenario 1: Visualización de testimonios <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de testimonios <br> Entonces se muestran al menos un testimonio por segmento objetivo |
 | USL04 | User Story | Visitante | Alta | Landing Page | Iniciar registro desde la landing | Como visitante, deseo iniciar mi registro desde la landing para comenzar a usar la plataforma. | Escenario 1: Llamado a la acción <br> Dado que el visitante decide registrarse <br> Cuando activa el llamado a la acción de registro <br> Entonces el sistema lo dirige al flujo de creación de cuenta |
-| USL05 | User Story | Visitante | Media | Landing Page | Cambiar idioma del sitio | Como visitante, deseo cambiar el idioma del sitio (English / Español) para leer el contenido en mi idioma preferido. | Escenario 1: Cambio de idioma <br> Dado que el visitante selecciona un idioma disponible (en_US / es_419) <br> Cuando confirma la selección <br> Entonces el contenido del sitio se muestra en el idioma elegido |
+| USL05 | User Story | Visitante | Media | Landing Page | Cambiar idioma del sitio | Como visitante, deseo cambiar el idioma del sitio (English / Español) para leer el contenido en mi idioma preferido. | Escenario 1: Cambio de idioma <br> Dado que el visitante se encuentra en la landing en español o inglés <br> Cuando selecciona ES o EN en el encabezado <br> Entonces los textos de la landing se muestran inmediatamente en el idioma elegido |
 | USL06 | User Story | Visitante | Media | Landing Page | Consultar Términos y Condiciones | Como visitante, deseo consultar los Términos y Condiciones desde el footer para conocer los derechos y obligaciones del servicio. | Escenario 1: Acceso a Términos y Condiciones <br> Dado que el visitante está en la landing <br> Cuando accede al enlace de Términos y Condiciones del footer <br> Entonces el sistema muestra el Acuerdo de Servicio (SaaS) |
 | USW01 | User Story | Cuidador | Alta | Gestión de Agenda | Gestionar agenda desde la web | Como cuidador, deseo gestionar la agenda del paciente desde el navegador para coordinar el cuidado sin depender del móvil. | Escenario 1: Gestión web de eventos <br> Dado que el cuidador inició sesión en la web application <br> Cuando registra o edita un evento de salud <br> Entonces el sistema persiste el cambio y lo refleja en la agenda |
 | USW02 | User Story | Cuidador | Media | Diario de Seguimiento | Consultar diario y documentos desde la web | Como cuidador, deseo consultar el diario y los documentos compartidos del paciente desde la web para dar seguimiento en pantalla amplia. | Escenario 1: Consulta web autorizada <br> Dado que el cuidador tiene acceso autorizado <br> Cuando consulta el diario o los documentos compartidos en la web application <br> Entonces el sistema muestra la información correspondiente |
@@ -1599,12 +1599,16 @@ La arquitectura se organiza en tres capas:
 
 La estructura de la landing sigue una jerarquía descendente clásica de conversión:
 
-1. **Header** fijo: logo, navegación (Inicio, Funciones, Beneficios, Precio, Contacto), CTA "Probar app".
+1. **Header** fijo: logo, navegación (Inicio, Funciones, Beneficios, Precio, Contacto), selector ES/EN y CTA "Probar app".
 2. **Hero**: titular + subtítulo + doble CTA ("Comienza ahora" / "Ver funciones") + mockup del dashboard real de la app.
 3. **Beneficios** ("Pensado para pacientes, cuidadores y familias"): 3 columnas con ícono, título y descripción.
 4. **Proceso** ("Cómo funciona"): 3 pasos numerados.
 5. **Funciones principales**: grilla de 5 tarjetas (una destacada — Acceso compartido).
 6. **Planes** ("Planes simples para tu cuidado diario"): 2 tarjetas de precio comparadas.
+
+El alcance lingüístico de la Landing Page para TB1 es **bilingüe: español (`es`) e inglés (`en`)**. El selector ES/EN usa `i18next` y `react-i18next` para cambiar los textos de la interfaz, las etiquetas accesibles y los metadatos de la página. La elección se conserva al recargar. No se contemplan otros idiomas en esta entrega. El mockup del hero es una imagen del prototipo móvil y conserva el idioma de la captura.
+
+Las secciones **About the Team** y **About the Product** muestran una miniatura y un botón para cargar el video incrustado de YouTube cuando el visitante lo solicite. Cada sección ofrece también un enlace directo, traducido al idioma seleccionado, para abrir el video si el reproductor embebido no está disponible en su navegador. La verificación local de estos controles se describe en §6.1.4.
 
 ![Landing Page Wireframe: sección 1](./assets/capitulo4/figma/landing1.png)
 ![Landing Page Wireframe: sección 2](./assets/capitulo4/figma/landing2.png)
@@ -3608,13 +3612,86 @@ El Video About-the-Product presenta el modelo de negocio de CareConnect y sus ca
 
 ### 6.1. Testing Suites & Validation
 
+Esta sección separa **casos diseñados**, **pruebas ejecutadas** y **evidencia disponible**. La revisión se realizó el 30/09/2026 sobre la Landing Page local y una copia del backend histórico [`CareStacks/BackEnd`](https://github.com/CareStacks/BackEnd) (base `df2adf8`). Las pruebas JUnit se publicaron en la rama [`test/core-verification`](https://github.com/CareStacks/BackEnd/tree/test/core-verification) (commit `ff58cec`). Los repositorios nuevos del curso todavía no contienen una suite equivalente de backend, web o móvil. Por tanto, un caso descrito como pendiente no debe interpretarse como una prueba aprobada.
+
+| Nivel | Alcance | Evidencia revisada | Estado al 30/09/2026 |
+|---|---|---|---|
+| Unidad | Reglas de entidades `HealthEvent` y `ProfileShareConsent` | `HealthEventTest` y `ProfileShareConsentTest` en la rama publicada del backend histórico | 6 pruebas aprobadas, 0 fallos |
+| Integración | Arranque de Spring con H2 y flujos API + persistencia | `CareConnectBackendApplicationTests` y `CoreApiIntegrationTests` | 4 pruebas aprobadas, 0 fallos |
+| BDD | USL05, cambio de idioma del Landing Page | Ejecución manual en `http://127.0.0.1:5173/` | Aprobado localmente |
+| Sistema | Navegación, idioma y videos del Landing Page | Inspección del navegador y comprobación de videos en YouTube | Casos locales aprobados con alcance indicado abajo; embed en el sitio publicado pendiente |
+
 #### 6.1.1. Core Entities Unit Tests
+
+El objetivo de este nivel es comprobar reglas de negocio sin levantar Spring ni conectar una base de datos. En el backend histórico, `HealthEvent` valida identificador del paciente, título, tipo y que el fin sea posterior al inicio; sus operaciones `confirm`, `reschedule`, `cancel` y `markAsMissed` modifican el estado. `ProfileShareConsent` exige paciente y cuidador distintos, al menos una vista autorizada y permite consultar las vistas concedidas. Estas reglas permiten los siguientes casos reproducibles:
+
+| ID | Entidad / historia | Datos y acción | Resultado esperado | Estado |
+|---|---|---|---|---|
+| UT-01 | `HealthEvent` / US01 | Programar evento con paciente, título, tipo e intervalo válido | Se crea en estado `PENDING` con las fechas indicadas | Aprobado |
+| UT-02 | `HealthEvent` / US01 | Programar evento cuyo fin es igual o anterior al inicio | Se lanza `BusinessRuleException` | Aprobado |
+| UT-03 | `HealthEvent` / US02–US03 | Confirmar, reprogramar y cancelar un evento válido | Pasa a `CONFIRMED`, vuelve a `PENDING` al reprogramar y termina en `CANCELLED` | Aprobado |
+| UT-04 | `HealthEvent` / US02 | Intentar confirmar un evento cancelado | Se rechaza la transición mediante `BusinessRuleException` | Aprobado |
+| UT-05 | `ProfileShareConsent` / US14–US16 | Otorgar una vista, consultar acceso y actualizar las vistas concedidas | `allows` refleja únicamente los permisos actuales | Aprobado |
+| UT-06 | `ProfileShareConsent` / US14 | Crear consentimiento para el mismo usuario como paciente y cuidador, o sin vistas | Se lanza `BusinessRuleException` | Aprobado |
+
+**Evidencia y límite.** Las seis pruebas se añadieron bajo `src/test/java` en la rama publicada del backend histórico y se ejecutaron con `mvn test`. Surefire registró 4 casos de `HealthEventTest` y 2 de `ProfileShareConsentTest`, todos aprobados. La ejecución no prueba todavía la aplicación móvil o web.
 
 #### 6.1.2. Core Integration Tests
 
+En integración se verificó que controller, servicio, repositorio y base de datos colaboren correctamente. El backend histórico incluye `@SpringBootTest` `contextLoads()` y una configuración de prueba para H2 en memoria (`jdbc:h2:mem:careconnect;MODE=PostgreSQL`). Se añadió `CoreApiIntegrationTests`, que levanta el servidor en un puerto aleatorio y usa solicitudes HTTP reales contra H2. El caso `contextLoads()` por sí solo sigue siendo una prueba de arranque.
+
+| ID | Flujo / historia | Preparación y operación | Resultado comprobable | Estado |
+|---|---|---|---|---|
+| IT-01 | Contexto Spring | Ejecutar `mvn test` con la configuración H2 de pruebas | El contexto carga sin errores | Aprobado: 1 prueba, 0 fallos, 0 errores |
+| IT-02 | Agenda / US01–US03 | `POST /api/agenda`, consultar el ID, confirmar y reprogramar | Respuestas 201/200, estado y horario persistidos al volver a consultar | Aprobado |
+| IT-03 | Consentimiento / US14–US16 | Registrar paciente y cuidador, iniciar sesión, conceder vista, validar acceso y revocar por `/api/consents` | Vista concedida permitida, vista no concedida denegada y acceso inexistente tras revocar | Aprobado |
+| IT-04 | Diario / US12–US13 | Crear entrada por `/api/diary` y consultar por ID y paciente | La entrada se recupera con el contenido y propietario correctos | Aprobado |
+
+IT-02–IT-04 usan identificadores y correos únicos de prueba; la base H2 es temporal y se recrea al iniciar el contexto. Las pruebas comprueban códigos HTTP, cuerpo y persistencia mediante consultas posteriores. No comprueban una base de datos de producción ni el cliente visual.
+
+**Evidencia de IT-01 (30/09/2026).** Se ejecutó `mvn -B -q test` con Java 25 en una copia del commit `df2adf8`, usando un repositorio local temporal para las dependencias. Surefire registró **1 prueba ejecutada, 0 fallos, 0 errores y 0 omitidas**; el log confirmó conexión a `jdbc:h2:mem:careconnect`. Se conserva el [resumen de Surefire](assets/testing/backend-contextloads-2026-09-30.txt). El perfil activo fue `default`, con la configuración H2 ubicada en `src/test/resources/application.yml`.
+
+**Evidencia de la suite ampliada (30/09/2026).** Tras añadir las pruebas, `mvn -B -q -o test` terminó con código 0: **10 pruebas ejecutadas, 0 fallos, 0 errores y 0 omitidas**. Los cuatro resultados por clase están en el [resumen de la suite](assets/testing/backend-suite-2026-09-30.txt). La rama de pruebas está publicada en el backend histórico; su incorporación a la rama principal o al repositorio nuevo del curso queda pendiente de revisión del equipo.
+
 #### 6.1.3. Core Behavior-Driven Development
 
+Los escenarios BDD vinculan el comportamiento observable con los criterios de aceptación del Product Backlog (§3.2). Para USL05 se ejecutó el siguiente escenario en el Landing Page local:
+
+```gherkin
+Característica: Idioma del Landing Page
+  Como visitante
+  Quiero elegir español o inglés
+  Para leer el contenido en mi idioma preferido
+
+  Escenario: Cambiar a inglés y conservar la preferencia
+    Dado que la landing está abierta en español
+    Cuando selecciono "EN" en el encabezado
+    Entonces el título principal y la navegación aparecen en inglés
+    Y el idioma del documento es "en"
+    Y el título y la descripción de la página están en inglés
+    Cuando recargo la página
+    Entonces la landing continúa en inglés
+    Cuando selecciono "ES"
+    Entonces el contenido y el idioma del documento vuelven a español
+```
+
+**Resultado USL05: aprobado en entorno local (30/09/2026).** Se observó el título principal `Organize the daily care of your loved ones`, `html[lang="en"]`, los metadatos en inglés y el botón EN seleccionado. Después de recargar, inglés siguió seleccionado; al pulsar ES volvieron el título `Organiza el cuidado diario de tus seres queridos` y `html[lang="es"]`. La ejecución fue manual; aún no hay archivo `.feature` ni runner BDD automatizado en los repositorios revisados.
+
+Las pruebas JUnit del backend cubren comportamientos de US01 (registro válido y fechas inválidas), US02 (confirmación), US14 (concesión de vistas) y US16 (revocación), pero **no existe todavía un runner BDD ni archivos `.feature` ejecutables**. Para afirmar automatización BDD se deben vincular los pasos Gherkin con estas pruebas o implementar step definitions específicas.
+
 #### 6.1.4. Core System Tests
+
+Las pruebas de sistema revisan el recorrido visible para el usuario. La siguiente ejecución corresponde exclusivamente al servidor local del Landing Page (`http://127.0.0.1:5173/`), no a una validación del despliegue público ni de las aplicaciones conectadas al backend.
+
+| ID | Recorrido | Resultado observado | Estado |
+|---|---|---|---|
+| ST-01 | Entrar al Landing Page y usar ES/EN | Cambian los textos, etiquetas accesibles, `lang`, título y descripción; la preferencia permanece tras recargar | Aprobado localmente |
+| ST-02 | Revisar secciones About the Team y About the Product | Se muestran dos miniaturas con botones ES/EN que activan los `iframe` y enlaces directos; ambos videos reprodujeron en YouTube | Aprobado para presentación y acceso directo; embed publicado pendiente |
+| ST-03 | Recorrido completo paciente/cuidador: registro, evento, confirmación, acceso compartido y revocación | El tramo API + H2 está cubierto por IT-02 e IT-03; falta probarlo desde frontend móvil/web | Pendiente de interfaz integrada |
+
+**Límite de ST-02.** Los dos videos se abrieron y avanzaron al reproducirlos en YouTube (`About the Team`, 2:36; `About the product`, 3:20). En el navegador integrado, el reproductor embebido mostró el error 153 de configuración; se muestra primero una miniatura y se mantiene un enlace visible a cada video como vía de acceso. Debe verificarse el `iframe` en el sitio publicado después del despliegue.
+
+**Criterio de cierre de ST-03.** Registrar versión/commit de cada componente, URL del entorno, usuario de prueba sin datos reales, pasos, resultado esperado y observado, evidencia visual y defectos hallados al ejecutar el flujo desde la aplicación móvil o web conectada al backend.
 
 ### 6.2. Static testing & Verification
 

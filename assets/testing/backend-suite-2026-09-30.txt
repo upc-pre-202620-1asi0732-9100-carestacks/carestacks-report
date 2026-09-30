@@ -1,0 +1,21 @@
+CareConnect backend - suite de entidades e integración
+Fecha: 2026-09-30
+Fuente: https://github.com/CareStacks/BackEnd
+Commit base: df2adf8
+Rama publicada con nuevas pruebas: test/core-verification
+Commit: ff58cec02cd9d8fd919bf3264ec65431be3c3b58
+URL: https://github.com/CareStacks/BackEnd/tree/test/core-verification
+Entorno: Java 25.0.1, Spring Boot 4.0.6, H2 en memoria
+Comando: mvn -B -q -o test
+Resultado: exit code 0
+
+Resultados de target/surefire-reports/*.txt:
+HealthEventTest: Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+ProfileShareConsentTest: Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+CareConnectBackendApplicationTests: Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+CoreApiIntegrationTests: Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+TOTAL: Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+
+CoreApiIntegrationTests levanta un servidor HTTP en puerto aleatorio y verifica
+agenda, diario y consentimiento contra H2. Se usan UUID y correos de prueba
+unicos. No incluye frontend ni una base de datos de produccion.
