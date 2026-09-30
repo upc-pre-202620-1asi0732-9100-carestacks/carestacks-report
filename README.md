@@ -2883,21 +2883,18 @@ Para la presente entrega, no todos los productos cuentan todavía con un desplie
 
 La Landing Page de CareConnect está implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada públicamente mediante **Vercel**.
 
-- **Repositorio:** `https://github.com/CareStacks/Landing-Page`
-- **URL de producción:** `https://landing-page-lovat-ten.vercel.app/`
+- **Repositorio de la entrega:** `https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page`
+- **URL de producción:** `https://carestacks-landing-page.vercel.app/`
 - **Proveedor de despliegue:** Vercel
 - **Build Tool:** Vite
 
-El flujo de despliegue utilizado es:
+El flujo de despliegue utilizado para esta entrega es:
 
 ```text
-Cambios en el repositorio
+Cambios en el repositorio de la entrega
           |
           v
-     Push a GitHub
-          |
-          v
-Vercel detecta los cambios
+vercel deploy --prod --yes
           |
           v
 Instalación de dependencias
@@ -2912,7 +2909,7 @@ Publicación de la nueva versión
       URL pública
 ```
 
-Vercel se encuentra vinculado al repositorio de la Landing Page, permitiendo generar una nueva versión desplegada a partir de los cambios integrados en la rama configurada para producción.
+La publicación se realizó desde el repositorio de la entrega mediante Vercel CLI. La conexión automática con GitHub no quedó habilitada, por lo que los cambios posteriores requieren ejecutar de nuevo el comando de despliegue.
 
 La evidencia visual correspondiente al despliegue y funcionamiento de este producto se presenta posteriormente en la sección **5.2.2. Implemented Landing Page Evidence**.
 
@@ -3428,8 +3425,9 @@ La tabla se organiza por los User Stories definidos en la sección 3.2, descompu
 
 La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada mediante **Vercel**.
 
-**Repositorio:** `https://github.com/CareStacks/Landing-Page`  
-**Landing Page:** `https://landing-page-lovat-ten.vercel.app/`
+**Repositorio:** `https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page`
+
+**Landing Page:** `https://carestacks-landing-page.vercel.app/`
 
 ##### Deployment Evidence
 
