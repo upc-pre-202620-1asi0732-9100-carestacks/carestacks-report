@@ -2498,10 +2498,10 @@ La selección de herramientas busca mantener una separación clara entre cada pr
 | Notifications | Firebase Cloud Messaging | Entregar notificaciones push. | Proyecto Firebase de CareConnect |
 | Mobile Distribution | Firebase App Distribution | Distribuir builds Android de prueba. | Proyecto Firebase de CareConnect |
 | Email | SendGrid | Enviar correos electrónicos transaccionales. | Configuración privada del backend |
-| Landing Page Development | React + Vite + TypeScript | Implementación actual de la Landing Page. | `CareStacks/Landing-Page` |
-| Landing Page Deployment | Vercel | Publicar la Landing Page. | Proyecto Vercel vinculado al repositorio |
+| Landing Page Development | React + Vite + TypeScript | Implementación actual de la Landing Page. | `upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page` |
+| Landing Page Deployment | Vercel | Publicar la Landing Page. | Proyecto Vercel desplegado con CLI; integración automática con GitHub pendiente |
 | Frontend Web Application | Flutter | Stack requerido por 1ASI0732 para la aplicación web funcional. | Pendiente de repositorio/implementación confirmada |
-| Documentation | Markdown | Elaborar el informe principal del proyecto. | `CareStacks/Report/README.md` |
+| Documentation | Markdown | Elaborar el informe principal del proyecto. | `upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/README.md` |
 
 ##### Configuración de la Native Mobile Application
 
@@ -3433,7 +3433,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ![CareConnect Landing Page Deployment](assets/careconnect-landing-deployment.png)
 
-*Figura 12. Evidencia del despliegue de la Landing Page de CareConnect.*
+*Figura 12. Landing Page publicada en [Vercel](https://carestacks-landing-page.vercel.app/) el 30/09/2026; captura de la versión con selector ES/EN.*
 
 ---
 
@@ -3610,14 +3610,14 @@ El Video About-the-Product presenta el modelo de negocio de CareConnect y sus ca
 
 ### 6.1. Testing Suites & Validation
 
-Esta sección separa **casos diseñados**, **pruebas ejecutadas** y **evidencia disponible**. La revisión se realizó el 30/09/2026 sobre la Landing Page local y una copia del backend histórico [`CareStacks/BackEnd`](https://github.com/CareStacks/BackEnd) (base `df2adf8`). Las pruebas JUnit se publicaron en la rama [`test/core-verification`](https://github.com/CareStacks/BackEnd/tree/test/core-verification) (commit `ff58cec`). Los repositorios nuevos del curso todavía no contienen una suite equivalente de backend, web o móvil. Por tanto, un caso descrito como pendiente no debe interpretarse como una prueba aprobada.
+Esta sección separa **casos diseñados**, **pruebas ejecutadas** y **evidencia disponible**. La revisión se realizó el 30/09/2026 sobre la Landing Page local, su versión pública en [Vercel](https://carestacks-landing-page.vercel.app/) y una copia del backend histórico [`CareStacks/BackEnd`](https://github.com/CareStacks/BackEnd) (base `df2adf8`). Las pruebas JUnit se publicaron en la rama [`test/core-verification`](https://github.com/CareStacks/BackEnd/tree/test/core-verification) (commit `ff58cec`). Los repositorios nuevos del curso todavía no contienen una suite equivalente de backend, web o móvil. Por tanto, un caso descrito como pendiente no debe interpretarse como una prueba aprobada.
 
 | Nivel | Alcance | Evidencia revisada | Estado al 30/09/2026 |
 |---|---|---|---|
 | Unidad | Reglas de entidades `HealthEvent` y `ProfileShareConsent` | `HealthEventTest` y `ProfileShareConsentTest` en la rama publicada del backend histórico | 6 pruebas aprobadas, 0 fallos |
 | Integración | Arranque de Spring con H2 y flujos API + persistencia | `CareConnectBackendApplicationTests` y `CoreApiIntegrationTests` | 4 pruebas aprobadas, 0 fallos |
-| BDD | USL05, cambio de idioma del Landing Page | Ejecución manual en `http://127.0.0.1:5173/` | Aprobado localmente |
-| Sistema | Navegación, idioma y videos del Landing Page | Inspección del navegador y comprobación de videos en YouTube | Casos locales aprobados con alcance indicado abajo; embed en el sitio publicado pendiente |
+| BDD | USL05, cambio de idioma del Landing Page | Ejecución manual local y en la URL pública | Aprobado en ambos entornos; sin automatización BDD |
+| Sistema | Navegación, idioma y videos del Landing Page | Inspección de la URL pública, captura actual y reproducción de ambos videos incrustados | ST-01 y ST-02 aprobados en producción con el alcance indicado abajo |
 
 #### 6.1.1. Core Entities Unit Tests
 
@@ -3675,19 +3675,21 @@ Característica: Idioma del Landing Page
 
 **Resultado USL05: aprobado en entorno local (30/09/2026).** Se observó el título principal `Organize the daily care of your loved ones`, `html[lang="en"]`, los metadatos en inglés y el botón EN seleccionado. Después de recargar, inglés siguió seleccionado; al pulsar ES volvieron el título `Organiza el cuidado diario de tus seres queridos` y `html[lang="es"]`. La ejecución fue manual; aún no hay archivo `.feature` ni runner BDD automatizado en los repositorios revisados.
 
+**Verificación en producción (30/09/2026).** En `https://carestacks-landing-page.vercel.app/`, se seleccionó EN y se observaron el título `CareConnect | Organized daily care`, `html[lang="en"]`, la descripción de la página en inglés y la navegación traducida. Tras recargar, el idioma inglés permaneció seleccionado. La comprobación se hizo manualmente en una sesión nueva del navegador integrado.
+
 Las pruebas JUnit del backend cubren comportamientos de US01 (registro válido y fechas inválidas), US02 (confirmación), US14 (concesión de vistas) y US16 (revocación), pero **no existe todavía un runner BDD ni archivos `.feature` ejecutables**. Para afirmar automatización BDD se deben vincular los pasos Gherkin con estas pruebas o implementar step definitions específicas.
 
 #### 6.1.4. Core System Tests
 
-Las pruebas de sistema revisan el recorrido visible para el usuario. La siguiente ejecución corresponde exclusivamente al servidor local del Landing Page (`http://127.0.0.1:5173/`), no a una validación del despliegue público ni de las aplicaciones conectadas al backend.
+Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-02 se repitieron en la Landing Page publicada (`https://carestacks-landing-page.vercel.app/`) el 30/09/2026. La [Figura 12](assets/careconnect-landing-deployment.png) muestra una captura actual del sitio público. ST-03 sigue sin ejecutarse desde las aplicaciones conectadas al backend.
 
 | ID | Recorrido | Resultado observado | Estado |
 |---|---|---|---|
-| ST-01 | Entrar al Landing Page y usar ES/EN | Cambian los textos, etiquetas accesibles, `lang`, título y descripción; la preferencia permanece tras recargar | Aprobado localmente |
-| ST-02 | Revisar secciones About the Team y About the Product | Se muestran dos miniaturas con botones ES/EN que activan los `iframe` y enlaces directos; ambos videos reprodujeron en YouTube | Aprobado para presentación y acceso directo; embed publicado pendiente |
+| ST-01 | Entrar al Landing Page y usar ES/EN | En producción se observaron navegación, título, descripción y `lang` en inglés; la elección permaneció tras recargar | Aprobado en producción, sesión de escritorio |
+| ST-02 | Revisar secciones About the Team y About the Product | En producción se cargaron ambos `iframe` al pulsar sus botones; el video del equipo avanzó y el del producto mostró reproducción desde 0:01/3:20. Permanecen visibles los enlaces directos | Aprobado en producción, sesión de escritorio |
 | ST-03 | Recorrido completo paciente/cuidador: registro, evento, confirmación, acceso compartido y revocación | El tramo API + H2 está cubierto por IT-02 e IT-03; falta probarlo desde frontend móvil/web | Pendiente de interfaz integrada |
 
-**Límite de ST-02.** Los dos videos se abrieron y avanzaron al reproducirlos en YouTube (`About the Team`, 2:36; `About the product`, 3:20). En el navegador integrado, el reproductor embebido mostró el error 153 de configuración; se muestra primero una miniatura y se mantiene un enlace visible a cada video como vía de acceso. Debe verificarse el `iframe` en el sitio publicado después del despliegue.
+**Límite de ST-02.** En la prueba local anterior, el navegador integrado mostró el error 153 en el reproductor embebido. En una sesión nueva del mismo navegador, ambos reproductores del sitio publicado cargaron y avanzaron. Se conserva primero una miniatura y un enlace directo a cada video como alternativa. Esta comprobación no demuestra que la reproducción funcione en todos los navegadores o dispositivos.
 
 **Criterio de cierre de ST-03.** Registrar versión/commit de cada componente, URL del entorno, usuario de prueba sin datos reales, pasos, resultado esperado y observado, evidencia visual y defectos hallados al ejecutar el flujo desde la aplicación móvil o web conectada al backend.
 
