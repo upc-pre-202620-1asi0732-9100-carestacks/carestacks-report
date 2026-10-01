@@ -3610,18 +3610,18 @@ El Video About-the-Product presenta el modelo de negocio de CareConnect y sus ca
 
 ### 6.1. Testing Suites & Validation
 
-Esta sección separa **casos diseñados**, **pruebas ejecutadas** y **evidencia disponible**. La revisión se realizó el 30/09/2026 sobre la Landing Page local, su versión pública en [Vercel](https://carestacks-landing-page.vercel.app/) y una copia del backend histórico [`CareStacks/BackEnd`](https://github.com/CareStacks/BackEnd) (base `df2adf8`). Las pruebas JUnit se publicaron en la rama [`test/core-verification`](https://github.com/CareStacks/BackEnd/tree/test/core-verification) (commit `ff58cec`). Los repositorios nuevos del curso todavía no contienen una suite equivalente de backend, web o móvil. Por tanto, un caso descrito como pendiente no debe interpretarse como una prueba aprobada.
+Esta sección separa **casos diseñados**, **pruebas ejecutadas** y **evidencia disponible**. El 30/09/2026 se revisaron la Landing Page local y su versión pública en [Vercel](https://carestacks-landing-page.vercel.app/). El 01/10/2026 se ejecutó la suite JUnit en el [backend actual del curso](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api), rama [`test/core-verification`](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/tree/test/core-verification) (commit `24b1e75`). Estas pruebas se trasladaron desde el backend del ciclo anterior y aún no están integradas en `main`. Un caso descrito como pendiente no debe interpretarse como una prueba aprobada.
 
-| Nivel | Alcance | Evidencia revisada | Estado al 30/09/2026 |
+| Nivel | Alcance | Evidencia revisada | Estado al 01/10/2026 |
 |---|---|---|---|
-| Unidad | Reglas de entidades `HealthEvent` y `ProfileShareConsent` | `HealthEventTest` y `ProfileShareConsentTest` en la rama publicada del backend histórico | 6 pruebas aprobadas, 0 fallos |
+| Unidad | Reglas de entidades `HealthEvent` y `ProfileShareConsent` | `HealthEventTest` y `ProfileShareConsentTest` en la rama publicada del backend actual | 6 pruebas aprobadas, 0 fallos |
 | Integración | Arranque de Spring con H2 y flujos API + persistencia | `CareConnectBackendApplicationTests` y `CoreApiIntegrationTests` | 4 pruebas aprobadas, 0 fallos |
 | BDD | USL05, cambio de idioma del Landing Page | Ejecución manual local y en la URL pública | Aprobado en ambos entornos; sin automatización BDD |
 | Sistema | Navegación, idioma y videos del Landing Page | Inspección de la URL pública, captura actual y reproducción de ambos videos incrustados | ST-01 y ST-02 aprobados en producción con el alcance indicado abajo |
 
 #### 6.1.1. Core Entities Unit Tests
 
-El objetivo de este nivel es comprobar reglas de negocio sin levantar Spring ni conectar una base de datos. En el backend histórico, `HealthEvent` valida identificador del paciente, título, tipo y que el fin sea posterior al inicio; sus operaciones `confirm`, `reschedule`, `cancel` y `markAsMissed` modifican el estado. `ProfileShareConsent` exige paciente y cuidador distintos, al menos una vista autorizada y permite consultar las vistas concedidas. Estas reglas permiten los siguientes casos reproducibles:
+El objetivo de este nivel es comprobar reglas de negocio sin levantar Spring ni conectar una base de datos. En el backend actual, `HealthEvent` valida identificador del paciente, título, tipo y que el fin sea posterior al inicio; sus operaciones `confirm`, `reschedule`, `cancel` y `markAsMissed` modifican el estado. `ProfileShareConsent` exige paciente y cuidador distintos, al menos una vista autorizada y permite consultar las vistas concedidas. Estas reglas permiten los siguientes casos reproducibles:
 
 | ID | Entidad / historia | Datos y acción | Resultado esperado | Estado |
 |---|---|---|---|---|
@@ -3632,11 +3632,11 @@ El objetivo de este nivel es comprobar reglas de negocio sin levantar Spring ni 
 | UT-05 | `ProfileShareConsent` / US14–US16 | Otorgar una vista, consultar acceso y actualizar las vistas concedidas | `allows` refleja únicamente los permisos actuales | Aprobado |
 | UT-06 | `ProfileShareConsent` / US14 | Crear consentimiento para el mismo usuario como paciente y cuidador, o sin vistas | Se lanza `BusinessRuleException` | Aprobado |
 
-**Evidencia y límite.** Las seis pruebas se añadieron bajo `src/test/java` en la rama publicada del backend histórico y se ejecutaron con `mvn test`. Surefire registró 4 casos de `HealthEventTest` y 2 de `ProfileShareConsentTest`, todos aprobados. La ejecución no prueba todavía la aplicación móvil o web.
+**Evidencia y límite.** Las seis pruebas están bajo `src/test/java` en la rama publicada del backend actual y se ejecutaron con `mvn test`. Surefire registró 4 casos de `HealthEventTest` y 2 de `ProfileShareConsentTest`, todos aprobados. La ejecución no prueba todavía la aplicación móvil o web.
 
 #### 6.1.2. Core Integration Tests
 
-En integración se verificó que controller, servicio, repositorio y base de datos colaboren correctamente. El backend histórico incluye `@SpringBootTest` `contextLoads()` y una configuración de prueba para H2 en memoria (`jdbc:h2:mem:careconnect;MODE=PostgreSQL`). Se añadió `CoreApiIntegrationTests`, que levanta el servidor en un puerto aleatorio y usa solicitudes HTTP reales contra H2. El caso `contextLoads()` por sí solo sigue siendo una prueba de arranque.
+En integración se verificó que controller, servicio, repositorio y base de datos colaboren correctamente. El backend actual incluye `@SpringBootTest` `contextLoads()` y una configuración de prueba para H2 en memoria (`jdbc:h2:mem:careconnect;MODE=PostgreSQL`). Se añadió `CoreApiIntegrationTests`, que levanta el servidor en un puerto aleatorio y usa solicitudes HTTP reales contra H2. El caso `contextLoads()` por sí solo sigue siendo una prueba de arranque.
 
 | ID | Flujo / historia | Preparación y operación | Resultado comprobable | Estado |
 |---|---|---|---|---|
@@ -3647,9 +3647,7 @@ En integración se verificó que controller, servicio, repositorio y base de dat
 
 IT-02–IT-04 usan identificadores y correos únicos de prueba; la base H2 es temporal y se recrea al iniciar el contexto. Las pruebas comprueban códigos HTTP, cuerpo y persistencia mediante consultas posteriores. No comprueban una base de datos de producción ni el cliente visual.
 
-**Evidencia de IT-01 (30/09/2026).** Se ejecutó `mvn -B -q test` con Java 25 en una copia del commit `df2adf8`, usando un repositorio local temporal para las dependencias. Surefire registró **1 prueba ejecutada, 0 fallos, 0 errores y 0 omitidas**; el log confirmó conexión a `jdbc:h2:mem:careconnect`. Se conserva el [resumen de Surefire](assets/testing/backend-contextloads-2026-09-30.txt). El perfil activo fue `default`, con la configuración H2 ubicada en `src/test/resources/application.yml`.
-
-**Evidencia de la suite ampliada (30/09/2026).** Tras añadir las pruebas, `mvn -B -q -o test` terminó con código 0: **10 pruebas ejecutadas, 0 fallos, 0 errores y 0 omitidas**. Los cuatro resultados por clase están en el [resumen de la suite](assets/testing/backend-suite-2026-09-30.txt). La rama de pruebas está publicada en el backend histórico; su incorporación a la rama principal o al repositorio nuevo del curso queda pendiente de revisión del equipo.
+**Evidencia de la suite en el backend actual (01/10/2026).** Se ejecutó `mvn -B -q test` con Java 25 sobre la rama `test/core-verification` (commit `24b1e75`). Terminó con código 0: **10 pruebas ejecutadas, 0 fallos, 0 errores y 0 omitidas**. Los cuatro resultados por clase están en el [resumen de la suite](assets/testing/backend-suite-2026-10-01.txt). El log confirmó H2 en memoria, puerto HTTP aleatorio y perfil `default`. La integración a `main` queda pendiente de revisión del equipo.
 
 #### 6.1.3. Core Behavior-Driven Development
 
