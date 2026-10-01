@@ -766,150 +766,106 @@ npm run build
 
 ---
 
-### 7.2. Continuous Delivery
+## 7.2. Continuous Delivery
 
-La **Entrega Continua (Continuous Delivery)** extiende la Integración Continua asegurando que cada cambio que supera el pipeline de build y pruebas pueda quedar preparado para ser desplegado a un ambiente controlado. El objetivo es mantener una versión potencialmente liberable sin convertir automáticamente cada cambio en una publicación de producción.
+### 7.2.1. Tools and Practices.
 
-#### 7.2.1. Tools and Practices
+Para el proceso de Continuous Delivery del proyecto CareStacks se utiliza GitHub como repositorio central del código fuente y GitHub Actions como herramienta de integración continua. Se configuró un workflow de CI (`.github/workflows/ci.yml`) que se ejecuta automáticamente en cada push a las ramas `main` y `develop`, así como en cada Pull Request dirigido a estas ramas. Este workflow realiza dos tareas principales de forma secuencial: primero ejecuta la suite completa de pruebas del backend mediante `mvn -B test`, y si todas las pruebas pasan exitosamente, procede a construir la imagen Docker de la aplicación. De esta manera, cada cambio integrado al repositorio es validado automáticamente antes de considerarse apto para su despliegue, garantizando que el código en las ramas principales siempre se encuentra en un estado funcional y desplegable.
 
-Las herramientas y prácticas consideradas son:
+![Vista general de Actions](assets/actions-overview.png)
 
-| Herramienta / práctica | Uso |
-|---|---|
-| GitHub Actions | Orquesta las etapas de build, pruebas, empaquetado y preparación de despliegue. |
-| GitHub Environments | Separa `staging` y `production`, incluyendo variables, secretos y reglas de aprobación. |
-| GitHub Secrets | Protege credenciales, tokens y variables sensibles utilizadas por los workflows. |
-| Artifacts | Conserva temporalmente los resultados del build que serán promovidos entre etapas. |
-| Vercel | Proveedor ya utilizado por la Landing Page y capaz de generar despliegues asociados al repositorio. |
-| Pull Requests | Punto de control para revisión técnica antes de promover cambios. |
-| Aprobación manual | Barrera obligatoria antes de promover una versión desde staging hacia producción. |
+![Archivo ci.yml en GitHub](assets/ci-workflow-file.png)
 
-#### 7.2.2. Stages Deployment Pipeline Components
+### 7.2.2. Stages Deployment Pipeline Components.
 
-El pipeline de entrega continua se organiza en stages:
+- **Test Stage:**
 
-```text
-Stage 1
-Source
-  |
-  v
-Stage 2
-Build & Tests
-  |
-  v
-Stage 3
-Package / Artifact
-  |
-  v
-Stage 4
-Deploy to Staging
-  |
-  v
-Stage 5
-Smoke / Acceptance Validation
-  |
-  v
-Stage 6
-Manual Approval
-  |
-  v
-Release Candidate
+Marco de pruebas unitarias: JUnit 5 (Jupiter)
+
+Pruebas de integración: Spring Boot Test con H2 en memoria
+
+El pipeline ejecuta `mvn -B test`, que corre 4 clases de prueba con 10 métodos en total: 2 clases de pruebas unitarias de dominio (HealthEventTest, ProfileShareConsentTest), 1 clase de integración end-to-end (CoreApiIntegrationTests) y 1 smoke test del contexto Spring (CareConnectBackendApplicationTests). Todas las pruebas son autocontenidas y no requieren variables de entorno externas ni base de datos de producción.
+
+![Log de pruebas exitosas](assets/test-build-success.png)
+
+- **Staging Environment:**
+
+Contenerización: Docker (build multi-stage con Maven 3.9.11 + Eclipse Temurin JDK 25)
+
+Base de datos de pruebas: H2 en memoria (configurada en `src/test/resources/application.yml`)
+
+El segundo job del pipeline (`docker-build`) construye la imagen Docker de la aplicación utilizando el Dockerfile multi-stage existente en el repositorio, verificando que el artefacto compilado se empaqueta correctamente en un contenedor listo para despliegue.
+
+![Docker build exitoso](assets/docker-build-success.png)
+
+- **Deployment Stage:**
+
+Herramienta de despliegue: Render (Web Service)
+
+El backend se despliega en Render conectado a una base de datos PostgreSQL. La URL de producción es `https://careconnect-backend-hvyq.onrender.com`. La documentación de la API está disponible vía Swagger UI.
+
+- **Release Stage:**
+
+Herramientas de monitoreo y registro: No implementado. El proyecto utiliza únicamente el logging por defecto de Spring Boot (consola). No se ha integrado Spring Boot Actuator ni herramientas externas de monitoreo.
+
+- **Rollback and Recovery:**
+
+Copias de seguridad y restauración: No implementado. No existe una estrategia de rollback automatizada ni scripts de backup de base de datos en el repositorio. En caso de ser necesario, Render permite revertir a un despliegue anterior desde su panel de administración.
+
+Gestión de versiones de código: Git.
+
+- **Release Management:**
+
+Herramientas de gestión de versiones: Git, GitHub.
+
+![Diagrama de jobs del pipeline](assets/pipeline-jobs.png)
+
+## 7.3. Continuous Deployment
+
+### 7.3.1. Tools and Practices.
+
+Para llevar a cabo el proceso de gestión de versiones en Git, el equipo sigue el modelo Gitflow simplificado. La estructura de ramas documentada y utilizada en el proyecto es la siguiente:
+
+```
+main (producción)
+ └── develop (integración)
+      ├── feature/* (funcionalidades nuevas)
+      └── test/* (ramas de pruebas)
 ```
 
-| Stage | Descripción | Criterio de salida |
-|---|---|---|
-| Source | Obtiene el commit o tag candidato. | Código identificado de forma trazable. |
-| Build & Tests | Ejecuta el pipeline de CI. | Todos los checks obligatorios finalizan correctamente. |
-| Package / Artifact | Genera el artefacto desplegable. | Artefacto generado sin errores. |
-| Deploy to Staging | Publica la versión en un ambiente previo a producción. | Ambiente accesible y saludable. |
-| Smoke / Acceptance Validation | Ejecuta verificaciones rápidas sobre los flujos esenciales. | Flujos críticos responden correctamente. |
-| Manual Approval | Un integrante autorizado revisa la evidencia. | Aprobación explícita registrada. |
-| Release Candidate | La versión queda preparada para producción. | Versión aprobada y trazable. |
+La rama `main` contiene la versión estable y desplegada del backend en producción. La rama `develop` sirve como rama de integración donde se consolidan las funcionalidades antes de pasar a producción. Las ramas `feature/*` se crean a partir de `develop` para el desarrollo de nuevas funcionalidades, y se integran de vuelta a `develop` mediante Pull Requests que deben pasar las validaciones del pipeline CI antes de ser aceptados. Para facilitar la automatización, se utiliza GitHub Actions que valida automáticamente cada Pull Request antes del merge.
 
-Para reducir la cantidad de evidencias del TP, se utilizará **una sola captura** que muestre el pipeline de Continuous Delivery hasta staging y, cuando sea posible, la configuración del environment o la aprobación manual asociada.
+El equipo utiliza parcialmente la convención de Conventional Commits para los mensajes de commit, empleando prefijos como `feat:`, `chore:`, `test():` y `ci:` para categorizar los cambios realizados. El versionado del proyecto se encuentra en `0.0.1-SNAPSHOT` y se planea implementar versionado semántico con tags de Git en futuras iteraciones.
 
-> **[INSERTAR CAPTURA: pipeline de Continuous Delivery mostrando stages de staging y aprobación]**
+### 7.3.2. Production Deployment Pipeline Components.
 
-![Continuous Delivery Evidence](assets/chapter7/continuous-delivery-evidence.png)
+- **Source Control Management:** Git, GitHub
+- **Build and compilation:** Maven 3.9.11 (wrapper incluido en el repositorio) con JDK 25 (Eclipse Temurin)
+- **Artifact repository:** Docker Image (construida mediante Dockerfile multi-stage en el pipeline CI)
+- **Deployment platform:** Render (Web Service conectado a PostgreSQL)
+- **API Documentation:** OpenAPI 3.0 / Swagger UI (`https://careconnect-backend-hvyq.onrender.com/swagger-ui/index.html`)
 
-*Figura X. Evidencia del pipeline de Continuous Delivery de CareConnect hasta el ambiente de staging.*
+## 7.4. Continuous Deployment (Evidencias)
 
----
+Vistazo general de los pipelines utilizados en el backend:
 
-### 7.3. Continuous deployment
+![Vista general de pipelines](assets/actions-overview.png)
 
-El **Despliegue Continuo (Continuous Deployment)** automatiza la publicación de una versión que ya superó todas las validaciones definidas. Para CareConnect, esta práctica se aplica únicamente después de que la versión haya atravesado Continuous Integration y Continuous Delivery.
+Veamos el detalle de los jobs del pipeline:
 
-#### 7.3.1. Tools and Practices
+![Diagrama de jobs](assets/pipeline-jobs.png)
 
-Las prácticas definidas son:
+Veamos el resultado del pipeline de tipo Test:
 
-| Práctica | Aplicación |
-|---|---|
-| Producción desde rama estable | La rama de producción debe ser `main`. |
-| Checks obligatorios | Ningún despliegue puede iniciarse si el pipeline de CI falla. |
-| Environment separado | Las credenciales y variables de `production` se administran separadamente. |
-| Deployment automatizado | La publicación se inicia mediante integración nativa del proveedor o GitHub Actions. |
-| Smoke test post-deployment | Se valida que la aplicación o servicio responda después de publicarse. |
-| Trazabilidad | Cada despliegue debe identificar commit, workflow, fecha y resultado. |
-| Rollback | Debe existir una versión previa identificable que permita revertir una publicación defectuosa. |
+![Resultado de pruebas](assets/test-build-success.png)
 
-#### 7.3.2. Production Deployment Pipeline Components
+Veamos el resultado del pipeline de tipo Docker Build:
 
-El pipeline general de producción se compone de las siguientes etapas:
+![Docker build](assets/docker-build-success.png)
 
-```text
-Approved Release
-      |
-      v
-Production Environment
-      |
-      v
-Load Secrets
-      |
-      v
-Deploy Artifact
-      |
-      v
-Post-deployment Smoke Test
-      |
-      +---- success ----> Production Available
-      |
-      +---- failure ----> Rollback / Incident
-```
+Archivo de configuración del pipeline CI:
 
-| Componente | Responsabilidad |
-|---|---|
-| Approved Release | Identifica la versión que superó CI y Delivery. |
-| Production Environment | Aísla configuración y secretos de producción. |
-| Load Secrets | Proporciona credenciales de forma segura al proceso. |
-| Deploy Artifact | Publica el bundle web o el artefacto del backend. |
-| Smoke Test | Comprueba disponibilidad básica inmediatamente después del despliegue. |
-| Deployment Result | Registra éxito o falla de la publicación. |
-| Rollback | Restaura la versión anterior cuando el despliegue no cumple los checks. |
-
-Para esta sección se utilizarán **dos capturas**:
-
-1. una captura general del **Production Deployment Pipeline**;
-2. una captura del **deployment exitoso de la Landing Page**, ya que es el producto que actualmente cuenta con evidencia pública verificable.
-
-> **[INSERTAR CAPTURA: pipeline general de Production Deployment]**
-
-![Production Deployment Pipeline](assets/chapter7/production-deployment-pipeline.png)
-
-*Figura X. Evidencia general del pipeline de Continuous Deployment de CareConnect.*
-
-> **[INSERTAR CAPTURA: deployment exitoso de la Landing Page vinculado al commit]**
-
-![Landing Production Deploy](assets/chapter7/landing-production-deploy.png)
-
-*Figura X. Evidencia del despliegue en producción de la Landing Page de CareConnect.*
-
-La evidencia de despliegue en producción de la **Frontend Web Application** y de la **RESTful API** podrá incorporarse en una siguiente iteración del informe cuando el equipo disponga de despliegues públicos verificables para ambos productos.
-
----
-
-### 7.4. Continuous Monitoring
+![Archivo ci.yml](assets/ci-workflow-file.png)
 #### 7.4.1. Tools and Practices
 #### 7.4.2. Monitoring Pipeline Components
 #### 7.4.3. Alerting Pipeline Components
