@@ -1151,37 +1151,125 @@ La separación conceptual establecida mediante Domain-Driven Design también se 
 
 #### 4.10.1. Relational/Non-Relational Database Diagram
 
-El Relational/Non-Relational Database Diagram consolida las estructuras de persistencia del sistema en una vista integrada. Esto permite observar las relaciones generales de la solución manteniendo la separación conceptual entre bounded contexts.
+El diseño de base de datos de CareConnect se representa mediante un modelo relacional organizado según los Bounded Contexts definidos para el producto. Esta organización permite visualizar las tablas responsables de cada área funcional sin perder las relaciones necesarias entre los diferentes contextos.
 
-##### Agrupación conceptual por bounded context
+El esquema utiliza `users`, perteneciente al Bounded Context **Identity & Access Management**, como punto principal de referencia para la identidad de pacientes y cuidadores. Los demás contextos almacenan identificadores como `patient_id`, `caregiver_id` y `recipient_id` para relacionar sus registros con un usuario determinado.
 
-| Bounded Context | Información persistida |
-|---|---|
-| Autenticación / IAM | Usuarios, roles, estado de cuenta y datos de autenticación. |
-| Agenda | Eventos de salud y recordatorios. |
-| Notificaciones | Notificaciones, alertas, preferencias e intentos de entrega. |
-| Diario de Seguimiento | Entradas del diario del paciente. |
-| Gestión de Consentimiento | Solicitudes, accesos compartidos, permisos y revocaciones. |
-| Documentos | Metadata y referencias a archivos médicos. |
+Asimismo, existen relaciones entre otros contextos cuando estas se encuentran respaldadas por el modelo de persistencia. Por ejemplo, los eventos de salud pueden estar relacionados con recordatorios, notificaciones y alertas, mientras que las notificaciones pueden estar asociadas con alertas.
 
-##### Persistencia relacional
+Para facilitar la lectura, primero se presenta un diagrama integrado de la base de datos y posteriormente se muestran vistas individuales correspondientes a cada Bounded Context.
 
-PostgreSQL constituye el almacenamiento principal para la información estructurada. Las relaciones entre tablas deben respetar las referencias necesarias entre usuarios, eventos, notificaciones, documentos, entradas de diario y accesos compartidos.
+##### Integrated Database Diagram
 
-Las Primary Keys y Foreign Keys deben representarse explícitamente en el diagrama final, junto con las cardinalidades correspondientes.
+El siguiente diagrama presenta una vista general del modelo de persistencia de CareConnect, incluyendo las tablas principales, sus atributos y las relaciones existentes entre los diferentes Bounded Contexts.
 
-##### Persistencia de archivos
+![CareConnect Integrated Database Diagram](assets/DBDiagram.png)
 
-Los archivos médicos se almacenan en **Supabase Storage** y no como datos binarios dentro de PostgreSQL.
+*Figura X. Diagrama integrado de base de datos de CareConnect.*
 
-La base relacional conserva únicamente la información necesaria para identificar el documento y recuperar de forma segura el archivo correspondiente.
+En esta representación se puede observar que `users` constituye la principal referencia de identidad del sistema. Desde esta tabla se relacionan registros pertenecientes a Agenda, Notifications, Diary, Consent Management y Documents.
 
+Las relaciones se representan mediante sus respectivas cardinalidades. Los atributos marcados como `PK` identifican las Primary Keys, mientras que `FK` identifica Foreign Keys físicas y `REF` representa campos utilizados como referencia a identificadores pertenecientes a otras entidades.
 
-![Integrated Database Diagram](assets/careconnect-database-1-diagram.png)
-![Integrated Database Diagram](assets/careconnect-database-2-diagram.png)
+---
 
+##### Identity & Access Management
 
-*Figura X. Relational/Non-Relational Database Diagram integrado de CareConnect.*
+El Bounded Context **Identity & Access Management** administra la información necesaria para identificar y autenticar a los usuarios de CareConnect.
+
+La tabla principal es `users`, cuya clave primaria es un identificador `UUID`. Además de los datos de identificación, almacena información relacionada con las credenciales, rol, estado de cuenta, intentos fallidos de autenticación y bloqueo temporal.
+
+El atributo `email` posee una restricción `UNIQUE`, evitando el registro de múltiples cuentas con la misma dirección de correo electrónico.
+
+![Identity Database Diagram](assets/IdentityDB.png)
+
+*Figura X. Diagrama de base de datos del Bounded Context Identity & Access Management.*
+
+---
+
+##### Agenda
+
+El Bounded Context **Agenda** almacena los eventos de salud programados y los recordatorios asociados a dichos eventos.
+
+La tabla `health_events` contiene los eventos correspondientes a un paciente y, cuando aplica, al cuidador responsable. Para ello utiliza `patient_id` y `caregiver_id` como referencias a la identidad administrada por `users`.
+
+Cada evento puede poseer múltiples registros en `reminders`, los cuales permiten representar los recordatorios programados para el evento de salud correspondiente mediante `health_event_id`.
+
+![Agenda Database Diagram](assets/AgendaDB.png)
+
+*Figura X. Diagrama de base de datos del Bounded Context Agenda.*
+
+La tabla `users` representada dentro de esta vista mediante `<<external reference>>` no corresponde a una duplicación de la tabla. Su presencia permite mostrar de manera local la dependencia del Bounded Context Agenda con la identidad gestionada por IAM.
+
+---
+
+##### Notifications
+
+El Bounded Context **Notifications** contiene las estructuras responsables de almacenar notificaciones, alertas y preferencias de comunicación de los usuarios.
+
+La tabla `notifications` almacena las comunicaciones generadas para un destinatario mediante `recipient_id`. Cuando una notificación se origina a partir de un evento de salud, `health_event_id` permite mantener la referencia hacia el evento correspondiente.
+
+La tabla `alerts` puede relacionarse tanto con un usuario como con un evento de salud. Asimismo, `notification_id` permite asociar una alerta con una notificación cuando dicha relación existe.
+
+Por otro lado, `notification_preferences` mantiene la configuración personal de comunicación de cada usuario, incluyendo la habilitación de notificaciones push, correo electrónico, mensajes dentro de la aplicación y la prioridad mínima aceptada.
+
+![Notifications Database Diagram](assets/NotificationsDB.png)
+
+*Figura X. Diagrama de base de datos del Bounded Context Notifications.*
+
+En esta vista, `users` y `health_events` se muestran como `<<external reference>>` para representar las dependencias con los Bounded Contexts IAM y Agenda sin duplicar físicamente dichas tablas.
+
+No se establece una relación directa entre `notification_preferences` y `notifications`, debido a que ambas estructuras se relacionan mediante el identificador del usuario y no mediante una referencia directa entre ellas.
+
+---
+
+##### Diary
+
+El Bounded Context **Diary** administra las entradas de seguimiento registradas para cada paciente.
+
+La tabla `diary_entries` almacena el contenido de cada entrada junto con su fecha correspondiente. El atributo `patient_id` identifica al usuario al cual pertenece la entrada.
+
+![Diary Database Diagram](assets/DairyDB.png)
+
+*Figura X. Diagrama de base de datos del Bounded Context Diary.*
+
+La representación de `users` como `<<external reference>>` indica que la identidad pertenece al Bounded Context IAM y únicamente es referenciada desde Diary.
+
+---
+
+##### Consent Management
+
+El Bounded Context **Consent Management** administra las autorizaciones que permiten compartir información entre pacientes y cuidadores.
+
+La tabla `profile_share_consents` registra la relación entre el paciente y el cuidador utilizando `patient_id` y `caregiver_id`. El modelo establece restricciones de unicidad para evitar duplicidades incompatibles dentro del mismo esquema de consentimiento.
+
+La tabla `profile_share_consent_views` contiene las vistas o áreas de información autorizadas para un consentimiento determinado y se relaciona con `profile_share_consents` mediante `consent_id`.
+
+![Consent Management Database Diagram](assets/ConsentDB.png)
+
+*Figura X. Diagrama de base de datos del Bounded Context Consent Management.*
+
+Al igual que en otros contextos, `users` se presenta únicamente como referencia externa para mostrar la relación del consentimiento con las identidades administradas por IAM.
+
+---
+
+##### Documents
+
+El Bounded Context **Documents** gestiona la metadata correspondiente a los documentos médicos asociados a cada paciente.
+
+La tabla `medical_documents` representa el conjunto de documentos pertenecientes a un usuario mediante `patient_id`. Cada registro puede contener múltiples elementos almacenados en `document_items`, relacionados mediante `medical_document_id`.
+
+`document_items` conserva información como el tipo de documento, título, descripción, tipo MIME, tamaño del archivo y datos necesarios para localizarlo en el sistema de almacenamiento.
+
+![Documents Database Diagram](assets/DocumentsDB.png)
+
+*Figura X. Diagrama de base de datos del Bounded Context Documents.*
+
+Los archivos físicos no se almacenan directamente como contenido binario dentro de PostgreSQL. La tabla `document_items` mantiene campos como `file_url`, `storage_bucket` y `storage_path`, que permiten conservar la referencia correspondiente al archivo almacenado en **Supabase Storage**.
+
+---
+
+En conjunto, estos diagramas permiten analizar tanto la estructura interna de cada Bounded Context como las dependencias necesarias entre ellos. La separación mantiene la responsabilidad de cada contexto, mientras que las referencias mediante identificadores permiten relacionar información compartida sin duplicar entidades pertenecientes a otros dominios.
 
 ## Capítulo V: Product Implementation
 
