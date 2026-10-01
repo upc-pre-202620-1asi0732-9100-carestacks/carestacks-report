@@ -29,7 +29,7 @@ Diseño de Experimentos de Ingeniería de Software
 
 9100
 
-**Informe de Trabajo Final**
+**Informe de Trabajo Parcial**
 
 **Docente**
 
@@ -59,7 +59,7 @@ CareConnect
 
 **Período 2026-20**
 
-Septiembre, 2026
+Octubre, 2026
 
 </div>
 
