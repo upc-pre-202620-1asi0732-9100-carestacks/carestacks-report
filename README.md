@@ -83,6 +83,15 @@ Octubre, 2026
 | 0.13.0 | 14/09/2026 | Javier Nikaido / Percy Muñiz | Revisaron el class dictionary y el stack tecnológico, migraron el frontend a Flutter y ajustaron la configuración de despliegue (`chapter-4`, `chapter-5`) |
 | 0.14.0 | 15/09/2026 | Santiago Baldeon | Elaboró los wireframes y mockups de la aplicación móvil del Capítulo IV (`chapter-4`) |
 | 1.0.0 | 16/09/2026 | Matias Salcedo | AV1 Report |
+| 1.1.0 | 30/09/2026 | Matias Salcedo | Implementó el i18n (español/inglés) en la Landing Page y documentó su verificación (`docs/landing-i18n`) |
+| 1.2.0 | 01/10/2026 | Javier Nikaido | Desarrolló la sección 7.1 Continuous Integration del Capítulo VII (`chapter-7`) |
+| 1.3.0 | 03/10/2026 | Matias Salcedo | Desarrolló el Capítulo VI: Product Verification & Validation (`chapter-6`) |
+| 1.4.0 | 03/10/2026 | Percy Muñiz | Desarrolló las secciones 7.2 Continuous Delivery y 7.3 Continuous Deployment (`chapter-7`) |
+| 1.5.0 | 04/10/2026 | Javier Nikaido | Rediseñó la base de datos con diagramas UML normalizados por Bounded Context (`chapter-4`) |
+| 1.6.0 | 04/10/2026 | Angela Espinoza | Homogeneizó los criterios de aceptación en Gherkin y completó los precios del análisis competitivo (`chapter-2`, `chapter-3`, `chapter-5`) |
+| 1.7.0 | 01/10/2026 | Angela Espinoza | Actualizó la carátula, el Student Outcome y el Team Collaboration Insights del TB1 (`develop`) |
+| 1.8.0 | 04/10/2026 | Santiago Baldeon | Desarrolló el Acuerdo de Servicio SaaS y las conclusiones, y elaboró el guion y el video de exposición del TB1 (`develop`) |
+| 2.0.0 | 05/10/2026 | Matias Salcedo | TB1 Report |
 
 # Project Report Collaboration Insights
 
