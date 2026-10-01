@@ -845,27 +845,27 @@ El equipo utiliza parcialmente la convención de Conventional Commits para los m
 - **Deployment platform:** Render (Web Service conectado a PostgreSQL)
 - **API Documentation:** OpenAPI 3.0 / Swagger UI (`https://careconnect-backend-hvyq.onrender.com/swagger-ui/index.html`)
 
-## 7.4. Continuous Deployment (Evidencias)
-
 Vistazo general de los pipelines utilizados en el backend:
 
 ![Vista general de pipelines](assets/actions-overview.png)
 
-Veamos el detalle de los jobs del pipeline:
+Detalle de los jobs del pipeline:
 
 ![Diagrama de jobs](assets/pipeline-jobs.png)
 
-Veamos el resultado del pipeline de tipo Test:
+Resultado del pipeline de pruebas:
 
 ![Resultado de pruebas](assets/test-build-success.png)
 
-Veamos el resultado del pipeline de tipo Docker Build:
+Resultado del pipeline de Docker Build:
 
 ![Docker build](assets/docker-build-success.png)
 
 Archivo de configuración del pipeline CI:
 
 ![Archivo ci.yml](assets/ci-workflow-file.png)
+
+## 7.4. Continuous Deployment (Evidencias)
 #### 7.4.1. Tools and Practices
 #### 7.4.2. Monitoring Pipeline Components
 #### 7.4.3. Alerting Pipeline Components
