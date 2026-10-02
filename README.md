@@ -1438,6 +1438,118 @@ Esta sección presenta la evidencia de colaboración del equipo a lo largo de lo
 
 La distribución de commits entre los cuatro repositorios refleja la división de trabajo definida en el Sprint Backlog (§5.2.1): mientras el repositorio del informe concentra la participación distribuida de los cinco integrantes según la sección del reporte a su cargo, los repositorios de backend, móvil y web muestran una concentración de commits en los integrantes directamente responsables de esas capas de implementación durante este sprint, consistente con la asignación de tareas técnicas del equipo.
 
+### 5.2.8. Acuerdo de Servicio - SaaS (SaaS Agreement)
+
+**CareConnect – CareStacks** · Versión 1.0 · Septiembre de 2026
+
+Este documento explica, en lenguaje sencillo, los derechos, obligaciones y restricciones que aplican cuando usas CareConnect. Al crear una cuenta o usar la plataforma, aceptas este Acuerdo. Si no estás de acuerdo, te pedimos no usar el servicio.
+
+#### 5.2.8.1. Quiénes somos y qué es este Acuerdo
+
+CareConnect es una plataforma de software como servicio (SaaS) desarrollada por **CareStacks**, que ayuda a cuidadores y pacientes geriátricos a organizar el cuidado diario. Este Acuerdo es el contrato entre CareStacks ("nosotros") y la persona que usa la plataforma ("tú" o "el usuario").
+
+#### 5.2.8.2. Definiciones
+
+| Término | Significado |
+|---|---|
+| **Paciente** | Persona cuya información de salud se gestiona en la plataforma. |
+| **Cuidador** | Persona, familiar o profesional, que participa en el cuidado de uno o más pacientes. |
+| **Perfil compartido** | Perfil del paciente al que un cuidador accede porque el paciente lo autorizó. |
+| **Consentimiento de acceso** | Autorización del paciente que define qué información puede ver un cuidador. Puede modificarse o retirarse en cualquier momento. |
+
+#### 5.2.8.3. Descripción del servicio
+
+CareConnect ofrece:
+
+- Calendario de medicación y terapias.
+- Alertas y recordatorios.
+- Carpeta digital de documentos clínicos.
+- Diario de seguimiento y evolución del paciente.
+- Compartición de perfiles entre cuidadores.
+
+El servicio se brinda mediante una aplicación móvil y una aplicación web. CareConnect es una herramienta de apoyo y **no reemplaza el criterio, diagnóstico ni indicación de un profesional de la salud**.
+
+#### 5.2.8.4. Cuenta y roles
+
+Para usar el servicio debes registrarte con datos verdaderos y elegir tu rol (Paciente o Cuidador). Eres responsable de mantener la confidencialidad de tus credenciales y de la actividad realizada desde tu cuenta. Debes tener capacidad legal para aceptar este Acuerdo o actuar con autorización de quien la tenga.
+
+#### 5.2.8.5. Planes, pagos y cancelación
+
+- CareConnect funciona bajo un modelo **freemium**: un plan gratuito con funciones limitadas y planes de pago con funciones completas.
+- Planes vigentes: **Plan Mensual ($15)** y **Plan Anual ($150)**. Los precios y las funciones de cada plan se muestran en la sección "Planes" del sitio antes de contratar.
+- Las suscripciones se **renuevan automáticamente** al terminar cada periodo, salvo que las canceles antes de la fecha de renovación.
+- La cancelación evita cobros futuros y mantienes el acceso hasta el fin del periodo ya pagado.
+- Los pagos realizados no son reembolsables, salvo que la ley disponga lo contrario.
+- Podemos modificar precios y planes con aviso previo razonable; los cambios no afectan el periodo ya pagado.
+
+#### 5.2.8.6. Tus derechos
+
+1. Usar el servicio conforme a tu plan.
+2. Acceder, rectificar, cancelar y oponerte al tratamiento de tus datos personales.
+3. Otorgar, modificar y revocar el acceso de otros cuidadores a tu perfil (si eres paciente).
+4. Solicitar la eliminación de tu cuenta.
+5. Recibir información clara sobre cambios a este Acuerdo.
+6. Contar con soporte a través de nuestros canales de contacto.
+
+#### 5.2.8.7. Tus obligaciones
+
+- Proporcionar información veraz.
+- Usar el servicio solo para fines de cuidado y gestión de salud.
+- Respetar la privacidad de los pacientes.
+- Compartir información de un paciente únicamente con su consentimiento o el de su representante legal.
+- Avisarnos de cualquier uso no autorizado de tu cuenta.
+
+#### 5.2.8.8. Restricciones de uso
+
+Está prohibido:
+
+- Acceder a perfiles de pacientes sin consentimiento.
+- Intentar vulnerar la seguridad de la plataforma.
+- Usar el servicio para fines ilegales o fraudulentos.
+- Copiar, revender, sublicenciar o realizar ingeniería inversa del software.
+- Subir contenido ilícito o con software malicioso.
+- Compartir tu cuenta con terceros.
+
+#### 5.2.8.9. Datos personales y datos de salud
+
+La información de salud es **dato sensible**. La tratamos conforme a la **Ley N.° 29733, Ley de Protección de Datos Personales**, y su reglamento.
+
+- Solo tratamos tus datos para prestar el servicio.
+- Los datos se transmiten por conexiones cifradas (HTTPS/TLS) y los documentos clínicos se guardan en almacenamiento privado.
+- Usamos proveedores de infraestructura (almacenamiento de archivos, notificaciones push y envío de correos) que solo reciben los datos necesarios.
+- No vendemos tus datos.
+- Un cuidador solo ve la información que el paciente autorizó, y esa autorización puede **revocarse en cualquier momento**.
+- Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición escribiéndonos al contacto indicado en la sección 5.2.4.16.
+
+#### 5.2.8.10. Propiedad intelectual
+
+El software, la marca CareConnect, el diseño y los contenidos de la plataforma pertenecen a CareStacks. Te otorgamos una licencia limitada, personal, revocable y no exclusiva para usar el servicio. La información y los documentos que subes siguen siendo tuyos, y nos autorizas a tratarlos solo para prestarte el servicio.
+
+#### 5.2.8.11. Disponibilidad y soporte
+
+Hacemos esfuerzos razonables para mantener el servicio disponible, pero no garantizamos que funcione sin interrupciones. Podemos realizar mantenimientos y te avisaremos cuando sea posible. Las alertas dependen de factores externos (conexión a internet, dispositivo, permisos de notificación), por lo que no deben ser tu única forma de controlar medicamentos críticos.
+
+#### 5.2.8.12. Limitación de responsabilidad
+
+CareConnect no brinda atención médica ni atiende emergencias. **En una emergencia, contacta de inmediato a los servicios de salud.** En la medida que permita la ley, CareStacks no responde por decisiones médicas tomadas a partir de la información registrada, ni por daños indirectos derivados del uso o la imposibilidad de uso del servicio.
+
+#### 5.2.8.13. Suspensión y terminación
+
+Puedes dejar de usar el servicio y eliminar tu cuenta cuando quieras. Podemos suspender o cerrar cuentas que incumplan este Acuerdo, con aviso previo salvo en casos graves o de riesgo de seguridad. Al terminar, tus datos se eliminan o anonimizan, salvo los que la ley nos obligue a conservar.
+
+#### 5.2.8.14. Cambios al Acuerdo
+
+Podemos actualizar este Acuerdo. Te avisaremos de los cambios importantes por la aplicación o por correo. Si sigues usando el servicio después del aviso, entendemos que aceptas la nueva versión.
+
+#### 5.2.8.15. Ley aplicable y controversias
+
+Este Acuerdo se rige por las leyes de la República del Perú. Intentaremos resolver cualquier diferencia de forma directa y, de no lograrlo, se someterá a los jueces y tribunales de Lima, Perú, sin perjuicio de los derechos que la ley te reconozca como consumidor.
+
+#### 5.2.8.16. Contacto
+
+Para consultas, reclamos o ejercicio de derechos sobre tus datos: **[correo de contacto de CareStacks]**.
+
+
 ### 5.3. Video About-the-Product
 
 ---
