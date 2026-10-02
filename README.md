@@ -3608,9 +3608,9 @@ El Video About-the-Product presenta el modelo de negocio de CareConnect y sus ca
 
 ### 6.1. Testing Suites & Validation
 
-Esta sección separa **casos diseñados**, **pruebas ejecutadas** y **evidencia disponible**. El 30/09/2026 se revisaron la Landing Page local y su versión pública en [Vercel](https://carestacks-landing-page.vercel.app/). El 01/10/2026 se ejecutó la suite JUnit en el [backend actual del curso](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api), rama [`test/core-verification`](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/tree/test/core-verification) (commit `24b1e75`). Estas pruebas se trasladaron desde el backend del ciclo anterior y aún no están integradas en `main`. Un caso descrito como pendiente no debe interpretarse como una prueba aprobada.
+El 01/10/2026 se ejecutó la suite JUnit del [backend del curso](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api) en la rama [`test/core-verification`](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/tree/test/core-verification) (commit `24b1e75`): seis pruebas unitarias y cuatro de integración y arranque. El 30/09/2026 también se verificaron el cambio de idioma y los videos del [landing publicado](https://carestacks-landing-page.vercel.app/). La tabla resume qué se probó y los resultados observados.
 
-| Nivel | Alcance | Evidencia revisada | Estado al 01/10/2026 |
+| Tipo de prueba | Qué se verificó | Evidencia | Resultado al 01/10/2026 |
 |---|---|---|---|
 | Unidad | Reglas de entidades `HealthEvent` y `ProfileShareConsent` | `HealthEventTest` y `ProfileShareConsentTest` en la rama publicada del backend actual | 6 pruebas aprobadas, 0 fallos |
 | Integración | Arranque de Spring con H2 y flujos API + persistencia | `CareConnectBackendApplicationTests` y `CoreApiIntegrationTests` | 4 pruebas aprobadas, 0 fallos |
