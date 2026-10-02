@@ -837,7 +837,7 @@ El segundo job del pipeline (`docker-build`) construye la imagen Docker de la ap
 
 Herramienta de despliegue: Render (Web Service)
 
-El backend se despliega en Render conectado a una base de datos PostgreSQL. La URL de producción es `https://careconnect-backend-hvyq.onrender.com`. La documentación de la API está disponible vía Swagger UI.
+El backend se despliega en Render conectado a una base de datos PostgreSQL. Render detecta automáticamente el Dockerfile del repositorio, construye la imagen y la despliega en un contenedor en la nube. La URL de producción es `https://carestacks-backend-api.onrender.com`. La documentación de la API está disponible vía Swagger UI en `https://carestacks-backend-api.onrender.com/swagger-ui/index.html`.
 
 - **Release Stage:**
 
@@ -845,7 +845,7 @@ Herramientas de monitoreo y registro: No implementado. El proyecto utiliza únic
 
 - **Rollback and Recovery:**
 
-Copias de seguridad y restauración: No implementado. No existe una estrategia de rollback automatizada ni scripts de backup de base de datos en el repositorio. En caso de ser necesario, Render permite revertir a un despliegue anterior desde su panel de administración.
+Copias de seguridad y restauración: No implementado como proceso automatizado. En caso de ser necesario, Render permite revertir a un despliegue anterior desde su panel de administración, seleccionando una versión previa en el historial de deploys.
 
 Gestión de versiones de código: Git.
 
@@ -872,13 +872,17 @@ La rama `main` contiene la versión estable y desplegada del backend en producci
 
 El equipo utiliza parcialmente la convención de Conventional Commits para los mensajes de commit, empleando prefijos como `feat:`, `chore:`, `test():` y `ci:` para categorizar los cambios realizados. El versionado del proyecto se encuentra en `0.0.1-SNAPSHOT` y se planea implementar versionado semántico con tags de Git en futuras iteraciones.
 
+El despliegue a producción se realiza de forma automatizada mediante Render. El servicio web está conectado directamente al repositorio de GitHub y configurado con auto-deploy sobre la rama `main`. Cada vez que se realiza un merge a `main`, Render detecta el cambio, construye la imagen Docker utilizando el Dockerfile multi-stage del repositorio y despliega automáticamente la nueva versión en producción.
+
 ### 7.3.2. Production Deployment Pipeline Components.
 
 - **Source Control Management:** Git, GitHub
 - **Build and compilation:** Maven 3.9.11 (wrapper incluido en el repositorio) con JDK 25 (Eclipse Temurin)
-- **Artifact repository:** Docker Image (construida mediante Dockerfile multi-stage en el pipeline CI)
+- **Containerization:** Docker (build multi-stage definido en el Dockerfile del repositorio)
+- **Artifact repository:** Docker Image (construida por Render a partir del Dockerfile)
 - **Deployment platform:** Render (Web Service conectado a PostgreSQL)
-- **API Documentation:** OpenAPI 3.0 / Swagger UI (`https://careconnect-backend-hvyq.onrender.com/swagger-ui/index.html`)
+- **API Documentation:** OpenAPI 3.0 / Swagger UI (`https://carestacks-backend-api.onrender.com/swagger-ui/index.html`)
+- **Environment variables:** Configuradas en el panel de Render (SPRING_DATASOURCE_URL, SPRING_DATASOURCE_DRIVER_CLASS_NAME, SPRING_DATASOURCE_USERNAME, SPRING_DATASOURCE_PASSWORD, SPRING_JPA_HIBERNATE_DDL_AUTO)
 
 Vistazo general de los pipelines utilizados en el backend:
 
@@ -895,6 +899,14 @@ Resultado del pipeline de pruebas:
 Resultado del pipeline de Docker Build:
 
 ![Docker build](assets/docker-build-success.png)
+
+Evidencia del despliegue exitoso en producción mediante Render:
+
+![Render deploy exitoso](assets/render-deploy-success.png)
+
+Documentación de la API desplegada (Swagger UI):
+
+![Swagger UI](assets/swagger-ui.png)
 
 Archivo de configuración del pipeline CI:
 
