@@ -546,7 +546,7 @@ Cada participante del equipo debe sustentar evidencia de cómo las actividades r
 
 Para el **Trabajo Parcial (TP)**, el alcance del Capítulo VII comprende **Continuous Integration, Continuous Delivery y Continuous Deployment**, correspondientes a las secciones **7.1, 7.2 y 7.3**. La sección **7.4 Continuous Monitoring** se mantiene únicamente como estructura del informe, ya que corresponde a una etapa posterior.
 
-La estrategia DevOps de CareConnect busca que los cambios realizados en los productos principales de la solución puedan ser verificados, preparados para entrega y desplegados mediante procesos repetibles y trazables. Para ello se emplea GitHub como plataforma de control de versiones y colaboración, y se plantea GitHub Actions como herramienta de automatización de los pipelines.
+La estrategia DevOps de CareConnect busca que los cambios realizados en los productos principales de la solución puedan ser verificados, preparados para entrega y desplegados mediante procesos repetibles y trazables. Para ello se emplea GitHub como plataforma de control de versiones y colaboración, y GitHub Actions como herramienta de automatización de los pipelines.
 
 Los productos considerados en el pipeline del Trabajo Parcial son:
 
@@ -554,9 +554,8 @@ Los productos considerados en el pipeline del Trabajo Parcial son:
 |---|---|---|---|
 | Landing Page | `CareStacks/Landing-Page` | React + TypeScript + Vite | npm / Vite |
 | Frontend Web Application | `carestacks-web` | Flutter Web | Flutter SDK |
+| Native Mobile Application | `carestacks-mobile-app` | Flutter + Dart | Flutter SDK |
 | RESTful API | `carestacks-backend-api` | Spring Boot 4 + Java 25 | Maven |
-
-La Native Mobile Application continúa formando parte del producto CareConnect, pero el pipeline descrito en este hito prioriza los tres productos exigidos en el alcance del Trabajo Parcial: Landing Page, Frontend-Web Application y RESTful API.
 
 ### 7.1. Continuous Integration
 
@@ -583,6 +582,7 @@ Los triggers definidos para CI son:
 
 ```text
 push -> develop
+push -> main
 pull_request -> develop
 pull_request -> main
 ```
@@ -657,7 +657,7 @@ Setup Java 25
 Maven dependency cache
    |
    v
-./mvnw clean verify
+mvn -B clean verify
    |
    v
 Unit / Integration / BDD Tests
@@ -669,18 +669,16 @@ Build Result
 Comando principal:
 
 ```bash
-./mvnw clean verify
+mvn -B clean verify
 ```
-
-> **[INSERTAR CAPTURA: ejecución exitosa del workflow CI del RESTful API]**
 
 ![Backend CI Evidence](assets/chapter7/backend-ci-success.png)
 
-*Figura X. Evidencia del pipeline de Continuous Integration del RESTful API.*
+*Evidencia de ejecución exitosa del pipeline de Continuous Integration del RESTful API.*
 
 ##### Pipeline de la Frontend Web Application
 
-Para la aplicación web, el pipeline considera análisis estático, pruebas y generación del build de producción.
+Para la aplicación web, el pipeline considera restauración de dependencias, análisis estático, ejecución de pruebas y generación del build de producción.
 
 ```text
 Checkout
@@ -713,15 +711,13 @@ flutter test
 flutter build web --release
 ```
 
-> **[INSERTAR CAPTURA: ejecución exitosa del workflow CI de la Frontend Web Application]**
-
 ![Web CI Evidence](assets/chapter7/web-ci-success.png)
 
-*Figura X. Evidencia del pipeline de Continuous Integration de la Frontend Web Application.*
+*Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Frontend Web Application.*
 
 ##### Pipeline de la Landing Page
 
-La Landing Page utiliza **React, TypeScript y Vite**. Su pipeline valida instalación reproducible de dependencias, análisis estático y construcción del bundle de producción.
+La Landing Page utiliza **React, TypeScript y Vite**. Su pipeline instala las dependencias disponibles en el proyecto, ejecuta el análisis estático y construye el bundle de producción.
 
 ```text
 Checkout
@@ -730,7 +726,7 @@ Checkout
 Setup Node.js
    |
    v
-npm ci
+npm install
    |
    v
 npm run lint
@@ -745,24 +741,63 @@ Build Result
 Comandos principales:
 
 ```bash
-npm ci
+npm install
 npm run lint
 npm run build
 ```
 
-> **[INSERTAR CAPTURA: ejecución exitosa del workflow CI de la Landing Page]**
-
 ![Landing CI Evidence](assets/chapter7/landing-ci-success.png)
 
-*Figura X. Evidencia del pipeline de Continuous Integration de la Landing Page.*
+*Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Landing Page.*
+
+##### Pipeline de la Native Mobile Application
+
+La aplicación móvil de CareConnect está implementada con **Flutter y Dart**. El pipeline instala las dependencias, realiza análisis estático, ejecuta la suite de pruebas cuando se encuentra disponible y genera un APK Android de depuración como evidencia de que la aplicación puede compilarse correctamente.
+
+```text
+Checkout
+   |
+   v
+Setup Java 17
+   |
+   v
+Setup Flutter
+   |
+   v
+flutter pub get
+   |
+   v
+flutter analyze
+   |
+   v
+Tests disponibles
+   |
+   v
+flutter build apk --debug
+   |
+   v
+Build Result
+```
+
+Comandos principales:
+
+```bash
+flutter pub get
+flutter analyze
+flutter build apk --debug
+```
+
+En el estado actual del repositorio no existe un directorio `test`, por lo que el workflow omite la ejecución de `flutter test` hasta que se incorpore una suite automatizada para la aplicación móvil.
+
+![Mobile CI Evidence](assets/chapter7/mobile-ci-success.png)
+
+*Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Native Mobile Application.*
 
 ##### Diagrama general del pipeline
 
-> **[INSERTAR DIAGRAMA DEL BUILD & TEST SUITE PIPELINE DE CARECONNECT]**
-
 ![CareConnect CI Pipeline](assets/chapter7/build-test-suite-pipeline.png)
 
-*Figura X. Build & Test Suite Pipeline Components de CareConnect.*
+*Build & Test Suite Pipeline Components de CareConnect, integrando RESTful API, Frontend Web, Native Mobile Application y Landing Page.*
 
 ---
 
