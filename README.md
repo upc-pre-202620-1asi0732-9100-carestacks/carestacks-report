@@ -100,6 +100,9 @@ Enlace de la organización para el reporte del proyecto: https://github.com/upc-
 AV1:
 <img src="assets/insights_report_commits.png">
 <img src="assets/insights_report_branchs.png">
+TB1:
+<img src="assets/insights_report_commitsTB1.png">
+<img src="assets/insights_report_branchsTB1.png">
 
 ## Tabla de Contenidos
 
