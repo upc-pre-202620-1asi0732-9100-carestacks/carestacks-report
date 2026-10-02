@@ -672,7 +672,7 @@ Comando principal:
 mvn -B clean verify
 ```
 
-![Backend CI Evidence](assets/chapter7/backend-ci-success.png)
+![Backend CI Evidence](assets/backend-ci-success.png)
 
 *Evidencia de ejecución exitosa del pipeline de Continuous Integration del RESTful API.*
 
@@ -711,7 +711,7 @@ flutter test
 flutter build web --release
 ```
 
-![Web CI Evidence](assets/chapter7/web-ci-success.png)
+![Web CI Evidence](assets/web-ci-success.png)
 
 *Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Frontend Web Application.*
 
@@ -746,7 +746,7 @@ npm run lint
 npm run build
 ```
 
-![Landing CI Evidence](assets/chapter7/landing-ci-success.png)
+![Landing CI Evidence](assets/landing-ci-success.png)
 
 *Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Landing Page.*
 
@@ -789,13 +789,13 @@ flutter build apk --debug
 
 En el estado actual del repositorio no existe un directorio `test`, por lo que el workflow omite la ejecución de `flutter test` hasta que se incorpore una suite automatizada para la aplicación móvil.
 
-![Mobile CI Evidence](assets/chapter7/mobile-ci-success.png)
+![Mobile CI Evidence](assets/mobile-ci-success.png)
 
 *Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Native Mobile Application.*
 
 ##### Diagrama general del pipeline
 
-![CareConnect CI Pipeline](assets/chapter7/build-test-suite-pipeline.png)
+![CareConnect CI Pipeline](assets/build-test-suite-pipeline.png)
 
 *Build & Test Suite Pipeline Components de CareConnect, integrando RESTful API, Frontend Web, Native Mobile Application y Landing Page.*
 
