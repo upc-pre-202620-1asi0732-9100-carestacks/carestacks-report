@@ -248,10 +248,10 @@ El mercado de aplicaciones móviles orientadas a la salud personal presenta una 
   </tr>
   <tr>
     <td><b>Precios &amp; Costos</b></td>
-    <td>Modelo freemium con funcionalidades premium orientadas a la coordinación entre múltiples cuidadores, sin montos definidos aún por encontrarse en etapa de desarrollo.</td>
-    <td>Desde enero de 2026 el nivel gratuito quedó limitado a 2 medicamentos, y el acceso completo requiere una suscripción de 4.99 dólares al mes o 39.99 dólares al año.</td>
-    <td>Se mantiene completamente gratuita para iOS y Android, sostenida mediante publicidad dentro de la aplicación en lugar de un plan de pago.</td>
-    <td>Ofrece un plan gratuito limitado a un Village de hasta 2 miembros, un plan Circle de 14.99 dólares al mes con hasta 2 Villages de 5 miembros cada uno, y un plan Village de 24.99 dólares al mes con hasta 5 Villages de 50 miembros cada uno, con descuento del 17 % en facturación anual.</td>
+    <td>Modelo de suscripción con dos planes: Plan Mensual a 15 dólares al mes y Plan Anual a 150 dólares al año (equivale a 12.50 dólares al mes, un ahorro aproximado del 17 %), con acceso compartido para múltiples cuidadores.</td>
+    <td>Desde enero de 2026 el nivel gratuito (0 dólares) quedó limitado a 2 medicamentos, y el acceso completo requiere una suscripción de aproximadamente 4.99 dólares al mes o 39.99 dólares al año (cerca de 3.33 dólares al mes).</td>
+    <td>Actualmente se distribuye para iOS y Android sin cobro directo, sostenida mediante publicidad dentro de la aplicación. Para efectos comparativos, se estima un costo referencial simulado de aproximadamente 3 dólares al mes (cerca de 36 dólares al año) por un servicio equivalente de seguimiento de medicación y signos vitales, cifra alineada con la suscripción de Medisafe, su competidor más cercano en funcionalidad.</td>
+    <td>Ofrece un plan gratuito limitado a un Village de hasta 2 miembros, un plan Circle de 14.99 dólares al mes con hasta 2 Villages de 5 miembros cada uno, y un plan Village de 24.99 dólares al mes con hasta 5 Villages de 50 miembros cada uno, con descuento del 17 % en facturación anual (aproximadamente 12.45 y 20.75 dólares al mes, respectivamente, al pagar por año).</td>
   </tr>
   <tr>
     <td><b>Canales de distribución</b><br><i>(Web y/o Móvil)</i></td>
