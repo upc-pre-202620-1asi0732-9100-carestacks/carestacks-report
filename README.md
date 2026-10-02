@@ -1362,7 +1362,7 @@ El siguiente cuadro consolida todos los elementos especificados para los product
 | USL02 | User Story | Visitante (cuidador / paciente) | Alta | Landing Page | Explorar beneficios por segmento | Como visitante, deseo explorar los beneficios dirigidos a mi segmento para evaluar si la solución responde a mi necesidad. | Escenario 1: Contenido por segmento <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de segmentos <br> Entonces se presentan beneficios diferenciados para cuidadores y pacientes |
 | USL03 | User Story | Visitante | Media | Landing Page | Ver testimonios | Como visitante, deseo ver testimonios de usuarios para generar confianza en la solución. | Escenario 1: Visualización de testimonios <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de testimonios <br> Entonces se muestran al menos un testimonio por segmento objetivo |
 | USL04 | User Story | Visitante | Alta | Landing Page | Iniciar registro desde la landing | Como visitante, deseo iniciar mi registro desde la landing para comenzar a usar la plataforma. | Escenario 1: Llamado a la acción <br> Dado que el visitante decide registrarse <br> Cuando activa el llamado a la acción de registro <br> Entonces el sistema lo dirige al flujo de creación de cuenta |
-| USL05 | User Story | Visitante | Media | Landing Page | Cambiar idioma del sitio | Como visitante, deseo cambiar el idioma del sitio (English / Español) para leer el contenido en mi idioma preferido. | Escenario 1: Cambio de idioma <br> Dado que el visitante selecciona un idioma disponible (en_US / es_419) <br> Cuando confirma la selección <br> Entonces el contenido del sitio se muestra en el idioma elegido |
+| USL05 | User Story | Visitante | Media | Landing Page | Cambiar idioma del sitio | Como visitante, deseo cambiar el idioma del sitio (English / Español) para leer el contenido en mi idioma preferido. | Escenario 1: Cambio de idioma <br> Dado que el visitante se encuentra en la landing en español o inglés <br> Cuando selecciona ES o EN en el encabezado <br> Entonces los textos de la landing se muestran inmediatamente en el idioma elegido |
 | USL06 | User Story | Visitante | Media | Landing Page | Consultar Términos y Condiciones | Como visitante, deseo consultar los Términos y Condiciones desde el footer para conocer los derechos y obligaciones del servicio. | Escenario 1: Acceso a Términos y Condiciones <br> Dado que el visitante está en la landing <br> Cuando accede al enlace de Términos y Condiciones del footer <br> Entonces el sistema muestra el Acuerdo de Servicio (SaaS) |
 | USW01 | User Story | Cuidador | Alta | Gestión de Agenda | Gestionar agenda desde la web | Como cuidador, deseo gestionar la agenda del paciente desde el navegador para coordinar el cuidado sin depender del móvil. | Escenario 1: Gestión web de eventos <br> Dado que el cuidador inició sesión en la web application <br> Cuando registra o edita un evento de salud <br> Entonces el sistema persiste el cambio y lo refleja en la agenda |
 | USW02 | User Story | Cuidador | Media | Diario de Seguimiento | Consultar diario y documentos desde la web | Como cuidador, deseo consultar el diario y los documentos compartidos del paciente desde la web para dar seguimiento en pantalla amplia. | Escenario 1: Consulta web autorizada <br> Dado que el cuidador tiene acceso autorizado <br> Cuando consulta el diario o los documentos compartidos en la web application <br> Entonces el sistema muestra la información correspondiente |
@@ -1599,12 +1599,16 @@ La arquitectura se organiza en tres capas:
 
 La estructura de la landing sigue una jerarquía descendente clásica de conversión:
 
-1. **Header** fijo: logo, navegación (Inicio, Funciones, Beneficios, Precio, Contacto), CTA "Probar app".
+1. **Header** fijo: logo, navegación (Inicio, Funciones, Beneficios, Precio, Contacto), selector ES/EN y CTA "Probar app".
 2. **Hero**: titular + subtítulo + doble CTA ("Comienza ahora" / "Ver funciones") + mockup del dashboard real de la app.
 3. **Beneficios** ("Pensado para pacientes, cuidadores y familias"): 3 columnas con ícono, título y descripción.
 4. **Proceso** ("Cómo funciona"): 3 pasos numerados.
 5. **Funciones principales**: grilla de 5 tarjetas (una destacada — Acceso compartido).
 6. **Planes** ("Planes simples para tu cuidado diario"): 2 tarjetas de precio comparadas.
+
+El alcance lingüístico de la Landing Page para TB1 es **bilingüe: español (`es`) e inglés (`en`)**. El selector ES/EN usa `i18next` y `react-i18next` para cambiar los textos de la interfaz, las etiquetas accesibles y los metadatos de la página. La elección se conserva al recargar. No se contemplan otros idiomas en esta entrega. El mockup del hero es una imagen del prototipo móvil y conserva el idioma de la captura.
+
+Las secciones **About the Team** y **About the Product** muestran una miniatura y un botón para cargar el video incrustado de YouTube cuando el visitante lo solicite. Cada sección ofrece también un enlace directo, traducido al idioma seleccionado, para abrir el video si el reproductor embebido no está disponible en su navegador. El estado de validación del contenido enlazado se describe en §6.1.4.
 
 ![Landing Page Wireframe: sección 1](./assets/capitulo4/figma/landing1.png)
 ![Landing Page Wireframe: sección 2](./assets/capitulo4/figma/landing2.png)
@@ -2494,10 +2498,10 @@ La selección de herramientas busca mantener una separación clara entre cada pr
 | Notifications | Firebase Cloud Messaging | Entregar notificaciones push. | Proyecto Firebase de CareConnect |
 | Mobile Distribution | Firebase App Distribution | Distribuir builds Android de prueba. | Proyecto Firebase de CareConnect |
 | Email | SendGrid | Enviar correos electrónicos transaccionales. | Configuración privada del backend |
-| Landing Page Development | React + Vite + TypeScript | Implementación actual de la Landing Page. | `CareStacks/Landing-Page` |
-| Landing Page Deployment | Vercel | Publicar la Landing Page. | Proyecto Vercel vinculado al repositorio |
+| Landing Page Development | React + Vite + TypeScript | Implementación actual de la Landing Page. | `upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page` |
+| Landing Page Deployment | Vercel | Publicar la Landing Page. | Proyecto Vercel desplegado con CLI; integración automática con GitHub pendiente |
 | Frontend Web Application | Flutter | Stack requerido por 1ASI0732 para la aplicación web funcional. | Pendiente de repositorio/implementación confirmada |
-| Documentation | Markdown | Elaborar el informe principal del proyecto. | `CareStacks/Report/README.md` |
+| Documentation | Markdown | Elaborar el informe principal del proyecto. | `upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/README.md` |
 
 ##### Configuración de la Native Mobile Application
 
@@ -2879,21 +2883,18 @@ Para la presente entrega, no todos los productos cuentan todavía con un desplie
 
 La Landing Page de CareConnect está implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada públicamente mediante **Vercel**.
 
-- **Repositorio:** `https://github.com/CareStacks/Landing-Page`
-- **URL de producción:** `https://landing-page-lovat-ten.vercel.app/`
+- **Repositorio de la entrega:** `https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page`
+- **URL de producción:** `https://carestacks-landing-page.vercel.app/`
 - **Proveedor de despliegue:** Vercel
 - **Build Tool:** Vite
 
-El flujo de despliegue utilizado es:
+El flujo de despliegue utilizado para esta entrega es:
 
 ```text
-Cambios en el repositorio
+Cambios en el repositorio de la entrega
           |
           v
-     Push a GitHub
-          |
-          v
-Vercel detecta los cambios
+vercel deploy --prod --yes
           |
           v
 Instalación de dependencias
@@ -2908,7 +2909,7 @@ Publicación de la nueva versión
       URL pública
 ```
 
-Vercel se encuentra vinculado al repositorio de la Landing Page, permitiendo generar una nueva versión desplegada a partir de los cambios integrados en la rama configurada para producción.
+La publicación se realizó desde el repositorio de la entrega mediante Vercel CLI. La conexión automática con GitHub no quedó habilitada, por lo que los cambios posteriores requieren ejecutar de nuevo el comando de despliegue.
 
 La evidencia visual correspondiente al despliegue y funcionamiento de este producto se presenta posteriormente en la sección **5.2.2. Implemented Landing Page Evidence**.
 
@@ -3424,14 +3425,14 @@ La tabla se organiza por los User Stories definidos en la sección 3.2, descompu
 
 La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada mediante **Vercel**.
 
-**Repositorio:** `https://github.com/CareStacks/Landing-Page`  
-**Landing Page:** `https://landing-page-lovat-ten.vercel.app/`
+**Repositorio:** `https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page`
+**Landing Page:** `https://carestacks-landing-page.vercel.app/`
 
 ##### Deployment Evidence
 
 ![CareConnect Landing Page Deployment](assets/careconnect-landing-deployment.png)
 
-*Figura 12. Evidencia del despliegue de la Landing Page de CareConnect.*
+*Figura 12. Landing Page publicada en [Vercel](https://carestacks-landing-page.vercel.app/) el 30/09/2026; captura de la versión con selector ES/EN.*
 
 ---
 
@@ -3615,7 +3616,7 @@ El 01/10/2026 se ejecutó la suite JUnit del [backend del curso](https://github.
 | Unidad | Reglas de entidades `HealthEvent` y `ProfileShareConsent` | `HealthEventTest` y `ProfileShareConsentTest` en la rama publicada del backend actual | 6 pruebas aprobadas, 0 fallos |
 | Integración | Arranque de Spring con H2 y flujos API + persistencia | `CareConnectBackendApplicationTests` y `CoreApiIntegrationTests` | 4 pruebas aprobadas, 0 fallos |
 | BDD | USL05, cambio de idioma del Landing Page | Ejecución manual local y en la URL pública | Aprobado en ambos entornos; sin automatización BDD |
-| Sistema | Navegación, idioma y videos del Landing Page | Inspección de la URL pública, captura actual y reproducción de ambos videos incrustados | ST-01 y ST-02 aprobados en producción con el alcance indicado abajo |
+| Sistema | Navegación, idioma y videos del Landing Page | Inspección de la URL pública, captura actual y reproducción de ambos videos incrustados | ST-01 aprobado; ST-02 pendiente de corregir los enlaces de video |
 
 #### 6.1.1. Core Entities Unit Tests
 
@@ -3645,7 +3646,7 @@ En integración se verificó que controller, servicio, repositorio y base de dat
 
 IT-02–IT-04 usan identificadores y correos únicos de prueba; la base H2 es temporal y se recrea al iniciar el contexto. Las pruebas comprueban códigos HTTP, cuerpo y persistencia mediante consultas posteriores. No comprueban una base de datos de producción ni el cliente visual.
 
-**Evidencia de la suite en el backend actual (01/10/2026).** Se ejecutó `mvn -B -q test` con Java 25 sobre la rama `test/core-verification` (commit `24b1e75`). Terminó con código 0: **10 pruebas ejecutadas, 0 fallos, 0 errores y 0 omitidas**. Los cuatro resultados por clase están en el [resumen de la suite](assets/testing/backend-suite-2026-10-01.txt). El log confirmó H2 en memoria, puerto HTTP aleatorio y perfil `default`. La integración a `main` queda pendiente de revisión del equipo.
+**Evidencia de la suite en el backend actual (01/10/2026).** Se ejecutó `mvn -B -q test` con Java 25 sobre la rama `test/core-verification` (commit `24b1e75`). Terminó con código 0: **10 pruebas ejecutadas, 0 fallos, 0 errores y 0 omitidas**. Los cuatro resultados por clase están en el [resumen de la suite](assets/testing/backend-suite-2026-10-01.txt). El log confirmó H2 en memoria, puerto HTTP aleatorio y perfil `default`. Las pruebas se integraron después a `main` mediante el Pull Request 1 del backend.
 
 #### 6.1.3. Core Behavior-Driven Development
 
@@ -3682,10 +3683,10 @@ Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-
 | ID | Recorrido | Resultado observado | Estado |
 |---|---|---|---|
 | ST-01 | Entrar al Landing Page y usar ES/EN | En producción se observaron navegación, título, descripción y `lang` en inglés; la elección permaneció tras recargar | Aprobado en producción, sesión de escritorio |
-| ST-02 | Revisar secciones About the Team y About the Product | En producción se cargaron ambos `iframe` al pulsar sus botones; el video del equipo avanzó y el del producto mostró reproducción desde 0:01/3:20. Permanecen visibles los enlaces directos | Aprobado en producción, sesión de escritorio |
+| ST-02 | Revisar secciones About the Team y About the Product | En producción se cargaron ambos `iframe` y se reprodujeron, pero el contenido enlazado menciona proyectos distintos de CareConnect | Pendiente: sustituir los enlaces y repetir la prueba |
 | ST-03 | Recorrido completo paciente/cuidador: registro, evento, confirmación, acceso compartido y revocación | El tramo API + H2 está cubierto por IT-02 e IT-03; falta probarlo desde frontend móvil/web | Pendiente de interfaz integrada |
 
-**Límite de ST-02.** En la prueba local anterior, el navegador integrado mostró el error 153 en el reproductor embebido. En una sesión nueva del mismo navegador, ambos reproductores del sitio publicado cargaron y avanzaron. Se conserva primero una miniatura y un enlace directo a cada video como alternativa. Esta comprobación no demuestra que la reproducción funcione en todos los navegadores o dispositivos.
+**Límite de ST-02.** En la prueba local anterior, el navegador integrado mostró el error 153 en el reproductor embebido. En una sesión nueva del mismo navegador, ambos reproductores del sitio publicado cargaron y avanzaron. Sin embargo, al revisar su contenido el 02/10/2026, el video del equipo menciona “Cartax” y el del producto “Batimoff”. La reproducción técnica no valida que sean los videos de CareConnect. Se debe sustituir ambas URL y repetir la prueba antes de aprobar ST-02.
 
 **Criterio de cierre de ST-03.** Registrar versión/commit de cada componente, URL del entorno, usuario de prueba sin datos reales, pasos, resultado esperado y observado, evidencia visual y defectos hallados al ejecutar el flujo desde la aplicación móvil o web conectada al backend.
 
