@@ -3610,86 +3610,13 @@ El Video About-the-Product presenta el modelo de negocio de CareConnect y sus ca
 
 ### 6.1. Testing Suites & Validation
 
-Esta sección separa **casos diseñados**, **pruebas ejecutadas** y **evidencia disponible**. El 30/09/2026 se revisaron la Landing Page local y su versión pública en [Vercel](https://carestacks-landing-page.vercel.app/). El 01/10/2026 se ejecutó la suite JUnit en el [backend actual del curso](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api), rama [`test/core-verification`](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/tree/test/core-verification) (commit `24b1e75`). Estas pruebas se trasladaron desde el backend del ciclo anterior y aún no están integradas en `main`. Un caso descrito como pendiente no debe interpretarse como una prueba aprobada.
-
-| Nivel | Alcance | Evidencia revisada | Estado al 01/10/2026 |
-|---|---|---|---|
-| Unidad | Reglas de entidades `HealthEvent` y `ProfileShareConsent` | `HealthEventTest` y `ProfileShareConsentTest` en la rama publicada del backend actual | 6 pruebas aprobadas, 0 fallos |
-| Integración | Arranque de Spring con H2 y flujos API + persistencia | `CareConnectBackendApplicationTests` y `CoreApiIntegrationTests` | 4 pruebas aprobadas, 0 fallos |
-| BDD | USL05, cambio de idioma del Landing Page | Ejecución manual local y en la URL pública | Aprobado en ambos entornos; sin automatización BDD |
-| Sistema | Navegación, idioma y videos del Landing Page | Inspección de la URL pública, captura actual y reproducción de ambos videos incrustados | ST-01 y ST-02 aprobados en producción con el alcance indicado abajo |
-
 #### 6.1.1. Core Entities Unit Tests
-
-El objetivo de este nivel es comprobar reglas de negocio sin levantar Spring ni conectar una base de datos. En el backend actual, `HealthEvent` valida identificador del paciente, título, tipo y que el fin sea posterior al inicio; sus operaciones `confirm`, `reschedule`, `cancel` y `markAsMissed` modifican el estado. `ProfileShareConsent` exige paciente y cuidador distintos, al menos una vista autorizada y permite consultar las vistas concedidas. Estas reglas permiten los siguientes casos reproducibles:
-
-| ID | Entidad / historia | Datos y acción | Resultado esperado | Estado |
-|---|---|---|---|---|
-| UT-01 | `HealthEvent` / US01 | Programar evento con paciente, título, tipo e intervalo válido | Se crea en estado `PENDING` con las fechas indicadas | Aprobado |
-| UT-02 | `HealthEvent` / US01 | Programar evento cuyo fin es igual o anterior al inicio | Se lanza `BusinessRuleException` | Aprobado |
-| UT-03 | `HealthEvent` / US02–US03 | Confirmar, reprogramar y cancelar un evento válido | Pasa a `CONFIRMED`, vuelve a `PENDING` al reprogramar y termina en `CANCELLED` | Aprobado |
-| UT-04 | `HealthEvent` / US02 | Intentar confirmar un evento cancelado | Se rechaza la transición mediante `BusinessRuleException` | Aprobado |
-| UT-05 | `ProfileShareConsent` / US14–US16 | Otorgar una vista, consultar acceso y actualizar las vistas concedidas | `allows` refleja únicamente los permisos actuales | Aprobado |
-| UT-06 | `ProfileShareConsent` / US14 | Crear consentimiento para el mismo usuario como paciente y cuidador, o sin vistas | Se lanza `BusinessRuleException` | Aprobado |
-
-**Evidencia y límite.** Las seis pruebas están bajo `src/test/java` en la rama publicada del backend actual y se ejecutaron con `mvn test`. Surefire registró 4 casos de `HealthEventTest` y 2 de `ProfileShareConsentTest`, todos aprobados. La ejecución no prueba todavía la aplicación móvil o web.
 
 #### 6.1.2. Core Integration Tests
 
-En integración se verificó que controller, servicio, repositorio y base de datos colaboren correctamente. El backend actual incluye `@SpringBootTest` `contextLoads()` y una configuración de prueba para H2 en memoria (`jdbc:h2:mem:careconnect;MODE=PostgreSQL`). Se añadió `CoreApiIntegrationTests`, que levanta el servidor en un puerto aleatorio y usa solicitudes HTTP reales contra H2. El caso `contextLoads()` por sí solo sigue siendo una prueba de arranque.
-
-| ID | Flujo / historia | Preparación y operación | Resultado comprobable | Estado |
-|---|---|---|---|---|
-| IT-01 | Contexto Spring | Ejecutar `mvn test` con la configuración H2 de pruebas | El contexto carga sin errores | Aprobado: 1 prueba, 0 fallos, 0 errores |
-| IT-02 | Agenda / US01–US03 | `POST /api/agenda`, consultar el ID, confirmar y reprogramar | Respuestas 201/200, estado y horario persistidos al volver a consultar | Aprobado |
-| IT-03 | Consentimiento / US14–US16 | Registrar paciente y cuidador, iniciar sesión, conceder vista, validar acceso y revocar por `/api/consents` | Vista concedida permitida, vista no concedida denegada y acceso inexistente tras revocar | Aprobado |
-| IT-04 | Diario / US12–US13 | Crear entrada por `/api/diary` y consultar por ID y paciente | La entrada se recupera con el contenido y propietario correctos | Aprobado |
-
-IT-02–IT-04 usan identificadores y correos únicos de prueba; la base H2 es temporal y se recrea al iniciar el contexto. Las pruebas comprueban códigos HTTP, cuerpo y persistencia mediante consultas posteriores. No comprueban una base de datos de producción ni el cliente visual.
-
-**Evidencia de la suite en el backend actual (01/10/2026).** Se ejecutó `mvn -B -q test` con Java 25 sobre la rama `test/core-verification` (commit `24b1e75`). Terminó con código 0: **10 pruebas ejecutadas, 0 fallos, 0 errores y 0 omitidas**. Los cuatro resultados por clase están en el [resumen de la suite](assets/testing/backend-suite-2026-10-01.txt). El log confirmó H2 en memoria, puerto HTTP aleatorio y perfil `default`. La integración a `main` queda pendiente de revisión del equipo.
-
 #### 6.1.3. Core Behavior-Driven Development
 
-Los escenarios BDD vinculan el comportamiento observable con los criterios de aceptación del Product Backlog (§3.2). Para USL05 se ejecutó el siguiente escenario en el Landing Page local:
-
-```gherkin
-Característica: Idioma del Landing Page
-  Como visitante
-  Quiero elegir español o inglés
-  Para leer el contenido en mi idioma preferido
-
-  Escenario: Cambiar a inglés y conservar la preferencia
-    Dado que la landing está abierta en español
-    Cuando selecciono "EN" en el encabezado
-    Entonces el título principal y la navegación aparecen en inglés
-    Y el idioma del documento es "en"
-    Y el título y la descripción de la página están en inglés
-    Cuando recargo la página
-    Entonces la landing continúa en inglés
-    Cuando selecciono "ES"
-    Entonces el contenido y el idioma del documento vuelven a español
-```
-
-**Resultado USL05: aprobado en entorno local (30/09/2026).** Se observó el título principal `Organize the daily care of your loved ones`, `html[lang="en"]`, los metadatos en inglés y el botón EN seleccionado. Después de recargar, inglés siguió seleccionado; al pulsar ES volvieron el título `Organiza el cuidado diario de tus seres queridos` y `html[lang="es"]`. La ejecución fue manual; aún no hay archivo `.feature` ni runner BDD automatizado en los repositorios revisados.
-
-**Verificación en producción (30/09/2026).** En `https://carestacks-landing-page.vercel.app/`, se seleccionó EN y se observaron el título `CareConnect | Organized daily care`, `html[lang="en"]`, la descripción de la página en inglés y la navegación traducida. Tras recargar, el idioma inglés permaneció seleccionado. La comprobación se hizo manualmente en una sesión nueva del navegador integrado.
-
-Las pruebas JUnit del backend cubren comportamientos de US01 (registro válido y fechas inválidas), US02 (confirmación), US14 (concesión de vistas) y US16 (revocación), pero **no existe todavía un runner BDD ni archivos `.feature` ejecutables**. Para afirmar automatización BDD se deben vincular los pasos Gherkin con estas pruebas o implementar step definitions específicas.
-
 #### 6.1.4. Core System Tests
-
-Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-02 se repitieron en la Landing Page publicada (`https://carestacks-landing-page.vercel.app/`) el 30/09/2026. La [Figura 12](assets/careconnect-landing-deployment.png) muestra una captura actual del sitio público. ST-03 sigue sin ejecutarse desde las aplicaciones conectadas al backend.
-
-| ID | Recorrido | Resultado observado | Estado |
-|---|---|---|---|
-| ST-01 | Entrar al Landing Page y usar ES/EN | En producción se observaron navegación, título, descripción y `lang` en inglés; la elección permaneció tras recargar | Aprobado en producción, sesión de escritorio |
-| ST-02 | Revisar secciones About the Team y About the Product | En producción se cargaron ambos `iframe` al pulsar sus botones; el video del equipo avanzó y el del producto mostró reproducción desde 0:01/3:20. Permanecen visibles los enlaces directos | Aprobado en producción, sesión de escritorio |
-| ST-03 | Recorrido completo paciente/cuidador: registro, evento, confirmación, acceso compartido y revocación | El tramo API + H2 está cubierto por IT-02 e IT-03; falta probarlo desde frontend móvil/web | Pendiente de interfaz integrada |
-
-**Límite de ST-02.** En la prueba local anterior, el navegador integrado mostró el error 153 en el reproductor embebido. En una sesión nueva del mismo navegador, ambos reproductores del sitio publicado cargaron y avanzaron. Se conserva primero una miniatura y un enlace directo a cada video como alternativa. Esta comprobación no demuestra que la reproducción funcione en todos los navegadores o dispositivos.
-
-**Criterio de cierre de ST-03.** Registrar versión/commit de cada componente, URL del entorno, usuario de prueba sin datos reales, pasos, resultado esperado y observado, evidencia visual y defectos hallados al ejecutar el flujo desde la aplicación móvil o web conectada al backend.
 
 ### 6.2. Static testing & Verification
 
