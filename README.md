@@ -570,7 +570,7 @@ Las prácticas definidas para Continuous Integration son:
 | Práctica | Aplicación en CareConnect |
 |---|---|
 | Control de versiones | Git y GitHub para todos los repositorios del producto. |
-| Estrategia de ramas | `main`, `develop`, `feature/*`, `release/*` y `hotfix/*`. |
+| Estrategia de ramas | `main`, `develop`, `feature/*` y `test/*`. |
 | Pull Requests | Todo cambio destinado a `develop` o `main` debe integrarse mediante Pull Request. |
 | Validaciones automáticas | Cada Pull Request debe ejecutar el workflow de CI antes de ser fusionado. |
 | Build reproducible | Cada producto utiliza su herramienta oficial de construcción: Maven, Flutter o Vite. |
@@ -657,7 +657,7 @@ Setup Java 25
 Maven dependency cache
    |
    v
-mvn -B clean verify
+mvn -B test
    |
    v
 Unit / Integration / BDD Tests
@@ -669,7 +669,7 @@ Build Result
 Comando principal:
 
 ```bash
-mvn -B clean verify
+mvn -B test
 ```
 
 ![Backend CI Evidence](assets/backend-ci-success.png)
