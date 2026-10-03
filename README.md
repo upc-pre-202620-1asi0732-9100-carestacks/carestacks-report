@@ -417,16 +417,12 @@ Los valores reales de estas variables deben mantenerse únicamente en los entorn
 La Landing Page actualmente implementada utiliza:
 
 ```text
-Framework: Flutter
-UI Components: Flutter
-Package Manager: flutter run
-Communication: REST over HTTPS/JSON
-```
-
-El repositorio correspondiente es:
-
-```text
-https://github.com/CareStacks/Landing-Page
+Framework: React
+Language: TypeScript
+Build Tool: Vite
+Package Manager: npm
+Internationalization: i18n
+Supported Locales: es_419 / en_US
 ```
 
 ##### Configuración de la Frontend Web Application
