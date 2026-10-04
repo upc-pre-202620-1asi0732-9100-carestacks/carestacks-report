@@ -159,8 +159,10 @@ Los códigos de salida y hashes de las fuentes y evidencias figuran en
   dispositivo Android/iOS. No se acreditan distribución nativa, CORS ni producción.
 - No se repitieron ST-01/ST-02 de la landing ni se cambiaron sus videos.
 - No se probaron PostgreSQL ni proveedores externos de documentos o alertas.
-- Las modificaciones y evidencias se dejaron en ramas locales para revisión;
-  este resultado no demuestra que se hayan publicado o integrado en GitHub.
+- Este registro corresponde a la primera ejecución local. La publicación de las
+  ramas, la corrección UTF-8 y la comprobación posterior en navegador se documentan
+  en la [actualización de evidencia](../tb1-browser-2026-10-04/verification.md).
+  Publicar una rama no demuestra su integración ni un despliegue de producción.
 
 ST-03 solo podrá aprobarse cuando SYS-06/SYS-07 bloqueen el dato y se demuestre
 el recorrido de concesión/revocación en los clientes desplegados correspondientes.
