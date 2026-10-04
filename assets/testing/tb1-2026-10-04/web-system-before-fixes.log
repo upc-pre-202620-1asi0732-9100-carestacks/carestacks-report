@@ -1,0 +1,105 @@
+00:00 +0: loading C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/system_test/care_flow_test.dart
+00:00 +0: SYS-01 Given registered users, When sharing and confirming, Then the event persists
+00:04 +1: SYS-02 Given an account, When the password is wrong, Then login is rejected
+00:06 +2: SYS-03 Given a new caregiver, When loading home, Then an empty dashboard is shown
+00:07 +2 -1: SYS-03 Given a new caregiver, When loading home, Then an empty dashboard is shown [E]
+  Caregiver has no shared patient profile
+  package:carestacks/core/network/care_connect_api_client.dart 356:5  CareConnectApiClient._send
+  
+00:07 +2 -1: SYS-04 Given cached patient data, When consent is revoked, Then home removes the patient
+00:09 +2 -2: SYS-04 Given cached patient data, When consent is revoked, Then home removes the patient [E]
+  Expected: empty
+    Actual: [Instance of 'LinkedPatient']
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  system_test\care_flow_test.dart 168:5               main.<fn>
+  
+00:09 +2 -2: SYS-05 Given agenda-only consent, When diary is opened, Then its content is not downloaded
+00:10 +2 -3: SYS-05 Given agenda-only consent, When diary is opened, Then its content is not downloaded [E]
+  Expected: empty
+    Actual: [Instance of 'DiaryEntry']
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  system_test\care_flow_test.dart 181:5               main.<fn>
+  
+00:10 +2 -3: SYS-06 Given a revoked consent, When requesting agenda directly, Then the API denies access
+00:12 +2 -4: SYS-06 Given a revoked consent, When requesting agenda directly, Then the API denies access [E]
+  Expected: (<401> or <403>)
+    Actual: <200>
+  Revocation must protect the data endpoint.
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  system_test\care_flow_test.dart 192:5               main.<fn>
+  
+00:12 +2 -4: SYS-07 Given no session, When requesting agenda, Then the API denies access
+00:14 +2 -5: SYS-07 Given no session, When requesting agenda, Then the API denies access [E]
+  Expected: (<401> or <403>)
+    Actual: <200>
+  Data requires authentication.
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  system_test\care_flow_test.dart 201:5               main.<fn>
+  
+00:14 +2 -5: SYS-08 Given a linked caregiver, When logging in and tapping Confirmar, Then the UI and API update
+Pending timers:
+Timer (duration: 0:00:15.000000, periodic: false), created:
+#0      new FakeTimer._ (package:fake_async/fake_async.dart:342:62)
+#1      FakeAsync._createTimer (package:fake_async/fake_async.dart:260:29)
+#2      FakeAsync.run.<anonymous closure> (package:fake_async/fake_async.dart:185:15)
+#5      _HttpClientConnection.startTimer (dart:_http/http_impl.dart:2550:18)
+#6      _ConnectionTarget.returnConnection (dart:_http/http_impl.dart:2617:16)
+#7      _HttpClient._returnConnection (dart:_http/http_impl.dart:3123:41)
+#8      _HttpClientConnection.send.<anonymous closure>.<anonymous closure>.<anonymous closure> (dart:_http/http_impl.dart:2373:29)
+#22     FakeAsync.run.<anonymous closure>.<anonymous closure> (package:fake_async/fake_async.dart:189:18)
+#23     FakeAsync.flushMicrotasks (package:fake_async/fake_async.dart:200:32)
+#24     FakeAsync._fireTimersWhile (package:fake_async/fake_async.dart:241:5)
+#25     FakeAsync.elapse (package:fake_async/fake_async.dart:141:5)
+#26     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2253:28)
+#29     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#30     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#31     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#34     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#35     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#36     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#37     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/system_test/care_flow_test.dart:230:5)
+<asynchronous suspension>
+#38     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#39     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 20 frames from dart:async and package:stack_trace)
+
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+A Timer is still pending even after the widget tree was disposed.
+'package:flutter_test/src/binding.dart':
+Failed assertion: line 2542 pos 12: '!timersPending'
+
+When the exception was thrown, this was the stack:
+#2      AutomatedTestWidgetsFlutterBinding._verifyInvariants (package:flutter_test/src/binding.dart:2542:12)
+#3      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1973:7)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from class _AssertionError and package:stack_trace)
+
+The test description was:
+  SYS-08 Given a linked caregiver, When logging in and tapping Confirmar, Then the UI and API update
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:27 +2 -6: SYS-08 Given a linked caregiver, When logging in and tapping Confirmar, Then the UI and API update [E]
+  Test failed. See exception logs above.
+  The test description was: SYS-08 Given a linked caregiver, When logging in and tapping Confirmar, Then the UI and API update
+  
+00:27 +2 -6: Some tests failed.
+
+Failing tests:
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/system_test/care_flow_test.dart: SYS-03 Given a new caregiver, When loading home, Then an empty dashboard is shown
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/system_test/care_flow_test.dart: SYS-04 Given cached patient data, When consent is revoked, Then home removes the patient
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/system_test/care_flow_test.dart: SYS-05 Given agenda-only consent, When diary is opened, Then its content is not downloaded
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/system_test/care_flow_test.dart: SYS-06 Given a revoked consent, When requesting agenda directly, Then the API denies access
+  ... and 2 more

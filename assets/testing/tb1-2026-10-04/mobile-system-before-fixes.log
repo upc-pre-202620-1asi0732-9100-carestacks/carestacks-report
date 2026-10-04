@@ -1,0 +1,1210 @@
+00:00 +0: loading C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart
+00:00 +0: SYS-01 Given registered users, When sharing and confirming, Then the event persists
+00:01 +1: SYS-02 Given an account, When the password is wrong, Then login is rejected
+00:03 +2: SYS-03 Given a new caregiver, When loading home, Then an empty dashboard is shown
+00:05 +2 -1: SYS-03 Given a new caregiver, When loading home, Then an empty dashboard is shown [E]
+  Caregiver has no shared patient profile
+  package:carestacks/core/network/care_connect_api_client.dart 356:5  CareConnectApiClient._send
+  
+00:05 +2 -1: SYS-04 Given cached patient data, When consent is revoked, Then home removes the patient
+00:06 +2 -2: SYS-04 Given cached patient data, When consent is revoked, Then home removes the patient [E]
+  Expected: empty
+    Actual: [Instance of 'LinkedPatient']
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  system_test\care_flow_test.dart 168:5               main.<fn>
+  
+00:06 +2 -2: SYS-05 Given agenda-only consent, When diary is opened, Then its content is not downloaded
+00:08 +2 -3: SYS-05 Given agenda-only consent, When diary is opened, Then its content is not downloaded [E]
+  Expected: empty
+    Actual: [Instance of 'DiaryEntry']
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  system_test\care_flow_test.dart 181:5               main.<fn>
+  
+00:08 +2 -3: SYS-06 Given a revoked consent, When requesting agenda directly, Then the API denies access
+00:09 +2 -4: SYS-06 Given a revoked consent, When requesting agenda directly, Then the API denies access [E]
+  Expected: (<401> or <403>)
+    Actual: <200>
+  Revocation must protect the data endpoint.
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  system_test\care_flow_test.dart 192:5               main.<fn>
+  
+00:09 +2 -4: SYS-07 Given no session, When requesting agenda, Then the API denies access
+00:11 +2 -5: SYS-07 Given no session, When requesting agenda, Then the API denies access [E]
+  Expected: (<401> or <403>)
+    Actual: <200>
+  Data requires authentication.
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  system_test\care_flow_test.dart 201:5               main.<fn>
+  
+00:11 +2 -5: SYS-08 Given a linked caregiver, When logging in and tapping Confirmar, Then the UI and API update
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during performLayout():
+BoxConstraints forces an infinite width.
+These invalid constraints were provided to RenderPhysicalShape's layout() function by the following
+function, which probably computed the invalid constraints in question:
+  RenderConstrainedBox.performLayout (package:flutter/src/rendering/proxy_box.dart:296:14)
+The offending constraints were:
+  BoxConstraints(w=Infinity, h=56.0)
+
+The relevant error-causing widget was:
+  FilledButton
+  FilledButton:file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart:60:45
+
+When the exception was thrown, this was the stack:
+#0      BoxConstraints.debugAssertIsValid.<anonymous closure>.throwError (package:flutter/src/rendering/box.dart:549:9)
+#1      BoxConstraints.debugAssertIsValid.<anonymous closure> (package:flutter/src/rendering/box.dart:611:11)
+#2      BoxConstraints.debugAssertIsValid (package:flutter/src/rendering/box.dart:619:6)
+#3      RenderObject.layout (package:flutter/src/rendering/object.dart:2807:19)
+#4      RenderConstrainedBox.performLayout (package:flutter/src/rendering/proxy_box.dart:296:14)
+#5      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#6      ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#7      _RenderInputPadding._computeSize (package:flutter/src/material/button_style_button.dart:698:41)
+#8      _RenderInputPadding.performLayout (package:flutter/src/material/button_style_button.dart:728:12)
+#9      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#10     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#11     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#12     RenderConstrainedBox.performLayout (package:flutter/src/rendering/proxy_box.dart:296:14)
+#13     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#14     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#15     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1237:28)
+#16     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#17     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#18     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#19     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#20     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#21     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#22     RenderSliverList.performLayout (package:flutter/src/rendering/sliver_list.dart:209:28)
+#23     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#24     RenderSliverEdgeInsetsPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:133:12)
+#25     RenderSliverPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:368:11)
+#26     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#27     RenderViewportBase.layoutChildSequence (package:flutter/src/rendering/viewport.dart:821:13)
+#28     RenderViewport._attemptLayout (package:flutter/src/rendering/viewport.dart:1831:12)
+#29     RenderViewport.performLayout (package:flutter/src/rendering/viewport.dart:1724:20)
+#30     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#31     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#32     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#33     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#34     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#35     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#36     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#37     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#38     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#39     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#40     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#41     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#42     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#43     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#44     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#45     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#46     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1549:11)
+#47     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#48     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#49     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#50     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#51     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#52     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#53     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1275:26)
+#54     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#55     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#56     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#57     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#58     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#59     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#60     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#61     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#62     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#63     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#64     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:180:12)
+#65     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:1113:7)
+#66     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:246:7)
+#67     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:417:14)
+#68     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:2755:7)
+#69     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1174:18)
+#70     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1187:15)
+#71     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2433:27)
+#72     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+#73     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#74     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#75     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2260:9)
+#78     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#79     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#80     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#83     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#84     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#85     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#86     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:222:5)
+<asynchronous suspension>
+#87     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#88     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 5 frames from dart:async and package:stack_trace)
+
+The following RenderObject was being processed when the exception was fired: RenderConstrainedBox#4f0d7 relayoutBoundary=up9 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  creator: ConstrainedBox ← _InputPadding ← Semantics ← FilledButton ← SizedBox ← Row ←
+    RepaintBoundary ← IndexedSemantics ← _SelectionKeepAlive ←
+    NotificationListener<KeepAliveNotification> ← KeepAlive ← AutomaticKeepAlive ← ⋯
+  parentData: offset=Offset(0.0, 0.0) (can use size)
+  constraints: BoxConstraints(0.0<=w<=Infinity, h=56.0)
+  size: MISSING
+  additionalConstraints: BoxConstraints(w=Infinity, 56.0<=h<=Infinity)
+This RenderObject had the following descendants (showing up to depth 5):
+    child: RenderPhysicalShape#76de6 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      child: RenderCustomPaint#3127c NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+        child: _RenderInkFeatures#655cf NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+          child: RenderSemanticsAnnotations#d0e9a NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+            child: RenderMouseRegion#872f9 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during performLayout():
+RenderBox was not laid out: RenderConstrainedBox#4f0d7 relayoutBoundary=up9 NEEDS-PAINT
+NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 2251 pos 12: 'hasSize'
+
+Either the assertion indicates an error in the framework itself, or we should provide substantially
+more information in this error message to help you determine and fix the underlying cause.
+In either case, please report this assertion by filing a bug on GitHub:
+  https://github.com/flutter/flutter/issues/new?template=02_bug.yml
+
+The relevant error-causing widget was:
+  FilledButton
+  FilledButton:file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart:60:45
+
+When the exception was thrown, this was the stack:
+#2      RenderBox.size (package:flutter/src/rendering/box.dart:2251:12)
+#3      ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:63:18)
+#4      _RenderInputPadding._computeSize (package:flutter/src/material/button_style_button.dart:698:41)
+#5      _RenderInputPadding.performLayout (package:flutter/src/material/button_style_button.dart:728:12)
+#6      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#7      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#8      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#9      RenderConstrainedBox.performLayout (package:flutter/src/rendering/proxy_box.dart:296:14)
+#10     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#11     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#12     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1237:28)
+#13     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#14     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#15     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#16     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#17     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#18     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#19     RenderSliverList.performLayout (package:flutter/src/rendering/sliver_list.dart:209:28)
+#20     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#21     RenderSliverEdgeInsetsPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:133:12)
+#22     RenderSliverPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:368:11)
+#23     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#24     RenderViewportBase.layoutChildSequence (package:flutter/src/rendering/viewport.dart:821:13)
+#25     RenderViewport._attemptLayout (package:flutter/src/rendering/viewport.dart:1831:12)
+#26     RenderViewport.performLayout (package:flutter/src/rendering/viewport.dart:1724:20)
+#27     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#28     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#29     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#30     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#31     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#32     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#33     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#34     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#35     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#36     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#37     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#38     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#39     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#40     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#41     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#42     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#43     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1549:11)
+#44     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#45     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#46     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#47     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#48     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#49     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#50     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1275:26)
+#51     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#52     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#53     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#54     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#55     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#56     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#57     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#58     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#59     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#60     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#61     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:180:12)
+#62     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:1113:7)
+#63     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:246:7)
+#64     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:417:14)
+#65     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:2755:7)
+#66     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1174:18)
+#67     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1187:15)
+#68     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2433:27)
+#69     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+#70     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#71     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#72     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2260:9)
+#75     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#76     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#77     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#80     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#81     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#82     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#83     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:222:5)
+<asynchronous suspension>
+#84     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#85     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 7 frames from class _AssertionError, dart:async, and package:stack_trace)
+
+The following RenderObject was being processed when the exception was fired: _RenderInputPadding#7607a relayoutBoundary=up8 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  creator: _InputPadding ← Semantics ← FilledButton ← SizedBox ← Row ← RepaintBoundary ←
+    IndexedSemantics ← _SelectionKeepAlive ← NotificationListener<KeepAliveNotification> ← KeepAlive ←
+    AutomaticKeepAlive ← KeyedSubtree ← ⋯
+  parentData: <none> (can use size)
+  constraints: BoxConstraints(0.0<=w<=Infinity, h=56.0)
+  size: MISSING
+This RenderObject had the following descendants (showing up to depth 5):
+    child: RenderConstrainedBox#4f0d7 relayoutBoundary=up9 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      child: RenderPhysicalShape#76de6 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+        child: RenderCustomPaint#3127c NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+          child: _RenderInkFeatures#655cf NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+            child: RenderSemanticsAnnotations#d0e9a NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during performLayout():
+RenderBox was not laid out: _RenderInputPadding#7607a relayoutBoundary=up8 NEEDS-PAINT
+NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 2251 pos 12: 'hasSize'
+
+Either the assertion indicates an error in the framework itself, or we should provide substantially
+more information in this error message to help you determine and fix the underlying cause.
+In either case, please report this assertion by filing a bug on GitHub:
+  https://github.com/flutter/flutter/issues/new?template=02_bug.yml
+
+The relevant error-causing widget was:
+  FilledButton
+  FilledButton:file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart:60:45
+
+When the exception was thrown, this was the stack:
+#2      RenderBox.size (package:flutter/src/rendering/box.dart:2251:12)
+#3      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:62)
+#4      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#5      RenderConstrainedBox.performLayout (package:flutter/src/rendering/proxy_box.dart:296:14)
+#6      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#7      ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#8      RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1237:28)
+#9      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#10     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#11     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#12     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#13     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#14     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#15     RenderSliverList.performLayout (package:flutter/src/rendering/sliver_list.dart:209:28)
+#16     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#17     RenderSliverEdgeInsetsPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:133:12)
+#18     RenderSliverPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:368:11)
+#19     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#20     RenderViewportBase.layoutChildSequence (package:flutter/src/rendering/viewport.dart:821:13)
+#21     RenderViewport._attemptLayout (package:flutter/src/rendering/viewport.dart:1831:12)
+#22     RenderViewport.performLayout (package:flutter/src/rendering/viewport.dart:1724:20)
+#23     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#24     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#25     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#26     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#27     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#28     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#29     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#30     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#31     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#32     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#33     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#34     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#35     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#36     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#37     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#38     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#39     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1549:11)
+#40     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#41     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#42     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#43     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#44     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#45     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#46     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1275:26)
+#47     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#48     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#49     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#50     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#51     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#52     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#53     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#54     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#55     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#56     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#57     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:180:12)
+#58     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:1113:7)
+#59     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:246:7)
+#60     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:417:14)
+#61     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:2755:7)
+#62     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1174:18)
+#63     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1187:15)
+#64     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2433:27)
+#65     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+#66     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#67     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#68     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2260:9)
+#71     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#72     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#73     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#76     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#77     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#78     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#79     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:222:5)
+<asynchronous suspension>
+#80     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#81     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 7 frames from class _AssertionError, dart:async, and package:stack_trace)
+
+The following RenderObject was being processed when the exception was fired: RenderSemanticsAnnotations#2a3d4 relayoutBoundary=up7 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  creator: Semantics ← FilledButton ← SizedBox ← Row ← RepaintBoundary ← IndexedSemantics ←
+    _SelectionKeepAlive ← NotificationListener<KeepAliveNotification> ← KeepAlive ← AutomaticKeepAlive
+    ← KeyedSubtree ← SliverList ← ⋯
+  parentData: <none> (can use size)
+  constraints: BoxConstraints(0.0<=w<=Infinity, h=56.0)
+  semantic boundary
+  size: MISSING
+This RenderObject had the following descendants (showing up to depth 5):
+    child: _RenderInputPadding#7607a relayoutBoundary=up8 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      child: RenderConstrainedBox#4f0d7 relayoutBoundary=up9 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+        child: RenderPhysicalShape#76de6 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+          child: RenderCustomPaint#3127c NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+            child: _RenderInkFeatures#655cf NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during performLayout():
+RenderBox was not laid out: RenderSemanticsAnnotations#2a3d4 relayoutBoundary=up7 NEEDS-PAINT
+NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 2251 pos 12: 'hasSize'
+
+Either the assertion indicates an error in the framework itself, or we should provide substantially
+more information in this error message to help you determine and fix the underlying cause.
+In either case, please report this assertion by filing a bug on GitHub:
+  https://github.com/flutter/flutter/issues/new?template=02_bug.yml
+
+The relevant error-causing widget was:
+  SizedBox
+  SizedBox:file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart:58:23
+
+When the exception was thrown, this was the stack:
+#2      RenderBox.size (package:flutter/src/rendering/box.dart:2251:12)
+#3      RenderConstrainedBox.performLayout (package:flutter/src/rendering/proxy_box.dart:297:21)
+#4      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#5      ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#6      RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1237:28)
+#7      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#8      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#9      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#10     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#11     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#12     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#13     RenderSliverList.performLayout (package:flutter/src/rendering/sliver_list.dart:209:28)
+#14     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#15     RenderSliverEdgeInsetsPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:133:12)
+#16     RenderSliverPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:368:11)
+#17     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#18     RenderViewportBase.layoutChildSequence (package:flutter/src/rendering/viewport.dart:821:13)
+#19     RenderViewport._attemptLayout (package:flutter/src/rendering/viewport.dart:1831:12)
+#20     RenderViewport.performLayout (package:flutter/src/rendering/viewport.dart:1724:20)
+#21     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#22     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#23     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#24     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#25     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#26     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#27     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#28     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#29     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#30     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#31     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#32     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#33     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#34     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#35     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#36     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#37     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1549:11)
+#38     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#39     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#40     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#41     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#42     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#43     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#44     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1275:26)
+#45     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#46     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#47     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#48     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#49     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#50     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#51     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#52     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#53     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#54     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#55     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:180:12)
+#56     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:1113:7)
+#57     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:246:7)
+#58     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:417:14)
+#59     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:2755:7)
+#60     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1174:18)
+#61     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1187:15)
+#62     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2433:27)
+#63     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+#64     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#65     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#66     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2260:9)
+#69     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#70     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#71     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#74     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#75     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#76     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#77     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:222:5)
+<asynchronous suspension>
+#78     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#79     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 7 frames from class _AssertionError, dart:async, and package:stack_trace)
+
+The following RenderObject was being processed when the exception was fired: RenderConstrainedBox#8d5c3 relayoutBoundary=up6 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  creator: SizedBox ← Row ← RepaintBoundary ← IndexedSemantics ← _SelectionKeepAlive ←
+    NotificationListener<KeepAliveNotification> ← KeepAlive ← AutomaticKeepAlive ← KeyedSubtree ←
+    SliverList ← SliverPadding ← Viewport ← ⋯
+  parentData: offset=Offset(0.0, 0.0); flex=null; fit=null (can use size)
+  constraints: BoxConstraints(unconstrained)
+  size: MISSING
+  additionalConstraints: BoxConstraints(0.0<=w<=Infinity, h=56.0)
+This RenderObject had the following descendants (showing up to depth 5):
+    child: RenderSemanticsAnnotations#2a3d4 relayoutBoundary=up7 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      child: _RenderInputPadding#7607a relayoutBoundary=up8 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+        child: RenderConstrainedBox#4f0d7 relayoutBoundary=up9 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+          child: RenderPhysicalShape#76de6 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+            child: RenderCustomPaint#3127c NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during performLayout():
+RenderBox was not laid out: RenderConstrainedBox#8d5c3 relayoutBoundary=up6 NEEDS-PAINT
+NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 2251 pos 12: 'hasSize'
+
+Either the assertion indicates an error in the framework itself, or we should provide substantially
+more information in this error message to help you determine and fix the underlying cause.
+In either case, please report this assertion by filing a bug on GitHub:
+  https://github.com/flutter/flutter/issues/new?template=02_bug.yml
+
+The relevant error-causing widget was:
+  Row
+  Row:file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart:49:17
+
+When the exception was thrown, this was the stack:
+#2      RenderBox.size (package:flutter/src/rendering/box.dart:2251:12)
+#3      ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:63:18)
+#4      RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1237:28)
+#5      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#6      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#7      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#8      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#9      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#10     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#11     RenderSliverList.performLayout (package:flutter/src/rendering/sliver_list.dart:209:28)
+#12     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#13     RenderSliverEdgeInsetsPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:133:12)
+#14     RenderSliverPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:368:11)
+#15     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#16     RenderViewportBase.layoutChildSequence (package:flutter/src/rendering/viewport.dart:821:13)
+#17     RenderViewport._attemptLayout (package:flutter/src/rendering/viewport.dart:1831:12)
+#18     RenderViewport.performLayout (package:flutter/src/rendering/viewport.dart:1724:20)
+#19     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#20     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#21     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#22     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#23     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#24     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#25     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#26     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#27     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#28     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#29     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#30     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#31     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#32     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#33     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#34     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#35     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1549:11)
+#36     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#37     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#38     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#39     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#40     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#41     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#42     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1275:26)
+#43     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#44     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#45     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#46     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#47     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#48     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#49     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#50     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#51     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#52     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#53     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:180:12)
+#54     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:1113:7)
+#55     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:246:7)
+#56     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:417:14)
+#57     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:2755:7)
+#58     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1174:18)
+#59     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1187:15)
+#60     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2433:27)
+#61     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+#62     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#63     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#64     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2260:9)
+#67     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#68     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#69     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#72     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#73     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#74     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#75     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:222:5)
+<asynchronous suspension>
+#76     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#77     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 7 frames from class _AssertionError, dart:async, and package:stack_trace)
+
+The following RenderObject was being processed when the exception was fired: RenderFlex#16d4d relayoutBoundary=up5 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  creator: Row ← RepaintBoundary ← IndexedSemantics ← _SelectionKeepAlive ←
+    NotificationListener<KeepAliveNotification> ← KeepAlive ← AutomaticKeepAlive ← KeyedSubtree ←
+    SliverList ← SliverPadding ← Viewport ← IgnorePointer-[GlobalKey#38aee] ← ⋯
+  parentData: <none> (can use size)
+  constraints: BoxConstraints(w=342.0, 0.0<=h<=Infinity)
+  size: MISSING
+  direction: horizontal
+  mainAxisAlignment: start
+  mainAxisSize: max
+  crossAxisAlignment: center
+  textDirection: ltr
+  verticalDirection: down
+  spacing: 0.0
+This RenderObject had the following descendants (showing up to depth 5):
+    child 1: RenderParagraph#54eba NEEDS-LAYOUT NEEDS-PAINT
+      text: TextSpan
+    child 2: RenderConstrainedBox#8d5c3 relayoutBoundary=up6 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      child: RenderSemanticsAnnotations#2a3d4 relayoutBoundary=up7 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+        child: _RenderInputPadding#7607a relayoutBoundary=up8 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+          child: RenderConstrainedBox#4f0d7 relayoutBoundary=up9 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+            child: RenderPhysicalShape#76de6 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during performLayout():
+RenderBox was not laid out: RenderFlex#16d4d relayoutBoundary=up5 NEEDS-PAINT
+NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 2251 pos 12: 'hasSize'
+
+Either the assertion indicates an error in the framework itself, or we should provide substantially
+more information in this error message to help you determine and fix the underlying cause.
+In either case, please report this assertion by filing a bug on GitHub:
+  https://github.com/flutter/flutter/issues/new?template=02_bug.yml
+
+The relevant error-causing widget was:
+  ListView
+  ListView:file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart:41:20
+
+When the exception was thrown, this was the stack:
+#2      RenderBox.size (package:flutter/src/rendering/box.dart:2251:12)
+#3      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:62)
+#4      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#5      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#6      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#7      RenderSliverList.performLayout (package:flutter/src/rendering/sliver_list.dart:209:28)
+#8      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#9      RenderSliverEdgeInsetsPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:133:12)
+#10     RenderSliverPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:368:11)
+#11     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#12     RenderViewportBase.layoutChildSequence (package:flutter/src/rendering/viewport.dart:821:13)
+#13     RenderViewport._attemptLayout (package:flutter/src/rendering/viewport.dart:1831:12)
+#14     RenderViewport.performLayout (package:flutter/src/rendering/viewport.dart:1724:20)
+#15     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#16     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#17     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#18     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#19     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#20     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#21     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#22     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#23     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#24     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#25     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#26     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#27     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#28     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#29     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#30     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#31     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1549:11)
+#32     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#33     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#34     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#35     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#36     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#37     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#38     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1275:26)
+#39     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#40     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#41     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#42     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#43     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#44     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#45     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#46     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#47     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#48     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#49     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:180:12)
+#50     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:1113:7)
+#51     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:246:7)
+#52     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:417:14)
+#53     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:2755:7)
+#54     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1174:18)
+#55     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1187:15)
+#56     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2433:27)
+#57     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+#58     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#59     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#60     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2260:9)
+#63     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#64     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#65     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#68     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#69     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#70     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#71     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:222:5)
+<asynchronous suspension>
+#72     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#73     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 7 frames from class _AssertionError, dart:async, and package:stack_trace)
+
+The following RenderObject was being processed when the exception was fired: RenderRepaintBoundary#e0c02 relayoutBoundary=up4 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  needs compositing
+  creator: RepaintBoundary ← IndexedSemantics ← _SelectionKeepAlive ←
+    NotificationListener<KeepAliveNotification> ← KeepAlive ← AutomaticKeepAlive ← KeyedSubtree ←
+    SliverList ← SliverPadding ← Viewport ← IgnorePointer-[GlobalKey#38aee] ← Semantics ← ⋯
+  parentData: <none> (can use size)
+  constraints: BoxConstraints(w=342.0, 0.0<=h<=Infinity)
+  size: MISSING
+  usefulness ratio: no metrics collected yet (never painted)
+This RenderObject had the following descendants (showing up to depth 5):
+    child: RenderFlex#16d4d relayoutBoundary=up5 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      child 1: RenderParagraph#54eba NEEDS-LAYOUT NEEDS-PAINT
+        text: TextSpan
+      child 2: RenderConstrainedBox#8d5c3 relayoutBoundary=up6 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+        child: RenderSemanticsAnnotations#2a3d4 relayoutBoundary=up7 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+          child: _RenderInputPadding#7607a relayoutBoundary=up8 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+            child: RenderConstrainedBox#4f0d7 relayoutBoundary=up9 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during performLayout():
+RenderBox was not laid out: RenderRepaintBoundary#e0c02 relayoutBoundary=up4 NEEDS-PAINT
+NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 2251 pos 12: 'hasSize'
+
+Either the assertion indicates an error in the framework itself, or we should provide substantially
+more information in this error message to help you determine and fix the underlying cause.
+In either case, please report this assertion by filing a bug on GitHub:
+  https://github.com/flutter/flutter/issues/new?template=02_bug.yml
+
+The relevant error-causing widget was:
+  ListView
+  ListView:file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart:41:20
+
+When the exception was thrown, this was the stack:
+#2      RenderBox.size (package:flutter/src/rendering/box.dart:2251:12)
+#3      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:62)
+#4      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#5      RenderSliverList.performLayout (package:flutter/src/rendering/sliver_list.dart:209:28)
+#6      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#7      RenderSliverEdgeInsetsPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:133:12)
+#8      RenderSliverPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:368:11)
+#9      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#10     RenderViewportBase.layoutChildSequence (package:flutter/src/rendering/viewport.dart:821:13)
+#11     RenderViewport._attemptLayout (package:flutter/src/rendering/viewport.dart:1831:12)
+#12     RenderViewport.performLayout (package:flutter/src/rendering/viewport.dart:1724:20)
+#13     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#14     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#15     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#16     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#17     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#18     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#19     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#20     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#21     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#22     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#23     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#24     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#25     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#26     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#27     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#28     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#29     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1549:11)
+#30     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#31     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#32     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#33     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#34     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#35     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#36     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1275:26)
+#37     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#38     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#39     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#40     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#41     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#42     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#43     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#44     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#45     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#46     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#47     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:180:12)
+#48     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:1113:7)
+#49     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:246:7)
+#50     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:417:14)
+#51     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:2755:7)
+#52     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1174:18)
+#53     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1187:15)
+#54     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2433:27)
+#55     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+#56     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#57     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#58     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2260:9)
+#61     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#62     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#63     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#66     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#67     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#68     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#69     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:222:5)
+<asynchronous suspension>
+#70     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#71     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 7 frames from class _AssertionError, dart:async, and package:stack_trace)
+
+The following RenderObject was being processed when the exception was fired: RenderIndexedSemantics#a9219 relayoutBoundary=up3 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  creator: IndexedSemantics ← _SelectionKeepAlive ← NotificationListener<KeepAliveNotification> ←
+    KeepAlive ← AutomaticKeepAlive ← KeyedSubtree ← SliverList ← SliverPadding ← Viewport ←
+    IgnorePointer-[GlobalKey#38aee] ← Semantics ← Listener ← ⋯
+  parentData: index=0; layoutOffset=0.0 (can use size)
+  constraints: BoxConstraints(w=342.0, 0.0<=h<=Infinity)
+  size: MISSING
+  index: 0
+This RenderObject had the following descendants (showing up to depth 5):
+    child: RenderRepaintBoundary#e0c02 relayoutBoundary=up4 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      child: RenderFlex#16d4d relayoutBoundary=up5 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+        child 1: RenderParagraph#54eba NEEDS-LAYOUT NEEDS-PAINT
+          text: TextSpan
+        child 2: RenderConstrainedBox#8d5c3 relayoutBoundary=up6 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+          child: RenderSemanticsAnnotations#2a3d4 relayoutBoundary=up7 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+            child: _RenderInputPadding#7607a relayoutBoundary=up8 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during performLayout():
+'package:flutter/src/rendering/sliver_multi_box_adaptor.dart': Failed assertion: line 629 pos 12:
+'child.hasSize': is not true.
+
+Either the assertion indicates an error in the framework itself, or we should provide substantially
+more information in this error message to help you determine and fix the underlying cause.
+In either case, please report this assertion by filing a bug on GitHub:
+  https://github.com/flutter/flutter/issues/new?template=02_bug.yml
+
+The relevant error-causing widget was:
+  ListView
+  ListView:file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart:41:20
+
+When the exception was thrown, this was the stack:
+#2      RenderSliverMultiBoxAdaptor.paintExtentOf (package:flutter/src/rendering/sliver_multi_box_adaptor.dart:629:12)
+#3      RenderSliverList.performLayout (package:flutter/src/rendering/sliver_list.dart:222:58)
+#4      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#5      RenderSliverEdgeInsetsPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:133:12)
+#6      RenderSliverPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:368:11)
+#7      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#8      RenderViewportBase.layoutChildSequence (package:flutter/src/rendering/viewport.dart:821:13)
+#9      RenderViewport._attemptLayout (package:flutter/src/rendering/viewport.dart:1831:12)
+#10     RenderViewport.performLayout (package:flutter/src/rendering/viewport.dart:1724:20)
+#11     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#12     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#13     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#14     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#15     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#16     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#17     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#18     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#19     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#20     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#21     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#22     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#23     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#24     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#25     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#26     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#27     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1549:11)
+#28     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#29     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#30     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#31     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#32     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#33     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#34     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1275:26)
+#35     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#36     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#37     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#38     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#39     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#40     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#41     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#42     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#43     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#44     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#45     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:180:12)
+#46     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:1113:7)
+#47     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:246:7)
+#48     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:417:14)
+#49     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:2755:7)
+#50     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1174:18)
+#51     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1187:15)
+#52     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2433:27)
+#53     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+#54     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#55     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#56     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2260:9)
+#59     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#60     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#61     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#64     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#65     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#66     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#67     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:222:5)
+<asynchronous suspension>
+#68     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#69     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 7 frames from class _AssertionError, dart:async, and package:stack_trace)
+
+The following RenderObject was being processed when the exception was fired: RenderSliverList#c6b95 relayoutBoundary=up2 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  creator: SliverList ← SliverPadding ← Viewport ← IgnorePointer-[GlobalKey#38aee] ← Semantics ←
+    Listener ← _GestureSemantics ←
+    RawGestureDetector-[LabeledGlobalKey<RawGestureDetectorState>#df3c8] ← Listener ← _ScrollableScope
+    ← _ScrollSemantics-[GlobalKey#602e5] ← NotificationListener<ScrollMetricsNotification> ← ⋯
+  parentData: paintOffset=Offset(0.0, 0.0) (can use size)
+  constraints: SliverConstraints(AxisDirection.down, GrowthDirection.forward, ScrollDirection.idle,
+    scrollOffset: 0.0, precedingScrollExtent: 24.0, remainingPaintExtent: 848.0, crossAxisExtent:
+    342.0, crossAxisDirection: AxisDirection.right, viewportMainAxisExtent: 872.0,
+    remainingCacheExtent: 1098.0, cacheOrigin: 0.0)
+  geometry: null
+  currently live children: 0 to 0
+This RenderObject had the following descendants (showing up to depth 5):
+    child with index 0: RenderIndexedSemantics#a9219 relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      child: RenderRepaintBoundary#e0c02 relayoutBoundary=up4 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+        child: RenderFlex#16d4d relayoutBoundary=up5 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+          child 1: RenderParagraph#54eba NEEDS-LAYOUT NEEDS-PAINT
+            text: TextSpan
+          child 2: RenderConstrainedBox#8d5c3 relayoutBoundary=up6 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+            child: RenderSemanticsAnnotations#2a3d4 relayoutBoundary=up7 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following _TypeError was thrown during performLayout():
+Null check operator used on a null value
+
+The relevant error-causing widget was:
+  ListView
+  ListView:file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart:41:20
+
+When the exception was thrown, this was the stack:
+#0      RenderSliverEdgeInsetsPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:147:63)
+#1      RenderSliverPadding.performLayout (package:flutter/src/rendering/sliver_padding.dart:368:11)
+#2      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#3      RenderViewportBase.layoutChildSequence (package:flutter/src/rendering/viewport.dart:821:13)
+#4      RenderViewport._attemptLayout (package:flutter/src/rendering/viewport.dart:1831:12)
+#5      RenderViewport.performLayout (package:flutter/src/rendering/viewport.dart:1724:20)
+#6      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#7      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#8      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#9      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#10     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#11     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#12     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#13     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#14     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#15     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#16     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#17     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#18     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#19     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#20     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#21     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#22     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1549:11)
+#23     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#24     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#25     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#26     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#27     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#28     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#29     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1275:26)
+#30     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#31     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#32     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#33     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#34     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#35     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#36     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#37     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#38     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#39     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#40     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:180:12)
+#41     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:1113:7)
+#42     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:246:7)
+#43     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:417:14)
+#44     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:2755:7)
+#45     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1174:18)
+#46     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1187:15)
+#47     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2433:27)
+#48     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+#49     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#50     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#51     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2260:9)
+#54     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#55     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#56     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#59     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#60     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#61     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#62     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:222:5)
+<asynchronous suspension>
+#63     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#64     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 5 frames from dart:async and package:stack_trace)
+
+The following RenderObject was being processed when the exception was fired: RenderSliverPadding#399ae relayoutBoundary=up1 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  creator: SliverPadding ← Viewport ← IgnorePointer-[GlobalKey#38aee] ← Semantics ← Listener ←
+    _GestureSemantics ← RawGestureDetector-[LabeledGlobalKey<RawGestureDetectorState>#df3c8] ←
+    Listener ← _ScrollableScope ← _ScrollSemantics-[GlobalKey#602e5] ←
+    NotificationListener<ScrollMetricsNotification> ← Transform ← ⋯
+  parentData: paintOffset=Offset(0.0, 0.0) (can use size)
+  constraints: SliverConstraints(AxisDirection.down, GrowthDirection.forward, ScrollDirection.idle,
+    scrollOffset: 0.0, precedingScrollExtent: 0.0, remainingPaintExtent: 872.0, crossAxisExtent:
+    390.0, crossAxisDirection: AxisDirection.right, viewportMainAxisExtent: 872.0,
+    remainingCacheExtent: 1122.0, cacheOrigin: 0.0)
+  geometry: null
+  padding: EdgeInsets(24.0, 24.0, 24.0, 28.0)
+  textDirection: ltr
+This RenderObject had the following descendants (showing up to depth 5):
+    child: RenderSliverList#c6b95 relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      child with index 0: RenderIndexedSemantics#a9219 relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+        child: RenderRepaintBoundary#e0c02 relayoutBoundary=up4 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+          child: RenderFlex#16d4d relayoutBoundary=up5 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+            child 1: RenderParagraph#54eba NEEDS-LAYOUT NEEDS-PAINT
+            child 2: RenderConstrainedBox#8d5c3 relayoutBoundary=up6 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following _TypeError was thrown during performLayout():
+Null check operator used on a null value
+
+The relevant error-causing widget was:
+  ListView
+  ListView:file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart:41:20
+
+When the exception was thrown, this was the stack:
+#0      RenderViewportBase.layoutChildSequence (package:flutter/src/rendering/viewport.dart:842:64)
+#1      RenderViewport._attemptLayout (package:flutter/src/rendering/viewport.dart:1831:12)
+#2      RenderViewport.performLayout (package:flutter/src/rendering/viewport.dart:1724:20)
+#3      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#4      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#5      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#6      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#7      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#8      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#9      RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#10     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#11     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#12     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#13     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#14     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#15     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#16     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#17     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#18     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#19     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1549:11)
+#20     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#21     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#22     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#23     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#24     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#25     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#26     RenderFlex._computeSizes (package:flutter/src/rendering/flex.dart:1275:26)
+#27     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:1329:32)
+#28     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#29     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#30     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#31     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:118:18)
+#32     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#33     ChildLayoutHelper.layoutChild (package:flutter/src/rendering/layout_helper.dart:62:11)
+#34     RenderStack._computeSize (package:flutter/src/rendering/stack.dart:647:43)
+#35     RenderStack.performLayout (package:flutter/src/rendering/stack.dart:682:12)
+#36     RenderObject.layout (package:flutter/src/rendering/object.dart:2907:7)
+#37     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:180:12)
+#38     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:1113:7)
+#39     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:246:7)
+#40     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:417:14)
+#41     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:2755:7)
+#42     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1174:18)
+#43     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:1187:15)
+#44     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:2433:27)
+#45     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+#46     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+#47     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+#48     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:2260:9)
+#51     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#52     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:2249:27)
+#53     WidgetTester.pump.<anonymous closure> (package:flutter_test/src/widget_tester.dart:652:53)
+#56     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#57     WidgetTester.pump (package:flutter_test/src/widget_tester.dart:652:27)
+#58     waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:109:18)
+<asynchronous suspension>
+#59     main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:222:5)
+<asynchronous suspension>
+#60     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#61     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 5 frames from dart:async and package:stack_trace)
+
+The following RenderObject was being processed when the exception was fired: RenderViewport#2c786 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  needs compositing
+  creator: Viewport ← IgnorePointer-[GlobalKey#38aee] ← Semantics ← Listener ← _GestureSemantics ←
+    RawGestureDetector-[LabeledGlobalKey<RawGestureDetectorState>#df3c8] ← Listener ← _ScrollableScope
+    ← _ScrollSemantics-[GlobalKey#602e5] ← NotificationListener<ScrollMetricsNotification> ← Transform
+    ← StretchEffect ← ⋯
+  parentData: <none> (can use size)
+  constraints: BoxConstraints(0.0<=w<=390.0, 0.0<=h<=872.0)
+  size: Size(390.0, 872.0)
+  axisDirection: down
+  crossAxisDirection: right
+  offset: ScrollPositionWithSingleContext#c6d41(offset: 0.0, range: null..null, viewport: 872.0,
+    ScrollableState, AlwaysScrollableScrollPhysics -> ClampingScrollPhysics ->
+    RangeMaintainingScrollPhysics, IdleScrollActivity#a7297, ScrollDirection.idle)
+  anchor: 0.0
+This RenderObject had the following descendants (showing up to depth 5):
+    center child: RenderSliverPadding#399ae relayoutBoundary=up1 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      child: RenderSliverList#c6b95 relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+        child with index 0: RenderIndexedSemantics#a9219 relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+          child: RenderRepaintBoundary#e0c02 relayoutBoundary=up4 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+            child: RenderFlex#16d4d relayoutBoundary=up5 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+Warning: A call to tap() with finder "Found 1 widget with text containing Confirmar (ignoring all but first): [
+  Text("Confirmar evento", inherit: true, color: Color(alpha: 1.0000, red: 1.0000, green: 1.0000, blue: 1.0000, colorSpace: ColorSpace.sRGB), family: sans-serif, size: 18.0, weight: 600, height: 1.4x, overflow: ellipsis, dependencies: [DefaultSelectionStyle, DefaultTextStyle, MediaQuery, _ScrollableScope]),
+]" derived an Offset (Offset(208.5, 1103.0)) that would not hit test on the specified widget.
+Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+Indeed, Offset(208.5, 1103.0) is outside the bounds of the root of the render tree, Size(390.0, 1000.0).
+The finder corresponds to this RenderBox: RenderParagraph#e405c relayoutBoundary=up2
+The hit test result at that offset is: HitTestResult(HitTestEntry<HitTestTarget>#7baff(_ReusableRenderView#51bb0), HitTestEntry<HitTestTarget>#b34d3(<AutomatedTestWidgetsFlutterBinding>))
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+#3      main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:229:18)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+#6      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+To silence this warning, pass "warnIfMissed: false" to "tap()".
+To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+The UI did not reach the expected state within 6 seconds.
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      waitFor (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:112:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart:230:5)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1952:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  SYS-08 Given a linked caregiver, When logging in and tapping Confirmar, Then the UI and API update
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following message was thrown:
+Multiple exceptions (11) were detected during the running of the current test, and at least one was
+unexpected.
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:32 +2 -6: SYS-08 Given a linked caregiver, When logging in and tapping Confirmar, Then the UI and API update [E]
+  Test failed. See exception logs above.
+  The test description was: SYS-08 Given a linked caregiver, When logging in and tapping Confirmar, Then the UI and API update
+  
+00:32 +2 -6: Some tests failed.
+
+Failing tests:
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart: SYS-03 Given a new caregiver, When loading home, Then an empty dashboard is shown
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart: SYS-04 Given cached patient data, When consent is revoked, Then home removes the patient
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart: SYS-05 Given agenda-only consent, When diary is opened, Then its content is not downloaded
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/system_test/care_flow_test.dart: SYS-06 Given a revoked consent, When requesting agenda directly, Then the API denies access
+  ... and 2 more

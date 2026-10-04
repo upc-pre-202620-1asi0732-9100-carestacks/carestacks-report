@@ -1,0 +1,7 @@
+00:00 +0: loading C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/caregiver_acceptance_test.dart
+00:00 +0: BDD-01 registration normalizes email and establishes a caregiver session
+00:00 +1: BDD-02 a patient account cannot establish a caregiver session
+00:00 +2: BDD-03 agenda creation without permission sends no request
+00:00 +3: BDD-04 diary creation without permission sends no request
+00:00 +4: BDD-05 incorrect credentials preserve the unauthenticated state
+00:00 +5: All tests passed!
