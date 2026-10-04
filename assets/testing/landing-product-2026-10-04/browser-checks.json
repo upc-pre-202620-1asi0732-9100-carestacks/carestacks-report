@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-04",
+  "timezone": "America/Bogota",
+  "landing": "https://carestacks-landing-page.vercel.app/#about-product-video",
+  "sourceCommit": "ab2d60eb1302f8e1038f08760e63827f3fba5ebf",
+  "videoUrl": "https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQD9H0d9sU4tQJuKV5PStHyuAYjfXdpoDfRe-xCc_R1401s",
+  "checks": {
+    "spanishLinks": "pass",
+    "englishLinks": "pass",
+    "spanishPosterClickOpensCorrectStreamFile": "pass",
+    "streamPlayback": "pass"
+  },
+  "videoFile": "upc-pre-202620-1asi0732-9100-carestacks-about-the-product-sprint-1.mp4",
+  "duration": "02:20",
+  "limits": [
+    "Browser desktop verification; no mobile browser run",
+    "About the Team link remains pending"
+  ]
+}

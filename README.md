@@ -1621,7 +1621,7 @@ La estructura de la landing sigue una jerarquía descendente clásica de convers
 
 El alcance lingüístico de la Landing Page para TB1 es **bilingüe: español (`es`) e inglés (`en`)**. El selector ES/EN usa `i18next` y `react-i18next` para cambiar los textos de la interfaz, las etiquetas accesibles y los metadatos de la página. La elección se conserva al recargar. No se contemplan otros idiomas en esta entrega. El mockup del hero es una imagen del prototipo móvil y conserva el idioma de la captura.
 
-Las secciones **About the Team** y **About the Product** muestran una miniatura y un botón para cargar el video incrustado de YouTube cuando el visitante lo solicite. Cada sección ofrece también un enlace directo, traducido al idioma seleccionado, para abrir el video si el reproductor embebido no está disponible en su navegador. El estado de validación del contenido enlazado se describe en §6.1.4.
+La sección **About the Team** muestra una miniatura y un botón para cargar el video incrustado de YouTube cuando el visitante lo solicite. **About the Product** abre el video de CareConnect en Microsoft Stream mediante el botón principal o el enlace directo. Ambos accesos están traducidos a español e inglés. El estado de validación del contenido enlazado se describe en §6.1.4.
 
 ![Landing Page Wireframe: sección 1](./assets/capitulo4/figma/landing1.png)
 ![Landing Page Wireframe: sección 2](./assets/capitulo4/figma/landing2.png)
@@ -3703,10 +3703,12 @@ Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-
 | ID | Recorrido | Resultado observado | Estado |
 |---|---|---|---|
 | ST-01 | Entrar al Landing Page y usar ES/EN | En producción se observaron navegación, título, descripción y `lang` en inglés; la elección permaneció tras recargar | Aprobado en producción, sesión de escritorio |
-| ST-02 | Revisar secciones About the Team y About the Product | En producción se cargaron ambos `iframe` y se reprodujeron, pero el contenido enlazado menciona proyectos distintos de CareConnect | Pendiente: sustituir los enlaces y repetir la prueba |
+| ST-02 | Revisar secciones About the Team y About the Product | El 04/10/2026 se corrigió About the Product con el video de CareConnect en Microsoft Stream y se verificaron los accesos ES/EN y su reproducción desde la landing publicada. About the Team conserva el enlace de otro proyecto | Parcial: producto corregido; pendiente sustituir y verificar el video del equipo |
 | ST-03 | Recorrido completo paciente/cuidador: registro, evento, confirmación, acceso compartido y revocación | SYS-01–SYS-05, SYS-08 y SYS-09 pasan en ambos clientes contra H2; SYS-06/SYS-07 fallan porque la consulta directa de Agenda responde 200 tras revocar y sin token | Parcial, no aprobado: DEF-API-01 y recorrido pendiente en clientes desplegados |
 
 **Límite de ST-02.** En la prueba local anterior, el navegador integrado mostró el error 153 en el reproductor embebido. En una sesión nueva del mismo navegador, ambos reproductores del sitio publicado cargaron y avanzaron. Sin embargo, al revisar su contenido el 02/10/2026, el video del equipo menciona “Cartax” y el del producto “Batimoff”. La reproducción técnica no valida que sean los videos de CareConnect. Se debe sustituir ambas URL y repetir la prueba antes de aprobar ST-02.
+
+**Corrección de About the Product — 04/10/2026.** El commit `ab2d60e` de la landing reemplaza el video ajeno con el enlace de Microsoft Stream registrado en §5.3. El botón y el enlace secundario abren `upc-pre-202620-1asi0732-9100-carestacks-about-the-product-sprint-1.mp4` (2:20). Se verificaron los textos y destinos en ES/EN, la apertura desde el botón del sitio público y la reproducción del archivo. La corrección está subida a GitHub y desplegada en [la landing publicada](https://carestacks-landing-page.vercel.app/#about-product-video). Las [capturas y resultados](assets/testing/landing-product-2026-10-04/verification.md) registran esta actualización; ST-02 sigue parcial hasta sustituir y validar About the Team.
 
 **Criterio de cierre de ST-03.** Registrar versión/commit de cada componente, URL del entorno, usuario de prueba sin datos reales, pasos, resultado esperado y observado, evidencia visual y defectos hallados al ejecutar el flujo desde la aplicación móvil o web conectada al backend.
 
