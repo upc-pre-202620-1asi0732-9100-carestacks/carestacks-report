@@ -1181,12 +1181,12 @@ A continuación se presenta el resumen de la Sprint Planning Meeting del Sprint 
 | **Time** | 7:00 PM |
 | **Location** | Reunión virtual (Google Meet) |
 | **Prepared By** | Muñiz Huayanca, Percy Alonso |
-| **Attendees (to planning meeting)** | Salcedo Champi, Matias Rodolfo / Nikaido Vargas, Javier Masaru / Muñiz Huayanca, Percy Alonso / Espinoza Cruz, Angela Milagros / Baldeon Vivar, Santiago Armando |
+| **Attendees (to planning meeting)** | Salcedo Champi, Matias Rodolfo / Nikaido Vargas, Javier Masaru / Muñiz Huayanca, Percy Alonso / Espinoza Cruz, Angela Milagros / Baldeon Armas, Santiago Armando |
 | **Sprint 0 Review Summary** | No hay un Sprint 0 formal con productos de software propios: el equipo partió del proyecto CareConnect desarrollado en el ciclo anterior, que se reutilizó como base de datos, arquitectura y diseño para acelerar el arranque del Sprint 1. |
 | **Sprint 0 Retrospective Summary** | Como aprendizaje previo al Sprint 1, el equipo acordó dividir el trabajo por capítulos del informe según fortalezas individuales y mantener reuniones de seguimiento periódicas para validar avances antes de integrar a `develop`. |
 | **Sprint 1 Goal** | Completar la documentación base del informe (Capítulos I al III), la arquitectura y diseño visual del producto (Capítulo IV) y las primeras evidencias de implementación (Landing Page, Software Configuration Management y Mobile Prototyping), reutilizando como punto de partida el proyecto CareConnect del ciclo anterior. Métrica de cumplimiento: los 42 work items del Sprint Backlog quedan en estado Done. |
 | **Sprint 1 Velocity** | 100 horas (20 horas por integrante, acumuladas en varias reuniones de trabajo y avance individual durante el Sprint 1). |
-| **Sum of Estimated Hours** | 204 horas, correspondientes a los 42 work items incluidos en el Sprint Backlog 1. El equipo superó la Velocity planificada mediante horas adicionales de trabajo individual fuera de las reuniones conjuntas. |
+| **Sum of Estimated Hours** | 207 horas, correspondientes a los 43 work items incluidos en el Sprint Backlog 1. El equipo superó la Velocity planificada mediante horas adicionales de trabajo individual fuera de las reuniones conjuntas. |
 
 ##### Aspect Leaders and Collaborators
 
@@ -1198,7 +1198,7 @@ Para el Sprint 1 se identificaron cinco aspectos principales dentro del alcance:
 | Nikaido Vargas, Javier Masaru | MassiFlip | — | — | C | L | C |
 | Muñiz Huayanca, Percy Alonso | alomsoo | — | — | — | — | L |
 | Espinoza Cruz, Angela Milagros | Emy127 | L | C | — | — | — |
-| Baldeon Vivar, Santiago Armando | Santibal11 | — | — | L | C | — |
+| Baldeon Armas, Santiago Armando | Santibal11 | — | — | L | C | — |
 
 ##### Sprint Backlog 1
 
@@ -1215,7 +1215,7 @@ La tabla se organiza por los User Stories definidos en la sección 3.2, descompu
 | USL01 | Conocer la propuesta de valor | T01 | Implementar sección hero y problemática | Maquetar en React + TypeScript el hero con la propuesta de valor y la sección de problemática de la Landing Page. | 4 | Nikaido Vargas, Javier Masaru | Done |
 | USL02 | Explorar beneficios por segmento | T02 | Implementar secciones de funcionalidades y beneficios | Maquetar las secciones de funcionalidades, producto, beneficios y funcionamiento de CareConnect. | 4 | Nikaido Vargas, Javier Masaru | Done |
 | USL04 | Iniciar registro desde la landing | T03 | Implementar planes y llamado a la acción | Maquetar la sección de planes y el botón de llamado a la acción hacia el registro. | 3 | Nikaido Vargas, Javier Masaru | Done |
-| USL05 | Implementar Internationalization (i18n) | T04 | Implementar i18n en la Landing Page | Configurar Internationalization (i18n) en React para soportar los locales `es_419` y `en_US` y permitir que el contenido de la Landing Page se muestre según el locale seleccionado. | 3 | Nikaido Vargas, Javier Masaru | Done |
+| USL05 | Implementar Internationalization (i18n) | T43 | Implementar i18n en la Landing Page | Configurar Internationalization (i18n) en React para soportar los locales `es_419` y `en_US` y permitir que el contenido de la Landing Page se muestre según el locale seleccionado. | 3 | Nikaido Vargas, Javier Masaru | Done |
 | USL06 | Consultar Términos y Condiciones | T04 | Implementar footer con enlaces | Maquetar el footer con datos de contacto y enlaces del sitio. | 2 | Nikaido Vargas, Javier Masaru | Done |
 | US10 | Registrar cuenta | T05 | Implementar endpoint de registro de usuarios | Implementar en el bounded context IAM la persistencia de usuarios y el endpoint de registro con validación de correo duplicado. | 4 | Nikaido Vargas, Javier Masaru | Done |
 | US10 | Registrar cuenta | T06 | Implementar pantalla de registro en Flutter | Implementar la pantalla de creación de cuenta de la app del cuidador (web e iOS) consumiendo el endpoint de registro. | 3 | Muñiz Huayanca, Percy Alonso | Done |
@@ -1256,7 +1256,9 @@ La tabla se organiza por los User Stories definidos en la sección 3.2, descompu
 | — | — | T41 | Documentar Software Configuration Management | Documentar entorno de desarrollo, gestión de código fuente, convenciones y configuración de despliegue (5.1). | 5 | Nikaido Vargas, Javier Masaru | Done |
 | — | — | T42 | Documentar prototipado móvil y web | Documentar capturas y videos de los prototipos (4.5 y 4.7) y el diseño de la aplicación web (4.6). | 8 | Muñiz Huayanca, Percy Alonso | Done |
 
-**Total comprometido:** 204 horas.
+**Total comprometido:** 207 horas.
+
+**Estado del Sprint 1:** los 43 work items comprometidos se encuentran en estado Done. Con ellos se implementaron 19 de las 25 User Stories de la sección 3.2: USL01, USL02, USL04, USL05, USL06, US01 a US08, US10, US11, US12, US14, US15 y USW01. Las User Stories USL03, US09, US13, US16, USW02 y USW03, así como las Technical Stories y los spikes, no se comprometieron como work items propios en este sprint y permanecen en el Product Backlog (sección 3.3).
 
 **Sprint Goal:** Completar la documentación base del informe (Capítulos I al III), la arquitectura y diseño visual del producto (Capítulo IV) y las primeras evidencias de implementación (Landing Page, Software Configuration Management y Mobile Prototyping), reutilizando como punto de partida el proyecto CareConnect del ciclo anterior.
 
