@@ -823,13 +823,11 @@ El pipeline ejecuta `mvn -B test`, que corre 4 clases de prueba con 10 métodos 
 
 ![Log de pruebas exitosas](assets/test-build-success.png)
 
-- **Staging Environment:**
+- **Package / Artifact:**
 
 Contenerización: Docker (build multi-stage con Maven 3.9.11 + Eclipse Temurin JDK 25)
 
-Base de datos de pruebas: H2 en memoria (configurada en `src/test/resources/application.yml`)
-
-El segundo job del pipeline (`docker-build`) construye la imagen Docker de la aplicación utilizando el Dockerfile multi-stage existente en el repositorio, verificando que el artefacto compilado se empaqueta correctamente en un contenedor listo para despliegue.
+El segundo job del pipeline (`docker-build`) construye la imagen Docker de la aplicación utilizando el Dockerfile multi-stage existente en el repositorio. Este job genera el artefacto desplegable (imagen Docker) y valida que el empaquetado se complete sin errores. La imagen no se publica en un registry externo; Render construye su propia imagen a partir del Dockerfile al momento del despliegue.
 
 ![Docker build exitoso](assets/docker-build-success.png)
 
@@ -872,7 +870,9 @@ La rama `main` contiene la versión estable y desplegada del backend en producci
 
 El equipo utiliza parcialmente la convención de Conventional Commits para los mensajes de commit, empleando prefijos como `feat:`, `chore:`, `test():` y `ci:` para categorizar los cambios realizados. El versionado del proyecto se encuentra en `0.0.1-SNAPSHOT` y se planea implementar versionado semántico con tags de Git en futuras iteraciones.
 
-El despliegue a producción se realiza de forma automatizada mediante Render. El servicio web está conectado directamente al repositorio de GitHub y configurado con auto-deploy sobre la rama `main`. Cada vez que se realiza un merge a `main`, Render detecta el cambio, construye la imagen Docker utilizando el Dockerfile multi-stage del repositorio y despliega automáticamente la nueva versión en producción.
+El despliegue a producción se realiza de forma automatizada mediante Render. El servicio web está conectado directamente al repositorio de GitHub y configurado con auto-deploy sobre la rama `main`. Cada vez que se realiza un merge a `main`, Render detecta el cambio, construye la imagen Docker utilizando el Dockerfile multi-stage del repositorio y despliega automáticamente la nueva versión en producción. La configuración de Auto-Deploy está habilitada en el panel de Render, como se evidencia a continuación.
+
+![Render Auto-Deploy Settings](assets/render-auto-deploy-settings.png)
 
 ### 7.3.2. Production Deployment Pipeline Components.
 
