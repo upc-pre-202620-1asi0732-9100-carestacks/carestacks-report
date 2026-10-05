@@ -97,6 +97,8 @@ Octubre, 2026
 
 Enlace de la organización para el reporte del proyecto: https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report
 
+La [verificación de integración TB1](assets/integration/tb1/verification.md) registra las ramas de los capítulos I–VII, la resolución de conflictos y las comprobaciones del informe consolidado.
+
 AV1:
 <img src="assets/insights_report_commits.png">
 <img src="assets/insights_report_branchs.png">
@@ -2447,7 +2449,7 @@ El siguiente diagrama presenta una vista general del modelo de persistencia de C
 
 ![CareConnect Integrated Database Diagram](assets/DBDiagram.png)
 
-*Figura X. Diagrama integrado de base de datos de CareConnect.*
+*Figura 11. Diagrama integrado de base de datos de CareConnect.*
 
 En esta representación se puede observar que `users` constituye la principal referencia de identidad del sistema. Desde esta tabla se relacionan registros pertenecientes a Agenda, Notifications, Diary, Consent Management y Documents.
 
@@ -2465,7 +2467,7 @@ El atributo `email` posee una restricción `UNIQUE`, evitando el registro de mú
 
 ![Identity Database Diagram](assets/IdentityDB.png)
 
-*Figura X. Diagrama de base de datos del Bounded Context Identity & Access Management.*
+*Figura 12. Diagrama de base de datos del Bounded Context Identity & Access Management.*
 
 ---
 
@@ -2479,7 +2481,7 @@ Cada evento puede poseer múltiples registros en `reminders`, los cuales permite
 
 ![Agenda Database Diagram](assets/AgendaDB.png)
 
-*Figura X. Diagrama de base de datos del Bounded Context Agenda.*
+*Figura 13. Diagrama de base de datos del Bounded Context Agenda.*
 
 La tabla `users` representada dentro de esta vista mediante `<<external reference>>` no corresponde a una duplicación de la tabla. Su presencia permite mostrar de manera local la dependencia del Bounded Context Agenda con la identidad gestionada por IAM.
 
@@ -2497,7 +2499,7 @@ Por otro lado, `notification_preferences` mantiene la configuración personal de
 
 ![Notifications Database Diagram](assets/NotificationsDB.png)
 
-*Figura X. Diagrama de base de datos del Bounded Context Notifications.*
+*Figura 14. Diagrama de base de datos del Bounded Context Notifications.*
 
 En esta vista, `users` y `health_events` se muestran como `<<external reference>>` para representar las dependencias con los Bounded Contexts IAM y Agenda sin duplicar físicamente dichas tablas.
 
@@ -2513,7 +2515,7 @@ La tabla `diary_entries` almacena el contenido de cada entrada junto con su fech
 
 ![Diary Database Diagram](assets/DairyDB.png)
 
-*Figura X. Diagrama de base de datos del Bounded Context Diary.*
+*Figura 15. Diagrama de base de datos del Bounded Context Diary.*
 
 La representación de `users` como `<<external reference>>` indica que la identidad pertenece al Bounded Context IAM y únicamente es referenciada desde Diary.
 
@@ -2529,7 +2531,7 @@ La tabla `profile_share_consent_views` contiene las vistas o áreas de informaci
 
 ![Consent Management Database Diagram](assets/ConsentDB.png)
 
-*Figura X. Diagrama de base de datos del Bounded Context Consent Management.*
+*Figura 16. Diagrama de base de datos del Bounded Context Consent Management.*
 
 Al igual que en otros contextos, `users` se presenta únicamente como referencia externa para mostrar la relación del consentimiento con las identidades administradas por IAM.
 
@@ -2545,7 +2547,7 @@ La tabla `medical_documents` representa el conjunto de documentos pertenecientes
 
 ![Documents Database Diagram](assets/DocumentsDB.png)
 
-*Figura X. Diagrama de base de datos del Bounded Context Documents.*
+*Figura 17. Diagrama de base de datos del Bounded Context Documents.*
 
 Los archivos físicos no se almacenan directamente como contenido binario dentro de PostgreSQL. La tabla `document_items` mantiene campos como `file_url`, `storage_bucket` y `storage_path`, que permiten conservar la referencia correspondiente al archivo almacenado en **Supabase Storage**.
 
@@ -3538,7 +3540,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ![CareConnect Landing Page Deployment](assets/careconnect-landing-deployment.png)
 
-*Figura 12. Landing Page publicada en [Vercel](https://carestacks-landing-page.vercel.app/) el 30/09/2026; captura de la versión con selector ES/EN.*
+*Figura 18. Landing Page publicada en [Vercel](https://carestacks-landing-page.vercel.app/) el 30/09/2026; captura de la versión con selector ES/EN.*
 
 ---
 
@@ -3546,7 +3548,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ![CareConnect Landing Page Home](assets/careconnect-landing-home.png)
 
-*Figura 13. Home y presentación de la problemática de CareConnect.*
+*Figura 19. Home y presentación de la problemática de CareConnect.*
 
 ---
 
@@ -3564,7 +3566,7 @@ La landing de CareConnect permite cambiar la interfaz entre español (`es`) e in
 
 ![CareConnect Landing Page Features](assets/careconnect-landing-features.png)
 
-*Figura 14. Funcionalidades principales presentadas en la Landing Page.*
+*Figura 20. Funcionalidades principales presentadas en la Landing Page.*
 
 ---
 
@@ -3572,7 +3574,7 @@ La landing de CareConnect permite cambiar la interfaz entre español (`es`) e in
 
 ![CareConnect Landing Page Product](assets/careconnect-landing-product.png)
 
-*Figura 15. Presentación del producto, beneficios y funcionamiento de CareConnect.*
+*Figura 21. Presentación del producto, beneficios y funcionamiento de CareConnect.*
 
 ---
 
@@ -3580,7 +3582,7 @@ La landing de CareConnect permite cambiar la interfaz entre español (`es`) e in
 
 ![CareConnect Landing Page Footer](assets/careconnect-landing-footer.png)
 
-*Figura 16. Planes, llamada a la acción y footer de la Landing Page.*
+*Figura 22. Planes, llamada a la acción y footer de la Landing Page.*
 #### 5.2.3. Implemented Frontend-Web Application Evidence
 
 **Cambios de implementación:**
@@ -3658,27 +3660,27 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 
 ![Endpoints — Gestión de Consentimiento y Documents](assets/swagger_1.png)
 
-*Figura 17. Endpoints del módulo Gestión de Consentimiento (`/api/consents`) y Documents (`/api/documents`): compartir perfil, actualizar vistas visibles, validar acceso, y gestión de documentos médicos.*
+*Figura 23. Endpoints del módulo Gestión de Consentimiento (`/api/consents`) y Documents (`/api/documents`): compartir perfil, actualizar vistas visibles, validar acceso, y gestión de documentos médicos.*
 
 ![Endpoints — Diary y Notifications](assets/swagger_2.png)
 
-*Figura 18. Endpoints del módulo Diary (`/api/diary`) y Notifications (`/api/notifications`): entradas de diario, recordatorios, alertas y preferencias de notificación.*
+*Figura 24. Endpoints del módulo Diary (`/api/diary`) y Notifications (`/api/notifications`): entradas de diario, recordatorios, alertas y preferencias de notificación.*
 
 ![Endpoints — IAM](assets/swagger_3.png)
 
-*Figura 19. Endpoints del módulo IAM (`/api/auth`): registro, login, logout, validación de sesión y consulta de usuario actual.*
+*Figura 25. Endpoints del módulo IAM (`/api/auth`): registro, login, logout, validación de sesión y consulta de usuario actual.*
 
 ![Endpoints — Agenda](assets/swagger_4.png)
 
-*Figura 20. Endpoints del módulo Agenda (`/api/agenda`): creación, consulta, reprogramación, confirmación y cancelación de eventos de salud.*
+*Figura 26. Endpoints del módulo Agenda (`/api/agenda`): creación, consulta, reprogramación, confirmación y cancelación de eventos de salud.*
 
 ![Esquemas de datos (DTOs y Requests) — parte 1](assets/schema1.png)
 
-*Figura 21. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Notifications, Diary, Consents y Agenda.*
+*Figura 27. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Notifications, Diary, Consents y Agenda.*
 
 ![Esquemas de datos (DTOs y Requests) — parte 2](assets/schema2.png)
 
-*Figura 22. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Documents, Diary, Consents, IAM y Agenda.*
+*Figura 28. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Documents, Diary, Consents, IAM y Agenda.*
 
 #### 5.2.7. Team Collaboration Insights
 
@@ -3688,25 +3690,25 @@ Esta sección presenta la evidencia de colaboración del equipo a lo largo de lo
 
 ![Insights de colaboración — Repositorio del Informe](assets/insights_report.png)
 
-*Figura 23. Gráfico de contribuciones del repositorio `carestacks-report`, mostrando los commits de cada integrante del equipo durante la elaboración del informe.*
+*Figura 29. Gráfico de contribuciones del repositorio `carestacks-report`, mostrando los commits de cada integrante del equipo durante la elaboración del informe.*
 
 #### Repositorio del Backend (`carestacks-backend-api`)
 
 ![Insights de colaboración — Backend API](assets/insights_backend.png)
 
-*Figura 24. Gráfico de contribuciones del repositorio `carestacks-backend-api`, correspondiente al trabajo de implementación y configuración del backend RESTful.*
+*Figura 30. Gráfico de contribuciones del repositorio `carestacks-backend-api`, correspondiente al trabajo de implementación y configuración del backend RESTful.*
 
 #### Repositorio de la Aplicación Móvil (`carestacks-mobile-app`)
 
 ![Insights de colaboración — Mobile App](assets/insights_mobile.png)
 
-*Figura 25. Gráfico de contribuciones del repositorio `carestacks-mobile-app`, correspondiente al trabajo sobre la aplicación Flutter del segmento cuidador.*
+*Figura 31. Gráfico de contribuciones del repositorio `carestacks-mobile-app`, correspondiente al trabajo sobre la aplicación Flutter del segmento cuidador.*
 
 #### Repositorio de la Aplicación Web (`carestacks-web`)
 
 ![Insights de colaboración — Web App](assets/insights_web.png)
 
-*Figura 26. Gráfico de contribuciones del repositorio `carestacks-web`, correspondiente a la adaptación de la base Flutter al segmento cuidador para escritorio.*
+*Figura 32. Gráfico de contribuciones del repositorio `carestacks-web`, correspondiente a la adaptación de la base Flutter al segmento cuidador para escritorio.*
 
 #### Interpretación
 
