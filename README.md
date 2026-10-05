@@ -3896,15 +3896,15 @@ Característica: Idioma del Landing Page
   Para leer el contenido en mi idioma preferido
 
   Escenario: Cambiar a inglés y conservar la preferencia
-    Dado que la landing está abierta en español
-    Cuando selecciono "EN" en el encabezado
-    Entonces el título principal y la navegación aparecen en inglés
-    Y el idioma del documento es "en"
-    Y el título y la descripción de la página están en inglés
-    Cuando recargo la página
-    Entonces la landing continúa en inglés
-    Cuando selecciono "ES"
-    Entonces el contenido y el idioma del documento vuelven a español
+    Given que la landing está abierta en español
+    When selecciono "EN" en el encabezado
+    Then el título principal y la navegación aparecen en inglés
+    And el idioma del documento es "en"
+    And el título y la descripción de la página están en inglés
+    When recargo la página
+    Then la landing continúa en inglés
+    When selecciono "ES"
+    Then el contenido y el idioma del documento vuelven a español
 ```
 
 **Resultado USL05: aprobado en entorno local (30/09/2026).** Se observó el título principal `Organize the daily care of your loved ones`, `html[lang="en"]`, los metadatos en inglés y el botón EN seleccionado. Después de recargar, inglés siguió seleccionado; al pulsar ES volvieron el título `Organiza el cuidado diario de tus seres queridos` y `html[lang="es"]`. La ejecución fue manual; aún no hay archivo `.feature` ni runner BDD automatizado en los repositorios revisados.

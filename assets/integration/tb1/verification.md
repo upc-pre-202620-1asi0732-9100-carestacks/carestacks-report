@@ -9,7 +9,7 @@ Las ramas de los capítulos I a VII se integraron en `develop` mediante commits 
 | `chapter-3` | `4d784d4` | Su contenido vigente ya coincidía con el capítulo III consolidado; se conservó sin restaurar la plantilla anterior. |
 | `chapter-4` | `02132b7` | Se incorporaron el diagrama integrado y las seis vistas de base de datos por bounded context. Se conservaron los diseños y la documentación bilingüe de la landing. |
 | `chapter-5` | `9c6d431` | Se incorporaron las capturas ES/EN; se conservaron el stack verificado, los repositorios de la organización, el acuerdo SaaS y el enlace About the Product. |
-| `chapter-6` | `7706bb5` | Se incorporaron las pruebas, evidencias y conclusiones actualizadas, y el enlace de exposición TB1. |
+| `chapter-6` | `8f8d585` | Se incorporaron las pruebas, evidencias y conclusiones actualizadas, el enlace de exposición TB1 y la última corrección de palabras clave Given/When/Then del escenario BDD de la landing. |
 | `chapter-7` | `758ce96` | Se conservó el contenido del equipo ya incorporado y actualizado con la evidencia de CI y los límites de despliegue. |
 
 ## Verificación antes de promover a main
