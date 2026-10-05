@@ -3729,12 +3729,12 @@ Para consultas generales del proyecto: [canal público del equipo en GitHub](htt
 
 ##### 5.2.8.17. Alineación ética y profesional
 
-La redacción del Acuerdo se orientó por el Código de Ética y Práctica Profesional de la Ingeniería de Software de ACM/IEEE-CS (ACM/IEEE-CS, 1999) y por el código de ética del Colegio de Ingenieros del Perú (Colegio de Ingenieros del Perú, s. f.). La siguiente tabla relaciona las cláusulas del Acuerdo con los principios aplicados.
+La redacción del Acuerdo se orientó por el Código de Ética y Práctica Profesional de la Ingeniería de Software de ACM/IEEE-CS (ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices, 1999) y por el código de ética del Colegio de Ingenieros del Perú (Colegio de Ingenieros del Perú, s.f.). La siguiente tabla relaciona las cláusulas del Acuerdo con los principios aplicados.
 
 | Cláusula del Acuerdo | Principio | Cómo se refleja |
 |---|---|---|
 | 5.2.8.3 y 5.2.8.12 (descripción del servicio y limitación de responsabilidad) | Público; Producto | Declara que CareConnect no reemplaza el criterio de un profesional de la salud ni atiende emergencias, y no promete más de lo que el producto hace. |
-| 5.2.8.6 y 5.2.8.9 (derechos y datos personales) | Público | Trata la información de salud como dato sensible conforme a la Ley N.° 29733 (Ley N.° 29733, 2011) y exige un consentimiento que puede revocarse en cualquier momento. |
+| 5.2.8.6 y 5.2.8.9 (derechos y datos personales) | Público | Trata la información de salud como dato sensible conforme a la Ley N.° 29733 (Ley 29733, 2011) y exige un consentimiento que puede revocarse en cualquier momento. |
 | 5.2.8.4, 5.2.8.7 y 5.2.8.8 (cuenta, obligaciones y restricciones) | Juicio | Solicita información veraz y prohíbe el acceso a perfiles sin consentimiento y el uso fraudulento del servicio. |
 | 5.2.8.5 y 5.2.8.14 (planes y cambios al Acuerdo) | Público | Informa precios, renovación y cancelación antes de contratar, y avisa los cambios importantes. |
 | 5.2.8.11 (disponibilidad y soporte) | Producto; Juicio | Reconoce que el servicio puede interrumpirse y que las alertas no deben ser la única forma de controlar medicamentos críticos. |
