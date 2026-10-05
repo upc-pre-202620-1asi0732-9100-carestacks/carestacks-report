@@ -1,0 +1,11 @@
+00:00 +0: loading C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/agenda_authorization_test.dart
+00:00 +0: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/agenda_authorization_test.dart: Agenda reads and mutations carry the issued caregiver session
+00:00 +1: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/agenda_authorization_test.dart: Agenda cache handles HTTP 401 without hiding access denial
+00:00 +2: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/agenda_authorization_test.dart: Agenda cache handles HTTP 403 without hiding access denial
+00:00 +3: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/agenda_authorization_test.dart: Agenda cache handles HTTP 503 without hiding access denial
+00:00 +4: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/caregiver_acceptance_test.dart: BDD-01 registration normalizes email and establishes a caregiver session
+00:00 +5: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/caregiver_acceptance_test.dart: BDD-02 a patient account cannot establish a caregiver session
+00:00 +6: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/caregiver_acceptance_test.dart: BDD-03 agenda creation without permission sends no request
+00:00 +7: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/caregiver_acceptance_test.dart: BDD-04 diary creation without permission sends no request
+00:00 +8: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-mobile-app/test/caregiver_acceptance_test.dart: BDD-05 incorrect credentials preserve the unauthenticated state
+00:00 +9: All tests passed!

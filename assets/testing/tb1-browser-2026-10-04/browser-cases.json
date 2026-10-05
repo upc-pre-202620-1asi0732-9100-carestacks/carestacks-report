@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-04T23:08:14.500Z",
+  "browser": "Codex In-app Browser",
+  "appUrl": "http://127.0.0.1:18181",
+  "apiUrl": "http://127.0.0.1:18080",
+  "backendCommit": "4528a60",
+  "initialWebCommit": "483204d",
+  "finalWebCommit": "37ff8bc",
+  "runner": "Manual browser UI through CUA; real Flutter web build and HTTP",
+  "cases": [
+    {
+      "id": "BR-01",
+      "pass": true,
+      "expected": "Invalid credentials keep the login form and display the correctly decoded error",
+      "observed": "Correo o contraseña incorrectos"
+    },
+    {
+      "id": "BR-02",
+      "pass": true,
+      "expected": "Register through the caregiver form and show authenticated home without a patient",
+      "observed": "Cuidador Navegador TB1; Aún no tienes pacientes activos"
+    },
+    {
+      "id": "BR-03",
+      "pass": true,
+      "expected": "Log in, open Agenda and confirm the fixture event",
+      "observed": "Completado in UI; CONFIRMED read back from API"
+    },
+    {
+      "id": "BR-04",
+      "pass": true,
+      "expected": "Revoke the fixture consent through API and reload the authenticated browser",
+      "observed": "Session persisted; patient removed; Aún no tienes pacientes activos"
+    },
+    {
+      "id": "BR-05",
+      "pass": true,
+      "expected": "Log out and reload",
+      "observed": "Iniciar sesión; no authenticated dashboard"
+    }
+  ],
+  "limits": [
+    "Consent and event prepared through API, not a patient UI",
+    "Local environment only",
+    "No Android/iOS device execution",
+    "Direct backend authorization checks still fail"
+  ]
+}

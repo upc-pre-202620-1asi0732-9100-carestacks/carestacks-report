@@ -1,0 +1,56 @@
+{
+  "date_local": "2026-10-04",
+  "ci": {
+    "backend": {
+      "headSha": "734f8694a13f3ead85fade5b6eed3a2c938516b5",
+      "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/actions/runs/37260376359",
+      "conclusion": "success"
+    },
+    "web": {
+      "headSha": "42d50ac265ebc24ed4b14a5b97144f81ecd702ca",
+      "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/actions/runs/37260341123",
+      "conclusion": "success"
+    },
+    "mobile": {
+      "headSha": "24098938f797175cfe37fb1ff50a74fc129a3ffd",
+      "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/actions/runs/37260341247",
+      "conclusion": "success"
+    },
+    "landing": {
+      "headSha": "746ea487f0ecd4e56e94c43a4a129d42c0110182",
+      "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/actions/runs/37263367766",
+      "conclusion": "success"
+    }
+  },
+  "report_source_chapter7": "758ce96",
+  "official_patient_source": {
+    "repo": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend",
+    "branch": "main",
+    "commit": "922361d1db33251415481ed592227006c453e316"
+  },
+  "validation": {
+    "new_local_links_missing": [],
+    "section_headings_unique": true,
+    "prior_missing_assets": []
+  },
+  "landing_deployment": "dpl_6C3kbVMxMLQcg7D5hNNE3uuCcydX",
+  "footer_verified_es_en": true,
+  "hash_method": "SHA-256; text .json/.log/.md normalized to LF, binary files unchanged",
+  "files_sha256": {
+    "backend-browser.json": "e481ffef01cef7ef7db21659a4022fc4219d56923127d6b355b68456af0348f2",
+    "backend-ci.json": "ab70ca7f3ee83511a026ec660910ab3695897903f0f31eb34ab827781a0ab098",
+    "backend-swagger.jpg": "0198d61de319e3147bd959e1aff055ab3d0db9f4b5da941b33b2ddd1f20b9811",
+    "footer-browser.json": "7bd865f04508f8ea8d3caf8a440031f3e5356cb79264586563095e4331663267",
+    "footer-preview-en.jpg": "7cce4bde88d592393a5161a116ab5cf4f7adecb1074e81e291a3bd63ed18ab5d",
+    "footer-preview-es.jpg": "5702eeae709ec6488b8f86ff5508a5d77eb7b04a5865e0dca95ac3d1b0d34641",
+    "footer-production-en.jpg": "95ca3149e907e7581f20961043d531941214a9f9bd188cbfb8d70602ed610d09",
+    "footer-production-es.jpg": "44f9e59c92fe83bd7830719866b8fbc1060af4fd82df4d9444dc51faacc6dd3a",
+    "landing-build.log": "00ba16ce04b1a32e9ef8dabe69cd4b4087ac6e5b177272bb989e92e6ced4630d",
+    "landing-ci.json": "2cd7c90eb67eddb4777d50d6401adf260caee9e5354d2d52498acee523f1f27c",
+    "landing-deployment.json": "6333514219e2fc815f34acfbfd53b2591de1e772a66eabf1978138f202ef2675",
+    "landing-lint.log": "f71b9861b76772141f029da5f54f519592bc406d451f9bc59f7eb90ee7672aef",
+    "mobile-ci.json": "73d3135b4640e938be1807754856d75790c8cf1f2e7c72dea0ff00a2019bae5e",
+    "verification.md": "4c2ee65c786b1426e3ad9baca87887658bffc9b8cb5b9211586963b35032ee2d",
+    "web-ci.json": "2d3d7f0678b8ad623180da1bc4ed29572462c7debe2c3ae3f608a6d68a08b4f2"
+  }
+}

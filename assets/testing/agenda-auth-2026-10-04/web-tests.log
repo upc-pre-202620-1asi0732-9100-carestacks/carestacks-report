@@ -1,0 +1,38 @@
+00:00 +0: loading C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/agenda_authorization_test.dart
+00:00 +0: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at phone
+00:00 +1: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at phone
+00:00 +2: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at phone
+00:00 +3: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at phone
+00:00 +4: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at phone
+00:00 +5: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at phone
+00:00 +6: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at phone
+00:00 +7: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at phone
+00:00 +8: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at phone
+00:00 +9: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at phone
+00:01 +10: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at tablet
+00:01 +11: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at desktop
+00:01 +12: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: home renders at wide
+00:01 +13: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: agenda renders at phone
+00:02 +14: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: agenda renders at tablet
+00:02 +15: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: agenda renders at desktop
+00:02 +16: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: agenda renders at wide
+00:02 +17: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: documents renders at phone
+00:03 +18: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: documents renders at tablet
+00:03 +19: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: documents renders at desktop
+00:03 +20: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: documents renders at wide
+00:03 +21: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: diary renders at phone
+00:03 +22: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: diary renders at tablet
+00:03 +23: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: diary renders at desktop
+00:04 +24: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: diary renders at wide
+00:04 +25: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: profile renders at phone
+00:04 +26: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: profile renders at tablet
+00:04 +27: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: profile renders at desktop
+00:04 +28: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: profile renders at wide
+00:04 +29: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: sidebar replaces bottom nav above 768px
+00:04 +30: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: tablet collapses the sidebar and drops the rail
+00:05 +31: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: notifications panel renders at phone
+00:05 +32: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: notifications panel renders at tablet
+00:05 +33: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: notifications panel renders at desktop
+00:05 +34: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: notifications panel renders at wide
+00:05 +35: C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart: phone keeps the bottom nav
+00:05 +36: All tests passed!

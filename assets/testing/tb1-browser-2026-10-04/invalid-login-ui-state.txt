@@ -1,0 +1,20 @@
+Browser tab: 2, Title: "CareConnect", URL: "http://127.0.0.1:18181/".
+1 AXWebArea CareConnect, URL: 127.0.0.1:18181/
+	2 container
+		3 container flt-semantic-node-3
+			19 text CareConnect
+			6 text Todo el cuidado de tu paciente, en una sola vista.
+			7 text Agenda de salud con la semana completa a la vista
+			8 text Documentos médicos ordenados y buscables
+			9 text Diario de seguimiento compartido con la familia
+			10 container flt-semantic-node-10
+				11 text Iniciar sesión
+				12 text Entra con tu cuenta de cuidador para ver la agenda, los documentos y el diario del paciente.
+				13 container Description: Correo o contraseña incorrectos, ID: flt-semantic-node-13
+					14 text field (settable) Description: Correo electrónico, Value: <redacted>
+					15 text field (settable) Description: Contraseña, Value: <redacted>
+					16 button Ingresar, ID: flt-semantic-node-16
+				17 button ¿No tienes cuenta? Crear cuenta, ID: flt-semantic-node-17
+			18 text Acceso sujeto a los permisos que cada paciente comparte.
+
+The focused UI element is 15 text field (settable) Description: Contraseña, Value: <redacted>

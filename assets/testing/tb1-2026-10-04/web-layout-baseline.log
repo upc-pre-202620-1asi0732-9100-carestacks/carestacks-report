@@ -1,0 +1,29 @@
+00:00 +0: loading C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/responsive_layout_test.dart
+00:00 +0: home renders at phone
+00:03 +1: home renders at tablet
+00:04 +2: home renders at desktop
+00:04 +3: home renders at wide
+00:05 +4: agenda renders at phone
+00:06 +5: agenda renders at tablet
+00:06 +6: agenda renders at desktop
+00:07 +7: agenda renders at wide
+00:08 +8: documents renders at phone
+00:09 +9: documents renders at tablet
+00:09 +10: documents renders at desktop
+00:09 +11: documents renders at wide
+00:10 +12: diary renders at phone
+00:10 +13: diary renders at tablet
+00:10 +14: diary renders at desktop
+00:11 +15: diary renders at wide
+00:11 +16: profile renders at phone
+00:11 +17: profile renders at tablet
+00:12 +18: profile renders at desktop
+00:12 +19: profile renders at wide
+00:12 +20: sidebar replaces bottom nav above 768px
+00:13 +21: tablet collapses the sidebar and drops the rail
+00:13 +22: notifications panel renders at phone
+00:13 +23: notifications panel renders at tablet
+00:13 +24: notifications panel renders at desktop
+00:13 +25: notifications panel renders at wide
+00:14 +26: phone keeps the bottom nav
+00:14 +27: All tests passed!

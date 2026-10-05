@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-04",
+  "timezone": "America/Bogota",
+  "base_commits": {
+    "backend": "4528a60",
+    "web": "e27da77",
+    "mobile": "0f1286b"
+  },
+  "runs": 65,
+  "passed": 61,
+  "failed": 4,
+  "system_each_client": {
+    "runs": 9,
+    "passed": 7,
+    "failed": [
+      "SYS-06",
+      "SYS-07"
+    ]
+  },
+  "exit_codes": {
+    "web": {
+      "unit": 0,
+      "system": 1,
+      "analyze": 0
+    },
+    "mobile": {
+      "unit": 0,
+      "analyze": 0,
+      "system": 1
+    }
+  },
+  "open_defect": "DEF-API-01",
+  "ST-03": "partial, not approved",
+  "sha256": {
+    "carestacks-web/lib/core/network/care_connect_api_client.dart": "3d537968731c68b8ff7c9861af65cc162b3f917849557d0783449a1ffacc77de",
+    "carestacks-web/lib/features/caregiver/data/caregiver_repository.dart": "c6bf14c621ca9c956728e0f9009d3255888dca07df5d73f41346a13aac61d652",
+    "carestacks-web/test/caregiver_acceptance_test.dart": "d62c426cfc0baca1e6af4c67fa3f45d0660f4850e6a881aef3e1d61c72ec7a63",
+    "carestacks-web/system_test/care_flow_test.dart": "0cd30e3c747901194c243172500843896da86b360f4fe117d623fe9e5d33479a",
+    "carestacks-web/system_test/care_flow.feature": "6997a8c6a002334655c6b79c9cf755ff49b714a08f5770bac0b2c43ac47d74af",
+    "carestacks-web/system_test/README.md": "a04f4ae4fbbe7f3263f81ac7d94fd39e4ddd1ff203f015a5d2ce25abdf04a8d6",
+    "carestacks-mobile-app/lib/core/network/care_connect_api_client.dart": "3d537968731c68b8ff7c9861af65cc162b3f917849557d0783449a1ffacc77de",
+    "carestacks-mobile-app/lib/features/caregiver/data/caregiver_repository.dart": "c6bf14c621ca9c956728e0f9009d3255888dca07df5d73f41346a13aac61d652",
+    "carestacks-mobile-app/test/caregiver_acceptance_test.dart": "3634b065f8a5f9e75e9cbc666e6eb84a93887152a34e8d3275137dd25e4b297d",
+    "carestacks-mobile-app/system_test/care_flow_test.dart": "853fe1622c9c2d39269a8b5ed199244dd9aabdfc26e9c1ab7cfb269afc6405f5",
+    "carestacks-mobile-app/system_test/care_flow.feature": "6997a8c6a002334655c6b79c9cf755ff49b714a08f5770bac0b2c43ac47d74af",
+    "carestacks-mobile-app/system_test/README.md": "90668d1ec03186a888fabff169b5cd5405a50dbedf5e8fb8daf83363b3a9f451",
+    "carestacks-mobile-app/lib/features/caregiver/presentation/caregiver_diary_page.dart": "948e7c631d34dec21fc5e8e99c7559bba05d0f33aadae9fd9e4be00df18452ba",
+    "carestacks-report/assets/testing/tb1-2026-10-04/backend-unit-integration.log": "ce8d5ecc1e3a29c4fcadb7681282945aa8f67816de8e2047c11ea85d307ba1c6",
+    "carestacks-report/assets/testing/tb1-2026-10-04/commands.json": "2818b22c0d5026c016dedf1dcc120fa86478371f6726770c3a68987e23e7515b",
+    "carestacks-report/assets/testing/tb1-2026-10-04/mobile-analyze.log": "175dc07582cd405a9250017bcd88c0a2e1f6b6c9beb71a100e63ee96c51586b1",
+    "carestacks-report/assets/testing/tb1-2026-10-04/mobile-runtime.lock": "f6f71f97ff69ebfa1d4d56cdb7bb9ff62aa4d9fd1e58785e7c8c6f98cd70b30e",
+    "carestacks-report/assets/testing/tb1-2026-10-04/mobile-system-before-fixes.log": "a3ea0cce4eef882650a402fae5fa608b0e820c7012a03196eda57b674696c151",
+    "carestacks-report/assets/testing/tb1-2026-10-04/mobile-system-final.log": "0163a079cf45bc6230c1570309f9ba3ac48706d7fe8660b17fdb6e37bb71903f",
+    "carestacks-report/assets/testing/tb1-2026-10-04/mobile-unit-bdd.log": "16d968d798743f033f52040bd26fa40b18174e65588e5934ea2229e51a396fea",
+    "carestacks-report/assets/testing/tb1-2026-10-04/verification.md": "e16b06045a9dbf4acf76edcfccd56e174c56e133a727d2959f57763c964bfe7a",
+    "carestacks-report/assets/testing/tb1-2026-10-04/web-analyze.log": "baa1adb92b54aab19d52ddc1f36f3e13549398a7e5b85bd9dbc9383081a17f15",
+    "carestacks-report/assets/testing/tb1-2026-10-04/web-layout-baseline.log": "2037a815fde7685ef83e803e4327281c411c8405cf785e5c4a2e3f5a84150016",
+    "carestacks-report/assets/testing/tb1-2026-10-04/web-runtime.lock": "f6f71f97ff69ebfa1d4d56cdb7bb9ff62aa4d9fd1e58785e7c8c6f98cd70b30e",
+    "carestacks-report/assets/testing/tb1-2026-10-04/web-system-before-fixes.log": "dba076479b9442dbd4547fa08f019232e686cd500c831348fa64819a0e9bea17",
+    "carestacks-report/assets/testing/tb1-2026-10-04/web-system-final.log": "86512db39e84f0a703e3d288699c7cc3eae92faa38d9cb5d7c308186d42d837e",
+    "carestacks-report/assets/testing/tb1-2026-10-04/web-unit-bdd.log": "51d5f6a0d357dfb5b9f34d63473c926b944de5514577c145cac21d5a3e19b438",
+    "carestacks-report/assets/testing/tb1-web-2026-10-04/agenda-confirmed.png": "1a69c464d3b9a8bfd151438aadf8fc8736ddf799f90f7b0a82dfe6d3c1f38d53",
+    "carestacks-report/assets/testing/tb1-web-2026-10-04/agenda-pending.png": "45410db1960ef20c2c6403768eae77506c1da5b752b1949154bab6c826732b06",
+    "carestacks-report/assets/testing/tb1-web-2026-10-04/home-no-patient.png": "b0c2c2bb0660d216f630c417c654d58358f91656cfca71e8a221e625f4cf4ba6",
+    "carestacks-report/assets/testing/tb1-web-2026-10-04/login.png": "537921114b94b2f8e4a28d1428e1ff5cef42c81856af7b9cf11d02b69b663feb",
+    "carestacks-report/assets/testing/tb1-web-2026-10-04/registration.png": "f571acd21cf30203e5e9df3fdc456884da94d219e79448645a1997a7c7dfb0f4",
+    "carestacks-report/assets/testing/tb1-mobile-2026-10-04/agenda-confirmed.png": "45534eba74cb640c9a99c499fa69a50458f2317c4cb930ca01d1a2d1f242914b",
+    "carestacks-report/assets/testing/tb1-mobile-2026-10-04/agenda-pending.png": "40b7bf8c420995ae109d1a352236603507eb94425e13d24866c49897c75bf08b",
+    "carestacks-report/assets/testing/tb1-mobile-2026-10-04/home-no-patient.png": "cffe8f6148f91a2b792c61e02f2b71d2b00c3107900c6a4e066649dc9857bb7b",
+    "carestacks-report/assets/testing/tb1-mobile-2026-10-04/login.png": "a828c2ed9dec8820e17b14a215ddd4768722ae0ffff0a70914575842f8444d16",
+    "carestacks-report/assets/testing/tb1-mobile-2026-10-04/registration.png": "509a0a1c14b8731b14cf007b75cc17a2e22f55d5640c2bd5b8e137cdfd2b91e2"
+  }
+}

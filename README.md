@@ -29,7 +29,7 @@ Diseño de Experimentos de Ingeniería de Software
 
 9100
 
-**Informe de Trabajo Final**
+**Informe del Trabajo Parcial**
 
 **Docente**
 
@@ -59,7 +59,7 @@ CareConnect
 
 **Período 2026-20**
 
-Septiembre, 2026
+Octubre, 2026
 
 </div>
 
@@ -83,15 +83,28 @@ Septiembre, 2026
 | 0.13.0 | 14/09/2026 | Javier Nikaido / Percy Muñiz | Revisaron el class dictionary y el stack tecnológico, migraron el frontend a Flutter y ajustaron la configuración de despliegue (`chapter-4`, `chapter-5`) |
 | 0.14.0 | 15/09/2026 | Santiago Baldeon | Elaboró los wireframes y mockups de la aplicación móvil del Capítulo IV (`chapter-4`) |
 | 1.0.0 | 16/09/2026 | Matias Salcedo | AV1 Report |
+| 1.1.0 | 30/09/2026 | Matias Salcedo | Implementó el i18n (español/inglés) en la Landing Page y documentó su verificación (`docs/landing-i18n`) |
+| 1.2.0 | 01/10/2026 | Javier Nikaido | Desarrolló la sección 7.1 Continuous Integration del Capítulo VII (`chapter-7`) |
+| 1.3.0 | 03/10/2026 | Matias Salcedo | Desarrolló el Capítulo VI: Product Verification & Validation (`chapter-6`) |
+| 1.4.0 | 03/10/2026 | Percy Muñiz | Desarrolló las secciones 7.2 Continuous Delivery y 7.3 Continuous Deployment (`chapter-7`) |
+| 1.5.0 | 04/10/2026 | Javier Nikaido | Rediseñó la base de datos con diagramas UML normalizados por Bounded Context (`chapter-4`) |
+| 1.6.0 | 04/10/2026 | Angela Espinoza | Homogeneizó los criterios de aceptación en Gherkin y completó los precios del análisis competitivo (`chapter-2`, `chapter-3`, `chapter-5`) |
+| 1.7.0 | 01/10/2026 | Angela Espinoza | Actualizó la carátula, el Student Outcome y el Team Collaboration Insights del TB1 (`develop`) |
+| 1.8.0 | 04/10/2026 | Santiago Baldeon | Desarrolló el Acuerdo de Servicio SaaS y las conclusiones, y elaboró el guion y el video de exposición del TB1 (`develop`) |
+| 2.0.0 | 04/10/2026 | Matias Salcedo | Consolidó la verificación TB1, corrigió los resultados y conclusiones, e incorporó el capítulo 7 y el acuerdo SaaS con evidencia y límites de entrega |
 
 # Project Report Collaboration Insights
 
 Enlace de la organización para el reporte del proyecto: https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report
 
+La [verificación de integración TB1](assets/integration/tb1/verification.md) registra las ramas de los capítulos I–VII, la resolución de conflictos y las comprobaciones del informe consolidado.
+
 AV1:
 <img src="assets/insights_report_commits.png">
 <img src="assets/insights_report_branchs.png">
-
+TB1:
+<img src="assets/insights_report_commitsTB1.png">
+<img src="assets/insights_report_branchsTB1.png">
 ## Tabla de Contenidos
 
 <!-- 4 niveles. Verificar los anclajes (#) antes de cada entrega: GitHub genera el ancla a partir del texto del título. -->
@@ -282,6 +295,7 @@ AV1:
       - [Repositorio de la Aplicación Móvil (`carestacks-mobile-app`)](#repositorio-de-la-aplicación-móvil-carestacks-mobile-app)
       - [Repositorio de la Aplicación Web (`carestacks-web`)](#repositorio-de-la-aplicación-web-carestacks-web)
       - [Interpretación](#interpretación)
+      - [5.2.8. Acuerdo de Servicio - SaaS](#528-acuerdo-de-servicio---saas-saas-agreement)
     - [5.3. Video About-the-Product](#53-video-about-the-product)
 - [Part II: Verification, Validation & Pipeline](#part-ii-verification-validation--pipeline)
   - [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
@@ -364,12 +378,15 @@ AV1:
       - [8.6.2. Resumen usando Gees Framework](#862-resumen-usando-gees-framework)
   - [Conclusiones](#conclusiones)
     - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+    - [Resultados y recomendaciones de TB1](#resultados-y-recomendaciones-de-tb1)
   - [Bibliografía](#bibliografía)
   - [Anexos](#anexos)
     - [Anexo A: Archivo de Figma](#anexo-a-archivo-de-figma)
     - [Anexo B: Video de Entrevistas](#anexo-b-video-de-entrevistas)
     - [Anexo C: Repositorios de Producto](#anexo-c-repositorios-de-producto)
     - [Anexo: Videos](#anexo-videos)
+
+<div style="page-break-before: always"></div>
 
 # Student Outcome
 
@@ -379,8 +396,8 @@ Cada participante del equipo debe sustentar evidencia de cómo las actividades r
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |----|----|----|
-|4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>*AV1*<br>Redacté la descripción de la startup, los perfiles del equipo, el problema y la problemática, el proceso completo de Lean UX (Problem Statements, Assumptions, Hypothesis Statements y Canvas) y los segmentos objetivo en el Capítulo I. En el Capítulo II, desarrollé el análisis competitivo, el diseño y registro de entrevistas, los User Personas, User Task Matrix, Journey Maps, Empathy Maps, As-Is Scenario Mapping y el glosario de Ubiquitous Language.<br><br>**Salcedo Champi, Matias Rodolfo**<br>*AV1*<br>Configuré la plantilla inicial del informe y la carátula del equipo. En el Capítulo III, redacté el To-Be Scenario Mapping, las User Stories, el Product Backlog y el Impact Mapping. En el Capítulo IV, completé la sección de Web Applications UX/UI Design.<br><br>**Nikaido Vargas, Javier Masaru**<br>*AV1*<br>En el Capítulo IV, elaboré los diagramas de arquitectura (Context, Container y Components), los diagramas y diccionario de clases, y el diagrama de base de datos. En el Capítulo V, documenté la Software Configuration Management, la evidencia de despliegue del Landing Page y la configuración de despliegue de los productos de CareConnect.<br><br>**Baldeon Armas, Santiago Armando**<br>*AV1*<br>Colaboré en la documentación de los perfiles de integrantes del equipo en el Capítulo I y en contenido del Capítulo IV.<br><br>**Muñiz Huayanca, Percy Alonso**<br>*AV1*<br>En el Capítulo IV, documenté el prototipado de la aplicación móvil (iOS con Flutter) y adapté la base Flutter del segmento cuidador a un prototipo funcional de escritorio para el Capítulo IV.7. En el Capítulo V, documenté la evidencia de implementación del Frontend-Web, la evidencia Native-Mobile, la evidencia del backend RESTful y su documentación en Swagger, y actualicé los Sprint Backlogs con el detalle técnico de cada tarea.|**AV1**<br><br>La actualización constante de conceptos y conocimientos en ingeniería de software nos permitió abordar de manera efectiva los retos de los capítulos desarrollados hasta esta entrega, aplicando metodologías actuales —Lean UX, Domain-Driven Design, arquitectura C4 y mejores prácticas de implementación para el desarrollo del proyecto y nuestro crecimiento profesional.|
-|4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales|**Espinoza Cruz, Angela Milagros**<br>*AV1*<br>La elaboración del Lean UX Canvas y el análisis competitivo me exigió investigar metodologías de validación temprana de producto y herramientas de análisis de mercado que no había aplicado antes. El diseño y análisis de entrevistas reforzó la importancia de la empatía y el aprendizaje continuo sobre experiencia de usuario en un dominio sensible como el cuidado de adultos mayores.<br><br>**Salcedo Champi, Matias Rodolfo**<br>*AV1*<br>Redactar el Product Backlog y el Impact Mapping me llevó a profundizar en técnicas de priorización de historias de usuario. Completar el diseño UX/UI web me exigió aprender a adaptar un sistema de diseño pensado originalmente para móvil hacia un contexto de escritorio.<br><br>**Nikaido Vargas, Javier Masaru**<br>*AV1*<br>Elaborar los diagramas C4 y el diccionario de clases me llevó a profundizar en Domain-Driven Design y en la representación formal de bounded contexts. Documentar la configuración de despliegue me impulsó a investigar buenas prácticas de gestión de variables de entorno y separación de ambientes.<br><br>**Baldeon Armas, Santiago Armando**<br>*AV1*<br>Colaborar en la documentación del equipo y del Capítulo IV me motivó a revisar cómo estructurar información técnica de forma clara para distintos lectores del informe.<br><br>**Muñiz Huayanca, Percy Alonso**<br>*AV1*<br>Adaptar la aplicación móvil Flutter a un prototipo web funcional me exigió aprender sobre sistemas de layout responsive y jerarquía visual en Flutter Web, algo que no había trabajado antes. Levantar y documentar el backend con Swagger me llevó a profundizar en configuración de CORS, gestión de variables de entorno y buenas prácticas de control de versiones (Git) que no dominaba con este nivel de detalle.|**AV1**<br><br>El aprendizaje permanente ha sido fundamental para adaptarnos a los retos técnicos y metodológicos de los capítulos desarrollados hasta esta entrega, permitiéndonos incorporar nuevas metodologías, herramientas y enfoques en el desarrollo del proyecto, y preparándonos para un desempeño profesional competente y actualizado en ingeniería de software.|
+|4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Redacté la descripción de la startup, los perfiles del equipo, el problema y la problemática, el proceso completo de Lean UX (Problem Statements, Assumptions, Hypothesis Statements y Canvas) y los segmentos objetivo en el Capítulo I. En el Capítulo II, desarrollé el análisis competitivo, el diseño y registro de entrevistas, los User Personas, User Task Matrix, Journey Maps, Empathy Maps, As-Is Scenario Mapping y el glosario de Ubiquitous Language.<br><br>**TB1**<br>Homogeneicé los criterios de aceptación en formato Gherkin de todas las User Stories y completé los precios faltantes del análisis competitivo, atendiendo el feedback del docente. Actualicé la carátula, el Student Outcome, el Team Collaboration Insights, el registro de versiones y las conclusiones del informe parcial.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Configuré la plantilla inicial del informe y la carátula del equipo. En el Capítulo III, redacté el To-Be Scenario Mapping, las User Stories, el Product Backlog y el Impact Mapping. En el Capítulo IV, completé la sección de Web Applications UX/UI Design.<br><br>**TB1**<br>Desarrollé en el Capítulo VI los Core Entities Unit Tests, los Core Integration Tests, el Core Behavior Driven Development y los Core System Tests. Corregí además la Landing Page implementando el i18n en español e inglés, corregí el enlace de About the Product y documenté que About the Team sigue pendiente. Verifiqué la landing bilingüe ES/EN y registré el alcance real de las pruebas, incluidas la autorización de Agenda y sus limitaciones de despliegue.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Elaboré en el Capítulo IV los diagramas de arquitectura (Context, Container y Components), los diagramas y diccionario de clases, y el diagrama de base de datos. En el Capítulo V, documenté la Software Configuration Management, la evidencia de despliegue del Landing Page y la configuración de despliegue de los productos de CareConnect.<br><br>**TB1**<br>Desarrollé en el Capítulo VII la sección 7.1 Continuous Integration, con sus herramientas, prácticas y componentes del pipeline de build y test. Rediseñé la base de datos pasando del formato C4 a diagramas UML normalizados por Bounded Context, atendiendo el feedback del docente.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Colaboré en la documentación de los perfiles de integrantes del equipo en el Capítulo I y en contenido del Capítulo IV.<br><br>**TB1**<br>Redacté el Acuerdo de Servicio SaaS y las conclusiones y recomendaciones del informe. Elaboré el guion para los cinco integrantes y edité el video de exposición del TB1.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Documenté en el Capítulo IV el prototipado de la aplicación móvil (iOS con Flutter) y adapté la base Flutter del segmento cuidador a un prototipo funcional de escritorio para el Capítulo IV.7. En el Capítulo V, documenté la evidencia de implementación del Frontend-Web, la evidencia Native-Mobile, la evidencia del backend RESTful y su documentación en Swagger, y actualicé los Sprint Backlogs con el detalle técnico de cada tarea.<br><br>**TB1**<br>Desarrollé en el Capítulo VII las secciones 7.2 Continuous Delivery y 7.3 Continuous Deployment, con sus herramientas, prácticas y componentes de los pipelines de staging y producción.|**AV1**<br><br>Abordamos de manera efectiva los retos de los capítulos desarrollados hasta esta entrega gracias a la actualización constante de conceptos y conocimientos en ingeniería de software, aplicando metodologías actuales como Lean UX, Domain Driven Design, arquitectura C4 y mejores prácticas de implementación para el desarrollo del proyecto y nuestro crecimiento profesional.<br><br>**TB1**<br><br>Asumimos durante el TB1 nuestra responsabilidad profesional atendiendo el feedback del AV1 y cumpliendo cada uno los entregables asignados. Corregimos lo observado en la landing, la base de datos, los criterios de aceptación y los precios, y dejamos evidencia verificable en pruebas y pipelines.|
+|4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Investigué metodologías de validación temprana de producto y herramientas de análisis de mercado que no había aplicado antes al elaborar el Lean UX Canvas y el análisis competitivo. Reforcé con el diseño y análisis de entrevistas la importancia de la empatía y el aprendizaje continuo sobre experiencia de usuario en un dominio sensible como el cuidado de adultos mayores.<br><br>**TB1**<br>Comparé soluciones reales al completar los precios del análisis competitivo y juzgué el impacto económico de nuestra propuesta. Comprendí al escribir los criterios en Gherkin cómo una especificación clara reduce errores que afectarían a cuidadores y pacientes.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Profundicé en técnicas de priorización de historias de usuario al redactar el Product Backlog y el Impact Mapping. Aprendí a adaptar un sistema de diseño pensado originalmente para móvil hacia un contexto de escritorio al completar el diseño UX/UI web.<br><br>**TB1**<br>Comprendí al diseñar las pruebas del Capítulo VI que verificar el sistema es una forma de proteger a los usuarios en un dominio sensible. Consideré el alcance global y el acceso a la información en más de un idioma al implementar el i18n.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Profundicé en Domain Driven Design y en la representación formal de bounded contexts al elaborar los diagramas C4 y el diccionario de clases. Investigué buenas prácticas de gestión de variables de entorno y separación de ambientes al documentar la configuración de despliegue.<br><br>**TB1**<br>Colaboré en la documentación de la integración continua y comprobé su impacto en la calidad y mantenibilidad del producto. Evalué cómo el diseño de datos afecta la integridad de la información clínica al normalizar la base de datos por Bounded Context.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Revisé cómo estructurar información técnica de forma clara para distintos lectores del informe al colaborar en la documentación del equipo y del Capítulo IV.<br><br>**TB1**<br>Investigué las implicaciones económicas y legales de ofrecer el producto como servicio al redactar el Acuerdo SaaS. Valoré con criterio el impacto social y los alcances reales del proyecto al preparar las conclusiones y el guion.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Aprendí sobre sistemas de layout responsive y jerarquía visual en Flutter Web, algo que no había trabajado antes, al adaptar la aplicación móvil Flutter a un prototipo web funcional. Profundicé en configuración de CORS, gestión de variables de entorno y buenas prácticas de control de versiones Git que no dominaba con este nivel de detalle al levantar y documentar el backend con Swagger.<br><br>**TB1**<br>Colaboré en la documentación de los pipelines de entrega y despliegue, y evalué el impacto de las decisiones de despliegue en la disponibilidad y confiabilidad del servicio para los usuarios.|**AV1**<br><br>Incorporamos nuevas metodologías, herramientas y enfoques en el desarrollo del proyecto gracias al aprendizaje permanente, que nos permitió adaptarnos a los retos técnicos y metodológicos de los capítulos desarrollados hasta esta entrega y nos preparó para un desempeño profesional competente y actualizado en ingeniería de software.<br><br>**TB1**<br><br>Fundamentamos en el TB1 nuestras decisiones sobre pruebas, pipelines, base de datos, modelo SaaS e i18n considerando su impacto económico, social y global, y no solo su viabilidad técnica.|
 
 # Part I: As-Is Software Project
 
@@ -402,7 +419,7 @@ Nuestro producto, CareConnect, es una aplicación móvil nativa y multiplataform
 | Integrantes | Descripción |
 | --- | --- |
 | ![Team Member](assets/img/chapter1/matias.jpeg) | **Nombres y Apellidos:** Matias Rodolfo Salcedo Champi <br> **Código:** U202319698 <br> **Carrera:** Ingeniería de Software <br> Soy una persona orientada a la construcción de producto, con experiencia en el desarrollo de aplicaciones móviles y web y participación previa en proyectos de investigación y desarrollo. Cuento con conocimientos en Flutter, Dart, Node.js, Express.js, MongoDB, PostgreSQL, Git y GitHub, lo que me permite aportar tanto en la capa móvil como en los servicios que la soportan. Me motiva llevar una idea desde el prototipo hasta una versión funcional y desplegada. |
-|![Team Member](assets/img/chapter1/santiago.jpeg)  | **Nombres y Apellidos:** Santiago Armando Baldeon Vivar<br> **Código:** U202319881 <br> **Carrera:** Ingeniería de Software <br> Mi nombre es Santiago Armando Baldeon y tengo 20 años. Actualmente estoy cursando la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. En mi caso elegí esta carrera porque desde chico sentí gran pasión por la tecnología y siempre quise ser alguien importante en este mundo, brindando mis aportes a la humanidad. Creo que voy por buen camino y espero en un futuro cumplir estos sueños y objetivos que tengo. |
+|![Team Member](assets/img/chapter1/santiago.jpeg)  | **Nombres y Apellidos:** Santiago Armando Baldeon Armas<br> **Código:** U202319881 <br> **Carrera:** Ingeniería de Software <br> Mi nombre es Santiago Armando Baldeon y tengo 20 años. Actualmente estoy cursando la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. En mi caso elegí esta carrera porque desde chico sentí gran pasión por la tecnología y siempre quise ser alguien importante en este mundo, brindando mis aportes a la humanidad. Creo que voy por buen camino y espero en un futuro cumplir estos sueños y objetivos que tengo. |
 | ![Team Member](assets/img/chapter1/Javier.jpeg) | **Nombres y Apellidos:** Javier Masaru Nikaido Vargas <br> **Código:** U20221G099 <br> **Carrera:** Ingeniería de Software <br> Soy estudiante del octavo ciclo de Ingeniería de Software y contribuyo al equipo en el desarrollo estructural de la solución y en la validación funcional de lo implementado. Me enfoco en verificar que lo construido responda efectivamente a los requisitos definidos y en detectar inconsistencias antes de que lleguen a la entrega. Me motiva el trabajo metódico y la mejora continua del producto. |
 | ![Team Member](assets/img/chapter1/angela.jpeg) | **Nombres y Apellidos:** Angela Milagros Espinoza Cruz <br> **Código:** U202415495 <br> **Carrera:** Ingeniería de Software <br> Soy una persona curiosa, creativa y resiliente, cualidades que me impulsan a aportar innovación en cada uno de mis trabajos. Cuento con conocimientos en Python, Figma y C++, además de experiencia en el diseño y desarrollo de páginas web. Me motiva el aprendizaje constante, la exploración de nuevas herramientas y la creación de soluciones innovadoras aplicadas a problemas existentes. Asimismo, considero que la proactividad y la comunicación asertiva son fundamentales para llevar a cabo los proyectos de manera efectiva. |
 | ![Team Member](assets/img/chapter1/alonso.jpeg)  | **Nombres y Apellidos:** Percy Alonso Muñiz Huayanca <br> **Código:** U202319563 <br> **Carrera:** Ingeniería de Software <br> Soy Alonso, estudiante de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas, actualmente en octavo ciclo. Me interesa especialmente el desarrollo backend y fullstack, y en los últimos ciclos he ido inclinándome también hacia el área de Inteligencia Artificial y Data Science, sin dejar de lado buenas prácticas de ciberseguridad. Me gusta trabajar apoyándome en herramientas de IA para programar de forma más eficiente, dividiendo el trabajo en tareas claras para cumplir con los plazos sin perder calidad. Como líder de equipo, procuro mantener una comunicación constante con mis compañeros y asegurarme de que cada entregable avance de forma ordenada, coordinando responsabilidades según las fortalezas de cada uno.|
@@ -729,10 +746,10 @@ El mercado de aplicaciones móviles orientadas a la salud personal presenta una 
   </tr>
   <tr>
     <td><b>Precios &amp; Costos</b></td>
-    <td>Modelo freemium con funcionalidades premium orientadas a la coordinación entre múltiples cuidadores, sin montos definidos aún por encontrarse en etapa de desarrollo.</td>
-    <td>Desde enero de 2026 el nivel gratuito quedó limitado a 2 medicamentos, y el acceso completo requiere una suscripción de 4.99 dólares al mes o 39.99 dólares al año.</td>
-    <td>Se mantiene completamente gratuita para iOS y Android, sostenida mediante publicidad dentro de la aplicación en lugar de un plan de pago.</td>
-    <td>Ofrece un plan gratuito limitado a un Village de hasta 2 miembros, un plan Circle de 14.99 dólares al mes con hasta 2 Villages de 5 miembros cada uno, y un plan Village de 24.99 dólares al mes con hasta 5 Villages de 50 miembros cada uno, con descuento del 17 % en facturación anual.</td>
+    <td>Modelo de suscripción con dos planes: Plan Mensual a 15 dólares al mes y Plan Anual a 150 dólares al año (equivale a 12.50 dólares al mes, un ahorro aproximado del 17 %), con acceso compartido para múltiples cuidadores.</td>
+    <td>Desde enero de 2026 el nivel gratuito (0 dólares) quedó limitado a 2 medicamentos, y el acceso completo requiere una suscripción de aproximadamente 4.99 dólares al mes o 39.99 dólares al año (cerca de 3.33 dólares al mes).</td>
+    <td>Actualmente se distribuye para iOS y Android sin cobro directo, sostenida mediante publicidad dentro de la aplicación. Para efectos comparativos, se estima un costo referencial simulado de aproximadamente 3 dólares al mes (cerca de 36 dólares al año) por un servicio equivalente de seguimiento de medicación y signos vitales, cifra alineada con la suscripción de Medisafe, su competidor más cercano en funcionalidad.</td>
+    <td>Ofrece un plan gratuito limitado a un Village de hasta 2 miembros, un plan Circle de 14.99 dólares al mes con hasta 2 Villages de 5 miembros cada uno, y un plan Village de 24.99 dólares al mes con hasta 5 Villages de 50 miembros cada uno, con descuento del 17 % en facturación anual (aproximadamente 12.45 y 20.75 dólares al mes, respectivamente, al pagar por año).</td>
   </tr>
   <tr>
     <td><b>Canales de distribución</b><br><i>(Web y/o Móvil)</i></td>
@@ -1322,7 +1339,7 @@ En el caso de Valeria, el escenario actual distribuye la información entre cuad
 En el caso de Rafael, la situación actual genera dudas sobre si ya tomó una dosis y lo lleva a depender de otras personas para consultar su rutina. El escenario To-Be introduce recordatorios claros, confirmación con un solo toque y una agenda diaria de alta legibilidad. Con ello conserva mayor autonomía y su cuidadora puede conocer el estado de las actividades sin interrumpirlo constantemente.
 
 ### 3.2. User Stories
-Las historias de usuario se organizaron por producto digital y se redactaron con criterios de aceptación en formato Gherkin (Dado-Cuando-Entonces). Se conservaron las historias funcionales validadas durante el ciclo anterior y se incorporaron las correspondientes al Landing Page y a la Frontend Web Application.
+Las historias de usuario se organizaron por producto digital y se redactaron con criterios de aceptación en formato Gherkin (Given-When-Then). Las palabras reservadas de Gherkin (`Given`, `When`, `Then` y `And`) se mantienen en inglés y el resto de la redacción se presenta en español. Se conservaron las historias funcionales validadas durante el ciclo anterior y se incorporaron las correspondientes al Landing Page y a la Frontend Web Application.
 
 **Epics**
 
@@ -1338,54 +1355,54 @@ Las historias de usuario se organizaron por producto digital y se redactaron con
 
 **Historias de usuario, historias técnicas y spikes**
 
-El siguiente cuadro consolida todos los elementos especificados para los productos digitales de CareConnect. Las User Stories y Technical Stories incluyen criterios de aceptación comprobables en formato Gherkin, mientras que los spikes indican su timebox y resultado esperado.
+El siguiente cuadro consolida todos los elementos especificados para los productos digitales de CareConnect. Las User Stories, Technical Stories y Spikes incluyen criterios de aceptación comprobables en formato Gherkin (en las Technical Stories se describen como escenarios de request/response), mientras que los spikes incluyen, además, su timebox y criterios que definen cuándo se considera completada la investigación.
 
-| Story ID | Tipo | Usuario | Prioridad | Épica | Título | Descripción | Criterios de aceptación / Resultado esperado |
+| Story ID | Tipo | Usuario | Prioridad | Épica | Título | Descripción | Criterios de aceptación |
 |----------|------|---------|-----------|--------|--------|-------------|-----------------------------------------------|
-| US01 | User Story | Paciente / Cuidador | Alta | Gestión de Agenda | Registrar evento de salud | Como paciente o cuidador, deseo registrar un evento de salud (medicación o cita) para organizar las actividades médicas en un calendario. | Escenario 1: Registro exitoso de evento <br> Dado que el paciente o cuidador ingresa datos válidos del evento <br> Cuando registra el evento de salud <br> Entonces el sistema almacena el evento correctamente en la agenda <br><br> Escenario 2: Validación de datos obligatorios <br> Dado que el paciente o cuidador omite datos obligatorios <br> Cuando intenta registrar el evento <br> Entonces el sistema muestra un mensaje de error indicando los campos requeridos <br><br> Escenario 3: Visualización del evento <br> Dado que el evento fue registrado correctamente <br> Cuando el paciente o cuidador accede al calendario <br> Entonces el evento se visualiza en la fecha correspondiente |
-| US02 | User Story | Paciente | Alta | Gestión de Agenda | Confirmar evento de salud | Como paciente, deseo confirmar un evento de salud para registrar el cumplimiento de mi tratamiento. | Escenario 1: Confirmación exitosa <br> Dado que existe un evento programado <br> Cuando el paciente confirma el evento <br> Entonces el sistema actualiza su estado a "confirmado" <br><br> Escenario 2: Visualización del estado <br> Dado que el evento fue confirmado <br> Cuando el paciente accede al calendario <br> Entonces el estado del evento se muestra como confirmado |
-| US03 | User Story | Paciente / Cuidador | Media | Gestión de Agenda | Reprogramar evento de salud | Como paciente o cuidador, deseo reprogramar un evento de salud para ajustarlo a cambios en la disponibilidad. | Escenario 1: Reprogramación exitosa <br> Dado que existe un evento previamente registrado <br> Cuando el paciente o cuidador modifica la fecha u hora <br> Entonces el sistema actualiza el evento correctamente <br><br> Escenario 2: Validación de conflicto <br> Dado que existe otro evento en el mismo horario <br> Cuando el paciente o cuidador intenta reprogramar <br> Entonces el sistema evita el conflicto y muestra una advertencia |
-| US04 | User Story | Paciente | Alta | Gestión de Notificaciones | Recibir recordatorios de eventos | Como paciente, deseo recibir recordatorios de mis eventos de salud para cumplir con mis actividades programadas. | Escenario 1: Envío de recordatorio <br> Dado que existe un evento programado <br> Cuando se aproxima la hora del evento <br> Entonces el paciente recibe una notificación <br><br> Escenario 2: Contenido de la notificación <br> Dado que se genera una notificación <br> Cuando el paciente la visualiza <br> Entonces esta contiene información relevante del evento |
-| US05 | User Story | Cuidador | Alta | Gestión de Notificaciones | Recibir alertas de incumplimiento | Como cuidador, deseo recibir alertas cuando un evento no es confirmado para supervisar al paciente. | Escenario 1: Generación de alerta <br> Dado que un evento no ha sido confirmado <br> Cuando se supera el tiempo límite establecido <br> Entonces el cuidador recibe una alerta de incumplimiento <br><br> Escenario 2: Validación de permisos <br> Dado que el cuidador no tiene acceso al paciente <br> Cuando se genera la alerta <br> Entonces el sistema no envía la notificación |
-| US06 | User Story | Cuidador | Media | Gestión de Notificaciones | Visualizar notificaciones | Como cuidador, deseo visualizar las notificaciones recibidas para monitorear el estado del paciente. | Escenario 1: Consulta de notificaciones <br> Dado que existen notificaciones registradas <br> Cuando el cuidador accede a la sección de notificaciones <br> Entonces el sistema muestra la lista de notificaciones <br><br> Escenario 2: Orden de visualización <br> Dado que existen múltiples notificaciones <br> Cuando el cuidador las visualiza <br> Entonces se muestran ordenadas por fecha o prioridad |
-| US07 | User Story | Paciente / Cuidador | Alta | Gestión de Documentos | Subir documento médico | Como paciente o cuidador, deseo subir documentos médicos para mantener un registro digital accesible. | Escenario 1: Carga exitosa <br> Dado que el paciente o cuidador selecciona un archivo válido <br> Cuando lo sube al sistema <br> Entonces el documento se almacena correctamente <br><br> Escenario 2: Validación de archivo <br> Dado que el archivo no cumple con formato o tamaño permitido <br> Cuando el paciente o cuidador intenta subirlo <br> Entonces el sistema muestra un mensaje de error |
-| US08 | User Story | Paciente / Cuidador | Media | Gestión de Documentos | Consultar documentos | Como paciente o cuidador, deseo consultar los documentos almacenados para revisar información médica. | Escenario 1: Visualización de documentos <br> Dado que existen documentos almacenados <br> Cuando el paciente o cuidador accede a la sección correspondiente <br> Entonces el sistema muestra la lista de documentos disponibles |
-| US09 | User Story | Cuidador | Media | Gestión de Documentos | Acceder a documentos compartidos | Como cuidador, deseo acceder a los documentos del paciente para apoyar en su seguimiento. | Escenario 1: Acceso autorizado <br> Dado que el cuidador tiene permisos de acceso <br> Cuando consulta los documentos del paciente <br> Entonces el sistema permite su visualización <br><br> Escenario 2: Acceso denegado <br> Dado que el cuidador no tiene permisos <br> Cuando intenta acceder a los documentos <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
-| US10 | User Story | Paciente / Cuidador | Alta | Autenticación | Registrar cuenta | Como usuario, quiero registrar mi propia cuenta para acceder a la plataforma. | Escenario 1: Creación de cuenta <br> Dado que el usuario ingresa datos válidos <br> Cuando registra su cuenta <br> Entonces el sistema crea la cuenta del usuario <br><br> Escenario 2: Creación denegada <br> Dado que el correo ya existe <br> Cuando el usuario intenta registrarse <br> Entonces el sistema bloquea el registro y muestra "el usuario con este correo ya existe" |
-| US11 | User Story | Paciente / Cuidador | Alta | Autenticación | Validar acceso por rol | Como usuario, quiero validar el acceso según el rol que poseo. | Escenario 1: Acceso permitido <br> Dado que el usuario tiene permisos válidos <br> Cuando abre la aplicación <br> Entonces el sistema le muestra lo que le corresponde según su rol <br><br> Escenario 2: Acceso denegado <br> Dado que el usuario no tiene permisos <br> Cuando intenta acceder a otra sección <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
-| US12 | User Story | Paciente / Cuidador | Media | Diario de Seguimiento | Escribir nota | Como paciente o cuidador, quiero escribir notas en mi diario para registrar mi estado o el de mi familiar. | Escenario 1: Nota registrada <br> Dado que el paciente o cuidador ingresa contenido válido <br> Cuando guarda la nota <br> Entonces la nota se almacena correctamente <br><br> Escenario 2: Nota vacía <br> Dado que el paciente o cuidador no ingresa contenido <br> Cuando intenta guardar <br> Entonces el sistema muestra un mensaje de error |
-| US13 | User Story | Cuidador | Media | Diario de Seguimiento | Consultar diarios compartidos | Como cuidador, quiero consultar el diario compartido del paciente para conocer su estado. | Escenario 1: Consulta exitosa <br> Dado que el cuidador posee acceso autorizado <br> Cuando consulta el diario del paciente <br> Entonces el sistema le muestra las notas <br><br> Escenario 2: Acceso denegado <br> Dado que el cuidador no tiene permisos <br> Cuando intenta acceder a las notas <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
-| US14 | User Story | Paciente | Alta | Gestión de Consentimiento | Compartir perfil | Como paciente, quiero compartir mi perfil con familiares para que puedan ver mi información. | Escenario 1: Compartir exitoso <br> Dado que el familiar es un usuario válido <br> Cuando comparto mi perfil <br> Entonces el sistema otorga el acceso al familiar <br><br> Escenario 2: Error al compartir <br> Dado que el familiar no es un usuario válido <br> Cuando intento compartir el perfil <br> Entonces el sistema muestra un mensaje de usuario no existe |
-| US15 | User Story | Cuidador | Media | Gestión de Consentimiento | Consultar perfil compartido | Como cuidador, quiero consultar el perfil compartido del paciente para acceder a su información. | Escenario 1: Consulta exitosa <br> Dado que el paciente me dio permiso <br> Cuando consulto el perfil <br> Entonces se muestra la información <br><br> Escenario 2: Acceso inválido <br> Dado que el paciente no otorgó permisos <br> Cuando intento consultar el perfil <br> Entonces el sistema bloquea el acceso y muestra un mensaje de restricción |
-| US16 | User Story | Paciente | Media | Gestión de Consentimiento | Revocar acceso | Como paciente, quiero revocar el acceso a mi perfil para controlar quién puede ver mi información. | Escenario 1: Revocación exitosa <br> Dado que el paciente otorgó los permisos <br> Cuando revoca el acceso <br> Entonces el sistema quita los privilegios al cuidador <br><br> Escenario 2: Acción no permitida <br> Dado que el paciente ya revocó el permiso al cuidador <br> Cuando intenta revocar nuevamente <br> Entonces el sistema muestra un mensaje de error |
-| USL01 | User Story | Visitante | Alta | Landing Page | Conocer la propuesta de valor | Como visitante, deseo conocer la propuesta de valor de CareConnect para entender cómo la solución me ayuda a coordinar el cuidado. | Escenario 1: Presentación de la propuesta <br> Dado que el visitante ingresa a la landing <br> Cuando visualiza la sección principal <br> Entonces se presenta la propuesta de valor y su beneficio principal |
-| USL02 | User Story | Visitante (cuidador / paciente) | Alta | Landing Page | Explorar beneficios por segmento | Como visitante, deseo explorar los beneficios dirigidos a mi segmento para evaluar si la solución responde a mi necesidad. | Escenario 1: Contenido por segmento <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de segmentos <br> Entonces se presentan beneficios diferenciados para cuidadores y pacientes |
-| USL03 | User Story | Visitante | Media | Landing Page | Ver testimonios | Como visitante, deseo ver testimonios de usuarios para generar confianza en la solución. | Escenario 1: Visualización de testimonios <br> Dado que el visitante recorre la landing <br> Cuando llega a la sección de testimonios <br> Entonces se muestran al menos un testimonio por segmento objetivo |
-| USL04 | User Story | Visitante | Alta | Landing Page | Iniciar registro desde la landing | Como visitante, deseo iniciar mi registro desde la landing para comenzar a usar la plataforma. | Escenario 1: Llamado a la acción <br> Dado que el visitante decide registrarse <br> Cuando activa el llamado a la acción de registro <br> Entonces el sistema lo dirige al flujo de creación de cuenta |
-| USL05 | User Story | Visitante | Media | Landing Page | Cambiar idioma del sitio | Como visitante, deseo cambiar el idioma del sitio (English / Español) para leer el contenido en mi idioma preferido. | Escenario 1: Cambio de idioma <br> Dado que el visitante selecciona un idioma disponible (en_US / es_419) <br> Cuando confirma la selección <br> Entonces el contenido del sitio se muestra en el idioma elegido |
-| USL06 | User Story | Visitante | Media | Landing Page | Consultar Términos y Condiciones | Como visitante, deseo consultar los Términos y Condiciones desde el footer para conocer los derechos y obligaciones del servicio. | Escenario 1: Acceso a Términos y Condiciones <br> Dado que el visitante está en la landing <br> Cuando accede al enlace de Términos y Condiciones del footer <br> Entonces el sistema muestra el Acuerdo de Servicio (SaaS) |
-| USW01 | User Story | Cuidador | Alta | Gestión de Agenda | Gestionar agenda desde la web | Como cuidador, deseo gestionar la agenda del paciente desde el navegador para coordinar el cuidado sin depender del móvil. | Escenario 1: Gestión web de eventos <br> Dado que el cuidador inició sesión en la web application <br> Cuando registra o edita un evento de salud <br> Entonces el sistema persiste el cambio y lo refleja en la agenda |
-| USW02 | User Story | Cuidador | Media | Diario de Seguimiento | Consultar diario y documentos desde la web | Como cuidador, deseo consultar el diario y los documentos compartidos del paciente desde la web para dar seguimiento en pantalla amplia. | Escenario 1: Consulta web autorizada <br> Dado que el cuidador tiene acceso autorizado <br> Cuando consulta el diario o los documentos compartidos en la web application <br> Entonces el sistema muestra la información correspondiente |
-| USW03 | User Story | Paciente / Cuidador | Media | Gestión de Notificaciones | Visualizar notificaciones desde la web | Como usuario, deseo visualizar mis notificaciones en la web application para dar seguimiento a los eventos desde cualquier dispositivo. | Escenario 1: Notificaciones en web <br> Dado que existen notificaciones para el usuario <br> Cuando accede a la sección de notificaciones en la web application <br> Entonces el sistema muestra la lista ordenada por fecha o prioridad |
-| TS01 | Technical Story | Desarrollador | Alta | Gestión de Agenda | Persistencia de eventos de agenda | Como desarrollador, quiero implementar la persistencia de eventos de salud (citas y medicación) para garantizar su almacenamiento y consulta eficiente. | Escenario 1: Almacenamiento exitoso <br> Dado que se recibe un evento válido <br> Cuando el sistema lo procesa <br> Entonces el evento se almacena correctamente en la base de datos <br><br> Escenario 2: Integridad de datos <br> Dado que ocurre un error en el almacenamiento <br> Cuando el sistema intenta guardar el evento <br> Entonces se evita la persistencia de datos incompletos |
-| TS02 | Technical Story | Desarrollador | Alta | Gestión de Agenda | Gestión de estado de eventos | Como desarrollador, quiero implementar la lógica de cambio de estado de los eventos (pendiente, confirmado, incumplido) para reflejar el seguimiento del paciente. | Escenario 1: Cambio de estado válido <br> Dado que existe un evento registrado <br> Cuando se actualiza su estado <br> Entonces el sistema persiste el nuevo estado correctamente <br><br> Escenario 2: Validación de transición <br> Dado un estado inválido <br> Cuando se intenta actualizar <br> Entonces el sistema rechaza la operación |
-| TS03 | Technical Story | Desarrollador | Alta | Gestión de Notificaciones | Programación de notificaciones | Como desarrollador, quiero implementar un servicio de programación que genere notificaciones basadas en la fecha y hora de los eventos registrados. | Escenario 1: Programación correcta <br> Dado que existe un evento con fecha definida <br> Cuando se agenda la notificación <br> Entonces el sistema programa su envío correctamente <br><br> Escenario 2: Reprogramación <br> Dado que el evento cambia de horario <br> Cuando se actualiza <br> Entonces la notificación se reprograma automáticamente |
-| TS04 | Technical Story | Desarrollador | Alta | Gestión de Notificaciones | Envío de notificaciones | Como desarrollador, quiero implementar el mecanismo de envío de notificaciones push hacia pacientes y cuidadores según reglas de negocio. | Escenario 1: Envío exitoso <br> Dado que existe una notificación programada <br> Cuando se cumple la condición de envío <br> Entonces el sistema envía la notificación al destinatario <br><br> Escenario 2: Manejo de fallos <br> Dado que falla el envío <br> Cuando ocurre el error <br> Entonces el sistema registra el incidente y reintenta según configuración |
-| TS05 | Technical Story | Desarrollador | Media | Gestión de Notificaciones | Control de acceso a notificaciones | Como desarrollador, quiero implementar validaciones de permisos para asegurar que solo usuarios autorizados reciban notificaciones. | Escenario 1: Acceso autorizado <br> Dado que el usuario tiene permisos <br> Cuando se genera una notificación <br> Entonces el sistema permite su envío <br><br> Escenario 2: Acceso restringido <br> Dado que el usuario no tiene permisos <br> Cuando se genera una notificación <br> Entonces el sistema bloquea el envío |
-| TS06 | Technical Story | Desarrollador | Alta | Gestión de Documentos | Almacenamiento de documentos | Como desarrollador, quiero implementar el almacenamiento de documentos médicos en un sistema seguro para garantizar su disponibilidad. | Escenario 1: Almacenamiento correcto <br> Dado que se recibe un archivo válido <br> Cuando el sistema lo procesa <br> Entonces el documento se almacena correctamente <br><br> Escenario 2: Validación de archivo <br> Dado un archivo inválido <br> Cuando se intenta almacenar <br> Entonces el sistema rechaza la operación |
-| TS07 | Technical Story | Desarrollador | Media | Gestión de Documentos | Gestión de metadatos de documentos | Como desarrollador, quiero implementar el registro de metadatos (tipo, fecha, paciente, descripción) asociados a cada documento. | Escenario 1: Registro de metadatos <br> Dado que se almacena un documento <br> Cuando se registran sus atributos <br> Entonces el sistema guarda correctamente los metadatos <br><br> Escenario 2: Consistencia <br> Dado datos incompletos <br> Cuando se intenta registrar <br> Entonces el sistema valida y rechaza la operación |
-| TS08 | Technical Story | Desarrollador | Alta | Gestión de Documentos | Control de acceso a documentos | Como desarrollador, quiero implementar mecanismos de autorización para controlar el acceso a documentos entre paciente y cuidador. | Escenario 1: Acceso permitido <br> Dado que el cuidador tiene permisos <br> Cuando solicita acceso <br> Entonces el sistema permite visualizar el documento <br><br> Escenario 2: Acceso denegado <br> Dado que no tiene permisos <br> Cuando intenta acceder <br> Entonces el sistema bloquea la operación |
-| TS09 | Technical Story | Desarrollador | Alta | Autenticación | Persistencia de usuarios | Como desarrollador, quiero implementar la persistencia de usuarios para garantizar el registro correcto en la base de datos. | Escenario 1: Registro exitoso <br> Dado que el usuario envía datos válidos <br> Cuando el sistema procesa el registro <br> Entonces el usuario se almacena correctamente en la base de datos <br><br> Escenario 2: Usuario duplicado <br> Dado que el correo ya existe <br> Cuando el sistema intenta registrar el usuario <br> Entonces se evita el registro duplicado y se muestra un error |
-| TS10 | Technical Story | Desarrollador | Alta | Autenticación | Autorización basada en roles | Como desarrollador, quiero implementar validación de acceso por roles para garantizar seguridad en los recursos. | Escenario 1: Acceso autorizado <br> Dado que el usuario tiene el rol correcto <br> Cuando intenta acceder a un recurso <br> Entonces el sistema permite el acceso <br><br> Escenario 2: Acceso denegado <br> Dado que el usuario no tiene permisos <br> Cuando intenta acceder <br> Entonces el sistema bloquea el acceso |
-| TS11 | Technical Story | Desarrollador | Alta | Diario de Seguimiento | Persistencia de notas | Como desarrollador, quiero almacenar notas del diario para asegurar su disponibilidad. | Escenario 1: Guardado exitoso <br> Dado que la nota tiene contenido válido <br> Cuando el sistema guarda la nota <br> Entonces se almacena correctamente <br><br> Escenario 2: Nota inválida <br> Dado que la nota está vacía <br> Cuando el sistema intenta guardarla <br> Entonces se rechaza la operación |
-| TS12 | Technical Story | Desarrollador | Media | Diario de Seguimiento | Consulta de diario compartido | Como desarrollador, quiero implementar la consulta de diarios compartidos para permitir acceso a cuidadores. | Escenario 1: Consulta autorizada <br> Dado que el usuario tiene acceso <br> Cuando consulta el diario <br> Entonces se muestran las notas <br><br> Escenario 2: Acceso denegado <br> Dado que no tiene permisos <br> Cuando intenta consultar <br> Entonces el sistema bloquea el acceso |
-| TS13 | Technical Story | Desarrollador | Media | Gestión de Consentimiento | Consulta de perfil compartido | Como desarrollador, quiero permitir la visualización de perfiles compartidos. | Escenario 1: Consulta exitosa <br> Dado que el usuario tiene acceso <br> Cuando consulta el perfil <br> Entonces se muestra la información <br><br> Escenario 2: Acceso inválido <br> Dado que no tiene permisos <br> Cuando intenta acceder <br> Entonces se bloquea el acceso |
-| TS14 | Technical Story | Desarrollador | Media | Gestión de Consentimiento | Revocación de acceso | Como desarrollador, quiero implementar la revocación de accesos para controlar permisos. | Escenario 1: Revocación exitosa <br> Dado que existe acceso activo <br> Cuando el propietario revoca acceso <br> Entonces se elimina el permiso <br><br> Escenario 2: Usuario sin permiso <br> Dado que no es propietario <br> Cuando intenta revocar <br> Entonces se rechaza la acción |
-| SP01 | Spike | Equipo de desarrollo | Alta | Investigación técnica | Estrategia de notificaciones sin conexión | Como equipo de desarrollo, queremos investigar cómo entregar notificaciones push de medicación en dispositivos con conectividad intermitente, comparando Firebase Cloud Messaging vs. AlarmManager local, para decidir la estrategia del Bounded Context de Notificaciones. | Timebox: 2 días.<br>Resultado esperado: Documento corto con recomendación, prototipo mínimo y criterios de decisión (latencia, batería, costo, complejidad). |
-| SP02 | Spike | Equipo de desarrollo | Alta | Investigación técnica | Consentimiento y requisitos legales | Como equipo, queremos investigar patrones técnicos (tokens firmados con expiración + lista de revocación) y requisitos legales (Ley N° 29733, HIPAA-like) para implementar el otorgamiento y revocación de consentimiento del paciente sobre su información clínica. | Timebox: 3 días.<br>Resultado esperado: Documento con esquema técnico, validación con caso de uso de revocación inmediata y referencias normativas aplicables. |
-| SP03 | Spike | Equipo de desarrollo | Media | Investigación técnica | Evaluación del stack móvil | Como equipo, queremos comparar Flutter y Kotlin Multiplatform en términos de productividad, performance, soporte de notificaciones nativas y curva de aprendizaje para decidir el stack móvil del MVP. | Timebox: 2 días.<br>Resultado esperado: Matriz comparativa, prototipos en cada tecnología consumiendo un endpoint REST y recomendación final. |
-| SP04 | Spike | Equipo de desarrollo | Media | Investigación técnica | Almacenamiento cifrado de documentos | Como equipo, queremos investigar opciones de almacenamiento cifrado en reposo y en tránsito para documentos clínicos del paciente (recetas, resultados), comparando S3 con SSE-KMS, GCS y un esquema local cifrado. | Timebox: 2 días.<br>Resultado esperado: Recomendación de servicio, esquema de cifrado y plan de manejo de claves. |
-| SP05 | Spike | Equipo de desarrollo | Media | Investigación técnica | Sincronización offline | Como equipo, queremos definir cómo sincronizar Diario y Agenda entre el dispositivo (SQLite/Room) y el backend tras periodos sin conexión, evitando conflictos y pérdidas de información. | Timebox: 2 días.<br>Resultado esperado: Documento de estrategia de sincronización con manejo de conflictos y prototipo mínimo. |
+| US01 | User Story | Paciente / Cuidador | Alta | Gestión de Agenda | Registrar evento de salud | Como paciente o cuidador, deseo registrar un evento de salud (medicación o cita) para organizar las actividades médicas en un calendario. | Escenario 1: Registro exitoso de evento <br> **Given** que el paciente o cuidador proporciona los datos válidos de un evento de salud <br> **When** registra el evento <br> **Then** el sistema almacena el evento en la agenda <br><br> Escenario 2: Validación de datos obligatorios <br> **Given** que el paciente o cuidador omite datos obligatorios del evento <br> **When** intenta registrar el evento <br> **Then** el sistema rechaza el registro e indica los datos requeridos <br><br> Escenario 3: Consulta del evento registrado <br> **Given** que el evento fue registrado correctamente <br> **When** el paciente o cuidador consulta la agenda <br> **Then** el evento aparece en la fecha correspondiente |
+| US02 | User Story | Paciente | Alta | Gestión de Agenda | Confirmar evento de salud | Como paciente, deseo confirmar un evento de salud para registrar el cumplimiento de mi tratamiento. | Escenario 1: Confirmación exitosa <br> **Given** que existe un evento programado para el paciente <br> **When** el paciente confirma el evento <br> **Then** el sistema actualiza el estado del evento a "confirmado" <br><br> Escenario 2: Consulta del estado <br> **Given** que el evento fue confirmado <br> **When** el paciente consulta la agenda <br> **Then** el estado del evento se presenta como confirmado |
+| US03 | User Story | Paciente / Cuidador | Media | Gestión de Agenda | Reprogramar evento de salud | Como paciente o cuidador, deseo reprogramar un evento de salud para ajustarlo a cambios en la disponibilidad. | Escenario 1: Reprogramación exitosa <br> **Given** que existe un evento previamente registrado <br> **When** el paciente o cuidador modifica la fecha u hora del evento <br> **Then** el sistema actualiza el evento correctamente <br><br> Escenario 2: Validación de conflicto <br> **Given** que existe otro evento en el mismo horario <br> **When** el paciente o cuidador intenta reprogramar el evento a ese horario <br> **Then** el sistema evita el conflicto y advierte sobre la superposición |
+| US04 | User Story | Paciente | Alta | Gestión de Notificaciones | Recibir recordatorios de eventos | Como paciente, deseo recibir recordatorios de mis eventos de salud para cumplir con mis actividades programadas. | Escenario 1: Envío de recordatorio <br> **Given** que existe un evento programado para el paciente <br> **When** se aproxima la hora del evento <br> **Then** el paciente recibe una notificación de recordatorio <br><br> Escenario 2: Contenido de la notificación <br> **Given** que el sistema genera una notificación de recordatorio <br> **When** el paciente la recibe <br> **Then** la notificación contiene la información relevante del evento |
+| US05 | User Story | Cuidador | Alta | Gestión de Notificaciones | Recibir alertas de incumplimiento | Como cuidador, deseo recibir alertas cuando un evento no es confirmado para supervisar al paciente. | Escenario 1: Generación de alerta <br> **Given** que un evento no ha sido confirmado por el paciente <br> **When** transcurre el tiempo límite establecido <br> **Then** el cuidador vinculado recibe una alerta de incumplimiento <br><br> Escenario 2: Validación de permisos <br> **Given** que el cuidador no tiene acceso al perfil del paciente <br> **When** el sistema genera la alerta de incumplimiento <br> **Then** el sistema no envía la notificación a ese cuidador |
+| US06 | User Story | Cuidador | Media | Gestión de Notificaciones | Visualizar notificaciones | Como cuidador, deseo visualizar las notificaciones recibidas para monitorear el estado del paciente. | Escenario 1: Consulta de notificaciones <br> **Given** que existen notificaciones registradas para el cuidador <br> **When** el cuidador consulta sus notificaciones <br> **Then** el sistema presenta las notificaciones recibidas <br><br> Escenario 2: Orden de presentación <br> **Given** que existen múltiples notificaciones <br> **When** el cuidador las consulta <br> **Then** el sistema las ordena por fecha o prioridad |
+| US07 | User Story | Paciente / Cuidador | Alta | Gestión de Documentos | Subir documento médico | Como paciente o cuidador, deseo subir documentos médicos para mantener un registro digital accesible. | Escenario 1: Carga exitosa <br> **Given** que el paciente o cuidador proporciona un archivo con formato y tamaño permitidos <br> **When** sube el documento <br> **Then** el sistema almacena el documento correctamente <br><br> Escenario 2: Validación de archivo <br> **Given** que el archivo no cumple con el formato o tamaño permitido <br> **When** el paciente o cuidador intenta subirlo <br> **Then** el sistema rechaza la carga e informa el error |
+| US08 | User Story | Paciente / Cuidador | Media | Gestión de Documentos | Consultar documentos | Como paciente o cuidador, deseo consultar los documentos almacenados para revisar información médica. | Escenario 1: Consulta de documentos <br> **Given** que existen documentos almacenados <br> **When** el paciente o cuidador consulta sus documentos <br> **Then** el sistema presenta los documentos disponibles <br><br> Escenario 2: Consulta del detalle de un documento <br> **Given** que existen documentos almacenados con sus metadatos (tipo, fecha, paciente y descripción) <br> **When** el paciente o cuidador selecciona un documento <br> **Then** el sistema presenta los metadatos del documento |
+| US09 | User Story | Cuidador | Media | Gestión de Documentos | Acceder a documentos compartidos | Como cuidador, deseo acceder a los documentos del paciente para apoyar en su seguimiento. | Escenario 1: Acceso autorizado <br> **Given** que el cuidador tiene permisos de acceso sobre el paciente <br> **When** consulta los documentos del paciente <br> **Then** el sistema permite su visualización <br><br> Escenario 2: Acceso denegado <br> **Given** que el cuidador no tiene permisos de acceso sobre el paciente <br> **When** intenta consultar los documentos del paciente <br> **Then** el sistema bloquea el acceso e informa la restricción |
+| US10 | User Story | Paciente / Cuidador | Alta | Autenticación | Registrar cuenta | Como usuario, quiero registrar mi propia cuenta para acceder a la plataforma. | Escenario 1: Creación de cuenta <br> **Given** que el usuario proporciona datos válidos de registro <br> **When** registra su cuenta <br> **Then** el sistema crea la cuenta del usuario <br><br> Escenario 2: Creación denegada <br> **Given** que el correo proporcionado ya está registrado <br> **When** el usuario intenta registrarse <br> **Then** el sistema rechaza el registro e informa que "el usuario con este correo ya existe" |
+| US11 | User Story | Paciente / Cuidador | Alta | Autenticación | Validar acceso por rol | Como usuario, quiero validar el acceso según el rol que poseo. | Escenario 1: Acceso permitido <br> **Given** que el usuario tiene un rol válido <br> **When** accede a la plataforma <br> **Then** el sistema le otorga acceso solo a las funciones correspondientes a su rol <br><br> Escenario 2: Acceso denegado <br> **Given** que el usuario no tiene permisos para un recurso <br> **When** intenta acceder a ese recurso <br> **Then** el sistema bloquea el acceso e informa la restricción |
+| US12 | User Story | Paciente / Cuidador | Media | Diario de Seguimiento | Escribir nota | Como paciente o cuidador, quiero escribir notas en mi diario para registrar mi estado o el de mi familiar. | Escenario 1: Nota registrada <br> **Given** que el paciente o cuidador proporciona contenido válido <br> **When** guarda la nota <br> **Then** el sistema almacena la nota correctamente <br><br> Escenario 2: Nota vacía <br> **Given** que el paciente o cuidador no proporciona contenido <br> **When** intenta guardar la nota <br> **Then** el sistema rechaza el guardado e informa el error |
+| US13 | User Story | Cuidador | Media | Diario de Seguimiento | Consultar diarios compartidos | Como cuidador, quiero consultar el diario compartido del paciente para conocer su estado. | Escenario 1: Consulta exitosa <br> **Given** que el cuidador tiene acceso autorizado al diario del paciente <br> **When** consulta el diario <br> **Then** el sistema presenta las notas del paciente <br><br> Escenario 2: Acceso denegado <br> **Given** que el cuidador no tiene permisos de acceso al diario del paciente <br> **When** intenta consultar las notas <br> **Then** el sistema bloquea el acceso e informa la restricción |
+| US14 | User Story | Paciente | Alta | Gestión de Consentimiento | Compartir perfil | Como paciente, quiero compartir mi perfil con familiares para que puedan ver mi información. | Escenario 1: Compartir exitoso <br> **Given** que el familiar indicado es un usuario registrado <br> **When** el paciente comparte su perfil <br> **Then** el sistema otorga el acceso al familiar <br><br> Escenario 2: Error al compartir <br> **Given** que el familiar indicado no es un usuario registrado <br> **When** el paciente intenta compartir su perfil <br> **Then** el sistema informa que el usuario no existe |
+| US15 | User Story | Cuidador | Media | Gestión de Consentimiento | Consultar perfil compartido | Como cuidador, quiero consultar el perfil compartido del paciente para acceder a su información. | Escenario 1: Consulta exitosa <br> **Given** que el paciente otorgó permiso al cuidador <br> **When** el cuidador consulta el perfil compartido <br> **Then** el sistema presenta la información del perfil <br><br> Escenario 2: Acceso inválido <br> **Given** que el paciente no otorgó permiso al cuidador <br> **When** el cuidador intenta consultar el perfil <br> **Then** el sistema bloquea el acceso e informa la restricción |
+| US16 | User Story | Paciente | Media | Gestión de Consentimiento | Revocar acceso | Como paciente, quiero revocar el acceso a mi perfil para controlar quién puede ver mi información. | Escenario 1: Revocación exitosa <br> **Given** que el paciente otorgó acceso a un cuidador <br> **When** el paciente revoca el acceso <br> **Then** el sistema retira los permisos del cuidador <br><br> Escenario 2: Acción no permitida <br> **Given** que el paciente ya revocó el acceso al cuidador <br> **When** el paciente intenta revocarlo nuevamente <br> **Then** el sistema informa el error |
+| USL01 | User Story | Visitante | Alta | Landing Page | Conocer la propuesta de valor | Como visitante, deseo conocer la propuesta de valor de CareConnect para entender cómo la solución me ayuda a coordinar el cuidado. | Escenario 1: Presentación de la propuesta <br> **Given** que el visitante ingresa a la landing <br> **When** visualiza el contenido principal <br> **Then** se presenta la propuesta de valor y su beneficio principal <br><br> Escenario 2: Presentación de la problemática <br> **Given** que el visitante ingresa a la landing <br> **When** recorre el contenido inicial <br> **Then** se presenta la problemática que CareConnect busca resolver |
+| USL02 | User Story | Visitante (cuidador / paciente) | Alta | Landing Page | Explorar beneficios por segmento | Como visitante, deseo explorar los beneficios dirigidos a mi segmento para evaluar si la solución responde a mi necesidad. | Escenario 1: Contenido por segmento <br> **Given** que el visitante recorre la landing <br> **When** llega al contenido de beneficios <br> **Then** se presentan beneficios diferenciados para cuidadores y pacientes <br><br> Escenario 2: Funcionamiento de la solución <br> **Given** que el visitante recorre la landing <br> **When** consulta cómo funciona CareConnect <br> **Then** se presentan los pasos para comenzar a usar la solución |
+| USL03 | User Story | Visitante | Media | Landing Page | Ver testimonios | Como visitante, deseo ver testimonios de usuarios para generar confianza en la solución. | Escenario 1: Presentación de testimonios <br> **Given** que el visitante recorre la landing <br> **When** llega al contenido de testimonios <br> **Then** se presenta al menos un testimonio por segmento objetivo |
+| USL04 | User Story | Visitante | Alta | Landing Page | Iniciar registro desde la landing | Como visitante, deseo iniciar mi registro desde la landing para comenzar a usar la plataforma. | Escenario 1: Inicio de registro <br> **Given** que el visitante decide registrarse <br> **When** solicita iniciar su registro <br> **Then** el sistema lo dirige al flujo de creación de cuenta <br><br> Escenario 2: Inicio de registro desde los planes <br> **Given** que el visitante consulta los planes disponibles <br> **When** solicita iniciar su registro desde un plan <br> **Then** el sistema lo dirige al flujo de creación de cuenta |
+| USL05 | User Story | Visitante | Media | Landing Page | Implementar Internationalization (i18n) | Como visitante, deseo que la Landing Page implemente Internationalization (i18n) para visualizar el contenido en el idioma de mi preferencia. | Escenario 1: Cambio de locale mediante i18n <br> **Given** que la Landing Page implementa Internationalization (i18n) y dispone de los locales `en_US` y `es_419` <br> **When** el visitante selecciona uno de los locales disponibles <br> **Then** el contenido se presenta utilizando los recursos de traducción correspondientes al locale seleccionado <br><br> Escenario 2: Persistencia del locale <br> **Given** que el visitante seleccionó uno de los locales disponibles <br> **When** recarga la Landing Page <br> **Then** el contenido se mantiene en el locale seleccionado |
+| USL06 | User Story | Visitante | Media | Landing Page | Consultar Términos y Condiciones | Como visitante, deseo consultar los Términos y Condiciones desde la landing para conocer los derechos y obligaciones del servicio. | Escenario 1: Acceso a Términos y Condiciones <br> **Given** que el visitante está en la landing <br> **When** solicita consultar los Términos y Condiciones <br> **Then** el sistema presenta el Acuerdo de Servicio (SaaS) <br><br> Escenario 2: Datos de contacto y enlaces del sitio <br> **Given** que el visitante recorre la landing <br> **When** consulta la información de contacto <br> **Then** se presentan los datos de contacto y los enlaces del sitio |
+| USW01 | User Story | Cuidador | Alta | Gestión de Agenda | Gestionar agenda desde la web | Como cuidador, deseo gestionar la agenda del paciente desde el navegador para coordinar el cuidado sin depender del móvil. | Escenario 1: Gestión web de eventos <br> **Given** que el cuidador inició sesión en la web application <br> **When** registra o edita un evento de salud <br> **Then** el sistema persiste el cambio y lo refleja en la agenda <br><br> Escenario 2: Consulta de la agenda semanal <br> **Given** que el cuidador inició sesión en la web application <br> **When** consulta la agenda <br> **Then** el sistema presenta los eventos de la semana y permite consultar el detalle de cada evento |
+| USW02 | User Story | Cuidador | Media | Diario de Seguimiento | Consultar diario y documentos desde la web | Como cuidador, deseo consultar el diario y los documentos compartidos del paciente desde la web para dar seguimiento en pantalla amplia. | Escenario 1: Consulta web autorizada <br> **Given** que el cuidador tiene acceso autorizado <br> **When** consulta el diario o los documentos compartidos en la web application <br> **Then** el sistema presenta la información correspondiente <br><br> Escenario 2: Consulta web denegada <br> **Given** que el cuidador no tiene acceso autorizado <br> **When** intenta consultar el diario o los documentos compartidos en la web application <br> **Then** el sistema bloquea el acceso e informa la restricción |
+| USW03 | User Story | Paciente / Cuidador | Media | Gestión de Notificaciones | Visualizar notificaciones desde la web | Como usuario, deseo visualizar mis notificaciones en la web application para dar seguimiento a los eventos desde cualquier dispositivo. | Escenario 1: Notificaciones en la web application <br> **Given** que existen notificaciones para el usuario <br> **When** accede a sus notificaciones en la web application <br> **Then** el sistema las presenta ordenadas por fecha o prioridad <br><br> Escenario 2: Estado de las notificaciones <br> **Given** que existen notificaciones con distinto estado <br> **When** el usuario las consulta en la web application <br> **Then** el sistema identifica el estado de cada notificación (pendiente, urgente o leído) |
+| TS01 | Technical Story | Desarrollador | Alta | Gestión de Agenda | Persistencia de eventos de agenda | Como desarrollador, quiero implementar la persistencia de eventos de salud (citas y medicación) para garantizar su almacenamiento y consulta eficiente. | Escenario 1: Almacenamiento exitoso <br> **Given** que el servicio recibe una solicitud con un evento de salud válido <br> **When** procesa la solicitud <br> **Then** almacena el evento y responde con la confirmación del registro <br><br> Escenario 2: Integridad de datos <br> **Given** que ocurre un error durante el almacenamiento del evento <br> **When** el servicio intenta persistirlo <br> **Then** evita la persistencia de datos incompletos y responde indicando el error |
+| TS02 | Technical Story | Desarrollador | Alta | Gestión de Agenda | Gestión de estado de eventos | Como desarrollador, quiero implementar la lógica de cambio de estado de los eventos (pendiente, confirmado, incumplido) para reflejar el seguimiento del paciente. | Escenario 1: Cambio de estado válido <br> **Given** que existe un evento registrado y el servicio recibe una solicitud con un estado válido <br> **When** procesa la solicitud de actualización <br> **Then** persiste el nuevo estado y responde con el evento actualizado <br><br> Escenario 2: Validación de transición <br> **Given** que existe un evento registrado y el servicio recibe una solicitud con un estado inválido <br> **When** intenta procesar la actualización <br> **Then** rechaza la operación y responde indicando el error |
+| TS03 | Technical Story | Desarrollador | Alta | Gestión de Notificaciones | Programación de notificaciones | Como desarrollador, quiero implementar un servicio de programación que genere notificaciones basadas en la fecha y hora de los eventos registrados. | Escenario 1: Programación correcta <br> **Given** que existe un evento con fecha definida <br> **When** el servicio agenda la notificación <br> **Then** programa su envío correctamente <br><br> Escenario 2: Reprogramación <br> **Given** que el evento cambia de horario <br> **When** el servicio recibe la actualización del evento <br> **Then** reprograma automáticamente la notificación asociada |
+| TS04 | Technical Story | Desarrollador | Alta | Gestión de Notificaciones | Envío de notificaciones | Como desarrollador, quiero implementar el mecanismo de envío de notificaciones push hacia pacientes y cuidadores según reglas de negocio. | Escenario 1: Envío exitoso <br> **Given** que existe una notificación programada <br> **When** se cumple la condición de envío <br> **Then** el servicio envía la notificación al destinatario <br><br> Escenario 2: Manejo de fallos <br> **Given** que falla el envío de la notificación <br> **When** ocurre el error <br> **Then** el servicio registra el incidente y reintenta el envío según la configuración |
+| TS05 | Technical Story | Desarrollador | Media | Gestión de Notificaciones | Control de acceso a notificaciones | Como desarrollador, quiero implementar validaciones de permisos para asegurar que solo usuarios autorizados reciban notificaciones. | Escenario 1: Acceso autorizado <br> **Given** que el destinatario tiene permisos sobre el paciente <br> **When** el servicio genera una notificación <br> **Then** permite su envío <br><br> Escenario 2: Acceso restringido <br> **Given** que el destinatario no tiene permisos sobre el paciente <br> **When** el servicio genera una notificación <br> **Then** bloquea el envío |
+| TS06 | Technical Story | Desarrollador | Alta | Gestión de Documentos | Almacenamiento de documentos | Como desarrollador, quiero implementar el almacenamiento de documentos médicos en un sistema seguro para garantizar su disponibilidad. | Escenario 1: Almacenamiento correcto <br> **Given** que el servicio recibe una solicitud con un archivo válido <br> **When** procesa la solicitud <br> **Then** almacena el documento y responde con la confirmación del registro <br><br> Escenario 2: Validación de archivo <br> **Given** que el servicio recibe una solicitud con un archivo inválido <br> **When** intenta almacenarlo <br> **Then** rechaza la operación y responde indicando el error |
+| TS07 | Technical Story | Desarrollador | Media | Gestión de Documentos | Gestión de metadatos de documentos | Como desarrollador, quiero implementar el registro de metadatos (tipo, fecha, paciente, descripción) asociados a cada documento. | Escenario 1: Registro de metadatos <br> **Given** que se almacena un documento <br> **When** el servicio registra sus atributos (tipo, fecha, paciente y descripción) <br> **Then** guarda correctamente los metadatos <br><br> Escenario 2: Consistencia <br> **Given** que la solicitud contiene datos incompletos <br> **When** el servicio intenta registrar los metadatos <br> **Then** valida y rechaza la operación |
+| TS08 | Technical Story | Desarrollador | Alta | Gestión de Documentos | Control de acceso a documentos | Como desarrollador, quiero implementar mecanismos de autorización para controlar el acceso a documentos entre paciente y cuidador. | Escenario 1: Acceso permitido <br> **Given** que el cuidador tiene permisos sobre el paciente <br> **When** solicita acceso a un documento <br> **Then** el servicio permite visualizar el documento <br><br> Escenario 2: Acceso denegado <br> **Given** que el usuario no tiene permisos sobre el paciente <br> **When** intenta acceder a un documento <br> **Then** el servicio bloquea la operación |
+| TS09 | Technical Story | Desarrollador | Alta | Autenticación | Persistencia de usuarios | Como desarrollador, quiero implementar la persistencia de usuarios para garantizar el registro correcto en la base de datos. | Escenario 1: Registro exitoso <br> **Given** que el servicio recibe una solicitud de registro con datos válidos <br> **When** procesa el registro <br> **Then** almacena al usuario correctamente en la base de datos <br><br> Escenario 2: Usuario duplicado <br> **Given** que el correo de la solicitud ya está registrado <br> **When** el servicio intenta registrar al usuario <br> **Then** evita el registro duplicado y responde indicando el error |
+| TS10 | Technical Story | Desarrollador | Alta | Autenticación | Autorización basada en roles | Como desarrollador, quiero implementar validación de acceso por roles para garantizar seguridad en los recursos. | Escenario 1: Acceso autorizado <br> **Given** que el usuario tiene el rol correcto <br> **When** solicita un recurso <br> **Then** el servicio permite el acceso <br><br> Escenario 2: Acceso denegado <br> **Given** que el usuario no tiene permisos <br> **When** solicita un recurso <br> **Then** el servicio bloquea el acceso |
+| TS11 | Technical Story | Desarrollador | Alta | Diario de Seguimiento | Persistencia de notas | Como desarrollador, quiero almacenar notas del diario para asegurar su disponibilidad. | Escenario 1: Guardado exitoso <br> **Given** que la nota tiene contenido válido <br> **When** el servicio guarda la nota <br> **Then** la almacena correctamente <br><br> Escenario 2: Nota inválida <br> **Given** que la nota está vacía <br> **When** el servicio intenta guardarla <br> **Then** rechaza la operación |
+| TS12 | Technical Story | Desarrollador | Media | Diario de Seguimiento | Consulta de diario compartido | Como desarrollador, quiero implementar la consulta de diarios compartidos para permitir acceso a cuidadores. | Escenario 1: Consulta autorizada <br> **Given** que el usuario tiene acceso al diario compartido <br> **When** consulta el diario <br> **Then** el servicio responde con las notas <br><br> Escenario 2: Acceso denegado <br> **Given** que el usuario no tiene permisos sobre el diario compartido <br> **When** intenta consultarlo <br> **Then** el servicio bloquea el acceso |
+| TS13 | Technical Story | Desarrollador | Media | Gestión de Consentimiento | Consulta de perfil compartido | Como desarrollador, quiero permitir la visualización de perfiles compartidos. | Escenario 1: Consulta exitosa <br> **Given** que el usuario tiene acceso al perfil compartido <br> **When** consulta el perfil <br> **Then** el servicio responde con la información del perfil <br><br> Escenario 2: Acceso inválido <br> **Given** que el usuario no tiene permisos sobre el perfil compartido <br> **When** intenta acceder al perfil <br> **Then** el servicio bloquea el acceso |
+| TS14 | Technical Story | Desarrollador | Media | Gestión de Consentimiento | Revocación de acceso | Como desarrollador, quiero implementar la revocación de accesos para controlar permisos. | Escenario 1: Revocación exitosa <br> **Given** que existe un acceso activo sobre el perfil <br> **When** el propietario revoca el acceso <br> **Then** el servicio elimina el permiso <br><br> Escenario 2: Usuario sin permiso <br> **Given** que quien realiza la solicitud no es el propietario del perfil <br> **When** intenta revocar el acceso <br> **Then** el servicio rechaza la acción |
+| SP01 | Spike | Desarrollador | Alta | Investigación técnica | Estrategia de notificaciones sin conexión | Como desarrollador, quiero investigar cómo entregar notificaciones push de medicación en dispositivos con conectividad intermitente, comparando Firebase Cloud Messaging vs. AlarmManager local, para decidir la estrategia del Bounded Context de Notificaciones. | Timebox: 2 días. <br><br> Escenario 1: Cierre del spike <br> **Given** que se evalúan Firebase Cloud Messaging y AlarmManager local para entregar notificaciones push de medicación con conectividad intermitente <br> **When** finaliza el timebox de 2 días <br> **Then** se presenta un documento corto con la recomendación y los criterios de decisión (latencia, batería, costo y complejidad) <br> **And** se entrega un prototipo mínimo |
+| SP02 | Spike | Desarrollador | Alta | Investigación técnica | Consentimiento y requisitos legales | Como desarrollador, quiero investigar patrones técnicos (tokens firmados con expiración + lista de revocación) y requisitos legales (Ley N° 29733, HIPAA-like) para implementar el otorgamiento y revocación de consentimiento del paciente sobre su información clínica. | Timebox: 3 días. <br><br> Escenario 1: Cierre del spike <br> **Given** que se investigan tokens firmados con expiración, lista de revocación y los requisitos legales (Ley N° 29733, HIPAA-like) para el consentimiento del paciente <br> **When** finaliza el timebox de 3 días <br> **Then** se presenta un documento con el esquema técnico y las referencias normativas aplicables <br> **And** se valida el esquema con el caso de uso de revocación inmediata |
+| SP03 | Spike | Desarrollador | Media | Investigación técnica | Evaluación del stack móvil | Como desarrollador, quiero comparar Flutter y Kotlin Multiplatform en términos de productividad, performance, soporte de notificaciones nativas y curva de aprendizaje para decidir el stack móvil del MVP. | Timebox: 2 días. <br><br> Escenario 1: Cierre del spike <br> **Given** que se comparan Flutter y Kotlin Multiplatform según productividad, performance, soporte de notificaciones nativas y curva de aprendizaje <br> **When** finaliza el timebox de 2 días <br> **Then** se presenta una matriz comparativa y la recomendación final del stack móvil <br> **And** se entregan prototipos en cada tecnología que consumen un endpoint REST |
+| SP04 | Spike | Desarrollador | Media | Investigación técnica | Almacenamiento cifrado de documentos | Como desarrollador, quiero investigar opciones de almacenamiento cifrado en reposo y en tránsito para documentos clínicos del paciente (recetas, resultados), comparando S3 con SSE-KMS, GCS y un esquema local cifrado. | Timebox: 2 días. <br><br> Escenario 1: Cierre del spike <br> **Given** que se comparan S3 con SSE-KMS, GCS y un esquema local cifrado para el almacenamiento cifrado en reposo y en tránsito de documentos clínicos <br> **When** finaliza el timebox de 2 días <br> **Then** se presenta la recomendación del servicio y el esquema de cifrado <br> **And** se documenta el plan de manejo de claves |
+| SP05 | Spike | Desarrollador | Media | Investigación técnica | Sincronización offline | Como desarrollador, quiero definir cómo sincronizar Diario y Agenda entre el dispositivo (SQLite/Room) y el backend tras periodos sin conexión, evitando conflictos y pérdidas de información. | Timebox: 2 días. <br><br> Escenario 1: Cierre del spike <br> **Given** que se define la sincronización de Diario y Agenda entre el dispositivo (SQLite/Room) y el backend tras periodos sin conexión <br> **When** finaliza el timebox de 2 días <br> **Then** se presenta un documento con la estrategia de sincronización y el manejo de conflictos <br> **And** se entrega un prototipo mínimo |
 ### 3.3. Product Backlog
 El Product Backlog integra las historias funcionales de la aplicación, el Landing Page y la Frontend Web Application, además de las historias técnicas y los spikes necesarios para reducir incertidumbre antes de la implementación. El orden considera primero la comunicación y captación inicial del Landing Page y, a continuación, el acceso web y las capacidades principales de seguimiento y cuidado.
 
@@ -1396,8 +1413,8 @@ Los elementos se ordenan por valor para el negocio e incluyen su estimación en 
 | 1  | USL01 | Conocer la propuesta de valor | Como visitante, deseo conocer la propuesta de valor de CareConnect para entender cómo la solución me ayuda a coordinar el cuidado. | 2 |
 | 2  | USL02 | Explorar beneficios por segmento | Como visitante, deseo explorar los beneficios dirigidos a mi segmento para evaluar si la solución responde a mi necesidad. | 3 |
 | 3  | USL04 | Iniciar registro desde la landing | Como visitante, deseo iniciar mi registro desde la landing para comenzar a usar la plataforma. | 2 |
-| 4  | USL05 | Cambiar idioma del sitio | Como visitante, deseo cambiar el idioma del sitio para leer el contenido en su idioma preferido. | 3 |
-| 5  | USL06 | Consultar Términos y Condiciones | Como visitante, deseo consultar los Términos y Condiciones desde el footer para conocer los derechos y obligaciones del servicio. | 2 |
+| 4 | USL05 | Implementar Internationalization (i18n) | Como visitante, deseo que la Landing Page implemente Internationalization (i18n) para visualizar el contenido en el idioma de mi preferencia. | 3 |
+| 5  | USL06 | Consultar Términos y Condiciones | Como visitante, deseo consultar los Términos y Condiciones desde la landing para conocer los derechos y obligaciones del servicio. | 2 |
 | 6  | USL03 | Ver testimonios | Como visitante, deseo ver testimonios de usuarios para generar confianza en la solución. | 2 |
 | 7  | USW01 | Gestionar agenda desde la web | Como cuidador, deseo gestionar la agenda del paciente desde el navegador para coordinar el cuidado sin depender del móvil. | 5 |
 | 8  | USW02 | Consultar diario y documentos desde la web | Como cuidador, deseo consultar el diario y los documentos compartidos del paciente desde la web para dar seguimiento en pantalla amplia. | 3 |
@@ -1432,11 +1449,11 @@ Los elementos se ordenan por valor para el negocio e incluyen su estimación en 
 | 37 | TS12 | Consulta de diario compartido | Como desarrollador, quiero implementar la consulta de diarios compartidos para permitir acceso a cuidadores. | 3 |
 | 38 | TS13 | Consulta de perfil compartido | Como desarrollador, quiero permitir la visualización de perfiles compartidos. | 3 |
 | 39 | TS14 | Revocación de acceso | Como desarrollador, quiero implementar la revocación de accesos para controlar permisos. | 5 |
-| 40 | SP01 | Estrategia de notificaciones sin conexión | Como equipo de desarrollo, queremos investigar cómo entregar notificaciones push de medicación en dispositivos con conectividad intermitente, comparando Firebase Cloud Messaging vs. AlarmManager local, para decidir la estrategia del Bounded Context de Notificaciones. | 3 |
-| 41 | SP02 | Consentimiento y requisitos legales | Como equipo, queremos investigar patrones técnicos (tokens firmados con expiración + lista de revocación) y requisitos legales (Ley N° 29733, HIPAA-like) para implementar el otorgamiento y revocación de consentimiento del paciente sobre su información clínica. | 5 |
-| 42 | SP03 | Evaluación del stack móvil | Como equipo, queremos comparar Flutter y Kotlin Multiplatform en términos de productividad, performance, soporte de notificaciones nativas y curva de aprendizaje para decidir el stack móvil del MVP. | 3 |
-| 43 | SP04 | Almacenamiento cifrado de documentos | Como equipo, queremos investigar opciones de almacenamiento cifrado en reposo y en tránsito para documentos clínicos del paciente (recetas, resultados), comparando S3 con SSE-KMS, GCS y un esquema local cifrado. | 3 |
-| 44 | SP05 | Sincronización offline | Como equipo, queremos definir cómo sincronizar Diario y Agenda entre el dispositivo (SQLite/Room) y el backend tras periodos sin conexión, evitando conflictos y pérdidas de información. | 3 |
+| 40 | SP01 | Estrategia de notificaciones sin conexión | Como desarrollador, quiero investigar cómo entregar notificaciones push de medicación en dispositivos con conectividad intermitente, comparando Firebase Cloud Messaging vs. AlarmManager local, para decidir la estrategia del Bounded Context de Notificaciones. | 3 |
+| 41 | SP02 | Consentimiento y requisitos legales | Como desarrollador, quiero investigar patrones técnicos (tokens firmados con expiración + lista de revocación) y requisitos legales (Ley N° 29733, HIPAA-like) para implementar el otorgamiento y revocación de consentimiento del paciente sobre su información clínica. | 5 |
+| 42 | SP03 | Evaluación del stack móvil | Como desarrollador, quiero comparar Flutter y Kotlin Multiplatform en términos de productividad, performance, soporte de notificaciones nativas y curva de aprendizaje para decidir el stack móvil del MVP. | 3 |
+| 43 | SP04 | Almacenamiento cifrado de documentos | Como desarrollador, quiero investigar opciones de almacenamiento cifrado en reposo y en tránsito para documentos clínicos del paciente (recetas, resultados), comparando S3 con SSE-KMS, GCS y un esquema local cifrado. | 3 |
+| 44 | SP05 | Sincronización offline | Como desarrollador, quiero definir cómo sincronizar Diario y Agenda entre el dispositivo (SQLite/Room) y el backend tras periodos sin conexión, evitando conflictos y pérdidas de información. | 3 |
 
 - URL del Product Backlog: https://trello.com/b/slxEXro5/careconnect-product-backlog
 
@@ -1599,12 +1616,16 @@ La arquitectura se organiza en tres capas:
 
 La estructura de la landing sigue una jerarquía descendente clásica de conversión:
 
-1. **Header** fijo: logo, navegación (Inicio, Funciones, Beneficios, Precio, Contacto), CTA "Probar app".
+1. **Header** fijo: logo, navegación (Inicio, Funciones, Beneficios, Precio, Contacto), selector ES/EN y CTA "Probar app".
 2. **Hero**: titular + subtítulo + doble CTA ("Comienza ahora" / "Ver funciones") + mockup del dashboard real de la app.
 3. **Beneficios** ("Pensado para pacientes, cuidadores y familias"): 3 columnas con ícono, título y descripción.
 4. **Proceso** ("Cómo funciona"): 3 pasos numerados.
 5. **Funciones principales**: grilla de 5 tarjetas (una destacada — Acceso compartido).
 6. **Planes** ("Planes simples para tu cuidado diario"): 2 tarjetas de precio comparadas.
+
+El alcance lingüístico de la Landing Page para TB1 es **bilingüe: español (`es`) e inglés (`en`)**. El selector ES/EN usa `i18next` y `react-i18next` para cambiar los textos de la interfaz, las etiquetas accesibles y los metadatos de la página. La elección se conserva al recargar. No se contemplan otros idiomas en esta entrega. El mockup del hero es una imagen del prototipo móvil y conserva el idioma de la captura.
+
+La sección **About the Team** muestra una miniatura y un botón para cargar el video incrustado de YouTube cuando el visitante lo solicite. **About the Product** abre el video de CareConnect en Microsoft Stream mediante el botón principal o el enlace directo. Ambos accesos están traducidos a español e inglés. El estado de validación del contenido enlazado se describe en §6.1.4.
 
 ![Landing Page Wireframe: sección 1](./assets/capitulo4/figma/landing1.png)
 ![Landing Page Wireframe: sección 2](./assets/capitulo4/figma/landing2.png)
@@ -2414,37 +2435,125 @@ La separación conceptual establecida mediante Domain-Driven Design también se 
 
 #### 4.10.1. Relational/Non-Relational Database Diagram
 
-El Relational/Non-Relational Database Diagram consolida las estructuras de persistencia del sistema en una vista integrada. Esto permite observar las relaciones generales de la solución manteniendo la separación conceptual entre bounded contexts.
+El diseño de base de datos de CareConnect se representa mediante un modelo relacional organizado según los Bounded Contexts definidos para el producto. Esta organización permite visualizar las tablas responsables de cada área funcional sin perder las relaciones necesarias entre los diferentes contextos.
 
-##### Agrupación conceptual por bounded context
+El esquema utiliza `users`, perteneciente al Bounded Context **Identity & Access Management**, como punto principal de referencia para la identidad de pacientes y cuidadores. Los demás contextos almacenan identificadores como `patient_id`, `caregiver_id` y `recipient_id` para relacionar sus registros con un usuario determinado.
 
-| Bounded Context | Información persistida |
-|---|---|
-| Autenticación / IAM | Usuarios, roles, estado de cuenta y datos de autenticación. |
-| Agenda | Eventos de salud y recordatorios. |
-| Notificaciones | Notificaciones, alertas, preferencias e intentos de entrega. |
-| Diario de Seguimiento | Entradas del diario del paciente. |
-| Gestión de Consentimiento | Solicitudes, accesos compartidos, permisos y revocaciones. |
-| Documentos | Metadata y referencias a archivos médicos. |
+Asimismo, existen relaciones entre otros contextos cuando estas se encuentran respaldadas por el modelo de persistencia. Por ejemplo, los eventos de salud pueden estar relacionados con recordatorios, notificaciones y alertas, mientras que las notificaciones pueden estar asociadas con alertas.
 
-##### Persistencia relacional
+Para facilitar la lectura, primero se presenta un diagrama integrado de la base de datos y posteriormente se muestran vistas individuales correspondientes a cada Bounded Context.
 
-PostgreSQL constituye el almacenamiento principal para la información estructurada. Las relaciones entre tablas deben respetar las referencias necesarias entre usuarios, eventos, notificaciones, documentos, entradas de diario y accesos compartidos.
+##### Integrated Database Diagram
 
-Las Primary Keys y Foreign Keys deben representarse explícitamente en el diagrama final, junto con las cardinalidades correspondientes.
+El siguiente diagrama presenta una vista general del modelo de persistencia de CareConnect, incluyendo las tablas principales, sus atributos y las relaciones existentes entre los diferentes Bounded Contexts.
 
-##### Persistencia de archivos
+![CareConnect Integrated Database Diagram](assets/DBDiagram.png)
 
-Los archivos médicos se almacenan en **Supabase Storage** y no como datos binarios dentro de PostgreSQL.
+*Figura 11. Diagrama integrado de base de datos de CareConnect.*
 
-La base relacional conserva únicamente la información necesaria para identificar el documento y recuperar de forma segura el archivo correspondiente.
+En esta representación se puede observar que `users` constituye la principal referencia de identidad del sistema. Desde esta tabla se relacionan registros pertenecientes a Agenda, Notifications, Diary, Consent Management y Documents.
 
+Las relaciones se representan mediante sus respectivas cardinalidades. Los atributos marcados como `PK` identifican las Primary Keys, mientras que `FK` identifica Foreign Keys físicas y `REF` representa campos utilizados como referencia a identificadores pertenecientes a otras entidades.
 
-![Integrated Database Diagram](assets/careconnect-database-1-diagram.png)
-![Integrated Database Diagram](assets/careconnect-database-2-diagram.png)
+---
 
+##### Identity & Access Management
 
-*Figura 11. Relational/Non-Relational Database Diagram integrado de CareConnect.*
+El Bounded Context **Identity & Access Management** administra la información necesaria para identificar y autenticar a los usuarios de CareConnect.
+
+La tabla principal es `users`, cuya clave primaria es un identificador `UUID`. Además de los datos de identificación, almacena información relacionada con las credenciales, rol, estado de cuenta, intentos fallidos de autenticación y bloqueo temporal.
+
+El atributo `email` posee una restricción `UNIQUE`, evitando el registro de múltiples cuentas con la misma dirección de correo electrónico.
+
+![Identity Database Diagram](assets/IdentityDB.png)
+
+*Figura 12. Diagrama de base de datos del Bounded Context Identity & Access Management.*
+
+---
+
+##### Agenda
+
+El Bounded Context **Agenda** almacena los eventos de salud programados y los recordatorios asociados a dichos eventos.
+
+La tabla `health_events` contiene los eventos correspondientes a un paciente y, cuando aplica, al cuidador responsable. Para ello utiliza `patient_id` y `caregiver_id` como referencias a la identidad administrada por `users`.
+
+Cada evento puede poseer múltiples registros en `reminders`, los cuales permiten representar los recordatorios programados para el evento de salud correspondiente mediante `health_event_id`.
+
+![Agenda Database Diagram](assets/AgendaDB.png)
+
+*Figura 13. Diagrama de base de datos del Bounded Context Agenda.*
+
+La tabla `users` representada dentro de esta vista mediante `<<external reference>>` no corresponde a una duplicación de la tabla. Su presencia permite mostrar de manera local la dependencia del Bounded Context Agenda con la identidad gestionada por IAM.
+
+---
+
+##### Notifications
+
+El Bounded Context **Notifications** contiene las estructuras responsables de almacenar notificaciones, alertas y preferencias de comunicación de los usuarios.
+
+La tabla `notifications` almacena las comunicaciones generadas para un destinatario mediante `recipient_id`. Cuando una notificación se origina a partir de un evento de salud, `health_event_id` permite mantener la referencia hacia el evento correspondiente.
+
+La tabla `alerts` puede relacionarse tanto con un usuario como con un evento de salud. Asimismo, `notification_id` permite asociar una alerta con una notificación cuando dicha relación existe.
+
+Por otro lado, `notification_preferences` mantiene la configuración personal de comunicación de cada usuario, incluyendo la habilitación de notificaciones push, correo electrónico, mensajes dentro de la aplicación y la prioridad mínima aceptada.
+
+![Notifications Database Diagram](assets/NotificationsDB.png)
+
+*Figura 14. Diagrama de base de datos del Bounded Context Notifications.*
+
+En esta vista, `users` y `health_events` se muestran como `<<external reference>>` para representar las dependencias con los Bounded Contexts IAM y Agenda sin duplicar físicamente dichas tablas.
+
+No se establece una relación directa entre `notification_preferences` y `notifications`, debido a que ambas estructuras se relacionan mediante el identificador del usuario y no mediante una referencia directa entre ellas.
+
+---
+
+##### Diary
+
+El Bounded Context **Diary** administra las entradas de seguimiento registradas para cada paciente.
+
+La tabla `diary_entries` almacena el contenido de cada entrada junto con su fecha correspondiente. El atributo `patient_id` identifica al usuario al cual pertenece la entrada.
+
+![Diary Database Diagram](assets/DairyDB.png)
+
+*Figura 15. Diagrama de base de datos del Bounded Context Diary.*
+
+La representación de `users` como `<<external reference>>` indica que la identidad pertenece al Bounded Context IAM y únicamente es referenciada desde Diary.
+
+---
+
+##### Consent Management
+
+El Bounded Context **Consent Management** administra las autorizaciones que permiten compartir información entre pacientes y cuidadores.
+
+La tabla `profile_share_consents` registra la relación entre el paciente y el cuidador utilizando `patient_id` y `caregiver_id`. El modelo establece restricciones de unicidad para evitar duplicidades incompatibles dentro del mismo esquema de consentimiento.
+
+La tabla `profile_share_consent_views` contiene las vistas o áreas de información autorizadas para un consentimiento determinado y se relaciona con `profile_share_consents` mediante `consent_id`.
+
+![Consent Management Database Diagram](assets/ConsentDB.png)
+
+*Figura 16. Diagrama de base de datos del Bounded Context Consent Management.*
+
+Al igual que en otros contextos, `users` se presenta únicamente como referencia externa para mostrar la relación del consentimiento con las identidades administradas por IAM.
+
+---
+
+##### Documents
+
+El Bounded Context **Documents** gestiona la metadata correspondiente a los documentos médicos asociados a cada paciente.
+
+La tabla `medical_documents` representa el conjunto de documentos pertenecientes a un usuario mediante `patient_id`. Cada registro puede contener múltiples elementos almacenados en `document_items`, relacionados mediante `medical_document_id`.
+
+`document_items` conserva información como el tipo de documento, título, descripción, tipo MIME, tamaño del archivo y datos necesarios para localizarlo en el sistema de almacenamiento.
+
+![Documents Database Diagram](assets/DocumentsDB.png)
+
+*Figura 17. Diagrama de base de datos del Bounded Context Documents.*
+
+Los archivos físicos no se almacenan directamente como contenido binario dentro de PostgreSQL. La tabla `document_items` mantiene campos como `file_url`, `storage_bucket` y `storage_path`, que permiten conservar la referencia correspondiente al archivo almacenado en **Supabase Storage**.
+
+---
+
+En conjunto, estos diagramas permiten analizar tanto la estructura interna de cada Bounded Context como las dependencias necesarias entre ellos. La separación mantiene la responsabilidad de cada contexto, mientras que las referencias mediante identificadores permiten relacionar información compartida sin duplicar entidades pertenecientes a otros dominios.
 
 ## Capítulo V: Product Implementation
 
@@ -2494,10 +2603,10 @@ La selección de herramientas busca mantener una separación clara entre cada pr
 | Notifications | Firebase Cloud Messaging | Entregar notificaciones push. | Proyecto Firebase de CareConnect |
 | Mobile Distribution | Firebase App Distribution | Distribuir builds Android de prueba. | Proyecto Firebase de CareConnect |
 | Email | SendGrid | Enviar correos electrónicos transaccionales. | Configuración privada del backend |
-| Landing Page Development | React + Vite + TypeScript | Implementación actual de la Landing Page. | `CareStacks/Landing-Page` |
-| Landing Page Deployment | Vercel | Publicar la Landing Page. | Proyecto Vercel vinculado al repositorio |
+| Landing Page Development | React + Vite + TypeScript | Implementación actual de la Landing Page. | `upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page` |
+| Landing Page Deployment | Vercel | Publicar la Landing Page. | Proyecto Vercel desplegado con CLI; integración automática con GitHub pendiente |
 | Frontend Web Application | Flutter | Stack requerido por 1ASI0732 para la aplicación web funcional. | Pendiente de repositorio/implementación confirmada |
-| Documentation | Markdown | Elaborar el informe principal del proyecto. | `CareStacks/Report/README.md` |
+| Documentation | Markdown | Elaborar el informe principal del proyecto. | `upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/README.md` |
 
 ##### Configuración de la Native Mobile Application
 
@@ -2522,8 +2631,8 @@ La persistencia local con Room/SQLite permite mantener determinados datos dispon
 El backend actual de CareConnect se implementa como una aplicación Spring Boot única organizada internamente mediante bounded contexts.
 
 ```text
-Language: Java 21
-Framework: Spring Boot
+Language: Java 25
+Framework: Spring Boot 4
 Build Tool: Maven
 ORM: Spring Data JPA / Hibernate
 Relational Database: PostgreSQL
@@ -2574,16 +2683,16 @@ Los valores reales de estas variables deben mantenerse únicamente en los entorn
 La Landing Page actualmente implementada utiliza:
 
 ```text
-Framework: Flutter
-UI Components: Flutter
-Package Manager: flutter run
+Framework: React + TypeScript + Vite
+UI Components: React
+Package Manager: npm
 Communication: REST over HTTPS/JSON
 ```
 
 El repositorio correspondiente es:
 
 ```text
-https://github.com/CareStacks/Landing-Page
+https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page
 ```
 
 ##### Configuración de la Frontend Web Application
@@ -2595,7 +2704,7 @@ El stack establecido para esta aplicación es:
 ```text
 Framework: Flutter
 UI Components: Flutter
-Package Manager: npm
+Package Manager: Flutter / Dart Pub
 Communication: REST over HTTPS/JSON
 ```
 
@@ -2603,7 +2712,7 @@ La aplicación deberá consumir los servicios expuestos por el backend y contar 
 
 ##### Consideración sobre el stack del curso
 
-El backend actualmente implementado utiliza **Java 21 y Spring Boot**. Sin embargo, el Final Project Statement de 1ASI0732 establece **ASP.NET Core y C#** para los Web Services.
+El backend actualmente implementado utiliza **Java 25 y Spring Boot 4**. Sin embargo, el Final Project Statement de 1ASI0732 establece **ASP.NET Core y C#** para los Web Services.
 
 De igual forma, la Landing Page existente utiliza React + Vite + TypeScript, mientras que el statement establece un stack específico para dicho producto.
 
@@ -2674,7 +2783,7 @@ Además del repositorio del informe, la solución CareConnect se compone de los 
 | `carestacks-report` | Informe del proyecto (este repositorio). | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report |
 | `carestacks-backend-api` | Web Services: API REST del backend (Spring Boot), organizada en los bounded contexts de IAM, Agenda, Notificaciones, Diario, Documentos y Gestión de Consentimiento. | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api |
 | `carestacks-web` | Frontend Web Application: adaptación a escritorio de la aplicación del cuidador (Flutter web). | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web |
-| `Landing-Page` | Landing Page del producto (React + TypeScript + Vite), desplegada en Vercel. | https://github.com/CareStacks/Landing-Page |
+| `carestacks-landing-page` | Landing Page del producto (React + TypeScript + Vite), desplegada en Vercel. | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page |
 
 #### Convenciones de GitFlow para los repositorios de producto
 
@@ -2879,21 +2988,18 @@ Para la presente entrega, no todos los productos cuentan todavía con un desplie
 
 La Landing Page de CareConnect está implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada públicamente mediante **Vercel**.
 
-- **Repositorio:** `https://github.com/CareStacks/Landing-Page`
-- **URL de producción:** `https://landing-page-lovat-ten.vercel.app/`
+- **Repositorio de la entrega:** `https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page`
+- **URL de producción:** `https://carestacks-landing-page.vercel.app/`
 - **Proveedor de despliegue:** Vercel
 - **Build Tool:** Vite
 
-El flujo de despliegue utilizado es:
+El flujo de despliegue utilizado para esta entrega es:
 
 ```text
-Cambios en el repositorio
+Cambios en el repositorio de la entrega
           |
           v
-     Push a GitHub
-          |
-          v
-Vercel detecta los cambios
+vercel deploy --prod --yes
           |
           v
 Instalación de dependencias
@@ -2908,7 +3014,7 @@ Publicación de la nueva versión
       URL pública
 ```
 
-Vercel se encuentra vinculado al repositorio de la Landing Page, permitiendo generar una nueva versión desplegada a partir de los cambios integrados en la rama configurada para producción.
+La publicación se realizó desde el repositorio de la entrega mediante Vercel CLI. La conexión automática con GitHub no quedó habilitada, por lo que los cambios posteriores requieren ejecutar de nuevo el comando de despliegue.
 
 La evidencia visual correspondiente al despliegue y funcionamiento de este producto se presenta posteriormente en la sección **5.2.2. Implemented Landing Page Evidence**.
 
@@ -3049,7 +3155,7 @@ y la especificación OpenAPI mediante:
 /v3/api-docs
 ```
 
-Actualmente, el informe no presenta evidencia suficiente de una URL pública de producción de la RESTful API. Por ello, el deployment del backend deberá completarse antes de ser presentado como un servicio desplegado en producción.
+El equipo aportó evidencia del backend publicado en Render: [Swagger público](https://carestacks-backend-api.onrender.com/swagger-ui/index.html), [deploy automático del commit 51decbd](assets/render-after-ci-deploy.png). El capítulo 7 distingue esa versión de la corrección de Agenda en PR y registra la comprobación de disponibilidad del servicio; la existencia del deployment no acredita el recorrido ST-03 completo.
 
 ---
 
@@ -3342,12 +3448,12 @@ A continuación se presenta el resumen de la Sprint Planning Meeting del Sprint 
 | **Time** | 7:00 PM |
 | **Location** | Reunión virtual (Google Meet) |
 | **Prepared By** | Muñiz Huayanca, Percy Alonso |
-| **Attendees (to planning meeting)** | Salcedo Champi, Matias Rodolfo / Nikaido Vargas, Javier Masaru / Muñiz Huayanca, Percy Alonso / Espinoza Cruz, Angela Milagros / Baldeon Vivar, Santiago Armando |
+| **Attendees (to planning meeting)** | Salcedo Champi, Matias Rodolfo / Nikaido Vargas, Javier Masaru / Muñiz Huayanca, Percy Alonso / Espinoza Cruz, Angela Milagros / Baldeon Armas, Santiago Armando |
 | **Sprint 0 Review Summary** | No hay un Sprint 0 formal con productos de software propios: el equipo partió del proyecto CareConnect desarrollado en el ciclo anterior, que se reutilizó como base de datos, arquitectura y diseño para acelerar el arranque del Sprint 1. |
 | **Sprint 0 Retrospective Summary** | Como aprendizaje previo al Sprint 1, el equipo acordó dividir el trabajo por capítulos del informe según fortalezas individuales y mantener reuniones de seguimiento periódicas para validar avances antes de integrar a `develop`. |
 | **Sprint 1 Goal** | Completar la documentación base del informe (Capítulos I al III), la arquitectura y diseño visual del producto (Capítulo IV) y las primeras evidencias de implementación (Landing Page, Software Configuration Management y Mobile Prototyping), reutilizando como punto de partida el proyecto CareConnect del ciclo anterior. Métrica de cumplimiento: los 42 work items del Sprint Backlog quedan en estado Done. |
 | **Sprint 1 Velocity** | 100 horas (20 horas por integrante, acumuladas en varias reuniones de trabajo y avance individual durante el Sprint 1). |
-| **Sum of Estimated Hours** | 204 horas, correspondientes a los 42 work items incluidos en el Sprint Backlog 1. El equipo superó la Velocity planificada mediante horas adicionales de trabajo individual fuera de las reuniones conjuntas. |
+| **Sum of Estimated Hours** | 207 horas, correspondientes a los 43 work items incluidos en el Sprint Backlog 1. El equipo superó la Velocity planificada mediante horas adicionales de trabajo individual fuera de las reuniones conjuntas. |
 
 ##### Aspect Leaders and Collaborators
 
@@ -3359,7 +3465,7 @@ Para el Sprint 1 se identificaron cinco aspectos principales dentro del alcance:
 | Nikaido Vargas, Javier Masaru | MassiFlip | — | — | C | L | C |
 | Muñiz Huayanca, Percy Alonso | alomsoo | — | — | — | — | L |
 | Espinoza Cruz, Angela Milagros | Emy127 | L | C | — | — | — |
-| Baldeon Vivar, Santiago Armando | Santibal11 | — | — | L | C | — |
+| Baldeon Armas, Santiago Armando | Santibal11 | — | — | L | C | — |
 
 ##### Sprint Backlog 1
 
@@ -3376,6 +3482,7 @@ La tabla se organiza por los User Stories definidos en la sección 3.2, descompu
 | USL01 | Conocer la propuesta de valor | T01 | Implementar sección hero y problemática | Maquetar en React + TypeScript el hero con la propuesta de valor y la sección de problemática de la Landing Page. | 4 | Nikaido Vargas, Javier Masaru | Done |
 | USL02 | Explorar beneficios por segmento | T02 | Implementar secciones de funcionalidades y beneficios | Maquetar las secciones de funcionalidades, producto, beneficios y funcionamiento de CareConnect. | 4 | Nikaido Vargas, Javier Masaru | Done |
 | USL04 | Iniciar registro desde la landing | T03 | Implementar planes y llamado a la acción | Maquetar la sección de planes y el botón de llamado a la acción hacia el registro. | 3 | Nikaido Vargas, Javier Masaru | Done |
+| USL05 | Implementar Internationalization (i18n) | T43 | Implementar i18n en la Landing Page | Configurar Internationalization (i18n) en React para soportar los locales `es_419` y `en_US` y permitir que el contenido de la Landing Page se muestre según el locale seleccionado. | 3 | Nikaido Vargas, Javier Masaru | Done |
 | USL06 | Consultar Términos y Condiciones | T04 | Implementar footer con enlaces | Maquetar el footer con datos de contacto y enlaces del sitio. | 2 | Nikaido Vargas, Javier Masaru | Done |
 | US10 | Registrar cuenta | T05 | Implementar endpoint de registro de usuarios | Implementar en el bounded context IAM la persistencia de usuarios y el endpoint de registro con validación de correo duplicado. | 4 | Nikaido Vargas, Javier Masaru | Done |
 | US10 | Registrar cuenta | T06 | Implementar pantalla de registro en Flutter | Implementar la pantalla de creación de cuenta de la app del cuidador (web e iOS) consumiendo el endpoint de registro. | 3 | Muñiz Huayanca, Percy Alonso | Done |
@@ -3416,7 +3523,9 @@ La tabla se organiza por los User Stories definidos en la sección 3.2, descompu
 | — | — | T41 | Documentar Software Configuration Management | Documentar entorno de desarrollo, gestión de código fuente, convenciones y configuración de despliegue (5.1). | 5 | Nikaido Vargas, Javier Masaru | Done |
 | — | — | T42 | Documentar prototipado móvil y web | Documentar capturas y videos de los prototipos (4.5 y 4.7) y el diseño de la aplicación web (4.6). | 8 | Muñiz Huayanca, Percy Alonso | Done |
 
-**Total comprometido:** 204 horas.
+**Total comprometido:** 207 horas.
+
+**Estado del Sprint 1:** los 43 work items comprometidos se encuentran en estado Done. Con ellos se implementaron 19 de las 25 User Stories de la sección 3.2: USL01, USL02, USL04, USL05, USL06, US01 a US08, US10, US11, US12, US14, US15 y USW01. Las User Stories USL03, US09, US13, US16, USW02 y USW03, así como las Technical Stories y los spikes, no se comprometieron como work items propios en este sprint y permanecen en el Product Backlog (sección 3.3).
 
 **Sprint Goal:** Completar la documentación base del informe (Capítulos I al III), la arquitectura y diseño visual del producto (Capítulo IV) y las primeras evidencias de implementación (Landing Page, Software Configuration Management y Mobile Prototyping), reutilizando como punto de partida el proyecto CareConnect del ciclo anterior.
 
@@ -3424,14 +3533,14 @@ La tabla se organiza por los User Stories definidos en la sección 3.2, descompu
 
 La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada mediante **Vercel**.
 
-**Repositorio:** `https://github.com/CareStacks/Landing-Page`  
-**Landing Page:** `https://landing-page-lovat-ten.vercel.app/`
+**Repositorio:** `https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page`
+**Landing Page:** `https://carestacks-landing-page.vercel.app/`
 
 ##### Deployment Evidence
 
 ![CareConnect Landing Page Deployment](assets/careconnect-landing-deployment.png)
 
-*Figura 12. Evidencia del despliegue de la Landing Page de CareConnect.*
+*Figura 18. Landing Page publicada en [Vercel](https://carestacks-landing-page.vercel.app/) el 30/09/2026; captura de la versión con selector ES/EN.*
 
 ---
 
@@ -3439,7 +3548,17 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ![CareConnect Landing Page Home](assets/careconnect-landing-home.png)
 
-*Figura 13. Home y presentación de la problemática de CareConnect.*
+*Figura 19. Home y presentación de la problemática de CareConnect.*
+
+---
+
+##### Internationalization (i18n) Evidence
+
+La landing de CareConnect permite cambiar la interfaz entre español (`es`) e inglés (`en`). Las siguientes capturas, aportadas por el equipo en `chapter-5`, muestran ambas versiones. La comprobación de la landing publicada y sus enlaces actuales se registra en §6.1.4 y en la evidencia de despliegue de TB1.
+
+![Landing Page i18n - Español](assets/landing-i18n-es.png)
+
+![Landing Page i18n - English](assets/landing-i18n-en.png)
 
 ---
 
@@ -3447,7 +3566,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ![CareConnect Landing Page Features](assets/careconnect-landing-features.png)
 
-*Figura 14. Funcionalidades principales presentadas en la Landing Page.*
+*Figura 20. Funcionalidades principales presentadas en la Landing Page.*
 
 ---
 
@@ -3455,7 +3574,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ![CareConnect Landing Page Product](assets/careconnect-landing-product.png)
 
-*Figura 15. Presentación del producto, beneficios y funcionamiento de CareConnect.*
+*Figura 21. Presentación del producto, beneficios y funcionamiento de CareConnect.*
 
 ---
 
@@ -3463,7 +3582,7 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ![CareConnect Landing Page Footer](assets/careconnect-landing-footer.png)
 
-*Figura 16. Planes, llamada a la acción y footer de la Landing Page.*
+*Figura 22. Planes, llamada a la acción y footer de la Landing Page.*
 #### 5.2.3. Implemented Frontend-Web Application Evidence
 
 **Cambios de implementación:**
@@ -3541,27 +3660,27 @@ La documentación de la API se generó automáticamente mediante **SpringDoc Ope
 
 ![Endpoints — Gestión de Consentimiento y Documents](assets/swagger_1.png)
 
-*Figura 17. Endpoints del módulo Gestión de Consentimiento (`/api/consents`) y Documents (`/api/documents`): compartir perfil, actualizar vistas visibles, validar acceso, y gestión de documentos médicos.*
+*Figura 23. Endpoints del módulo Gestión de Consentimiento (`/api/consents`) y Documents (`/api/documents`): compartir perfil, actualizar vistas visibles, validar acceso, y gestión de documentos médicos.*
 
 ![Endpoints — Diary y Notifications](assets/swagger_2.png)
 
-*Figura 18. Endpoints del módulo Diary (`/api/diary`) y Notifications (`/api/notifications`): entradas de diario, recordatorios, alertas y preferencias de notificación.*
+*Figura 24. Endpoints del módulo Diary (`/api/diary`) y Notifications (`/api/notifications`): entradas de diario, recordatorios, alertas y preferencias de notificación.*
 
 ![Endpoints — IAM](assets/swagger_3.png)
 
-*Figura 19. Endpoints del módulo IAM (`/api/auth`): registro, login, logout, validación de sesión y consulta de usuario actual.*
+*Figura 25. Endpoints del módulo IAM (`/api/auth`): registro, login, logout, validación de sesión y consulta de usuario actual.*
 
 ![Endpoints — Agenda](assets/swagger_4.png)
 
-*Figura 20. Endpoints del módulo Agenda (`/api/agenda`): creación, consulta, reprogramación, confirmación y cancelación de eventos de salud.*
+*Figura 26. Endpoints del módulo Agenda (`/api/agenda`): creación, consulta, reprogramación, confirmación y cancelación de eventos de salud.*
 
 ![Esquemas de datos (DTOs y Requests) — parte 1](assets/schema1.png)
 
-*Figura 21. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Notifications, Diary, Consents y Agenda.*
+*Figura 27. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Notifications, Diary, Consents y Agenda.*
 
 ![Esquemas de datos (DTOs y Requests) — parte 2](assets/schema2.png)
 
-*Figura 22. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Documents, Diary, Consents, IAM y Agenda.*
+*Figura 28. Esquemas de datos documentados automáticamente por SpringDoc: DTOs y requests de los módulos Documents, Diary, Consents, IAM y Agenda.*
 
 #### 5.2.7. Team Collaboration Insights
 
@@ -3571,29 +3690,143 @@ Esta sección presenta la evidencia de colaboración del equipo a lo largo de lo
 
 ![Insights de colaboración — Repositorio del Informe](assets/insights_report.png)
 
-*Figura 23. Gráfico de contribuciones del repositorio `carestacks-report`, mostrando los commits de cada integrante del equipo durante la elaboración del informe.*
+*Figura 29. Gráfico de contribuciones del repositorio `carestacks-report`, mostrando los commits de cada integrante del equipo durante la elaboración del informe.*
 
 #### Repositorio del Backend (`carestacks-backend-api`)
 
 ![Insights de colaboración — Backend API](assets/insights_backend.png)
 
-*Figura 24. Gráfico de contribuciones del repositorio `carestacks-backend-api`, correspondiente al trabajo de implementación y configuración del backend RESTful.*
+*Figura 30. Gráfico de contribuciones del repositorio `carestacks-backend-api`, correspondiente al trabajo de implementación y configuración del backend RESTful.*
 
 #### Repositorio de la Aplicación Móvil (`carestacks-mobile-app`)
 
 ![Insights de colaboración — Mobile App](assets/insights_mobile.png)
 
-*Figura 25. Gráfico de contribuciones del repositorio `carestacks-mobile-app`, correspondiente al trabajo sobre la aplicación Flutter del segmento cuidador.*
+*Figura 31. Gráfico de contribuciones del repositorio `carestacks-mobile-app`, correspondiente al trabajo sobre la aplicación Flutter del segmento cuidador.*
 
 #### Repositorio de la Aplicación Web (`carestacks-web`)
 
 ![Insights de colaboración — Web App](assets/insights_web.png)
 
-*Figura 26. Gráfico de contribuciones del repositorio `carestacks-web`, correspondiente a la adaptación de la base Flutter al segmento cuidador para escritorio.*
+*Figura 32. Gráfico de contribuciones del repositorio `carestacks-web`, correspondiente a la adaptación de la base Flutter al segmento cuidador para escritorio.*
 
 #### Interpretación
 
 La distribución de commits entre los cuatro repositorios refleja la división de trabajo definida en el Sprint Backlog (§5.2.1): mientras el repositorio del informe concentra la participación distribuida de los cinco integrantes según la sección del reporte a su cargo, los repositorios de backend, móvil y web muestran una concentración de commits en los integrantes directamente responsables de esas capas de implementación durante este sprint, consistente con la asignación de tareas técnicas del equipo.
+
+#### 5.2.8. Acuerdo de Servicio - SaaS (SaaS Agreement)
+
+**CareConnect – CareStacks** · Versión 1.0 · Septiembre de 2026
+
+Texto del acuerdo elaborado por el equipo en `chapter-5`. Describe el modelo SaaS propuesto; las cláusulas de suscripción y cobro no acreditan una integración de pagos ni una operación comercial en esta entrega.
+
+Este documento explica, en lenguaje sencillo, los derechos, obligaciones y restricciones que aplican cuando usas CareConnect. Al crear una cuenta o usar la plataforma, aceptas este Acuerdo. Si no estás de acuerdo, te pedimos no usar el servicio.
+
+##### 5.2.8.1. Quiénes somos y qué es este Acuerdo
+
+CareConnect es una plataforma de software como servicio (SaaS) desarrollada por **CareStacks**, que ayuda a cuidadores y pacientes geriátricos a organizar el cuidado diario. Este Acuerdo es el contrato entre CareStacks ("nosotros") y la persona que usa la plataforma ("tú" o "el usuario").
+
+##### 5.2.8.2. Definiciones
+
+| Término | Significado |
+|---|---|
+| **Paciente** | Persona cuya información de salud se gestiona en la plataforma. |
+| **Cuidador** | Persona, familiar o profesional, que participa en el cuidado de uno o más pacientes. |
+| **Perfil compartido** | Perfil del paciente al que un cuidador accede porque el paciente lo autorizó. |
+| **Consentimiento de acceso** | Autorización del paciente que define qué información puede ver un cuidador. Puede modificarse o retirarse en cualquier momento. |
+
+##### 5.2.8.3. Descripción del servicio
+
+CareConnect ofrece:
+
+- Calendario de medicación y terapias.
+- Alertas y recordatorios.
+- Carpeta digital de documentos clínicos.
+- Diario de seguimiento y evolución del paciente.
+- Compartición de perfiles entre cuidadores.
+
+El servicio se brinda mediante una aplicación móvil y una aplicación web. CareConnect es una herramienta de apoyo y **no reemplaza el criterio, diagnóstico ni indicación de un profesional de la salud**.
+
+##### 5.2.8.4. Cuenta y roles
+
+Para usar el servicio debes registrarte con datos verdaderos y elegir tu rol (Paciente o Cuidador). Eres responsable de mantener la confidencialidad de tus credenciales y de la actividad realizada desde tu cuenta. Debes tener capacidad legal para aceptar este Acuerdo o actuar con autorización de quien la tenga.
+
+##### 5.2.8.5. Planes, pagos y cancelación
+
+- CareConnect funciona bajo un modelo **freemium**: un plan gratuito con funciones limitadas y planes de pago con funciones completas.
+- Planes vigentes: **Plan Mensual ($15)** y **Plan Anual ($150)**. Los precios y las funciones de cada plan se muestran en la sección "Planes" del sitio antes de contratar.
+- Las suscripciones se **renuevan automáticamente** al terminar cada periodo, salvo que las canceles antes de la fecha de renovación.
+- La cancelación evita cobros futuros y mantienes el acceso hasta el fin del periodo ya pagado.
+- Los pagos realizados no son reembolsables, salvo que la ley disponga lo contrario.
+- Podemos modificar precios y planes con aviso previo razonable; los cambios no afectan el periodo ya pagado.
+
+##### 5.2.8.6. Tus derechos
+
+1. Usar el servicio conforme a tu plan.
+2. Acceder, rectificar, cancelar y oponerte al tratamiento de tus datos personales.
+3. Otorgar, modificar y revocar el acceso de otros cuidadores a tu perfil (si eres paciente).
+4. Solicitar la eliminación de tu cuenta.
+5. Recibir información clara sobre cambios a este Acuerdo.
+6. Contar con soporte a través de nuestros canales de contacto.
+
+##### 5.2.8.7. Tus obligaciones
+
+- Proporcionar información veraz.
+- Usar el servicio solo para fines de cuidado y gestión de salud.
+- Respetar la privacidad de los pacientes.
+- Compartir información de un paciente únicamente con su consentimiento o el de su representante legal.
+- Avisarnos de cualquier uso no autorizado de tu cuenta.
+
+##### 5.2.8.8. Restricciones de uso
+
+Está prohibido:
+
+- Acceder a perfiles de pacientes sin consentimiento.
+- Intentar vulnerar la seguridad de la plataforma.
+- Usar el servicio para fines ilegales o fraudulentos.
+- Copiar, revender, sublicenciar o realizar ingeniería inversa del software.
+- Subir contenido ilícito o con software malicioso.
+- Compartir tu cuenta con terceros.
+
+##### 5.2.8.9. Datos personales y datos de salud
+
+La información de salud es **dato sensible**. La tratamos conforme a la **Ley N.° 29733, Ley de Protección de Datos Personales**, y su reglamento.
+
+- Solo tratamos tus datos para prestar el servicio.
+- Los datos se transmiten por conexiones cifradas (HTTPS/TLS) y los documentos clínicos se guardan en almacenamiento privado.
+- Usamos proveedores de infraestructura (almacenamiento de archivos, notificaciones push y envío de correos) que solo reciben los datos necesarios.
+- No vendemos tus datos.
+- Un cuidador solo ve la información que el paciente autorizó, y esa autorización puede **revocarse en cualquier momento**.
+- Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición escribiéndonos al contacto indicado en la sección 5.2.8.16.
+
+##### 5.2.8.10. Propiedad intelectual
+
+El software, la marca CareConnect, el diseño y los contenidos de la plataforma pertenecen a CareStacks. Te otorgamos una licencia limitada, personal, revocable y no exclusiva para usar el servicio. La información y los documentos que subes siguen siendo tuyos, y nos autorizas a tratarlos solo para prestarte el servicio.
+
+##### 5.2.8.11. Disponibilidad y soporte
+
+Hacemos esfuerzos razonables para mantener el servicio disponible, pero no garantizamos que funcione sin interrupciones. Podemos realizar mantenimientos y te avisaremos cuando sea posible. Las alertas dependen de factores externos (conexión a internet, dispositivo, permisos de notificación), por lo que no deben ser tu única forma de controlar medicamentos críticos.
+
+##### 5.2.8.12. Limitación de responsabilidad
+
+CareConnect no brinda atención médica ni atiende emergencias. **En una emergencia, contacta de inmediato a los servicios de salud.** En la medida que permita la ley, CareStacks no responde por decisiones médicas tomadas a partir de la información registrada, ni por daños indirectos derivados del uso o la imposibilidad de uso del servicio.
+
+##### 5.2.8.13. Suspensión y terminación
+
+Puedes dejar de usar el servicio y eliminar tu cuenta cuando quieras. Podemos suspender o cerrar cuentas que incumplan este Acuerdo, con aviso previo salvo en casos graves o de riesgo de seguridad. Al terminar, tus datos se eliminan o anonimizan, salvo los que la ley nos obligue a conservar.
+
+##### 5.2.8.14. Cambios al Acuerdo
+
+Podemos actualizar este Acuerdo. Te avisaremos de los cambios importantes por la aplicación o por correo. Si sigues usando el servicio después del aviso, entendemos que aceptas la nueva versión.
+
+##### 5.2.8.15. Ley aplicable y controversias
+
+Este Acuerdo se rige por las leyes de la República del Perú. Intentaremos resolver cualquier diferencia de forma directa y, de no lograrlo, se someterá a los jueces y tribunales de Lima, Perú, sin perjuicio de los derechos que la ley te reconozca como consumidor.
+
+##### 5.2.8.16. Contacto
+
+Para consultas generales del proyecto: [canal público del equipo en GitHub](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues). El canal privado para reclamos relativos a datos personales queda pendiente de definir; no se deben incluir esos datos en consultas públicas.
+
 
 ### 5.3. Video About-the-Product
 
@@ -3608,13 +3841,103 @@ El Video About-the-Product presenta el modelo de negocio de CareConnect y sus ca
 
 ### 6.1. Testing Suites & Validation
 
+La verificación actual de TB1 corresponde a las versiones de revisión del 04/10/2026. Los [resultados de la corrección de Agenda](assets/testing/agenda-auth-2026-10-04/verification.md) vinculan código, logs y CI. Las ejecuciones anteriores se conservan más abajo como historial y no representan el estado actual de las suites.
+
+| Suite / comprobación | Alcance actual | Resultado |
+|---|---|---|
+| Backend | JUnit: dominio, integración, autorización de diez rutas de Agenda y expiración de sesión | 16 aprobadas, sin fallos ni omisiones |
+| Cliente web | Pruebas rápidas, aceptación y caché ante 401/403 | 36 aprobadas |
+| Cliente móvil Flutter | Pruebas rápidas, aceptación y caché ante 401/403 | 9 aprobadas |
+| Sistema web y móvil | HTTP real contra H2 temporal, SYS-01–SYS-09 por cliente | 9/9 por cliente; revocación y ausencia de sesión aprobadas |
+| Análisis / compilación | Flutter Analyze en ambos clientes, web release y CI por producto | Aprobados; CI móvil incluye APK debug |
+| Landing pública | ES/EN y enlaces de video | ST-01 aprobado; ST-02 parcial por About the Team |
+| Recorrido completo desplegado | Interfaz del paciente, versiones compatibles y dispositivos | ST-03 parcial; pendiente validación conjunta |
+
+**Primera ejecución TB1 — 04/10/2026 (historial anterior al arreglo de Agenda).** Se repitieron las 10 pruebas del backend y se añadieron pruebas de aceptación y sistema para los clientes Flutter actuales. Pasan 32 pruebas rápidas web y 5 móviles. De 9 escenarios contra la API local por cliente, pasan 7 y fallan 2: la API permite consultar la agenda sin sesión y después de revocar el consentimiento. Se corrigieron en ambos clientes el estado sin paciente, la reutilización del perfil revocado desde la caché y la descarga de vistas no concedidas; también se corrigió un error de renderizado móvil. **ST-03 permanece parcial y no aprobado.** Los [resultados, logs, capturas, versiones y comandos de reproducción](assets/testing/tb1-2026-10-04/verification.md) distinguen las pruebas con HTTP simulado de las ejecutadas contra la API real con H2 temporal.
+
 #### 6.1.1. Core Entities Unit Tests
+
+El objetivo de este nivel es comprobar reglas de negocio sin levantar Spring ni conectar una base de datos. En el backend actual, `HealthEvent` valida identificador del paciente, título, tipo y que el fin sea posterior al inicio; sus operaciones `confirm`, `reschedule`, `cancel` y `markAsMissed` modifican el estado. `ProfileShareConsent` exige paciente y cuidador distintos, al menos una vista autorizada y permite consultar las vistas concedidas. Estas reglas permiten los siguientes casos reproducibles:
+
+| ID | Entidad / historia | Datos y acción | Resultado esperado | Estado |
+|---|---|---|---|---|
+| UT-01 | `HealthEvent` / US01 | Programar evento con paciente, título, tipo e intervalo válido | Se crea en estado `PENDING` con las fechas indicadas | Aprobado |
+| UT-02 | `HealthEvent` / US01 | Programar evento cuyo fin es igual o anterior al inicio | Se lanza `BusinessRuleException` | Aprobado |
+| UT-03 | `HealthEvent` / US02–US03 | Confirmar, reprogramar y cancelar un evento válido | Pasa a `CONFIRMED`, vuelve a `PENDING` al reprogramar y termina en `CANCELLED` | Aprobado |
+| UT-04 | `HealthEvent` / US02 | Intentar confirmar un evento cancelado | Se rechaza la transición mediante `BusinessRuleException` | Aprobado |
+| UT-05 | `ProfileShareConsent` / US14–US16 | Otorgar una vista, consultar acceso y actualizar las vistas concedidas | `allows` refleja únicamente los permisos actuales | Aprobado |
+| UT-06 | `ProfileShareConsent` / US14 | Crear consentimiento para el mismo usuario como paciente y cuidador, o sin vistas | Se lanza `BusinessRuleException` | Aprobado |
+
+**Evidencia y límite.** Las seis pruebas están bajo `src/test/java` en la rama publicada del backend actual y se ejecutaron con `mvn test`. Surefire registró 4 casos de `HealthEventTest` y 2 de `ProfileShareConsentTest`, todos aprobados. La ejecución no prueba todavía la aplicación móvil o web.
 
 #### 6.1.2. Core Integration Tests
 
+En integración se verificó que controller, servicio, repositorio y base de datos colaboren correctamente. El backend actual incluye `@SpringBootTest` `contextLoads()` y una configuración de prueba para H2 en memoria (`jdbc:h2:mem:careconnect;MODE=PostgreSQL`). Se añadió `CoreApiIntegrationTests`, que levanta el servidor en un puerto aleatorio y usa solicitudes HTTP reales contra H2. El caso `contextLoads()` por sí solo sigue siendo una prueba de arranque.
+
+| ID | Flujo / historia | Preparación y operación | Resultado comprobable | Estado |
+|---|---|---|---|---|
+| IT-01 | Contexto Spring | Ejecutar `mvn test` con la configuración H2 de pruebas | El contexto carga sin errores | Aprobado: 1 prueba, 0 fallos, 0 errores |
+| IT-02 | Agenda / US01–US03 | `POST /api/agenda`, consultar el ID, confirmar y reprogramar | Respuestas 201/200, estado y horario persistidos al volver a consultar | Aprobado |
+| IT-03 | Consentimiento / US14–US16 | Registrar paciente y cuidador, iniciar sesión, conceder vista, validar acceso y revocar por `/api/consents` | Vista concedida permitida, vista no concedida denegada y acceso inexistente tras revocar | Aprobado |
+| IT-04 | Diario / US12–US13 | Crear entrada por `/api/diary` y consultar por ID y paciente | La entrada se recupera con el contenido y propietario correctos | Aprobado |
+
+IT-02–IT-04 usan identificadores y correos únicos de prueba; la base H2 es temporal y se recrea al iniciar el contexto. Las pruebas comprueban códigos HTTP, cuerpo y persistencia mediante consultas posteriores. No comprueban una base de datos de producción ni el cliente visual.
+
+**Evidencia de la suite en el backend actual (01/10/2026).** Se ejecutó `mvn -B -q test` con Java 25 sobre la rama `test/core-verification` (commit `24b1e75`). Terminó con código 0: **10 pruebas ejecutadas, 0 fallos, 0 errores y 0 omitidas**. Los cuatro resultados por clase están en el [resumen de la suite](assets/testing/backend-suite-2026-10-01.txt). El log confirmó H2 en memoria, puerto HTTP aleatorio y perfil `default`. Las pruebas se integraron después a `main` mediante el Pull Request 1 del backend.
+
 #### 6.1.3. Core Behavior-Driven Development
 
+Los escenarios BDD vinculan el comportamiento observable con los criterios de aceptación del Product Backlog (§3.2). Para USL05 se ejecutó el siguiente escenario en el Landing Page local:
+
+```gherkin
+Característica: Idioma del Landing Page
+  Como visitante
+  Quiero elegir español o inglés
+  Para leer el contenido en mi idioma preferido
+
+  Escenario: Cambiar a inglés y conservar la preferencia
+    Given que la landing está abierta en español
+    When selecciono "EN" en el encabezado
+    Then el título principal y la navegación aparecen en inglés
+    And el idioma del documento es "en"
+    And el título y la descripción de la página están en inglés
+    When recargo la página
+    Then la landing continúa en inglés
+    When selecciono "ES"
+    Then el contenido y el idioma del documento vuelven a español
+```
+
+**Resultado USL05: aprobado en entorno local (30/09/2026).** Se observó el título principal `Organize the daily care of your loved ones`, `html[lang="en"]`, los metadatos en inglés y el botón EN seleccionado. Después de recargar, inglés siguió seleccionado; al pulsar ES volvieron el título `Organiza el cuidado diario de tus seres queridos` y `html[lang="es"]`. La ejecución fue manual; aún no hay archivo `.feature` ni runner BDD automatizado en los repositorios revisados.
+
+**Verificación en producción (30/09/2026).** En `https://carestacks-landing-page.vercel.app/`, se seleccionó EN y se observaron el título `CareConnect | Organized daily care`, `html[lang="en"]`, la descripción de la página en inglés y la navegación traducida. Tras recargar, el idioma inglés permaneció seleccionado. La comprobación se hizo manualmente en una sesión nueva del navegador integrado.
+
+Las pruebas JUnit del backend cubren comportamientos de US01 (registro válido y fechas inválidas), US02 (confirmación), US14 (concesión de vistas) y US16 (revocación). El 04/10/2026 se complementaron con escenarios de aceptación ejecutables en Flutter Test y una especificación Gherkin trazada por ID. **No existe un runner Cucumber ni step definitions que interpreten automáticamente los archivos `.feature`**; esa limitación se distingue de las aserciones automatizadas de comportamiento que sí se ejecutaron.
+
+**Automatización de aceptación del cliente — 04/10/2026.** Cada aplicación Flutter incorpora `test/caregiver_acceptance_test.dart` con cinco casos ejecutables: registro y sesión del cuidador, rechazo de una cuenta paciente en la vista cuidador, bloqueo de escritura de Agenda y Diario sin permisos, y rechazo de credenciales incorrectas. Los cinco pasan en cada cliente con HTTP simulado. Adicionalmente, `system_test/care_flow.feature` especifica nueve escenarios Gherkin trazados por ID a `care_flow_test.dart`, que usa HTTP real contra la API local. El runner es Flutter Test; el archivo `.feature` es una especificación y no se interpreta mediante Cucumber. La ausencia de un runner Cucumber no debe confundirse con ausencia de pruebas automatizadas del comportamiento. Véase la [matriz de escenarios y evidencia](assets/testing/tb1-2026-10-04/verification.md#escenarios-de-sistema-y-trazabilidad).
+
 #### 6.1.4. Core System Tests
+
+Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-02 se repitieron en la Landing Page publicada (`https://carestacks-landing-page.vercel.app/`) el 30/09/2026. La [captura del despliegue](assets/testing/landing-deployment-2026-09-30.png) muestra la versión verificada. El 04/10/2026 ST-03 se ejecutó parcialmente mediante los widgets y repositorios reales de ambos clientes Flutter contra una API local desechable. Este harness verifica registro visual, inicio de sesión y confirmación; no acredita un navegador, un dispositivo nativo ni un entorno de producción.
+
+| ID | Recorrido | Resultado observado | Estado |
+|---|---|---|---|
+| ST-01 | Entrar al Landing Page y usar ES/EN | En producción se observaron navegación, título, descripción y `lang` en inglés; la elección permaneció tras recargar | Aprobado en producción, sesión de escritorio |
+| ST-02 | Revisar secciones About the Team y About the Product | El 04/10/2026 se corrigió About the Product con el video de CareConnect en Microsoft Stream y se verificaron los accesos ES/EN y su reproducción desde la landing publicada. About the Team conserva el enlace de otro proyecto | Parcial: producto corregido; pendiente sustituir y verificar el video del equipo |
+| ST-03 | Recorrido completo paciente/cuidador: registro, evento, confirmación, acceso compartido y revocación | Tras corregir la autorización de Agenda, SYS-01–SYS-09 pasan en ambos clientes contra H2, incluidos el rechazo sin sesión y tras revocar | Parcial: defecto de Agenda corregido en ramas de revisión; pendiente recorrido del paciente, despliegue y dispositivos |
+
+**Límite de ST-02.** En la prueba local anterior, el navegador integrado mostró el error 153 en el reproductor embebido. En una sesión nueva del mismo navegador, ambos reproductores del sitio publicado cargaron y avanzaron. Sin embargo, al revisar su contenido el 02/10/2026, el video del equipo menciona “Cartax” y el del producto “Batimoff”. La reproducción técnica no valida que sean los videos de CareConnect. About the Product se corrigió y verificó después, como se documenta a continuación. Para aprobar ST-02 queda sustituir y verificar About the Team.
+
+**Corrección de About the Product — 04/10/2026.** El commit `ab2d60e` de la landing reemplaza el video ajeno con el enlace de Microsoft Stream registrado en §5.3. El botón y el enlace secundario abren `upc-pre-202620-1asi0732-9100-carestacks-about-the-product-sprint-1.mp4` (2:20). Se verificaron los textos y destinos en ES/EN, la apertura desde el botón del sitio público y la reproducción del archivo. La corrección está subida a GitHub y desplegada en [la landing publicada](https://carestacks-landing-page.vercel.app/#about-product-video). Las [capturas y resultados](assets/testing/landing-product-2026-10-04/verification.md) registran esta actualización; ST-02 sigue parcial hasta sustituir y validar About the Team.
+
+**Contacto y footer — 04/10/2026.** El commit `746ea48` retira el correo provisional y usa el canal público de GitHub elegido por el equipo para consultas generales. El footer incorpora Términos y condiciones, enlazados al acuerdo SaaS de §5.2.8. Se comprobaron los textos y destinos en ES/EN, los anchors internos y la apertura del acuerdo desde la landing publicada. Lint, build, CI y deploy Vercel aprobaron. El [registro de publicación y las capturas](assets/deployment/tb1-2026-10-04/verification.md#footer-y-contacto-publicados) documentan esta actualización.
+
+**Criterio de cierre de ST-03.** Registrar versión/commit de cada componente, URL del entorno, usuario de prueba sin datos reales, pasos, resultado esperado y observado, evidencia visual y defectos hallados al ejecutar el flujo desde la aplicación móvil o web conectada al backend.
+
+**Primera ejecución de ST-03 — 04/10/2026 (historial).** Las suites rápidas registraron 32 casos web y 5 móviles aprobados; las suites de sistema registraron 7 aprobados y 2 fallidos en cada cliente. SYS-08 inicia sesión desde el formulario, navega a Agenda y confirma un evento; una consulta posterior comprueba `CONFIRMED`. SYS-09 crea una cuenta desde el formulario y muestra el estado sin pacientes activos. El consentimiento y el evento de SYS-08 se preparan mediante la API, no mediante una interfaz de paciente. Las [capturas y logs completos](assets/testing/tb1-2026-10-04/verification.md#evidencia-visual) muestran la evidencia y sus límites. En esa ejecución, los dos controles negativos hicieron que la suite terminara con código 1. La corrección posterior que se documenta abajo protege Agenda y hace que ambos casos pasen. Sigue pendiente demostrar la concesión/revocación desde los clientes desplegados; comprobar únicamente `/api/consents/.../access` no demuestra ese recorrido.
+
+**Verificación histórica en navegador — 04/10/2026, anterior al arreglo de Agenda.** Se compiló la aplicación Flutter Web en modo release y se ejecutaron cinco comprobaciones desde el navegador integrado de Codex contra H2 local: rechazo de credenciales, registro del cuidador, login y confirmación de un evento, recarga después de revocar y cierre de sesión persistido tras recargar. La confirmación visible se contrastó con `CONFIRMED` en la API. El paciente, consentimiento y evento se prepararon por HTTP; no se acredita una interfaz de paciente ni una ejecución Android/iOS. La prueba encontró y corrigió la decodificación de mensajes `application/problem+json`, que dañaba los acentos. Las 32 pruebas rápidas web y 5 móviles volvieron a pasar, el análisis estático no encontró problemas y las suites externas conservaron sus dos fallos de autorización. Las [capturas, pasos y resultados de navegador](assets/testing/tb1-browser-2026-10-04/verification.md) complementan la primera ejecución. Los cambios se publicaron para revisión en [web PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/pull/1) y [móvil PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/pull/1); en esa versión DEF-API-01 seguía abierto. La corrección posterior cierra el defecto de Agenda en las ramas de revisión; la validación en clientes desplegados y dispositivos sigue pendiente.
+
+**Corrección posterior de Agenda — 04/10/2026.** El [backend PR #3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3) exige sesiones emitidas por IAM y propiedad o consentimiento AGENDA vigente en las diez rutas. Se sustituyeron los tokens fabricables por sesiones opacas de 30 minutos; logout las revoca. Web y móvil envían el token y eliminan la lista rechazada de caché ante 401/403. Pasan 16 pruebas del backend, 36 rápidas web, 9 rápidas móviles y los 9 escenarios de sistema por cliente: SYS-06 y SYS-07 ya no fallan. Ambos análisis estáticos y la compilación web release aprobaron. Las [versiones, logs y límites de esta corrección](assets/testing/agenda-auth-2026-10-04/verification.md) actualizan el resultado; las ejecuciones anteriores se conservan como historial. El defecto de Agenda queda corregido en las ramas publicadas, pero ST-03 sigue parcial hasta validar el cliente de paciente y los entornos desplegados/dispositivos. Las sesiones son locales a una instancia y requieren login después de reiniciar. Los cambios están en PRs; no se han fusionado ni desplegado.
 
 ### 6.2. Static testing & Verification
 
@@ -3656,23 +3979,336 @@ El Video About-the-Product presenta el modelo de negocio de CareConnect y sus ca
 
 ## Capítulo VII: DevOps Practices
 
+Para el **Trabajo Parcial (TP)**, el alcance del Capítulo VII comprende **Continuous Integration, Continuous Delivery y Continuous Deployment**, correspondientes a las secciones **7.1, 7.2 y 7.3**. La sección **7.4 Continuous Monitoring** se mantiene únicamente como estructura del informe, ya que corresponde a una etapa posterior.
+
+La estrategia DevOps de CareConnect busca que los cambios realizados en los productos principales de la solución puedan ser verificados, preparados para entrega y desplegados mediante procesos repetibles y trazables. Para ello se emplea GitHub como plataforma de control de versiones y colaboración, y GitHub Actions como herramienta de automatización de los pipelines.
+
+Se integra aquí el contenido del equipo de `chapter-7` (`758ce96`) y se actualiza con los workflows y resultados de las ramas de revisión del 04/10/2026. Las capturas originales se conservan como evidencia histórica; los [registros CI actuales](assets/deployment/tb1-2026-10-04/verification.md) identifican las versiones aprobadas.
+
+Los productos considerados en el pipeline del Trabajo Parcial son:
+
+| Producto | Repositorio | Stack actual | Build tool |
+|---|---|---|---|
+| Landing Page | `carestacks-landing-page` | React + TypeScript + Vite | npm / Vite |
+| Frontend Web Application | `carestacks-web` | Flutter Web | Flutter SDK |
+| Native Mobile Application | `carestacks-mobile-app` | Flutter + Dart | Flutter SDK |
+| RESTful API | `carestacks-backend-api` | Spring Boot 4 + Java 25 | Maven |
+
 ### 7.1. Continuous Integration
+
+La **Integración Continua (Continuous Integration)** permite verificar automáticamente cada cambio antes de integrarlo a una rama estable. En CareConnect, el objetivo es detectar errores de compilación, fallas en pruebas y problemas de integración lo más temprano posible, evitando que cambios defectuosos lleguen a los ambientes de entrega o producción.
 
 #### 7.1.1. Tools and Practices
 
+La herramienta seleccionada para la automatización es **GitHub Actions**, debido a que los repositorios de CareConnect se administran en GitHub y el equipo ya utiliza GitFlow, Pull Requests y Conventional Commits como parte de su flujo de desarrollo.
+
+Las prácticas definidas para Continuous Integration son:
+
+| Práctica | Aplicación en CareConnect |
+|---|---|
+| Control de versiones | Git y GitHub para todos los repositorios del producto. |
+| Estrategia de ramas | `main`, `develop`, `feature/*` y `test/*`. |
+| Pull Requests | Todo cambio destinado a `develop` o `main` debe integrarse mediante Pull Request. |
+| Validaciones automáticas | Cada Pull Request debe ejecutar el workflow de CI antes de ser fusionado. |
+| Build reproducible | Cada producto utiliza su herramienta oficial de construcción: Maven, Flutter o Vite. |
+| Pruebas automatizadas | Se ejecutan las suites disponibles y se incorporan progresivamente Unit, Integration, BDD y System Tests del Capítulo VI. |
+| Gestión de secretos | Las credenciales no se incluyen en el repositorio y deben almacenarse en GitHub Secrets o GitHub Environments. |
+| Trazabilidad | El resultado de cada ejecución queda asociado al commit y al Pull Request que la originó. |
+
+Los triggers definidos para CI son:
+
+```text
+push -> develop
+push -> main
+pull_request -> develop
+pull_request -> main
+```
+
+Cuando el equipo trabaje directamente sobre una rama `feature/*`, la validación principal se ejecutará al abrir o actualizar el Pull Request hacia `develop`. Esto permite evitar ejecuciones innecesarias sin perder el control de calidad previo a la integración.
+
 #### 7.1.2. Build & Test Suite Pipeline Components
+
+El pipeline general de integración continua sigue el siguiente flujo:
+
+```text
+Developer
+    |
+    v
+Commit / Push
+    |
+    v
+Pull Request
+    |
+    v
+GitHub Actions
+    |
+    v
+Checkout
+    |
+    v
+Setup del entorno
+    |
+    v
+Restauración de dependencias
+    |
+    v
+Build
+    |
+    v
+Automated Test Suite
+    |
+    v
+Resultado del pipeline
+    |
+    +---- success ----> PR habilitado para revisión e integración
+    |
+    +---- failure ----> corrección requerida
+```
+
+Los componentes principales son:
+
+| Componente | Responsabilidad |
+|---|---|
+| Trigger | Inicia el workflow ante `push` o `pull_request`. |
+| Checkout | Obtiene exactamente el commit que será validado. |
+| Environment Setup | Configura Java, Flutter o Node.js según el producto. |
+| Dependency Restore | Descarga y, cuando sea posible, reutiliza caché de dependencias. |
+| Build | Verifica que el producto pueda construirse correctamente. |
+| Unit Tests | Valida reglas de negocio y comportamiento aislado. |
+| Integration Tests | Verifica la interacción entre capas, persistencia y servicios. |
+| BDD Tests | Ejecuta escenarios derivados de User Stories cuando los Steps estén implementados. |
+| System Tests | Verifica flujos de extremo a extremo cuando la suite esté disponible. |
+| Pipeline Result | Publica el resultado `success` o `failure` asociado al commit/PR. |
+
+##### Pipeline del RESTful API
+
+Para el backend de CareConnect se utiliza **Java 25, Spring Boot 4 y Maven**.
+
+```text
+Checkout
+   |
+   v
+Setup Java 25
+   |
+   v
+Maven dependency cache
+   |
+   v
+mvn -B test
+   |
+   v
+JUnit: Unit / Integration Tests
+   |
+   v
+Build Result
+```
+
+Comando principal:
+
+```bash
+mvn -B test
+```
+
+![Backend CI Evidence](assets/backend-ci-success.png)
+
+*Evidencia de ejecución exitosa del pipeline de Continuous Integration del RESTful API.*
+
+##### Pipeline de la Frontend Web Application
+
+Para la aplicación web, el pipeline considera restauración de dependencias, análisis estático, ejecución de pruebas y generación del build de producción.
+
+```text
+Checkout
+   |
+   v
+Setup Flutter
+   |
+   v
+flutter pub get
+   |
+   v
+flutter analyze
+   |
+   v
+flutter test
+   |
+   v
+flutter build web --release
+   |
+   v
+Build Result
+```
+
+Comandos principales:
+
+```bash
+flutter pub get
+flutter analyze
+flutter test
+flutter build web --release
+```
+
+![Web CI Evidence](assets/web-ci-success.png)
+
+*Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Frontend Web Application.*
+
+##### Pipeline de la Landing Page
+
+La Landing Page utiliza **React, TypeScript y Vite**. Su pipeline instala las dependencias disponibles en el proyecto, ejecuta el análisis estático y construye el bundle de producción.
+
+```text
+Checkout
+   |
+   v
+Setup Node.js
+   |
+   v
+npm install
+   |
+   v
+npm run lint
+   |
+   v
+npm run build
+   |
+   v
+Build Result
+```
+
+Comandos principales:
+
+```bash
+npm install
+npm run lint
+npm run build
+```
+
+La [ejecución CI de la landing actual](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/actions/runs/37244598095) aprobó el commit `ab2d60e`; el [registro de verificación](assets/testing/landing-product-2026-10-04/verification.md) documenta su publicación.
+
+##### Pipeline de la Native Mobile Application
+
+La aplicación móvil de CareConnect está implementada con **Flutter y Dart**. El pipeline instala las dependencias, realiza análisis estático, ejecuta la suite de pruebas cuando se encuentra disponible y genera un APK Android de depuración como evidencia de que la aplicación puede compilarse correctamente.
+
+```text
+Checkout
+   |
+   v
+Setup Java 17
+   |
+   v
+Setup Flutter
+   |
+   v
+flutter pub get
+   |
+   v
+flutter analyze
+   |
+   v
+Tests disponibles
+   |
+   v
+flutter build apk --debug
+   |
+   v
+Build Result
+```
+
+Comandos principales:
+
+```bash
+flutter pub get
+flutter analyze
+flutter build apk --debug
+```
+
+La rama de revisión actual incluye `test/`: sus nueve pruebas rápidas se ejecutan en CI. El workflow solo omite Flutter Test si el directorio no existe. Los nueve escenarios HTTP externos se ejecutan aparte, como se explica en el Capítulo VI.
+
+![Mobile CI Evidence](assets/mobile-ci-success.png)
+
+*Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Native Mobile Application.*
+
+##### Diagrama general del pipeline
+
+![CareConnect CI Pipeline](assets/build-test-suite-pipeline.png)
+
+*Build & Test Suite Pipeline Components de CareConnect, integrando RESTful API, Frontend Web, Native Mobile Application y Landing Page.*
+
+---
 
 ### 7.2. Continuous Delivery
 
 #### 7.2.1. Tools and Practices
 
+CareConnect prepara cada producto mediante su pipeline de GitHub Actions y mantiene la entrega separada de su publicación. Un build aprobado demuestra que esa versión compila y supera las pruebas configuradas; la disponibilidad de una URL, una instalación nativa y un recorrido completo se comprueban por separado. Los workflows actuales muestran los archivos generados, pero no publican `build/web` ni el APK como artefactos descargables de Actions.
+
+| Producto | Preparación comprobada | Entrega y límite actual |
+|---|---|---|
+| RESTful API | Java 25, `mvn -B clean verify`; suite adicional y construcción Docker | Render construye su propia imagen desde el repositorio; el CI no la sube a un registry |
+| Frontend Web | `flutter pub get`, `flutter analyze`, `flutter test`, `flutter build web --release` | Se genera `build/web`; falta una URL publicada con la versión corregida y el backend configurado |
+| App Flutter del cuidador | Java 17, Flutter, análisis, pruebas y `flutter build apk --debug` | El APK de depuración demuestra compilación Android; no acredita firma release, Play Store, iOS ni instalación en dispositivo |
+| Landing Page | Node 24, instalación npm, lint y build Vite | Publicada en Vercel mediante CLI; verificación de ES/EN y enlaces en navegador |
+
+La revisión de Agenda está publicada en [backend PR #3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3), [web PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/pull/1) y [móvil PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/pull/1). El [registro de entrega TB1](assets/deployment/tb1-2026-10-04/verification.md) vincula cada commit con su ejecución CI y evita confundir esas ramas con producción.
+
 #### 7.2.2. Stages Deployment Pipeline Components
+
+**Verificación.** El backend usa JUnit, Spring Boot Test y H2 en memoria. La versión corregida pasó 16 pruebas. Los clientes pasaron 36 pruebas rápidas web, 9 móviles y 9 escenarios de sistema por cliente contra una API H2 desechable. Las suites externas se ejecutan explícitamente y no forman parte del `flutter test` predeterminado del CI. SYS-06/SYS-07 comprueban el rechazo después de revocar y sin sesión.
+
+**Empaquetado.** El Dockerfile realiza `mvn -B -DskipTests package` en Maven 3.9.11 con Temurin 25 y copia el JAR a una imagen JRE ejecutada como usuario `spring`. Las pruebas se ejecutan antes en CI; construir Docker por sí solo no las ejecuta. Flutter produce `build/web` y `build/app/outputs/flutter-apk/app-debug.apk`; la landing produce `dist`.
+
+**Configuración web.** `ApiConfig` permite definir el backend en compilación. Para preparar un bundle conectado al servicio público:
+
+```bash
+flutter pub get
+flutter analyze
+flutter test
+flutter build web --release --dart-define=API_BASE_URL=https://carestacks-backend-api.onrender.com
+```
+
+Sin ese `--dart-define`, el bundle usa `http://localhost:8080`; un build de CI con esa configuración no debe presentarse como una app de producción conectada. Publicar el contenido de `build/web` en el alojamiento elegido, comprobar que CORS permite su origen HTTPS y repetir login, Agenda y revocación. Este procedimiento está documentado; no se ha ejecutado una nueva publicación de la aplicación web.
+
+**Configuración móvil.** Para reproducir la compilación Android del cuidador:
+
+```bash
+flutter pub get
+flutter analyze
+flutter test
+flutter build apk --debug --dart-define=API_BASE_URL=https://carestacks-backend-api.onrender.com
+```
+
+Instalar y probar ese APK en un dispositivo o emulador antes de considerarlo una entrega funcional. La distribución release requiere la configuración de firma del equipo y una compilación release; no se incluyen claves en el repositorio. Una entrega iOS exige el entorno Apple y su firma. El cliente Android del paciente está en [carestacks-frontend](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend), rama `main` (`922361d`), dentro de la organización del curso. `develop` solo contiene el README. Su compatibilidad con la corrección de Agenda requiere verificación propia; el repositorio histórico `CareStacks/FrontEnd` no pertenece a esta sección.
+
+**Backend y persistencia.** El servicio recibe `PORT` y las variables `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_DRIVER_CLASS_NAME`, `SPRING_DATASOURCE_USERNAME`, `SPRING_DATASOURCE_PASSWORD` y `SPRING_JPA_HIBERNATE_DDL_AUTO`. Para PostgreSQL usar su URL JDBC y `org.postgresql.Driver`. La evidencia visual del servicio no expone secretos ni permite certificar los valores de esas variables. El código tiene H2 como valor por defecto; por ello la persistencia PostgreSQL requiere comprobar la configuración del entorno y no se infiere solo por la existencia de una URL pública.
+
+**Aceptación y recuperación.** Registrar commit, URL o archivo generado, CI, configuración no secreta y resultado del recorrido. Mantener disponibles el build y commit anteriores para volver a publicarlos si falla la nueva versión; conservar la base de datos y comprobar la compatibilidad de esquema antes de revertir. No existe en estos workflows un proceso automatizado de backup/restauración ni una publicación a tiendas. Las sesiones de IAM corregidas residen en una sola instancia y requieren login después de reiniciar.
 
 ### 7.3. Continuous deployment
 
 #### 7.3.1. Tools and Practices
 
+Los repositorios usan `main`, `develop`, ramas `feature/*` y `test/*`, con Pull Requests y checks de CI. Una rama de revisión aprobada no se fusiona ni despliega por el hecho de pasar las pruebas. El cambio de Agenda permanece en PRs; la captura de Render corresponde a `51decbd`, una versión anterior al arreglo.
+
+El equipo aportó evidencia de un despliegue automático en Render: `Deploy succeeded | Live`, trigger `Auto-Deploy`, fuente `51decbd`, el 04/10/2026. Se conserva la [captura original](assets/render-after-ci-deploy.png), incorporada desde `chapter-7` (`758ce96`). La referencia anterior a `assets/render-auto-deploy-settings.png` se retiró porque el archivo no existe; no se sustituye por una imagen que simule el panel de configuración.
+
+![Despliegue automático de backend en Render](assets/render-after-ci-deploy.png)
+
+La [captura de checks de GitHub](assets/render-ci-checks-github.png) y la del deploy respaldan el historial aportado por el equipo. El modo `After CI Checks Pass` debe comprobarse en Settings del servicio para certificar que Render exige esos checks; la captura de un deploy exitoso no muestra esa configuración. La [documentación oficial de Render](https://render.com/docs/deploys) describe ese modo y el comportamiento del despliegue.
+
+La landing se publica mediante Vercel CLI. El despliegue manual a producción y la integración automática con GitHub son mecanismos distintos; no se ha acreditado esta última para el proyecto actual. La [documentación oficial de Vercel CLI](https://vercel.com/docs/cli/deploy) explica `--prod`.
+
 #### 7.3.2. Production Deployment Pipeline Components
+
+| Producto | Destino y evidencia | Estado comprobado |
+|---|---|---|
+| Backend | [Swagger público](https://carestacks-backend-api.onrender.com/swagger-ui/index.html), captura Render `51decbd` y [registro de comprobación](assets/deployment/tb1-2026-10-04/verification.md) | Existe evidencia de publicación; el arreglo de Agenda aún no está en esa versión |
+| Landing | [Vercel](https://carestacks-landing-page.vercel.app/), despliegue y navegador documentados en §6.1.4 | Publicada; About the Product corregido y About the Team pendiente |
+| Web del cuidador | CI del commit `42d50ac`, bundle release comprobado | Preparada para publicar; no se encontró un registro de deployment en GitHub ni se acreditó una URL de esta versión |
+| Móvil del cuidador | CI del commit `2409893`, etapa APK debug aprobada | Compilada; no se encontró una release del repositorio ni se acreditó distribución en dispositivo/tienda |
+
+Para el backend, Render obtiene el código de la rama configurada, construye el Dockerfile, inicia el contenedor usando `PORT` y expone la URL HTTPS. Comprobar el commit del deploy y la documentación OpenAPI después del arranque. Un arranque en frío puede mostrar la página de activación de Render; la disponibilidad de Swagger se registra por separado del estado histórico `Live`.
+
+Para cerrar la entrega conjunta se requiere integrar las versiones compatibles, comprobar el cliente de paciente, definir las URLs/archivos de distribución de los clientes, validar CORS y repetir ST-03 en esos entornos. Este informe registra los pasos y la evidencia disponible; no atribuye despliegues ni instalaciones que no se realizaron.
 
 ### 7.4. Continuous Monitoring
 
@@ -3684,7 +4320,10 @@ El Video About-the-Product presenta el modelo de negocio de CareConnect y sus ca
 
 #### 7.4.4. Notification Pipeline Components
 
+La sección 7.4 queda fuera del alcance TB1. No se presenta el logging de consola como un sistema de monitoreo, alertas o notificaciones operativas.
+
 ---
+
 
 # Part III: Experiment-Driven Lifecycle
 
@@ -3776,6 +4415,17 @@ En cuanto a los seis Hypothesis Statements formulados, ninguno ha sido sometido 
 
 Como recomendación para el roadmap del proyecto, se propone priorizar durante la fase de Experiment-Driven Development los experimentos asociados a las tres primeras hipótesis, dado que cuentan con la evidencia cualitativa más sólida obtenida en esta entrega, y diseñar un experimento adicional dirigido específicamente a cuidadores formales con el fin de cerrar la brecha de validación de las suposiciones de negocio correspondientes. Asimismo, se recomienda incorporar en una futura ronda de entrevistas una pregunta explícita sobre la disposición de los participantes a compartir el perfil del paciente y a pagar por funcionalidades avanzadas, de manera que la hipótesis relacionada con la compartición de perfil y la suposición de negocio sobre el modelo freemium cuenten con evidencia propia antes de invertir en su desarrollo.
 
+
+### Resultados y recomendaciones de TB1
+
+TB1 añade evidencia técnica a la propuesta desarrollada en AV1. La landing bilingüe se verificó publicada y el enlace de About the Product se corrigió; el video About the Team sigue pendiente. El backend y los clientes del cuidador incorporan pruebas reproducibles de registro, login, eventos y consentimiento. Tras corregir Agenda, pasan 16 pruebas backend, 36 rápidas web, 9 rápidas móviles y 9 escenarios HTTP por cliente. Los checks CI de los tres productos aprobaron sus commits de revisión.
+
+La verificación mostró una diferencia relevante entre ocultar información en la interfaz y impedir su consulta en el servidor. La primera ejecución aún devolvía eventos sin sesión y después de revocar. El arreglo exige sesiones emitidas por IAM y propietario o consentimiento AGENDA vigente en cada ruta, y los clientes rechazan la caché tras 401/403. Esto aporta evidencia de funcionamiento de Agenda en el entorno probado; no demuestra la protección de todos los módulos ni una mejora clínica o de adherencia.
+
+El capítulo 7 documenta los builds y la entrega de cada producto. Existe evidencia de publicación de la landing y de un backend anterior en Render; las correcciones siguen en PRs. El APK debug de CI acredita compilación Android del cuidador, mientras la distribución release, iOS y la ejecución del paciente requieren verificaciones propias. Por eso ST-03 se mantiene parcial y no se presenta toda la solución como validada en producción.
+
+La siguiente iteración debe integrar versiones compatibles, comprobar que la app oficial Kotlin de paciente (`carestacks-frontend/main`) envía el token a Agenda, publicar los clientes con el backend HTTPS configurado y ejecutar desde sus interfaces la concesión, retirada de vistas y revocación. El contacto público y el enlace al acuerdo quedaron corregidos y publicados; queda sustituir About the Team y definir el canal privado para consultas relativas a datos personales. Después corresponde evaluar las hipótesis Lean UX con usuarios y métricas: las pruebas de software de TB1 no miden todavía retención, disposición a pagar, reducción de errores de medicación ni tiempo de relevo.
+
 ---
 
 ## Bibliografía
@@ -3809,10 +4459,13 @@ The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https:/
 | Informe del proyecto (`carestacks-report`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report |
 | Backend / Web Services (`carestacks-backend-api`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api |
 | Frontend Web (`carestacks-web`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web |
-| Landing Page (`Landing-Page`) | https://github.com/CareStacks/Landing-Page |
+| App Flutter del cuidador (`carestacks-mobile-app`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app |
+| App Android del paciente (`carestacks-frontend`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend |
+| Landing Page (`carestacks-landing-page`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page |
 
 ### Anexo: Videos
 | Entrega | Título | Enlace (Microsoft Stream) |
 |---------|--------|---------------------------|
 | AV1 | Video About-the-Product | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQD9H0d9sU4tQJuKV5PStHyuAYjfXdpoDfRe-xCc_R1401s |
 | AV1 | Video de exposición | \<url> |
+| TB1 | Video de exposición | [Ver exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQA9unyXf7GAS7Hj7D1HUpNHATNj-KI3ciqOrg7tZizpxVQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=OWQiRK) |

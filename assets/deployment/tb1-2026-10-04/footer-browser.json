@@ -1,0 +1,119 @@
+{
+  "checkedAt": "2026-10-05T04:30:56.815Z",
+  "url": "https://carestacks-landing-page.vercel.app/#contacto",
+  "checks": [
+    {
+      "footerLinks": [
+        {
+          "href": "#inicio",
+          "text": "CareConnect"
+        },
+        {
+          "href": "#inicio",
+          "text": "Inicio"
+        },
+        {
+          "href": "#funciones",
+          "text": "Funciones"
+        },
+        {
+          "href": "#beneficios",
+          "text": "Beneficios"
+        },
+        {
+          "href": "#precio",
+          "text": "Planes"
+        },
+        {
+          "href": "#funciones",
+          "text": "Organizar medicación"
+        },
+        {
+          "href": "#funciones",
+          "text": "Centralizar documentos"
+        },
+        {
+          "href": "#beneficios",
+          "text": "Coordinar familia"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues",
+          "text": "Contactar al equipo"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues",
+          "text": "Consultas del proyecto"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/blob/chapter-6/README.md#528-acuerdo-de-servicio---saas-saas-agreement",
+          "text": "Términos y condiciones"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues",
+          "text": "Consultas del proyecto en GitHub"
+        }
+      ],
+      "locale": "es",
+      "missingAnchors": [],
+      "placeholderEmail": false
+    },
+    {
+      "footerLinks": [
+        {
+          "href": "#inicio",
+          "text": "CareConnect"
+        },
+        {
+          "href": "#inicio",
+          "text": "Home"
+        },
+        {
+          "href": "#funciones",
+          "text": "Features"
+        },
+        {
+          "href": "#beneficios",
+          "text": "Benefits"
+        },
+        {
+          "href": "#precio",
+          "text": "Plans"
+        },
+        {
+          "href": "#funciones",
+          "text": "Manage medication"
+        },
+        {
+          "href": "#funciones",
+          "text": "Organize documents"
+        },
+        {
+          "href": "#beneficios",
+          "text": "Coordinate family care"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues",
+          "text": "Contact the team"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues",
+          "text": "Project inquiries"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/blob/chapter-6/README.md#528-acuerdo-de-servicio---saas-saas-agreement",
+          "text": "Terms and conditions"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues",
+          "text": "Project inquiries on GitHub"
+        }
+      ],
+      "locale": "en",
+      "missingAnchors": [],
+      "placeholderEmail": false
+    }
+  ],
+  "termsHeadingVerified": true,
+  "termsClickDestination": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/blob/chapter-6/README.md#528-acuerdo-de-servicio---saas-saas-agreement",
+  "termsLoadedAfterClick": true
+}
