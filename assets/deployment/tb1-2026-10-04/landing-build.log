@@ -1,0 +1,15 @@
+
+> landingpage@0.0.0 build
+> tsc -b && vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 46 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     1.02 kB │ gzip:  0.53 kB
+dist/assets/heroImg-BSzr2bbE.png  331.37 kB
+dist/assets/index-Dn7LiGV4.css     21.34 kB │ gzip:  4.81 kB
+dist/assets/index-BHD80n77.js     300.37 kB │ gzip: 93.88 kB
+
+✓ built in 1.96s

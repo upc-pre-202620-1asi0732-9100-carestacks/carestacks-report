@@ -9,7 +9,7 @@ Este registro respalda los apartados 7.1–7.3 del reporte. Diferencia los check
 | Flutter móvil del cuidador | `24098938f797175cfe37fb1ff50a74fc129a3ffd` | [CI JSON](mobile-ci.json): análisis, pruebas y APK debug `success` | Sin release/tienda ni instalación nativa acreditada |
 | Backend publicado en Render | `51decbd`, según captura del equipo | [Deploy original](../../render-after-ci-deploy.png): `Live`, `Auto-Deploy`, fuente `51decbd` | La versión es anterior al arreglo de Agenda; no se verificaron secretos ni configuración PostgreSQL |
 | Swagger público | Servicio Render | [Captura actual](backend-swagger.jpg), [registro del navegador](backend-browser.json) | Swagger cargó después del arranque en frío; no se ejecutaron mutaciones ni pruebas funcionales contra producción |
-| Landing | `ab2d60e`, despliegue `dpl_4CMyCEcycwvsUH3HDLieBbiTYrtL` | [Publicación y navegador](../../testing/landing-product-2026-10-04/verification.md) | El contacto/footer se actualiza en una verificación posterior; About the Team sigue pendiente |
+| Landing actual | `746ea487f0ecd4e56e94c43a4a129d42c0110182`, despliegue `dpl_6C3kbVMxMLQcg7D5hNNE3uuCcydX` | [CI](landing-ci.json), [Vercel READY/production](landing-deployment.json), [navegador ES/EN](footer-browser.json) | Contacto y términos corregidos; About the Team sigue pendiente |
 | Android paciente, repositorio oficial | `carestacks-frontend/main`, `922361d1db33251415481ed592227006c453e316` | Revisión de árbol de archivos en GitHub: Kotlin, `AgendaRepository`, `ConsentRepository`, `ShareProfileScreen` | Se identificó la fuente de la organización; no se ejecutó su build ni el recorrido nativo |
 
 Los registros CI contienen el commit fuente (`headSha`), los jobs, sus pasos, conclusión y URL de GitHub Actions. Web pasó `Build Flutter Web`; móvil pasó `Build Android APK`. Mostrar la ruta de un archivo en logs no lo publica como descarga: los workflows actuales no incluyen upload del bundle web o del APK. La consulta de deployments de `carestacks-web` y de releases de `carestacks-mobile-app` devolvió listas vacías el 04/10/2026. Eso indica ausencia de esos registros en GitHub, sin descartar una publicación manual en otra plataforma.
@@ -23,6 +23,14 @@ El archivo `render-auto-deploy-settings.png` referido por la redacción anterior
 ## Comprobación actual en navegador
 
 Se abrió `https://carestacks-backend-api.onrender.com/swagger-ui/index.html` en el navegador integrado. Render mostró su página de arranque en frío y posteriormente cargó Swagger con el título `CareConnect Backend API 0.0.1`, `OAS 3.1`, servidor HTTPS y los módulos Consentimiento, Documents, Diary, Notifications, IAM y Agenda. Se guardó la captura; no se enviaron peticiones de registro, login ni cambios a datos de producción.
+
+## Footer y contacto publicados
+
+El usuario eligió el canal público del proyecto en GitHub. El commit `746ea48` elimina `hola@careconnect.app` y los mailto asociados, sustituye las llamadas de contacto en ES/EN por ese canal y añade el enlace al acuerdo SaaS del equipo, incorporado al reporte desde `chapter-5`. No se envió ninguna consulta ni se creó una issue. El acuerdo describe el modelo propuesto; su publicación no acredita un procesador de pagos operativo. Se corrigió además su referencia 5.2.8.16 y se distingue el canal de consultas generales del canal privado pendiente para datos personales.
+
+`npm run lint` y `npm run build` terminaron con código 0 ([lint](landing-lint.log), [build](landing-build.log)). El [CI de la landing](landing-ci.json) terminó `success` sobre `746ea48`. Vercel CLI publicó en producción y `inspect` devolvió `READY`, target `production` y el ID del despliegue. El registro CLI no incluye `gitSource`; la versión del código se identifica por el commit local/publicado y el CI, junto con la comprobación del contenido en la URL pública.
+
+En el navegador integrado se revisaron los destinos de los enlaces del footer en ambos idiomas. No apareció el correo provisional y todos los anchors internos tuvieron un destino existente. Se abrió el enlace de términos desde el footer y se observó la sección `5.2.8. Acuerdo de Servicio - SaaS (SaaS Agreement)` en GitHub. Los [resultados de navegador](footer-browser.json) registran locales, URLs y comprobaciones; las [capturas ES](footer-production-es.jpg) y [EN](footer-production-en.jpg) muestran el footer en la vista de escritorio disponible. La verificación es de escritorio y no sustituye una prueba de dispositivo móvil.
 
 ## Condiciones pendientes de publicación conjunta
 
