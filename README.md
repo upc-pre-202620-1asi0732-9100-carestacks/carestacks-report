@@ -3550,6 +3550,16 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ---
 
+##### Internationalization (i18n) Evidence
+
+La landing de CareConnect permite cambiar la interfaz entre español (`es`) e inglés (`en`). Las siguientes capturas, aportadas por el equipo en `chapter-5`, muestran ambas versiones. La comprobación de la landing publicada y sus enlaces actuales se registra en §6.1.4 y en la evidencia de despliegue de TB1.
+
+![Landing Page i18n - Español](assets/landing-i18n-es.png)
+
+![Landing Page i18n - English](assets/landing-i18n-en.png)
+
+---
+
 ##### Features Section
 
 ![CareConnect Landing Page Features](assets/careconnect-landing-features.png)
