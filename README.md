@@ -1285,6 +1285,20 @@ La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScri
 
 ---
 
+##### Internationalization (i18n) Evidence
+
+La Landing Page de CareConnect implementa Internationalization (i18n) para gestionar el contenido de la interfaz mediante los locales ⁠ es_419 ⁠ y ⁠ en_US ⁠.
+
+![Landing Page i18n - Español](assets/landing-i18n-es.png)
+
+Evidencia de la Landing Page utilizando el locale ⁠ es_419 ⁠.
+
+![Landing Page i18n - English](assets/landing-i18n-en.png)
+
+Evidencia de la Landing Page utilizando el locale ⁠ en_US ⁠.
+
+---
+
 ##### Features Section
 
 ![CareConnect Landing Page Features](assets/careconnect-landing-features.png)
