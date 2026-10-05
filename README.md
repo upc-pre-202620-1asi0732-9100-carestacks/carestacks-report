@@ -4368,3 +4368,4 @@ The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https:/
 |---------|--------|---------------------------|
 | AV1 | Video About-the-Product | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQD9H0d9sU4tQJuKV5PStHyuAYjfXdpoDfRe-xCc_R1401s |
 | AV1 | Video de exposición | \<url> |
+| TB1 | Video de exposición | [Ver exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQA9unyXf7GAS7Hj7D1HUpNHATNj-KI3ciqOrg7tZizpxVQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=OWQiRK) |
