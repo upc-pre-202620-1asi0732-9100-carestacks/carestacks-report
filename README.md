@@ -3718,7 +3718,7 @@ La distribución de commits entre los cuatro repositorios refleja la división d
 
 **CareConnect – CareStacks** · Versión 1.0 · Septiembre de 2026
 
-Texto del acuerdo elaborado por el equipo en `chapter-5`. Describe el modelo SaaS propuesto; las cláusulas de suscripción y cobro no acreditan una integración de pagos ni una operación comercial en esta entrega.
+**Nota del equipo.** El Acuerdo que sigue es la versión 1.0 (septiembre de 2026), enlazada desde la sección Términos y Condiciones de la Landing Page y disponible en español (es_419) e inglés (en_US). Describe el modelo SaaS propuesto para CareConnect; las cláusulas de suscripción y cobro describen ese modelo y no acreditan una integración de pagos ni una operación comercial en esta entrega.
 
 Este documento explica, en lenguaje sencillo, los derechos, obligaciones y restricciones que aplican cuando usas CareConnect. Al crear una cuenta o usar la plataforma, aceptas este Acuerdo. Si no estás de acuerdo, te pedimos no usar el servicio.
 
@@ -3825,7 +3825,30 @@ Este Acuerdo se rige por las leyes de la República del Perú. Intentaremos reso
 
 ##### 5.2.8.16. Contacto
 
-Para consultas generales del proyecto: [canal público del equipo en GitHub](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues). El canal privado para reclamos relativos a datos personales queda pendiente de definir; no se deben incluir esos datos en consultas públicas.
+Para consultas generales del proyecto: [canal público del equipo en GitHub](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues). Para ejercer tus derechos de acceso, rectificación, cancelación y oposición sobre tus datos personales, escribe a careconnect@gmail.com. No incluyas datos de salud ni otros datos personales en las consultas públicas.
+
+##### 5.2.8.17. Alineación ética y profesional
+
+La redacción del Acuerdo se orientó por el Código de Ética y Práctica Profesional de la Ingeniería de Software de ACM/IEEE-CS (ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices, 1999) y por el código de ética del Colegio de Ingenieros del Perú (Colegio de Ingenieros del Perú, s.f.). La siguiente tabla relaciona las cláusulas del Acuerdo con los principios aplicados.
+
+| Cláusula del Acuerdo | Principio | Cómo se refleja |
+|---|---|---|
+| 5.2.8.3 y 5.2.8.12 (descripción del servicio y limitación de responsabilidad) | Público; Producto | Declara que CareConnect no reemplaza el criterio de un profesional de la salud ni atiende emergencias, y no promete más de lo que el producto hace. |
+| 5.2.8.6 y 5.2.8.9 (derechos y datos personales) | Público | Trata la información de salud como dato sensible conforme a la Ley N.° 29733 (Ley 29733, 2011) y exige un consentimiento que puede revocarse en cualquier momento. |
+| 5.2.8.4, 5.2.8.7 y 5.2.8.8 (cuenta, obligaciones y restricciones) | Juicio | Solicita información veraz y prohíbe el acceso a perfiles sin consentimiento y el uso fraudulento del servicio. |
+| 5.2.8.5 y 5.2.8.14 (planes y cambios al Acuerdo) | Público | Informa precios, renovación y cancelación antes de contratar, y avisa los cambios importantes. |
+| 5.2.8.11 (disponibilidad y soporte) | Producto; Juicio | Reconoce que el servicio puede interrumpirse y que las alertas no deben ser la única forma de controlar medicamentos críticos. |
+
+##### 5.2.8.18. Claridad y accesibilidad
+
+El Acuerdo se redactó pensando en personas cuidadoras y pacientes que no necesariamente tienen formación legal. Las decisiones de claridad y accesibilidad que pueden comprobarse en el propio texto son:
+
+- Lenguaje sencillo y trato directo en segunda persona.
+- Secciones numeradas con títulos descriptivos, lo que permite ubicar cada tema.
+- Definiciones de los términos clave en una tabla.
+- Listas separadas para derechos, obligaciones y restricciones de uso.
+- Disponibilidad en español (es_419) e inglés (en_US) mediante el selector de idioma de la Landing Page, que actualiza el atributo `lang` del documento y las etiquetas accesibles (secciones 4.3.1 y 6.1.3).
+
 
 
 ### 5.3. Video About-the-Product
