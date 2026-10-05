@@ -4430,9 +4430,15 @@ La siguiente iteración debe integrar versiones compatibles, comprobar que la ap
 
 ## Bibliografía
 
+ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (Version 5.2). Association for Computing Machinery. https://www.acm.org/code-of-ethics/software-engineering-code
+
 Beard, J. R., Officer, A., de Carvalho, I. A., et al. (2016). The World report on ageing and health: A policy framework for healthy ageing. *The Lancet*, *387*(10033), 2145–2154. https://doi.org/10.1016/S0140-6736(15)00516-4
 
+Colegio de Ingenieros del Perú. (s.f.). *Código de ética del Colegio de Ingenieros del Perú*. https://cdcallao.cip.org.pe/wp-content/uploads/2024/09/codigo_de_etica_del_cip.pdf
+
 Instituto Nacional de Estadística e Informática. (2024). *Situación de la población adulta mayor: Informe técnico N.° 01*. https://www.inei.gob.pe/media/MenuRecursivo/boletines/informe-tecnico-poblacion-adulta-mayor.pdf
+
+Ley 29733. (2011). *Ley de protección de datos personales*. Congreso de la República del Perú. https://www.congreso.gob.pe/Docs/DGP/DIDP/files/ley_29733.pdf
 
 Microsoft. (s.f.). *REST API guidelines*. GitHub. https://github.com/microsoft/api-guidelines
 
