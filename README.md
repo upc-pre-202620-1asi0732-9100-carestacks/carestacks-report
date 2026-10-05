@@ -900,9 +900,13 @@ Resultado del pipeline de Docker Build:
 
 ![Docker build](assets/docker-build-success.png)
 
-Evidencia del despliegue exitoso en producción mediante Render:
+Evidencia de que Render espera a que los checks de CI en GitHub Actions pasen antes de iniciar el despliegue:
 
-![Render deploy exitoso](assets/render-deploy-success.png)
+![CI Checks en GitHub](assets/render-ci-checks-github.png)
+
+Evidencia del despliegue automático en producción mediante Render, activado después de que los checks de CI finalizaron exitosamente:
+
+![Render Auto-Deploy after CI](assets/render-after-ci-deploy.png)
 
 Documentación de la API desplegada (Swagger UI):
 
@@ -911,19 +915,6 @@ Documentación de la API desplegada (Swagger UI):
 Archivo de configuración del pipeline CI:
 
 ![Archivo ci.yml](assets/ci-workflow-file.png)
-
-## 7.4. Continuous Deployment (Evidencias)
-#### 7.4.1. Tools and Practices
-#### 7.4.2. Monitoring Pipeline Components
-#### 7.4.3. Alerting Pipeline Components
-#### 7.4.4. Notification Pipeline Components
-
-
-### 7.4. Continuous Monitoring
-#### 7.4.1. Tools and Practices
-#### 7.4.2. Monitoring Pipeline Components
-#### 7.4.3. Alerting Pipeline Components
-#### 7.4.4. Notification Pipeline Components
 
 ---
 
