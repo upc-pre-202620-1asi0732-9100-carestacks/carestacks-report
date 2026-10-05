@@ -91,7 +91,7 @@ Octubre, 2026
 | 1.6.0 | 04/10/2026 | Angela Espinoza | Homogeneizó los criterios de aceptación en Gherkin y completó los precios del análisis competitivo (`chapter-2`, `chapter-3`, `chapter-5`) |
 | 1.7.0 | 01/10/2026 | Angela Espinoza | Actualizó la carátula, el Student Outcome y el Team Collaboration Insights del TB1 (`develop`) |
 | 1.8.0 | 04/10/2026 | Santiago Baldeon | Desarrolló el Acuerdo de Servicio SaaS y las conclusiones, y elaboró el guion y el video de exposición del TB1 (`develop`) |
-| 2.0.0 | 05/10/2026 | Matias Salcedo | TB1 Report |
+| 2.0.0 | 04/10/2026 | Matias Salcedo | Consolidó la verificación TB1, corrigió los resultados y conclusiones, e incorporó el capítulo 7 y el acuerdo SaaS con evidencia y límites de entrega |
 
 # Project Report Collaboration Insights
 
@@ -293,6 +293,7 @@ TB1:
       - [Repositorio de la Aplicación Móvil (`carestacks-mobile-app`)](#repositorio-de-la-aplicación-móvil-carestacks-mobile-app)
       - [Repositorio de la Aplicación Web (`carestacks-web`)](#repositorio-de-la-aplicación-web-carestacks-web)
       - [Interpretación](#interpretación)
+      - [5.2.8. Acuerdo de Servicio - SaaS](#528-acuerdo-de-servicio---saas-saas-agreement)
     - [5.3. Video About-the-Product](#53-video-about-the-product)
 - [Part II: Verification, Validation & Pipeline](#part-ii-verification-validation--pipeline)
   - [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
@@ -375,6 +376,7 @@ TB1:
       - [8.6.2. Resumen usando Gees Framework](#862-resumen-usando-gees-framework)
   - [Conclusiones](#conclusiones)
     - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+    - [Resultados y recomendaciones de TB1](#resultados-y-recomendaciones-de-tb1)
   - [Bibliografía](#bibliografía)
   - [Anexos](#anexos)
     - [Anexo A: Archivo de Figma](#anexo-a-archivo-de-figma)
@@ -392,7 +394,7 @@ Cada participante del equipo debe sustentar evidencia de cómo las actividades r
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |----|----|----|
-|4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Redacté la descripción de la startup, los perfiles del equipo, el problema y la problemática, el proceso completo de Lean UX (Problem Statements, Assumptions, Hypothesis Statements y Canvas) y los segmentos objetivo en el Capítulo I. En el Capítulo II, desarrollé el análisis competitivo, el diseño y registro de entrevistas, los User Personas, User Task Matrix, Journey Maps, Empathy Maps, As-Is Scenario Mapping y el glosario de Ubiquitous Language.<br><br>**TB1**<br>Homogeneicé los criterios de aceptación en formato Gherkin de todas las User Stories y completé los precios faltantes del análisis competitivo, atendiendo el feedback del docente. Actualicé la carátula, el Student Outcome, el Team Collaboration Insights, el registro de versiones y las conclusiones del informe parcial.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Configuré la plantilla inicial del informe y la carátula del equipo. En el Capítulo III, redacté el To-Be Scenario Mapping, las User Stories, el Product Backlog y el Impact Mapping. En el Capítulo IV, completé la sección de Web Applications UX/UI Design.<br><br>**TB1**<br>Desarrollé en el Capítulo VI los Core Entities Unit Tests, los Core Integration Tests, el Core Behavior Driven Development y los Core System Tests. Corregí además la Landing Page implementando el i18n en español e inglés, actualicé los videos About The Team y About The Product, y corregí en el reporte que la landing ya no es multilenguaje.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Elaboré en el Capítulo IV los diagramas de arquitectura (Context, Container y Components), los diagramas y diccionario de clases, y el diagrama de base de datos. En el Capítulo V, documenté la Software Configuration Management, la evidencia de despliegue del Landing Page y la configuración de despliegue de los productos de CareConnect.<br><br>**TB1**<br>Desarrollé en el Capítulo VII la sección 7.1 Continuous Integration, con sus herramientas, prácticas y componentes del pipeline de build y test. Rediseñé la base de datos pasando del formato C4 a diagramas UML normalizados por Bounded Context, atendiendo el feedback del docente.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Colaboré en la documentación de los perfiles de integrantes del equipo en el Capítulo I y en contenido del Capítulo IV.<br><br>**TB1**<br>Redacté el Acuerdo de Servicio SaaS y las conclusiones y recomendaciones del informe. Elaboré el guion para los cinco integrantes y edité el video de exposición del TB1.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Documenté en el Capítulo IV el prototipado de la aplicación móvil (iOS con Flutter) y adapté la base Flutter del segmento cuidador a un prototipo funcional de escritorio para el Capítulo IV.7. En el Capítulo V, documenté la evidencia de implementación del Frontend-Web, la evidencia Native-Mobile, la evidencia del backend RESTful y su documentación en Swagger, y actualicé los Sprint Backlogs con el detalle técnico de cada tarea.<br><br>**TB1**<br>Desarrollé en el Capítulo VII las secciones 7.2 Continuous Delivery y 7.3 Continuous Deployment, con sus herramientas, prácticas y componentes de los pipelines de staging y producción.|**AV1**<br><br>Abordamos de manera efectiva los retos de los capítulos desarrollados hasta esta entrega gracias a la actualización constante de conceptos y conocimientos en ingeniería de software, aplicando metodologías actuales como Lean UX, Domain Driven Design, arquitectura C4 y mejores prácticas de implementación para el desarrollo del proyecto y nuestro crecimiento profesional.<br><br>**TB1**<br><br>Asumimos durante el TB1 nuestra responsabilidad profesional atendiendo el feedback del AV1 y cumpliendo cada uno los entregables asignados. Corregimos lo observado en la landing, la base de datos, los criterios de aceptación y los precios, y dejamos evidencia verificable en pruebas y pipelines.|
+|4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Redacté la descripción de la startup, los perfiles del equipo, el problema y la problemática, el proceso completo de Lean UX (Problem Statements, Assumptions, Hypothesis Statements y Canvas) y los segmentos objetivo en el Capítulo I. En el Capítulo II, desarrollé el análisis competitivo, el diseño y registro de entrevistas, los User Personas, User Task Matrix, Journey Maps, Empathy Maps, As-Is Scenario Mapping y el glosario de Ubiquitous Language.<br><br>**TB1**<br>Homogeneicé los criterios de aceptación en formato Gherkin de todas las User Stories y completé los precios faltantes del análisis competitivo, atendiendo el feedback del docente. Actualicé la carátula, el Student Outcome, el Team Collaboration Insights, el registro de versiones y las conclusiones del informe parcial.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Configuré la plantilla inicial del informe y la carátula del equipo. En el Capítulo III, redacté el To-Be Scenario Mapping, las User Stories, el Product Backlog y el Impact Mapping. En el Capítulo IV, completé la sección de Web Applications UX/UI Design.<br><br>**TB1**<br>Desarrollé en el Capítulo VI los Core Entities Unit Tests, los Core Integration Tests, el Core Behavior Driven Development y los Core System Tests. Corregí además la Landing Page implementando el i18n en español e inglés, corregí el enlace de About the Product y documenté que About the Team sigue pendiente. Verifiqué la landing bilingüe ES/EN y registré el alcance real de las pruebas, incluidas la autorización de Agenda y sus limitaciones de despliegue.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Elaboré en el Capítulo IV los diagramas de arquitectura (Context, Container y Components), los diagramas y diccionario de clases, y el diagrama de base de datos. En el Capítulo V, documenté la Software Configuration Management, la evidencia de despliegue del Landing Page y la configuración de despliegue de los productos de CareConnect.<br><br>**TB1**<br>Desarrollé en el Capítulo VII la sección 7.1 Continuous Integration, con sus herramientas, prácticas y componentes del pipeline de build y test. Rediseñé la base de datos pasando del formato C4 a diagramas UML normalizados por Bounded Context, atendiendo el feedback del docente.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Colaboré en la documentación de los perfiles de integrantes del equipo en el Capítulo I y en contenido del Capítulo IV.<br><br>**TB1**<br>Redacté el Acuerdo de Servicio SaaS y las conclusiones y recomendaciones del informe. Elaboré el guion para los cinco integrantes y edité el video de exposición del TB1.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Documenté en el Capítulo IV el prototipado de la aplicación móvil (iOS con Flutter) y adapté la base Flutter del segmento cuidador a un prototipo funcional de escritorio para el Capítulo IV.7. En el Capítulo V, documenté la evidencia de implementación del Frontend-Web, la evidencia Native-Mobile, la evidencia del backend RESTful y su documentación en Swagger, y actualicé los Sprint Backlogs con el detalle técnico de cada tarea.<br><br>**TB1**<br>Desarrollé en el Capítulo VII las secciones 7.2 Continuous Delivery y 7.3 Continuous Deployment, con sus herramientas, prácticas y componentes de los pipelines de staging y producción.|**AV1**<br><br>Abordamos de manera efectiva los retos de los capítulos desarrollados hasta esta entrega gracias a la actualización constante de conceptos y conocimientos en ingeniería de software, aplicando metodologías actuales como Lean UX, Domain Driven Design, arquitectura C4 y mejores prácticas de implementación para el desarrollo del proyecto y nuestro crecimiento profesional.<br><br>**TB1**<br><br>Asumimos durante el TB1 nuestra responsabilidad profesional atendiendo el feedback del AV1 y cumpliendo cada uno los entregables asignados. Corregimos lo observado en la landing, la base de datos, los criterios de aceptación y los precios, y dejamos evidencia verificable en pruebas y pipelines.|
 |4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Investigué metodologías de validación temprana de producto y herramientas de análisis de mercado que no había aplicado antes al elaborar el Lean UX Canvas y el análisis competitivo. Reforcé con el diseño y análisis de entrevistas la importancia de la empatía y el aprendizaje continuo sobre experiencia de usuario en un dominio sensible como el cuidado de adultos mayores.<br><br>**TB1**<br>Comparé soluciones reales al completar los precios del análisis competitivo y juzgué el impacto económico de nuestra propuesta. Comprendí al escribir los criterios en Gherkin cómo una especificación clara reduce errores que afectarían a cuidadores y pacientes.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Profundicé en técnicas de priorización de historias de usuario al redactar el Product Backlog y el Impact Mapping. Aprendí a adaptar un sistema de diseño pensado originalmente para móvil hacia un contexto de escritorio al completar el diseño UX/UI web.<br><br>**TB1**<br>Comprendí al diseñar las pruebas del Capítulo VI que verificar el sistema es una forma de proteger a los usuarios en un dominio sensible. Consideré el alcance global y el acceso a la información en más de un idioma al implementar el i18n.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Profundicé en Domain Driven Design y en la representación formal de bounded contexts al elaborar los diagramas C4 y el diccionario de clases. Investigué buenas prácticas de gestión de variables de entorno y separación de ambientes al documentar la configuración de despliegue.<br><br>**TB1**<br>Colaboré en la documentación de la integración continua y comprobé su impacto en la calidad y mantenibilidad del producto. Evalué cómo el diseño de datos afecta la integridad de la información clínica al normalizar la base de datos por Bounded Context.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Revisé cómo estructurar información técnica de forma clara para distintos lectores del informe al colaborar en la documentación del equipo y del Capítulo IV.<br><br>**TB1**<br>Investigué las implicaciones económicas y legales de ofrecer el producto como servicio al redactar el Acuerdo SaaS. Valoré con criterio el impacto social y los alcances reales del proyecto al preparar las conclusiones y el guion.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Aprendí sobre sistemas de layout responsive y jerarquía visual en Flutter Web, algo que no había trabajado antes, al adaptar la aplicación móvil Flutter a un prototipo web funcional. Profundicé en configuración de CORS, gestión de variables de entorno y buenas prácticas de control de versiones Git que no dominaba con este nivel de detalle al levantar y documentar el backend con Swagger.<br><br>**TB1**<br>Colaboré en la documentación de los pipelines de entrega y despliegue, y evalué el impacto de las decisiones de despliegue en la disponibilidad y confiabilidad del servicio para los usuarios.|**AV1**<br><br>Incorporamos nuevas metodologías, herramientas y enfoques en el desarrollo del proyecto gracias al aprendizaje permanente, que nos permitió adaptarnos a los retos técnicos y metodológicos de los capítulos desarrollados hasta esta entrega y nos preparó para un desempeño profesional competente y actualizado en ingeniería de software.<br><br>**TB1**<br><br>Fundamentamos en el TB1 nuestras decisiones sobre pruebas, pipelines, base de datos, modelo SaaS e i18n considerando su impacto económico, social y global, y no solo su viabilidad técnica.|
 
 # Part I: As-Is Software Project
@@ -2539,8 +2541,8 @@ La persistencia local con Room/SQLite permite mantener determinados datos dispon
 El backend actual de CareConnect se implementa como una aplicación Spring Boot única organizada internamente mediante bounded contexts.
 
 ```text
-Language: Java 21
-Framework: Spring Boot
+Language: Java 25
+Framework: Spring Boot 4
 Build Tool: Maven
 ORM: Spring Data JPA / Hibernate
 Relational Database: PostgreSQL
@@ -2591,16 +2593,16 @@ Los valores reales de estas variables deben mantenerse únicamente en los entorn
 La Landing Page actualmente implementada utiliza:
 
 ```text
-Framework: Flutter
-UI Components: Flutter
-Package Manager: flutter run
+Framework: React + TypeScript + Vite
+UI Components: React
+Package Manager: npm
 Communication: REST over HTTPS/JSON
 ```
 
 El repositorio correspondiente es:
 
 ```text
-https://github.com/CareStacks/Landing-Page
+https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page
 ```
 
 ##### Configuración de la Frontend Web Application
@@ -2612,7 +2614,7 @@ El stack establecido para esta aplicación es:
 ```text
 Framework: Flutter
 UI Components: Flutter
-Package Manager: npm
+Package Manager: Flutter / Dart Pub
 Communication: REST over HTTPS/JSON
 ```
 
@@ -2620,7 +2622,7 @@ La aplicación deberá consumir los servicios expuestos por el backend y contar 
 
 ##### Consideración sobre el stack del curso
 
-El backend actualmente implementado utiliza **Java 21 y Spring Boot**. Sin embargo, el Final Project Statement de 1ASI0732 establece **ASP.NET Core y C#** para los Web Services.
+El backend actualmente implementado utiliza **Java 25 y Spring Boot 4**. Sin embargo, el Final Project Statement de 1ASI0732 establece **ASP.NET Core y C#** para los Web Services.
 
 De igual forma, la Landing Page existente utiliza React + Vite + TypeScript, mientras que el statement establece un stack específico para dicho producto.
 
@@ -2691,7 +2693,7 @@ Además del repositorio del informe, la solución CareConnect se compone de los 
 | `carestacks-report` | Informe del proyecto (este repositorio). | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report |
 | `carestacks-backend-api` | Web Services: API REST del backend (Spring Boot), organizada en los bounded contexts de IAM, Agenda, Notificaciones, Diario, Documentos y Gestión de Consentimiento. | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api |
 | `carestacks-web` | Frontend Web Application: adaptación a escritorio de la aplicación del cuidador (Flutter web). | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web |
-| `Landing-Page` | Landing Page del producto (React + TypeScript + Vite), desplegada en Vercel. | https://github.com/CareStacks/Landing-Page |
+| `carestacks-landing-page` | Landing Page del producto (React + TypeScript + Vite), desplegada en Vercel. | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page |
 
 #### Convenciones de GitFlow para los repositorios de producto
 
@@ -3063,7 +3065,7 @@ y la especificación OpenAPI mediante:
 /v3/api-docs
 ```
 
-Actualmente, el informe no presenta evidencia suficiente de una URL pública de producción de la RESTful API. Por ello, el deployment del backend deberá completarse antes de ser presentado como un servicio desplegado en producción.
+El equipo aportó evidencia del backend publicado en Render: [Swagger público](https://carestacks-backend-api.onrender.com/swagger-ui/index.html), [deploy automático del commit 51decbd](assets/render-after-ci-deploy.png). El capítulo 7 distingue esa versión de la corrección de Agenda en PR y registra la comprobación de disponibilidad del servicio; la existencia del deployment no acredita el recorrido ST-03 completo.
 
 ---
 
@@ -3612,6 +3614,120 @@ Esta sección presenta la evidencia de colaboración del equipo a lo largo de lo
 
 La distribución de commits entre los cuatro repositorios refleja la división de trabajo definida en el Sprint Backlog (§5.2.1): mientras el repositorio del informe concentra la participación distribuida de los cinco integrantes según la sección del reporte a su cargo, los repositorios de backend, móvil y web muestran una concentración de commits en los integrantes directamente responsables de esas capas de implementación durante este sprint, consistente con la asignación de tareas técnicas del equipo.
 
+#### 5.2.8. Acuerdo de Servicio - SaaS (SaaS Agreement)
+
+**CareConnect – CareStacks** · Versión 1.0 · Septiembre de 2026
+
+Texto del acuerdo elaborado por el equipo en `chapter-5`. Describe el modelo SaaS propuesto; las cláusulas de suscripción y cobro no acreditan una integración de pagos ni una operación comercial en esta entrega.
+
+Este documento explica, en lenguaje sencillo, los derechos, obligaciones y restricciones que aplican cuando usas CareConnect. Al crear una cuenta o usar la plataforma, aceptas este Acuerdo. Si no estás de acuerdo, te pedimos no usar el servicio.
+
+##### 5.2.8.1. Quiénes somos y qué es este Acuerdo
+
+CareConnect es una plataforma de software como servicio (SaaS) desarrollada por **CareStacks**, que ayuda a cuidadores y pacientes geriátricos a organizar el cuidado diario. Este Acuerdo es el contrato entre CareStacks ("nosotros") y la persona que usa la plataforma ("tú" o "el usuario").
+
+##### 5.2.8.2. Definiciones
+
+| Término | Significado |
+|---|---|
+| **Paciente** | Persona cuya información de salud se gestiona en la plataforma. |
+| **Cuidador** | Persona, familiar o profesional, que participa en el cuidado de uno o más pacientes. |
+| **Perfil compartido** | Perfil del paciente al que un cuidador accede porque el paciente lo autorizó. |
+| **Consentimiento de acceso** | Autorización del paciente que define qué información puede ver un cuidador. Puede modificarse o retirarse en cualquier momento. |
+
+##### 5.2.8.3. Descripción del servicio
+
+CareConnect ofrece:
+
+- Calendario de medicación y terapias.
+- Alertas y recordatorios.
+- Carpeta digital de documentos clínicos.
+- Diario de seguimiento y evolución del paciente.
+- Compartición de perfiles entre cuidadores.
+
+El servicio se brinda mediante una aplicación móvil y una aplicación web. CareConnect es una herramienta de apoyo y **no reemplaza el criterio, diagnóstico ni indicación de un profesional de la salud**.
+
+##### 5.2.8.4. Cuenta y roles
+
+Para usar el servicio debes registrarte con datos verdaderos y elegir tu rol (Paciente o Cuidador). Eres responsable de mantener la confidencialidad de tus credenciales y de la actividad realizada desde tu cuenta. Debes tener capacidad legal para aceptar este Acuerdo o actuar con autorización de quien la tenga.
+
+##### 5.2.8.5. Planes, pagos y cancelación
+
+- CareConnect funciona bajo un modelo **freemium**: un plan gratuito con funciones limitadas y planes de pago con funciones completas.
+- Planes vigentes: **Plan Mensual ($15)** y **Plan Anual ($150)**. Los precios y las funciones de cada plan se muestran en la sección "Planes" del sitio antes de contratar.
+- Las suscripciones se **renuevan automáticamente** al terminar cada periodo, salvo que las canceles antes de la fecha de renovación.
+- La cancelación evita cobros futuros y mantienes el acceso hasta el fin del periodo ya pagado.
+- Los pagos realizados no son reembolsables, salvo que la ley disponga lo contrario.
+- Podemos modificar precios y planes con aviso previo razonable; los cambios no afectan el periodo ya pagado.
+
+##### 5.2.8.6. Tus derechos
+
+1. Usar el servicio conforme a tu plan.
+2. Acceder, rectificar, cancelar y oponerte al tratamiento de tus datos personales.
+3. Otorgar, modificar y revocar el acceso de otros cuidadores a tu perfil (si eres paciente).
+4. Solicitar la eliminación de tu cuenta.
+5. Recibir información clara sobre cambios a este Acuerdo.
+6. Contar con soporte a través de nuestros canales de contacto.
+
+##### 5.2.8.7. Tus obligaciones
+
+- Proporcionar información veraz.
+- Usar el servicio solo para fines de cuidado y gestión de salud.
+- Respetar la privacidad de los pacientes.
+- Compartir información de un paciente únicamente con su consentimiento o el de su representante legal.
+- Avisarnos de cualquier uso no autorizado de tu cuenta.
+
+##### 5.2.8.8. Restricciones de uso
+
+Está prohibido:
+
+- Acceder a perfiles de pacientes sin consentimiento.
+- Intentar vulnerar la seguridad de la plataforma.
+- Usar el servicio para fines ilegales o fraudulentos.
+- Copiar, revender, sublicenciar o realizar ingeniería inversa del software.
+- Subir contenido ilícito o con software malicioso.
+- Compartir tu cuenta con terceros.
+
+##### 5.2.8.9. Datos personales y datos de salud
+
+La información de salud es **dato sensible**. La tratamos conforme a la **Ley N.° 29733, Ley de Protección de Datos Personales**, y su reglamento.
+
+- Solo tratamos tus datos para prestar el servicio.
+- Los datos se transmiten por conexiones cifradas (HTTPS/TLS) y los documentos clínicos se guardan en almacenamiento privado.
+- Usamos proveedores de infraestructura (almacenamiento de archivos, notificaciones push y envío de correos) que solo reciben los datos necesarios.
+- No vendemos tus datos.
+- Un cuidador solo ve la información que el paciente autorizó, y esa autorización puede **revocarse en cualquier momento**.
+- Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición escribiéndonos al contacto indicado en la sección 5.2.8.16.
+
+##### 5.2.8.10. Propiedad intelectual
+
+El software, la marca CareConnect, el diseño y los contenidos de la plataforma pertenecen a CareStacks. Te otorgamos una licencia limitada, personal, revocable y no exclusiva para usar el servicio. La información y los documentos que subes siguen siendo tuyos, y nos autorizas a tratarlos solo para prestarte el servicio.
+
+##### 5.2.8.11. Disponibilidad y soporte
+
+Hacemos esfuerzos razonables para mantener el servicio disponible, pero no garantizamos que funcione sin interrupciones. Podemos realizar mantenimientos y te avisaremos cuando sea posible. Las alertas dependen de factores externos (conexión a internet, dispositivo, permisos de notificación), por lo que no deben ser tu única forma de controlar medicamentos críticos.
+
+##### 5.2.8.12. Limitación de responsabilidad
+
+CareConnect no brinda atención médica ni atiende emergencias. **En una emergencia, contacta de inmediato a los servicios de salud.** En la medida que permita la ley, CareStacks no responde por decisiones médicas tomadas a partir de la información registrada, ni por daños indirectos derivados del uso o la imposibilidad de uso del servicio.
+
+##### 5.2.8.13. Suspensión y terminación
+
+Puedes dejar de usar el servicio y eliminar tu cuenta cuando quieras. Podemos suspender o cerrar cuentas que incumplan este Acuerdo, con aviso previo salvo en casos graves o de riesgo de seguridad. Al terminar, tus datos se eliminan o anonimizan, salvo los que la ley nos obligue a conservar.
+
+##### 5.2.8.14. Cambios al Acuerdo
+
+Podemos actualizar este Acuerdo. Te avisaremos de los cambios importantes por la aplicación o por correo. Si sigues usando el servicio después del aviso, entendemos que aceptas la nueva versión.
+
+##### 5.2.8.15. Ley aplicable y controversias
+
+Este Acuerdo se rige por las leyes de la República del Perú. Intentaremos resolver cualquier diferencia de forma directa y, de no lograrlo, se someterá a los jueces y tribunales de Lima, Perú, sin perjuicio de los derechos que la ley te reconozca como consumidor.
+
+##### 5.2.8.16. Contacto
+
+Para consultas generales del proyecto: [canal público del equipo en GitHub](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues). El canal privado para reclamos relativos a datos personales queda pendiente de definir; no se deben incluir esos datos en consultas públicas.
+
+
 ### 5.3. Video About-the-Product
 
 El Video About-the-Product presenta el modelo de negocio de CareConnect y sus características principales, dirigido tanto a los visitantes del Landing Page que buscan conocer la propuesta de valor como a los usuarios de las aplicaciones que desean realizar las tareas soportadas por la solución.
@@ -3625,16 +3741,19 @@ El Video About-the-Product presenta el modelo de negocio de CareConnect y sus ca
 
 ### 6.1. Testing Suites & Validation
 
-El 01/10/2026 se ejecutó la suite JUnit del [backend del curso](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api) en la rama [`test/core-verification`](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/tree/test/core-verification) (commit `24b1e75`): seis pruebas unitarias y cuatro de integración y arranque. El 30/09/2026 también se verificaron el cambio de idioma y los videos del [landing publicado](https://carestacks-landing-page.vercel.app/). La tabla resume qué se probó y los resultados observados.
+La verificación actual de TB1 corresponde a las versiones de revisión del 04/10/2026. Los [resultados de la corrección de Agenda](assets/testing/agenda-auth-2026-10-04/verification.md) vinculan código, logs y CI. Las ejecuciones anteriores se conservan más abajo como historial y no representan el estado actual de las suites.
 
-| Tipo de prueba | Qué se verificó | Evidencia | Resultado al 01/10/2026 |
-|---|---|---|---|
-| Unidad | Reglas de entidades `HealthEvent` y `ProfileShareConsent` | `HealthEventTest` y `ProfileShareConsentTest` en la rama publicada del backend actual | 6 pruebas aprobadas, 0 fallos |
-| Integración | Arranque de Spring con H2 y flujos API + persistencia | `CareConnectBackendApplicationTests` y `CoreApiIntegrationTests` | 4 pruebas aprobadas, 0 fallos |
-| BDD | USL05, cambio de idioma del Landing Page | Ejecución manual local y en la URL pública | Aprobado en ambos entornos; sin automatización BDD |
-| Sistema | Navegación, idioma y videos del Landing Page | Inspección de la URL pública, captura actual y reproducción de ambos videos incrustados | ST-01 aprobado; ST-02 pendiente de corregir los enlaces de video |
+| Suite / comprobación | Alcance actual | Resultado |
+|---|---|---|
+| Backend | JUnit: dominio, integración, autorización de diez rutas de Agenda y expiración de sesión | 16 aprobadas, sin fallos ni omisiones |
+| Cliente web | Pruebas rápidas, aceptación y caché ante 401/403 | 36 aprobadas |
+| Cliente móvil Flutter | Pruebas rápidas, aceptación y caché ante 401/403 | 9 aprobadas |
+| Sistema web y móvil | HTTP real contra H2 temporal, SYS-01–SYS-09 por cliente | 9/9 por cliente; revocación y ausencia de sesión aprobadas |
+| Análisis / compilación | Flutter Analyze en ambos clientes, web release y CI por producto | Aprobados; CI móvil incluye APK debug |
+| Landing pública | ES/EN y enlaces de video | ST-01 aprobado; ST-02 parcial por About the Team |
+| Recorrido completo desplegado | Interfaz del paciente, versiones compatibles y dispositivos | ST-03 parcial; pendiente validación conjunta |
 
-**Actualización TB1 — 04/10/2026.** Se repitieron las 10 pruebas del backend y se añadieron pruebas de aceptación y sistema para los clientes Flutter actuales. Pasan 32 pruebas rápidas web y 5 móviles. De 9 escenarios contra la API local por cliente, pasan 7 y fallan 2: la API permite consultar la agenda sin sesión y después de revocar el consentimiento. Se corrigieron en ambos clientes el estado sin paciente, la reutilización del perfil revocado desde la caché y la descarga de vistas no concedidas; también se corrigió un error de renderizado móvil. **ST-03 permanece parcial y no aprobado.** Los [resultados, logs, capturas, versiones y comandos de reproducción](assets/testing/tb1-2026-10-04/verification.md) distinguen las pruebas con HTTP simulado de las ejecutadas contra la API real con H2 temporal.
+**Primera ejecución TB1 — 04/10/2026 (historial anterior al arreglo de Agenda).** Se repitieron las 10 pruebas del backend y se añadieron pruebas de aceptación y sistema para los clientes Flutter actuales. Pasan 32 pruebas rápidas web y 5 móviles. De 9 escenarios contra la API local por cliente, pasan 7 y fallan 2: la API permite consultar la agenda sin sesión y después de revocar el consentimiento. Se corrigieron en ambos clientes el estado sin paciente, la reutilización del perfil revocado desde la caché y la descarga de vistas no concedidas; también se corrigió un error de renderizado móvil. **ST-03 permanece parcial y no aprobado.** Los [resultados, logs, capturas, versiones y comandos de reproducción](assets/testing/tb1-2026-10-04/verification.md) distinguen las pruebas con HTTP simulado de las ejecutadas contra la API real con H2 temporal.
 
 #### 6.1.1. Core Entities Unit Tests
 
@@ -3706,15 +3825,15 @@ Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-
 | ST-02 | Revisar secciones About the Team y About the Product | El 04/10/2026 se corrigió About the Product con el video de CareConnect en Microsoft Stream y se verificaron los accesos ES/EN y su reproducción desde la landing publicada. About the Team conserva el enlace de otro proyecto | Parcial: producto corregido; pendiente sustituir y verificar el video del equipo |
 | ST-03 | Recorrido completo paciente/cuidador: registro, evento, confirmación, acceso compartido y revocación | Tras corregir la autorización de Agenda, SYS-01–SYS-09 pasan en ambos clientes contra H2, incluidos el rechazo sin sesión y tras revocar | Parcial: defecto de Agenda corregido en ramas de revisión; pendiente recorrido del paciente, despliegue y dispositivos |
 
-**Límite de ST-02.** En la prueba local anterior, el navegador integrado mostró el error 153 en el reproductor embebido. En una sesión nueva del mismo navegador, ambos reproductores del sitio publicado cargaron y avanzaron. Sin embargo, al revisar su contenido el 02/10/2026, el video del equipo menciona “Cartax” y el del producto “Batimoff”. La reproducción técnica no valida que sean los videos de CareConnect. Se debe sustituir ambas URL y repetir la prueba antes de aprobar ST-02.
+**Límite de ST-02.** En la prueba local anterior, el navegador integrado mostró el error 153 en el reproductor embebido. En una sesión nueva del mismo navegador, ambos reproductores del sitio publicado cargaron y avanzaron. Sin embargo, al revisar su contenido el 02/10/2026, el video del equipo menciona “Cartax” y el del producto “Batimoff”. La reproducción técnica no valida que sean los videos de CareConnect. About the Product se corrigió y verificó después, como se documenta a continuación. Para aprobar ST-02 queda sustituir y verificar About the Team.
 
 **Corrección de About the Product — 04/10/2026.** El commit `ab2d60e` de la landing reemplaza el video ajeno con el enlace de Microsoft Stream registrado en §5.3. El botón y el enlace secundario abren `upc-pre-202620-1asi0732-9100-carestacks-about-the-product-sprint-1.mp4` (2:20). Se verificaron los textos y destinos en ES/EN, la apertura desde el botón del sitio público y la reproducción del archivo. La corrección está subida a GitHub y desplegada en [la landing publicada](https://carestacks-landing-page.vercel.app/#about-product-video). Las [capturas y resultados](assets/testing/landing-product-2026-10-04/verification.md) registran esta actualización; ST-02 sigue parcial hasta sustituir y validar About the Team.
 
 **Criterio de cierre de ST-03.** Registrar versión/commit de cada componente, URL del entorno, usuario de prueba sin datos reales, pasos, resultado esperado y observado, evidencia visual y defectos hallados al ejecutar el flujo desde la aplicación móvil o web conectada al backend.
 
-**Ejecución y evidencia de ST-03 — 04/10/2026.** Las suites rápidas registraron 32 casos web y 5 móviles aprobados; las suites de sistema registraron 7 aprobados y 2 fallidos en cada cliente. SYS-08 inicia sesión desde el formulario, navega a Agenda y confirma un evento; una consulta posterior comprueba `CONFIRMED`. SYS-09 crea una cuenta desde el formulario y muestra el estado sin pacientes activos. El consentimiento y el evento de SYS-08 se preparan mediante la API, no mediante una interfaz de paciente. Las [capturas y logs completos](assets/testing/tb1-2026-10-04/verification.md#evidencia-visual) muestran la evidencia y sus límites. Los dos controles negativos siguen activos y hacen que la suite de sistema termine con código 1. Para cerrar ST-03 se debe proteger el endpoint de datos y demostrar la concesión/revocación desde los clientes desplegados; comprobar únicamente `/api/consents/.../access` no demuestra esa protección.
+**Primera ejecución de ST-03 — 04/10/2026 (historial).** Las suites rápidas registraron 32 casos web y 5 móviles aprobados; las suites de sistema registraron 7 aprobados y 2 fallidos en cada cliente. SYS-08 inicia sesión desde el formulario, navega a Agenda y confirma un evento; una consulta posterior comprueba `CONFIRMED`. SYS-09 crea una cuenta desde el formulario y muestra el estado sin pacientes activos. El consentimiento y el evento de SYS-08 se preparan mediante la API, no mediante una interfaz de paciente. Las [capturas y logs completos](assets/testing/tb1-2026-10-04/verification.md#evidencia-visual) muestran la evidencia y sus límites. En esa ejecución, los dos controles negativos hicieron que la suite terminara con código 1. La corrección posterior que se documenta abajo protege Agenda y hace que ambos casos pasen. Sigue pendiente demostrar la concesión/revocación desde los clientes desplegados; comprobar únicamente `/api/consents/.../access` no demuestra ese recorrido.
 
-**Verificación adicional en navegador y publicación — 04/10/2026.** Se compiló la aplicación Flutter Web en modo release y se ejecutaron cinco comprobaciones desde el navegador integrado de Codex contra H2 local: rechazo de credenciales, registro del cuidador, login y confirmación de un evento, recarga después de revocar y cierre de sesión persistido tras recargar. La confirmación visible se contrastó con `CONFIRMED` en la API. El paciente, consentimiento y evento se prepararon por HTTP; no se acredita una interfaz de paciente ni una ejecución Android/iOS. La prueba encontró y corrigió la decodificación de mensajes `application/problem+json`, que dañaba los acentos. Las 32 pruebas rápidas web y 5 móviles volvieron a pasar, el análisis estático no encontró problemas y las suites externas conservaron sus dos fallos de autorización. Las [capturas, pasos y resultados de navegador](assets/testing/tb1-browser-2026-10-04/verification.md) complementan la primera ejecución. Los cambios se publicaron para revisión en [web PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/pull/1) y [móvil PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/pull/1); ST-03 sigue parcial por DEF-API-01 y la validación pendiente en clientes desplegados y dispositivos.
+**Verificación histórica en navegador — 04/10/2026, anterior al arreglo de Agenda.** Se compiló la aplicación Flutter Web en modo release y se ejecutaron cinco comprobaciones desde el navegador integrado de Codex contra H2 local: rechazo de credenciales, registro del cuidador, login y confirmación de un evento, recarga después de revocar y cierre de sesión persistido tras recargar. La confirmación visible se contrastó con `CONFIRMED` en la API. El paciente, consentimiento y evento se prepararon por HTTP; no se acredita una interfaz de paciente ni una ejecución Android/iOS. La prueba encontró y corrigió la decodificación de mensajes `application/problem+json`, que dañaba los acentos. Las 32 pruebas rápidas web y 5 móviles volvieron a pasar, el análisis estático no encontró problemas y las suites externas conservaron sus dos fallos de autorización. Las [capturas, pasos y resultados de navegador](assets/testing/tb1-browser-2026-10-04/verification.md) complementan la primera ejecución. Los cambios se publicaron para revisión en [web PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/pull/1) y [móvil PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/pull/1); en esa versión DEF-API-01 seguía abierto. La corrección posterior cierra el defecto de Agenda en las ramas de revisión; la validación en clientes desplegados y dispositivos sigue pendiente.
 
 **Corrección posterior de Agenda — 04/10/2026.** El [backend PR #3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3) exige sesiones emitidas por IAM y propiedad o consentimiento AGENDA vigente en las diez rutas. Se sustituyeron los tokens fabricables por sesiones opacas de 30 minutos; logout las revoca. Web y móvil envían el token y eliminan la lista rechazada de caché ante 401/403. Pasan 16 pruebas del backend, 36 rápidas web, 9 rápidas móviles y los 9 escenarios de sistema por cliente: SYS-06 y SYS-07 ya no fallan. Ambos análisis estáticos y la compilación web release aprobaron. Las [versiones, logs y límites de esta corrección](assets/testing/agenda-auth-2026-10-04/verification.md) actualizan el resultado; las ejecuciones anteriores se conservan como historial. El defecto de Agenda queda corregido en las ramas publicadas, pero ST-03 sigue parcial hasta validar el cliente de paciente y los entornos desplegados/dispositivos. Las sesiones son locales a una instancia y requieren login después de reiniciar. Los cambios están en PRs; no se han fusionado ni desplegado.
 
@@ -3758,23 +3877,336 @@ Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-
 
 ## Capítulo VII: DevOps Practices
 
+Para el **Trabajo Parcial (TP)**, el alcance del Capítulo VII comprende **Continuous Integration, Continuous Delivery y Continuous Deployment**, correspondientes a las secciones **7.1, 7.2 y 7.3**. La sección **7.4 Continuous Monitoring** se mantiene únicamente como estructura del informe, ya que corresponde a una etapa posterior.
+
+La estrategia DevOps de CareConnect busca que los cambios realizados en los productos principales de la solución puedan ser verificados, preparados para entrega y desplegados mediante procesos repetibles y trazables. Para ello se emplea GitHub como plataforma de control de versiones y colaboración, y GitHub Actions como herramienta de automatización de los pipelines.
+
+Se integra aquí el contenido del equipo de `chapter-7` (`758ce96`) y se actualiza con los workflows y resultados de las ramas de revisión del 04/10/2026. Las capturas originales se conservan como evidencia histórica; los [registros CI actuales](assets/deployment/tb1-2026-10-04/verification.md) identifican las versiones aprobadas.
+
+Los productos considerados en el pipeline del Trabajo Parcial son:
+
+| Producto | Repositorio | Stack actual | Build tool |
+|---|---|---|---|
+| Landing Page | `carestacks-landing-page` | React + TypeScript + Vite | npm / Vite |
+| Frontend Web Application | `carestacks-web` | Flutter Web | Flutter SDK |
+| Native Mobile Application | `carestacks-mobile-app` | Flutter + Dart | Flutter SDK |
+| RESTful API | `carestacks-backend-api` | Spring Boot 4 + Java 25 | Maven |
+
 ### 7.1. Continuous Integration
+
+La **Integración Continua (Continuous Integration)** permite verificar automáticamente cada cambio antes de integrarlo a una rama estable. En CareConnect, el objetivo es detectar errores de compilación, fallas en pruebas y problemas de integración lo más temprano posible, evitando que cambios defectuosos lleguen a los ambientes de entrega o producción.
 
 #### 7.1.1. Tools and Practices
 
+La herramienta seleccionada para la automatización es **GitHub Actions**, debido a que los repositorios de CareConnect se administran en GitHub y el equipo ya utiliza GitFlow, Pull Requests y Conventional Commits como parte de su flujo de desarrollo.
+
+Las prácticas definidas para Continuous Integration son:
+
+| Práctica | Aplicación en CareConnect |
+|---|---|
+| Control de versiones | Git y GitHub para todos los repositorios del producto. |
+| Estrategia de ramas | `main`, `develop`, `feature/*` y `test/*`. |
+| Pull Requests | Todo cambio destinado a `develop` o `main` debe integrarse mediante Pull Request. |
+| Validaciones automáticas | Cada Pull Request debe ejecutar el workflow de CI antes de ser fusionado. |
+| Build reproducible | Cada producto utiliza su herramienta oficial de construcción: Maven, Flutter o Vite. |
+| Pruebas automatizadas | Se ejecutan las suites disponibles y se incorporan progresivamente Unit, Integration, BDD y System Tests del Capítulo VI. |
+| Gestión de secretos | Las credenciales no se incluyen en el repositorio y deben almacenarse en GitHub Secrets o GitHub Environments. |
+| Trazabilidad | El resultado de cada ejecución queda asociado al commit y al Pull Request que la originó. |
+
+Los triggers definidos para CI son:
+
+```text
+push -> develop
+push -> main
+pull_request -> develop
+pull_request -> main
+```
+
+Cuando el equipo trabaje directamente sobre una rama `feature/*`, la validación principal se ejecutará al abrir o actualizar el Pull Request hacia `develop`. Esto permite evitar ejecuciones innecesarias sin perder el control de calidad previo a la integración.
+
 #### 7.1.2. Build & Test Suite Pipeline Components
+
+El pipeline general de integración continua sigue el siguiente flujo:
+
+```text
+Developer
+    |
+    v
+Commit / Push
+    |
+    v
+Pull Request
+    |
+    v
+GitHub Actions
+    |
+    v
+Checkout
+    |
+    v
+Setup del entorno
+    |
+    v
+Restauración de dependencias
+    |
+    v
+Build
+    |
+    v
+Automated Test Suite
+    |
+    v
+Resultado del pipeline
+    |
+    +---- success ----> PR habilitado para revisión e integración
+    |
+    +---- failure ----> corrección requerida
+```
+
+Los componentes principales son:
+
+| Componente | Responsabilidad |
+|---|---|
+| Trigger | Inicia el workflow ante `push` o `pull_request`. |
+| Checkout | Obtiene exactamente el commit que será validado. |
+| Environment Setup | Configura Java, Flutter o Node.js según el producto. |
+| Dependency Restore | Descarga y, cuando sea posible, reutiliza caché de dependencias. |
+| Build | Verifica que el producto pueda construirse correctamente. |
+| Unit Tests | Valida reglas de negocio y comportamiento aislado. |
+| Integration Tests | Verifica la interacción entre capas, persistencia y servicios. |
+| BDD Tests | Ejecuta escenarios derivados de User Stories cuando los Steps estén implementados. |
+| System Tests | Verifica flujos de extremo a extremo cuando la suite esté disponible. |
+| Pipeline Result | Publica el resultado `success` o `failure` asociado al commit/PR. |
+
+##### Pipeline del RESTful API
+
+Para el backend de CareConnect se utiliza **Java 25, Spring Boot 4 y Maven**.
+
+```text
+Checkout
+   |
+   v
+Setup Java 25
+   |
+   v
+Maven dependency cache
+   |
+   v
+mvn -B test
+   |
+   v
+JUnit: Unit / Integration Tests
+   |
+   v
+Build Result
+```
+
+Comando principal:
+
+```bash
+mvn -B test
+```
+
+![Backend CI Evidence](assets/backend-ci-success.png)
+
+*Evidencia de ejecución exitosa del pipeline de Continuous Integration del RESTful API.*
+
+##### Pipeline de la Frontend Web Application
+
+Para la aplicación web, el pipeline considera restauración de dependencias, análisis estático, ejecución de pruebas y generación del build de producción.
+
+```text
+Checkout
+   |
+   v
+Setup Flutter
+   |
+   v
+flutter pub get
+   |
+   v
+flutter analyze
+   |
+   v
+flutter test
+   |
+   v
+flutter build web --release
+   |
+   v
+Build Result
+```
+
+Comandos principales:
+
+```bash
+flutter pub get
+flutter analyze
+flutter test
+flutter build web --release
+```
+
+![Web CI Evidence](assets/web-ci-success.png)
+
+*Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Frontend Web Application.*
+
+##### Pipeline de la Landing Page
+
+La Landing Page utiliza **React, TypeScript y Vite**. Su pipeline instala las dependencias disponibles en el proyecto, ejecuta el análisis estático y construye el bundle de producción.
+
+```text
+Checkout
+   |
+   v
+Setup Node.js
+   |
+   v
+npm install
+   |
+   v
+npm run lint
+   |
+   v
+npm run build
+   |
+   v
+Build Result
+```
+
+Comandos principales:
+
+```bash
+npm install
+npm run lint
+npm run build
+```
+
+La [ejecución CI de la landing actual](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/actions/runs/37244598095) aprobó el commit `ab2d60e`; el [registro de verificación](assets/testing/landing-product-2026-10-04/verification.md) documenta su publicación.
+
+##### Pipeline de la Native Mobile Application
+
+La aplicación móvil de CareConnect está implementada con **Flutter y Dart**. El pipeline instala las dependencias, realiza análisis estático, ejecuta la suite de pruebas cuando se encuentra disponible y genera un APK Android de depuración como evidencia de que la aplicación puede compilarse correctamente.
+
+```text
+Checkout
+   |
+   v
+Setup Java 17
+   |
+   v
+Setup Flutter
+   |
+   v
+flutter pub get
+   |
+   v
+flutter analyze
+   |
+   v
+Tests disponibles
+   |
+   v
+flutter build apk --debug
+   |
+   v
+Build Result
+```
+
+Comandos principales:
+
+```bash
+flutter pub get
+flutter analyze
+flutter build apk --debug
+```
+
+La rama de revisión actual incluye `test/`: sus nueve pruebas rápidas se ejecutan en CI. El workflow solo omite Flutter Test si el directorio no existe. Los nueve escenarios HTTP externos se ejecutan aparte, como se explica en el Capítulo VI.
+
+![Mobile CI Evidence](assets/mobile-ci-success.png)
+
+*Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Native Mobile Application.*
+
+##### Diagrama general del pipeline
+
+![CareConnect CI Pipeline](assets/build-test-suite-pipeline.png)
+
+*Build & Test Suite Pipeline Components de CareConnect, integrando RESTful API, Frontend Web, Native Mobile Application y Landing Page.*
+
+---
 
 ### 7.2. Continuous Delivery
 
 #### 7.2.1. Tools and Practices
 
+CareConnect prepara cada producto mediante su pipeline de GitHub Actions y mantiene la entrega separada de su publicación. Un build aprobado demuestra que esa versión compila y supera las pruebas configuradas; la disponibilidad de una URL, una instalación nativa y un recorrido completo se comprueban por separado. Los workflows actuales muestran los archivos generados, pero no publican `build/web` ni el APK como artefactos descargables de Actions.
+
+| Producto | Preparación comprobada | Entrega y límite actual |
+|---|---|---|
+| RESTful API | Java 25, `mvn -B clean verify`; suite adicional y construcción Docker | Render construye su propia imagen desde el repositorio; el CI no la sube a un registry |
+| Frontend Web | `flutter pub get`, `flutter analyze`, `flutter test`, `flutter build web --release` | Se genera `build/web`; falta una URL publicada con la versión corregida y el backend configurado |
+| App Flutter del cuidador | Java 17, Flutter, análisis, pruebas y `flutter build apk --debug` | El APK de depuración demuestra compilación Android; no acredita firma release, Play Store, iOS ni instalación en dispositivo |
+| Landing Page | Node 24, instalación npm, lint y build Vite | Publicada en Vercel mediante CLI; verificación de ES/EN y enlaces en navegador |
+
+La revisión de Agenda está publicada en [backend PR #3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3), [web PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/pull/1) y [móvil PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/pull/1). El [registro de entrega TB1](assets/deployment/tb1-2026-10-04/verification.md) vincula cada commit con su ejecución CI y evita confundir esas ramas con producción.
+
 #### 7.2.2. Stages Deployment Pipeline Components
+
+**Verificación.** El backend usa JUnit, Spring Boot Test y H2 en memoria. La versión corregida pasó 16 pruebas. Los clientes pasaron 36 pruebas rápidas web, 9 móviles y 9 escenarios de sistema por cliente contra una API H2 desechable. Las suites externas se ejecutan explícitamente y no forman parte del `flutter test` predeterminado del CI. SYS-06/SYS-07 comprueban el rechazo después de revocar y sin sesión.
+
+**Empaquetado.** El Dockerfile realiza `mvn -B -DskipTests package` en Maven 3.9.11 con Temurin 25 y copia el JAR a una imagen JRE ejecutada como usuario `spring`. Las pruebas se ejecutan antes en CI; construir Docker por sí solo no las ejecuta. Flutter produce `build/web` y `build/app/outputs/flutter-apk/app-debug.apk`; la landing produce `dist`.
+
+**Configuración web.** `ApiConfig` permite definir el backend en compilación. Para preparar un bundle conectado al servicio público:
+
+```bash
+flutter pub get
+flutter analyze
+flutter test
+flutter build web --release --dart-define=API_BASE_URL=https://carestacks-backend-api.onrender.com
+```
+
+Sin ese `--dart-define`, el bundle usa `http://localhost:8080`; un build de CI con esa configuración no debe presentarse como una app de producción conectada. Publicar el contenido de `build/web` en el alojamiento elegido, comprobar que CORS permite su origen HTTPS y repetir login, Agenda y revocación. Este procedimiento está documentado; no se ha ejecutado una nueva publicación de la aplicación web.
+
+**Configuración móvil.** Para reproducir la compilación Android del cuidador:
+
+```bash
+flutter pub get
+flutter analyze
+flutter test
+flutter build apk --debug --dart-define=API_BASE_URL=https://carestacks-backend-api.onrender.com
+```
+
+Instalar y probar ese APK en un dispositivo o emulador antes de considerarlo una entrega funcional. La distribución release requiere la configuración de firma del equipo y una compilación release; no se incluyen claves en el repositorio. Una entrega iOS exige el entorno Apple y su firma. El cliente Android del paciente está en [carestacks-frontend](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend), rama `main` (`922361d`), dentro de la organización del curso. `develop` solo contiene el README. Su compatibilidad con la corrección de Agenda requiere verificación propia; el repositorio histórico `CareStacks/FrontEnd` no pertenece a esta sección.
+
+**Backend y persistencia.** El servicio recibe `PORT` y las variables `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_DRIVER_CLASS_NAME`, `SPRING_DATASOURCE_USERNAME`, `SPRING_DATASOURCE_PASSWORD` y `SPRING_JPA_HIBERNATE_DDL_AUTO`. Para PostgreSQL usar su URL JDBC y `org.postgresql.Driver`. La evidencia visual del servicio no expone secretos ni permite certificar los valores de esas variables. El código tiene H2 como valor por defecto; por ello la persistencia PostgreSQL requiere comprobar la configuración del entorno y no se infiere solo por la existencia de una URL pública.
+
+**Aceptación y recuperación.** Registrar commit, URL o archivo generado, CI, configuración no secreta y resultado del recorrido. Mantener disponibles el build y commit anteriores para volver a publicarlos si falla la nueva versión; conservar la base de datos y comprobar la compatibilidad de esquema antes de revertir. No existe en estos workflows un proceso automatizado de backup/restauración ni una publicación a tiendas. Las sesiones de IAM corregidas residen en una sola instancia y requieren login después de reiniciar.
 
 ### 7.3. Continuous deployment
 
 #### 7.3.1. Tools and Practices
 
+Los repositorios usan `main`, `develop`, ramas `feature/*` y `test/*`, con Pull Requests y checks de CI. Una rama de revisión aprobada no se fusiona ni despliega por el hecho de pasar las pruebas. El cambio de Agenda permanece en PRs; la captura de Render corresponde a `51decbd`, una versión anterior al arreglo.
+
+El equipo aportó evidencia de un despliegue automático en Render: `Deploy succeeded | Live`, trigger `Auto-Deploy`, fuente `51decbd`, el 04/10/2026. Se conserva la [captura original](assets/render-after-ci-deploy.png), incorporada desde `chapter-7` (`758ce96`). La referencia anterior a `assets/render-auto-deploy-settings.png` se retiró porque el archivo no existe; no se sustituye por una imagen que simule el panel de configuración.
+
+![Despliegue automático de backend en Render](assets/render-after-ci-deploy.png)
+
+La [captura de checks de GitHub](assets/render-ci-checks-github.png) y la del deploy respaldan el historial aportado por el equipo. El modo `After CI Checks Pass` debe comprobarse en Settings del servicio para certificar que Render exige esos checks; la captura de un deploy exitoso no muestra esa configuración. La [documentación oficial de Render](https://render.com/docs/deploys) describe ese modo y el comportamiento del despliegue.
+
+La landing se publica mediante Vercel CLI. El despliegue manual a producción y la integración automática con GitHub son mecanismos distintos; no se ha acreditado esta última para el proyecto actual. La [documentación oficial de Vercel CLI](https://vercel.com/docs/cli/deploy) explica `--prod`.
+
 #### 7.3.2. Production Deployment Pipeline Components
+
+| Producto | Destino y evidencia | Estado comprobado |
+|---|---|---|
+| Backend | [Swagger público](https://carestacks-backend-api.onrender.com/swagger-ui/index.html), captura Render `51decbd` y [registro de comprobación](assets/deployment/tb1-2026-10-04/verification.md) | Existe evidencia de publicación; el arreglo de Agenda aún no está en esa versión |
+| Landing | [Vercel](https://carestacks-landing-page.vercel.app/), despliegue y navegador documentados en §6.1.4 | Publicada; About the Product corregido y About the Team pendiente |
+| Web del cuidador | CI del commit `42d50ac`, bundle release comprobado | Preparada para publicar; no se encontró un registro de deployment en GitHub ni se acreditó una URL de esta versión |
+| Móvil del cuidador | CI del commit `2409893`, etapa APK debug aprobada | Compilada; no se encontró una release del repositorio ni se acreditó distribución en dispositivo/tienda |
+
+Para el backend, Render obtiene el código de la rama configurada, construye el Dockerfile, inicia el contenedor usando `PORT` y expone la URL HTTPS. Comprobar el commit del deploy y la documentación OpenAPI después del arranque. Un arranque en frío puede mostrar la página de activación de Render; la disponibilidad de Swagger se registra por separado del estado histórico `Live`.
+
+Para cerrar la entrega conjunta se requiere integrar las versiones compatibles, comprobar el cliente de paciente, definir las URLs/archivos de distribución de los clientes, validar CORS y repetir ST-03 en esos entornos. Este informe registra los pasos y la evidencia disponible; no atribuye despliegues ni instalaciones que no se realizaron.
 
 ### 7.4. Continuous Monitoring
 
@@ -3786,7 +4218,10 @@ Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-
 
 #### 7.4.4. Notification Pipeline Components
 
+La sección 7.4 queda fuera del alcance TB1. No se presenta el logging de consola como un sistema de monitoreo, alertas o notificaciones operativas.
+
 ---
+
 
 # Part III: Experiment-Driven Lifecycle
 
@@ -3878,6 +4313,17 @@ En cuanto a los seis Hypothesis Statements formulados, ninguno ha sido sometido 
 
 Como recomendación para el roadmap del proyecto, se propone priorizar durante la fase de Experiment-Driven Development los experimentos asociados a las tres primeras hipótesis, dado que cuentan con la evidencia cualitativa más sólida obtenida en esta entrega, y diseñar un experimento adicional dirigido específicamente a cuidadores formales con el fin de cerrar la brecha de validación de las suposiciones de negocio correspondientes. Asimismo, se recomienda incorporar en una futura ronda de entrevistas una pregunta explícita sobre la disposición de los participantes a compartir el perfil del paciente y a pagar por funcionalidades avanzadas, de manera que la hipótesis relacionada con la compartición de perfil y la suposición de negocio sobre el modelo freemium cuenten con evidencia propia antes de invertir en su desarrollo.
 
+
+### Resultados y recomendaciones de TB1
+
+TB1 añade evidencia técnica a la propuesta desarrollada en AV1. La landing bilingüe se verificó publicada y el enlace de About the Product se corrigió; el video About the Team sigue pendiente. El backend y los clientes del cuidador incorporan pruebas reproducibles de registro, login, eventos y consentimiento. Tras corregir Agenda, pasan 16 pruebas backend, 36 rápidas web, 9 rápidas móviles y 9 escenarios HTTP por cliente. Los checks CI de los tres productos aprobaron sus commits de revisión.
+
+La verificación mostró una diferencia relevante entre ocultar información en la interfaz y impedir su consulta en el servidor. La primera ejecución aún devolvía eventos sin sesión y después de revocar. El arreglo exige sesiones emitidas por IAM y propietario o consentimiento AGENDA vigente en cada ruta, y los clientes rechazan la caché tras 401/403. Esto aporta evidencia de funcionamiento de Agenda en el entorno probado; no demuestra la protección de todos los módulos ni una mejora clínica o de adherencia.
+
+El capítulo 7 documenta los builds y la entrega de cada producto. Existe evidencia de publicación de la landing y de un backend anterior en Render; las correcciones siguen en PRs. El APK debug de CI acredita compilación Android del cuidador, mientras la distribución release, iOS y la ejecución del paciente requieren verificaciones propias. Por eso ST-03 se mantiene parcial y no se presenta toda la solución como validada en producción.
+
+La siguiente iteración debe integrar versiones compatibles, comprobar que la app Kotlin de paciente envía el token a Agenda, publicar los clientes con el backend HTTPS configurado y ejecutar desde sus interfaces la concesión, retirada de vistas y revocación. También debe confirmarse el contacto del servicio y sustituirse About the Team. Después corresponde evaluar las hipótesis Lean UX con usuarios y métricas: las pruebas de software de TB1 no miden todavía retención, disposición a pagar, reducción de errores de medicación ni tiempo de relevo.
+
 ---
 
 ## Bibliografía
@@ -3911,7 +4357,9 @@ The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https:/
 | Informe del proyecto (`carestacks-report`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report |
 | Backend / Web Services (`carestacks-backend-api`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api |
 | Frontend Web (`carestacks-web`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web |
-| Landing Page (`Landing-Page`) | https://github.com/CareStacks/Landing-Page |
+| App Flutter del cuidador (`carestacks-mobile-app`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app |
+| App Android del paciente (`carestacks-frontend`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend |
+| Landing Page (`carestacks-landing-page`) | https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page |
 
 ### Anexo: Videos
 | Entrega | Título | Enlace (Microsoft Stream) |

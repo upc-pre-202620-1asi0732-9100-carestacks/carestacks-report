@@ -1,0 +1,41 @@
+{
+  "date_local": "2026-10-04",
+  "ci": {
+    "backend": {
+      "headSha": "734f8694a13f3ead85fade5b6eed3a2c938516b5",
+      "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/actions/runs/37260376359",
+      "conclusion": "success"
+    },
+    "web": {
+      "headSha": "42d50ac265ebc24ed4b14a5b97144f81ecd702ca",
+      "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/actions/runs/37260341123",
+      "conclusion": "success"
+    },
+    "mobile": {
+      "headSha": "24098938f797175cfe37fb1ff50a74fc129a3ffd",
+      "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/actions/runs/37260341247",
+      "conclusion": "success"
+    }
+  },
+  "report_source_chapter7": "758ce96",
+  "official_patient_source": {
+    "repo": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend",
+    "branch": "main",
+    "commit": "922361d1db33251415481ed592227006c453e316"
+  },
+  "validation": {
+    "new_local_links_missing": [],
+    "section_headings_unique": true,
+    "prior_missing_assets": []
+  },
+  "files_sha256": {
+    "backend-browser.json": "e481ffef01cef7ef7db21659a4022fc4219d56923127d6b355b68456af0348f2",
+    "backend-ci.json": "ab70ca7f3ee83511a026ec660910ab3695897903f0f31eb34ab827781a0ab098",
+    "backend-swagger.jpg": "0198d61de319e3147bd959e1aff055ab3d0db9f4b5da941b33b2ddd1f20b9811",
+    "footer-preview-en.jpg": "7cce4bde88d592393a5161a116ab5cf4f7adecb1074e81e291a3bd63ed18ab5d",
+    "footer-preview-es.jpg": "5702eeae709ec6488b8f86ff5508a5d77eb7b04a5865e0dca95ac3d1b0d34641",
+    "mobile-ci.json": "73d3135b4640e938be1807754856d75790c8cf1f2e7c72dea0ff00a2019bae5e",
+    "verification.md": "689c2dea35dabf7910e49ad2eda8d487963444c7ee5a7b6b1a766f1f70dca8d4",
+    "web-ci.json": "2d3d7f0678b8ad623180da1bc4ed29572462c7debe2c3ae3f608a6d68a08b4f2"
+  }
+}
