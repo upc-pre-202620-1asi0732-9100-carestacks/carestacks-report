@@ -1,0 +1,37 @@
+[
+  {
+    "case": "BR-03",
+    "check": "browser confirmation persisted",
+    "httpStatus": 200,
+    "eventStatus": "CONFIRMED",
+    "pass": true
+  },
+  {
+    "case": "BR-04",
+    "check": "consent revoked via API fixture",
+    "httpStatus": 204,
+    "pass": true
+  },
+  {
+    "case": "SYS-06",
+    "check": "direct agenda access after revocation",
+    "httpStatus": 200,
+    "expected": [
+      401,
+      403
+    ],
+    "pass": false,
+    "returnedEvents": 1
+  },
+  {
+    "case": "SYS-07",
+    "check": "direct agenda access without session",
+    "httpStatus": 200,
+    "expected": [
+      401,
+      403
+    ],
+    "pass": false,
+    "returnedEvents": 1
+  }
+]

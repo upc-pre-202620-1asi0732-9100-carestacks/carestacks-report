@@ -1,0 +1,35 @@
+00:00 +0: loading C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/system_test/care_flow_test.dart
+00:00 +0: (setUpAll)
+00:00 +0: SYS-01 Given registered users, When sharing and confirming, Then the event persists
+00:01 +1: SYS-02 Given an account, When the password is wrong, Then login is rejected
+00:03 +2: SYS-03 Given a new caregiver, When loading home, Then an empty dashboard is shown
+00:04 +3: SYS-04 Given cached patient data, When consent is revoked, Then home removes the patient
+00:06 +4: SYS-05 Given agenda-only consent, When diary is opened, Then its content is not downloaded
+00:08 +5: SYS-06 Given a revoked consent, When requesting agenda directly, Then the API denies access
+00:09 +5 -1: SYS-06 Given a revoked consent, When requesting agenda directly, Then the API denies access [E]
+  Expected: (<401> or <403>)
+    Actual: <200>
+  Revocation must protect the data endpoint.
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  system_test\care_flow_test.dart 310:7               main.<fn>
+  
+00:09 +5 -1: SYS-07 Given no session, When requesting agenda, Then the API denies access
+00:11 +5 -2: SYS-07 Given no session, When requesting agenda, Then the API denies access [E]
+  Expected: (<401> or <403>)
+    Actual: <200>
+  Data requires authentication.
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  system_test\care_flow_test.dart 329:7               main.<fn>
+  
+00:11 +5 -2: SYS-08 Given a linked caregiver, When logging in and tapping Confirmar, Then the UI and API update
+00:24 +6 -2: SYS-09 Given a new caregiver, When registering from the form, Then home shows no linked patient
+00:29 +7 -2: (tearDownAll)
+00:29 +7 -2: Some tests failed.
+
+Failing tests:
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/system_test/care_flow_test.dart: SYS-06 Given a revoked consent, When requesting agenda directly, Then the API denies access
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/system_test/care_flow_test.dart: SYS-07 Given no session, When requesting agenda, Then the API denies access

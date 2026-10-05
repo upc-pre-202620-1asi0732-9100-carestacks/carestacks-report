@@ -1,0 +1,26 @@
+00:00 +0: loading C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/caregiver_acceptance_test.dart
+00:00 +0: BDD-05 incorrect credentials preserve the unauthenticated state
+00:00 +0 -1: BDD-05 incorrect credentials preserve the unauthenticated state [E]
+  Expected: throws <Instance of 'ApiException'> with `status`: <401> and `message`: 'Correo o contraseña incorrectos'
+    Actual: <Instance of 'Future<UserProfile>'>
+     Which: threw ApiException:<Correo o contraseÃ±a incorrectos>
+            stack package:carestacks/core/network/care_connect_api_client.dart 363:5  CareConnectApiClient._send
+                  ===== asynchronous gap ===========================
+                  package:matcher                                                     expectLater
+                  package:flutter_test/src/widget_tester.dart 507:8                   expectLater
+                  test\caregiver_acceptance_test.dart 166:13                          main.<fn>
+                  
+            which has `message` with value 'Correo o contraseÃ±a incorrectos' which is different.
+                  Expected: ... o contraseña incorre ...
+                    Actual: ... o contraseÃ±a incorr ...
+                                          ^
+                   Differ at offset 17
+  
+  package:matcher                                    expectLater
+  package:flutter_test/src/widget_tester.dart 507:8  expectLater
+  test\caregiver_acceptance_test.dart 166:13         main.<fn>
+  
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/matia/dev/DisenoDeExperimentos/carestacks-web/test/caregiver_acceptance_test.dart: BDD-05 incorrect credentials preserve the unauthenticated state

@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-04",
+  "timezone": "America/Bogota",
+  "scope": "Local disposable API; real Flutter Web browser; mobile tests are widgets, not native device execution",
+  "source_commits": {
+    "web": "37ff8bca94cf98a87d4bda09079e17545f21eaa6",
+    "mobile": "4f86fc425733fae0210cdc4d3be73020591a17de",
+    "backend": "4528a60872498fa510770dd9926daaa685abd781"
+  },
+  "browser": {
+    "runs": 5,
+    "passed": 5,
+    "automated_runner": false
+  },
+  "fast_tests": {
+    "web": {
+      "runs": 32,
+      "passed": 32
+    },
+    "mobile": {
+      "runs": 5,
+      "passed": 5
+    }
+  },
+  "system_each_client": {
+    "runs": 9,
+    "passed": 7,
+    "failed": [
+      "SYS-06",
+      "SYS-07"
+    ]
+  },
+  "backend_previous_run": {
+    "runs": 10,
+    "passed": 10,
+    "rerun": false
+  },
+  "exit_codes": {
+    "web": {
+      "unit": 0,
+      "analyze": 0,
+      "system": 1
+    },
+    "mobile": {
+      "analyze": 0,
+      "system": 1,
+      "unit": 0
+    }
+  },
+  "web_release_build_exit_code": 0,
+  "build_main_dart_js_sha256": {
+    "483204d": "4760d1e169e75f229393fd6fa8cf8f68d1c2ac180f2f50a787edbefb08d91885",
+    "37ff8bc": "eb174c3c51542cc2796a16b4f31bdf485098d3ff88f36628dbffdd4b7be54fe3"
+  },
+  "ci": {
+    "web": {
+      "headSha": "37ff8bca94cf98a87d4bda09079e17545f21eaa6",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/actions/runs/37242472931",
+      "workflowName": "Web CI"
+    },
+    "mobile": {
+      "headSha": "4f86fc425733fae0210cdc4d3be73020591a17de",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/actions/runs/37242557138",
+      "workflowName": "Mobile CI"
+    }
+  },
+  "ST-03": "partial, not approved",
+  "open_defect": "DEF-API-01",
+  "sha256": {
+    "agenda-confirmed.jpg": "6474424441cd02af33baebe46a7b275fcd7c0609404b975eb09fa2720049e600",
+    "agenda-pending.jpg": "9c6aa41c38988cb4fd36c95f2a4dc58df2dd5fc2ba1ca96c85414e196dac8956",
+    "browser-api-results.json": "033cd6fde5fe52ba51ed8394933fecd6535b3c39ee799f3c1f3d666563e7a22d",
+    "browser-cases.json": "20340911e5ce7896e2dc992a1f0e404801e7b4a0d79757338f4f6e7a79d65691",
+    "invalid-login-before-utf8.jpg": "3a9f5fc23a34d60432b1fc0a7e36f6cc1bfdc607be387781122ac523dd290b5d",
+    "invalid-login-ui-state.txt": "645bccd34111004cbf0a2de5e6cc8c035b79f9a863f43da87478c1dc5cc080f7",
+    "invalid-login.jpg": "35e79424b2ba2969383aae7082461397fa24b8394be0185fcf1ecd0fd41af1d8",
+    "linked-home.jpg": "d10a58bbf7e7a5503d3554c54a67682244b8e7679a3cd62c98cc231e73cde217",
+    "logged-out-after-reload.jpg": "083d6ba82d82d96065550a4c80c98b2e311d863b2b7821dd8c6c592c499b51d2",
+    "login.jpg": "083d6ba82d82d96065550a4c80c98b2e311d863b2b7821dd8c6c592c499b51d2",
+    "mobile-analyze.log": "a8fff3771ccfaea8ce2ecc45264bcef1f225516463ea0c20aa45203a8b89b567",
+    "mobile-ci.json": "aee086797d72fc9f7585b96349acdb3018353b29c9f5dd211dc9f6bf6e5561c2",
+    "mobile-system.log": "bb104acf3ba78ffba1bfdc4c917e450914c45f23f8202c377e647ec086a187a7",
+    "mobile-unit.log": "a4f0c6da7d605033a3c0492b620e9afe17e8a95ebc808e3b457a8610cc6e944e",
+    "registered-no-patient.jpg": "bf54abf9f3461a66c804d00f267cb03a73b69af89d63bd1cf2a7f8d518e2b6bc",
+    "registration.jpg": "e921139acff4c75d72a4e89f700f90256830d9a8f8c10b01400c271b2f1f69b6",
+    "revoked-patient-removed.jpg": "bf54abf9f3461a66c804d00f267cb03a73b69af89d63bd1cf2a7f8d518e2b6bc",
+    "revoked-ui-state.txt": "6366a41cc9028e37dd589f453f1da40c728366145b0428582f672c814a0ec4ca",
+    "utf8-before.log": "18d37be2a5a925ed60b4348ca65ad9020e755046757a5345c48fda420e1240bf",
+    "verification.md": "d50b1eea807ad642c8cf30597d09f2b1a6a4649b68b33ef4c4f7f554d7e56e2e",
+    "web-analyze.log": "755fbd0dbd8671b536158eb73d45d3e97593e2891e6daf4d375e6e32db374cc3",
+    "web-build.log": "e98e99a936d6b0e921e2d46eb8f43994a6d0b1ad3a9ba09d788a20a7cf0f5615",
+    "web-ci.json": "c4e8006f6ba82bb585a962a69c4601df99e4f6e22615ef92b38eb10b42cd0f36",
+    "web-system.log": "448c9b9ad7e32c6590d56135c84e2046c998a76627c8ea7f8c0918b54633fabf",
+    "web-unit.log": "7d56b6d1b496e6a45c2be652ebbb57f279c258a88d85e195678a5d79b5b8f044"
+  },
+  "sha256_scope": "Git blob bytes; text line endings normalized by Git"
+}
