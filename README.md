@@ -719,7 +719,7 @@ Para la presente entrega, no todos los productos cuentan todavía con un desplie
 La Landing Page de CareConnect está implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada públicamente mediante **Vercel**.
 
 - **Repositorio:** `https://github.com/CareStacks/Landing-Page`
-- **URL de producción:** `https://landing-page-lovat-ten.vercel.app/`
+- **URL de producción:** `https://carestacks-landing-page.vercel.app/`
 - **Proveedor de despliegue:** Vercel
 - **Build Tool:** Vite
 
@@ -1267,7 +1267,7 @@ La tabla se organiza por los User Stories definidos en la sección 3.2, descompu
 La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada mediante **Vercel**.
 
 **Repositorio:** `https://github.com/CareStacks/Landing-Page`  
-**Landing Page:** `https://landing-page-lovat-ten.vercel.app/`
+**Landing Page:** `https://carestacks-landing-page.vercel.app/`
 
 ##### Deployment Evidence
 
