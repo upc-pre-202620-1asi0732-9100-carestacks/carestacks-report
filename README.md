@@ -92,6 +92,7 @@ Octubre, 2026
 | 1.7.0 | 01/10/2026 | Angela Espinoza | Actualizó la carátula, el Student Outcome y el Team Collaboration Insights del TB1 (`develop`) |
 | 1.8.0 | 04/10/2026 | Santiago Baldeon | Desarrolló el Acuerdo de Servicio SaaS y las conclusiones, y elaboró el guion y el video de exposición del TB1 (`develop`) |
 | 2.0.0 | 04/10/2026 | Matias Salcedo | Consolidó la verificación TB1, corrigió los resultados y conclusiones, e incorporó el capítulo 7 y el acuerdo SaaS con evidencia y límites de entrega |
+| 2.1.0 | 21/10/2026 | Matias Salcedo | Desarrolló el Capítulo VIII: Experiment Planning (8.1) y Experiment Design inicial (8.2) con Question Backlog, Experiment Cards, Hipótesis Null/Alternative, Domain Metrics y Condiciones (`chapter-8`) |
 
 # Project Report Collaboration Insights
 
@@ -396,8 +397,8 @@ Cada participante del equipo debe sustentar evidencia de cómo las actividades r
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |----|----|----|
-|4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Redacté la descripción de la startup, los perfiles del equipo, el problema y la problemática, el proceso completo de Lean UX (Problem Statements, Assumptions, Hypothesis Statements y Canvas) y los segmentos objetivo en el Capítulo I. En el Capítulo II, desarrollé el análisis competitivo, el diseño y registro de entrevistas, los User Personas, User Task Matrix, Journey Maps, Empathy Maps, As-Is Scenario Mapping y el glosario de Ubiquitous Language.<br><br>**TB1**<br>Homogeneicé los criterios de aceptación en formato Gherkin de todas las User Stories y completé los precios faltantes del análisis competitivo, atendiendo el feedback del docente. Actualicé la carátula, el Student Outcome, el Team Collaboration Insights, el registro de versiones y las conclusiones del informe parcial.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Configuré la plantilla inicial del informe y la carátula del equipo. En el Capítulo III, redacté el To-Be Scenario Mapping, las User Stories, el Product Backlog y el Impact Mapping. En el Capítulo IV, completé la sección de Web Applications UX/UI Design.<br><br>**TB1**<br>Desarrollé en el Capítulo VI los Core Entities Unit Tests, los Core Integration Tests, el Core Behavior Driven Development y los Core System Tests. Corregí además la Landing Page implementando el i18n en español e inglés, corregí el enlace de About the Product y documenté que About the Team sigue pendiente. Verifiqué la landing bilingüe ES/EN y registré el alcance real de las pruebas, incluidas la autorización de Agenda y sus limitaciones de despliegue.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Elaboré en el Capítulo IV los diagramas de arquitectura (Context, Container y Components), los diagramas y diccionario de clases, y el diagrama de base de datos. En el Capítulo V, documenté la Software Configuration Management, la evidencia de despliegue del Landing Page y la configuración de despliegue de los productos de CareConnect.<br><br>**TB1**<br>Desarrollé en el Capítulo VII la sección 7.1 Continuous Integration, con sus herramientas, prácticas y componentes del pipeline de build y test. Rediseñé la base de datos pasando del formato C4 a diagramas UML normalizados por Bounded Context, atendiendo el feedback del docente.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Colaboré en la documentación de los perfiles de integrantes del equipo en el Capítulo I y en contenido del Capítulo IV.<br><br>**TB1**<br>Redacté el Acuerdo de Servicio SaaS y las conclusiones y recomendaciones del informe. Elaboré el guion para los cinco integrantes y edité el video de exposición del TB1.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Documenté en el Capítulo IV el prototipado de la aplicación móvil (iOS con Flutter) y adapté la base Flutter del segmento cuidador a un prototipo funcional de escritorio para el Capítulo IV.7. En el Capítulo V, documenté la evidencia de implementación del Frontend-Web, la evidencia Native-Mobile, la evidencia del backend RESTful y su documentación en Swagger, y actualicé los Sprint Backlogs con el detalle técnico de cada tarea.<br><br>**TB1**<br>Desarrollé en el Capítulo VII las secciones 7.2 Continuous Delivery y 7.3 Continuous Deployment, con sus herramientas, prácticas y componentes de los pipelines de staging y producción.|**AV1**<br><br>Abordamos de manera efectiva los retos de los capítulos desarrollados hasta esta entrega gracias a la actualización constante de conceptos y conocimientos en ingeniería de software, aplicando metodologías actuales como Lean UX, Domain Driven Design, arquitectura C4 y mejores prácticas de implementación para el desarrollo del proyecto y nuestro crecimiento profesional.<br><br>**TB1**<br><br>Asumimos durante el TB1 nuestra responsabilidad profesional atendiendo el feedback del AV1 y cumpliendo cada uno los entregables asignados. Corregimos lo observado en la landing, la base de datos, los criterios de aceptación y los precios, y dejamos evidencia verificable en pruebas y pipelines.|
-|4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Investigué metodologías de validación temprana de producto y herramientas de análisis de mercado que no había aplicado antes al elaborar el Lean UX Canvas y el análisis competitivo. Reforcé con el diseño y análisis de entrevistas la importancia de la empatía y el aprendizaje continuo sobre experiencia de usuario en un dominio sensible como el cuidado de adultos mayores.<br><br>**TB1**<br>Comparé soluciones reales al completar los precios del análisis competitivo y juzgué el impacto económico de nuestra propuesta. Comprendí al escribir los criterios en Gherkin cómo una especificación clara reduce errores que afectarían a cuidadores y pacientes.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Profundicé en técnicas de priorización de historias de usuario al redactar el Product Backlog y el Impact Mapping. Aprendí a adaptar un sistema de diseño pensado originalmente para móvil hacia un contexto de escritorio al completar el diseño UX/UI web.<br><br>**TB1**<br>Comprendí al diseñar las pruebas del Capítulo VI que verificar el sistema es una forma de proteger a los usuarios en un dominio sensible. Consideré el alcance global y el acceso a la información en más de un idioma al implementar el i18n.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Profundicé en Domain Driven Design y en la representación formal de bounded contexts al elaborar los diagramas C4 y el diccionario de clases. Investigué buenas prácticas de gestión de variables de entorno y separación de ambientes al documentar la configuración de despliegue.<br><br>**TB1**<br>Colaboré en la documentación de la integración continua y comprobé su impacto en la calidad y mantenibilidad del producto. Evalué cómo el diseño de datos afecta la integridad de la información clínica al normalizar la base de datos por Bounded Context.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Revisé cómo estructurar información técnica de forma clara para distintos lectores del informe al colaborar en la documentación del equipo y del Capítulo IV.<br><br>**TB1**<br>Investigué las implicaciones económicas y legales de ofrecer el producto como servicio al redactar el Acuerdo SaaS. Valoré con criterio el impacto social y los alcances reales del proyecto al preparar las conclusiones y el guion.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Aprendí sobre sistemas de layout responsive y jerarquía visual en Flutter Web, algo que no había trabajado antes, al adaptar la aplicación móvil Flutter a un prototipo web funcional. Profundicé en configuración de CORS, gestión de variables de entorno y buenas prácticas de control de versiones Git que no dominaba con este nivel de detalle al levantar y documentar el backend con Swagger.<br><br>**TB1**<br>Colaboré en la documentación de los pipelines de entrega y despliegue, y evalué el impacto de las decisiones de despliegue en la disponibilidad y confiabilidad del servicio para los usuarios.|**AV1**<br><br>Incorporamos nuevas metodologías, herramientas y enfoques en el desarrollo del proyecto gracias al aprendizaje permanente, que nos permitió adaptarnos a los retos técnicos y metodológicos de los capítulos desarrollados hasta esta entrega y nos preparó para un desempeño profesional competente y actualizado en ingeniería de software.<br><br>**TB1**<br><br>Fundamentamos en el TB1 nuestras decisiones sobre pruebas, pipelines, base de datos, modelo SaaS e i18n considerando su impacto económico, social y global, y no solo su viabilidad técnica.|
+|4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Redacté la descripción de la startup, los perfiles del equipo, el problema y la problemática, el proceso completo de Lean UX (Problem Statements, Assumptions, Hypothesis Statements y Canvas) y los segmentos objetivo en el Capítulo I. En el Capítulo II, desarrollé el análisis competitivo, el diseño y registro de entrevistas, los User Personas, User Task Matrix, Journey Maps, Empathy Maps, As-Is Scenario Mapping y el glosario de Ubiquitous Language.<br><br>**TB1**<br>Homogeneicé los criterios de aceptación en formato Gherkin de todas las User Stories y completé los precios faltantes del análisis competitivo, atendiendo el feedback del docente. Actualicé la carátula, el Student Outcome, el Team Collaboration Insights, el registro de versiones y las conclusiones del informe parcial.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Configuré la plantilla inicial del informe y la carátula del equipo. En el Capítulo III, redacté el To-Be Scenario Mapping, las User Stories, el Product Backlog y el Impact Mapping. En el Capítulo IV, completé la sección de Web Applications UX/UI Design.<br><br>**TB1**<br>Desarrollé en el Capítulo VI los Core Entities Unit Tests, los Core Integration Tests, el Core Behavior Driven Development y los Core System Tests. Corregí además la Landing Page implementando el i18n en español e inglés, corregí el enlace de About the Product y documenté que About the Team sigue pendiente. Verifiqué la landing bilingüe ES/EN y registré el alcance real de las pruebas, incluidas la autorización de Agenda y sus limitaciones de despliegue.<br><br>**AV2**<br>Diseñé la fase de Experiment Planning (8.1) y Experiment Design (8.2) del Capítulo VIII, analizando la plataforma As-Is e identificando las incertidumbres de sincronización y adherencia. Formulé las Experiment-Ready Questions con 5W+1H, prioricé el Question Backlog y elaboré las Experiment Cards con sus hipótesis nula y alternativa, métricas de dominio y condiciones de aislamiento para proteger la salud y privacidad del paciente geriátrico.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Elaboré en el Capítulo IV los diagramas de arquitectura (Context, Container y Components), los diagramas y diccionario de clases, y el diagrama de base de datos. En el Capítulo V, documenté la Software Configuration Management, la evidencia de despliegue del Landing Page y la configuración de despliegue de los productos de CareConnect.<br><br>**TB1**<br>Desarrollé en el Capítulo VII la sección 7.1 Continuous Integration, con sus herramientas, prácticas y componentes del pipeline de build y test. Rediseñé la base de datos pasando del formato C4 a diagramas UML normalizados por Bounded Context, atendiendo el feedback del docente.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Colaboré en la documentación de los perfiles de integrantes del equipo en el Capítulo I y en contenido del Capítulo IV.<br><br>**TB1**<br>Redacté el Acuerdo de Servicio SaaS y las conclusiones y recomendaciones del informe. Elaboré el guion para los cinco integrantes y edité el video de exposición del TB1.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Documenté en el Capítulo IV el prototipado de la aplicación móvil (iOS con Flutter) y adapté la base Flutter del segmento cuidador a un prototipo funcional de escritorio para el Capítulo IV.7. En el Capítulo V, documenté la evidencia de implementación del Frontend-Web, la evidencia Native-Mobile, la evidencia del backend RESTful y su documentación en Swagger, y actualicé los Sprint Backlogs con el detalle técnico de cada tarea.<br><br>**TB1**<br>Desarrollé en el Capítulo VII las secciones 7.2 Continuous Delivery y 7.3 Continuous Deployment, con sus herramientas, prácticas y componentes de los pipelines de staging y producción.|**AV1**<br><br>Abordamos de manera efectiva los retos de los capítulos desarrollados hasta esta entrega gracias a la actualización constante de conceptos y conocimientos en ingeniería de software, aplicando metodologías actuales como Lean UX, Domain Driven Design, arquitectura C4 y mejores prácticas de implementación para el desarrollo del proyecto y nuestro crecimiento profesional.<br><br>**TB1**<br><br>Asumimos durante el TB1 nuestra responsabilidad profesional atendiendo el feedback del AV1 y cumpliendo cada uno los entregables asignados. Corregimos lo observado en la landing, la base de datos, los criterios de aceptación y los precios, y dejamos evidencia verificable en pruebas y pipelines.|
+|4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Investigué metodologías de validación temprana de producto y herramientas de análisis de mercado que no había aplicado antes al elaborar el Lean UX Canvas y el análisis competitivo. Reforcé con el diseño y análisis de entrevistas la importancia de la empatía y el aprendizaje continuo sobre experiencia de usuario en un dominio sensible como el cuidado de adultos mayores.<br><br>**TB1**<br>Comparé soluciones reales al completar los precios del análisis competitivo y juzgué el impacto económico de nuestra propuesta. Comprendí al escribir los criterios en Gherkin cómo una especificación clara reduce errores que afectarían a cuidadores y pacientes.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Profundicé en técnicas de priorización de historias de usuario al redactar el Product Backlog y el Impact Mapping. Aprendí a adaptar un sistema de diseño pensado originalmente para móvil hacia un contexto de escritorio al completar el diseño UX/UI web.<br><br>**TB1**<br>Comprendí al diseñar las pruebas del Capítulo VI que verificar el sistema es una forma de proteger a los usuarios en un dominio sensible. Consideré el alcance global y el acceso a la información en más de un idioma al implementar el i18n.<br><br>**AV2**<br>Evalué el impacto ético, social y de seguridad médica al definir las condiciones experimentales de confirmación de dosis y alertas escalonadas, incorporando métricas de protección (guardrails) como la tasa de deshecho y la tasa de fatiga por alertas para evitar saturación y falsos positivos en familias y cuidadores.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Profundicé en Domain Driven Design y en la representación formal de bounded contexts al elaborar los diagramas C4 y el diccionario de clases. Investigué buenas prácticas de gestión de variables de entorno y separación de ambientes al documentar la configuración de despliegue.<br><br>**TB1**<br>Colaboré en la documentación de la integración continua y comprobé su impacto en la calidad y mantenibilidad del producto. Evalué cómo el diseño de datos afecta la integridad de la información clínica al normalizar la base de datos por Bounded Context.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Revisé cómo estructurar información técnica de forma clara para distintos lectores del informe al colaborar en la documentación del equipo y del Capítulo IV.<br><br>**TB1**<br>Investigué las implicaciones económicas y legales de ofrecer el producto como servicio al redactar el Acuerdo SaaS. Valoré con criterio el impacto social y los alcances reales del proyecto al preparar las conclusiones y el guion.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Aprendí sobre sistemas de layout responsive y jerarquía visual en Flutter Web, algo que no había trabajado antes, al adaptar la aplicación móvil Flutter a un prototipo web funcional. Profundicé en configuración de CORS, gestión de variables de entorno y buenas prácticas de control de versiones Git que no dominaba con este nivel de detalle al levantar y documentar el backend con Swagger.<br><br>**TB1**<br>Colaboré en la documentación de los pipelines de entrega y despliegue, y evalué el impacto de las decisiones de despliegue en la disponibilidad y confiabilidad del servicio para los usuarios.|**AV1**<br><br>Incorporamos nuevas metodologías, herramientas y enfoques en el desarrollo del proyecto gracias al aprendizaje permanente, que nos permitió adaptarnos a los retos técnicos y metodológicos de los capítulos desarrollados hasta esta entrega y nos preparó para un desempeño profesional competente y actualizado en ingeniería de software.<br><br>**TB1**<br><br>Fundamentamos en el TB1 nuestras decisiones sobre pruebas, pipelines, base de datos, modelo SaaS e i18n considerando su impacto económico, social y global, y no solo su viabilidad técnica.|
 
 # Part I: As-Is Software Project
 
@@ -4331,25 +4332,375 @@ La sección 7.4 queda fuera del alcance TB1. No se presenta el logging de consol
 
 ### 8.1. Experiment Planning
 
+El propósito de la fase de planificación de experimentos (*Experiment Planning*) es transformar las incertidumbres críticas del modelo de negocio y del comportamiento de los usuarios de CareConnect en hipótesis verificables y contrastables empíricamente. En lugar de desarrollar funcionalidades de forma especulativa, esta fase establece los cimientos para que cada incremento de software esté respaldado por un diseño experimental riguroso, minimizando el riesgo de inversión y maximizando el valor entregado a los cuidadores y pacientes geriátricos.
+
 #### 8.1.1. As-Is Summary
+
+El estado actual de la plataforma de software de CareConnect (**As-Is Platform**) se consolidó durante el hito de Trabajo Parcial (TB1) y comprende un ecosistema digital distribuido conformado por:
+1. **Backend RESTful API:** Desarrollado sobre ASP.NET Core y C#, organizado bajo principios de Domain-Driven Design (DDD) con los Bounded Contexts de `IAM` (autenticación y sesiones mediante tokens opacos), `Agenda` (programación y registro de medicación y controles médicos), `Patient Profile` (datos del adulto mayor), `Medical Records` (documentos clínicos) y `Caregiving` (vinculación entre cuidadores y pacientes). Se encuentra desplegado en un contenedor Docker sobre la plataforma Render, conectado a una base de datos PostgreSQL normalizada.
+2. **Aplicación Móvil Nativa/Multiplataforma:** Desarrollada en Flutter (Dart) para dispositivos Android e iOS, orientada a los cuidadores y pacientes con una interfaz accesible y de alta legibilidad.
+3. **Aplicación Web Responsive:** Desarrollada con Vue 3, TypeScript y la biblioteca de componentes PrimeVue, pensada para la gestión extendida y la supervisión desde navegadores de escritorio.
+4. **Sitio Web Estático (Landing Page):** Desarrollado con Next.js y Tailwind CSS, desplegado en Vercel, con soporte bilingüe de internacionalización (i18n en inglés y español) y diseño inclusivo.
+
+##### Procesos de Negocio Soportados en el Estado As-Is
+En la versión actual, un cuidador registrado puede iniciar sesión, visualizar el listado de actividades del día para el paciente asignado y marcar manualmente una medicación como administrada mediante un selector de verificación estándar (*checkbox*). El sistema persiste el estado en la base de datos y refleja el cambio cuando el usuario actualiza la vista.
+
+##### Limitaciones e Incertidumbres Críticas de Negocio
+A pesar de la estabilidad operativa alcanzada en TB1, el análisis del comportamiento de uso y los hallazgos de las entrevistas cualitativas revelaron tres incertidumbres críticas que frenan el valor percibido del producto:
+
+1. **Incertidumbre en la Sincronización del Círculo de Cuidado (Care Circle Synchronization Gap):**
+   * *Diagnóstico:* Cuando un cuidador administra un medicamento y lo marca en la aplicación, el cambio se guarda en la base de datos relacional de forma transaccional, pero no se emite ninguna notificación activa inmediata hacia los otros cuidadores o familiares vinculados al paciente.
+   * *Impacto en el negocio:* Si el familiar responsable o el cuidador del siguiente turno desea saber si la dosis de las 08:00 a. m. fue administrada, debe ingresar a la aplicación y refrescar manualmente la vista, o recurrir a canales externos (mensajería instantánea por WhatsApp o llamadas telefónicas). Esta desconexión fomenta el abandono de la plataforma y perpetúa la ansiedad familiar.
+
+2. **Incertidumbre en la Detección y Escalamiento de Dosis Omitidas (Medication Adherence Risk):**
+   * *Diagnóstico:* La aplicación As-Is programa alarmas locales fijas a la hora exacta de la toma. Si el cuidador no confirma la dosis en el momento programado (por encontrarse ocupado atendiendo otra emergencia del paciente), la notificación caduca y queda en el panel del dispositivo sin insistencia ni escalamiento.
+   * *Impacto en el negocio:* No existe un mecanismo que determine si la falta de registro se debe a un olvido, a un fallo de conectividad o a una omisión real del medicamento. Ante dosis críticas (antihipertensivos, insulina, anticoagulantes), una demora no advertida de más de 30 minutos representa un riesgo clínico severo para el adulto mayor y deteriora la confianza en CareConnect.
+
+3. **Incertidumbre en la Fricción del Relevo de Turnos (Handover Friction):**
+   * *Diagnóstico:* Los cuidadores formales e informales que alternan turnos deben reconstruir los eventos del día revisando registros dispersos, lo que insume entre 15 y 25 minutos por cambio de turno y genera omisiones involuntarias de indicaciones médicas.
+   * *Impacto en el negocio:* Los usuarios perciben que la plataforma duplica el trabajo administrativo en lugar de simplificarlo si no ofrece una vista consolidada de cierre y entrega de guardia.
+
+##### Justificación de la Transición al Estado To-Be
+La transición hacia la plataforma **To-Be** no debe concebirse como una simple adición arbitraria de funcionalidades, sino como un proceso guiado por hipótesis (*Experiment-Driven Development*). Se requiere diseñar experimentos controlados en el entorno de software que permitan contrastar empíricamente si la sincronización en tiempo real (WebSockets/SignalR) y el escalamiento activo de alertas incrementan significativamente la tasa de confirmación oportuna de medicamentos y reducen el tiempo de relevo de turnos, antes de consolidar estas características de forma definitiva en el código de producción.
+
+---
 
 #### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 
+Para estructurar formalmente el proceso de experimentación, el equipo recopiló y clasificó la materia prima proveniente de los supuestos iniciales de Lean UX (Capítulo I), las entrevistas de necesidad (Capítulo II), los incidentes identificados en las pruebas de sistema (Capítulo VI) y las revisiones técnicas de arquitectura. 
+
+Esta materia prima se organiza en cuatro cuadrantes fundamentales:
+
+```
++----------------------------------------------------------------------------------------------------+
+|                                    MATERIA PRIMA EXPERIMENTAL                                     |
++---------------------------------------------------+------------------------------------------------+
+|                   ASSUMPTIONS                     |                 KNOWLEDGE GAPS                 |
+|             (Supuestos del Negocio)               |            (Vacíos de Conocimiento)            |
+| - Adopción de registro en < 10 segundos           | - Tiempo de tolerancia a demoras en familiares |
+| - Reducción del estrés por confirmación en vivo   | - Canal de alerta más efectivo en emergencias  |
+| - Disminución del 50% en tiempo de cambio de turno| - Tasa de registro inmediato vs. diferido      |
+| - Mayor valoración de alertas que de reportes     | - Nivel de rechazo a confirmaciones complejas  |
++---------------------------------------------------+------------------------------------------------+
+|                      IDEAS                        |                     CLAIMS                     |
+|            (Iniciativas de Solución)              |           (Afirmaciones No Contrastadas)       |
+| - Botón de confirmación rápida en un toque        | - "Notificaciones sonoras siempre son mejores" |
+| - Notificación en tiempo real vía WebSockets      | - "Doble confirmación previene todo error"     |
+| - Protocolo de alertas escalonadas (0m/15m/30m)   | - "El relevo digital reemplaza todo papel"     |
+| - Resumen consolidado de relevo de turno          |                                                |
++---------------------------------------------------+------------------------------------------------+
+```
+
+A continuación se detalla cada elemento con su respectivo código de identificación y sustento analítico:
+
+##### 1. Assumptions (Supuestos)
+* **AS-01 (Velocidad de Interacción):** Creemos que los cuidadores de pacientes geriátricos registrarán la medicación de manera oportuna y constante si la acción de confirmación requiere un solo toque en pantalla y no supera los 5 segundos de interacción.
+* **AS-02 (Tranquilidad Familiar por Sincronización):** Creemos que los familiares vinculados experimentarán una reducción sustancial en el nivel de ansiedad y llamadas de supervisión si reciben una confirmación instantánea en sus propios teléfonos en el instante en que el cuidador suministra la medicina.
+* **AS-03 (Eficiencia en Relevo de Turnos):** Creemos que presentar una vista consolidada de "Cierre y Entrega de Turno" reducirá en al menos un 50 % el tiempo que los cuidadores dedican a transferir información verbalmente o mediante cuadernos físicos.
+* **AS-04 (Prioridad de Notificaciones Operativas):** Creemos que los usuarios finales valoran significativamente más las alertas en tiempo real de eventos no cumplidos que la generación semanal de reportes clínicos estáticos en PDF.
+
+##### 2. Knowledge Gaps (Vacíos de Conocimiento)
+* **KG-01 (Umbral Crítico de Espera):** Desconocemos cuál es el tiempo máximo de retraso admisible (ventana de tolerancia) que un familiar o cuidador secundario está dispuesto a tolerar antes de considerar que una dosis ha sido omitida y comunicarse alarmado con el cuidador de turno.
+* **KG-02 (Eficacia del Canal de Notificación):** Desconocemos si las alertas sonoras intensivas en la app móvil generan mayor efectividad de respuesta o si, por el contrario, provocan fatiga de notificaciones (*notification fatigue*) y desactivación voluntaria de permisos en el sistema operativo.
+* **KG-03 (Momento Real del Registro):** No contamos con datos cuantitativos que demuestren qué porcentaje de cuidadores registra el medicamento en el instante exacto de la ingesta frente a aquellos que acumulan las confirmaciones para completarlas todas juntas al término de su jornada.
+* **KG-04 (Resistencia al Cambio en Cuidadores Adultos):** Desconocemos el grado de fricción cognitiva que experimentan los cuidadores de mayor edad (45 a 60 años) ante interfaces dinámicas con actualizaciones en vivo frente a listas estáticas tradicionales.
+
+##### 3. Ideas (Iniciativas de Solución)
+* **ID-01 (One-Tap Quick Confirmation con Feedback Háptico):** Diseñar un componente interactivo de confirmación en la tarjeta de medicación de la aplicación móvil y web que permita validar la toma con una pulsación sostenida de 1 segundo (con microanimación de completitud y vibración háptica), enviando de inmediato el evento al servidor.
+* **ID-02 (Broadcasting Push en Tiempo Real):** Implementar un canal de WebSockets / SignalR en el backend de ASP.NET Core que propague en menos de 500 milisegundos el evento `MedicationAdministeredEvent` a todos los clientes web y móviles autenticados dentro del mismo círculo de cuidado (*Care Circle*).
+* **ID-03 (Protocolo de Alertas Escalonadas - Escalated Alert Protocol):** Desarrollar un servicio programado (*background worker*) que dispare recordatorios escalonados: al minuto 0 (notificación push estándar al cuidador de turno), al minuto +15 (alerta sonora de insistencia al cuidador) y al minuto +30 (notificación push de prioridad alta a familiares y co-cuidadores avisando del retraso).
+* **ID-04 (Smart Handover Dashboard):** Crear un módulo de cambio de guardia que genere automáticamente un balance visual de las últimas 12 horas: porcentaje de dosis cumplidas, tomas pospuestas o rechazadas con sus respectivos motivos, y signos vitales fuera de rango.
+
+##### 4. Claims (Afirmaciones No Validadas)
+* **CL-01:** *"Las notificaciones sonoras con alarmas continuas siempre garantizan que el medicamento se administre a tiempo."* (No validada; podría provocar que el usuario silencie el dispositivo o desinstale la aplicación por molestia).
+* **CL-02:** *"Incorporar un diálogo modal de confirmación obligatoria con doble aceptación elimina por completo los registros accidentales sin afectar la velocidad de uso."* (No validada; la fricción adicional podría desincentivar el registro inmediato).
+* **CL-03:** *"El uso de un sistema digital de relevo de turnos erradica de forma inmediata el uso de bitácoras en papel o mensajes de WhatsApp entre los cuidadores."* (No validada; la sustitución de hábitos arraigados depende de la confiabilidad percibida de la herramienta durante fallos de red).
+
+---
+
 #### 8.1.3. Experiment-Ready Questions
+
+A partir de la materia prima identificada, el equipo aplicó la técnica sistemática **5W+1H** (*Who, What, Where, When, Why, How*) para transformar los vacíos de conocimiento, supuestos críticos y afirmaciones en **Preguntas Listas para Experimentar** (*Experiment-Ready Questions*). Estas preguntas están orientadas a resolver incertidumbres medibles y descartar riesgos de forma científica:
+
+1. **ERQ-01 (Why & How — Confirmación en Un Toque y Sincronización Inmediata):**
+   * *Pregunta:* ¿Cómo influye la incorporación de un botón de confirmación rápida en un toque con sincronización en tiempo real vía WebSockets frente a la confirmación tradicional en formulario estático en la **Tasa de Confirmación Oportuna de Medicación** (dentro de una ventana de $\pm 30$ minutos de la hora prescrita) en cuidadores geriátricos?
+   * *Enfoque 5W+1H:*
+     * **Why:** Porque la fricción en el registro y la falta de confirmación inmediata son la principal causa de desinformación entre co-cuidadores.
+     * **How:** Comparando la velocidad y frecuencia de confirmaciones registradas entre una interfaz de un toque sincronizada y el flujo estándar de edición manual.
+
+2. **ERQ-02 (What & When — Protocolo de Alertas Escalonadas ante Omisión):**
+   * *Pregunta:* ¿Qué efecto produce un protocolo automatizado de alertas escalonadas (+15 min al cuidador de turno y +30 min a los familiares vinculados) en la **Latencia de Resolución de Dosis Retrasadas** frente al esquema de notificación única estándar a la hora fija?
+   * *Enfoque 5W+1H:*
+     * **What:** La reducción del tiempo que una dosis crítica permanece sin administrarse ni reportarse.
+     * **When:** En los minutos inmediatamente posteriores a la expiración de la hora programada del tratamiento.
+
+3. **ERQ-03 (How much & Where — Eficiencia del Relevo de Turno Inteligente):**
+   * *Pregunta:* ¿En qué magnitud reduce una vista digital consolidada de "Cierre y Entrega de Turno" en la aplicación móvil el **Tiempo Medio Dedicado al Relevo de Guardia** entre cuidadores salientes y entrantes frente al proceso manual basado en cuadernos y WhatsApp?
+   * *Enfoque 5W+1H:*
+     * **How much:** Midiendo la disminución de minutos dedicados a transferir la información médica y asistencial.
+     * **Where:** En el domicilio del paciente durante el solapamiento de turnos de los cuidadores.
+
+4. **ERQ-04 (Who & What — Resistencia y Error Accidental por Grupo Etario):**
+   * *Pregunta:* ¿Quiénes (cuidadores informales familiares jóvenes vs. cuidadores de mayor edad) presentan una mayor tasa de error por toques accidentales al interactuar con el mecanismo de confirmación en un solo toque, y qué mecanismo de deshecho (*undo*) minimiza dicho error sin agregar fricción?
+   * *Enfoque 5W+1H:*
+     * **Who:** Cuidadores de 25 a 40 años frente a cuidadores de 41 a 60 años.
+     * **What:** Tasa de correcciones o cancelaciones de tomas en los primeros 10 segundos posteriores al registro.
+
+5. **ERQ-05 (How & Why — Retención y Motivación Mediante Indicadores de Adherencia):**
+   * *Pregunta:* ¿Cómo afecta la visualización de un indicador de racha de adherencia médica (*adherence streak*) en el panel principal a la **Tasa de Retención Semanal de Uso** de los cuidadores y familiares en la plataforma?
+   * *Enfoque 5W+1H:*
+     * **How:** Mostrando el cumplimiento porcentual acumulado de la semana frente a una vista neutral sin elementos de refuerzo positivo.
+     * **Why:** Para validar si el refuerzo visual fomenta el hábito de registro diario recurrente.
+
+---
 
 #### 8.1.4. Question Backlog
 
+Con el objetivo de decidir objetivamente qué preguntas deben abordarse en primer lugar mediante experimentos formales, el equipo construyó un **Question Backlog** priorizado. Se evaluó cada pregunta según cuatro variables ponderadas en una escala del 1 al 5:
+
+* **Confianza (Confidence - $C$):** Nivel de certeza y evidencia previa que el equipo posee sobre la respuesta. Un valor bajo (1 o 2) indica alta incertidumbre o pura suposición; un valor alto (4 o 5) indica evidencia cualitativa previa sólida.
+* **Riesgo (Risk - $R$):** Gravedad del impacto negativo sobre el producto, el modelo de negocio o la salud del paciente si asumimos una respuesta equivocada sin experimentar (1 = riesgo despreciable, 5 = riesgo crítico de seguridad médica o abandono de plataforma).
+* **Impacto (Impact - $I$):** Magnitud de la mejora esperada en las métricas clave de CareConnect si la hipótesis resulta validada (1 = cambio cosmético, 5 = cambio transformador en el core business).
+* **Interés (Interest - $In$):** Relevancia estratégica para la startup, el alineamiento con la propuesta de valor y el interés de los evaluadores/stakeholders (1 = bajo, 5 = máxima prioridad).
+
+##### Fórmula de Priorización
+Para que la priorización castigue la falta de evidencia y premie las oportunidades críticas de alto impacto, se utiliza el cociente formal de evaluación de preguntas de experimentación:
+
+$$\text{Prioritization Score} = \frac{\text{Riesgo} \times \text{Impacto} \times \text{Interés}}{\text{Confianza}}$$
+
+*Regla de desempate:* A igualdad de puntuación final, se prioriza estrictamente la pregunta que presente el mayor valor de **Riesgo ($R$)**, garantizando que el equipo mitigue primero las incertidumbres más peligrosas para el paciente geriátrico.
+
+##### Matriz de Question Backlog Priorizado
+
+| ID | Pregunta Lista para Experimentar (*Experiment-Ready Question*) | Confianza ($C$) [1–5] | Riesgo ($R$) [1–5] | Impacto ($I$) [1–5] | Interés ($In$) [1–5] | Score de Prioridad | Orden de Prioridad |
+|:---:|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **ERQ-01** | ¿Cómo influye el botón de confirmación en un toque con sincronización en tiempo real vía WebSockets frente al registro manual en la Tasa de Confirmación Oportuna de Medicación ($\pm 30$ min)? | 2 | 5 | 5 | 5 | **62.5** | **1° (Top Priority)** |
+| **ERQ-02** | ¿Qué impacto tiene un protocolo de alertas escalonadas (+15m cuidador, +30m familiar) en la reducción de la Latencia de Resolución de Dosis Retrasadas frente a la notificación única fija? | 2 | 5 | 4 | 5 | **50.0** | **2° (Top Priority)** |
+| **ERQ-03** | ¿En qué magnitud reduce la vista digital consolidada de "Relevo de Turno Inteligente" el tiempo medio dedicado al cambio de guardia frente al proceso manual en cuaderno/WhatsApp? | 3 | 4 | 4 | 4 | **21.3** | **3°** |
+| **ERQ-04** | ¿Quiénes presentan mayor tasa de error accidental con la confirmación de un toque y qué mecanismo de deshecho (*undo*) minimiza el fallo sin agregar fricción según el grupo etario? | 2 | 4 | 3 | 3 | **18.0** | **4°** |
+| **ERQ-05** | ¿Cómo afecta la visualización de un indicador de racha de adherencia médica en el panel principal a la tasa de retención semanal de los cuidadores en la plataforma? | 3 | 2 | 3 | 4 | **8.0** | **5°** |
+
+##### Justificación del Orden de Priorización
+1. **ERQ-01 (Score: 62.5):** Se posiciona en primer lugar indiscutible. El núcleo de CareConnect depende de que los medicamentos se administren y registren oportunamente. Si la confirmación en tiempo real falla o genera fricción, el círculo de cuidado pierde su razón de ser. Su riesgo e impacto son máximos (5) y la confianza actual es baja (2), lo que exige un experimento inmediato.
+2. **ERQ-02 (Score: 50.0):** Se ubica en segundo lugar. Representa la salvaguarda de seguridad para el paciente geriátrico: cuando un cuidador olvida una dosis crítica, el escalamiento a familiares previene complicaciones de salud graves.
+3. Las preguntas **ERQ-03**, **ERQ-04** y **ERQ-05**, aunque aportan valor a la usabilidad y retención, abordan aspectos secundarios o de optimización que deben ejecutarse una vez validado el mecanismo esencial de registro y notificación en tiempo real. Por consiguiente, **ERQ-01** y **ERQ-02** son seleccionadas formalmente para la elaboración de las **Experiment Cards**.
+
+---
+
 #### 8.1.5. Experiment Cards
+
+Para las dos preguntas prioritarias del Question Backlog, se diseñaron las **Experiment Cards** oficiales del proyecto. Cada tarjeta se estructura en dos caras: el **Anverso (Front)** define la pregunta, el sustento de negocio, la hipótesis operativa y el incremento mínimo necesario (*Simplest Useful Thing*); el **Reverso (Back)** establece las métricas objetivas, las condiciones de comparación, el criterio cuantitativo de éxito y las condiciones de descarte/falsificación.
+
+---
+
+##### 📇 Experiment Card 01: Sincronización Inmediata y Confirmación de Dosis en Un Toque
+
+```
+====================================================================================================
+EXPERIMENT CARD 01 (ANVERSO - FRONT)
+====================================================================================================
+ID: EXP-01                                               Fecha de Diseño: 21/10/2026
+Nombre: Quick-Sync Dose Confirmation (Confirmación en Un Toque con Sincronización en Tiempo Real)
+Pregunta Relacionada: ERQ-01                             Ciclo: Hito 3 (Semana 12)
+----------------------------------------------------------------------------------------------------
+¿POR QUÉ LLEVAR A CABO ESTE EXPERIMENTO? (BUSINESS JUSTIFICATION)
+En el cuidado geriátrico, la incertidumbre de si una dosis ya fue administrada o no es la causa del
+80% de las llamadas de supervisión entre familiares y cuidadores, y genera riesgo directo de doble
+dosificación accidental. Si la plataforma no permite confirmar en segundos y enterarse en tiempo
+real, los usuarios recurren a cuadernos y chats externos, perdiendo el valor central de CareConnect.
+----------------------------------------------------------------------------------------------------
+HIPÓTESIS DE COMPORTAMIENTO (TESTABLE HYPOTHESIS)
+Creemos que al incorporar en la aplicación móvil y web un botón interactivo de "Confirmación Rápida
+en Un Toque" (con microinteracción háptica) sincronizado mediante WebSockets con todo el círculo de
+cuidado, la Tasa de Confirmación Oportuna de Medicación (TCOM) se incrementará de un 58% a más de un
+82% en los círculos evaluados, reduciendo las consultas redundantes en al menos un 60%.
+----------------------------------------------------------------------------------------------------
+LO MÁS SIMPLE Y ÚTIL PARA IMPLEMENTAR (SIMPLEST USEFUL THING - SUT)
+Implementar en la vista de Agenda una tarjeta de medicación activa con un botón de acción rápida de
+confirmación (pulsación sostenida de 1 s para evitar toques accidentales). Al confirmarse, el cliente
+emite un evento HTTP/WebSocket hacia el backend de ASP.NET Core, el cual despacha un mensaje push
+inmediato vía SignalR/WebSocket hacia las sesiones activas de los co-cuidadores y familiares vinculados,
+actualizando el estado a "Administrado por [Nombre]" sin requerir refresco de página.
+====================================================================================================
+```
+
+```
+====================================================================================================
+EXPERIMENT CARD 01 (REVERSO - BACK)
+====================================================================================================
+MEDIDAS (MEASURES & KPIS)
+1. Métrica Primaria: Tasa de Confirmación Oportuna de Medicación (TCOM) en ventana de ±30 minutos.
+2. Métrica Secundaria: Tiempo promedio transcurrido entre la hora programada y el registro (minutos).
+3. Guardrail Metric (Métrica de Protección): Tasa de cancelaciones o deshechos (Undo Rate) en < 10 s
+   (debe mantenerse inferior al 4% para validar que el toque no genera registros accidentales).
+----------------------------------------------------------------------------------------------------
+CONDICIONES DEL EXPERIMENTO (CONDITIONS)
+- Condición de Control (Grupo A): Flujo As-Is tradicional. El cuidador abre la actividad, entra al
+  detalle, selecciona un checkbox y presiona "Guardar". Los familiares ven el cambio solo si recargan.
+- Condición Experimental (Grupo B): Flujo To-Be con botón Quick-Sync en tarjeta principal, feedback
+  háptico y actualización automática en tiempo real vía WebSocket en los dispositivos vinculados.
+----------------------------------------------------------------------------------------------------
+CRITERIO DE ÉXITO (SUCCESS CRITERIA)
+El experimento se considerará EXITOSO si el Grupo B alcanza una TCOM promedio ≥ 80% (frente al 58%
+observado en la línea base del Grupo A), con una diferencia estadísticamente significativa de
+p-valor < 0.05 y una reducción de al menos 40% en el tiempo medio de confirmación.
+----------------------------------------------------------------------------------------------------
+CRITERIO DE DESCARTE Y APRENDIZAJE (FALSIFICATION / PIVOT CRITERIA)
+Si tras el periodo experimental la TCOM en el Grupo B no supera el 65%, o si la tasa de cancelaciones
+por toques involuntarios supera el 8%, se RECHAZARÁ la confirmación de un solo toque directo y se
+pivotará hacia un control gestual de deslizamiento ("Swipe-to-confirm") con bloqueo biométrico opcional.
+====================================================================================================
+```
+
+---
+
+##### 📇 Experiment Card 02: Alertas Escalonadas a Co-cuidadores ante Retraso Crítico
+
+```
+====================================================================================================
+EXPERIMENT CARD 02 (ANVERSO - FRONT)
+====================================================================================================
+ID: EXP-02                                               Fecha de Diseño: 21/10/2026
+Nombre: Escalated Care Alert Protocol (Alertas Escalonadas con Notificación a Co-cuidadores)
+Pregunta Relacionada: ERQ-02                             Ciclo: Hito 3 (Semana 12)
+----------------------------------------------------------------------------------------------------
+¿POR QUÉ LLEVAR A CABO ESTE EXPERIMENTO? (BUSINESS JUSTIFICATION)
+En pacientes polimedicados con patologías crónicas, el retraso u olvido de una toma de medicamentos
+críticos (ej. anticoagulantes, insulina) por más de 45 minutos compromete seriamente su salud. Si el
+cuidador de turno no reacciona ante la primera alarma, el sistema debe activar una red de respaldo
+involucrando a los co-cuidadores y familiares antes de que la omisión se torne irreversible.
+----------------------------------------------------------------------------------------------------
+HIPÓTESIS DE COMPORTAMIENTO (TESTABLE HYPOTHESIS)
+Creemos que un protocolo automatizado de alertas escalonadas (notificación a los 0 min, alerta sonora
+de insistencia a los +15 min al cuidador, y notificación push prioritaria a familiares a los +30 min
+ante la falta de confirmación) reducirá la Latencia de Resolución de Medicación Retrasada (LRMR) en al
+menos un 45% y disminuirá las dosis omitidas en un 70%.
+----------------------------------------------------------------------------------------------------
+LO MÁS SIMPLE Y ÚTIL PARA IMPLEMENTAR (SIMPLEST USEFUL THING - SUT)
+Un componente en segundo plano (*Background Worker*) en el backend de CareConnect que audita cada
+5 minutos las dosis pendientes cuya hora programada haya vencido. Si a los +15 minutos no existe evento
+de confirmación, envía una notificación push de alta prioridad al cuidador; si a los +30 minutos sigue
+sin registrarse, dispara una notificación push con título "[ALERTA] Medicación no confirmada" a todos
+los miembros autorizados del círculo de cuidado vinculados al paciente en Firebase Cloud Messaging.
+====================================================================================================
+```
+
+```
+====================================================================================================
+EXPERIMENT CARD 02 (REVERSO - BACK)
+====================================================================================================
+MEDIDAS (MEASURES & KPIS)
+1. Métrica Primaria: Latencia de Resolución de Medicación Retrasada (LRMR), medida en minutos desde
+   la hora límite (+30 min) hasta la confirmación efectiva de la toma o reporte del motivo de omisión.
+2. Métrica Secundaria: Tasa de Dosis Críticas Omitidas (> 60 minutos sin resolver).
+3. Guardrail Metric: Tasa de Desactivación de Notificaciones (Notification Opt-out Rate): no debe
+   superar el 5% de los usuarios para asegurar que las alertas no causen fatiga o saturación.
+----------------------------------------------------------------------------------------------------
+CONDICIONES DEL EXPERIMENTO (CONDITIONS)
+- Condición de Control (Grupo A): Notificación simple única en el minuto 0 al cuidador asignado; si no
+  se abre o se descarta, el sistema no reintenta ni notifica a ningún co-cuidador ni familiar.
+- Condición Experimental (Grupo B): Protocolo escalonado en tres fases (0 min push normal, +15 min
+  sonido de insistencia, +30 min notificación de advertencia a co-cuidadores y familiares).
+----------------------------------------------------------------------------------------------------
+CRITERIO DE ÉXITO (SUCCESS CRITERIA)
+El experimento se considerará EXITOSO si la LRMR en el Grupo B se reduce en al menos un 40% respecto al
+Grupo A (p-valor < 0.05) y la tasa de dosis críticas omitidas que superan 60 min se reduce a menos del
+3% del total de eventos prescritos, manteniendo el opt-out de notificaciones por debajo del 5%.
+----------------------------------------------------------------------------------------------------
+CRITERIO DE DESCARTE Y APRENDIZAJE (FALSIFICATION / PIVOT CRITERIA)
+Si la tasa de desactivación de permisos de notificación supera el 10% en el Grupo B (indicador claro de
+fatiga de alertas), se rechazará el escalamiento agresivo a los 15 minutos y se rediseñará el protocolo
+para ampliar el intervalo a 45 minutos o permitir que cada familia personalice los umbrales de aviso.
+====================================================================================================
+```
+
+---
 
 ### 8.2. Experiment Design
 
+El diseño del experimento (*Experiment Design*) formaliza la estructura metodológica, matemática y operativa requerida para ejecutar las pruebas en el entorno de software de CareConnect. Establece las hipótesis estadísticas nulas y alternativas, el catálogo formal de métricas del dominio de teleasistencia geriátrica, y las condiciones de control y variantes experimentales bajo las cuales se recolectarán los datos.
+
 #### 8.2.1. Hypotheses
+
+En estricta conformidad con el método científico y las buenas prácticas de ingeniería de software basada en evidencia, se define para cada experimento una **Hipótesis Alternativa ($H_1$)** contrastable frente a una **Hipótesis Nula ($H_0$)**, la cual representa la ausencia de efecto o la superioridad del proceso existente.
+
+##### 1. Hipótesis para el Experimento EXP-01 (Confirmación Rápida y Sincronización en Tiempo Real)
+* **Contexto Operativo:** Se evalúa el impacto de la confirmación en un toque con emisión de eventos WebSocket a los co-cuidadores frente al flujo manual As-Is sobre la Tasa de Confirmación Oportuna de Medicación ($\text{TCOM}$).
+* **Hipótesis Nula ($H_{0,1}$):**
+  La implementación del botón de confirmación rápida en un toque con sincronización en tiempo real vía WebSockets no genera un incremento estadísticamente significativo en la Tasa Media de Confirmación Oportuna de Medicación ($\mu_{\text{TCOM}}$) respecto al flujo As-Is tradicional, o genera un incremento menor o igual al umbral mínimo detectable del 15 %:
+  $$H_{0,1}: \mu_{\text{TCOM, Variante B}} - \mu_{\text{TCOM, Control A}} \le 15\%$$
+* **Hipótesis Alternativa ($H_{1,1}$):**
+  La implementación del botón de confirmación rápida en un toque con sincronización en tiempo real incrementa de forma estadísticamente significativa la Tasa Media de Confirmación Oportuna de Medicación ($\mu_{\text{TCOM}}$) en más de un 15 % con un nivel de significancia $\alpha = 0.05$:
+  $$H_{1,1}: \mu_{\text{TCOM, Variante B}} - \mu_{\text{TCOM, Control A}} > 15\%$$
+  *(Criterio de contraste: Prueba unilateral de dos muestras independientes para proporciones o medias t-Student).*
+
+##### 2. Hipótesis para el Experimento EXP-02 (Protocolo de Alertas Escalonadas a Co-cuidadores)
+* **Contexto Operativo:** Se evalúa el impacto del escalamiento automático de alertas (a cuidadores a los +15 min y a familiares a los +30 min) sobre la Latencia de Resolución de Medicación Retrasada ($\text{LRMR}$).
+* **Hipótesis Nula ($H_{0,2}$):**
+  La activación del protocolo de alertas escalonadas a co-cuidadores y familiares no reduce significativamente la latencia media de resolución de medicación retrasada ($\mu_{\text{LRMR}}$) respecto al esquema de notificación simple As-Is, o la reducción media es menor al 30 %:
+  $$H_{0,2}: \mu_{\text{LRMR, Variante B}} \ge 0.70 \times \mu_{\text{LRMR, Control A}}$$
+* **Hipótesis Alternativa ($H_{1,2}$):**
+  La activación del protocolo de alertas escalonadas reduce significativamente la latencia media de resolución de medicación retrasada ($\mu_{\text{LRMR}}$) en al menos un 30 % con un nivel de significancia $\alpha = 0.05$:
+  $$H_{1,2}: \mu_{\text{LRMR, Variante B}} < 0.70 \times \mu_{\text{LRMR, Control A}}$$
+  *(Criterio de contraste: Prueba unilateral t-Student o Mann-Whitney U para variables continuas asimétricas).*
+
+---
 
 #### 8.2.2. Domain Business Metrics
 
+Para asegurar la rigurosidad conceptual del experimento, las Experiment Cards y el seguimiento analítico se restringen a métricas formales del dominio de salud geriátrica y cuidado domiciliario. A continuación se define el catálogo exhaustivo de métricas de negocio de CareConnect:
+
+| Código | Métrica de Negocio | Definición Conceptual | Expresión Matemática / Fórmula | Unidad | Origen y Técnica de Recolección | Meta (*Target*) |
+|:---:|---|---|:---:|:---:|---|:---:|
+| **TCOM** | Tasa de Confirmación Oportuna de Medicación | Proporción de tomas registradas dentro de la ventana médica segura de $\pm 30$ minutos respecto a la hora prescrita. | $$\text{TCOM} = \left( \frac{\sum \text{Dosis registradas en } [t_0 - 30\text{m}, t_0 + 30\text{m}]}{\text{Total de dosis prescritas programadas}} \right) \times 100$$ | % | Telemetría del backend (`MedicationLog` timestamp vs. `Schedule` time) | $\ge 85\%$ |
+| **LRMR** | Latencia de Resolución de Medicación Retrasada | Tiempo medio que transcurre desde que vence la hora de la toma ($t_0$) hasta que se registra la ingesta o se reporta el motivo médico de no administración. | $$\text{LRMR} = \frac{1}{K} \sum_{i=1}^{K} (t_{\text{confirmación}, i} - t_{\text{programada}, i})$$ <br> *(calculado sobre dosis confirmadas con retraso $> 30$ min)* | Minutos | Backend events: marca de tiempo de resolución menos hora programada | $\le 20\text{ min}$ |
+| **TRT** | Tiempo Medio de Relevo de Turno | Tiempo promedio que insumen los cuidadores salientes y entrantes en coordinar y contrastar las actividades y evolución del paciente. | $$\text{TRT} = \frac{1}{N} \sum_{j=1}^{N} (t_{\text{inicio turno}, j} - t_{\text{cierre turno anterior}, j})$$ | Minutos | Módulo de Handover: tiempo de apertura y confirmación del checklist de cambio | $\le 10\text{ min}$ |
+| **TEMR** | Tasa de Error de Medicación Reportada | Proporción de incidentes reportados relacionados con dosis duplicadas, medicamentos equivocados u omisiones absolutas. | $$\text{TEMR} = \left( \frac{\text{Incidentes de medicación reportados}}{\text{Total de tomas administradas}} \right) \times 100$$ | % | Auditoría clínica y reportes de eventos adversos en la plataforma | $\le 1.5\%$ |
+| **TAD** | Tasa de Adherencia Diaria del Paciente | Porcentaje de cumplimiento del plan médico integral diario (medicinas, hidratación, signos vitales y terapias). | $$\text{TAD} = \left( \frac{\text{Total de actividades cumplidas en el día}}{\text{Total de actividades planificadas en el día}} \right) \times 100$$ | % | Agregación diaria por paciente en base de datos PostgreSQL | $\ge 90\%$ |
+| **AFR** | Tasa de Fatiga de Alertas (*Alert Fatigue Rate*) | Porcentaje de usuarios que silencian, descartan inmediatamente o revocan los permisos de notificación de la aplicación. | $$\text{AFR} = \left( \frac{\text{Usuarios que revocan permisos o descartan } > 5\text{ alertas}}{\text{Total de usuarios activos expuestos a alertas}} \right) \times 100$$ | % | Eventos de cliente en Flutter y logging de permisos de sistema operativo | $\le 5\%$ |
+
+---
+
 #### 8.2.3. Measures
 
+Para operacionalizar el experimento, se establecen las variables cuantitativas y los instrumentos de medición asociados a la interacción con el software:
+
+##### 1. Clasificación de Variables
+* **Variables Independientes (Manipuladas):**
+  * *Para EXP-01:* El tipo de interfaz de confirmación de dosis en la aplicación (Flujo A: formulario modal manual As-Is vs. Flujo B: botón de acción rápida en un toque con emisión de eventos WebSocket).
+  * *Para EXP-02:* El mecanismo de notificación en el pipeline de alertas (Flujo A: notificación estática única al minuto 0 vs. Flujo B: pipeline escalonado a los minutos 0, +15 y +30 con notificación a co-cuidadores).
+* **Variables Dependientes Primarias (Efecto Medido):**
+  * La **Tasa de Confirmación Oportuna de Medicación (TCOM)** (variable continua porcentual, medida a nivel de cada círculo de cuidado).
+  * La **Latencia de Resolución de Medicación Retrasada (LRMR)** (variable continua en minutos transcurridos).
+* **Variables Secundarias y de Salvaguarda (*Guardrail Metrics*):**
+  * *Undo Rate (Tasa de Deshacer):* Porcentaje de confirmaciones canceladas durante la ventana de gracia de 10 segundos posteriores al toque, para asegurar que la rapidez no induzca a toques accidentales.
+  * *Alert Fatigue Rate (AFR):* Tasa de opt-out o silenciamiento de notificaciones en el sistema operativo, para garantizar que la insistencia de avisos no deteriore la experiencia de usuario.
+
+##### 2. Instrumentación Técnica de la Medición
+Las mediciones no se realizarán mediante estimaciones subjetivas, sino a través de la instrumentación de eventos en el código fuente de los componentes de CareConnect:
+* **Backend (`carestacks-backend-api`):** Middleware de auditoría que registra en la tabla `ExperimentAuditEvents` el `CareCircleId`, `VariantGroup` (A o B), `ScheduledTime`, `ExecutionTime`, `LatencyMinutes` y `EventType` (`MED_CONFIRMED`, `ALERT_ESCALATED_15M`, `ALERT_ESCALATED_30M`, `UNDO_TRIGGERED`).
+* **Frontend Móvil y Web (`carestacks-mobile-app` y `carestacks-web`):** Emisión de telemetría hacia el colector analítico cada vez que el usuario presiona el botón de confirmación, cancela una acción o interactúa con una notificación push.
+
+---
+
 #### 8.2.4. Conditions
+
+Las condiciones experimentales definen con precisión los entornos operativos y funcionales a los que se expondrán los sujetos de prueba, garantizando comparabilidad y control sobre factores de confusión:
+
+##### 1. Condición de Control (Grupo A — Baseline As-Is)
+* **Experiencia en Aplicación:** El cuidador visualiza la lista diaria de medicamentos en la vista tradicional de Agenda. Para registrar una toma, debe presionar sobre la fila del medicamento, esperar a que se abra la ventana modal de edición, seleccionar una casilla de verificación (*checkbox*) titulada *"Medicamento administrado"* y pulsar el botón *"Guardar cambios"*.
+* **Sincronización:** La confirmación se guarda en PostgreSQL. El resto de integrantes del círculo de cuidado (familiares y co-cuidadores) solo visualizan el cambio si actualizan manualmente la vista arrastrando la pantalla (*pull-to-refresh*) o reingresando a la aplicación.
+* **Alertas:** El sistema emite un recordatorio push local simple a la hora exacta estipulada en la prescripción. Si la toma no se realiza, no se envían recordatorios adicionales ni se notifica a terceras personas.
+
+##### 2. Condición Experimental (Grupo B — Variante To-Be)
+* **Experiencia en Aplicación:** La tarjeta del medicamento activo cuenta con un botón destacado de *"Confirmación Rápida"* accesible directamente desde la pantalla principal de la agenda. Requiere una pulsación sostenida de 1 segundo que activa una animación circular de progreso y una vibración háptica al completarse, mostrando de inmediato una barra temporal de 10 segundos con la opción *"Deshacer"* por si hubo una equivocación.
+* **Sincronización:** Al completarse la confirmación, el backend procesa el evento y utiliza el canal de WebSockets (SignalR) para emitir un evento broadcast a todas las sesiones móviles y web activas del mismo círculo de cuidado, actualizando la tarjeta de medicación en tiempo real a estado verde con la leyenda *"Administrado por [Nombre del Cuidador] a las HH:mm"*.
+* **Alertas:** Se activa el pipeline escalonado: a los 0 minutos se envía recordatorio al cuidador; a los +15 minutos sin confirmación, se reproduce un tono de alerta prioritario en su dispositivo; y a los +30 minutos sin respuesta, se despacha una notificación push a los dispositivos móviles de los familiares y co-cuidadores indicando el retraso para que puedan intervenir.
+
+##### 3. Protocolo de Aislamiento y Reglas de No Contaminación
+* **Unidad de Aleatorización:** La asignación a la Condición A o B se realiza estrictamente a nivel de **Círculo de Cuidado (*Care Circle* / ID de Paciente)** y no por usuario individual. Esto garantiza que todos los cuidadores y familiares que atienden a un mismo adulto mayor compartan exactamente la misma experiencia y reglas de sincronización, evitando inconsistencias operativas.
+* **Regla de Exclusión Mutua (No Contaminación Cruzada):** Ningún círculo de cuidado asignado a EXP-01 podrá formar parte de otro experimento concurrente durante la ventana de evaluación, garantizando que las variaciones observadas en la TCOM y LRMR sean atribuibles exclusivamente a las modificaciones de software introducidas.
+* **Balance de Asignación:** La asignación aleatoria se balancea 1:1 entre los círculos de cuidado activos registrados en la base de datos de CareConnect.
 
 #### 8.2.5. Scale Calculations and Decisions
 
