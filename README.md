@@ -4759,7 +4759,41 @@ En cumplimiento de la Regla de Exclusión Mutua establecida en 8.2.4, ningún C�
 
 #### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
+Para mantener trazabilidad entre la justificación de negocio de cada experimento y los datos efectivamente recolectados, el equipo estructura el marco analítico bajo el esquema **Goals → Signals → Metrics (GSM)**, anclado a las métricas de dominio formalizadas en 8.2.2.
+
+| Objetivo de Negocio (*Goal*) | Señal Observable (*Signal*) | Métrica (*Metric*) | Experimento Asociado |
+|---|---|---|:---:|
+| Reducir la incertidumbre del Círculo de Cuidado sobre la administración de medicamentos (Care Circle Synchronization Gap, 8.1.1) | Los cuidadores confirman la dosis dentro de la ventana segura sin necesidad de recargar la vista | **TCOM** | EXP-01 / ERQ-01 |
+| Minimizar el riesgo clínico derivado de dosis críticas omitidas (Medication Adherence Risk, 8.1.1) | El tiempo entre el vencimiento de la hora prescrita y la resolución efectiva se acorta | **LRMR** | EXP-02 / ERQ-02 |
+| Garantizar que la rapidez de confirmación no introduzca registros accidentales | La proporción de confirmaciones deshechas en los primeros 10 segundos se mantiene baja | **Undo Rate** (guardrail) | EXP-01 / ERQ-01 |
+| Garantizar que el escalamiento de alertas no deteriore la experiencia de usuario | La proporción de usuarios que silencian o revocan permisos de notificación se mantiene baja | **AFR** (guardrail) | EXP-02 / ERQ-02 |
+| Sostener la seguridad clínica general del paciente geriátrico | La proporción de incidentes de medicación reportados se mantiene o disminuye | **TEMR** | EXP-01 y EXP-02 |
+| Sostener la adherencia integral al plan médico diario | El cumplimiento diario de actividades planificadas se mantiene o mejora | **TAD** | EXP-01 y EXP-02 |
+
+**Decisión de Selección de KPIs:** Se seleccionan como **KPIs primarios de seguimiento del Hito 3** únicamente TCOM y LRMR, por ser las variables dependientes directamente contrastadas en las hipótesis de 8.2.1; TEMR y TAD se monitorean como **métricas de contexto clínico** para detectar efectos secundarios no anticipados sobre la seguridad del paciente, y Undo Rate y AFR se monitorean como **guardrails de experiencia de usuario** conforme a lo definido en cada Experiment Card.
+
+**Economía en el Rastreo de Datos:** El equipo limita deliberadamente el conjunto de métricas activas a las seis ya catalogadas en 8.2.2, descartando la creación de métricas ad-hoc no definidas previamente, conforme a la restricción establecida en 8.2.2 de que las Experiment Cards solo pueden referenciar métricas del catálogo formal. Esto asegura que cada evento instrumentado en 8.2.8 alimente directamente al menos un KPI primario, de contexto clínico o de guardrail, evitando el rastreo de datos que no permitan detectar diferencias o cambios precisos sobre las hipótesis en evaluación.
+
+---
+
 #### 8.2.8. Web and Mobile Tracking Plan
+
+El plan de instrumentación (*Tracking Plan*) traduce las variables de 8.2.3 y los eventos de auditoría ya definidos en eventos concretos a emitir desde la aplicación móvil Flutter, la aplicación web Vue 3 y el backend ASP.NET Core, preservando un vocabulario de evento único entre plataformas para permitir la agregación conjunta en `ExperimentAuditEvents`.
+
+| Evento (*Event Name*) | Plataforma de Origen | Disparador (*Trigger*) | Propiedades Registradas | Métrica Alimentada |
+|---|:---:|---|---|---|
+| `medication_card_rendered` | Mobile (Flutter) / Web (Vue 3) | La tarjeta de medicación activa se muestra en la vista de Agenda | `CareCircleId`, `VariantGroup`, `MedicationId`, `ScheduledTime` | Línea base para TCOM |
+| `MED_CONFIRMED` | Mobile / Web | El cuidador completa la confirmación, por checkbox en Grupo A o por pulsación sostenida de 1 s en Grupo B | `CareCircleId`, `VariantGroup`, `ScheduledTime`, `ExecutionTime`, `LatencyMinutes` | TCOM, LRMR |
+| `UNDO_TRIGGERED` | Mobile / Web | El cuidador presiona "Deshacer" dentro de la ventana de gracia de 10 segundos posteriores a `MED_CONFIRMED` (Grupo B) | `CareCircleId`, `MedicationId`, `SecondsSinceConfirmation` | Undo Rate (guardrail EXP-01) |
+| `realtime_sync_delivered` | Mobile / Web | El backend despacha vía SignalR el evento `MedicationAdministeredEvent` a un cliente suscrito del mismo Círculo de Cuidado (Grupo B) | `CareCircleId`, `RecipientSessionId`, `DeliveryLatencyMs` | TCOM (soporte de diagnóstico de sincronización) |
+| `ALERT_ESCALATED_15M` | Backend (background worker) | Transcurridos 15 minutos sin `MED_CONFIRMED` tras `ScheduledTime` (Grupo B) | `CareCircleId`, `MedicationId`, `VariantGroup` | LRMR |
+| `ALERT_ESCALATED_30M` | Backend (background worker) | Transcurridos 30 minutos sin `MED_CONFIRMED` tras `ScheduledTime` (Grupo B) | `CareCircleId`, `MedicationId`, `NotifiedFamilyMemberIds` | LRMR, TEMR |
+| `notification_permission_revoked` | Mobile (Flutter, Firebase Cloud Messaging) | El usuario desactiva los permisos de notificación push a nivel de sistema operativo | `CareCircleId`, `UserId`, `VariantGroup` | AFR (guardrail EXP-02) |
+| `handover_checklist_opened` | Mobile / Web | Un cuidador abre el módulo de cierre y entrega de turno descrito en el As-Is Summary (8.1.1) | `CareCircleId`, `UserId`, `ShiftTimestamp` | TAD (métrica de contexto) |
+
+**Decisión de Gobernanza del Plan:** Todos los eventos se emiten con el prefijo común `CareCircleId` y `VariantGroup` como propiedades obligatorias, de modo que el equipo de analítica pueda segmentar cualquier consulta de telemetría por Círculo de Cuidado y por condición experimental sin necesidad de instrumentación adicional, y así preservar la consistencia entre el backend, la aplicación móvil y la aplicación web durante toda la ventana de recolección definida en 8.2.5.
+
+---
 
 ### 8.3. Experimentation
 
