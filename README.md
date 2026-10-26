@@ -3872,13 +3872,437 @@ Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-
 
 #### 6.2.2. Reviews
 
+
 ### 6.3. Validation Interviews
+
+Esta sección reúne las entrevistas de validación de CareConnect documentadas previamente por CareStacks y organiza sus resultados para el análisis de la experiencia de usuario. La validación se centra en la comprensión de la interfaz, la utilidad percibida y las oportunidades de mejora para los segmentos de cuidadores y pacientes geriátricos.
+
+**Procedencia de la evidencia:** Los seis registros y las valoraciones heurísticas provienen del informe del curso 1ACC0238 - Aplicaciones para Dispositivos Móviles (2026-10). Se incorporan como evidencia previa reutilizada para la AV2 de Diseño de Experimentos, no como entrevistas nuevas realizadas durante la semana 12. El producto evaluado fue la Landing Page / prototipo de CareConnect.
 
 #### 6.3.1. Diseño de Entrevistas
 
+**Objetivo:** Validar la facilidad de uso, comprensión y utilidad de las principales funcionalidades de CareConnect mediante entrevistas breves de aproximadamente 5 minutos.
+
+**Participantes:** Se cuenta con seis entrevistas previas, distribuidas en cuatro cuidadores de pacientes geriátricos y dos pacientes geriátricos. Las sesiones documentadas tuvieron una duración aproximada de tres a cuatro minutos.
+
+**Tareas de validación propuestas**
+
+**Segmento 1: Cuidadores**
+
+1. Encontrar la próxima actividad del paciente en la Agenda.
+2. Consultar una notificación o alerta del paciente.
+
+**Segmento 2: Pacientes geriátricos**
+
+1. Consultar la siguiente actividad programada del día.
+2. Confirmar una actividad ficticia como realizada.
+
+**Preguntas finales**
+
+1. Del 1 al 5, ¿qué tan fácil te pareció utilizar CareConnect?
+2. ¿Hubo alguna parte que te resultó difícil o confusa?
+3. ¿Qué mejorarías de la aplicación?
+
+**Registro de resultados:** Se documentarán las tareas completadas, las dificultades observadas y las respuestas de los participantes. Las entrevistas anteriores aportan comentarios sobre el prototipo, pero no registran resultados individuales de las tareas anteriores ni puntuaciones numéricas de facilidad de uso.
+
 #### 6.3.2. Registro de Entrevistas
 
+Se recuperaron seis entrevistas de validación realizadas previamente sobre el prototipo de CareConnect. Los registros permiten analizar la utilidad percibida, la comprensión de las funcionalidades y las principales oportunidades de mejora.
+
+Los campos sin información disponible se mantienen vacíos.
+
+##### Segmento 1: Cuidadores de pacientes geriátricos
+
+###### Entrevista de validación 1 — Daniel Rodríguez
+
+| Campo | Información |
+|---|---|
+| **Entrevistado** | Daniel Rodríguez |
+| **Segmento** | Cuidador de pacientes geriátricos |
+| **Experiencia** | Cuidador de varios pacientes geriátricos |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+
+**Resumen:**
+
+Daniel Rodríguez indicó que CareConnect le parece una herramienta útil para organizar el cuidado de pacientes geriátricos. Considera que disponer de una agenda centralizada para medicación, citas y terapias ayudaría a mantener la información organizada y reducir olvidos durante el cuidado diario.
+
+Respecto a la pantalla principal, señaló que permite identificar rápidamente las actividades pendientes. También destacó la utilidad de confirmar actividades realizadas, especialmente cuando varias personas participan en el cuidado del mismo paciente.
+
+En relación con las alertas, mencionó que son claras y oportunas. Asimismo, valoró el diario de seguimiento y la consulta de documentos médicos como funcionalidades que permitirían mejorar la coordinación entre cuidadores y familiares.
+
+**Aspectos de mejora identificados:**
+
+El entrevistado mencionó que algunas funcionalidades no son fáciles de encontrar durante el primer uso, por lo que considera necesario mejorar la navegación entre las secciones principales.
+
+**Oportunidades de mejora:**
+
+- Mejorar la visibilidad de las secciones principales.
+- Incorporar accesos rápidos a Agenda, Alertas y Diario.
+- Facilitar la navegación inicial de nuevos usuarios.
+
+**Funcionalidad más valorada:** Agenda, especialmente los recordatorios de medicación.
+
+**Intención de uso:** El entrevistado afirmó que utilizaría CareConnect en una rutina real de cuidado.
+
+---
+
+###### Entrevista de validación 2 — Valeria Dobbertin
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Valeria Dobbertin |
+| **Edad** | 20 años |
+| **Segmento** | Cuidadora informal de pacientes geriátricos |
+| **Experiencia** | Cuida a sus abuelos en sus tiempos libres |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+**Resumen:**
+
+Valeria Dobbertin señaló que CareConnect sería útil para organizar el cuidado de sus abuelos, ya que permitiría centralizar medicamentos, citas y terapias en una sola aplicación.
+
+Consideró que la pantalla principal presenta la información de forma clara y organizada, facilitando la identificación de actividades pendientes y completadas.
+
+También valoró positivamente la confirmación de actividades, porque ayudaría a evitar confusiones entre familiares que participan en el cuidado. Asimismo, destacó la utilidad de las alertas, el diario de seguimiento y la consulta de documentos médicos.
+
+**Aspectos de mejora identificados:**
+
+La entrevistada sugirió aumentar la visibilidad de algunos textos e íconos para que las funcionalidades principales puedan identificarse con mayor rapidez.
+
+**Oportunidades de mejora:**
+
+- Mejorar el tamaño y la visibilidad de textos e íconos.
+- Reforzar la jerarquía visual de la pantalla principal.
+- Destacar las funciones utilizadas con mayor frecuencia.
+
+**Funcionalidad más valorada:** Agenda y Alertas.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para organizar actividades y coordinar el cuidado con sus familiares.
+
+---
+
+###### Entrevista de validación 3 — Sofía
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Sofía |
+| **Edad** | 22 años |
+| **Segmento** | Cuidadora informal de pacientes geriátricos |
+| **Experiencia** | Cuida a su abuela junto con su madre |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+
+**Resumen:**
+
+Sofía indicó que CareConnect le parece una solución útil para organizar el cuidado de su abuela. Actualmente utiliza notas del celular y un cuaderno compartido con su madre, lo que puede generar diferencias en los registros y dudas sobre las actividades realizadas.
+
+Por ello, considera que una agenda centralizada ayudaría a evitar confusiones relacionadas con medicamentos, citas y terapias.
+
+También destacó la confirmación de actividades, debido a que en su familia varias personas participan en el cuidado y necesitan saber si una medicación ya fue administrada.
+
+Respecto a las alertas, señaló que son directas y comprensibles. Asimismo, valoró el diario de seguimiento como una alternativa para organizar información que actualmente se comparte mediante WhatsApp.
+
+**Aspectos de mejora identificados:**
+
+La entrevistada mencionó que la opción de compartir perfil resultó confusa al inicio, especialmente por su ubicación y por la explicación de los permisos.
+
+También sugirió permitir la configuración del tiempo de anticipación de las alertas.
+
+**Oportunidades de mejora:**
+
+- Hacer más visible la función de compartir perfil.
+- Explicar claramente el funcionamiento de los permisos.
+- Incorporar orientación inicial para funciones menos evidentes.
+- Permitir configurar la anticipación de los recordatorios.
+
+**Funcionalidad más valorada:** Diario de seguimiento y confirmación de actividades.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para mejorar la coordinación entre los familiares encargados del cuidado de su abuela.
+
+---
+
+###### Entrevista de validación 4 — Alonso
+
+| Campo | Información |
+|---|---|
+| **Entrevistado** | Alonso |
+| **Edad** | 20 años |
+| **Segmento** | Cuidador informal de pacientes geriátricos |
+| **Experiencia** | Apoya a distancia el cuidado de su abuelo, asistido en casa por su madre |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+**Resumen:**
+
+Alonso indicó que CareConnect sería útil para organizar el cuidado de su abuelo, especialmente porque este utiliza varios medicamentos en diferentes horarios.
+
+Consideró que la pantalla principal está organizada y facilita la identificación de actividades pendientes. Sin embargo, sugirió destacar más las tareas urgentes mediante indicadores visuales.
+
+También valoró la confirmación de actividades porque le permitiría verificar a distancia si su madre ya administró un medicamento, evitando tener que llamar o enviar mensajes constantemente.
+
+Respecto a las alertas, destacó la utilidad de recibir avisos cuando una actividad no ha sido confirmada. Asimismo, consideró prácticos el diario de seguimiento y la consulta de documentos médicos.
+
+**Aspectos de mejora identificados:**
+
+El entrevistado señaló que la sección de notificaciones puede verse demasiado cargada cuando existen varias alertas, lo que dificulta distinguir las más importantes.
+
+**Oportunidades de mejora:**
+
+- Permitir filtrar notificaciones por prioridad y estado.
+- Diferenciar visualmente las alertas pendientes de las anteriores.
+- Resaltar las actividades más urgentes.
+- Mantener visible la información de confirmación para el seguimiento a distancia.
+
+**Funcionalidad más valorada:** Alertas y confirmación de actividades.
+
+**Intención de uso:** El entrevistado afirmó que utilizaría CareConnect para dar seguimiento al cuidado de su abuelo cuando no se encuentra en casa.
+
+---
+
+###### Síntesis del segmento cuidador
+
+A partir de las cuatro entrevistas de validación se identificó una percepción favorable hacia CareConnect.
+
+Los participantes destacaron la utilidad de centralizar información relacionada con medicamentos, citas, terapias y actividades pendientes.
+
+La confirmación de actividades también fue una de las funcionalidades más valoradas, especialmente cuando varias personas participan en el cuidado de un mismo paciente.
+
+| Aspecto evaluado | Resultado documentado |
+|---|---|
+| **Agenda y recordatorios** | Los participantes los consideran útiles para organizar medicamentos, citas y terapias. |
+| **Confirmación de actividades** | Se valora porque puede reducir dudas cuando participan varios cuidadores. |
+| **Diario de seguimiento** | Facilitaría registrar observaciones y compartir información entre familiares. |
+| **Documentos médicos** | Permitiría centralizar archivos y consultarlos fácilmente. |
+| **Navegación** | Algunas funciones no resultan evidentes durante el primer uso. |
+| **Notificaciones** | Se sugieren filtros, indicadores de prioridad y configuración de anticipación. |
+| **Intención de uso** | Los 4 cuidadores declararon que utilizarían CareConnect. |
+
+**Conclusión del segmento:**
+
+Las entrevistas muestran que los cuidadores perciben CareConnect como una herramienta útil para organizar las actividades de cuidado y mejorar la coordinación familiar.
+
+Sin embargo, se identificaron oportunidades de mejora relacionadas con la navegación inicial, la visibilidad de funciones, la gestión de permisos y la presentación de las notificaciones.
+
+---
+
+##### Segmento 2: Pacientes geriátricos
+
+###### Entrevista de validación 5 — Nelly Ramírez
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Nelly Ramírez |
+| **Edad** | 70 años |
+| **Segmento** | Paciente geriátrica |
+| **Modalidad** | Virtual / Presencial (no precisada) |
+| **Duración aproximada** | 3 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+**Resumen:**
+
+Nelly Ramírez indicó que pudo comprender las actividades pendientes mostradas en el prototipo, aunque algunas acciones no resultaron completamente claras desde el primer momento.
+
+Señaló que los textos, botones e íconos eran comprensibles en su mayoría. También destacó que los recordatorios de medicamentos y citas le parecen útiles para evitar olvidos.
+
+La entrevistada valoró la posibilidad de centralizar información médica y permitir que familiares, cuidadores o médicos consulten sus datos con autorización.
+
+La pantalla de inicio fue la que consideró más útil por presentar información relevante de manera resumida.
+
+**Aspectos de mejora identificados:**
+
+Nelly mencionó que no logró identificar claramente cómo confirmar una actividad realizada.
+
+También propuso incorporar una guía mediante voz o sonidos para facilitar el uso de la aplicación por parte de adultos mayores.
+
+**Oportunidades de mejora:**
+
+- Hacer más visible la confirmación de actividades.
+- Incorporar instrucciones breves para acciones importantes.
+- Evaluar una guía asistida por voz o sonidos.
+- Reforzar la accesibilidad de la interfaz para adultos mayores.
+
+**Funcionalidad más valorada:** Pantalla de inicio y recordatorios.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para organizar su cuidado diario.
+
+---
+
+###### Entrevista de validación 6 — Lucila Nakamura
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Lucila Nakamura |
+| **Edad** | 75 años |
+| **Segmento** | Paciente geriátrica |
+| **Modalidad** | Virtual / Presencial (no precisada) |
+| **Duración aproximada** | 3 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect ||
+
+**Resumen:**
+
+Lucila Nakamura indicó que pudo comprender las actividades pendientes y que los textos y botones del prototipo le parecieron claros.
+
+Sin embargo, señaló que algunos íconos eran demasiado pequeños, lo que podría dificultar su reconocimiento.
+
+La entrevistada destacó la utilidad de los recordatorios de medicamentos y citas médicas, así como la posibilidad de organizar documentos y actividades en una sola aplicación.
+
+También consideró positivo que familiares o cuidadores puedan consultar su información cuando ella lo autorice.
+
+La pantalla de inicio fue la más valorada, porque permite revisar información importante de manera rápida.
+
+**Aspectos de mejora identificados:**
+
+Lucila mencionó que la sección de notificaciones le resultó menos clara que otras pantallas.
+
+Además, recomendó diferenciar las funciones mediante colores y aumentar el tamaño de los íconos para facilitar la navegación.
+
+**Oportunidades de mejora:**
+
+- Aumentar el tamaño de los íconos.
+- Diferenciar visualmente las secciones de la aplicación.
+- Mejorar la claridad de las notificaciones.
+- Utilizar elementos gráficos fáciles de reconocer.
+
+**Funcionalidad más valorada:** Pantalla de inicio y recordatorios.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para organizar sus actividades y recordatorios de salud.
+
+---
+
+###### Síntesis del segmento paciente geriátrico
+
+Las dos entrevistas del segmento paciente geriátrico reflejan una valoración positiva de las funciones de recordatorios, visualización de actividades e información centralizada.
+
+Ambas entrevistadas destacaron la pantalla de inicio como una de las partes más útiles del prototipo.
+
+No obstante, se identificaron dificultades relacionadas con la confirmación de actividades, el tamaño de los íconos y la comprensión de las notificaciones.
+
+| Aspecto evaluado | Resultado documentado |
+|---|---|
+| **Actividades pendientes** | Las participantes comprendieron la información general, aunque se recomendó mejorar su claridad. |
+| **Recordatorios** | Ambas participantes consideraron útiles los avisos de medicamentos y citas. |
+| **Pantalla de inicio** | Fue la pantalla más valorada por las dos entrevistadas. |
+| **Confirmación de actividades** | Una participante señaló dificultades para identificar esta función. |
+| **Íconos** | Se recomendó aumentar su tamaño. |
+| **Notificaciones** | Se identificó la necesidad de mejorar su presentación. |
+| **Intención de uso** | Las 2 pacientes declararon que utilizarían CareConnect. |
+
+**Conclusión del segmento:**
+
+Las entrevistas sugieren que CareConnect puede resultar útil para apoyar la organización de las actividades de cuidado de adultos mayores.
+
+Sin embargo, las siguientes iteraciones deberían prestar especial atención a la accesibilidad visual, la comprensión de acciones y la simplicidad de la navegación.
+
+---
+
+##### Evidencias de las entrevistas
+
+Las grabaciones de las entrevistas de validación se encuentran organizadas en la carpeta de evidencias del proyecto anterior.
+
+[Acceder a las entrevistas de validación en Google Drive](https://drive.google.com/drive/folders/1VYjVySQl0oseLNgTZZUiOr7G8rnr98jq?usp=sharing)
+
+##### Conclusión general del registro de entrevistas
+
+Las seis entrevistas documentadas reflejan una percepción positiva del prototipo de CareConnect entre los dos segmentos evaluados.
+
+Los cuidadores valoraron especialmente la agenda, las alertas y la confirmación de actividades, mientras que las pacientes geriátricas destacaron la pantalla de inicio, los recordatorios y la centralización de información.
+
+Asimismo, se identificaron oportunidades de mejora relacionadas con la navegación, la visibilidad de las funciones, el tamaño de los íconos y la claridad de las notificaciones.
+
+Estos resultados corresponden a percepciones declaradas durante entrevistas sobre el prototipo y no constituyen evidencia de adopción real o de mediciones de desempeño de la versión actual.
+
 #### 6.3.3. Evaluaciones según heurísticas
+
+La evaluación heurística permite identificar problemas de usabilidad relacionados con la claridad visual, la navegación, la comprensión de acciones y la accesibilidad de CareConnect.
+
+Para esta sección se recuperó la evaluación documentada en el informe previo del producto, basada en las diez heurísticas de Jakob Nielsen y en los comentarios de los participantes.
+
+Las severidades presentadas corresponden a dicha evaluación previa y no representan una nueva inspección de la versión actual del sistema.
+
+##### Escala de severidad utilizada
+
+| Nivel | Severidad | Descripción |
+|---|---|---|
+| 0 | Sin problema | No se identifica un problema de usabilidad. |
+| 1 | Cosmético | Problema visual con impacto reducido. |
+| 2 | Menor | Genera dificultades, pero permite continuar la tarea. |
+| 3 | Mayor | Dificulta completar una tarea importante. |
+| 4 | Crítico | Impide completar una tarea esencial. |
+
+##### Evaluación heurística documentada
+
+| Heurística | Evidencia documentada | Severidad previa | Recomendación |
+|---|---|:---:|---|
+| **H1. Visibilidad del estado del sistema** | La pantalla principal muestra actividades pendientes, pero Nelly no identificó claramente cómo confirmar una actividad. | 2 | Hacer más visibles los estados pendiente, confirmado y vencido. |
+| **H2. Relación entre el sistema y el mundo real** | Los participantes comprendieron conceptos como medicamentos, citas y documentos. | 1 | Mantener un lenguaje simple y cercano al usuario. |
+| **H3. Control y libertad del usuario** | Daniel señaló dificultades iniciales para encontrar algunas funciones. | 2 | Agregar accesos rápidos y mejorar la navegación. |
+| **H4. Consistencia y estándares** | Valeria consideró intuitivo el prototipo, pero sugirió mejorar la visibilidad de textos e íconos. | 1 | Mantener estilos consistentes y mejorar la legibilidad. |
+| **H5. Prevención de errores** | Los cuidadores valoraron la confirmación de actividades para reducir confusiones con la medicación. | 2 | Reforzar los mensajes posteriores a la confirmación. |
+| **H6. Reconocimiento antes que memoria** | Nelly y Lucila valoraron la pantalla de inicio porque reúne información importante. | 1 | Priorizar la visualización de actividades y recordatorios del día. |
+| **H7. Flexibilidad y eficiencia de uso** | La Agenda y las Alertas fueron valoradas como funciones importantes para tareas frecuentes. | 1 | Mantener recorridos breves y accesos directos. |
+| **H8. Diseño estético y minimalista** | Lucila indicó que algunos íconos eran pequeños y recomendó diferenciar las secciones por colores. | 3 | Mejorar el tamaño de íconos, el contraste y la diferenciación visual. |
+| **H9. Ayuda para reconocer y recuperarse de errores** | Nelly presentó dificultades para identificar la confirmación de actividades. | 3 | Mostrar instrucciones claras y retroalimentación visible. |
+| **H10. Ayuda y documentación** | Nelly sugirió incorporar orientación mediante voz o sonidos. | 3 | Agregar una guía inicial accesible para adultos mayores. |
+
+##### Problemas de usabilidad identificados
+
+| Problema identificado | Segmento afectado | Severidad previa | Propuesta de mejora |
+|---|---|:---:|---|
+| Íconos pequeños o poco visibles | Pacientes geriátricos | 3 | Aumentar el tamaño de los íconos y utilizar símbolos más reconocibles. |
+| Confirmación de actividades poco evidente | Pacientes geriátricos | 3 | Utilizar botones directos como "Ya lo hice" y mostrar el estado confirmado. |
+| Navegación inicial poco intuitiva | Cuidadores | 2 | Incorporar accesos rápidos a las funciones principales. |
+| Notificaciones difíciles de interpretar | Pacientes geriátricos | 3 | Diferenciar notificaciones por tipo, prioridad y estado. |
+| Poca diferenciación visual entre funciones | Pacientes geriátricos | 3 | Aplicar elementos visuales consistentes para identificar cada módulo. |
+| Ausencia de orientación asistida | Pacientes geriátricos | 3 | Incorporar instrucciones iniciales, voz o sonidos de apoyo. |
+
+##### Hallazgos positivos
+
+| Hallazgo | Evidencia |
+|---|---|
+| La Agenda fue percibida como una función importante. | Daniel señaló que usaría principalmente la Agenda por los recordatorios de medicación. |
+| La pantalla de inicio fue valorada positivamente. | Nelly y Lucila la identificaron como la pantalla más útil. |
+| Las alertas fueron consideradas oportunas. | Daniel y Valeria destacaron su utilidad para recordar actividades. |
+| La centralización de información fue bien recibida. | Los participantes valoraron la organización de citas, medicamentos y documentos. |
+| La confirmación de actividades fue valorada por cuidadores. | Los cuidadores señalaron que ayudaría a evitar confusiones entre familiares. |
+| El acceso compartido fue percibido como útil. | Las pacientes señalaron que les daría tranquilidad compartir información con autorización. |
+
+##### Recomendaciones de mejora
+
+| Recomendación | Justificación |
+|---|---|
+| Priorizar una pantalla principal con las actividades del día. | Facilita identificar tareas pendientes. |
+| Aumentar el tamaño de íconos y elementos visuales. | Mejora la legibilidad para adultos mayores. |
+| Diferenciar visualmente los módulos. | Ayuda a identificar rápidamente cada función. |
+| Mejorar la confirmación de actividades. | Reduce las dudas sobre tareas realizadas. |
+| Simplificar la sección de notificaciones. | Facilita comprender los avisos recibidos. |
+| Incorporar una guía inicial accesible. | Favorece el aprendizaje de usuarios con menor experiencia tecnológica. |
+| Hacer más visibles los accesos principales. | Reduce las dificultades durante el primer uso. |
+| Mantener un lenguaje simple y directo. | Facilita la comprensión de las acciones. |
+
+##### Comprobación de hallazgos en la versión actual
+
+| ID | Versión o pantalla revisada | Resultado observado | Evidencia | Severidad actual |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+
+##### Conclusión de la evaluación heurística
+
+La evaluación previa del prototipo de CareConnect permitió identificar fortalezas en la organización de información, los recordatorios y la visualización de actividades, así como oportunidades de mejora relacionadas con la navegación, accesibilidad y claridad de las acciones.
+
+Los problemas más relevantes para una siguiente iteración se concentran en la visibilidad de la confirmación de actividades, el tamaño de los íconos y la organización de las notificaciones.
+
+Estos hallazgos constituyen antecedentes útiles para la AV2, pero requieren una nueva comprobación sobre la versión actual de CareConnect antes de afirmar que los problemas persisten o que las correcciones fueron implementadas.
+
 
 ### 6.4. Auditoría de Experiencias de Usuario
 
