@@ -4756,7 +4756,6 @@ En cumplimiento de la Regla de Exclusión Mutua establecida en 8.2.4, ningún C�
 
 ---
 
-
 #### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
 Para mantener trazabilidad entre la justificación de negocio de cada experimento y los datos efectivamente recolectados, el equipo estructura el marco analítico bajo el esquema **Goals → Signals → Metrics (GSM)**, anclado a las métricas de dominio formalizadas en 8.2.2.
@@ -4869,6 +4868,22 @@ Cada historia de usuario To-Be se deriva directamente del incremento mínimo nec
 ---
 
 #### 8.3.2. To-Be Product Backlog
+
+Los User Stories se estiman en Story Points bajo la escala Fibonacci reducida (1 / 2 / 3 / 5 / 8) y se ordenan por valor para el negocio, dando prioridad a las historias de EXP-01 por su Score de Prioridad superior calculado en 8.1.4, y evitando colocar al inicio historias no vinculadas a la validación de las hipótesis del Hito 3.
+
+| # Orden | User Story Id | Título | Descripción | Story Points (1 / 2 / 3 / 5 / 8) |
+|:---:|:---:|---|---|:---:|
+| 1 | US-01 | Confirmación en un toque de medicación administrada | Como cuidador registrado, deseo confirmar una dosis con una pulsación sostenida para registrarla en menos tiempo que con el formulario modal. | 3 |
+| 2 | TS-01 | Canal de broadcasting en tiempo real `MedicationAdministeredEvent` | Como developer, deseo implementar el canal SignalR que propaga la confirmación de dosis al Círculo de Cuidado. | 5 |
+| 3 | US-02 | Actualización en tiempo real del estado de medicación | Como familiar vinculado, deseo ver el estado de la medicación actualizado en tiempo real sin recargar la aplicación. | 3 |
+| 4 | US-05 | Deshacer una confirmación accidental | Como cuidador, deseo deshacer una confirmación dentro de los 10 segundos posteriores al toque. | 2 |
+| 5 | US-03 | Alerta de insistencia a los 15 minutos | Como cuidador de turno, deseo recibir una alerta sonora si no confirmo una dosis dentro de los 15 minutos de retraso. | 3 |
+| 6 | US-04 | Notificación de retraso crítico a los 30 minutos | Como familiar o co-cuidador, deseo ser notificado si una dosis crítica permanece sin confirmar 30 minutos después de lo programado. | 3 |
+| 7 | US-06 | Registro de desactivación de permisos de notificación | Como usuario de la plataforma, deseo que el sistema registre si desactivo mis permisos de notificación. | 1 |
+
+**Decisión de Ordenamiento:** US-01 y TS-01 encabezan el backlog por sustentar directamente el experimento de mayor Score de Prioridad, EXP-01, y por ser requisito técnico indispensable para que US-02 pueda implementarse; US-05 se posiciona antes que US-03 y US-04 por tratarse de un guardrail de EXP-01, cuyo despliegue antecede operativamente a la activación del protocolo de alertas escalonadas de EXP-02, conforme a la secuenciación de escala definida en 8.2.5.
+
+---
 
 #### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
 
