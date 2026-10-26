@@ -4797,7 +4797,76 @@ El plan de instrumentación (*Tracking Plan*) traduce las variables de 8.2.3 y l
 
 ### 8.3. Experimentation
 
+Esta sección traduce el diseño experimental de 8.2 en artefactos de ejecución concretos del proceso de desarrollo ágil, derivando las Historias de Usuario To-Be y el Product Backlog directamente de las Experiment Cards EXP-01 y EXP-02, de sus condiciones experimentales y de las métricas que validarán su éxito.
+
 #### 8.3.1. To-Be User Stories
+
+Cada historia de usuario To-Be se deriva directamente del incremento mínimo necesario (*Simplest Useful Thing*) descrito en el Anverso de las Experiment Cards EXP-01 y EXP-02, y de las condiciones experimentales del Grupo B formalizadas en 8.2.4. Los criterios de aceptación se redactan en tiempo presente, tercera persona, y siguen la estructura Gherkin (*Given-When-Then*).
+
+##### US-01
+
+| Story ID | User | Priority | Epic |
+|:---:|---|:---:|---|
+| US-01 | Cuidador registrado | Alta | Confirmación Rápida de Medicación |
+| **Title** | Confirmación en un toque de medicación administrada |
+| **Description** | Como cuidador registrado, quiero confirmar la administración de un medicamento con una sola pulsación sostenida desde la tarjeta principal de Agenda, para registrar la toma en menos tiempo que con el formulario modal actual. |
+| **Acceptance Criteria** | **Dado** que el cuidador visualiza la tarjeta de medicación activa en la vista de Agenda del Grupo B, <br> **Cuando** mantiene presionado el botón de confirmación rápida durante 1 segundo, <br> **Entonces** el sistema registra el evento `MED_CONFIRMED` con el `VariantGroup` correspondiente y muestra una ventana de "Deshacer" de 10 segundos. |
+
+##### US-02
+
+| Story ID | User | Priority | Epic |
+|:---:|---|:---:|---|
+| US-02 | Familiar vinculado al Círculo de Cuidado | Alta | Sincronización en Tiempo Real |
+| **Title** | Actualización en tiempo real del estado de medicación |
+| **Description** | Como familiar vinculado al Círculo de Cuidado, quiero ver actualizado en tiempo real el estado de la medicación de mi familiar sin recargar la aplicación, para reducir mi necesidad de llamar al cuidador de turno. |
+| **Acceptance Criteria** | **Dado** que el evento `MED_CONFIRMED` se registra en un Círculo de Cuidado asignado al Grupo B, <br> **Cuando** el backend despacha el evento `MedicationAdministeredEvent` vía SignalR, <br> **Entonces** la tarjeta de medicación en los dispositivos vinculados cambia a estado verde con la leyenda "Administrado por [Nombre] a las HH:mm" sin recarga manual. |
+
+##### US-03
+
+| Story ID | User | Priority | Epic |
+|:---:|---|:---:|---|
+| US-03 | Cuidador de turno | Alta | Alertas Escalonadas |
+| **Title** | Alerta de insistencia a los 15 minutos |
+| **Description** | Como cuidador de turno, quiero recibir una alerta sonora de insistencia si no confirmo una dosis dentro de los 15 minutos posteriores a la hora programada, para no dejar pasar inadvertidamente una toma crítica. |
+| **Acceptance Criteria** | **Dado** que una dosis prescrita en un Círculo de Cuidado del Grupo B no registra el evento `MED_CONFIRMED` 15 minutos después de `ScheduledTime`, <br> **Cuando** el background worker evalúa las dosis pendientes vencidas, <br> **Entonces** el sistema emite el evento `ALERT_ESCALATED_15M` y reproduce una alerta sonora de prioridad alta en el dispositivo del cuidador de turno. |
+
+##### US-04
+
+| Story ID | User | Priority | Epic |
+|:---:|---|:---:|---|
+| US-04 | Familiar o co-cuidador vinculado | Alta | Alertas Escalonadas |
+| **Title** | Notificación de retraso crítico a los 30 minutos |
+| **Description** | Como familiar o co-cuidador vinculado, quiero ser notificado si una dosis crítica permanece sin confirmar 30 minutos después de lo programado, para poder intervenir antes de que el retraso se agrave. |
+| **Acceptance Criteria** | **Dado** que una dosis prescrita en un Círculo de Cuidado del Grupo B no registra el evento `MED_CONFIRMED` 30 minutos después de `ScheduledTime`, <br> **Cuando** el background worker evalúa las dosis pendientes vencidas, <br> **Entonces** el sistema emite el evento `ALERT_ESCALATED_30M` y despacha vía Firebase Cloud Messaging una notificación con el título "[ALERTA] Medicación no confirmada" a todos los miembros autorizados del Círculo de Cuidado. |
+
+##### US-05
+
+| Story ID | User | Priority | Epic |
+|:---:|---|:---:|---|
+| US-05 | Cuidador registrado | Media | Confirmación Rápida de Medicación |
+| **Title** | Deshacer una confirmación accidental |
+| **Description** | Como cuidador, quiero poder deshacer una confirmación de medicamento dentro de los 10 segundos posteriores al toque, para corregir registros accidentales sin reportar un incidente. |
+| **Acceptance Criteria** | **Dado** que el cuidador registró el evento `MED_CONFIRMED` hace menos de 10 segundos, <br> **Cuando** presiona la opción "Deshacer" mostrada en la barra temporal, <br> **Entonces** el sistema registra el evento `UNDO_TRIGGERED`, revierte el estado de la dosis a pendiente y audita la reversión en `ExperimentAuditEvents` para el cálculo del Undo Rate. |
+
+##### US-06
+
+| Story ID | User | Priority | Epic |
+|:---:|---|:---:|---|
+| US-06 | Usuario de la plataforma | Media | Alertas Escalonadas |
+| **Title** | Registro de desactivación de permisos de notificación |
+| **Description** | Como usuario de la plataforma, quiero poder gestionar mis permisos de notificación sin que ello interrumpa la recepción de alertas críticas de medicación, para evitar la fatiga de notificaciones durante el piloto del protocolo escalonado. |
+| **Acceptance Criteria** | **Dado** que el usuario desactiva los permisos de notificación push a nivel de sistema operativo, <br> **Cuando** la aplicación móvil detecta el cambio de permiso, <br> **Entonces** el sistema registra el evento `notification_permission_revoked` con el `CareCircleId` y `VariantGroup` correspondientes, para su agregación en el cálculo del AFR. |
+
+##### TS-01 (Technical Story)
+
+| Story ID | User | Priority | Epic |
+|:---:|---|:---:|---|
+| TS-01 | Developer | Alta | Sincronización en Tiempo Real |
+| **Title** | Canal de broadcasting en tiempo real `MedicationAdministeredEvent` |
+| **Description** | Como developer, quiero implementar un canal de WebSockets/SignalR en el backend de ASP.NET Core que despache el evento `MedicationAdministeredEvent` a los clientes autenticados de un mismo Círculo de Cuidado, para soportar la sincronización en tiempo real requerida por US-02. |
+| **Acceptance Criteria** | **Dado** un `POST` de confirmación de dosis recibido por el backend para un Círculo de Cuidado asignado al Grupo B, <br> **Cuando** el middleware de auditoría persiste el registro en `ExperimentAuditEvents`, <br> **Entonces** el backend emite el evento `MedicationAdministeredEvent` vía SignalR a todas las sesiones activas suscritas al mismo `CareCircleId` en menos de 500 milisegundos, registrando el evento `realtime_sync_delivered`. |
+
+---
 
 #### 8.3.2. To-Be Product Backlog
 
