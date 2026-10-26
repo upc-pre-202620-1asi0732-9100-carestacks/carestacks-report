@@ -4704,7 +4704,58 @@ Las condiciones experimentales definen con precisión los entornos operativos y 
 
 #### 8.2.5. Scale Calculations and Decisions
 
+La escala del experimento se determina a partir de dos dimensiones complementarias definidas por el equipo: la **Certeza**, entendida como la probabilidad de error aceptable, y la **Precisión**, correspondiente a la granularidad del cambio que se desea detectar. La Certeza se fija mediante el **Nivel de Significación** ($\alpha = 0.05$), que previene errores Tipo I, y el **Poder Estadístico** ($1 - \beta = 0.80$), que evita errores Tipo II. La Precisión se expresa mediante el **Efecto Mínimo Detectable (MDE)**, tomado directamente de los umbrales ya formalizados en las hipótesis nulas de 8.2.1, de modo que el cálculo de escala sea consistente con el contraste estadístico que se pretende ejecutar y no con una cifra arbitraria. Los datos de línea base utilizados, 58 % de TCOM y la variable LRMR, provienen de las Experiment Cards de 8.1.5, por lo que son representativos del grupo de interés, los Círculos de Cuidado activos de CareConnect.
+
+##### 1. Cálculo de Muestra para EXP-01 (Prueba de Dos Proporciones — TCOM)
+El MDE formal para EXP-01, establecido en $H_{0,1}$ (8.2.1), es de **15 puntos porcentuales** sobre la TCOM base. Dado que la TCOM es una variable proporcional, se emplea la fórmula de comparación de dos proporciones independientes:
+
+$$n = \frac{(z_{\alpha} + z_{\beta})^2 \left[ p_1(1-p_1) + p_2(1-p_2) \right]}{(p_2 - p_1)^2}$$
+
+Con $p_1 = 0.58$ (TCOM base del Grupo A), $p_2 = 0.73$ (TCOM base más el MDE de 15 puntos), $z_{\alpha} = 1.645$ (unilateral, $\alpha = 0.05$) y $z_{\beta} = 0.84$ (Poder Estadístico del 80 %):
+
+$$n = \frac{(1.645 + 0.84)^2 \left[ 0.58(0.42) + 0.73(0.27) \right]}{(0.73 - 0.58)^2} = \frac{6.18 \times 0.4407}{0.0225} \approx 121.0$$
+
+**Decisión:** Se redondea hacia arriba a **121 Círculos de Cuidado por grupo**, es decir **242 Círculos de Cuidado en total** (121 en Control y 121 en Variante), asignados mediante balanceo 1:1 según el protocolo de aleatorización ya descrito en 8.2.4. Este tamaño garantiza la Precisión necesaria para detectar, con la Certeza fijada, el MDE de 15 puntos porcentuales declarado como umbral mínimo de relevancia en $H_{0,1}$.
+
+##### 2. Cálculo de Muestra para EXP-02 (Prueba de Dos Medias — LRMR)
+El MDE formal para EXP-02, establecido en $H_{0,2}$ (8.2.1), es una reducción relativa del **30 %** en la LRMR media. Dado que la LRMR es una variable continua y el equipo no cuenta aún con una desviación estándar histórica de producción para expresar dicho MDE en unidades absolutas, se adopta de forma prudente el tamaño de efecto estandarizado de Cohen equivalente a una diferencia relativa de esta magnitud, $d = 0.5$ (efecto medio), convención estadística estándar que evita subdimensionar la muestra ante varianza desconocida:
+
+$$n = \frac{2 (z_{\alpha} + z_{\beta})^2}{d^2} = \frac{2 (1.645 + 0.84)^2}{(0.5)^2} = \frac{2 \times 6.18}{0.25} \approx 49.4$$
+
+**Decisión:** Se redondea hacia arriba a **50 Círculos de Cuidado por grupo**, es decir **100 Círculos de Cuidado en total**. En cuanto se disponga de la primera cohorte de datos de LRMR, el equipo recalculará $d$ con la desviación estándar observada para ajustar la Precisión real de este cálculo.
+
+##### 3. Decisión de Escala Operativa
+Debido a que EXP-01 exige la muestra mayor de las dos (242 círculos) y a que la Regla de Exclusión Mutua definida en 8.2.4 impide compartir círculos entre experimentos concurrentes, el equipo decide ejecutar ambos experimentos en **ventanas secuenciales y no simultáneas** sobre la base de Círculos de Cuidado activos y registrados en PostgreSQL, iniciando por EXP-01 dado su Score de Prioridad superior calculado en 8.1.4. Si la base activa de círculos no alcanza el mínimo estadístico requerido durante el ciclo del Hito 3, el equipo extenderá la ventana de recolección en lugar de reducir el tamaño de muestra, para no comprometer la validez estadística del contraste de hipótesis.
+
+---
+
 #### 8.2.6. Methods Selection
+
+La selección de métodos responde directamente al tipo de variable dependiente definida en cada Experiment Card y a la necesidad de atribuir causalidad a los cambios de software introducidos, evitando factores de confusión.
+
+##### 1. Diseño Experimental General
+Ambos experimentos se ejecutan como **experimentos controlados aleatorizados (Randomized Controlled Experiments / A-B Testing)**, con asignación aleatoria balanceada 1:1 a nivel de Círculo de Cuidado, según se estableció en 8.2.4 y se dimensionó en 8.2.5. Esta unidad de aleatorización, en lugar del usuario individual, previene la contaminación entre miembros de un mismo círculo que de otro modo podrían recibir tratamientos distintos para el mismo paciente.
+
+##### 2. Métodos de Recolección de Datos
+La recolección es exclusivamente **cuantitativa e instrumentada en el código fuente** mediante los eventos de auditoría descritos en 8.2.3 (`ExperimentAuditEvents` en el backend ASP.NET Core, y telemetría de cliente en Flutter y Vue 3), descartando deliberadamente estimaciones subjetivas o auto-reportes para las métricas primarias y de guardrail.
+
+##### 3. Métodos de Contraste Estadístico
+| Experimento | Variable Dependiente | Tipo de Variable | Método de Contraste Seleccionado | Justificación |
+|:---:|---|:---:|---|---|
+| **EXP-01** | TCOM | Proporción | Prueba unilateral de dos proporciones independientes (*two-proportion z-test*) | La TCOM es un cociente de dosis confirmadas dentro de ventana sobre el total prescrito; la prueba z de proporciones es el método estándar cuando $n \ge 30$ por grupo, condición satisfecha por el cálculo de 8.2.5. |
+| **EXP-02** | LRMR | Continua (minutos) | Prueba unilateral t-Student para dos muestras independientes, con prueba de Mann-Whitney U como respaldo no paramétrico | La LRMR puede presentar distribución asimétrica por valores extremos de dosis gravemente retrasadas; se usa t-Student como método primario y Mann-Whitney U si la prueba de normalidad de Shapiro-Wilk rechaza la normalidad de los residuos. |
+
+##### 4. Métodos de Verificación de Guardrails
+Las métricas de salvaguarda, Undo Rate para EXP-01 y Alert Fatigue Rate (AFR) para EXP-02, se verifican mediante **pruebas de una cola sobre proporciones** contra el umbral máximo tolerable definido en el Reverso de cada Experiment Card, de modo que el experimento pueda declararse exitoso únicamente si supera el criterio de éxito de la métrica primaria sin violar simultáneamente ningún guardrail.
+
+##### 5. Objeto de Investigación versus Método
+El equipo distingue explícitamente el **objeto de investigación**, es decir la pregunta o hipótesis que se busca responder, representado por ERQ-01/$H_{1,1}$ para EXP-01 y ERQ-02/$H_{1,2}$ para EXP-02, del **método**, es decir la técnica empleada para obtener evidencia sobre dicho objeto, que en ambos casos corresponde a un experimento controlado aleatorizado de tipo A/B a nivel de Círculo de Cuidado. El método se selecciona siguiendo el principio del **Simplest Useful Thing**: en ambos casos se implementa el incremento mínimo de software ya descrito en el Anverso de cada Experiment Card, suficiente para generar el evento instrumentado que permite alcanzar el tamaño de muestra calculado en 8.2.5, sin construir funcionalidad adicional no requerida para contrastar la hipótesis.
+
+##### 6. Consideración Ética de No Causar Daño
+En cumplimiento de la Regla de Exclusión Mutua establecida en 8.2.4, ningún Círculo de Cuidado participa simultáneamente en EXP-01 y EXP-02, evitando que un mismo cuidador o paciente quede expuesto a dos tratamientos experimentales superpuestos que impidan atribuir el efecto observado a una sola causa. Adicionalmente, ambas condiciones experimentales, Grupo A y Grupo B, preservan como mínimo el nivel de seguridad clínica del estado As-Is descrito en 8.1.1: en ningún caso se retiran las alarmas locales existentes ni se demora deliberadamente una notificación más allá de lo necesario para generar evidencia, de modo que la participación en el experimento no incremente el riesgo clínico del paciente geriátrico respecto de la operación actual de la plataforma.
+
+---
+
 
 #### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
