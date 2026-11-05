@@ -4218,91 +4218,202 @@ Asimismo, se identificaron oportunidades de mejora relacionadas con la navegaci�
 
 Estos resultados corresponden a percepciones declaradas durante entrevistas sobre el prototipo y no constituyen evidencia de adopción real o de mediciones de desempeño de la versión actual.
 
+
 #### 6.3.3. Evaluaciones según heurísticas
 
-La evaluación heurística permite identificar problemas de usabilidad relacionados con la claridad visual, la navegación, la comprensión de acciones y la accesibilidad de CareConnect.
+La evaluación según heurísticas permite identificar problemas de usabilidad en CareConnect mediante principios reconocidos de diseño de interfaces. Para este análisis se consideran las diez heurísticas de Jakob Nielsen, con especial atención a la claridad de las acciones, la navegación, la retroalimentación del sistema y la accesibilidad para cuidadores y pacientes geriátricos.
 
-Para esta sección se recuperó la evaluación documentada en el informe previo del producto, basada en las diez heurísticas de Jakob Nielsen y en los comentarios de los participantes.
+La presente sección desarrolla un análisis secundario de las seis entrevistas de validación documentadas en la sección 6.3.2, correspondientes a cuatro cuidadores y dos pacientes geriátricos. Estas entrevistas provienen del proyecto realizado previamente en el curso 1ACC0238 - Aplicaciones para Dispositivos Móviles (2026-10), donde se evaluó la Landing Page y el prototipo de CareConnect.
 
-Las severidades presentadas corresponden a dicha evaluación previa y no representan una nueva inspección de la versión actual del sistema.
+Los comentarios de los participantes permiten asociar problemas y oportunidades de mejora con las heurísticas de Nielsen. Sin embargo, esta asociación no equivale a una nueva inspección heurística realizada por especialistas. Del mismo modo, las severidades anteriores no representan una evaluación de la versión actualmente implementada.
+
+##### Objetivo y alcance de la evaluación
+
+El objetivo es identificar y priorizar los problemas de usabilidad que podrían dificultar la interacción de los usuarios con las funcionalidades principales de CareConnect.
+
+Se consideran los siguientes aspectos:
+
+- Comprensión de las actividades pendientes y confirmadas.
+- Facilidad para identificar y ejecutar acciones frecuentes.
+- Claridad de la navegación y los accesos principales.
+- Legibilidad de textos, íconos y elementos visuales.
+- Comprensión de notificaciones y alertas.
+- Facilidad para compartir perfiles y comprender los permisos.
+- Disponibilidad de orientación para usuarios con menor experiencia tecnológica.
+
+La evaluación documental utiliza los comentarios registrados durante las entrevistas anteriores. La comprobación de estos hallazgos en las aplicaciones actuales constituye una actividad independiente y requiere evidencia de ejecución.
 
 ##### Escala de severidad utilizada
 
+Se adopta la escala de severidad de Nielsen, que permite priorizar problemas considerando su frecuencia, impacto y persistencia.
+
 | Nivel | Severidad | Descripción |
+|:---:|---|---|
+| 0 | Sin problema | La situación evaluada no constituye un problema de usabilidad. |
+| 1 | Cosmético | Problema de bajo impacto que puede corregirse si existen recursos disponibles. |
+| 2 | Menor | Problema que genera dificultades limitadas y cuya corrección tiene prioridad baja. |
+| 3 | Mayor | Problema importante que afecta la experiencia y requiere atención prioritaria. |
+| 4 | Crítico | Problema grave de usabilidad que debe corregirse antes de publicar el producto. |
+
+La severidad debe asignarse a problemas concretos y no automáticamente a cada heurística. Cuando no existe evidencia suficiente para determinar un problema, se utiliza la indicación "No evaluado" en lugar de asignar el nivel 0.
+
+##### Análisis según las diez heurísticas de Nielsen
+
+| Heurística | Evidencia identificada en las entrevistas | Interpretación y oportunidad de mejora |
 |---|---|---|
-| 0 | Sin problema | No se identifica un problema de usabilidad. |
-| 1 | Cosmético | Problema visual con impacto reducido. |
-| 2 | Menor | Genera dificultades, pero permite continuar la tarea. |
-| 3 | Mayor | Dificulta completar una tarea importante. |
-| 4 | Crítico | Impide completar una tarea esencial. |
+| **H1. Visibilidad del estado del sistema** | Nelly Ramírez no identificó claramente cómo confirmar una actividad. Alonso sugirió destacar las tareas urgentes. | Es necesario reforzar la visibilidad de las acciones y de los estados pendiente, confirmado y vencido, así como ofrecer retroalimentación después de completar una actividad. |
+| **H2. Relación entre el sistema y el mundo real** | Los participantes comprendieron conceptos como medicamentos, citas, agenda y documentos. | No se documentó un incumplimiento concreto. Se recomienda conservar términos cotidianos y evitar lenguaje técnico innecesario. |
+| **H3. Control y libertad del usuario** | Las entrevistas no registran pruebas específicas de cancelación, retroceso o reversión de acciones. | No existe evidencia suficiente para calificar esta heurística. Se requiere comprobar si el usuario puede cancelar o corregir acciones realizadas por error. |
+| **H4. Consistencia y estándares** | Los participantes describieron elementos comprensibles, aunque algunos solicitaron mayor claridad visual. | No se demostró una inconsistencia específica. Se recomienda revisar que botones, estados e íconos mantengan significados y estilos consistentes entre pantallas. |
+| **H5. Prevención de errores** | Los cuidadores valoraron la confirmación de actividades porque permitiría reducir dudas sobre la administración de medicamentos. | La funcionalidad presenta valor preventivo, pero no se comprobó experimentalmente que evite errores. Se debe verificar que las confirmaciones sean claras y que el sistema advierta ante acciones potencialmente duplicadas. |
+| **H6. Reconocimiento antes que memoria** | Daniel tuvo dificultades para localizar funciones durante el primer uso. Nelly no encontró fácilmente la confirmación de actividades y Sofía manifestó confusión al compartir perfiles. | Es necesario mejorar la visibilidad de funciones y permisos, reducir la necesidad de recordar rutas y utilizar etiquetas reconocibles. |
+| **H7. Flexibilidad y eficiencia de uso** | Daniel solicitó accesos rápidos a Agenda, Alertas y Diario. Los cuidadores valoraron las funciones utilizadas frecuentemente. | Se recomienda facilitar el acceso a tareas habituales y reducir los pasos necesarios para completarlas. No se dispone de mediciones de tiempo de ejecución. |
+| **H8. Diseño estético y minimalista** | Lucila señaló que algunos íconos eran pequeños. Alonso indicó que las notificaciones podían resultar visualmente sobrecargadas. | Se requiere mejorar la legibilidad, la jerarquía visual y la organización de información para evitar dificultades de reconocimiento. |
+| **H9. Ayuda para reconocer, diagnosticar y recuperarse de errores** | No se documentaron pruebas específicas sobre mensajes de error o recuperación ante acciones fallidas. | No existe evidencia suficiente para asignar una severidad. Se recomienda evaluar los mensajes presentados ante datos incorrectos, operaciones fallidas o acciones no permitidas. |
+| **H10. Ayuda y documentación** | Nelly propuso orientación mediante voz o sonidos. Sofía solicitó mayor claridad al explicar los permisos de acceso. | Se identifica una oportunidad para incorporar instrucciones contextuales, especialmente en acciones poco frecuentes o complejas. La ausencia de ayuda efectiva debe confirmarse en la versión implementada. |
 
-##### Evaluación heurística documentada
+El análisis permite identificar problemas relacionados principalmente con la visibilidad, el reconocimiento de elementos, la eficiencia de navegación y la presentación de información.
 
-| Heurística | Evidencia documentada | Severidad previa | Recomendación |
-|---|---|:---:|---|
-| **H1. Visibilidad del estado del sistema** | La pantalla principal muestra actividades pendientes, pero Nelly no identificó claramente cómo confirmar una actividad. | 2 | Hacer más visibles los estados pendiente, confirmado y vencido. |
-| **H2. Relación entre el sistema y el mundo real** | Los participantes comprendieron conceptos como medicamentos, citas y documentos. | 1 | Mantener un lenguaje simple y cercano al usuario. |
-| **H3. Control y libertad del usuario** | Daniel señaló dificultades iniciales para encontrar algunas funciones. | 2 | Agregar accesos rápidos y mejorar la navegación. |
-| **H4. Consistencia y estándares** | Valeria consideró intuitivo el prototipo, pero sugirió mejorar la visibilidad de textos e íconos. | 1 | Mantener estilos consistentes y mejorar la legibilidad. |
-| **H5. Prevención de errores** | Los cuidadores valoraron la confirmación de actividades para reducir confusiones con la medicación. | 2 | Reforzar los mensajes posteriores a la confirmación. |
-| **H6. Reconocimiento antes que memoria** | Nelly y Lucila valoraron la pantalla de inicio porque reúne información importante. | 1 | Priorizar la visualización de actividades y recordatorios del día. |
-| **H7. Flexibilidad y eficiencia de uso** | La Agenda y las Alertas fueron valoradas como funciones importantes para tareas frecuentes. | 1 | Mantener recorridos breves y accesos directos. |
-| **H8. Diseño estético y minimalista** | Lucila indicó que algunos íconos eran pequeños y recomendó diferenciar las secciones por colores. | 3 | Mejorar el tamaño de íconos, el contraste y la diferenciación visual. |
-| **H9. Ayuda para reconocer y recuperarse de errores** | Nelly presentó dificultades para identificar la confirmación de actividades. | 3 | Mostrar instrucciones claras y retroalimentación visible. |
-| **H10. Ayuda y documentación** | Nelly sugirió incorporar orientación mediante voz o sonidos. | 3 | Agregar una guía inicial accesible para adultos mayores. |
+Las heurísticas H3, H4 y H9 requieren una inspección específica antes de determinar si existen incumplimientos. La ausencia de comentarios negativos en las entrevistas no demuestra por sí sola que una heurística se cumpla.
 
-##### Problemas de usabilidad identificados
+##### Registro de hallazgos de usabilidad
 
-| Problema identificado | Segmento afectado | Severidad previa | Propuesta de mejora |
-|---|---|:---:|---|
-| Íconos pequeños o poco visibles | Pacientes geriátricos | 3 | Aumentar el tamaño de los íconos y utilizar símbolos más reconocibles. |
-| Confirmación de actividades poco evidente | Pacientes geriátricos | 3 | Utilizar botones directos como "Ya lo hice" y mostrar el estado confirmado. |
-| Navegación inicial poco intuitiva | Cuidadores | 2 | Incorporar accesos rápidos a las funciones principales. |
-| Notificaciones difíciles de interpretar | Pacientes geriátricos | 3 | Diferenciar notificaciones por tipo, prioridad y estado. |
-| Poca diferenciación visual entre funciones | Pacientes geriátricos | 3 | Aplicar elementos visuales consistentes para identificar cada módulo. |
-| Ausencia de orientación asistida | Pacientes geriátricos | 3 | Incorporar instrucciones iniciales, voz o sonidos de apoyo. |
+Los siguientes hallazgos se obtienen de la tabla de problemas previamente documentada y de los comentarios individuales de la sección 6.3.2. Se conservan las severidades históricas existentes y se distingue el hallazgo adicional que no contaba con calificación.
 
-##### Hallazgos positivos
+| ID | Hallazgo identificado | Heurísticas relacionadas | Evidencia previa | Severidad previa |
+|---|---|---|---|:---:|
+| HU-01 | Confirmación de actividades poco evidente. | H1, H6 | Nelly Ramírez indicó que no identificaba claramente cómo confirmar una actividad realizada. | 3 |
+| HU-02 | Íconos pequeños o difíciles de reconocer. | H6, H8 | Lucila Nakamura recomendó aumentar el tamaño de los íconos. | 3 |
+| HU-03 | Dificultad para localizar funciones durante el primer uso. | H6, H7 | Daniel Rodríguez solicitó mejorar la navegación y los accesos principales. | 2 |
+| HU-04 | Notificaciones poco claras o visualmente sobrecargadas. | H1, H8 | Alonso señaló dificultades para distinguir alertas importantes y Lucila manifestó confusión con las notificaciones. | 3 |
+| HU-05 | Diferenciación visual insuficiente entre funciones. | H6, H8 | Lucila recomendó diferenciar las secciones mediante elementos visuales y colores. | 3 |
+| HU-06 | Necesidad de orientación accesible para realizar determinadas acciones. | H10 | Nelly sugirió implementar asistencia mediante voz o sonidos. | 3 |
+| HU-07 | Dificultad inicial para localizar y comprender la función de compartir perfil. | H6, H10 | Sofía señaló confusión respecto a la ubicación de la función y el significado de los permisos. | No registrada |
 
-| Hallazgo | Evidencia |
-|---|---|
-| La Agenda fue percibida como una función importante. | Daniel señaló que usaría principalmente la Agenda por los recordatorios de medicación. |
-| La pantalla de inicio fue valorada positivamente. | Nelly y Lucila la identificaron como la pantalla más útil. |
-| Las alertas fueron consideradas oportunas. | Daniel y Valeria destacaron su utilidad para recordar actividades. |
-| La centralización de información fue bien recibida. | Los participantes valoraron la organización de citas, medicamentos y documentos. |
-| La confirmación de actividades fue valorada por cuidadores. | Los cuidadores señalaron que ayudaría a evitar confusiones entre familiares. |
-| El acceso compartido fue percibido como útil. | Las pacientes señalaron que les daría tranquilidad compartir información con autorización. |
+**Interpretación de las severidades:** Los niveles de HU-01 a HU-06 proceden del registro anterior de problemas de usabilidad. No se dispone de información suficiente sobre frecuencia, impacto y persistencia para recalcularlos. HU-07 se incorpora por trazabilidad con la entrevista de Sofía y queda pendiente de calificación.
 
-##### Recomendaciones de mejora
+En particular, HU-06 representa una necesidad de apoyo expresada por una participante. Su severidad histórica no demuestra por sí misma que la versión actual carezca de mecanismos de ayuda.
 
-| Recomendación | Justificación |
-|---|---|
-| Priorizar una pantalla principal con las actividades del día. | Facilita identificar tareas pendientes. |
-| Aumentar el tamaño de íconos y elementos visuales. | Mejora la legibilidad para adultos mayores. |
-| Diferenciar visualmente los módulos. | Ayuda a identificar rápidamente cada función. |
-| Mejorar la confirmación de actividades. | Reduce las dudas sobre tareas realizadas. |
-| Simplificar la sección de notificaciones. | Facilita comprender los avisos recibidos. |
-| Incorporar una guía inicial accesible. | Favorece el aprendizaje de usuarios con menor experiencia tecnológica. |
-| Hacer más visibles los accesos principales. | Reduce las dificultades durante el primer uso. |
-| Mantener un lenguaje simple y directo. | Facilita la comprensión de las acciones. |
+##### Priorización de mejoras
+
+Las mejoras se organizan considerando la severidad histórica, la importancia de las funcionalidades y las características de los segmentos objetivo.
+
+| Prioridad | Hallazgos | Mejora propuesta | Justificación |
+|---|---|---|---|
+| Alta | HU-01 | Incorporar una acción de confirmación claramente identificable, con retroalimentación y actualización visible del estado. | La confirmación de medicación es una funcionalidad central para ambos segmentos. |
+| Alta | HU-02, HU-05 | Aumentar la legibilidad de íconos y mejorar la diferenciación visual de los módulos. | Los pacientes geriátricos necesitan reconocer funciones sin depender de instrucciones complejas. |
+| Alta | HU-04 | Organizar las notificaciones por prioridad y estado, destacando las alertas que requieren atención. | Ayuda a distinguir información importante y reduce la sobrecarga visual. |
+| Media | HU-03 | Incorporar accesos directos a Agenda, Notificaciones y Diario. | Facilita la navegación de cuidadores que ejecutan actividades frecuentes. |
+| Media | HU-06 | Incorporar orientación contextual para funciones principales y evaluar la necesidad de asistencia sonora. | Puede facilitar el aprendizaje de usuarios con menor experiencia digital. |
+| Por determinar | HU-07 | Mejorar la ubicación de compartir perfil y explicar claramente los permisos de acceso. | La función permite la coordinación entre cuidadores y debe comprenderse antes de autorizar el acceso a información personal. |
+
+La prioridad de HU-07 deberá establecerse después de verificar la dificultad en el flujo actual y asignarle una severidad sustentada.
 
 ##### Comprobación de hallazgos en la versión actual
 
-| ID | Versión o pantalla revisada | Resultado observado | Evidencia | Severidad actual |
-|---|---|---|---|---|
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
+La comprobación tiene como propósito determinar si los problemas identificados en el prototipo anterior persisten, fueron corregidos o requieren mejoras adicionales.
+
+Para cada hallazgo se debe registrar la versión o commit evaluado, la pantalla o flujo revisado, el resultado observado, la evidencia correspondiente y la severidad actual.
+
+La sección 6.1.4 documenta pruebas funcionales de los clientes web y móvil, incluyendo algunos recorridos de Agenda. Sin embargo, dichas pruebas no constituyen una reevaluación heurística de los siete hallazgos aquí identificados. Por ello, no se consideran suficientes para declarar que estos problemas de usabilidad han sido corregidos.
+
+| ID | Versión o pantalla por revisar | Criterio de comprobación | Resultado actual | Evidencia de versión actual | Severidad actual |
+|---|---|---|---|---|:---:|
+| HU-01 | Agenda / Confirmación de actividades | Comprobar que el usuario identifica la acción de confirmar y reconoce el estado resultante. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-02 | Pantalla principal / Agenda | Comprobar que los íconos son legibles, reconocibles y suficientemente grandes para las interacciones previstas. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-03 | Navegación principal | Comprobar que el cuidador encuentra Agenda, Notificaciones y Diario sin indicaciones adicionales. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-04 | Notificaciones | Comprobar que el usuario distingue notificaciones pendientes, urgentes y anteriores sin confusión. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-05 | Pantalla principal / Módulos | Comprobar que los módulos se reconocen mediante etiquetas e indicadores visuales consistentes. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-06 | Orientación inicial / Ayuda contextual | Comprobar si el usuario dispone de instrucciones comprensibles para completar acciones que desconoce. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-07 | Perfil / Gestión de accesos | Comprobar que el usuario encuentra la función de compartir perfil y comprende los permisos antes de concederlos. | Pendiente de verificación. | No registrada. | No evaluada |
+
+**Estado de la comprobación:** El informe disponible no contiene registros de una nueva inspección heurística de estas pantallas. Por tanto, no es posible asignar severidades actuales ni afirmar que los hallazgos fueron corregidos.
+
+La escala de severidad debe aplicarse nuevamente cuando se disponga de resultados observados. Una severidad 0 solo corresponde a un problema descartado o inexistente después de la revisión, y no debe utilizarse para representar evaluaciones pendientes.
+
+##### Métricas e indicadores de evaluación
+
+Se establecen indicadores para organizar los resultados disponibles y permitir una comprobación cuantitativa en futuras iteraciones.
+
+Los indicadores se proponen como criterios internos de seguimiento y no como resultados ya obtenidos ni como umbrales obligatorios del enunciado del curso.
+
+| Indicador | Definición | Resultado disponible |
+|---|---|---|
+| Entrevistas de validación documentadas | Número de entrevistas previas utilizadas como fuente. | 6 entrevistas: 4 cuidadores y 2 pacientes geriátricos. |
+| Heurísticas consideradas | Número de principios de Nielsen incluidos en el análisis documental. | 10 de 10 heurísticas. |
+| Hallazgos registrados | Número de problemas u oportunidades de mejora identificados. | 7 hallazgos. |
+| Hallazgos con severidad histórica | Número de hallazgos que ya tenían calificación en el informe anterior. | 6 de 7. |
+| Hallazgos históricos de severidad mayor | Hallazgos que recibieron una calificación previa de nivel 3. | 5 hallazgos. |
+| Hallazgos históricos de severidad menor | Hallazgos que recibieron una calificación previa de nivel 2. | 1 hallazgo. |
+| Hallazgos corregidos y comprobados | Número de problemas cuya solución fue demostrada mediante una reevaluación de la versión actual. | Sin información disponible. |
+| Facilidad de uso percibida | Calificación individual de 1 a 5 prevista en el diseño de entrevistas de la sección 6.3.1. | No disponible: las entrevistas anteriores no registran puntuaciones individuales. |
+| Tasa de éxito de tareas | Porcentaje de intentos completados correctamente por los participantes durante la evaluación. | No disponible: no se documentaron los resultados individuales de las tareas propuestas. |
+
+Para una siguiente evaluación se recomienda registrar los siguientes indicadores:
+
+**1. Tasa de éxito de tareas**
+
+Permite determinar qué proporción de tareas evaluadas fue completada correctamente.
+
+`Tasa de éxito (%) = (Tareas completadas correctamente / Total de intentos válidos) × 100`
+
+Se considerarán tareas como consultar la próxima actividad, confirmar una actividad, identificar una notificación prioritaria y compartir el perfil con un cuidador.
+
+**2. Tiempo de ejecución**
+
+Permite medir el tiempo necesario para completar cada tarea, expresado en segundos. Los resultados podrán compararse entre segmentos o entre versiones de la aplicación cuando se utilicen tareas equivalentes.
+
+**3. Facilidad de uso percibida**
+
+Se utilizará la escala de 1 a 5 definida en la sección 6.3.1, donde 1 representa una experiencia muy difícil y 5 una experiencia muy fácil.
+
+`Promedio de facilidad = Suma de calificaciones obtenidas / Número de respuestas válidas`
+
+**4. Porcentaje de hallazgos corregidos y verificados**
+
+Permite medir el avance de las acciones de mejora a partir de los hallazgos registrados.
+
+`Corrección verificada (%) = (Hallazgos corregidos con evidencia / Total de hallazgos registrados) × 100`
+
+Este indicador solo deberá calcularse una vez que los hallazgos hayan sido revisados y exista evidencia suficiente para determinar su estado.
+
+**5. Severidad residual**
+
+Representa la severidad asignada a un problema después de evaluar la versión actual. Se utilizará la misma escala de 0 a 4 para facilitar la comparación con las valoraciones históricas, sin asumir que estas constituyen una línea base cuantitativa experimental.
+
+No se establecen resultados ni porcentajes de cumplimiento para las métricas que todavía no cuentan con mediciones.
+
+##### Hallazgos positivos
+
+Las entrevistas también permitieron identificar aspectos favorables de la experiencia de CareConnect.
+
+| Aspecto | Evidencia documentada |
+|---|---|
+| Organización centralizada | Los participantes valoraron que las actividades de salud pudieran consultarse desde una misma plataforma. |
+| Pantalla principal | Nelly y Lucila identificaron esta pantalla como una de las más útiles por reunir información relevante. |
+| Agenda y recordatorios | Daniel destacó su utilidad para organizar la medicación y las actividades programadas. |
+| Confirmación compartida | Valeria, Sofía y Alonso valoraron la posibilidad de comprobar las actividades realizadas por otras personas. |
+| Alertas | Los cuidadores identificaron valor en recibir avisos relacionados con actividades pendientes. |
+| Acceso autorizado | Las pacientes valoraron la posibilidad de compartir información con familiares y cuidadores mediante autorización. |
+
+Estos resultados corresponden a percepciones declaradas durante las entrevistas y no demuestran por sí mismos la eficacia de las funcionalidades implementadas.
 
 ##### Conclusión de la evaluación heurística
 
-La evaluación previa del prototipo de CareConnect permitió identificar fortalezas en la organización de información, los recordatorios y la visualización de actividades, así como oportunidades de mejora relacionadas con la navegación, accesibilidad y claridad de las acciones.
+El análisis de las entrevistas previas permitió relacionar los comentarios de los participantes con las diez heurísticas de Nielsen e identificar siete hallazgos relevantes para la experiencia de usuario de CareConnect.
 
-Los problemas más relevantes para una siguiente iteración se concentran en la visibilidad de la confirmación de actividades, el tamaño de los íconos y la organización de las notificaciones.
+Los problemas de mayor atención se relacionan con la visibilidad de la confirmación de actividades, la legibilidad de los íconos, la presentación de notificaciones y el reconocimiento de las funcionalidades principales. Estos aspectos son especialmente importantes para los pacientes geriátricos, quienes pueden presentar distintos niveles de familiaridad con la tecnología.
 
-Estos hallazgos constituyen antecedentes útiles para la AV2, pero requieren una nueva comprobación sobre la versión actual de CareConnect antes de afirmar que los problemas persisten o que las correcciones fueron implementadas.
+Asimismo, el análisis permitió reconocer oportunidades de mejora en los accesos rápidos, la orientación inicial y la comprensión de los permisos para compartir perfiles.
 
+Las valoraciones históricas sirven para organizar las prioridades de revisión, pero no permiten concluir que los problemas persistan o se hayan solucionado en la versión actual. Una nueva inspección, acompañada de capturas, versiones identificadas y resultados observados, será necesaria para establecer severidades actuales y calcular las métricas de cumplimiento.
+
+La siguiente iteración deberá priorizar la comprobación de los hallazgos asociados con actividades esenciales de cuidado y registrar datos que permitan evaluar las mejoras de manera objetiva.
+
+**Referencias metodológicas**
+
+- Nielsen, J. (1994). *10 Usability Heuristics for User Interface Design*. Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/
+- Nielsen, J. (1994). *Severity Ratings for Usability Problems*. Nielsen Norman Group. https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/
 
 ### 6.4. Auditoría de Experiencias de Usuario
 
