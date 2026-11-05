@@ -548,11 +548,13 @@ Para el **Trabajo Parcial (TP)**, el alcance del Capítulo VII comprende **Conti
 
 La estrategia DevOps de CareConnect busca que los cambios realizados en los productos principales de la solución puedan ser verificados, preparados para entrega y desplegados mediante procesos repetibles y trazables. Para ello se emplea GitHub como plataforma de control de versiones y colaboración, y GitHub Actions como herramienta de automatización de los pipelines.
 
+Se integra aquí el contenido del equipo de `chapter-7` (`758ce96`) y se actualiza con los workflows y resultados de las ramas de revisión del 04/10/2026. Las capturas originales se conservan como evidencia histórica; los [registros CI actuales](assets/deployment/tb1-2026-10-04/verification.md) identifican las versiones aprobadas.
+
 Los productos considerados en el pipeline del Trabajo Parcial son:
 
 | Producto | Repositorio | Stack actual | Build tool |
 |---|---|---|---|
-| Landing Page | `CareStacks/Landing-Page` | React + TypeScript + Vite | npm / Vite |
+| Landing Page | `carestacks-landing-page` | React + TypeScript + Vite | npm / Vite |
 | Frontend Web Application | `carestacks-web` | Flutter Web | Flutter SDK |
 | Native Mobile Application | `carestacks-mobile-app` | Flutter + Dart | Flutter SDK |
 | RESTful API | `carestacks-backend-api` | Spring Boot 4 + Java 25 | Maven |
@@ -660,7 +662,7 @@ Maven dependency cache
 mvn -B test
    |
    v
-Unit / Integration / BDD Tests
+JUnit: Unit / Integration Tests
    |
    v
 Build Result
@@ -746,9 +748,7 @@ npm run lint
 npm run build
 ```
 
-![Landing CI Evidence](assets/landing-ci-success.png)
-
-*Evidencia de ejecución exitosa del pipeline de Continuous Integration de la Landing Page.*
+La [ejecución CI de la landing actual](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/actions/runs/37244598095) aprobó el commit `ab2d60e`; el [registro de verificación](assets/testing/landing-product-2026-10-04/verification.md) documenta su publicación.
 
 ##### Pipeline de la Native Mobile Application
 
@@ -787,7 +787,7 @@ flutter analyze
 flutter build apk --debug
 ```
 
-En el estado actual del repositorio no existe un directorio `test`, por lo que el workflow omite la ejecución de `flutter test` hasta que se incorpore una suite automatizada para la aplicación móvil.
+La rama de revisión actual incluye `test/`: sus nueve pruebas rápidas se ejecutan en CI. El workflow solo omite Flutter Test si el directorio no existe. Los nueve escenarios HTTP externos se ejecutan aparte, como se explica en el Capítulo VI.
 
 ![Mobile CI Evidence](assets/mobile-ci-success.png)
 
@@ -801,122 +801,94 @@ En el estado actual del repositorio no existe un directorio `test`, por lo que e
 
 ---
 
-## 7.2. Continuous Delivery
+### 7.2. Continuous Delivery
 
-### 7.2.1. Tools and Practices.
+#### 7.2.1. Tools and Practices
 
-Para el proceso de Continuous Delivery del proyecto CareStacks se utiliza GitHub como repositorio central del código fuente y GitHub Actions como herramienta de integración continua. Se configuró un workflow de CI (`.github/workflows/ci.yml`) que se ejecuta automáticamente en cada push a las ramas `main` y `develop`, así como en cada Pull Request dirigido a estas ramas. Este workflow realiza dos tareas principales de forma secuencial: primero ejecuta la suite completa de pruebas del backend mediante `mvn -B test`, y si todas las pruebas pasan exitosamente, procede a construir la imagen Docker de la aplicación. De esta manera, cada cambio integrado al repositorio es validado automáticamente antes de considerarse apto para su despliegue, garantizando que el código en las ramas principales siempre se encuentra en un estado funcional y desplegable.
+CareConnect prepara cada producto mediante su pipeline de GitHub Actions y mantiene la entrega separada de su publicación. Un build aprobado demuestra que esa versión compila y supera las pruebas configuradas; la disponibilidad de una URL, una instalación nativa y un recorrido completo se comprueban por separado. Los workflows actuales muestran los archivos generados, pero no publican `build/web` ni el APK como artefactos descargables de Actions.
 
-![Vista general de Actions](assets/actions-overview.png)
+| Producto | Preparación comprobada | Entrega y límite actual |
+|---|---|---|
+| RESTful API | Java 25, `mvn -B clean verify`; suite adicional y construcción Docker | Render construye su propia imagen desde el repositorio; el CI no la sube a un registry |
+| Frontend Web | `flutter pub get`, `flutter analyze`, `flutter test`, `flutter build web --release` | Se genera `build/web`; falta una URL publicada con la versión corregida y el backend configurado |
+| App Flutter del cuidador | Java 17, Flutter, análisis, pruebas y `flutter build apk --debug` | El APK de depuración demuestra compilación Android; no acredita firma release, Play Store, iOS ni instalación en dispositivo |
+| Landing Page | Node 24, instalación npm, lint y build Vite | Publicada en Vercel mediante CLI; verificación de ES/EN y enlaces en navegador |
 
-![Archivo ci.yml en GitHub](assets/ci-workflow-file.png)
+La revisión de Agenda está publicada en [backend PR #3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3), [web PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/pull/1) y [móvil PR #1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/pull/1). El [registro de entrega TB1](assets/deployment/tb1-2026-10-04/verification.md) vincula cada commit con su ejecución CI y evita confundir esas ramas con producción.
 
-### 7.2.2. Stages Deployment Pipeline Components.
+#### 7.2.2. Stages Deployment Pipeline Components
 
-- **Test Stage:**
+**Verificación.** El backend usa JUnit, Spring Boot Test y H2 en memoria. La versión corregida pasó 16 pruebas. Los clientes pasaron 36 pruebas rápidas web, 9 móviles y 9 escenarios de sistema por cliente contra una API H2 desechable. Las suites externas se ejecutan explícitamente y no forman parte del `flutter test` predeterminado del CI. SYS-06/SYS-07 comprueban el rechazo después de revocar y sin sesión.
 
-Marco de pruebas unitarias: JUnit 5 (Jupiter)
+**Empaquetado.** El Dockerfile realiza `mvn -B -DskipTests package` en Maven 3.9.11 con Temurin 25 y copia el JAR a una imagen JRE ejecutada como usuario `spring`. Las pruebas se ejecutan antes en CI; construir Docker por sí solo no las ejecuta. Flutter produce `build/web` y `build/app/outputs/flutter-apk/app-debug.apk`; la landing produce `dist`.
 
-Pruebas de integración: Spring Boot Test con H2 en memoria
+**Configuración web.** `ApiConfig` permite definir el backend en compilación. Para preparar un bundle conectado al servicio público:
 
-El pipeline ejecuta `mvn -B test`, que corre 4 clases de prueba con 10 métodos en total: 2 clases de pruebas unitarias de dominio (HealthEventTest, ProfileShareConsentTest), 1 clase de integración end-to-end (CoreApiIntegrationTests) y 1 smoke test del contexto Spring (CareConnectBackendApplicationTests). Todas las pruebas son autocontenidas y no requieren variables de entorno externas ni base de datos de producción.
-
-![Log de pruebas exitosas](assets/test-build-success.png)
-
-- **Package / Artifact:**
-
-Contenerización: Docker (build multi-stage con Maven 3.9.11 + Eclipse Temurin JDK 25)
-
-El segundo job del pipeline (`docker-build`) construye la imagen Docker de la aplicación utilizando el Dockerfile multi-stage existente en el repositorio. Este job genera el artefacto desplegable (imagen Docker) y valida que el empaquetado se complete sin errores. La imagen no se publica en un registry externo; Render construye su propia imagen a partir del Dockerfile al momento del despliegue.
-
-![Docker build exitoso](assets/docker-build-success.png)
-
-- **Deployment Stage:**
-
-Herramienta de despliegue: Render (Web Service)
-
-El backend se despliega en Render conectado a una base de datos PostgreSQL. Render detecta automáticamente el Dockerfile del repositorio, construye la imagen y la despliega en un contenedor en la nube. La URL de producción es `https://carestacks-backend-api.onrender.com`. La documentación de la API está disponible vía Swagger UI en `https://carestacks-backend-api.onrender.com/swagger-ui/index.html`.
-
-- **Release Stage:**
-
-Herramientas de monitoreo y registro: No implementado. El proyecto utiliza únicamente el logging por defecto de Spring Boot (consola). No se ha integrado Spring Boot Actuator ni herramientas externas de monitoreo.
-
-- **Rollback and Recovery:**
-
-Copias de seguridad y restauración: No implementado como proceso automatizado. En caso de ser necesario, Render permite revertir a un despliegue anterior desde su panel de administración, seleccionando una versión previa en el historial de deploys.
-
-Gestión de versiones de código: Git.
-
-- **Release Management:**
-
-Herramientas de gestión de versiones: Git, GitHub.
-
-![Diagrama de jobs del pipeline](assets/pipeline-jobs.png)
-
-## 7.3. Continuous Deployment
-
-### 7.3.1. Tools and Practices.
-
-Para llevar a cabo el proceso de gestión de versiones en Git, el equipo sigue el modelo Gitflow simplificado. La estructura de ramas documentada y utilizada en el proyecto es la siguiente:
-
-```
-main (producción)
- └── develop (integración)
-      ├── feature/* (funcionalidades nuevas)
-      └── test/* (ramas de pruebas)
+```bash
+flutter pub get
+flutter analyze
+flutter test
+flutter build web --release --dart-define=API_BASE_URL=https://carestacks-backend-api.onrender.com
 ```
 
-La rama `main` contiene la versión estable y desplegada del backend en producción. La rama `develop` sirve como rama de integración donde se consolidan las funcionalidades antes de pasar a producción. Las ramas `feature/*` se crean a partir de `develop` para el desarrollo de nuevas funcionalidades, y se integran de vuelta a `develop` mediante Pull Requests que deben pasar las validaciones del pipeline CI antes de ser aceptados. Para facilitar la automatización, se utiliza GitHub Actions que valida automáticamente cada Pull Request antes del merge.
+Sin ese `--dart-define`, el bundle usa `http://localhost:8080`; un build de CI con esa configuración no debe presentarse como una app de producción conectada. Publicar el contenido de `build/web` en el alojamiento elegido, comprobar que CORS permite su origen HTTPS y repetir login, Agenda y revocación. Este procedimiento está documentado; no se ha ejecutado una nueva publicación de la aplicación web.
 
-El equipo utiliza parcialmente la convención de Conventional Commits para los mensajes de commit, empleando prefijos como `feat:`, `chore:`, `test():` y `ci:` para categorizar los cambios realizados. El versionado del proyecto se encuentra en `0.0.1-SNAPSHOT` y se planea implementar versionado semántico con tags de Git en futuras iteraciones.
+**Configuración móvil.** Para reproducir la compilación Android del cuidador:
 
-El despliegue a producción se realiza de forma automatizada mediante Render. El servicio web está conectado directamente al repositorio de GitHub y configurado con auto-deploy sobre la rama `main`. Cada vez que se realiza un merge a `main`, Render detecta el cambio, construye la imagen Docker utilizando el Dockerfile multi-stage del repositorio y despliega automáticamente la nueva versión en producción. La configuración de Auto-Deploy está habilitada en el panel de Render, como se evidencia a continuación.
+```bash
+flutter pub get
+flutter analyze
+flutter test
+flutter build apk --debug --dart-define=API_BASE_URL=https://carestacks-backend-api.onrender.com
+```
 
-![Render Auto-Deploy Settings](assets/render-auto-deploy-settings.png)
+Instalar y probar ese APK en un dispositivo o emulador antes de considerarlo una entrega funcional. La distribución release requiere la configuración de firma del equipo y una compilación release; no se incluyen claves en el repositorio. Una entrega iOS exige el entorno Apple y su firma. El cliente Android del paciente está en [carestacks-frontend](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend), rama `main` (`922361d`), dentro de la organización del curso. `develop` solo contiene el README. Su compatibilidad con la corrección de Agenda requiere verificación propia; el repositorio histórico `CareStacks/FrontEnd` no pertenece a esta sección.
 
-### 7.3.2. Production Deployment Pipeline Components.
+**Backend y persistencia.** El servicio recibe `PORT` y las variables `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_DRIVER_CLASS_NAME`, `SPRING_DATASOURCE_USERNAME`, `SPRING_DATASOURCE_PASSWORD` y `SPRING_JPA_HIBERNATE_DDL_AUTO`. Para PostgreSQL usar su URL JDBC y `org.postgresql.Driver`. La evidencia visual del servicio no expone secretos ni permite certificar los valores de esas variables. El código tiene H2 como valor por defecto; por ello la persistencia PostgreSQL requiere comprobar la configuración del entorno y no se infiere solo por la existencia de una URL pública.
 
-- **Source Control Management:** Git, GitHub
-- **Build and compilation:** Maven 3.9.11 (wrapper incluido en el repositorio) con JDK 25 (Eclipse Temurin)
-- **Containerization:** Docker (build multi-stage definido en el Dockerfile del repositorio)
-- **Artifact repository:** Docker Image (construida por Render a partir del Dockerfile)
-- **Deployment platform:** Render (Web Service conectado a PostgreSQL)
-- **API Documentation:** OpenAPI 3.0 / Swagger UI (`https://carestacks-backend-api.onrender.com/swagger-ui/index.html`)
-- **Environment variables:** Configuradas en el panel de Render (SPRING_DATASOURCE_URL, SPRING_DATASOURCE_DRIVER_CLASS_NAME, SPRING_DATASOURCE_USERNAME, SPRING_DATASOURCE_PASSWORD, SPRING_JPA_HIBERNATE_DDL_AUTO)
+**Aceptación y recuperación.** Registrar commit, URL o archivo generado, CI, configuración no secreta y resultado del recorrido. Mantener disponibles el build y commit anteriores para volver a publicarlos si falla la nueva versión; conservar la base de datos y comprobar la compatibilidad de esquema antes de revertir. No existe en estos workflows un proceso automatizado de backup/restauración ni una publicación a tiendas. Las sesiones de IAM corregidas residen en una sola instancia y requieren login después de reiniciar.
 
-Vistazo general de los pipelines utilizados en el backend:
+### 7.3. Continuous deployment
 
-![Vista general de pipelines](assets/actions-overview.png)
+#### 7.3.1. Tools and Practices
 
-Detalle de los jobs del pipeline:
+Los repositorios usan `main`, `develop`, ramas `feature/*` y `test/*`, con Pull Requests y checks de CI. Una rama de revisión aprobada no se fusiona ni despliega por el hecho de pasar las pruebas. El cambio de Agenda permanece en PRs; la captura de Render corresponde a `51decbd`, una versión anterior al arreglo.
 
-![Diagrama de jobs](assets/pipeline-jobs.png)
+El equipo aportó evidencia de un despliegue automático en Render: `Deploy succeeded | Live`, trigger `Auto-Deploy`, fuente `51decbd`, el 04/10/2026. Se conserva la [captura original](assets/render-after-ci-deploy.png), incorporada desde `chapter-7` (`758ce96`). La referencia anterior a `assets/render-auto-deploy-settings.png` se retiró porque el archivo no existe; no se sustituye por una imagen que simule el panel de configuración.
 
-Resultado del pipeline de pruebas:
+![Despliegue automático de backend en Render](assets/render-after-ci-deploy.png)
 
-![Resultado de pruebas](assets/test-build-success.png)
+La [captura de checks de GitHub](assets/render-ci-checks-github.png) y la del deploy respaldan el historial aportado por el equipo. El modo `After CI Checks Pass` debe comprobarse en Settings del servicio para certificar que Render exige esos checks; la captura de un deploy exitoso no muestra esa configuración. La [documentación oficial de Render](https://render.com/docs/deploys) describe ese modo y el comportamiento del despliegue.
 
-Resultado del pipeline de Docker Build:
+La landing se publica mediante Vercel CLI. El despliegue manual a producción y la integración automática con GitHub son mecanismos distintos; no se ha acreditado esta última para el proyecto actual. La [documentación oficial de Vercel CLI](https://vercel.com/docs/cli/deploy) explica `--prod`.
 
-![Docker build](assets/docker-build-success.png)
+#### 7.3.2. Production Deployment Pipeline Components
 
-Evidencia de que Render espera a que los checks de CI en GitHub Actions pasen antes de iniciar el despliegue:
+| Producto | Destino y evidencia | Estado comprobado |
+|---|---|---|
+| Backend | [Swagger público](https://carestacks-backend-api.onrender.com/swagger-ui/index.html), captura Render `51decbd` y [registro de comprobación](assets/deployment/tb1-2026-10-04/verification.md) | Existe evidencia de publicación; el arreglo de Agenda aún no está en esa versión |
+| Landing | [Vercel](https://carestacks-landing-page.vercel.app/), despliegue y navegador documentados en §6.1.4 | Publicada; About the Product corregido y About the Team pendiente |
+| Web del cuidador | CI del commit `42d50ac`, bundle release comprobado | Preparada para publicar; no se encontró un registro de deployment en GitHub ni se acreditó una URL de esta versión |
+| Móvil del cuidador | CI del commit `2409893`, etapa APK debug aprobada | Compilada; no se encontró una release del repositorio ni se acreditó distribución en dispositivo/tienda |
 
-![CI Checks en GitHub](assets/render-ci-checks-github.png)
+Para el backend, Render obtiene el código de la rama configurada, construye el Dockerfile, inicia el contenedor usando `PORT` y expone la URL HTTPS. Comprobar el commit del deploy y la documentación OpenAPI después del arranque. Un arranque en frío puede mostrar la página de activación de Render; la disponibilidad de Swagger se registra por separado del estado histórico `Live`.
 
-Evidencia del despliegue automático en producción mediante Render, activado después de que los checks de CI finalizaron exitosamente:
+Para cerrar la entrega conjunta se requiere integrar las versiones compatibles, comprobar el cliente de paciente, definir las URLs/archivos de distribución de los clientes, validar CORS y repetir ST-03 en esos entornos. Este informe registra los pasos y la evidencia disponible; no atribuye despliegues ni instalaciones que no se realizaron.
 
-![Render Auto-Deploy after CI](assets/render-after-ci-deploy.png)
+### 7.4. Continuous Monitoring
 
-Documentación de la API desplegada (Swagger UI):
+#### 7.4.1. Tools and Practices
 
-![Swagger UI](assets/swagger-ui.png)
+#### 7.4.2. Monitoring Pipeline Components
 
-Archivo de configuración del pipeline CI:
+#### 7.4.3. Alerting Pipeline Components
 
-![Archivo ci.yml](assets/ci-workflow-file.png)
+#### 7.4.4. Notification Pipeline Components
+
+La sección 7.4 queda fuera del alcance TB1. No se presenta el logging de consola como un sistema de monitoreo, alertas o notificaciones operativas.
 
 ---
+
 
 # Part III: Experiment-Driven Lifecycle
 
