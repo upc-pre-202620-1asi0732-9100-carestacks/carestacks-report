@@ -4206,7 +4206,7 @@ Sin embargo, las siguientes iteraciones deberían prestar especial atención a l
 
 Las grabaciones de las entrevistas de validación se encuentran organizadas en la carpeta de evidencias del proyecto anterior.
 
-[Acceder a las entrevistas de validación en Google Drive](https://drive.google.com/drive/folders/1VYjVySQl0oseLNgTZZUiOr7G8rnr98jq?usp=sharing)
+[Acceder a las entrevistas de validación en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgCmr6IQ2FadRYjjkZ3dTDyRAYRDnvqex5WaYepc0P0cXj8?e=rs21EW)
 
 ##### Conclusión general del registro de entrevistas
 
