@@ -1283,7 +1283,7 @@ El *Bounded Context* **Documents** administra los metadatos de documentos médic
 
 La relación entre ambas tablas permite que un documento lógico contenga uno o varios archivos. Esta separación evita repetir metadatos generales de un mismo documento para cada archivo adjunto.
 
-![Documents Database Diagram](CareConnect_DB_Documents_v2.png)
+![Documents Database Diagram](assets/CareConnect_DB_Documents_v2.png)
 
 *Figura X. Diagrama de base de datos del Bounded Context Documents.*
 
