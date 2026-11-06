@@ -983,7 +983,7 @@ Este bounded context controla el ciclo de vida de los accesos compartidos entre 
 El bounded context Documentos administra la información asociada a documentos médicos y la referencia necesaria para acceder a los archivos almacenados externamente.
 
 
-![Class Diagram - Documentos](assets/careconnect-documents-class-diagram.png)
+![Class Diagram - Documentos](assets/CareConnect_DB_Documents_v2)
 
 *Figura X. Diagrama de clases del bounded context Documentos.*
 
@@ -995,7 +995,7 @@ La entidad principal es `User`, que contiene información relacionada con el cor
 
 
 
-![Class Diagram - IAM](assets/careconnect-iam-class-diagram.png)
+![Class Diagram - IAM](assets/CareConnect_DB_IdentityAccess_v2)
 
 *Figura X. Diagrama de clases del bounded context Autenticación / IAM.*
 
