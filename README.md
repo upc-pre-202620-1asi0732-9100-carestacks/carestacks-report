@@ -1230,7 +1230,7 @@ Este contexto gestiona las alertas y las comunicaciones individuales enviadas a 
 
 Esta estructura distingue el hecho que origina una alerta de las notificaciones enviadas a múltiples destinatarios. Así, una alerta puede generar varias comunicaciones sin duplicar su registro de origen. Los intentos de entrega permiten realizar seguimiento individual del envío.
 
-![Notifications Database Diagram](CareConnect_DB_Notifications_v2.png)
+![Notifications Database Diagram](assets/CareConnect_DB_Notifications_v2.png)
 
 *Figura X. Diagrama de base de datos del Bounded Context Notifications.*
 
@@ -1246,7 +1246,7 @@ Cada entrada contiene `patient_id`, que identifica al paciente al que pertenece 
 
 Esta distinción permite mantener la trazabilidad cuando una observación es registrada por el propio paciente o por un cuidador autorizado.
 
-![Diary Database Diagram](CareConnect_DB_Diary_v2.png)
+![Diary Database Diagram](assets/CareConnect_DB_Diary_v2.png)
 
 *Figura X. Diagrama de base de datos del Bounded Context Diary.*
 
@@ -1266,7 +1266,7 @@ Las relaciones entre pacientes y cuidadores admiten que un paciente autorice a v
 
 En `profile_share_consent_views`, la combinación de `consent_id` y `view_name` identifica cada permiso específico. La autorización efectiva no depende solo de que exista la relación: también deben verificarse su estado, expiración y alcance de acceso.
 
-![Consent Management Database Diagram](CareConnect_DB_ConsentManagement_v2.png)
+![Consent Management Database Diagram](assets/CareConnect_DB_ConsentManagement_v2.png)
 
 *Figura X. Diagrama de base de datos del Bounded Context Consent Management.*
 
