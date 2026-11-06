@@ -876,18 +876,303 @@ Para el backend, Render obtiene el código de la rama configurada, construye el 
 Para cerrar la entrega conjunta se requiere integrar las versiones compatibles, comprobar el cliente de paciente, definir las URLs/archivos de distribución de los clientes, validar CORS y repetir ST-03 en esos entornos. Este informe registra los pasos y la evidencia disponible; no atribuye despliegues ni instalaciones que no se realizaron.
 
 ### 7.4. Continuous Monitoring
-
+ 
+El **Continuous Monitoring** permite conocer el estado de los productos en producción sin depender de que un usuario reporte una falla. En CareConnect, su objetivo es detectar caídas del RESTful API, de la Frontend Web Application y de la Landing Page, generar una alerta cuando el servicio deja de responder correctamente y notificar al equipo para iniciar la recuperación.
+ 
+La implementación combina dos componentes: **Spring Boot Actuator**, que expone el estado interno del backend, y **UptimeRobot**, que consulta periódicamente los productos publicados desde fuera de la infraestructura. Los cambios del backend se integraron siguiendo el mismo flujo GitFlow y los mismos pipelines de las secciones 7.1 a 7.3. Todas las evidencias se registraron el 05/11/2026.
+ 
 #### 7.4.1. Tools and Practices
-
+ 
+| Herramienta | Producto | Propósito en CareConnect |
+|---|---|---|
+| Spring Boot Actuator | RESTful API | Expone `/actuator/health`, `/actuator/info` y `/actuator/metrics` para conocer el estado del servicio y sus métricas de ejecución |
+| UptimeRobot (plan gratuito) | RESTful API, Frontend Web, Landing Page | Consulta cada producto por HTTPS cada 5 minutos, registra disponibilidad, tiempo de respuesta e incidentes |
+| Correo electrónico | Equipo | Canal de notificación de las alertas de UptimeRobot |
+| GitHub Actions | RESTful API | Verifica en CI que el endpoint de salud responda `UP` antes de integrar el cambio |
+| Render (logs y eventos de deploy) | RESTful API, Frontend Web | Registra el resultado de cada despliegue y los errores de arranque |
+ 
+Las prácticas aplicadas son:
+ 
+| Práctica | Aplicación en CareConnect |
+|---|---|
+| Health check como contrato | El backend expone un único endpoint de salud que resume el estado de la aplicación y de su conexión a la base de datos |
+| Exposición mínima | Solo se exponen `health`, `info` y `metrics`; el detalle de los componentes de salud permanece oculto (`show-details: never`) para no revelar información de la infraestructura |
+| Monitoreo externo (black-box) | La disponibilidad se mide desde fuera de Render y Vercel, tal como la percibe un usuario |
+| Monitoreo verificado en CI | Una prueba de integración comprueba que `/actuator/health` responde `200` y `UP` |
+| Cambios trazables | La incorporación de Actuator siguió `feature/continuous-monitoring` → `develop` → `main`, con CI aprobado en cada Pull Request |
+| Gestión de secretos | Las credenciales de la base de datos solo se registran como variables de entorno en Render |
+ 
+**Configuración del backend.** Se agregó la dependencia `spring-boot-starter-actuator` en `pom.xml` y la siguiente configuración en `src/main/resources/application.yml`:
+ 
+```yaml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: never
+```
+ 
+La prueba `ActuatorHealthIntegrationTests` levanta la aplicación en un puerto aleatorio y verifica la respuesta del endpoint de salud. Con ella, la suite del backend pasó de 16 a 17 pruebas, todas aprobadas.
+ 
+![Endpoints de Actuator en local](assets/monitoring/actuator-endpoints-local.png)
+ 
+*Endpoints expuestos por Actuator en ejecución local: `health`, `info` y `metrics`.*
+ 
+![Health check en local](assets/monitoring/actuator-health-local.png)
+ 
+*Respuesta `UP` del endpoint de salud en ejecución local.*
+ 
+![Métricas disponibles](assets/monitoring/actuator-metrics-local.png)
+ 
+*Métricas disponibles en `/actuator/metrics`, entre ellas `http.server.requests`, `jvm.memory.used` y `hikaricp.connections.active`.*
+ 
+**Integración y despliegue del cambio.** El commit `3882ac6` (`feat(monitoring): add spring boot actuator health endpoint`) se integró a `develop` mediante el PR #5, con 3 checks aprobados. Luego se promovió a `main` mediante el PR #6, con 6 checks aprobados: los ejecutados por `pull_request` y por `push`. Render desplegó el commit `fae0f42` y el log de arranque confirmó `Exposing 3 endpoints beneath base path '/actuator'`.
+ 
+![CI del PR #5](assets/monitoring/pr5-ci-checks-passed.png)
+ 
+*PR #5 (`feature/continuous-monitoring` → `develop`) con los checks de CI aprobados.*
+ 
+![CI del PR #6](assets/monitoring/pr-develop-main-ci-passed.png)
+ 
+*PR #6 (`develop` → `main`) con 6 checks aprobados.*
+ 
+![Ejecuciones de GitHub Actions](assets/monitoring/actions-monitoring-pipeline.png)
+ 
+*Ejecuciones de GitHub Actions del cambio, desde la rama de feature hasta `main`.*
+ 
+![Deploy de Render con Actuator](assets/monitoring/render-deploy-live-actuator.png)
+ 
+*Deploy exitoso en Render con los endpoints de Actuator expuestos.*
+ 
+![Health check en producción](assets/monitoring/actuator-health-production.png)
+ 
+*Endpoint de salud en producción: `https://carestacks-backend-api.onrender.com/actuator/health`.*
+ 
 #### 7.4.2. Monitoring Pipeline Components
-
+ 
+El pipeline de monitoreo sigue el siguiente flujo:
+ 
+```text
+UptimeRobot (cada 5 minutos)
+    |
+    v
+Petición HTTPS al producto
+    |
+    +---- RESTful API ----> /actuator/health ----> estado de la app + conexión a PostgreSQL
+    +---- Frontend Web ---> página principal
+    +---- Landing Page ---> página principal
+    |
+    v
+Evaluación de la respuesta
+    |
+    +---- 2xx a tiempo -------------> Up: se registra el tiempo de respuesta
+    |
+    +---- error HTTP o timeout -----> Down: se abre un incidente (sección 7.4.3)
+```
+ 
+Los monitores configurados son:
+ 
+| Monitor | URL monitoreada | Tipo | Intervalo |
+|---|---|---|---|
+| RESTful API | `https://carestacks-backend-api.onrender.com/actuator/health` | HTTP(s) | 5 minutos |
+| Frontend Web Application | `https://carestacks-web.onrender.com/` | HTTP(s) | 5 minutos |
+| Landing Page | `https://carestacks-landing-page.vercel.app` | HTTP(s) | 5 minutos |
+ 
+| Componente | Responsabilidad |
+|---|---|
+| Fuente de datos (backend) | Actuator calcula el estado agregado de la aplicación, incluida la conexión a PostgreSQL. Si la base de datos no responde, el endpoint devuelve `DOWN` con HTTP `503` |
+| Fuente de datos (frontends) | La respuesta HTTP de la página publicada en Render y Vercel |
+| Recolector | UptimeRobot realiza la petición desde sus servidores en el intervalo configurado |
+| Almacenamiento | UptimeRobot conserva el historial de disponibilidad, tiempos de respuesta e incidentes |
+| Visualización | El dashboard de UptimeRobot muestra el estado actual, el porcentaje de disponibilidad y el gráfico de tiempo de respuesta de cada monitor |
+ 
+El monitor del backend apunta a `/actuator/health` y no a la raíz del servicio. De esa forma, un `Up` confirma que el servidor responde **y** que la aplicación tiene acceso a su base de datos.
+ 
+![Monitor del RESTful API](assets/monitoring/uptimerobot-monitor-api.png)
+ 
+*Monitor del RESTful API en estado `Up`.*
+ 
+![Monitor de la Frontend Web](assets/monitoring/uptimerobot-monitor-web.png)
+ 
+*Monitor de la Frontend Web Application en estado `Up`.*
+ 
+![Monitor de la Landing Page](assets/monitoring/uptimerobot-monitor-landing.png)
+ 
+*Monitor de la Landing Page en estado `Up`.*
+ 
+**Limitaciones.** En el plan gratuito, el intervalo mínimo es de 5 minutos, por lo que una caída puede tardar hasta 5 minutos en detectarse. Las métricas de `/actuator/metrics` están disponibles para consulta, pero no se recolectan de forma continua ni se grafican en una herramienta como Prometheus o Grafana.
+ 
 #### 7.4.3. Alerting Pipeline Components
-
+ 
+UptimeRobot evalúa cada respuesta y abre un incidente cuando un monitor deja de responder correctamente. Las reglas de alerta definidas son:
+ 
+| Regla | Condición | Severidad | Acción |
+|---|---|---|---|
+| RESTful API caído | `/actuator/health` responde un código distinto de 2xx (incluye `503` por `DOWN`) o no responde | Alta | Incidente en UptimeRobot y correo de alerta |
+| Frontend Web caída | La página principal responde error o no responde | Alta | Incidente en UptimeRobot y correo de alerta |
+| Landing Page caída | La página principal responde error o no responde | Media | Incidente en UptimeRobot y correo de alerta |
+| Recuperación | El monitor vuelve a responder 2xx | Informativa | Cierre del incidente, registro de su duración y correo de recuperación |
+| Falla de CI | Un check de GitHub Actions falla en un Pull Request | Media | El PR queda bloqueado para revisión hasta corregir el cambio |
+| Falla de despliegue | La aplicación no arranca en Render | Alta | Render conserva la versión anterior y registra el error en los logs del deploy |
+ 
+**Incidente real: expiración de la base de datos.** Al desplegar el commit `fae0f42`, Render marcó el deploy como fallido. El log mostró `java.net.UnknownHostException: dpg-davf89mk1f9s73a3ncdg-a`: la base de datos PostgreSQL gratuita de Render había expirado y estaba suspendida, por lo que su host interno había dejado de existir. La aplicación no podía iniciar Hibernate sin una base de datos disponible. El incidente se resolvió migrando la persistencia a **Neon** (PostgreSQL serverless, región AWS us-west-2) y actualizando las variables `SPRING_DATASOURCE_*` en Render. Después de ese cambio, el deploy terminó en estado `Live`.
+ 
+La nueva base se creó vacía, por lo que los datos de prueba anteriores se perdieron. Durante la corrección, una credencial quedó impresa en un log de error de Render; se rotó de inmediato en Neon y la evidencia de este informe no la incluye.
+ 
+Este incidente ocurrió antes de que existiera el monitoreo y no se detectó hasta un nuevo despliegue, cuatro días después de la suspensión. Con el monitor actual, la misma situación habría respondido `DOWN` en `/actuator/health` y generado una alerta en el siguiente chequeo.
+ 
+![Base de datos suspendida](assets/monitoring/render-db-suspended.png)
+ 
+*Base de datos `careconnect-db` suspendida por Render al expirar el plan gratuito.*
+ 
+![Deploy fallido](assets/monitoring/render-deploy-failed-db-expired.png)
+ 
+*Deploy fallido por `UnknownHostException` al intentar conectarse a la base de datos suspendida.*
+ 
+**Incidente simulado: verificación del ciclo de alerta.** Para comprobar el pipeline de alerta sin afectar a los usuarios, se cambió temporalmente la URL del monitor del backend a `/actuator/health-test`, una ruta inexistente que responde con error. UptimeRobot marcó el monitor como `Down` y abrió un incidente. Al restaurar la URL correcta, el monitor volvió a `Up` y el incidente se cerró con una duración registrada de **1 minuto y 8 segundos**. El porcentaje de disponibilidad del monitor incluye este incidente controlado.
+ 
+![Monitor en Down](assets/monitoring/uptimerobot-api-down.png)
+ 
+*Monitor del backend en estado `Down` durante la caída simulada.*
+ 
+![Monitor recuperado](assets/monitoring/uptimerobot-api-recovered.png)
+ 
+*Monitor del backend recuperado, con el incidente de 1 minuto y 8 segundos registrado.*
+ 
+![Registro de incidentes](assets/monitoring/uptimerobot-incidents.png)
+ 
+*Registro del incidente en UptimeRobot, con inicio, fin y duración.*
+ 
 #### 7.4.4. Notification Pipeline Components
-
-La sección 7.4 queda fuera del alcance TB1. No se presenta el logging de consola como un sistema de monitoreo, alertas o notificaciones operativas.
-
----
+ 
+```text
+Incidente abierto (Down)
+    |
+    v
+UptimeRobot ----> correo "Monitor is DOWN" ----> responsable revisa logs de Render
+                                                      |
+                                                      v
+                                            corrección / redeploy / rollback
+                                                      |
+                                                      v
+Incidente cerrado (Up) ----> correo "Monitor is UP" con la duración de la caída
+```
+ 
+| Componente | Configuración actual |
+|---|---|
+| Canal | Correo electrónico configurado como alert contact en UptimeRobot |
+| Destinatario | Responsable del monitoreo (Muñiz Huayanca, Percy Alonso) |
+| Contenido | Monitor afectado, URL, motivo de la falla y, en la recuperación, duración del incidente |
+| Escalamiento | El responsable comunica el incidente al equipo por el canal de coordinación del grupo |
+| Respuesta | Revisar logs y eventos de Render; corregir y volver a desplegar, o redesplegar el commit anterior desde el historial de deploys |
+ 
+Durante el incidente simulado se recibieron los dos correos del ciclo: el aviso de caída y el aviso de recuperación.
+ 
+![Correo de caída](assets/monitoring/email-monitor-down.png)
+ 
+*Notificación de UptimeRobot al detectar la caída del backend.*
+ 
+![Correo de recuperación](assets/monitoring/email-monitor-up.png)
+ 
+*Notificación de UptimeRobot al recuperarse el backend.*
+ 
+**Mejora propuesta.** Las notificaciones llegan a un único destinatario. Se recomienda agregar los correos de los demás integrantes como alert contacts, o integrar un canal compartido del equipo, para que la respuesta no dependa de una sola persona.
+ 
+#### 7.4.5. Benchmark
+ 
+El benchmark mide el rendimiento de los productos en producción y lo compara con metas definidas por el equipo. Se realizaron tres pruebas el 05/11/2026 desde Lima, Perú. El backend está alojado en Render (Oregón, Estados Unidos), por lo que las latencias del API incluyen esa distancia de red.
+ 
+**A. Prueba de carga del RESTful API.** Se utilizó **k6 v2.3.0** con el script `benchmark/k6-health.js`, versionado en el repositorio del backend: 10 usuarios virtuales concurrentes durante 30 segundos contra `/actuator/health`, con una pausa de 1 segundo entre iteraciones. La carga se limitó a propósito para no afectar una instancia gratuita.
+ 
+| Métrica | Resultado | Meta | Estado |
+|---|---|---|---|
+| Peticiones totales | 249 | — | — |
+| Throughput | 8 req/s | — | — |
+| Latencia promedio | 225.41 ms | — | — |
+| Mediana | 199.91 ms | — | — |
+| p90 | 297.21 ms | — | — |
+| p95 | 323.40 ms | < 800 ms | ✅ |
+| Máximo | 956.15 ms | — | — |
+| Tasa de errores | 0.00 % | < 1 % | ✅ |
+| Checks (`200` y `UP`) | 498 de 498 | 100 % | ✅ |
+ 
+![Resultado de k6](assets/monitoring/k6-health-results.png)
+ 
+*Resumen de k6 con los thresholds de latencia y errores aprobados.*
+ 
+**B. Arranque en frío del RESTful API.** El plan gratuito de Render suspende el servicio tras un periodo sin tráfico. Para medir su efecto, se pausó el monitor de UptimeRobot durante más de 20 minutos sin realizar peticiones. Luego se midió con `curl` la primera respuesta y las siguientes.
+ 
+| Medición | Estado del servicio | HTTP | Tiempo total |
+|---|---|---|---|
+| 1 | Suspendido (arranque en frío) | 200 | 166.30 s |
+| 2 | Activo | 200 | 0.24 s |
+| 3 | Activo | 200 | 0.24 s |
+| 4 | Activo | 200 | 0.25 s |
+| 5 | Activo | 200 | 0.56 s |
+ 
+La meta de responder en menos de 5 segundos no se cumple en frío: la primera petición tardó unas 690 veces más que una petición con el servicio activo. El valor coincide con el tiempo de arranque de Spring Boot registrado en Render (169.79 s). Mientras UptimeRobot consulta el backend cada 5 minutos, el servicio no llega a suspenderse; este efecto es secundario y no reemplaza a una instancia sin suspensión por inactividad.
+ 
+![Monitor pausado](assets/monitoring/uptimerobot-api-paused.png)
+ 
+*Monitor pausado durante la ventana sin tráfico de la prueba de arranque en frío.*
+ 
+![Resultado de arranque en frío](assets/monitoring/cold-start-results.png)
+ 
+*Tiempos de respuesta medidos con `curl`: primera petición en frío y peticiones posteriores.*
+ 
+**C. Rendimiento y calidad de los frontends.** Se ejecutó **Lighthouse** desde Chrome DevTools en una ventana de incógnito, en modo Navigation, para dispositivos Desktop y Mobile.
+ 
+| Producto | Dispositivo | Performance | Accessibility | Best Practices | SEO |
+|---|---|---|---|---|---|
+| Landing Page | Desktop | 99 | 100 | 100 | 100 |
+| Landing Page | Mobile | 73 | 100 | 100 | 100 |
+| Frontend Web | Desktop | 85 | 100 | 81 | 100 |
+| Frontend Web | Mobile | 39 | 100 | 81 | 100 |
+ 
+| Producto | Dispositivo | FCP | LCP | TBT | CLS |
+|---|---|---|---|---|---|
+| Landing Page | Desktop | 0.6 s | 0.8 s | 0 ms | 0.009 |
+| Landing Page | Mobile | 2.9 s | 4.1 s | 0 ms | 0 |
+| Frontend Web | Desktop | 0.5 s | 2.6 s | 50 ms | 0 |
+| Frontend Web | Mobile | 5.9 s | 14.5 s | 980 ms | 0 |
+ 
+![Lighthouse Landing Desktop](assets/monitoring/lighthouse-landing-desktop.png)
+ 
+*Lighthouse de la Landing Page en Desktop.*
+ 
+![Lighthouse Landing Mobile](assets/monitoring/lighthouse-landing-mobile.png)
+ 
+*Lighthouse de la Landing Page en Mobile.*
+ 
+![Lighthouse Web Desktop](assets/monitoring/lighthouse-web-desktop.png)
+ 
+*Lighthouse de la Frontend Web Application en Desktop.*
+ 
+![Lighthouse Web Mobile](assets/monitoring/lighthouse-web-mobile.png)
+ 
+*Lighthouse de la Frontend Web Application en Mobile.*
+ 
+**Resumen frente a las metas.**
+ 
+| Prueba | Meta | Resultado | Estado |
+|---|---|---|---|
+| Carga del API | p95 < 800 ms y errores < 1 % | p95 = 323 ms, errores = 0 % | ✅ |
+| Arranque en frío del API | < 5 s | 166.30 s | ❌ |
+| Landing Page | Performance ≥ 90 en Desktop y ≥ 50 en Mobile | 99 y 73 | ✅ |
+| Frontend Web | Performance ≥ 90 en Desktop y ≥ 50 en Mobile | 85 y 39 | ❌ |
+| Accesibilidad de los frontends | ≥ 90 | 100 en los cuatro casos | ✅ |
+| LCP | ≤ 2.5 s | Solo la Landing en Desktop lo cumple | ❌ |
+ 
+**Interpretación y recomendaciones.**
+ 
+- Con el servicio activo, el RESTful API responde con holgura frente a su meta y sin errores bajo carga concurrente.
+- El principal riesgo para la experiencia del usuario es el arranque en frío del plan gratuito de Render. Para producción real se recomienda una instancia sin suspensión por inactividad; mientras tanto, el monitoreo cada 5 minutos atenúa el problema.
+- La Landing Page cumple sus metas y obtiene la puntuación máxima en Accessibility y SEO, en línea con los requisitos de accesibilidad del proyecto.
+- La Frontend Web en Mobile obtiene la puntuación más baja: Flutter Web descarga su motor de renderizado antes de mostrar contenido, lo que eleva el LCP a 14.5 s y el TBT a 980 ms. Se recomienda evaluar la carga diferida de módulos, la optimización de recursos y el uso de caché, y repetir la medición después de cada cambio.
+- La puntuación de 81 en Best Practices de la Frontend Web debe revisarse con el detalle del reporte de Lighthouse para corregir los ítems observados.
 
 
 # Part III: Experiment-Driven Lifecycle
