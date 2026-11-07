@@ -8,7 +8,9 @@
 =====================================================================
 -->
 
+
 <!-- CARÁTULA -->
+
 <div align="center">
 
 <img src="assets/UPC_logo_transparente.png" alt="Logo UPC" width="180"/>
@@ -21,15 +23,15 @@
 
 ---
 
-1ASI0732
+**1ASI0732**
 
-Diseño de Experimentos de Ingeniería de Software
+**Diseño de Experimentos de Ingeniería de Software**
 
 **NRC**
 
 9100
 
-**Informe del Trabajo Parcial**
+## Informe del Avance 2 (AV2)
 
 **Docente**
 
@@ -45,8 +47,9 @@ CareConnect
 
 **Integrantes**
 
-<center>
-
+</div>
+<div align="center">
+ 
 | Código | Apellidos y Nombres |
 |---|---|
 | U202319881 | Baldeon Armas, Santiago Armando |
@@ -55,15 +58,16 @@ CareConnect
 | U20221G099 | Nikaido Vargas, Javier Masaru |
 | U202319698 | Salcedo Champi, Matias Rodolfo |
 
-</center>
+
 
 **Período 2026-20**
 
-Octubre, 2026
+Noviembre, 2026
 
 </div>
 
 ---
+
 # REGISTRO DE VERSIONES DEL INFORME
 
 | **Versión** | **Fecha** | **Autor** | **Descripción de modificación** |
