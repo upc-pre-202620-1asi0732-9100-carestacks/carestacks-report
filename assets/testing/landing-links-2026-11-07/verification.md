@@ -27,4 +27,4 @@ Las ocho apariciones comparten `CONTACT_URL` en `src/content.ts`. Se sustituye s
 
 El [registro de navegador](browser-checks.json) contiene las ocho apariciones comprobadas y la persistencia del idioma. Las capturas muestran la [landing corregida en vista previa](landing-contact-fixed.jpg) y el [destino público de contacto](contact-destination-public.jpg).
 
-La corrección se verifica en una vista previa local. No se atribuye a producción hasta que se publique el build correspondiente. La rama `main` y el despliegue de Vercel se conservan para la integración final solicitada por el usuario.
+La primera comprobación se realizó en una vista previa local. Posteriormente el usuario solicitó publicar para disponer de la URL funcionando: la [verificación de producción](../../deployment/av2-landing-2026-11-07/verification.md) acredita el despliegue del build corregido en Vercel. `main` se conserva para la integración final solicitada.

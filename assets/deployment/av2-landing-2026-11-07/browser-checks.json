@@ -1,0 +1,57 @@
+{
+  "productionUrl": "https://carestacks-landing-page.vercel.app/",
+  "checks": [
+    {
+      "failedImages": [],
+      "language": "en",
+      "links": [
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Contact the team"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Contact the team"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Project inquiries"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Project inquiries on GitHub"
+        }
+      ],
+      "missingAnchors": [],
+      "title": "CareConnect | Organized daily care"
+    },
+    {
+      "language": "es",
+      "links": [
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Contactar al equipo"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Contactar al equipo"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Consultas del proyecto"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Consultas del proyecto en GitHub"
+        }
+      ],
+      "missingAnchors": [],
+      "title": "CareConnect | Cuidado diario organizado"
+    }
+  ],
+  "destination": {
+    "is404": false,
+    "title": "Issues · upc-pre-202620-1asi0732-9100-carestacks/carestacks-report · GitHub",
+    "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues"
+  }
+}

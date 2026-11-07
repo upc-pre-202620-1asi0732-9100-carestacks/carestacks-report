@@ -4,7 +4,7 @@
   "base": "6dfbb0e",
   "checked_scope": "document consistency, preservation, links, formulas and Markdown; not experiment execution",
   "preserved": "chapters I–VII except declared outcomes/version/TOC and landing evidence note; 8.3.3+ unchanged",
-  "local_links_checked": 23,
+  "local_links_checked": 27,
   "markdown_tables": 16,
   "scores": [
     62.5,
@@ -51,5 +51,5 @@
     "EXP-02_relative_improvement_target": 0.4,
     "total_distinct_circles_recruitment_target": 590
   },
-  "sha256_readme": "c094e543c625d688dd3a034e2717ed1c2a098ed0cd94d80b3f72b4411601322a"
+  "sha256_readme": "7e2f515c425df72ed3ac1f32354627dbcd502373ce59ba3968e1a7de54380b25"
 }

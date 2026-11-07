@@ -1,0 +1,13 @@
+{
+  "date_local": "2026-11-07",
+  "source_commit": "62772caff439f871aedb3bd12617b10f6e2d8dba",
+  "source_branch": "chapter-8",
+  "id": "dpl_AqvZjhqU3jn5KeoB4aLGcknqdgTF",
+  "url": "https://carestacks-landing-page-btybf9pmo-matias-projects-969e997e.vercel.app",
+  "production_alias": "https://carestacks-landing-page.vercel.app/",
+  "inspector_url": "https://vercel.com/matias-projects-969e997e/carestacks-landing-page/AqvZjhqU3jn5KeoB4aLGcknqdgTF",
+  "readyState": "READY",
+  "target": "production",
+  "deploy_exit_code": 0,
+  "main_merged": false
+}

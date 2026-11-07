@@ -3536,7 +3536,7 @@ La tabla se organiza por los User Stories definidos en la sección 3.2, descompu
 
 #### 5.2.2. Implemented Landing Page Evidence
 
-**Revisión AV2 — 07/11/2026.** La [verificación de enlaces de la landing](assets/testing/landing-links-2026-11-07/verification.md) registra cuatro accesos de contacto con 404 y la corrección común para ES/EN. La revisión se conserva en `chapter-8`; la comprobación local no se presenta como despliegue de producción.
+**Revisión AV2 — 07/11/2026.** La [verificación de enlaces de la landing](assets/testing/landing-links-2026-11-07/verification.md) registra cuatro accesos de contacto con 404 y la corrección común para ES/EN. La corrección se [publicó y verificó en Vercel](assets/deployment/av2-landing-2026-11-07/verification.md) directamente desde `chapter-8`, conservando el merge a `main` para la integración final.
 
 La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada mediante **Vercel**.
 
