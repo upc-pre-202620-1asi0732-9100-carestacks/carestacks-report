@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-07",
+  "status": "passed",
+  "base": "6dfbb0e",
+  "checked_scope": "document consistency, preservation, links, formulas and Markdown; not experiment execution",
+  "preserved": "chapters I–VII except declared outcomes/version/TOC and landing evidence note; 8.3.3+ unchanged",
+  "local_links_checked": 23,
+  "markdown_tables": 16,
+  "scores": [
+    62.5,
+    50,
+    32,
+    18,
+    12
+  ],
+  "catalog": [
+    "LRMR",
+    "NOR",
+    "TCOM",
+    "TNR",
+    "TSC",
+    "UR"
+  ],
+  "calculations": {
+    "status": "planning_scenarios_only_not_observed_data",
+    "EXP-01": {
+      "alpha_one_sided": 0.05,
+      "planning_power": 0.8,
+      "retention_assumption": 0.85,
+      "sigma_assumption": 0.5,
+      "delta": 0.15,
+      "normal_approximation_per_arm": 137.3901607115503,
+      "evaluable_per_arm": 138,
+      "recruit_per_arm": 163,
+      "recruit_total": 326,
+      "approximate_power_at_evaluable_n": 0.8015396516367695
+    },
+    "EXP-02": {
+      "alpha_one_sided": 0.05,
+      "planning_power": 0.8,
+      "retention_assumption": 0.85,
+      "sigma_assumption": 30,
+      "delta": 10,
+      "normal_approximation_per_arm": 111.28603017635574,
+      "evaluable_per_arm": 112,
+      "recruit_per_arm": 132,
+      "recruit_total": 264,
+      "approximate_power_at_evaluable_n": 0.8022219701621712
+    },
+    "EXP-02_reference_mean_assumption_minutes": 25,
+    "EXP-02_relative_improvement_target": 0.4,
+    "total_distinct_circles_recruitment_target": 590
+  },
+  "sha256_readme": "c094e543c625d688dd3a034e2717ed1c2a098ed0cd94d80b3f72b4411601322a"
+}
