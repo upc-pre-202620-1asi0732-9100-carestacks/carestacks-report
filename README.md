@@ -4563,6 +4563,12 @@ Se recogerán únicamente los datos necesarios durante la ventana predefinida. N
 | EXP-01 | Botón actual, confirmación REST y recarga del dashboard del emisor. La otra sesión consulta o refresca su vista. | Añade pulsación de 1 s, reversión durante 10 s y difusión a sesiones autorizadas. | Versión base, datos, horarios, contenido de la tarjeta, tareas, auditoría y soporte. No añadir avisos escalonados en B. |
 | EXP-02 | Aviso instrumentado al minuto 0 y ausencia de avisos adicionales. | Mismo aviso al 0; si sigue pendiente, recordatorio al +15 y aviso a co-cuidadores autorizados al +30. | Interfaz de confirmación, agenda y canal de entrega; auditoría y seguimiento hasta +90. No habilitar el paquete de EXP-01. |
 
+##### Ejemplo ilustrativo por experimento
+
+Para EXP-01, imaginemos un evento de medicación programado a las 8:00 a. m. En el Control A, el cuidador confirma el evento desde su tarjeta y el estado se guarda en el servidor; si un familiar revisa Agenda desde otro dispositivo, solo verá el cambio si recarga su propia vista. En la Variante B, el mismo cuidador mantiene presionado el botón durante un segundo, puede deshacer la acción si se equivocó durante los diez segundos siguientes, y el estado se propaga automáticamente a la sesión del familiar sin que este tenga que recargar nada.
+
+Para EXP-02, imaginemos un evento que vence a las 9:00 a. m. y nadie lo confirma. En el Control A se envía un único aviso al cuidador a las 9:00 y, si no hay respuesta, no ocurre nada más. En la Variante B se envía ese mismo aviso a las 9:00; si a las 9:15 sigue sin confirmarse, se envía un recordatorio adicional al cuidador; y si a las 9:30 sigue pendiente, se avisa también a los co-cuidadores autorizados del mismo círculo. El seguimiento de ambos grupos se cierra a las 10:30, es decir noventa minutos después del horario original.
+
 ##### Asignación, comparabilidad y no contaminación
 
 La unidad de asignación será el **círculo de cuidado de un paciente de prueba**. Todos sus cuidadores y sesiones web/móvil compartirán variante. Se propone una asignación aleatoria 1:1, equilibrando experiencia digital y uso de web/móvil cuando el reclutamiento lo permita. El dispositivo utilizado se registrará como contexto de exposición, no como una muestra independiente.
@@ -4575,7 +4581,7 @@ Se utilizarán eventos `MEDICATION` sintéticos preasignados con seguimiento com
 
 La ejecución inicial propuesta es una prueba de software con usuarios que realizan tareas sobre datos sintéticos, consentimiento de participación y posibilidad de retirarse. Los intervalos 0/+15/+30/+90 pertenecen al escenario de prueba y no modifican horarios de medicación reales. No se retendrán avisos asistenciales reales para crear un control ni se atribuirá seguridad clínica a estos umbrales.
 
-La ejecución requiere versiones compatibles de API y clientes web/móvil, permisos y revocación verificados, auditoría común funcionando y entrega observable de avisos para EXP-02. La escala, duración, método y reglas de factibilidad están especificados en §8.2.4–§8.2.5; el tracking y las historias identifican cómo implementar y comprobar sus capacidades. Estos son requisitos de entrada a la ejecución, sin afirmar que ya se hayan desplegado. La decisión se vinculará a los datos recolectados y a las reglas fijadas en las tarjetas.
+La ejecución requiere versiones compatibles de API y clientes web/móvil, permisos y revocación verificados, auditoría común funcionando y entrega observable de avisos para EXP-02. La escala, duración, método y reglas de factibilidad están especificados en las secciones 8.2.4 y 8.2.5; el tracking y las historias identifican cómo implementar y comprobar sus capacidades. Estos son requisitos de entrada a la ejecución, sin afirmar que ya se hayan desplegado. La decisión se vinculará a los datos recolectados y a las reglas fijadas en las tarjetas.
 
 #### 8.2.4. Scale Calculations and Decisions
 
