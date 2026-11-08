@@ -4628,11 +4628,24 @@ El [cálculo reproducible de escala](assets/experiments/av2-consolidation-2026-1
 
 #### 8.2.5. Methods Selection
 
+##### Objeto de investigación versus método
+
+Antes de elegir la técnica conviene separar dos cosas que suelen confundirse: la pregunta que se quiere responder y la herramienta que se usa para responderla. La siguiente tabla hace esa separación para cada experimento.
+
+| Experimento | Objeto de investigación, la pregunta | Método, la técnica elegida para responderla |
+|---|---|---|
+| EXP-01 | ERQ-01, si la confirmación reversible y sincronizada mejora la TCOM frente al flujo actual. | Experimento controlado A/B, aleatorizado por círculo de cuidado, con la prueba estadística de Welch descrita más abajo. |
+| EXP-02 | ERQ-02, si el protocolo de avisos a los 0, +15 y +30 minutos reduce la LRMR frente a un aviso único. | Experimento controlado A/B, aleatorizado por círculo de cuidado, con la misma prueba estadística de Welch. |
+
+El incremento de software que se construye para cada experimento es, en ambos casos, el mínimo necesario para generar el evento que se mide, el llamado Simplest Useful Thing ya descrito en el Anverso de cada Experiment Card de la sección 8.1.5. No se agrega funcionalidad adicional que no sea indispensable para contrastar la hipótesis correspondiente.
+
 ##### Diseño y recolección
 
-Se selecciona una comparación A/B aleatorizada por círculo de cuidado, independiente para EXP-01 y EXP-02. Los mismos instrumentos de auditoría se aplican a ambos grupos; solo varían los componentes definidos en §8.2.3. La plataforma de referencia usa **Spring Boot y Flutter web/móvil**. Los escenarios iniciales usan actividades y pacientes sintéticos con usuarios que consienten participar.
+Se selecciona una comparación A/B aleatorizada por círculo de cuidado, independiente para EXP-01 y EXP-02. Los mismos instrumentos de auditoría se aplican a ambos grupos; solo varían los componentes definidos en la sección 8.2.3. La plataforma de referencia usa Spring Boot y Flutter web/móvil. Los escenarios iniciales usan actividades y pacientes sintéticos con usuarios que consienten participar, precisamente para que ningún paciente real quede expuesto a un cambio todavía no validado.
 
 La recolección combina el historial de servidor con verificaciones de visibilidad/entrega y preferencias del cliente. Las marcas `createdAt` o `updatedAt` de una entidad no sustituyen el historial de confirmaciones, reversiones y resoluciones. La ausencia de un clic no equivale a fatiga ni una notificación persistida acredita entrega.
+
+Por último, ningún círculo de cuidado participa a la vez en EXP-01 y en EXP-02, tal como se definió en la sección 8.2.3. Esto evita que un mismo cuidador reciba dos tratamientos experimentales superpuestos y, de paso, evita que el experimento dependa de alterar las alarmas asistenciales reales del paciente para construir el grupo de control.
 
 ##### Contraste preespecificado
 
@@ -4653,20 +4666,29 @@ Cada cuidador participa en un único círculo experimental y no comparte los dos
 
 #### 8.2.6. Data Analytics: Goals, KPIs and Metrics Selection
 
-Se conserva el enfoque **Goals → Signals → Metrics (GSM)** de los aportes del equipo, con el catálogo unificado de §8.2.2.1:
+Antes de la tabla, un recordatorio rápido de qué significa cada sigla que aparece en esta sección, ya que todas se definen con su fórmula completa en la sección 8.2.2.1.
+
+- **TCOM**, Tasa de Confirmación Oportuna de Medicación, qué porcentaje de registros se confirma dentro del tiempo esperado.
+- **TSC**, Tasa de Sincronización Compartida, qué porcentaje de confirmaciones aparece a tiempo en la sesión de otro cuidador autorizado.
+- **UR**, Undo Rate, qué porcentaje de confirmaciones se deshacen por error en los diez segundos siguientes.
+- **LRMR**, Latencia de Resolución de Medicación Retrasada, cuántos minutos en promedio tarda en resolverse un registro una vez que ya venció su horario.
+- **TNR**, Tasa de No Resolución, qué porcentaje de registros queda sin resolver al cierre del seguimiento.
+- **NOR**, Notification Opt-out Rate, qué porcentaje de usuarios desactiva o silencia las notificaciones después de recibirlas.
+
+Con esas siglas ya explicadas, la tabla siguiente conecta cada objetivo de negocio con la señal que se observa y la métrica que la traduce en un número, siguiendo el enfoque Goals → Signals → Metrics y el catálogo unificado de la sección 8.2.2.1.
 
 | Objetivo | Señal observable | Métrica | Experimento |
 |---|---|---|---|
-| Facilitar el registro oportuno de actividades. | Confirmación válida dentro de la ventana operativa predefinida. | **TCOM**: primaria. | EXP-01 |
-| Hacer visible el registro a otros cuidadores autorizados. | Otra sesión activa muestra el mismo estado en ≤5 s. | **TSC**: secundaria. | EXP-01 |
-| Vigilar la fricción de la confirmación reversible. | Acciones aceptadas que se revierten en ≤10 s. | **UR**: salvaguarda. | EXP-01 |
-| Reducir la demora de seguimiento de registros. | Menor demora adicional media después de t0+30, con corte en +90. | **LRMR**: primaria. | EXP-02 |
-| Conservar visibilidad de los eventos sin resolver. | Eventos que continúan sin confirmación o cierre con motivo al corte. | **TNR**: salvaguarda EXP-01 y secundaria EXP-02. | Ambos |
-| Evitar saturación de avisos. | Desactivación o silenciamiento observados tras exposición acreditada. | **NOR**: salvaguarda. | EXP-02 |
+| Facilitar el registro oportuno de actividades. | Confirmación válida dentro de la ventana operativa predefinida. | TCOM, primaria. | EXP-01 |
+| Hacer visible el registro a otros cuidadores autorizados. | Otra sesión activa muestra el mismo estado en 5 segundos o menos. | TSC, secundaria. | EXP-01 |
+| Vigilar la fricción de la confirmación reversible. | Acciones aceptadas que se revierten en 10 segundos o menos. | UR, salvaguarda. | EXP-01 |
+| Reducir la demora de seguimiento de registros. | Menor demora adicional después de los 30 minutos de retraso, con corte a los 90. | LRMR, primaria. | EXP-02 |
+| Conservar visibilidad de los eventos sin resolver. | Eventos que continúan sin confirmación o cierre con motivo al corte. | TNR, salvaguarda en EXP-01 y secundaria en EXP-02. | Ambos |
+| Evitar saturación de avisos. | Desactivación o silenciamiento observados tras recibir un aviso. | NOR, salvaguarda. | EXP-02 |
 
-Solo TCOM y LRMR sustentan los contrastes primarios. El registro de eventos no permite inferir ingesta ni incidentes clínicos, por lo que TEMR, TAD y el antiguo AFR no forman parte de la decisión de estas tarjetas. NOR identifica específicamente el opt-out observado, sin equipararlo con toda forma de fatiga.
+Solo TCOM y LRMR se usan para decidir si cada experimento tuvo éxito. Las demás métricas son de apoyo, como señales de salvaguarda que no deben empeorar aunque la métrica principal mejore. Al ser registros del propio software, estos datos no permiten afirmar nada sobre si la medicación realmente se administró o sobre un incidente clínico; por eso las métricas antiguas TEMR, TAD y AFR, pensadas para ese fin, ya no forman parte de esta decisión.
 
-La agregación utiliza la asignación original, el horario congelado y el historial de servidor. Se informan por grupo los círculos asignados/evaluables, los eventos elegibles y los faltantes. Los registros sin denominador no se sustituyen por cero. Los datos se recogen durante la ventana definida y se limitan a lo necesario para las seis métricas; visitas a la landing y cantidad de tarjetas renderizadas no se usan como denominador de medicación.
+La información se agrupa usando la asignación original de cada círculo, su horario fijado desde el inicio y el historial guardado en el servidor. Por cada grupo se informa cuántos círculos fueron asignados, cuántos resultaron evaluables y cuántos eventos quedaron sin dato. Un registro sin dato nunca se cuenta como si fuera un cero. Solo se recolecta la información necesaria para estas seis métricas durante la ventana ya definida; cosas como las visitas a la landing page no se usan para este cálculo.
 
 #### 8.2.7. Web and Mobile Tracking Plan
 
