@@ -3992,42 +3992,887 @@ Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-
 **Corrección posterior de Agenda — 04/10/2026.** El [backend PR #3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3) exige sesiones emitidas por IAM y propiedad o consentimiento AGENDA vigente en las diez rutas. Se sustituyeron los tokens fabricables por sesiones opacas de 30 minutos; logout las revoca. Web y móvil envían el token y eliminan la lista rechazada de caché ante 401/403. Pasan 16 pruebas del backend, 36 rápidas web, 9 rápidas móviles y los 9 escenarios de sistema por cliente: SYS-06 y SYS-07 ya no fallan. Ambos análisis estáticos y la compilación web release aprobaron. Las [versiones, logs y límites de esta corrección](assets/testing/agenda-auth-2026-10-04/verification.md) actualizan el resultado; las ejecuciones anteriores se conservan como historial. El defecto de Agenda queda corregido en las ramas publicadas, pero ST-03 sigue parcial hasta validar el cliente de paciente y los entornos desplegados/dispositivos. Las sesiones son locales a una instancia y requieren login después de reiniciar. Los cambios están en PRs; no se han fusionado ni desplegado.
 
 ### 6.2. Static testing & Verification
-
+ 
+El static testing comprende el conjunto de actividades de verificación que se realizan sin ejecutar el código fuente. A diferencia de las pruebas dinámicas descritas en la sección 6.1, su objetivo es detectar defectos, deudas técnicas y vulnerabilidades de forma temprana, analizando directamente el código, su estructura y el cumplimiento de las convenciones definidas por el equipo.
+ 
+Para los productos de CareConnect se aplicaron dos enfoques complementarios de verificación estática:
+ 
+- **Static Code Analysis:** ejecución de analizadores y del pipeline de compilación sobre cada repositorio (RESTful API en Java / Spring Boot, Frontend Web y aplicación móvil del cuidador en Flutter / Dart, Landing Page en React / TypeScript), para validar el cumplimiento de convenciones de codificación y medir la calidad y seguridad del código. Los resultados provienen de los workflows de GitHub Actions descritos en la sección 7.1 y de una revisión manual del código.
+- **Reviews:** revisión e integración de cambios mediante Pull Requests en GitHub, integrada al flujo de trabajo GitFlow.
 #### 6.2.1. Static Code Analysis
-
+ 
+El análisis estático de código se ejecutó por cada producto utilizando la herramienta adecuada para su lenguaje. La siguiente tabla resume las herramientas empleadas:
+ 
+| Producto | Repositorio | Lenguaje / Framework | Herramienta de análisis estático | Dónde se ejecuta |
+|---|---|---|---|---|
+| RESTful API (Backend) | `carestacks-backend-api` | Java 25 / Spring Boot 4 (Maven) | Compilación y verificación con Maven (`mvn -B clean verify`) | Workflow *Backend CI* de GitHub Actions |
+| Frontend Web Application | `carestacks-web` | Dart / Flutter (target Web) | `flutter analyze` con `flutter_lints` | Workflow *Web CI* de GitHub Actions |
+| Mobile Application (cuidador) | `carestacks-mobile-app` | Dart / Flutter (iOS / Android) | `flutter analyze` con `flutter_lints` | Workflow *Mobile CI* de GitHub Actions |
+| Landing Page | `carestacks-landing-page` | TypeScript / React + Vite | ESLint (`npm run lint`) | Workflow de CI de la Landing Page (histórico) |
+| Mobile Application (paciente) | `carestacks-frontend` | Kotlin / Jetpack Compose (Gradle) | Android Lint (`./gradlew lint`) | No ejecutado; el repositorio no tiene workflow de CI |
+ 
 ##### 6.2.1.1. Coding standard & Code conventions
-
+ 
+En esta sección se verifica que el código de cada producto cumpla con los estándares de codificación y convenciones de nomenclatura definidos por el equipo. Tal como se establece en la sección 5.1.3 (Source Code Style Guide & Conventions), los identificadores técnicos (clases, métodos, variables, endpoints, tablas y commits) se redactan en inglés y se adoptan las guías de estilo estándar de cada lenguaje.
+ 
+| Lenguaje / Tecnología | Convención adoptada | Mecanismo de verificación |
+|---|---|---|
+| Java / Spring Boot (Backend) | Clases e interfaces en PascalCase; métodos y variables en camelCase; constantes en UPPER_SNAKE_CASE; paquetes en minúsculas (por ejemplo, `com.carestacks.careconnect.agenda`). Estructura por bounded context con las capas `domain/`, `application/`, `infrastructure/` e `interfaces/`. | Compilación Maven en CI y revisión en Pull Requests |
+| Dart / Flutter (Web y móvil del cuidador) | Effective Dart mediante `package:flutter_lints/flutter.yaml`, incluido en el `analysis_options.yaml` de ambos repositorios; clases en PascalCase y funciones y variables en camelCase. | `flutter analyze` en CI |
+| Kotlin / Jetpack Compose (Android del paciente) | Clases en PascalCase; funciones y variables en camelCase; la UI no concentra reglas de negocio y los ViewModels administran el estado de presentación. | Revisión manual (sin workflow de CI) |
+| TypeScript / React (Landing Page) | Componentes en PascalCase; funciones y variables en camelCase; configuración por ambiente mediante variables de entorno (`import.meta.env.VITE_API_BASE_URL`), sin valores sensibles en el código. | ESLint (`npm run lint`) en CI |
+| Base de datos | Tablas en `snake_case` plural (`health_events`); columnas en `snake_case` (`created_at`); llaves foráneas con el formato `<entity>_id` (`patient_id`). | Revisión en Pull Requests |
+| API REST | Endpoints con sustantivos y semántica HTTP (por ejemplo, `GET /api/events`). | Pruebas de integración y de sistema (sección 6.1) y revisión en Pull Requests |
+ 
+Adicionalmente, el control de versiones aplica **GitFlow** (ramas `feature/*`, `test/*`, `release/*` y `hotfix/*`, integradas a `develop` y `main`), **Semantic Versioning** (`MAJOR.MINOR.PATCH`) y **Conventional Commits** (`<tipo>(<scope>): <descripción breve>`). Los Pull Requests del proyecto usan los tipos `feat`, `fix`, `test`, `docs` y `release`, por ejemplo `fix(agenda): enforce sessions and current consent` o `test(core): port verification tests`.
+ 
+**Frontend Web y aplicación móvil del cuidador (Flutter).** Ambos workflows ejecutan la misma secuencia: `flutter pub get`, `flutter analyze`, `flutter test` y la compilación (`flutter build web --release` en la web y `flutter build apk --debug` en la aplicación móvil). En el Pull Request #1 de cada repositorio, el paso *Analyze project* concluyó con éxito y las anotaciones de los check-runs no reportan ningún problema de código Dart (únicamente avisos de infraestructura de GitHub Actions, como la deprecación de Node 20, que no corresponden al código Flutter). El cuerpo del Pull Request #1 de la web indica que `flutter analyze` finalizó sin problemas.
+ 
+```text
+flutter pub get
+flutter analyze        -> Analyze project: success (CI, Pull Request #1)
+flutter test           -> success
+flutter build web --release / flutter build apk --debug -> success
+```
+ 
+**RESTful API (Java / Spring Boot).** El workflow *Backend CI* ejecuta `mvn -B clean verify` con Java 25. El repositorio no incluye Maven Wrapper (`mvnw`), por lo que se utiliza la instalación de Maven del runner. La verificación finalizó con éxito en el Pull Request #3 y en la última ejecución sobre `develop` (06/11/2026).
+ 
+```text
+mvn -B clean verify    -> Build and run tests: success (CI, Pull Request #3 y develop)
+```
+ 
+**Landing Page (React + TypeScript).** El pipeline de la Landing Page ejecuta `npm install`, `npm run lint` y `npm run build`, y la ejecución del commit `ab2d60e` fue aprobada (sección 7.1). Este resultado es histórico: el repositorio `carestacks-landing-page` no figura actualmente en la lista pública de la organización, por lo que no fue posible volver a ejecutar `npm run lint` ni consultar el log.
+ 
+**Aplicación Android del paciente (Kotlin).** El repositorio `carestacks-frontend` incluye `gradlew`, pero no cuenta con workflow de CI ni con Pull Requests. No se ejecutó `./gradlew lint`; esta verificación queda como mejora pendiente.
+ 
+**Referencias de la ejecución en CI:**
+ 
+- Workflow de la Frontend Web (Pull Request #1): [https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/actions/runs/37260341123](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/actions/runs/37260341123)
+- Workflow de la aplicación móvil del cuidador (Pull Request #1): [https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/actions/runs/37260341247](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/actions/runs/37260341247)
 ##### 6.2.1.2. Code Quality & Code Security
-
+ 
+En esta sección se evalúa la calidad del código (errores, advertencias, confiabilidad y mantenibilidad) y se identifican vulnerabilidades de seguridad (credenciales expuestas, configuraciones inseguras, validación insuficiente de datos). El equipo no utiliza SonarCloud ni SonarQube: no existe un `sonar-project.properties`, un workflow de Sonar ni un check de SonarCloud en los Pull Requests. Por ello, la calidad del código se verifica con `flutter analyze`, con Maven y con los workflows de GitHub Actions, y la seguridad se complementa con una revisión manual del código.
+ 
+###### A. Code Quality
+ 
+| Producto | Herramienta | Errores | Advertencias de código | Pruebas | Resultado |
+|---|---|---|---|---|---|
+| carestacks-web | `flutter analyze` (CI, PR #1) | 0 | 0 | 36 pruebas rápidas aprobadas | Aprobado |
+| carestacks-mobile-app | `flutter analyze` (CI, PR #1) | 0 | 0 | 9 pruebas rápidas aprobadas | Aprobado |
+| carestacks-backend-api | `mvn -B clean verify` (CI, PR #3) | 0 fallos de compilación ni de pruebas | No extraídas (el log de compilación no es público sin autenticación) | 16 pruebas del backend aprobadas | Build exitoso |
+| carestacks-landing-page | `npm run lint` (CI histórico, commit `ab2d60e`) | No disponible | No disponible | No aplica | Aprobado (histórico) |
+| carestacks-frontend (Android) | No ejecutado | — | — | — | Sin verificación |
+ 
+El Pull Request #1 del backend documenta además una verificación local: `mvn -B -q test` con Java 25 y Spring Boot 4.0.6 ejecutó 10 pruebas con 0 fallos, 0 errores y 0 omitidas. Las métricas de duplicación de código, complejidad y cobertura no se midieron, porque el equipo no integra una plataforma de análisis continuo como SonarCloud.
+ 
+La arquitectura por bounded contexts, con las capas `domain`, `application`, `infrastructure` e `interfaces`, favorece la mantenibilidad, ya que mantiene las reglas de negocio fuera de los controllers y desacopla los contextos entre sí.
+ 
+**Referencias de la ejecución en CI:**
+ 
+- Workflow *Backend CI* (Pull Request #3): [https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/actions/runs/37260376353](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/actions/runs/37260376353)
+###### B. Code Security
+ 
+El análisis de seguridad combinó las pruebas de sistema de la sección 6.1 con una revisión manual del código orientada a vulnerabilidades comunes (OWASP). Los hallazgos corresponden a **revisión manual**, no a la salida de una herramienta automatizada. Los principales hallazgos de la solución son los siguientes:
+ 
+| # | Hallazgo | Ubicación | Severidad | Referencia (CWE) | Estado |
+|---|---|---|---|---|---|
+| 1 | Las rutas de Agenda aceptaban sesiones con tokens fabricables y no verificaban la propiedad del recurso ni el consentimiento vigente. Las pruebas de sistema SYS-06 y SYS-07 fallaban. | Backend: módulo Agenda (diez rutas) | Alta | CWE-285: Improper Authorization | Corregido en el Pull Request #3 del backend |
+| 2 | Las listas rechazadas por el servidor (401/403) permanecían en la caché de los clientes. | Frontend Web y aplicación móvil del cuidador | Media | CWE-524: Use of Cache Containing Sensitive Information | Corregido en el Pull Request #1 de web y de móvil |
+| 3 | Las sesiones son locales a una instancia y se pierden al reiniciar el servicio, por lo que se requiere iniciar sesión nuevamente. | Backend: módulo IAM | Baja | — | Limitación conocida y documentada |
+| 4 | Política CORS permisiva: `allowedOriginPatterns("*")` sobre `/api/**`, con todos los encabezados permitidos. Cualquier origen puede invocar la API. | `carestacks-backend-api/src/main/java/com/carestacks/careconnect/shared/infrastructure/CorsConfig.java` | Media | CWE-942: Permissive Cross-domain Policy | Pendiente |
+ 
+**Observaciones adicionales de la revisión manual:**
+ 
+| # | Observación | Ubicación | Severidad | Referencia (CWE) |
+|---|---|---|---|---|
+| 5 | La cadena de filtros de Spring Security deshabilita CSRF y declara `anyRequest().permitAll()`. La autenticación de Agenda e IAM se valida manualmente por *Bearer token* en los controllers, por lo que un endpoint nuevo sin esa validación quedaría público. | `SecurityConfig.java` | Media | CWE-862: Missing Authorization |
+| 6 | La consola de H2 está habilitada (`spring.h2.console.enabled: true`, ruta `/h2-console`); debe desactivarse en el perfil de producción. | `application.yml` | Media | CWE-489: Active Debug Code |
+| 7 | Actuator expone los endpoints `health`, `info` y `metrics`; `health.show-details` está en `never`. | `application.yml` | Baja | CWE-200: Exposure of Sensitive Information |
+ 
+No se encontraron contraseñas ni claves reales versionadas en el repositorio: el archivo `.env.example` utiliza valores de ejemplo (por ejemplo, `DB_PASSWORD=change-me`) y `SUPABASE_SERVICE_ROLE_KEY` no está escrita en el código.
+ 
+**Medidas de mitigación aplicadas y recomendadas:**
+ 
+- **Hallazgo 1:** se reemplazaron los tokens fabricables por sesiones opacas de 30 minutos que el cierre de sesión revoca, y se exige una sesión emitida por IAM junto con propiedad o consentimiento `AGENDA` vigente en las diez rutas. Tras la corrección pasan las 16 pruebas del backend y los 9 escenarios de sistema por cliente.
+- **Hallazgo 2:** los clientes envían el token en cada solicitud y eliminan de la caché la lista rechazada ante una respuesta 401 o 403.
+- **Hallazgo 3:** como mejora futura, almacenar las sesiones en un repositorio compartido (base de datos o Redis) para que sobrevivan a reinicios y a múltiples instancias.
+- **Hallazgo 4:** restringir la política CORS a los orígenes conocidos (el origen HTTPS de la Frontend Web desplegada y el dominio de la Landing Page, `https://carestacks-landing-page.vercel.app`), tal como se plantea en la sección 7.2.2.
+- **Observación 5:** aplicar autorización por defecto en `SecurityFilterChain` (`anyRequest().authenticated()`) y declarar de forma explícita las rutas públicas.
+- **Observación 6:** deshabilitar la consola de H2 mediante el perfil de producción.
+- **Gestión de secretos:** las credenciales no se incluyen en el repositorio; se almacenan en GitHub Secrets o GitHub Environments y la configuración por ambiente se administra mediante variables de entorno (por ejemplo, `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` y `SPRING_DATASOURCE_PASSWORD`).
 #### 6.2.2. Reviews
+ 
+Las reviews constituyen la verificación manual del código realizada por los integrantes del equipo como parte del flujo de trabajo. El equipo gestiona la integración de los cambios mediante Pull Requests en GitHub, integrados al flujo de trabajo GitFlow: cada nueva funcionalidad o corrección se desarrolla en una rama de tipo `feature/*` o `test/*` y se integra a `develop`, y posteriormente a `main`, a través de un Pull Request. De esta manera, ningún cambio llega directamente a las ramas principales, sino que pasa primero por un Pull Request donde puede ser inspeccionado.
+ 
+El Pull Request centraliza en un solo lugar el conjunto de commits, los archivos modificados y las verificaciones automáticas del workflow de Integración Continua, de modo que cada ejecución queda asociada al commit y al Pull Request que la originó. Al revisar un Pull Request, el equipo toma en cuenta los siguientes aspectos:
+ 
+| Aspecto revisado | Descripción |
+|---|---|
+| Convenciones de código | El código respeta las guías de estilo y la nomenclatura en inglés definidas en la sección 6.2.1.1. |
+| Funcionalidad | El cambio cumple con la User Story y sus Acceptance Criteria (escritos en Gherkin) asociados. |
+| Calidad y seguridad | El cambio no introduce code smells ni vulnerabilidades evidentes, y no expone credenciales en el código. |
+| Pruebas | El cambio no rompe las pruebas existentes descritas en la sección 6.1 y el workflow de CI finaliza correctamente. |
+| Conventional Commits | Los mensajes de commit y los nombres de rama siguen las convenciones establecidas en la sección 5.1. |
+ 
+**Pull Requests revisados:**
+ 
+| Repositorio | PR | Título | Autor | Integrado (UTC) | Integrado por | Checks de CI |
+|---|---|---|---|---|---|---|
+| carestacks-backend-api | [#1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/1) | `test(core): port verification tests` | Matias Salcedo (`matiAAsc`) | 01/10/2026 22:16 | Percy Muñiz (`alomsoo`) | Sin checks de GitHub Actions: el workflow se agregó en el PR #2, el mismo día y después de este merge. El PR documenta una verificación local: `mvn -B -q test`, 10 pruebas, 0 fallos, 0 errores, 0 omitidas (Java 25, Spring Boot 4.0.6). |
+| carestacks-backend-api | [#3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3) | `fix(agenda): enforce sessions and current consent` | Matias Salcedo (`matiAAsc`) | 05/10/2026 19:26 | Percy Muñiz (`alomsoo`) | Aprobados: *Build and Test RESTful API*, *test* y *docker-build*. |
+| carestacks-web | [#1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/pull/1) | `fix(caregiver): enforce agenda sessions and validate TB1 flows` | Matias Salcedo (`matiAAsc`) | 05/10/2026 18:32 | Percy Muñiz (`alomsoo`) | Aprobado: *Build and Test Flutter Web* (`flutter analyze`, `flutter test` y `flutter build web --release`). |
+| carestacks-mobile-app | [#1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/pull/1) | `fix(caregiver): enforce agenda sessions and validate TB1 flows` | Matias Salcedo (`matiAAsc`) | 05/10/2026 19:42 | Percy Muñiz (`alomsoo`) | Aprobado: *Build and Validate Flutter Mobile App* (`flutter analyze`, `flutter test` y `flutter build apk --debug`). |
+ 
+En estos cuatro Pull Requests el autor y quien integra el cambio son integrantes distintos del equipo, y los checks automáticos de CI actúan como primera barrera de verificación. Sin embargo, ninguno registra reviews formales en GitHub (0 reviews), por lo que la revisión se realizó de forma informal entre los integrantes. Asimismo, el último run de CI de la aplicación móvil sobre un `push` a `main`, posterior al merge, finalizó en fallo; el check del Pull Request #1 sí estuvo en verde.
+ 
+**Oportunidades de mejora identificadas:**
+ 
+- Activar la regla de protección de ramas en `develop` y `main` para exigir al menos una *review* aprobada y los checks de CI antes de integrar.
+- Revisar y corregir el fallo del workflow *Mobile CI* sobre `main`.
+- Agregar un workflow de CI y Pull Requests al repositorio `carestacks-frontend` (Android).
+- Integrar una herramienta de análisis continuo (por ejemplo, SonarCloud) para medir duplicación, complejidad y cobertura.
+
 
 ### 6.3. Validation Interviews
 
+Esta sección reúne las entrevistas de validación de CareConnect documentadas previamente por CareStacks y organiza sus resultados para el análisis de la experiencia de usuario. La validación se centra en la comprensión de la interfaz, la utilidad percibida y las oportunidades de mejora para los segmentos de cuidadores y pacientes geriátricos.
+
+**Procedencia de la evidencia:** Los seis registros y las valoraciones heurísticas provienen del informe del curso 1ACC0238 - Aplicaciones para Dispositivos Móviles (2026-10). Se incorporan como evidencia previa reutilizada para la AV2 de Diseño de Experimentos, no como entrevistas nuevas realizadas durante la semana 12. El producto evaluado fue la Landing Page / prototipo de CareConnect.
+
 #### 6.3.1. Diseño de Entrevistas
+
+**Objetivo:** Validar la facilidad de uso, comprensión y utilidad de las principales funcionalidades de CareConnect mediante entrevistas breves de aproximadamente 5 minutos.
+
+**Participantes:** Se cuenta con seis entrevistas previas, distribuidas en cuatro cuidadores de pacientes geriátricos y dos pacientes geriátricos. Las sesiones documentadas tuvieron una duración aproximada de tres a cuatro minutos.
+
+**Tareas de validación propuestas**
+
+**Segmento 1: Cuidadores**
+
+1. Encontrar la próxima actividad del paciente en la Agenda.
+2. Consultar una notificación o alerta del paciente.
+
+**Segmento 2: Pacientes geriátricos**
+
+1. Consultar la siguiente actividad programada del día.
+2. Confirmar una actividad ficticia como realizada.
+
+**Preguntas finales**
+
+1. Del 1 al 5, ¿qué tan fácil te pareció utilizar CareConnect?
+2. ¿Hubo alguna parte que te resultó difícil o confusa?
+3. ¿Qué mejorarías de la aplicación?
+
+**Registro de resultados:** Se documentarán las tareas completadas, las dificultades observadas y las respuestas de los participantes. Las entrevistas anteriores aportan comentarios sobre el prototipo, pero no registran resultados individuales de las tareas anteriores ni puntuaciones numéricas de facilidad de uso.
 
 #### 6.3.2. Registro de Entrevistas
 
+Se recuperaron seis entrevistas de validación realizadas previamente sobre el prototipo de CareConnect. Los registros permiten analizar la utilidad percibida, la comprensión de las funcionalidades y las principales oportunidades de mejora.
+
+Los campos sin información disponible se mantienen vacíos.
+
+##### Segmento 1: Cuidadores de pacientes geriátricos
+
+###### Entrevista de validación 1 — Daniel Rodríguez
+
+| Campo | Información |
+|---|---|
+| **Entrevistado** | Daniel Rodríguez |
+| **Segmento** | Cuidador de pacientes geriátricos |
+| **Experiencia** | Cuidador de varios pacientes geriátricos |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+
+**Resumen:**
+
+Daniel Rodríguez indicó que CareConnect le parece una herramienta útil para organizar el cuidado de pacientes geriátricos. Considera que disponer de una agenda centralizada para medicación, citas y terapias ayudaría a mantener la información organizada y reducir olvidos durante el cuidado diario.
+
+Respecto a la pantalla principal, señaló que permite identificar rápidamente las actividades pendientes. También destacó la utilidad de confirmar actividades realizadas, especialmente cuando varias personas participan en el cuidado del mismo paciente.
+
+En relación con las alertas, mencionó que son claras y oportunas. Asimismo, valoró el diario de seguimiento y la consulta de documentos médicos como funcionalidades que permitirían mejorar la coordinación entre cuidadores y familiares.
+
+**Aspectos de mejora identificados:**
+
+El entrevistado mencionó que algunas funcionalidades no son fáciles de encontrar durante el primer uso, por lo que considera necesario mejorar la navegación entre las secciones principales.
+
+**Oportunidades de mejora:**
+
+- Mejorar la visibilidad de las secciones principales.
+- Incorporar accesos rápidos a Agenda, Alertas y Diario.
+- Facilitar la navegación inicial de nuevos usuarios.
+
+**Funcionalidad más valorada:** Agenda, especialmente los recordatorios de medicación.
+
+**Intención de uso:** El entrevistado afirmó que utilizaría CareConnect en una rutina real de cuidado.
+
+---
+
+###### Entrevista de validación 2 — Valeria Dobbertin
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Valeria Dobbertin |
+| **Edad** | 20 años |
+| **Segmento** | Cuidadora informal de pacientes geriátricos |
+| **Experiencia** | Cuida a sus abuelos en sus tiempos libres |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+**Resumen:**
+
+Valeria Dobbertin señaló que CareConnect sería útil para organizar el cuidado de sus abuelos, ya que permitiría centralizar medicamentos, citas y terapias en una sola aplicación.
+
+Consideró que la pantalla principal presenta la información de forma clara y organizada, facilitando la identificación de actividades pendientes y completadas.
+
+También valoró positivamente la confirmación de actividades, porque ayudaría a evitar confusiones entre familiares que participan en el cuidado. Asimismo, destacó la utilidad de las alertas, el diario de seguimiento y la consulta de documentos médicos.
+
+**Aspectos de mejora identificados:**
+
+La entrevistada sugirió aumentar la visibilidad de algunos textos e íconos para que las funcionalidades principales puedan identificarse con mayor rapidez.
+
+**Oportunidades de mejora:**
+
+- Mejorar el tamaño y la visibilidad de textos e íconos.
+- Reforzar la jerarquía visual de la pantalla principal.
+- Destacar las funciones utilizadas con mayor frecuencia.
+
+**Funcionalidad más valorada:** Agenda y Alertas.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para organizar actividades y coordinar el cuidado con sus familiares.
+
+---
+
+###### Entrevista de validación 3 — Sofía
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Sofía |
+| **Edad** | 22 años |
+| **Segmento** | Cuidadora informal de pacientes geriátricos |
+| **Experiencia** | Cuida a su abuela junto con su madre |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+
+**Resumen:**
+
+Sofía indicó que CareConnect le parece una solución útil para organizar el cuidado de su abuela. Actualmente utiliza notas del celular y un cuaderno compartido con su madre, lo que puede generar diferencias en los registros y dudas sobre las actividades realizadas.
+
+Por ello, considera que una agenda centralizada ayudaría a evitar confusiones relacionadas con medicamentos, citas y terapias.
+
+También destacó la confirmación de actividades, debido a que en su familia varias personas participan en el cuidado y necesitan saber si una medicación ya fue administrada.
+
+Respecto a las alertas, señaló que son directas y comprensibles. Asimismo, valoró el diario de seguimiento como una alternativa para organizar información que actualmente se comparte mediante WhatsApp.
+
+**Aspectos de mejora identificados:**
+
+La entrevistada mencionó que la opción de compartir perfil resultó confusa al inicio, especialmente por su ubicación y por la explicación de los permisos.
+
+También sugirió permitir la configuración del tiempo de anticipación de las alertas.
+
+**Oportunidades de mejora:**
+
+- Hacer más visible la función de compartir perfil.
+- Explicar claramente el funcionamiento de los permisos.
+- Incorporar orientación inicial para funciones menos evidentes.
+- Permitir configurar la anticipación de los recordatorios.
+
+**Funcionalidad más valorada:** Diario de seguimiento y confirmación de actividades.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para mejorar la coordinación entre los familiares encargados del cuidado de su abuela.
+
+---
+
+###### Entrevista de validación 4 — Alonso
+
+| Campo | Información |
+|---|---|
+| **Entrevistado** | Alonso |
+| **Edad** | 20 años |
+| **Segmento** | Cuidador informal de pacientes geriátricos |
+| **Experiencia** | Apoya a distancia el cuidado de su abuelo, asistido en casa por su madre |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+**Resumen:**
+
+Alonso indicó que CareConnect sería útil para organizar el cuidado de su abuelo, especialmente porque este utiliza varios medicamentos en diferentes horarios.
+
+Consideró que la pantalla principal está organizada y facilita la identificación de actividades pendientes. Sin embargo, sugirió destacar más las tareas urgentes mediante indicadores visuales.
+
+También valoró la confirmación de actividades porque le permitiría verificar a distancia si su madre ya administró un medicamento, evitando tener que llamar o enviar mensajes constantemente.
+
+Respecto a las alertas, destacó la utilidad de recibir avisos cuando una actividad no ha sido confirmada. Asimismo, consideró prácticos el diario de seguimiento y la consulta de documentos médicos.
+
+**Aspectos de mejora identificados:**
+
+El entrevistado señaló que la sección de notificaciones puede verse demasiado cargada cuando existen varias alertas, lo que dificulta distinguir las más importantes.
+
+**Oportunidades de mejora:**
+
+- Permitir filtrar notificaciones por prioridad y estado.
+- Diferenciar visualmente las alertas pendientes de las anteriores.
+- Resaltar las actividades más urgentes.
+- Mantener visible la información de confirmación para el seguimiento a distancia.
+
+**Funcionalidad más valorada:** Alertas y confirmación de actividades.
+
+**Intención de uso:** El entrevistado afirmó que utilizaría CareConnect para dar seguimiento al cuidado de su abuelo cuando no se encuentra en casa.
+
+---
+
+###### Síntesis del segmento cuidador
+
+A partir de las cuatro entrevistas de validación se identificó una percepción favorable hacia CareConnect.
+
+Los participantes destacaron la utilidad de centralizar información relacionada con medicamentos, citas, terapias y actividades pendientes.
+
+La confirmación de actividades también fue una de las funcionalidades más valoradas, especialmente cuando varias personas participan en el cuidado de un mismo paciente.
+
+| Aspecto evaluado | Resultado documentado |
+|---|---|
+| **Agenda y recordatorios** | Los participantes los consideran útiles para organizar medicamentos, citas y terapias. |
+| **Confirmación de actividades** | Se valora porque puede reducir dudas cuando participan varios cuidadores. |
+| **Diario de seguimiento** | Facilitaría registrar observaciones y compartir información entre familiares. |
+| **Documentos médicos** | Permitiría centralizar archivos y consultarlos fácilmente. |
+| **Navegación** | Algunas funciones no resultan evidentes durante el primer uso. |
+| **Notificaciones** | Se sugieren filtros, indicadores de prioridad y configuración de anticipación. |
+| **Intención de uso** | Los 4 cuidadores declararon que utilizarían CareConnect. |
+
+**Conclusión del segmento:**
+
+Las entrevistas muestran que los cuidadores perciben CareConnect como una herramienta útil para organizar las actividades de cuidado y mejorar la coordinación familiar.
+
+Sin embargo, se identificaron oportunidades de mejora relacionadas con la navegación inicial, la visibilidad de funciones, la gestión de permisos y la presentación de las notificaciones.
+
+---
+
+##### Segmento 2: Pacientes geriátricos
+
+###### Entrevista de validación 5 — Nelly Ramírez
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Nelly Ramírez |
+| **Edad** | 70 años |
+| **Segmento** | Paciente geriátrica |
+| **Modalidad** | Virtual / Presencial (no precisada) |
+| **Duración aproximada** | 3 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+**Resumen:**
+
+Nelly Ramírez indicó que pudo comprender las actividades pendientes mostradas en el prototipo, aunque algunas acciones no resultaron completamente claras desde el primer momento.
+
+Señaló que los textos, botones e íconos eran comprensibles en su mayoría. También destacó que los recordatorios de medicamentos y citas le parecen útiles para evitar olvidos.
+
+La entrevistada valoró la posibilidad de centralizar información médica y permitir que familiares, cuidadores o médicos consulten sus datos con autorización.
+
+La pantalla de inicio fue la que consideró más útil por presentar información relevante de manera resumida.
+
+**Aspectos de mejora identificados:**
+
+Nelly mencionó que no logró identificar claramente cómo confirmar una actividad realizada.
+
+También propuso incorporar una guía mediante voz o sonidos para facilitar el uso de la aplicación por parte de adultos mayores.
+
+**Oportunidades de mejora:**
+
+- Hacer más visible la confirmación de actividades.
+- Incorporar instrucciones breves para acciones importantes.
+- Evaluar una guía asistida por voz o sonidos.
+- Reforzar la accesibilidad de la interfaz para adultos mayores.
+
+**Funcionalidad más valorada:** Pantalla de inicio y recordatorios.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para organizar su cuidado diario.
+
+---
+
+###### Entrevista de validación 6 — Lucila Nakamura
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Lucila Nakamura |
+| **Edad** | 75 años |
+| **Segmento** | Paciente geriátrica |
+| **Modalidad** | Virtual / Presencial (no precisada) |
+| **Duración aproximada** | 3 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect ||
+
+**Resumen:**
+
+Lucila Nakamura indicó que pudo comprender las actividades pendientes y que los textos y botones del prototipo le parecieron claros.
+
+Sin embargo, señaló que algunos íconos eran demasiado pequeños, lo que podría dificultar su reconocimiento.
+
+La entrevistada destacó la utilidad de los recordatorios de medicamentos y citas médicas, así como la posibilidad de organizar documentos y actividades en una sola aplicación.
+
+También consideró positivo que familiares o cuidadores puedan consultar su información cuando ella lo autorice.
+
+La pantalla de inicio fue la más valorada, porque permite revisar información importante de manera rápida.
+
+**Aspectos de mejora identificados:**
+
+Lucila mencionó que la sección de notificaciones le resultó menos clara que otras pantallas.
+
+Además, recomendó diferenciar las funciones mediante colores y aumentar el tamaño de los íconos para facilitar la navegación.
+
+**Oportunidades de mejora:**
+
+- Aumentar el tamaño de los íconos.
+- Diferenciar visualmente las secciones de la aplicación.
+- Mejorar la claridad de las notificaciones.
+- Utilizar elementos gráficos fáciles de reconocer.
+
+**Funcionalidad más valorada:** Pantalla de inicio y recordatorios.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para organizar sus actividades y recordatorios de salud.
+
+---
+
+###### Síntesis del segmento paciente geriátrico
+
+Las dos entrevistas del segmento paciente geriátrico reflejan una valoración positiva de las funciones de recordatorios, visualización de actividades e información centralizada.
+
+Ambas entrevistadas destacaron la pantalla de inicio como una de las partes más útiles del prototipo.
+
+No obstante, se identificaron dificultades relacionadas con la confirmación de actividades, el tamaño de los íconos y la comprensión de las notificaciones.
+
+| Aspecto evaluado | Resultado documentado |
+|---|---|
+| **Actividades pendientes** | Las participantes comprendieron la información general, aunque se recomendó mejorar su claridad. |
+| **Recordatorios** | Ambas participantes consideraron útiles los avisos de medicamentos y citas. |
+| **Pantalla de inicio** | Fue la pantalla más valorada por las dos entrevistadas. |
+| **Confirmación de actividades** | Una participante señaló dificultades para identificar esta función. |
+| **Íconos** | Se recomendó aumentar su tamaño. |
+| **Notificaciones** | Se identificó la necesidad de mejorar su presentación. |
+| **Intención de uso** | Las 2 pacientes declararon que utilizarían CareConnect. |
+
+**Conclusión del segmento:**
+
+Las entrevistas sugieren que CareConnect puede resultar útil para apoyar la organización de las actividades de cuidado de adultos mayores.
+
+Sin embargo, las siguientes iteraciones deberían prestar especial atención a la accesibilidad visual, la comprensión de acciones y la simplicidad de la navegación.
+
+---
+
+##### Evidencias de las entrevistas
+
+Las grabaciones de las entrevistas de validación se encuentran organizadas en la carpeta de evidencias del proyecto anterior.
+
+[Acceder a las entrevistas de validación en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgCmr6IQ2FadRYjjkZ3dTDyRAYRDnvqex5WaYepc0P0cXj8?e=rs21EW)
+
+##### Conclusión general del registro de entrevistas
+
+Las seis entrevistas documentadas reflejan una percepción positiva del prototipo de CareConnect entre los dos segmentos evaluados.
+
+Los cuidadores valoraron especialmente la agenda, las alertas y la confirmación de actividades, mientras que las pacientes geriátricas destacaron la pantalla de inicio, los recordatorios y la centralización de información.
+
+Asimismo, se identificaron oportunidades de mejora relacionadas con la navegación, la visibilidad de las funciones, el tamaño de los íconos y la claridad de las notificaciones.
+
+Estos resultados corresponden a percepciones declaradas durante entrevistas sobre el prototipo y no constituyen evidencia de adopción real o de mediciones de desempeño de la versión actual.
+
+
 #### 6.3.3. Evaluaciones según heurísticas
 
+La evaluación según heurísticas permite identificar problemas de usabilidad en CareConnect mediante principios reconocidos de diseño de interfaces. Para este análisis se consideran las diez heurísticas de Jakob Nielsen, con especial atención a la claridad de las acciones, la navegación, la retroalimentación del sistema y la accesibilidad para cuidadores y pacientes geriátricos.
+
+La presente sección desarrolla un análisis secundario de las seis entrevistas de validación documentadas en la sección 6.3.2, correspondientes a cuatro cuidadores y dos pacientes geriátricos. Estas entrevistas provienen del proyecto realizado previamente en el curso 1ACC0238 - Aplicaciones para Dispositivos Móviles (2026-10), donde se evaluó la Landing Page y el prototipo de CareConnect.
+
+Los comentarios de los participantes permiten asociar problemas y oportunidades de mejora con las heurísticas de Nielsen. Sin embargo, esta asociación no equivale a una nueva inspección heurística realizada por especialistas. Del mismo modo, las severidades anteriores no representan una evaluación de la versión actualmente implementada.
+
+##### Objetivo y alcance de la evaluación
+
+El objetivo es identificar y priorizar los problemas de usabilidad que podrían dificultar la interacción de los usuarios con las funcionalidades principales de CareConnect.
+
+Se consideran los siguientes aspectos:
+
+- Comprensión de las actividades pendientes y confirmadas.
+- Facilidad para identificar y ejecutar acciones frecuentes.
+- Claridad de la navegación y los accesos principales.
+- Legibilidad de textos, íconos y elementos visuales.
+- Comprensión de notificaciones y alertas.
+- Facilidad para compartir perfiles y comprender los permisos.
+- Disponibilidad de orientación para usuarios con menor experiencia tecnológica.
+
+La evaluación documental utiliza los comentarios registrados durante las entrevistas anteriores. La comprobación de estos hallazgos en las aplicaciones actuales constituye una actividad independiente y requiere evidencia de ejecución.
+
+##### Escala de severidad utilizada
+
+Se adopta la escala de severidad de Nielsen, que permite priorizar problemas considerando su frecuencia, impacto y persistencia.
+
+| Nivel | Severidad | Descripción |
+|:---:|---|---|
+| 0 | Sin problema | La situación evaluada no constituye un problema de usabilidad. |
+| 1 | Cosmético | Problema de bajo impacto que puede corregirse si existen recursos disponibles. |
+| 2 | Menor | Problema que genera dificultades limitadas y cuya corrección tiene prioridad baja. |
+| 3 | Mayor | Problema importante que afecta la experiencia y requiere atención prioritaria. |
+| 4 | Crítico | Problema grave de usabilidad que debe corregirse antes de publicar el producto. |
+
+La severidad debe asignarse a problemas concretos y no automáticamente a cada heurística. Cuando no existe evidencia suficiente para determinar un problema, se utiliza la indicación "No evaluado" en lugar de asignar el nivel 0.
+
+##### Análisis según las diez heurísticas de Nielsen
+
+| Heurística | Evidencia identificada en las entrevistas | Interpretación y oportunidad de mejora |
+|---|---|---|
+| **H1. Visibilidad del estado del sistema** | Nelly Ramírez no identificó claramente cómo confirmar una actividad. Alonso sugirió destacar las tareas urgentes. | Es necesario reforzar la visibilidad de las acciones y de los estados pendiente, confirmado y vencido, así como ofrecer retroalimentación después de completar una actividad. |
+| **H2. Relación entre el sistema y el mundo real** | Los participantes comprendieron conceptos como medicamentos, citas, agenda y documentos. | No se documentó un incumplimiento concreto. Se recomienda conservar términos cotidianos y evitar lenguaje técnico innecesario. |
+| **H3. Control y libertad del usuario** | Las entrevistas no registran pruebas específicas de cancelación, retroceso o reversión de acciones. | No existe evidencia suficiente para calificar esta heurística. Se requiere comprobar si el usuario puede cancelar o corregir acciones realizadas por error. |
+| **H4. Consistencia y estándares** | Los participantes describieron elementos comprensibles, aunque algunos solicitaron mayor claridad visual. | No se demostró una inconsistencia específica. Se recomienda revisar que botones, estados e íconos mantengan significados y estilos consistentes entre pantallas. |
+| **H5. Prevención de errores** | Los cuidadores valoraron la confirmación de actividades porque permitiría reducir dudas sobre la administración de medicamentos. | La funcionalidad presenta valor preventivo, pero no se comprobó experimentalmente que evite errores. Se debe verificar que las confirmaciones sean claras y que el sistema advierta ante acciones potencialmente duplicadas. |
+| **H6. Reconocimiento antes que memoria** | Daniel tuvo dificultades para localizar funciones durante el primer uso. Nelly no encontró fácilmente la confirmación de actividades y Sofía manifestó confusión al compartir perfiles. | Es necesario mejorar la visibilidad de funciones y permisos, reducir la necesidad de recordar rutas y utilizar etiquetas reconocibles. |
+| **H7. Flexibilidad y eficiencia de uso** | Daniel solicitó accesos rápidos a Agenda, Alertas y Diario. Los cuidadores valoraron las funciones utilizadas frecuentemente. | Se recomienda facilitar el acceso a tareas habituales y reducir los pasos necesarios para completarlas. No se dispone de mediciones de tiempo de ejecución. |
+| **H8. Diseño estético y minimalista** | Lucila señaló que algunos íconos eran pequeños. Alonso indicó que las notificaciones podían resultar visualmente sobrecargadas. | Se requiere mejorar la legibilidad, la jerarquía visual y la organización de información para evitar dificultades de reconocimiento. |
+| **H9. Ayuda para reconocer, diagnosticar y recuperarse de errores** | No se documentaron pruebas específicas sobre mensajes de error o recuperación ante acciones fallidas. | No existe evidencia suficiente para asignar una severidad. Se recomienda evaluar los mensajes presentados ante datos incorrectos, operaciones fallidas o acciones no permitidas. |
+| **H10. Ayuda y documentación** | Nelly propuso orientación mediante voz o sonidos. Sofía solicitó mayor claridad al explicar los permisos de acceso. | Se identifica una oportunidad para incorporar instrucciones contextuales, especialmente en acciones poco frecuentes o complejas. La ausencia de ayuda efectiva debe confirmarse en la versión implementada. |
+
+El análisis permite identificar problemas relacionados principalmente con la visibilidad, el reconocimiento de elementos, la eficiencia de navegación y la presentación de información.
+
+Las heurísticas H3, H4 y H9 requieren una inspección específica antes de determinar si existen incumplimientos. La ausencia de comentarios negativos en las entrevistas no demuestra por sí sola que una heurística se cumpla.
+
+##### Registro de hallazgos de usabilidad
+
+Los siguientes hallazgos se obtienen de la tabla de problemas previamente documentada y de los comentarios individuales de la sección 6.3.2. Se conservan las severidades históricas existentes y se distingue el hallazgo adicional que no contaba con calificación.
+
+| ID | Hallazgo identificado | Heurísticas relacionadas | Evidencia previa | Severidad previa |
+|---|---|---|---|:---:|
+| HU-01 | Confirmación de actividades poco evidente. | H1, H6 | Nelly Ramírez indicó que no identificaba claramente cómo confirmar una actividad realizada. | 3 |
+| HU-02 | Íconos pequeños o difíciles de reconocer. | H6, H8 | Lucila Nakamura recomendó aumentar el tamaño de los íconos. | 3 |
+| HU-03 | Dificultad para localizar funciones durante el primer uso. | H6, H7 | Daniel Rodríguez solicitó mejorar la navegación y los accesos principales. | 2 |
+| HU-04 | Notificaciones poco claras o visualmente sobrecargadas. | H1, H8 | Alonso señaló dificultades para distinguir alertas importantes y Lucila manifestó confusión con las notificaciones. | 3 |
+| HU-05 | Diferenciación visual insuficiente entre funciones. | H6, H8 | Lucila recomendó diferenciar las secciones mediante elementos visuales y colores. | 3 |
+| HU-06 | Necesidad de orientación accesible para realizar determinadas acciones. | H10 | Nelly sugirió implementar asistencia mediante voz o sonidos. | 3 |
+| HU-07 | Dificultad inicial para localizar y comprender la función de compartir perfil. | H6, H10 | Sofía señaló confusión respecto a la ubicación de la función y el significado de los permisos. | No registrada |
+
+**Interpretación de las severidades:** Los niveles de HU-01 a HU-06 proceden del registro anterior de problemas de usabilidad. No se dispone de información suficiente sobre frecuencia, impacto y persistencia para recalcularlos. HU-07 se incorpora por trazabilidad con la entrevista de Sofía y queda pendiente de calificación.
+
+En particular, HU-06 representa una necesidad de apoyo expresada por una participante. Su severidad histórica no demuestra por sí misma que la versión actual carezca de mecanismos de ayuda.
+
+##### Priorización de mejoras
+
+Las mejoras se organizan considerando la severidad histórica, la importancia de las funcionalidades y las características de los segmentos objetivo.
+
+| Prioridad | Hallazgos | Mejora propuesta | Justificación |
+|---|---|---|---|
+| Alta | HU-01 | Incorporar una acción de confirmación claramente identificable, con retroalimentación y actualización visible del estado. | La confirmación de medicación es una funcionalidad central para ambos segmentos. |
+| Alta | HU-02, HU-05 | Aumentar la legibilidad de íconos y mejorar la diferenciación visual de los módulos. | Los pacientes geriátricos necesitan reconocer funciones sin depender de instrucciones complejas. |
+| Alta | HU-04 | Organizar las notificaciones por prioridad y estado, destacando las alertas que requieren atención. | Ayuda a distinguir información importante y reduce la sobrecarga visual. |
+| Media | HU-03 | Incorporar accesos directos a Agenda, Notificaciones y Diario. | Facilita la navegación de cuidadores que ejecutan actividades frecuentes. |
+| Media | HU-06 | Incorporar orientación contextual para funciones principales y evaluar la necesidad de asistencia sonora. | Puede facilitar el aprendizaje de usuarios con menor experiencia digital. |
+| Por determinar | HU-07 | Mejorar la ubicación de compartir perfil y explicar claramente los permisos de acceso. | La función permite la coordinación entre cuidadores y debe comprenderse antes de autorizar el acceso a información personal. |
+
+La prioridad de HU-07 deberá establecerse después de verificar la dificultad en el flujo actual y asignarle una severidad sustentada.
+
+##### Comprobación de hallazgos en la versión actual
+
+La comprobación tiene como propósito determinar si los problemas identificados en el prototipo anterior persisten, fueron corregidos o requieren mejoras adicionales.
+
+Para cada hallazgo se debe registrar la versión o commit evaluado, la pantalla o flujo revisado, el resultado observado, la evidencia correspondiente y la severidad actual.
+
+La sección 6.1.4 documenta pruebas funcionales de los clientes web y móvil, incluyendo algunos recorridos de Agenda. Sin embargo, dichas pruebas no constituyen una reevaluación heurística de los siete hallazgos aquí identificados. Por ello, no se consideran suficientes para declarar que estos problemas de usabilidad han sido corregidos.
+
+| ID | Versión o pantalla por revisar | Criterio de comprobación | Resultado actual | Evidencia de versión actual | Severidad actual |
+|---|---|---|---|---|:---:|
+| HU-01 | Agenda / Confirmación de actividades | Comprobar que el usuario identifica la acción de confirmar y reconoce el estado resultante. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-02 | Pantalla principal / Agenda | Comprobar que los íconos son legibles, reconocibles y suficientemente grandes para las interacciones previstas. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-03 | Navegación principal | Comprobar que el cuidador encuentra Agenda, Notificaciones y Diario sin indicaciones adicionales. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-04 | Notificaciones | Comprobar que el usuario distingue notificaciones pendientes, urgentes y anteriores sin confusión. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-05 | Pantalla principal / Módulos | Comprobar que los módulos se reconocen mediante etiquetas e indicadores visuales consistentes. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-06 | Orientación inicial / Ayuda contextual | Comprobar si el usuario dispone de instrucciones comprensibles para completar acciones que desconoce. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-07 | Perfil / Gestión de accesos | Comprobar que el usuario encuentra la función de compartir perfil y comprende los permisos antes de concederlos. | Pendiente de verificación. | No registrada. | No evaluada |
+
+**Estado de la comprobación:** El informe disponible no contiene registros de una nueva inspección heurística de estas pantallas. Por tanto, no es posible asignar severidades actuales ni afirmar que los hallazgos fueron corregidos.
+
+La escala de severidad debe aplicarse nuevamente cuando se disponga de resultados observados. Una severidad 0 solo corresponde a un problema descartado o inexistente después de la revisión, y no debe utilizarse para representar evaluaciones pendientes.
+
+##### Métricas e indicadores de evaluación
+
+Se establecen indicadores para organizar los resultados disponibles y permitir una comprobación cuantitativa en futuras iteraciones.
+
+Los indicadores se proponen como criterios internos de seguimiento y no como resultados ya obtenidos ni como umbrales obligatorios del enunciado del curso.
+
+| Indicador | Definición | Resultado disponible |
+|---|---|---|
+| Entrevistas de validación documentadas | Número de entrevistas previas utilizadas como fuente. | 6 entrevistas: 4 cuidadores y 2 pacientes geriátricos. |
+| Heurísticas consideradas | Número de principios de Nielsen incluidos en el análisis documental. | 10 de 10 heurísticas. |
+| Hallazgos registrados | Número de problemas u oportunidades de mejora identificados. | 7 hallazgos. |
+| Hallazgos con severidad histórica | Número de hallazgos que ya tenían calificación en el informe anterior. | 6 de 7. |
+| Hallazgos históricos de severidad mayor | Hallazgos que recibieron una calificación previa de nivel 3. | 5 hallazgos. |
+| Hallazgos históricos de severidad menor | Hallazgos que recibieron una calificación previa de nivel 2. | 1 hallazgo. |
+| Hallazgos corregidos y comprobados | Número de problemas cuya solución fue demostrada mediante una reevaluación de la versión actual. | Sin información disponible. |
+| Facilidad de uso percibida | Calificación individual de 1 a 5 prevista en el diseño de entrevistas de la sección 6.3.1. | No disponible: las entrevistas anteriores no registran puntuaciones individuales. |
+| Tasa de éxito de tareas | Porcentaje de intentos completados correctamente por los participantes durante la evaluación. | No disponible: no se documentaron los resultados individuales de las tareas propuestas. |
+
+Para una siguiente evaluación se recomienda registrar los siguientes indicadores:
+
+**1. Tasa de éxito de tareas**
+
+Permite determinar qué proporción de tareas evaluadas fue completada correctamente.
+
+`Tasa de éxito (%) = (Tareas completadas correctamente / Total de intentos válidos) × 100`
+
+Se considerarán tareas como consultar la próxima actividad, confirmar una actividad, identificar una notificación prioritaria y compartir el perfil con un cuidador.
+
+**2. Tiempo de ejecución**
+
+Permite medir el tiempo necesario para completar cada tarea, expresado en segundos. Los resultados podrán compararse entre segmentos o entre versiones de la aplicación cuando se utilicen tareas equivalentes.
+
+**3. Facilidad de uso percibida**
+
+Se utilizará la escala de 1 a 5 definida en la sección 6.3.1, donde 1 representa una experiencia muy difícil y 5 una experiencia muy fácil.
+
+`Promedio de facilidad = Suma de calificaciones obtenidas / Número de respuestas válidas`
+
+**4. Porcentaje de hallazgos corregidos y verificados**
+
+Permite medir el avance de las acciones de mejora a partir de los hallazgos registrados.
+
+`Corrección verificada (%) = (Hallazgos corregidos con evidencia / Total de hallazgos registrados) × 100`
+
+Este indicador solo deberá calcularse una vez que los hallazgos hayan sido revisados y exista evidencia suficiente para determinar su estado.
+
+**5. Severidad residual**
+
+Representa la severidad asignada a un problema después de evaluar la versión actual. Se utilizará la misma escala de 0 a 4 para facilitar la comparación con las valoraciones históricas, sin asumir que estas constituyen una línea base cuantitativa experimental.
+
+No se establecen resultados ni porcentajes de cumplimiento para las métricas que todavía no cuentan con mediciones.
+
+##### Hallazgos positivos
+
+Las entrevistas también permitieron identificar aspectos favorables de la experiencia de CareConnect.
+
+| Aspecto | Evidencia documentada |
+|---|---|
+| Organización centralizada | Los participantes valoraron que las actividades de salud pudieran consultarse desde una misma plataforma. |
+| Pantalla principal | Nelly y Lucila identificaron esta pantalla como una de las más útiles por reunir información relevante. |
+| Agenda y recordatorios | Daniel destacó su utilidad para organizar la medicación y las actividades programadas. |
+| Confirmación compartida | Valeria, Sofía y Alonso valoraron la posibilidad de comprobar las actividades realizadas por otras personas. |
+| Alertas | Los cuidadores identificaron valor en recibir avisos relacionados con actividades pendientes. |
+| Acceso autorizado | Las pacientes valoraron la posibilidad de compartir información con familiares y cuidadores mediante autorización. |
+
+Estos resultados corresponden a percepciones declaradas durante las entrevistas y no demuestran por sí mismos la eficacia de las funcionalidades implementadas.
+
+##### Conclusión de la evaluación heurística
+
+El análisis de las entrevistas previas permitió relacionar los comentarios de los participantes con las diez heurísticas de Nielsen e identificar siete hallazgos relevantes para la experiencia de usuario de CareConnect.
+
+Los problemas de mayor atención se relacionan con la visibilidad de la confirmación de actividades, la legibilidad de los íconos, la presentación de notificaciones y el reconocimiento de las funcionalidades principales. Estos aspectos son especialmente importantes para los pacientes geriátricos, quienes pueden presentar distintos niveles de familiaridad con la tecnología.
+
+Asimismo, el análisis permitió reconocer oportunidades de mejora en los accesos rápidos, la orientación inicial y la comprensión de los permisos para compartir perfiles.
+
+Las valoraciones históricas sirven para organizar las prioridades de revisión, pero no permiten concluir que los problemas persistan o se hayan solucionado en la versión actual. Una nueva inspección, acompañada de capturas, versiones identificadas y resultados observados, será necesaria para establecer severidades actuales y calcular las métricas de cumplimiento.
+
+La siguiente iteración deberá priorizar la comprobación de los hallazgos asociados con actividades esenciales de cuidado y registrar datos que permitan evaluar las mejoras de manera objetiva.
+
+**Referencias metodológicas**
+
+- Nielsen, J. (1994). *10 Usability Heuristics for User Interface Design*. Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/
+- Nielsen, J. (1994). *Severity Ratings for Usability Problems*. Nielsen Norman Group. https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/
+
 ### 6.4. Auditoría de Experiencias de Usuario
-
+ 
 #### 6.4.1. Auditoría realizada
-
+ 
 ##### 6.4.1.1. Información del grupo auditado
-
+ 
+El grupo al que se le realizó la auditoría recibe el nombre de “NeuroDraw” y el producto que desarrollaron se llama “NeuroZen”. A continuación, se adjunta la lista de integrantes del grupo auditado.
+ 
+- Castro Picón, Manuel Fernando Joao (U20231G159)
+- Huaman De La Cruz, Jean Pool (U20201E781)
+- Paredes Chavez, Carlos Augusto (U202321613)
+- Requena Gutiérrez, Diego Gabriel (U20321774)
+- Vila Guillen, Miguel Angel (U20231G054)
+Inmediatamente, se adjuntan los enlaces de acceso al trabajo del grupo que desarrolló “NeuroZen”:
+ 
+- Aplicación web (producción): https://neurozen-web-frontend.vercel.app
+- Repositorio del informe: https://github.com/Proyecto-1ASI0732-2620-Experimentos/Report-NeuroZen-Experimento
 ##### 6.4.1.2. Cronograma de auditoría realizada
-
+ 
+En esta sección, se cronometran las principales actividades realizadas para el desarrollo de la auditoría hacia el trabajo del grupo “NeuroDraw”.
+ 
+| Actividad de auditoría realizada | Fecha/Hora | Realizado por |
+|---|---|---|
+| Solicitud de información al grupo auditado | [02/11/2026 13:00] | [Santiago Baldeon] |
+| Envío de información solicitada por parte del grupo auditado a nuestro grupo para el desarrollo de la auditoría | [07/11/2026 14:00] | [Santiago Baldeon] |
+| Ejecución de la auditoría | [07/11/2026 16:00] | [Percy Muñiz]<br>[Santiago Baldeon]<br>[Matias Salcedo] |
+| Elaboración del informe de la auditoría | [08/11/2026 13:00] | [Percy Muñiz]<br>[Santiago Baldeon]<br>[Matias Salcedo] |
+| Finalización y envío del informe de auditoría | [08/11/2026 16:00] | [Santiago Baldeon] |
+ 
 ##### 6.4.1.3. Contenido de auditoría realizada
+ 
+**TAREAS A EVALUAR:**
+ 
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+ 
+1. Inicio de sesión de un usuario
+2. Creación de cuenta y elección del tipo de cuenta (usuario o psicólogo)
+3. Registro de psicólogo y verificación de colegiatura
+4. Configuración inicial opcional y test de autoevaluación de estrés
+5. Navegación y lectura del panel de Inicio (estadísticas y herramientas)
+6. Reserva de una sesión con un profesional
+7. Configuración de idioma y visualización de la aplicación
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+ 
+1. Perfil del usuario y suscripciones
+2. Ejercicios de respiración, pausas activas y biblioteca de recursos
+3. Registro de desencadenantes
+4. Aplicación móvil y pruebas de rendimiento o seguridad sobre la API
+**ESCALA DE SEVERIDAD:**
+ 
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+ 
+| Nivel | Descripción |
+|---|---|
+| 1 | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja y resolverlo de cara al siguiente release. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+ 
+**TABLA RESUMEN:**
+ 
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|---|---|---|
+| 1 | Los campos del inicio de sesión muestran el texto “null” en lugar de una guía de ingreso. | 3 | Relación entre el sistema y mundo real |
+| 2 | El panel de Inicio muestra datos de ejemplo con mensajes de tendencia que parecen reales. | 3 | Visibilidad del estado del sistema |
+| 3 | La selección de fecha no indica qué días tienen horarios disponibles. | 3 | Prevención de errores |
+| 4 | La tarjeta del profesional muestra datos de relleno: “$0”, “health” y valoración 0.0. | 2 | Relación entre el sistema y mundo real |
+| 5 | El pie de página muestra datos de contacto de relleno. | 2 | Relación entre el sistema y mundo real |
+| 6 | El paso “Último paso” del registro no es el último y deja opciones preseleccionadas. | 2 | Visibilidad del estado del sistema |
+| 7 | Los textos de ayuda del registro de psicólogo son muy pequeños y de bajo contraste. | 2 | Accessibility: Legibility and contrast |
+| 8 | Se usan “sesión” y “cita” de forma indistinta para la misma acción. | 1 | Consistencia y estándares |
+| 9 | Los controles de “Visualización” en Configuración son poco claros. | 1 | Visibilidad del estado del sistema |
+| 10 | La pantalla “Tu cuenta está en revisión” no indica cuánto demorará la verificación. | 1 | Visibilidad del estado del sistema |
+ 
+**DESCRIPCIÓN DE PROBLEMAS:**
+ 
+###### Problema 01:
+ 
+**Heurística violada:** Relación entre el sistema y mundo real
+**Severidad:** 3/4 - Problema mayor
+**Problema explicado:** En la pantalla de inicio de sesión, los campos “Correo Electrónico” y “Contraseña” muestran el texto “null”. Es un valor técnico que se filtra a la interfaz: el usuario puede interpretarlo como un dato precargado o como un error, y dudar si debe borrarlo antes de escribir. Al ser la primera pantalla que ve cualquier usuario, además transmite una impresión de producto inestable.
+ 
+![Problema 01: campos del login con el texto null](./assets/ux-01-login.png)
+ 
+**Recomendaciones:**
+ 
+- Reemplazar “null” por textos de ayuda comprensibles, por ejemplo “tucorreo@ejemplo.com” y “Ingresa tu contraseña”.
+- Revisar que ninguna variable sin inicializar se muestre en la interfaz.
+###### Problema 02:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 3/4 - Problema mayor
+**Problema explicado:** El panel de estadísticas incluye un aviso (“Aún no hay registros suficientes: se muestran datos de ejemplo”), pero igualmente presenta un nivel de estrés, un promedio, un gráfico semanal y un texto personalizado que habla de “tus niveles de estrés” y de “tus horas pico”, con una flecha roja de aumento del 5 %. Además, las señales se contradicen: el nivel actual aparece como “Bajo” y la curva termina descendiendo, mientras el texto sugiere contactar a un profesional por un aumento. En una aplicación de salud mental, un usuario nuevo puede tomar estos datos como resultados reales sobre sí mismo.
+ 
+![Problema 02: panel de Inicio con datos de ejemplo](./assets/ux-05-inicio.png)
+ 
+**Recomendaciones:**
+ 
+- Mostrar un estado vacío (ilustración y un botón como “Registra tu primer desencadenante” o “Hacer el test”) mientras no existan registros.
+- Si se mantienen datos demostrativos, atenuarlos visualmente, rotularlos como “Ejemplo” y no mostrar recomendaciones personalizadas ni alertas de tendencia.
+###### Problema 03:
+ 
+**Heurística violada:** Prevención de errores
+**Severidad:** 3/4 - Problema mayor
+**Problema explicado:** En el paso “Fecha y hora” de la reserva, todos los días desde hoy aparecen habilitados con el mismo aspecto. Al elegir el día 12, el sistema responde “No hay horarios disponibles para este día.” y el botón “Siguiente” queda deshabilitado sin explicación. El usuario debe probar día por día hasta encontrar uno con cupo, lo que puede llevarlo a abandonar la tarea principal del producto. Además, el título del mes se muestra como “Noviembre De 2026” (con “De” en mayúscula).
+ 
+![Problema 03: calendario de reserva sin indicar disponibilidad](./assets/ux-07-reserva-calendario.png)
+ 
+**Recomendaciones:**
+ 
+- Marcar visualmente los días con disponibilidad (por ejemplo, con un punto) y deshabilitar los que no tengan horarios.
+- Complementar el mensaje vacío con una acción útil, como “Próximo horario disponible: [fecha]”.
+- Corregir el formato del mes a “Noviembre de 2026”.
+###### Problema 04:
+ 
+**Heurística violada:** Relación entre el sistema y mundo real
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** En el primer paso de “Reservar Sesión”, el único profesional listado aparece con precio “$0 sesión”, especialidad “health” (en inglés, mientras la interfaz está en español), una valoración “0.0 (0)” y un avatar genérico. El precio en cero puede interpretarse como sesión gratuita o como un error, y la especialidad no ayuda a decidir. Asimismo, el botón “Siguiente” aparece deshabilitado sin indicar que primero hay que seleccionar un profesional.
+ 
+![Problema 04: tarjeta del profesional con datos de relleno](./assets/ux-06-reserva-profesional.png)
+ 
+**Recomendaciones:**
+ 
+- Mostrar “Tarifa por definir” o un precio real; no mostrar “$0” si no es una sesión gratuita.
+- Mostrar la especialidad en español y usar “Sin valoraciones aún” en lugar de “0.0 (0)”.
+- Agregar un texto de ayuda junto al botón deshabilitado, como “Selecciona un profesional para continuar”.
+###### Problema 05:
+ 
+**Heurística violada:** Relación entre el sistema y mundo real
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** El pie de página, presente en varias pantallas, muestra el teléfono “+1 (555) 123-4567” y la dirección “123 Wellness St, Health City, HC 12345”, que son datos de ejemplo. En una plataforma que trata salud mental, la confianza es clave: el usuario que necesite contactar a soporte (por ejemplo, desde la pantalla de verificación de cuenta) no tendrá un canal real.
+ 
+![Problema 05: pie de página con datos de contacto de relleno](./assets/ux-03-verificacion-cuenta.png)
+ 
+**Recomendaciones:**
+ 
+- Reemplazar los datos por información real de contacto (con código +51 si corresponde) o retirarlos hasta contar con ella.
+- Verificar que “Contactar soporte” lleve a un canal funcional.
+###### Problema 06:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** La pantalla “Cuéntanos un poco de ti” se presenta como “Último paso” y como opcional, pero el botón dice “Continuar al test” y a continuación aparece un test de 10 preguntas, por lo que el usuario no sabe cuánto falta. Además, “18-24” y “Formal” ya vienen seleccionados, de modo que quien continúe sin tocar nada registrará datos que no declaró. La opción “Omitir” es un enlace pequeño, alejado del botón principal.
+ 
+![Problema 06: paso opcional con opciones preseleccionadas](./assets/ux-04-datos-opcionales.png)
+ 
+**Recomendaciones:**
+ 
+- Cambiar el encabezado por “Paso opcional” o indicar la cantidad de pasos restantes.
+- No preseleccionar edad ni tipo de trabajo.
+- Colocar “Omitir” como botón secundario junto a “Continuar al test”.
+###### Problema 07:
+ 
+**Heurística violada:** Accessibility: Legibility and contrast
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** En el formulario “Registro de psicólogo”, las indicaciones importantes (“Debe coincidir con tu DNI y tu registro en el CPsP”, “Lo usaremos para verificar que estás habilitado para ejercer”, “Mínimo 8 caracteres, con al menos una letra y un número”) se muestran con una tipografía muy reducida y en gris claro sobre fondo crema. Son instrucciones que evitan errores que retrasarían la verificación de la colegiatura, por lo que deberían leerse con facilidad, sobre todo por personas con baja visión.
+ 
+![Problema 07: textos de ayuda pequeños en el registro de psicólogo](./assets/ux-02-registro-psicologo.png)
+ 
+**Recomendaciones:**
+ 
+- Aumentar el tamaño del texto de ayuda (mínimo 14 px) y usar un gris más oscuro que cumpla la relación de contraste 4.5:1 de WCAG.
+- Presentar los requisitos de la contraseña como una lista que se marca a medida que se cumplen.
+###### Problema 08:
+ 
+**Heurística violada:** Consistencia y estándares
+**Severidad:** 1/4 - Problema superficial
+**Problema explicado:** En el panel de Inicio la tarjeta se llama “Reservar Sesión” pero su descripción dice “Agendar cita con profesional”, y la consulta posterior se llama “Mis citas” (también en el pie de página). Además, la reserva se encuentra dentro del menú “Profesionales”, lo que no es evidente para quien busca “Reservar”. Esto obliga al usuario a deducir que se trata de la misma función.
+ 
+**Recomendaciones:**
+ 
+- Unificar el término en toda la aplicación (por ejemplo, “Reservar cita” y “Mis citas”).
+- Agregar un acceso directo visible a “Reservar cita” en la barra de navegación.
+###### Problema 09:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 1/4 - Problema superficial
+**Problema explicado:** El control deslizante “Tamaño de texto” muestra solo “16px”, sin marcas de mínimo y máximo ni una vista previa, y su control es un cuadrado negro que no sigue el estilo del resto de la interfaz. Los interruptores “Reducir animaciones” y “Alto contraste” aparecen en gris sobre gris, por lo que cuesta distinguir su estado. Estas opciones son de accesibilidad y deberían ser fáciles de usar.
+ 
+![Problema 09: controles de visualización en Configuración](./assets/ux-08-configuracion.png)
+ 
+**Recomendaciones:**
+ 
+- Agregar marcas “A-” y “A+” y una línea de texto de ejemplo que cambie de tamaño.
+- Reforzar el contraste de los interruptores y mostrar “Activado/Desactivado”.
+###### Problema 10:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 1/4 - Problema superficial
+**Problema explicado:** El psicólogo recién registrado ve los pasos de verificación, pero no se informa un plazo estimado; solo se dice “Te avisaremos cuando puedas recibir citas”. Sin un tiempo orientativo, el usuario no sabe si debe esperar horas o días, y debe usar “Comprobar estado” repetidamente.
+ 
+![Problema 10: pantalla de cuenta en revisión sin plazo estimado](./assets/ux-03-verificacion-cuenta.png)
+ 
+**Recomendaciones:**
+ 
+- Indicar un plazo estimado (por ejemplo, “Suele tomar 1 a 2 días hábiles”).
+- Informar que se enviará un correo cuando la cuenta esté activa.
 
-#### 6.4.2. Auditoría recibida
-
-##### 6.4.2.1. Información del grupo auditor
-
-##### 6.4.2.2. Cronograma de auditoría recibida
-
-##### 6.4.2.3. Contenido de auditoría recibida
-
-##### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
 ## Capítulo VII: DevOps Practices
 
