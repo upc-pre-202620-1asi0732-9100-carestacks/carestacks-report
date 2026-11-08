@@ -8,7 +8,9 @@
 =====================================================================
 -->
 
+
 <!-- CARÁTULA -->
+
 <div align="center">
 
 <img src="assets/UPC_logo_transparente.png" alt="Logo UPC" width="180"/>
@@ -21,15 +23,15 @@
 
 ---
 
-1ASI0732
+**1ASI0732**
 
-Diseño de Experimentos de Ingeniería de Software
+**Diseño de Experimentos de Ingeniería de Software**
 
 **NRC**
 
 9100
 
-**Informe del Trabajo Parcial**
+## Informe del Avance 2 (AV2)
 
 **Docente**
 
@@ -45,8 +47,9 @@ CareConnect
 
 **Integrantes**
 
-<center>
-
+</div>
+<div align="center">
+ 
 | Código | Apellidos y Nombres |
 |---|---|
 | U202319881 | Baldeon Armas, Santiago Armando |
@@ -55,15 +58,16 @@ CareConnect
 | U20221G099 | Nikaido Vargas, Javier Masaru |
 | U202319698 | Salcedo Champi, Matias Rodolfo |
 
-</center>
+
 
 **Período 2026-20**
 
-Octubre, 2026
+Noviembre, 2026
 
 </div>
 
 ---
+
 # REGISTRO DE VERSIONES DEL INFORME
 
 | **Versión** | **Fecha** | **Autor** | **Descripción de modificación** |
@@ -3718,7 +3722,7 @@ La distribución de commits entre los cuatro repositorios refleja la división d
 
 **CareConnect – CareStacks** · Versión 1.0 · Septiembre de 2026
 
-Texto del acuerdo elaborado por el equipo en `chapter-5`. Describe el modelo SaaS propuesto; las cláusulas de suscripción y cobro no acreditan una integración de pagos ni una operación comercial en esta entrega.
+**Nota del equipo.** El Acuerdo que sigue es la versión 1.0 (septiembre de 2026), enlazada desde la sección Términos y Condiciones de la Landing Page y disponible en español (es_419) e inglés (en_US). Describe el modelo SaaS propuesto para CareConnect; las cláusulas de suscripción y cobro describen ese modelo y no acreditan una integración de pagos ni una operación comercial en esta entrega.
 
 Este documento explica, en lenguaje sencillo, los derechos, obligaciones y restricciones que aplican cuando usas CareConnect. Al crear una cuenta o usar la plataforma, aceptas este Acuerdo. Si no estás de acuerdo, te pedimos no usar el servicio.
 
@@ -3825,7 +3829,30 @@ Este Acuerdo se rige por las leyes de la República del Perú. Intentaremos reso
 
 ##### 5.2.8.16. Contacto
 
-Para consultas generales del proyecto: [canal público del equipo en GitHub](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues). El canal privado para reclamos relativos a datos personales queda pendiente de definir; no se deben incluir esos datos en consultas públicas.
+Para consultas generales del proyecto: [canal público del equipo en GitHub](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues). Para ejercer tus derechos de acceso, rectificación, cancelación y oposición sobre tus datos personales, escribe a careconnect@gmail.com. No incluyas datos de salud ni otros datos personales en las consultas públicas.
+
+##### 5.2.8.17. Alineación ética y profesional
+
+La redacción del Acuerdo se orientó por el Código de Ética y Práctica Profesional de la Ingeniería de Software de ACM/IEEE-CS (ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices, 1999) y por el código de ética del Colegio de Ingenieros del Perú (Colegio de Ingenieros del Perú, s.f.). La siguiente tabla relaciona las cláusulas del Acuerdo con los principios aplicados.
+
+| Cláusula del Acuerdo | Principio | Cómo se refleja |
+|---|---|---|
+| 5.2.8.3 y 5.2.8.12 (descripción del servicio y limitación de responsabilidad) | Público; Producto | Declara que CareConnect no reemplaza el criterio de un profesional de la salud ni atiende emergencias, y no promete más de lo que el producto hace. |
+| 5.2.8.6 y 5.2.8.9 (derechos y datos personales) | Público | Trata la información de salud como dato sensible conforme a la Ley N.° 29733 (Ley 29733, 2011) y exige un consentimiento que puede revocarse en cualquier momento. |
+| 5.2.8.4, 5.2.8.7 y 5.2.8.8 (cuenta, obligaciones y restricciones) | Juicio | Solicita información veraz y prohíbe el acceso a perfiles sin consentimiento y el uso fraudulento del servicio. |
+| 5.2.8.5 y 5.2.8.14 (planes y cambios al Acuerdo) | Público | Informa precios, renovación y cancelación antes de contratar, y avisa los cambios importantes. |
+| 5.2.8.11 (disponibilidad y soporte) | Producto; Juicio | Reconoce que el servicio puede interrumpirse y que las alertas no deben ser la única forma de controlar medicamentos críticos. |
+
+##### 5.2.8.18. Claridad y accesibilidad
+
+El Acuerdo se redactó pensando en personas cuidadoras y pacientes que no necesariamente tienen formación legal. Las decisiones de claridad y accesibilidad que pueden comprobarse en el propio texto son:
+
+- Lenguaje sencillo y trato directo en segunda persona.
+- Secciones numeradas con títulos descriptivos, lo que permite ubicar cada tema.
+- Definiciones de los términos clave en una tabla.
+- Listas separadas para derechos, obligaciones y restricciones de uso.
+- Disponibilidad en español (es_419) e inglés (en_US) mediante el selector de idioma de la Landing Page, que actualiza el atributo `lang` del documento y las etiquetas accesibles (secciones 4.3.1 y 6.1.3).
+
 
 
 ### 5.3. Video About-the-Product
@@ -4405,34 +4432,41 @@ La sección 7.4 queda fuera del alcance TB1. No se presenta el logging de consol
 
 ## Conclusiones
 
+
 ### Conclusiones y recomendaciones
 
-El Problem Statement planteado en la sección de Lean UX Problem Statements identificaba como brecha central la falta de coordinación entre cuidadores que atienden a un mismo paciente geriátrico, con tres consecuencias concretas: la imposibilidad de confirmar si otra persona ya administró una dosis, la omisión de dosis por parte del paciente ante la duda, y la reconstrucción manual del historial de evolución. Las entrevistas realizadas en el capítulo de Requirements Elicitation & Analysis confirman esta brecha con evidencia directa: la totalidad de los cuidadores entrevistados señaló la falta de coordinación en los cambios de turno como su principal problema, y la totalidad de los pacientes entrevistados reportó dudas sobre si ya había tomado una dosis. Esta evidencia valida el vacío declarado en el Problem Statement y respalda que la propuesta de valor de CareConnect apunta al problema correcto.
+#### Conclusiones del AV2
 
-Respecto a las Lean UX Assumptions, la evidencia recogida valida de forma consistente las suposiciones referidas a los usuarios y a los beneficios que estos obtendrían del producto: los cuidadores entrevistados emplean el teléfono móvil como herramienta principal de su jornada, confirmando la suposición de negocio correspondiente, y combinan pastilleros o cuadernos con alarmas del celular sin que ninguna herramienta esté integrada, lo cual coincide con los puntos de dolor declarados. Sin embargo, dos supuestos permanecen sin evidencia propia en esta entrega: la suposición de negocio sobre el modelo freemium no fue explorada con los cuidadores ni con los pacientes entrevistados, y las entrevistas del primer segmento cubrieron únicamente a cuidadores informales, de modo que queda pendiente validar las suposiciones de negocio asociadas a los cuidadores formales, tales como enfermeros o técnicos de salud en atención domiciliaria.
+El desarrollo de CareConnect permitió profundizar en la problemática de la coordinación del cuidado geriátrico, identificada inicialmente mediante el proceso Lean UX. Las entrevistas realizadas respaldan la necesidad de centralizar la información sobre medicación, actividades y evolución del paciente, especialmente cuando participan varios cuidadores. Sin embargo, los resultados obtenidos representan principalmente evidencia cualitativa sobre las necesidades y percepciones de los usuarios, por lo que todavía no permiten demostrar una reducción efectiva de errores de medicación o del tiempo empleado durante los cambios de turno.
 
-En cuanto a los seis Hypothesis Statements formulados, ninguno ha sido sometido todavía a un experimento formal, dado que el capítulo de Experiment-Driven Development corresponde a una entrega posterior dentro del ciclo de vida del proyecto. No obstante, el análisis cualitativo de las entrevistas ofrece evidencia de plausibilidad para las primeras tres hipótesis: la totalidad de los cuidadores solicitó de manera espontánea contar con un registro compartido en tiempo real y con la confirmación de la medicación administrada, funcionalidades que corresponden directamente a las suposiciones de características sobre las cuales se construyen dichas hipótesis. Las tres hipótesis restantes cuentan con un respaldo menor en esta entrega, pues solo uno de los cuidadores entrevistados mencionó explícitamente la falta de apoyo profesional inmediato, y ninguno de los participantes se refirió de forma espontánea a la posibilidad de compartir el perfil del paciente con otros cuidadores; por ello, estas hipótesis requieren una validación específica antes de poder considerarse confirmadas.
+En relación con las Lean UX Assumptions y los Hypothesis Statements, la validación del prototipo permitió identificar una percepción favorable hacia funcionalidades como la agenda compartida, los recordatorios y la confirmación de actividades. Al mismo tiempo, se reconocieron dificultades relacionadas con la visibilidad de determinadas acciones, la navegación, la legibilidad de los íconos y la comprensión de las notificaciones. Estos hallazgos evidencian que la utilidad percibida de una funcionalidad no garantiza su facilidad de uso, especialmente en un producto dirigido también a adultos mayores con distintos niveles de experiencia tecnológica.
 
-Como recomendación para el roadmap del proyecto, se propone priorizar durante la fase de Experiment-Driven Development los experimentos asociados a las tres primeras hipótesis, dado que cuentan con la evidencia cualitativa más sólida obtenida en esta entrega, y diseñar un experimento adicional dirigido específicamente a cuidadores formales con el fin de cerrar la brecha de validación de las suposiciones de negocio correspondientes. Asimismo, se recomienda incorporar en una futura ronda de entrevistas una pregunta explícita sobre la disposición de los participantes a compartir el perfil del paciente y a pagar por funcionalidades avanzadas, de manera que la hipótesis relacionada con la compartición de perfil y la suposición de negocio sobre el modelo freemium cuenten con evidencia propia antes de invertir en su desarrollo.
+Desde la perspectiva técnica, la revisión del diseño de base de datos permitió mejorar la representación de pacientes y cuidadores mediante entidades diferenciadas, fortalecer las relaciones entre Bounded Contexts y ampliar la trazabilidad de eventos, consentimientos y documentos. Estas correcciones contribuyen a que el modelo arquitectónico represente con mayor precisión las responsabilidades del dominio. No obstante, su incorporación al diseño no constituye por sí misma evidencia de que todas las restricciones y reglas de negocio hayan sido implementadas y verificadas en el backend.
 
+Finalmente, el AV2 permite orientar el proyecto hacia un proceso de mejora basado en evidencia, relacionando la calidad del software, la experiencia del usuario, las prácticas DevOps y la planificación experimental. Los criterios de éxito establecidos para CareConnect, como la reducción de errores de medicación, la disminución del tiempo de relevo y la retención de usuarios, requieren mediciones adicionales antes de determinar el cumplimiento de las hipótesis del producto. Por ello, resulta fundamental mantener una distinción clara entre funcionalidades diseñadas, pruebas ejecutadas y resultados efectivamente demostrados.
 
-### Resultados y recomendaciones de TB1
+#### Recomendaciones
 
-TB1 añade evidencia técnica a la propuesta desarrollada en AV1. La landing bilingüe se verificó publicada y el enlace de About the Product se corrigió; el video About the Team sigue pendiente. El backend y los clientes del cuidador incorporan pruebas reproducibles de registro, login, eventos y consentimiento. Tras corregir Agenda, pasan 16 pruebas backend, 36 rápidas web, 9 rápidas móviles y 9 escenarios HTTP por cliente. Los checks CI de los tres productos aprobaron sus commits de revisión.
+Como primera recomendación, se propone fortalecer la validación con participantes de ambos segmentos objetivo, utilizando tareas observables y métricas comparables. En particular, se deben evaluar los flujos de confirmación de medicación, consulta de actividades, recepción de alertas y compartición de perfiles. Se recomienda medir la tasa de éxito, el tiempo de ejecución, los errores cometidos y la facilidad de uso percibida. Asimismo, debe completarse la cantidad mínima de entrevistas requerida por segmento y acompañar los resultados con sus respectivas evidencias.
 
-La verificación mostró una diferencia relevante entre ocultar información en la interfaz y impedir su consulta en el servidor. La primera ejecución aún devolvía eventos sin sesión y después de revocar. El arreglo exige sesiones emitidas por IAM y propietario o consentimiento AGENDA vigente en cada ruta, y los clientes rechazan la caché tras 401/403. Esto aporta evidencia de funcionamiento de Agenda en el entorno probado; no demuestra la protección de todos los módulos ni una mejora clínica o de adherencia.
+En cuanto a la evolución del producto, se recomienda priorizar las mejoras de usabilidad identificadas durante las evaluaciones heurísticas, especialmente la visibilidad de las acciones, la claridad de las notificaciones y la legibilidad de los elementos de interfaz. Posteriormente, estas modificaciones deberán someterse a una nueva evaluación para comprobar si los problemas identificados fueron efectivamente corregidos, evitando asumir mejoras únicamente a partir de cambios visuales.
 
-El capítulo 7 documenta los builds y la entrega de cada producto. Existe evidencia de publicación de la landing y de un backend anterior en Render; las correcciones siguen en PRs. El APK debug de CI acredita compilación Android del cuidador, mientras la distribución release, iOS y la ejecución del paciente requieren verificaciones propias. Por eso ST-03 se mantiene parcial y no se presenta toda la solución como validada en producción.
+Desde el enfoque de arquitectura y calidad, se recomienda mantener la consistencia entre los diagramas de clases, el modelo de base de datos y la implementación de los servicios. Asimismo, deben verificarse las restricciones referenciales, las autorizaciones entre pacientes y cuidadores y la trazabilidad de las actividades de cuidado. Estas verificaciones deberán complementarse con pruebas automatizadas, análisis estático y mecanismos de monitoreo que permitan identificar fallos de manera oportuna.
 
-La siguiente iteración debe integrar versiones compatibles, comprobar que la app oficial Kotlin de paciente (`carestacks-frontend/main`) envía el token a Agenda, publicar los clientes con el backend HTTPS configurado y ejecutar desde sus interfaces la concesión, retirada de vistas y revocación. El contacto público y el enlace al acuerdo quedaron corregidos y publicados; queda sustituir About the Team y definir el canal privado para consultas relativas a datos personales. Después corresponde evaluar las hipótesis Lean UX con usuarios y métricas: las pruebas de software de TB1 no miden todavía retención, disposición a pagar, reducción de errores de medicación ni tiempo de relevo.
+Finalmente, para las siguientes iteraciones del roadmap, se recomienda priorizar experimentos vinculados con las hipótesis de mayor relevancia para la propuesta de valor, particularmente la confirmación compartida de actividades y la coordinación entre cuidadores. Cada experimento debe establecer previamente sus condiciones, métricas, criterios de éxito y mecanismos de recopilación de datos. De esta manera, CareConnect podrá evolucionar a partir de resultados verificables y no únicamente de supuestos, favoreciendo decisiones fundamentadas sobre el desarrollo de nuevas funcionalidades y la mejora continua de la plataforma.
 
----
 
 ## Bibliografía
 
+ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (Version 5.2). Association for Computing Machinery. https://www.acm.org/code-of-ethics/software-engineering-code
+
 Beard, J. R., Officer, A., de Carvalho, I. A., et al. (2016). The World report on ageing and health: A policy framework for healthy ageing. *The Lancet*, *387*(10033), 2145–2154. https://doi.org/10.1016/S0140-6736(15)00516-4
 
+Colegio de Ingenieros del Perú. (s.f.). *Código de ética del Colegio de Ingenieros del Perú*. https://cdcallao.cip.org.pe/wp-content/uploads/2024/09/codigo_de_etica_del_cip.pdf
+
 Instituto Nacional de Estadística e Informática. (2024). *Situación de la población adulta mayor: Informe técnico N.° 01*. https://www.inei.gob.pe/media/MenuRecursivo/boletines/informe-tecnico-poblacion-adulta-mayor.pdf
+
+Ley 29733. (2011). *Ley de protección de datos personales*. Congreso de la República del Perú. https://www.congreso.gob.pe/Docs/DGP/DIDP/files/ley_29733.pdf
 
 Microsoft. (s.f.). *REST API guidelines*. GitHub. https://github.com/microsoft/api-guidelines
 
@@ -4467,5 +4501,5 @@ The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https:/
 | Entrega | Título | Enlace (Microsoft Stream) |
 |---------|--------|---------------------------|
 | AV1 | Video About-the-Product | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQD9H0d9sU4tQJuKV5PStHyuAYjfXdpoDfRe-xCc_R1401s |
-| AV1 | Video de exposición | \<url> |
+| AV1 | Video de exposición | [Ver exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQDFERAyGNqUSKYZ1N-h8J84AYT8Zt4YMgGvLYk0nFd1Aa4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=8V3uxF) |
 | TB1 | Video de exposición | [Ver exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQA9unyXf7GAS7Hj7D1HUpNHATNj-KI3ciqOrg7tZizpxVQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=OWQiRK) |
