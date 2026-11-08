@@ -4585,35 +4585,46 @@ La ejecución requiere versiones compatibles de API y clientes web/móvil, permi
 
 #### 8.2.4. Scale Calculations and Decisions
 
-La escala se fija para las métricas **por círculo** definidas en §8.2.2.1. Un evento de medicación no constituye una observación independiente adicional. Se conserva la asignación 1:1, con nivel de significancia unilateral α=0.05 y potencia de planificación de 80 % por experimento. Los valores siguientes son **cálculos de diseño bajo supuestos explícitos**; no describen participantes reclutados, una línea base medida ni potencia efectivamente alcanzada.
+La escala se calcula para las métricas por círculo definidas en la sección 8.2.2.1. Un mismo círculo puede tener varios eventos de medicación, pero eso no cuenta como observaciones independientes adicionales; cada círculo aporta un solo valor promedio. Los números de esta sección son cálculos de diseño hechos antes de ejecutar el experimento; no describen participantes ya reclutados ni una línea base ya medida.
 
-##### Supuestos y cálculo reproducible
+##### Supuestos del cálculo
 
-Para dos grupos independientes de igual tamaño, la aproximación normal de planificación emplea:
+Para decidir cuántos círculos de cuidado se necesitan por grupo se fijaron, antes de calcular, los siguientes puntos de partida.
+
+- Nivel de significancia de 5 % por experimento. Es el riesgo que se acepta de detectar una diferencia que en realidad no existe.
+- Potencia de planificación de 80 % por experimento. Es la probabilidad que se busca de detectar la diferencia si esta realmente existe.
+- Reserva de pérdida del 15 % sobre el número mínimo de círculos. Esto previene que la muestra quede corta si algunos círculos no completan el seguimiento.
+- Asignación 1 a 1 entre el grupo de control y el grupo de variante.
+
+Con esos cuatro puntos de partida se aplica la fórmula estándar de tamaño de muestra para comparar dos grupos independientes de igual tamaño.
 
 $$n_0 = \frac{2(z_{1-\alpha}+z_{1-\beta})^2\sigma^2}{\delta^2}, \qquad n=\lceil n_0\rceil, \qquad n_{reclutar}=\left\lceil\frac{n}{0.85}\right\rceil$$
 
-Se usa $z_{0.95}=1.644854$ y $z_{0.80}=0.841621$. El 15 % de pérdida es una reserva de planificación, no una tasa observada. El cálculo aproxima el contraste de medias por círculo; no aplica una fórmula de dosis independientes ni presupone que un MDE forme parte de la hipótesis nula. La dependencia del tamaño de muestra respecto de α, potencia y variabilidad se describe en [NIST: Sample sizes required](https://www.itl.nist.gov/div898/handbook/prc/section2/prc222.htm). El factor 2 resulta de sumar las varianzas de los dos grupos de igual tamaño.
+En la fórmula, $z_{1-\alpha}$ y $z_{1-\beta}$ son valores fijos que corresponden al nivel de significancia y a la potencia elegidos (1.644854 y 0.841621 respectivamente), $\sigma$ es la variabilidad esperada de la métrica y $\delta$ es el Efecto Mínimo Detectable, es decir la diferencia mínima que se quiere poder detectar. El procedimiento sigue la guía de tamaño de muestra del [NIST](https://www.itl.nist.gov/div898/handbook/prc/section2/prc222.htm), una referencia pública de estadística aplicada.
 
-| Parámetro | EXP-01: TCOM | EXP-02: LRMR |
+La Certeza del cálculo queda fijada por el Nivel de Significación y la Potencia Estadística ya mencionados, mientras que la Precisión queda fijada por el Efecto Mínimo Detectable, llamado MDE por sus siglas en inglés, de cada experimento.
+
+| Parámetro | EXP-01, métrica TCOM | EXP-02, métrica LRMR |
 |---|---|---|
-| Unidad que aporta una observación | Proporción de confirmación por círculo, expresada entre 0 y 1. | Latencia media por círculo, entre 0 y 60 minutos. |
-| Efecto de interés | Diferencia de **0.15**, equivalente a 15 puntos porcentuales. Además se exige TCOM de B ≥80 %. | Reducción relativa de **40 %**, coherente con la tarjeta y §8.2.1. |
-| Variabilidad de planificación | Cota conservadora σ=0.50 para una variable en [0,1]. | Cota conservadora σ=30 min para una variable en [0,60]. |
-| Supuesto adicional | No se utiliza un porcentaje histórico de TCOM sin medir. | Escenario de planificación: LRMR de A=25 min y B=15 min; por tanto δ=10 min. **25 min es un supuesto, no una línea base observada**. |
-| Cálculo antes de redondear | $2(1.644854+0.841621)^2(0.50)^2/(0.15)^2=137.3902$. | $2(1.644854+0.841621)^2(30)^2/(10)^2=111.2860$. |
-| Círculos evaluables por grupo | **138**; 276 en total. | **112**; 224 en total. |
-| Objetivo de reclutamiento con reserva de 15 % | **163 por grupo; 326 en total**. | **132 por grupo; 264 en total**. |
+| Qué representa cada observación | La proporción de confirmaciones oportunas de un círculo, entre 0 y 1. | El promedio de minutos de demora de un círculo, entre 0 y 60. |
+| Diferencia mínima a detectar | 0.15, es decir 15 puntos porcentuales. La meta final de la variante B es llegar a 80 % o más. | Reducción relativa del 40 % frente al grupo de control, coherente con la tarjeta del experimento y con la hipótesis de la sección 8.2.1. |
+| Variabilidad asumida | 0.50, el valor máximo posible para una proporción entre 0 y 1. | 30 minutos, el valor máximo posible para una variable entre 0 y 60 minutos. |
+| Supuesto adicional usado solo para calcular | No se asume ningún porcentaje histórico de TCOM. | Se asume un escenario de planificación donde el control tarda 25 minutos en promedio y la variante 15 minutos; esto da una diferencia de 10 minutos. Este escenario es un supuesto para poder calcular, no un dato ya medido. |
+| Resultado antes de redondear | 137.39 | 111.29 |
+| Círculos necesarios por grupo | 138, o 276 en total entre los dos grupos. | 112, o 224 en total entre los dos grupos. |
+| Círculos a reclutar con la reserva del 15 % | 163 por grupo, 326 en total. | 132 por grupo, 264 en total. |
 
-Las cotas de variabilidad se justifican porque una variable acotada en [a,b] tiene desviación estándar como máximo (b−a)/2. Son deliberadamente conservadoras. En EXP-02, una reducción relativa de 40 % no determina por sí sola un tamaño de efecto estandarizado: necesita una media y una variabilidad de referencia. Por ello el escenario de 25→15 min se identifica como supuesto y no se equipara automáticamente con un valor de Cohen d.
+**En palabras simples.** Para EXP-01 se necesita reunir evidencia de al menos 163 círculos de cuidado por cada grupo antes de poder confiar en el resultado. Para EXP-02 el número equivalente es 132 círculos por grupo. Mientras no se alcancen esas cifras, cualquier diferencia observada entre el grupo de control y el grupo de variante se trata como una señal preliminar, no como una conclusión confirmada.
+
+Se usó el valor máximo posible de variabilidad a propósito, en vez de un valor observado, porque todavía no existe una medición real de cuánto varían estas métricas en CareConnect. Usar el máximo evita calcular una muestra más pequeña de la que realmente se necesitaría.
 
 ##### Decisión de escala operativa y factibilidad
 
-La ventana propuesta es **14 días consecutivos por experimento**, a partir de la disponibilidad de las variantes, auditoría y participantes; la agenda de eventos cierra con margen para completar el seguimiento hasta t0+90 min y las verificaciones de reversión. EXP-01 y EXP-02 utilizan círculos y cuidadores disjuntos y se programan secuencialmente. Alcanzar los objetivos conservadores de ambos requeriría **590 círculos distintos**; no hay evidencia incorporada de que esa base esté disponible.
+La ventana propuesta es de 14 días consecutivos por experimento, contados desde que estén listas las variantes, la auditoría y los participantes. EXP-01 y EXP-02 usan círculos y cuidadores distintos entre sí y se ejecutan uno después del otro, no al mismo tiempo. Juntar los 326 círculos de EXP-01 y los 264 de EXP-02 significaría conseguir 590 círculos de cuidado en total, y todavía no hay evidencia de que esa cantidad esté disponible para el equipo.
 
-**Regla de ejecución:** con una muestra inferior a la requerida, el trabajo se clasifica como **piloto de factibilidad y calidad de datos**, con resultados descriptivos y sin declarar eficacia o potencia del 80 %. El piloto verifica tareas, variabilidad, entrega de avisos y denominadores; sus datos no se reutilizan como si fueran una cohorte confirmatoria preespecificada. Un estudio confirmatorio posterior requiere un protocolo cerrado antes de recolectar su propia muestra. La ventana no se prolonga después de mirar valores p para perseguir significancia.
+**Regla de ejecución.** Si al momento de ejecutar no se alcanza el número de círculos calculado, el trabajo se presenta como un piloto de factibilidad, es decir una prueba para saber si el experimento funciona en la práctica y si los datos se pueden recolectar correctamente, en vez de un experimento confirmatorio con el 80 % de potencia buscado. Los datos del piloto no se reutilizan después como si hubieran sido parte de una muestra ya validada. Tampoco se extiende la ventana de 14 días simplemente para intentar que un resultado se vuelva significativo.
 
-El [cálculo reproducible de escala](assets/experiments/av2-consolidation-2026-11-07/calculate_scale.py) permite revisar los números sin depender de redondeos manuales. El diseño está especificado; la consecución de la muestra y la ejecución se acreditan mediante datos, no mediante este cálculo.
+El [cálculo reproducible de escala](assets/experiments/av2-consolidation-2026-11-07/calculate_scale.py) permite repetir estos números con un script en vez de depender de un cálculo manual.
 
 #### 8.2.5. Methods Selection
 
