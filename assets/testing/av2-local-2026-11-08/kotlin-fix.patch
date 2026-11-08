@@ -1,0 +1,135 @@
+diff --git a/.github/workflows/android-ci.yml b/.github/workflows/android-ci.yml
+new file mode 100644
+index 0000000..3f3639d
+--- /dev/null
++++ b/.github/workflows/android-ci.yml
+@@ -0,0 +1,38 @@
++name: Android verification
++
++on:
++  push:
++    branches: [develop, main]
++  pull_request:
++    branches: [develop, main]
++
++permissions:
++  contents: read
++
++jobs:
++  lint-test-build:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++      - uses: actions/setup-java@v4
++        with:
++          distribution: temurin
++          java-version: '21'
++      - uses: android-actions/setup-android@v3
++        with:
++          packages: platform-tools
++          log-accepted-android-sdk-licenses: false
++      - uses: gradle/actions/setup-gradle@v4
++      - name: Verify and build debug APK
++        run: |
++          chmod +x gradlew
++          ./gradlew --no-daemon lintDebug testDebugUnitTest assembleDebug
++      - name: Save reports and debug APK
++        if: always()
++        uses: actions/upload-artifact@v4
++        with:
++          name: android-verification
++          path: |
++            app/build/reports/lint-results-debug.*
++            app/build/test-results/testDebugUnitTest/*.xml
++            app/build/outputs/apk/debug/*.apk
+diff --git a/.gitignore b/.gitignore
+index f39276e..a734fed 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -3,6 +3,7 @@
+ 
+ # Gradle files
+ .gradle/
++.kotlin/
+ build/
+ 
+ # Local configuration file (sdk path, etc)
+@@ -34,4 +35,4 @@ render.experimental.xml
+ google-services.json
+ 
+ # Android Profiling
+-*.hprof
+\ No newline at end of file
++*.hprof
+diff --git a/VERIFICATION.md b/VERIFICATION.md
+new file mode 100644
+index 0000000..866a8d6
+--- /dev/null
++++ b/VERIFICATION.md
+@@ -0,0 +1,21 @@
++# Verificación local Android — AV2
++
++Revisión del 08/11/2026 sobre la base `922361d`. El cliente declara `minSdk = 24` y utiliza `java.time`, pero no habilitaba core library desugaring. Android Lint detectó 55 errores `NewApi`.
++
++Se habilita desugaring en `compileOptions` y se añade `desugar_jdk_libs:2.1.5` mediante el catálogo de versiones. La corrección mantiene el mínimo Android declarado; no oculta errores con una baseline ni desactiva comprobaciones.
++
++## Repetir la verificación
++
++Con JDK 21, SDK Android instalado y `ANDROID_HOME` configurado:
++
++```text
++./gradlew --no-daemon lintDebug testDebugUnitTest assembleDebug
++```
++
++En Windows se utiliza `gradlew.bat`. El wrapper fija Gradle 9.4.1 y el módulo utiliza compile SDK 36.1.
++
++El workflow `Android verification` repite esos comandos en PR y push a `develop`/`main` y conserva los informes y el APK debug como artifacts.
++
++Los reportes locales y el conteo de advertencias se incorporan al informe AV2. La prueba unitaria existente es una prueba de ejemplo; su aprobación no acredita los flujos de paciente. El APK generado tampoco sustituye la instalación, el recorrido integrado ni la validación con usuarios.
++
++Referencia de implementación: [Android Developers — library desugaring](https://developer.android.com/studio/write/java8-support#library-desugaring) y [changelog oficial de desugar_jdk_libs](https://github.com/google/desugar_jdk_libs/blob/master/CHANGELOG.md).
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+index 604f913..b45b501 100644
+--- a/app/build.gradle.kts
++++ b/app/build.gradle.kts
+@@ -33,6 +33,7 @@ android {
+         }
+     }
+     compileOptions {
++        isCoreLibraryDesugaringEnabled = true
+         sourceCompatibility = JavaVersion.VERSION_11
+         targetCompatibility = JavaVersion.VERSION_11
+     }
+@@ -42,6 +43,7 @@ android {
+ }
+ 
+ dependencies {
++    coreLibraryDesugaring(libs.desugar.jdk.libs)
+     implementation(platform(libs.androidx.compose.bom))
+     implementation(libs.androidx.activity.compose)
+     implementation(libs.androidx.compose.material3)
+@@ -74,4 +76,4 @@ dependencies {
+     implementation(libs.room.runtime)
+     implementation(libs.room.ktx)
+     ksp(libs.room.compiler)
+-}
+\ No newline at end of file
++}
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+index d2041ac..f57db44 100644
+--- a/gradle/libs.versions.toml
++++ b/gradle/libs.versions.toml
+@@ -1,4 +1,5 @@
+ [versions]
++desugarJdkLibs = "2.1.5"
+ agp = "9.2.1"
+ coilCompose = "3.4.0"
+ coreKtx = "1.18.0"
+@@ -19,6 +20,7 @@ room = "2.8.4"
+ tvMaterial = "1.1.0"
+ 
+ [libraries]
++desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
+ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+ coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
+ coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }

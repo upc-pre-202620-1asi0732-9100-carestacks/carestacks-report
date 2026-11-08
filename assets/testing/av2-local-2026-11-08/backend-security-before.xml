@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.carestacks.careconnect.SecurityBoundariesIntegrationTests" time="82.392" tests="9" errors="0" skipped="0" failures="6" flakes="0">
+  <testcase name="arbitraryOriginCannotPreflight" classname="com.carestacks.careconnect.SecurityBoundariesIntegrationTests" time="4.631">
+    <failure message="expected: &lt;403&gt; but was: &lt;200&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;403&gt; but was: &lt;200&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.carestacks.careconnect.SecurityBoundariesIntegrationTests.arbitraryOriginCannotPreflight(SecurityBoundariesIntegrationTests.java:37)
+</failure>
+    </testcase>
+  <testcase name="trustedFrontendCanPreflightAuthorizedRequests" classname="com.carestacks.careconnect.SecurityBoundariesIntegrationTests" time="0.121" />
+  <testcase name="h2ConsoleIsDisabledByDefault" classname="com.carestacks.careconnect.SecurityBoundariesIntegrationTests" time="0.012" />
+  <testcase name="issuedSessionWorksAndLogoutRevokesItAtTheFilter" classname="com.carestacks.careconnect.SecurityBoundariesIntegrationTests" time="1.78">
+    <failure message="expected: &lt;401&gt; but was: &lt;200&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;401&gt; but was: &lt;200&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.carestacks.careconnect.SecurityBoundariesIntegrationTests.issuedSessionWorksAndLogoutRevokesItAtTheFilter(SecurityBoundariesIntegrationTests.java:68)
+</failure>
+  </testcase>
+  <testcase name="diaryRequiresAnIssuedSession" classname="com.carestacks.careconnect.SecurityBoundariesIntegrationTests" time="0.063">
+    <failure message="expected: &lt;401&gt; but was: &lt;200&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;401&gt; but was: &lt;200&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.carestacks.careconnect.SecurityBoundariesIntegrationTests.diaryRequiresAnIssuedSession(SecurityBoundariesIntegrationTests.java:48)
+</failure>
+  </testcase>
+  <testcase name="internalMetricsAreNotAnonymous" classname="com.carestacks.careconnect.SecurityBoundariesIntegrationTests" time="0.215">
+    <failure message="expected: &lt;401&gt; but was: &lt;404&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;401&gt; but was: &lt;404&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.carestacks.careconnect.SecurityBoundariesIntegrationTests.internalMetricsAreNotAnonymous(SecurityBoundariesIntegrationTests.java:78)
+</failure>
+  </testcase>
+  <testcase name="apiDocumentationRemainsPublic" classname="com.carestacks.careconnect.SecurityBoundariesIntegrationTests" time="5.45">
+    </testcase>
+  <testcase name="fabricatedBearerDoesNotAuthenticate" classname="com.carestacks.careconnect.SecurityBoundariesIntegrationTests" time="0.148">
+    <failure message="expected: &lt;401&gt; but was: &lt;200&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;401&gt; but was: &lt;200&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.carestacks.careconnect.SecurityBoundariesIntegrationTests.fabricatedBearerDoesNotAuthenticate(SecurityBoundariesIntegrationTests.java:53)
+</failure>
+  </testcase>
+  <testcase name="evenAnUnmappedApiRouteRequiresAuthentication" classname="com.carestacks.careconnect.SecurityBoundariesIntegrationTests" time="0.129">
+    <failure message="expected: &lt;401&gt; but was: &lt;404&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;401&gt; but was: &lt;404&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.carestacks.careconnect.SecurityBoundariesIntegrationTests.evenAnUnmappedApiRouteRequiresAuthentication(SecurityBoundariesIntegrationTests.java:73)
+</failure>
+  </testcase>
+</testsuite>

@@ -1,5 +1,7 @@
 # Integración AV2 en develop — 08/11/2026
 
+**Seguimiento posterior.** Este registro conserva el estado encontrado durante el merge. La [revisión posterior con Sprint Backlog, benchmark y correcciones locales](../../experiments/av2-completion-2026-11-08/verification.md) actualiza qué hallazgos quedaron resueltos y cuáles continúan abiertos. Su verificador corresponde al estado histórico; para el contenido actual se utiliza el verificador enlazado en la revisión posterior.
+
 Se integraron los aportes disponibles del informe en `develop`, por solicitud del equipo. Esta integración no modifica `main`, no despliega productos y no acredita por sí sola el cierre académico de AV2.
 
 ## Versiones integradas

@@ -100,6 +100,7 @@ Noviembre, 2026
 | 2.1.1 | 24/10/2026 | Matias Salcedo | Revisó el bloque D contra la guía AV2 y el enunciado: corrigió el As-Is, trazó preguntas y tarjetas, unificó hipótesis y métricas, explicitó condiciones y separó planificación de resultados (`chapter-8`) |
 | 2.2.0 | 07/11/2026 | Matias Salcedo | Consolidó D con los cuatro commits de Emy127: alineó escala, métodos, tracking e historias con el As-Is real; completó las tarjetas con cálculos reproducibles y documentó la corrección de enlaces de la landing en `chapter-8` |
 | 2.3.0 | 08/11/2026 | Matias Salcedo / equipo CareStacks | Integró los aportes AV2 de los capítulos IV, VI, VII y VIII en `develop`, conservando la carátula y conclusiones AV2; corrigió referencias y registró la [verificación y los vacíos de entrega](assets/integration/av2-2026-11-08/verification.md). |
+| 2.3.1 | 08/11/2026 | Matias Salcedo | Completó la planificación del Sprint Backlog To-Be y la comparación de herramientas DevOps; corrigió compatibilidad Android y controles del backend, con [resultados y faltantes actualizados](assets/experiments/av2-completion-2026-11-08/verification.md). |
 
 # Project Report Collaboration Insights
 
@@ -346,6 +347,8 @@ TB1:
       - [7.4.3. Alerting Pipeline Components](#743-alerting-pipeline-components)
       - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
       - [7.4.5. Benchmark](#745-benchmark)
+        - [7.4.5.1. Selección de herramientas para el pipeline](#7451-selección-de-herramientas-para-el-pipeline)
+        - [7.4.5.2. Mediciones del software frente a metas](#7452-mediciones-del-software-frente-a-metas)
 - [Part III: Experiment-Driven Lifecycle](#part-iii-experiment-driven-lifecycle)
   - [Capítulo VIII: Experiment-Driven Development](#capítulo-viii-experiment-driven-development)
     - [8.1. Experiment Planning](#81-experiment-planning)
@@ -4017,7 +4020,7 @@ El análisis estático de código se ejecutó por cada producto utilizando la he
 | Frontend Web Application | `carestacks-web` | Dart / Flutter (target Web) | `flutter analyze` con `flutter_lints` | Workflow *Web CI* de GitHub Actions |
 | Mobile Application (cuidador) | `carestacks-mobile-app` | Dart / Flutter (iOS / Android) | `flutter analyze` con `flutter_lints` | Workflow *Mobile CI* de GitHub Actions |
 | Landing Page | `carestacks-landing-page` | TypeScript / React + Vite | ESLint (`npm run lint`) | Workflow de CI de la Landing Page (histórico) |
-| Mobile Application (paciente) | `carestacks-frontend` | Kotlin / Jetpack Compose (Gradle) | Android Lint (`./gradlew lint`) | No ejecutado; el repositorio no tiene workflow de CI |
+| Mobile Application (paciente) | `carestacks-frontend` | Kotlin / Jetpack Compose (Gradle) | Android Lint (`lintDebug`) | Ejecutado el 08/11/2026: 0 errores, 46 advertencias; workflow en `develop` |
  
 ##### 6.2.1.1. Coding standard & Code conventions
  
@@ -4043,7 +4046,7 @@ flutter test           -> success
 flutter build web --release / flutter build apk --debug -> success
 ```
  
-**RESTful API (Java / Spring Boot).** El workflow *Backend CI* ejecuta `mvn -B clean verify` con Java 25. El repositorio no incluye Maven Wrapper (`mvnw`), por lo que se utiliza la instalación de Maven del runner. La verificación finalizó con éxito en el Pull Request #3 y en la última ejecución sobre `develop` (06/11/2026).
+**RESTful API (Java / Spring Boot).** El workflow *Backend CI* ejecuta `mvn -B clean verify` con Java 25. La revisión local AV2 del commit `4aa830b` aprobó las 26 pruebas y el empaquetado. Las dos ejecuciones CI del mismo commit también aprobaron; la [verificación local AV2](assets/testing/av2-local-2026-11-08/verification.md) conserva resultados y URLs. El repositorio no incluye Maven Wrapper y utiliza Maven instalado en el runner.
  
 ```text
 mvn -B clean verify    -> Build and run tests: success (CI, Pull Request #3 y develop)
@@ -4051,7 +4054,7 @@ mvn -B clean verify    -> Build and run tests: success (CI, Pull Request #3 y de
  
 **Landing Page (React + TypeScript).** La revisión del 07/11/2026 ejecutó `npm run lint` y `npm run build` sobre la corrección `62772ca`, ambas con salida 0. La [verificación de enlaces](assets/testing/landing-links-2026-11-07/verification.md) y la [publicación](assets/deployment/av2-landing-2026-11-07/verification.md) registran el resultado local y la ejecución CI aprobada. El repositorio requiere acceso autenticado; su ausencia de la lista pública no equivale a una falla del análisis. La ejecución de `ab2d60e` en §7.1 se conserva como evidencia histórica del TB1.
  
-**Aplicación Android del paciente (Kotlin).** El repositorio `carestacks-frontend` incluye `gradlew`, pero no cuenta con workflow de CI ni con Pull Requests. No se ejecutó `./gradlew lint`; esta verificación queda como mejora pendiente.
+**Aplicación Android del paciente (Kotlin).** La revisión del 08/11/2026 detectó 55 errores `NewApi` por usar `java.time` con `minSdk=24` sin core library desugaring. Se habilitó esa compatibilidad y se declaró `desugar_jdk_libs:2.1.5` en el catálogo. En `64308ce`, `lintDebug` finalizó con 0 errores y 46 advertencias; `testDebugUnitTest` y `assembleDebug` aprobaron. La única prueba unitaria existente es un ejemplo aritmético; no acredita el flujo del paciente. Se añadió el workflow `Android verification` a `develop`. Véase la [verificación local AV2](assets/testing/av2-local-2026-11-08/verification.md).
  
 **Referencias de la ejecución en CI:**
  
@@ -4067,9 +4070,9 @@ En esta sección se evalúa la calidad del código (errores, advertencias, confi
 |---|---|---|---|---|---|
 | carestacks-web | `flutter analyze` (CI, PR #1) | 0 | 0 | 36 pruebas rápidas aprobadas | Aprobado |
 | carestacks-mobile-app | `flutter analyze` (CI, PR #1) | 0 | 0 | 9 pruebas rápidas aprobadas | Aprobado |
-| carestacks-backend-api | `mvn -B clean verify` (CI, PR #3) | 0 fallos de compilación ni de pruebas | No extraídas (el log de compilación no es público sin autenticación) | 16 pruebas del backend aprobadas | Build exitoso |
+| carestacks-backend-api | `mvn -B clean verify` (`4aa830b`, 08/11/2026) | 0 fallos de compilación/pruebas | No cuantificadas; hay avisos de API obsoleta en tests | 26 pruebas aprobadas | Build y CI aprobados; aún sin publicar a producción |
 | carestacks-landing-page | `npm run lint` y build (`62772ca`, 07/11/2026) | 0 reportados | 0 reportadas por lint | No aplica | Aprobado; ver registros enlazados |
-| carestacks-frontend (Android) | No ejecutado | — | — | — | Sin verificación |
+| carestacks-frontend (Android) | Android Lint (`64308ce`) | 0 | 46 | 1 ejemplo aprobado; flujo no probado | Lint y APK debug aprobados localmente |
  
 El Pull Request #1 del backend documenta además una verificación local: `mvn -B -q test` con Java 25 y Spring Boot 4.0.6 ejecutó 10 pruebas con 0 fallos, 0 errores y 0 omitidas. Las métricas de duplicación de código, complejidad y cobertura no se midieron, porque el equipo no integra una plataforma de análisis continuo como SonarCloud.
  
@@ -4087,15 +4090,15 @@ El análisis de seguridad combinó las pruebas de sistema de la sección 6.1 con
 | 1 | Las rutas de Agenda aceptaban sesiones con tokens fabricables y no verificaban la propiedad del recurso ni el consentimiento vigente. Las pruebas de sistema SYS-06 y SYS-07 fallaban. | Backend: módulo Agenda (diez rutas) | Alta | CWE-285: Improper Authorization | Corregido en el Pull Request #3 del backend |
 | 2 | Las listas rechazadas por el servidor (401/403) permanecían en la caché de los clientes. | Frontend Web y aplicación móvil del cuidador | Media | CWE-524: Use of Cache Containing Sensitive Information | Corregido en el Pull Request #1 de web y de móvil |
 | 3 | Las sesiones son locales a una instancia y se pierden al reiniciar el servicio, por lo que se requiere iniciar sesión nuevamente. | Backend: módulo IAM | Baja | — | Limitación conocida y documentada |
-| 4 | Política CORS permisiva: `allowedOriginPatterns("*")` sobre `/api/**`, con todos los encabezados permitidos. Cualquier origen puede invocar la API. | `carestacks-backend-api/src/main/java/com/carestacks/careconnect/shared/infrastructure/CorsConfig.java` | Media | CWE-942: Permissive Cross-domain Policy | Pendiente |
+| 4 | La revisión inicial encontró orígenes arbitrarios en `/api/**`. En `4aa830b` se usan orígenes exactos configurables, sin comodines. | `CorsConfig.java` | Media | CWE-942: Permissive Cross-domain Policy | Corregido en `develop` y probado localmente/CI; publicación y comprobación del entorno aún no realizadas |
  
 **Observaciones adicionales de la revisión manual:**
  
 | # | Observación | Ubicación | Severidad | Referencia (CWE) |
 |---|---|---|---|---|
-| 5 | La cadena de filtros de Spring Security deshabilita CSRF y declara `anyRequest().permitAll()`. La autenticación de Agenda e IAM se valida manualmente por *Bearer token* en los controllers, por lo que un endpoint nuevo sin esa validación quedaría público. | `SecurityConfig.java` | Media | CWE-862: Missing Authorization |
-| 6 | La consola de H2 está habilitada (`spring.h2.console.enabled: true`, ruta `/h2-console`); debe desactivarse en el perfil de producción. | `application.yml` | Media | CWE-489: Active Debug Code |
-| 7 | Actuator expone los endpoints `health`, `info` y `metrics`; `health.show-details` está en `never`. | `application.yml` | Baja | CWE-200: Exposure of Sensitive Information |
+| 5 | La configuración anterior utilizaba `anyRequest().permitAll()`. En `4aa830b` la cadena valida sesiones opacas de IAM y exige autenticación por defecto; registro/login, documentación y health son públicos explícitos. La autorización del recurso permanece en los controllers. | `SecurityConfig.java` y `IssuedSessionFilter.java` | Media | CWE-862: Missing Authorization |
+| 6 | En `4aa830b` la consola H2 está deshabilitada por defecto con `APP_H2_CONSOLE_ENABLED=false`. El perfil de pruebas carga la configuración real y sustituye solo su base desechable. | `application.yml` | Media | CWE-489: Active Debug Code |
+| 7 | Health permanece público y sin detalle; `info` y `metrics` requieren sesión emitida por IAM desde `4aa830b`. | `application.yml` / `SecurityConfig.java` | Baja | CWE-200: Exposure of Sensitive Information |
  
 No se encontraron contraseñas ni claves reales versionadas en el repositorio: el archivo `.env.example` utiliza valores de ejemplo (por ejemplo, `DB_PASSWORD=change-me`) y `SUPABASE_SERVICE_ROLE_KEY` no está escrita en el código.
  
@@ -4104,10 +4107,12 @@ No se encontraron contraseñas ni claves reales versionadas en el repositorio: e
 - **Hallazgo 1:** se reemplazaron los tokens fabricables por sesiones opacas de 30 minutos que el cierre de sesión revoca, y se exige una sesión emitida por IAM junto con propiedad o consentimiento `AGENDA` vigente en las diez rutas. Tras la corrección pasan las 16 pruebas del backend y los 9 escenarios de sistema por cliente.
 - **Hallazgo 2:** los clientes envían el token en cada solicitud y eliminan de la caché la lista rechazada ante una respuesta 401 o 403.
 - **Hallazgo 3:** como mejora futura, almacenar las sesiones en un repositorio compartido (base de datos o Redis) para que sobrevivan a reinicios y a múltiples instancias.
-- **Hallazgo 4:** restringir la política CORS a los orígenes conocidos (el origen HTTPS de la Frontend Web desplegada y el dominio de la Landing Page, `https://carestacks-landing-page.vercel.app`), tal como se plantea en la sección 7.2.2.
-- **Observación 5:** aplicar autorización por defecto en `SecurityFilterChain` (`anyRequest().authenticated()`) y declarar de forma explícita las rutas públicas.
-- **Observación 6:** deshabilitar la consola de H2 mediante el perfil de producción.
+- **Hallazgo 4:** se restringió CORS a los orígenes HTTPS de web y landing; `APP_CORS_ALLOWED_ORIGINS` permite añadir orígenes exactos de desarrollo. La prueba acepta el frontend conocido y rechaza un origen arbitrario.
+- **Observación 5:** se incorporó autenticación común con la sesión opaca vigente de IAM. Las pruebas rechazan ausencia de sesión, token fabricado y sesión revocada, y mantienen login/registro, Swagger y health accesibles. Esto no sustituye la revisión de propiedad y consentimiento de cada recurso.
+- **Observación 6:** se deshabilitó la consola H2 por defecto. La configuración aplicada en producción debe comprobarse después del merge y despliegue final.
 - **Gestión de secretos:** las credenciales no se incluyen en el repositorio; se almacenan en GitHub Secrets o GitHub Environments y la configuración por ambiente se administra mediante variables de entorno (por ejemplo, `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` y `SPRING_DATASOURCE_PASSWORD`).
+**Cierre de la revisión local — 08/11/2026.** Los cambios `4aa830b` (backend) y `64308ce` (Kotlin) están en `develop`. La [verificación local AV2](assets/testing/av2-local-2026-11-08/verification.md) incluye resultados antes/después, parches, límites y estado de CI. No se hizo merge a `main` ni despliegue de estos productos. ST-03 sigue requiriendo el recorrido integrado en los entornos y dispositivos objetivo.
+
 #### 6.2.2. Reviews
  
 Las reviews constituyen la verificación manual del código realizada por los integrantes del equipo como parte del flujo de trabajo. El equipo gestiona la integración de los cambios mediante Pull Requests en GitHub, integrados al flujo de trabajo GitFlow: cada nueva funcionalidad o corrección se desarrolla en una rama de tipo `feature/*` o `test/*` y se integra a `develop`, y posteriormente a `main`, a través de un Pull Request. De esta manera, ningún cambio llega directamente a las ramas principales, sino que pasa primero por un Pull Request donde puede ser inspeccionado.
@@ -5442,6 +5447,52 @@ Durante el incidente simulado se recibieron los dos correos del ciclo: el aviso 
 **Mejora propuesta.** Las notificaciones llegan a un único destinatario. Se recomienda agregar los correos de los demás integrantes como alert contacts, o integrar un canal compartido del equipo, para que la respuesta no dependa de una sola persona.
  
 #### 7.4.5. Benchmark
+
+##### 7.4.5.1. Selección de herramientas para el pipeline
+
+**Evaluación documental — 08/11/2026.** Se comparan alternativas para fundamentar la continuidad de las herramientas del pipeline existente. Esta evaluación se añade después de su implementación; no se atribuye retrospectivamente una comparación al despliegue del 05/11. Las capacidades se contrastaron en documentación oficial; el costo de adopción y la decisión son juicios del equipo para este proyecto, no resultados de un ensayo de rendimiento entre proveedores.
+
+**Criterios de selección.** C1: cubrir el stage requerido con el stack Java 25/Spring Boot, Flutter o React/Vite; C2: trazabilidad desde GitHub y configuración reproducible; C3: carga de administración y migración para cinco integrantes; C4: compatibilidad con la evidencia ya disponible; C5: límites operativos relevantes, en particular arranque en frío, secretos y monitoreo independiente. Se comparan opciones que cubren la función; se prefiere la de menor cambio operativo cuando no hay una mejora demostrada que justifique migrar. No se asignan tiempos, precios ni puntuaciones experimentales sin medición.
+
+**A. Integración, build y testing.**
+
+| Alternativa | Capacidades y límites comprobados | Evaluación para CareConnect |
+|---|---|---|
+| GitHub Actions | Workflows por eventos de PR/push, jobs y runners administrados o propios; automatiza build, test y despliegue. [Fuente oficial](https://docs.github.com/en/actions/get-started/understand-github-actions). | **Seleccionada para CI.** C1–C4: los comandos Maven, Flutter y npm ya están versionados en los repositorios y sus resultados se vinculan al commit. Conserva el control de versiones y revisión actuales sin operar un servidor de CI. |
+| GitLab CI/CD con repositorio GitHub externo | Conecta un repositorio externo mediante mirroring y puede ejecutar pipelines de PR; la funcionalidad documentada corresponde a Premium/Ultimate y tiene restricciones con forks. [Fuente oficial](https://docs.gitlab.com/ci/ci_cd_for_external_repos/). | C1–C2: alternativa funcional. C3–C4: introduce un proyecto espejo, otra integración y condiciones de plan que no están acreditadas en el entorno del equipo. No se selecciona para esta iteración. |
+| Jenkins | El controller organiza jobs y agentes; los agentes requieren Java y conectividad con el controller. [Fuente oficial](https://www.jenkins.io/doc/book/using/using-agents/). | C1–C2: permite ejecutar las herramientas del proyecto. C3: exige administrar controller/agentes, actualizaciones y disponibilidad. No se identificó una necesidad de infraestructura propia que compense esa carga en AV2. |
+
+**Decisión y gate.** Se mantiene GitHub Actions para build/test. Los comandos deben finalizar correctamente antes de integrar; disponer de un workflow no demuestra por sí solo que el despliegue esté condicionado a ese resultado. La configuración histórica y la evidencia de ejecución se detallan en §7.1–7.3.
+
+**B. Delivery y deployment del API.**
+
+| Alternativa | Capacidades y límites comprobados | Evaluación para CareConnect |
+|---|---|---|
+| Render | Permite despliegues mediante hooks invocables desde CI y servicios web. Su plan Free suspende el servicio tras quince minutos sin tráfico; no garantiza ausencia de arranque en frío. [Deploy hooks](https://render.com/docs/deploy-hooks), [límites del plan](https://render.com/docs/free). | **Se mantiene para el entorno académico.** C1–C4: API y evidencia existentes. C5: el arranque medido de 166.30 s incumple la meta de §7.4.5.2; la selección no declara resuelto ese incumplimiento. Los hooks son secretos y deben almacenarse en el servicio de CI. |
+| Railway | Documenta despliegue de Spring Boot desde un repositorio GitHub o mediante Docker. [Guía oficial](https://railway.com/guides/spring-boot). | C1–C2: alternativa compatible que merece evaluación si se decide cambiar el alojamiento. C3–C5: no se incorporó una configuración ni medición equivalente del proyecto que demuestre una mejora de latencia o costo; no se migra basándose solo en la disponibilidad de la guía. |
+
+**Decisión.** Mantener Render conserva una ruta de entrega ya acreditada, con el incumplimiento de arranque visible. Para exigir una disponibilidad sostenida debe evaluarse una instancia sin suspensión y repetir la medición; el ping periódico no sustituye esa garantía. Esta comparación no ejecuta una contratación ni una migración.
+
+**C. Delivery y deployment de la landing.**
+
+| Alternativa | Capacidades comprobadas | Evaluación para CareConnect |
+|---|---|---|
+| Vercel | Integración Git con previews por rama y despliegue de la rama de producción; permite rollback del dominio. [Fuente oficial](https://vercel.com/docs/git). | **Se mantiene para la landing React/Vite.** C1–C4: ya existe alias público y [publicación verificada](assets/deployment/av2-landing-2026-11-07/verification.md). La revisión AV2 se publicó desde `chapter-8` por CLI; no se presenta como merge a `main`. |
+| Netlify | Configura comando de build, directorio publicado, variables y configuración versionada; puede construir al recibir cambios del proveedor Git. [Fuente oficial](https://docs.netlify.com/build/configure-builds/overview/). | C1–C2: puede publicar el bundle estático. C3–C4: requeriría configurar y volver a verificar rutas, idiomas y dominio; no hay un problema acreditado del alojamiento actual que justifique esa migración. |
+
+El frontend Flutter Web conserva su alojamiento documentado en Render. Esta selección de la landing no acredita una migración ni una nueva publicación del frontend, y los builds móviles generan artefactos distribuidos mediante su flujo propio.
+
+**D. Operation: monitoreo, incidentes y alertas.**
+
+| Alternativa | Capacidades y límites comprobados | Evaluación para CareConnect |
+|---|---|---|
+| UptimeRobot | El plan Free documenta comprobación cada cinco minutos y monitores HTTP/puerto/ping, con límites de integraciones y usuarios. [Plan oficial](https://uptimerobot.com/pricing/). | **Se mantiene para monitoreo externo.** C1, C3 y C4: hay monitores, correos e incidentes documentados en §7.4.2–7.4.4 sin administrar un servidor adicional. C5: el intervalo no garantiza detección inmediata. |
+| Better Stack | Monitorea códigos HTTP, crea incidentes y notifica mediante responsable de guardia o política de escalamiento. [Fuente oficial](https://betterstack.com/docs/uptime/monitoring-start/). | C1–C2: alternativa cuando el proyecto requiera un esquema formal de guardias/escalamiento. C3–C4: ese proceso y su configuración no están acreditados en AV2; no se atribuye una mayor eficacia sin probarlo. |
+| Uptime Kuma | Solución de monitoreo autohospedada con instalación propia. [Repositorio oficial](https://github.com/louislam/uptime-kuma). | C1: alternativa controlada por el equipo. C3 y C5: añade operación y persistencia del monitor; ubicarlo en el mismo host que el API reduce la independencia frente a una caída. No se selecciona para esta etapa. |
+
+**Resultado de selección.** GitHub Actions + Render para API + Vercel para landing + UptimeRobot forman la combinación mantenida. Actuator complementa al monitor externo con el estado interno del backend; no compite con él. Se conservan las evidencias existentes y se explicitan sus límites. La comparación documental justifica el ajuste al proyecto; la sección siguiente conserva por separado las mediciones reales del software y sus metas.
+
+##### 7.4.5.2. Mediciones del software frente a metas
  
 El benchmark mide el rendimiento de los productos en producción y lo compara con metas definidas por el equipo. Se realizaron tres pruebas el 05/11/2026 desde Lima, Perú. El backend está alojado en Render (Oregón, Estados Unidos), por lo que las latencias del API incluyen esa distancia de red.
  
@@ -5959,6 +6010,90 @@ El aviso común al minuto 0 y su entrega instrumentada son prerrequisitos técni
 
 ##### 8.3.3.1. To-Be Sprint Backlogs
 
+**Plan propuesto — 08/11/2026.** Se descompone el Product Backlog de §8.3.2 en dos sprints de diez días laborables. Las estimaciones son horas de esfuerzo, no duración transcurrida ni horas ya trabajadas. El día 1 de cada sprint es relativo a su inicio autorizado; no se atribuyen fechas, asignaciones personales ni implementación realizadas.
+
+La prioridad conserva ERQ-01 antes de ERQ-02 y la dependencia de auditoría/cierre común. La trazabilidad con [Impact Mapping](#34-impact-mapping) se concreta en el actor cuidador/co-cuidador: registrar y compartir estados para coordinar el cuidado (EXP-01), y resolver registros con avisos sin saturación (EXP-02). TCOM, TSC y UR evalúan el primer impacto; LRMR, TNR y NOR, el segundo.
+
+**Capacidad de referencia.** Cinco roles funcionales × diez días × cuatro horas de foco = 200 h por sprint, con límite de 40 h por rol. Es un supuesto para comprobar factibilidad; los roles no representan una asignación personal confirmada. Si la disponibilidad real es menor, se reduce el alcance manteniendo dependencias y controles comunes. Los Story Points del Product Backlog no se convierten mediante una tasa fija a horas.
+
+| Rol propuesto | Responsabilidad |
+|---|---|
+| BE-1 | Backend: asignación, auditoría y estados |
+| BE-2 | Backend: permisos, contratos y avisos |
+| FL-1 | Flutter web e integración compartida |
+| FL-2 | Flutter móvil e integración compartida |
+| QA-OPS | Pruebas, pipeline y verificación de datos |
+
+| Sprint | Objetivo | Historias | SP de referencia | Tareas | Horas | Holgura sobre 200 h |
+|---|---|---|---|---|---|---|
+| S1 | Auditoría común y variante EXP-01 listas para ensayo técnico. | TS-02, US-07, US-01, TS-01, US-02, US-05 | 21 | 24 | 140 | 60 |
+| S2 | Aviso común y variante EXP-02 listas para ensayo técnico independiente. | US-03, US-04, US-06 | 7 | 13 | 74 | 126 |
+
+| Rol | Horas S1 | Horas S2 | Capacidad por sprint |
+|---|---|---|---|
+| BE-1 | 34 | 20 | 40 h |
+| BE-2 | 22 | 12 | 40 h |
+| FL-1 | 30 | 10 | 40 h |
+| FL-2 | 18 | 18 | 40 h |
+| QA-OPS | 36 | 14 | 40 h |
+
+###### Sprint S1 — desglose de ingeniería
+
+| Tarea | Historia | Rol | Horas | Dependencias | Trabajo y criterio de aceptación |
+|---|---|---|---|---|---|
+| S1-01 | TS-02 | BE-1 | 6 | Sin predecesora | Definir el esquema de asignación por círculo y la agenda congelada. **Aceptación:** Una variante por círculo; eventos elegibles conservan horarios originales. |
+| S1-02 | TS-02 | BE-1 | 8 | S1-01 | Implementar asignación persistente y separación de participantes entre experimentos. **Aceptación:** Reinicios no alteran la asignación; un participante no integra círculos contrapuestos. |
+| S1-03 | TS-02 | BE-2 | 6 | S1-01 | Implementar auditoría común con IDs únicos y seudónimos. **Aceptación:** A y B registran el mismo esquema; reintentos no duplican acciones ni incluyen texto clínico. |
+| S1-04 | TS-02 | QA-OPS | 6 | S1-02, S1-03 | Preparar exportación y validación de denominadores y seguimiento. **Aceptación:** La agenda exportada reconcilia eventos, pérdidas y ventanas hasta +90 minutos. |
+| S1-05 | TS-02 | QA-OPS | 6 | S1-04 | Incorporar fixtures sintéticos y contratos de auditoría al CI. **Aceptación:** El pipeline rechaza variantes mezcladas, IDs duplicados y campos sensibles. |
+| S1-06 | US-07 | BE-2 | 6 | S1-03 | Implementar cierre autenticado con motivo permitido. **Aceptación:** Emite MED_RESOLVED_WITH_REASON y conserva usuario seudónimo y hora del servidor. |
+| S1-07 | US-07 | BE-1 | 6 | S1-06 | Asegurar exclusión entre cierre con motivo y confirmación. **Aceptación:** El cierre alimenta LRMR/TNR y no incrementa TCOM; reintentos son idempotentes. |
+| S1-08 | US-07 | FL-1 | 6 | S1-06 | Integrar el formulario de cierre en ambos clientes Flutter. **Aceptación:** Web y móvil muestran los motivos permitidos y el estado aceptado por el servidor. |
+| S1-09 | US-07 | QA-OPS | 4 | S1-07, S1-08 | Verificar permisos y persistencia del cierre en A y B. **Aceptación:** Casos sin sesión, acceso revocado y repetición cubiertos; no hay diferencia instrumental entre grupos. |
+| S1-10 | US-01 | FL-1 | 6 | S1-03 | Implementar pulsación sostenida accesible en Flutter web. **Aceptación:** En B se exige un segundo; A conserva el botón actual y la auditoría común. |
+| S1-11 | US-01 | FL-2 | 6 | S1-03 | Implementar la interacción equivalente en Flutter móvil. **Aceptación:** La interacción se cancela al soltar antes de un segundo y comunica el estado. |
+| S1-12 | US-01 | BE-2 | 4 | S1-02, S1-03 | Resolver la variante desde servidor y auditar MED_CONFIRMED. **Aceptación:** El cliente no elige su grupo; el evento usa hora del servidor e ID idempotente. |
+| S1-13 | US-01 | QA-OPS | 6 | S1-10, S1-11, S1-12 | Automatizar confirmación, cancelación y control de variante. **Aceptación:** Casos de pulsación incompleta, reintento y variante A/B aprobados en ambos clientes. |
+| S1-14 | TS-01 | BE-1 | 8 | S1-03 | Implementar el canal de propagación compatible con Spring Boot. **Aceptación:** Propaga confirmación y reversión del círculo B sin atribuir entrega observable al mero envío. |
+| S1-15 | TS-01 | BE-2 | 6 | S1-14 | Comprobar sesión y consentimiento en suscripción y difusión. **Aceptación:** Una sesión ajena o revocada no recibe estados del círculo. |
+| S1-16 | TS-01 | FL-1 | 6 | S1-14 | Integrar recepción y reconexión en los clientes Flutter. **Aceptación:** La reconexión recupera estado del servidor y no inventa nuevas acciones de auditoría. |
+| S1-17 | TS-01 | QA-OPS | 6 | S1-15, S1-16 | Probar aislamiento y reconexión del canal. **Aceptación:** La prueba cubre dos círculos, revocación, duplicados y caída del canal. |
+| S1-18 | US-02 | FL-1 | 6 | S1-16, S1-12 | Mostrar estado recibido y registrar observación en otra sesión web. **Aceptación:** SYNC_STATE_OBSERVED compara estado esperado y observado con reloj común. |
+| S1-19 | US-02 | FL-2 | 6 | S1-16, S1-12 | Integrar el mismo verificador en otra sesión móvil. **Aceptación:** Distingue recepción tardía de observación dentro de cinco segundos. |
+| S1-20 | US-02 | QA-OPS | 4 | S1-17, S1-18, S1-19 | Verificar propagación y cómputo de TSC. **Aceptación:** Los casos autorizados se observan en el plazo previsto; los no observados permanecen identificados. |
+| S1-21 | US-05 | BE-1 | 6 | S1-12 | Implementar reversión autenticada dentro de diez segundos. **Aceptación:** Conserva acción original, registra UNDO_TRIGGERED y rechaza una reversión fuera de ventana. |
+| S1-22 | US-05 | FL-1 | 6 | S1-21, S1-10 | Integrar Deshacer y su vencimiento en Flutter web. **Aceptación:** La tarjeta refleja el estado confirmado por el servidor y conserva errores de red. |
+| S1-23 | US-05 | FL-2 | 6 | S1-21, S1-11 | Integrar Deshacer y su vencimiento en Flutter móvil. **Aceptación:** Mismo contrato temporal y semántica que web, sin borrar el historial. |
+| S1-24 | US-05 | QA-OPS | 4 | S1-22, S1-23, S1-20 | Probar reversión, límites temporales y propagación. **Aceptación:** Pruebas antes/después de diez segundos y actualización de TCOM/UR aprobadas. |
+
+###### Sprint S2 — desglose de ingeniería
+
+| Tarea | Historia | Rol | Horas | Dependencias | Trabajo y criterio de aceptación |
+|---|---|---|---|---|---|
+| S2-01 | US-03 | BE-1 | 8 | S1-05, S1-09 | Implementar planificador común al minuto 0 y escalón +15 solo en B. **Aceptación:** Consulta estado antes de enviar; A recibe solo el aviso común y no hay envíos duplicados. |
+| S2-02 | US-03 | BE-2 | 6 | S2-01 | Instrumentar envío y acuses observables del canal de avisos. **Aceptación:** NOTIFICATION_DELIVERED requiere acuse; los envíos sin evidencia conservan estado desconocido. |
+| S2-03 | US-03 | FL-1 | 6 | S2-02 | Integrar recepción y apertura contextual de avisos en web. **Aceptación:** El aviso lleva a Agenda y registra acuse únicamente cuando el canal lo permite. |
+| S2-04 | US-03 | FL-2 | 6 | S2-02 | Integrar el contrato de recepción y acuses en móvil. **Aceptación:** Distingue permiso deshabilitado, envío y entrega observable. |
+| S2-05 | US-03 | QA-OPS | 6 | S2-03, S2-04 | Verificar reloj controlado, reintentos y cancelación del escalón. **Aceptación:** Las pruebas cubren 0/+15, resolución previa y aislamiento A/B sin esperar quince minutos reales. |
+| S2-06 | US-04 | BE-1 | 6 | S2-01 | Programar escalón +30 y consultar estado vigente. **Aceptación:** Solo EXP-02/B sin resolución genera ALERT_ESCALATED_30M; no se activa EXP-01/B. |
+| S2-07 | US-04 | BE-2 | 6 | S2-06 | Resolver co-cuidadores y verificar consentimiento al emitir. **Aceptación:** Revocación o expiración excluye al destinatario antes del envío. |
+| S2-08 | US-04 | FL-2 | 6 | S2-07, S2-02 | Integrar aviso de co-cuidador en ambos clientes. **Aceptación:** La apertura respeta permisos; el acuse no acredita que una medicación fue administrada. |
+| S2-09 | US-04 | QA-OPS | 4 | S2-08, S2-05 | Probar escalamiento +30 y revocación entre escalones. **Aceptación:** Sin permisos no hay entrega; resolución previa cancela el aviso; exportación conserva seguimiento hasta +90. |
+| S2-10 | US-06 | FL-1 | 4 | S2-03 | Integrar observación de permisos y preferencias en web. **Aceptación:** Registra cambios observables y usa desconocido cuando el navegador no informa. |
+| S2-11 | US-06 | FL-2 | 6 | S2-04 | Integrar el mismo contrato de preferencias en móvil. **Aceptación:** La revocación del permiso no bloquea el acceso a Agenda ni se interpreta como entrega. |
+| S2-12 | US-06 | BE-1 | 6 | S2-10, S2-11 | Conservar cambios idempotentes y exposición para NOR. **Aceptación:** Denominador usa destinatarios con aviso entregado y seguimiento observable. |
+| S2-13 | US-06 | QA-OPS | 4 | S2-12, S2-09 | Validar exportación final y ensayo técnico de EXP-02. **Aceptación:** Se reconcilian LRMR/TNR/NOR con datos sintéticos; no se reporta ese ensayo como experimento con usuarios. |
+
+**Secuencia y límites de trabajo.** En S1, días 1–3: contrato/asignación/auditoría; días 3–6: cierre común, canal y controles de variante; días 6–9: interacción, observación y reversión; día 10: integración y ensayo técnico. En S2, días 1–4: aviso común y +15; días 4–7: +30 y permisos; días 7–9: preferencias/exportación; día 10: integración. Las dependencias de la tabla prevalecen sobre estas ventanas: una tarea no se inicia sin su predecesora aceptada. Cada rol mantiene una tarea activa como máximo; las estimaciones no implican que todo el esfuerzo sea secuencial.
+
+**Definition of Ready.** Historia con criterio Gherkin, contratos de API/eventos acordados, escenarios sintéticos y consentimiento de acceso definidos; canal de entrega observable identificado. EXP-02 requiere instrumentar el aviso común al minuto 0 por igual en A y B. EXP-01/B solo se habilita cuando confirmación, sincronización y reversión están integradas; EXP-02 no incorpora ese paquete.
+
+**Definition of Done por historia.** Código revisado y pipeline aprobado; criterios de aceptación verificados en los clientes incluidos; sesión/consentimiento y reintentos comprobados; eventos y exportación reconciliados; enlace a commit/PR y evidencia técnica conservados al ejecutar. Una tarea planificada no se marca como terminada por aparecer en esta tabla.
+
+**Gate de ensayo y ejecución.** Un build, un acuse de envío o una captura no acredita entrega/visibilidad ni resultados de usuarios. El ensayo técnico usa fixtures sintéticos y comprueba relojes, asignación, denominadores y salvaguardas. Antes de reclutar se aplica la factibilidad de §8.2.4 y se cierran los controles de §8.2.3. La ventana de catorce días de cada experimento comienza después de este gate; no es la duración de los sprints. EXP-01 y EXP-02 conservan círculos distintos. Los datos y conclusiones de usuarios se incorporan en §8.4–8.5 cuando exista ejecución real.
+
+El [desglose verificable](assets/experiments/av2-completion-2026-11-08/planning-tasks.json) contiene 37 tareas y 214 h propuestas. Todas las tareas están estimadas entre 4 y 8 h, cubren las nueve historias y tienen rol, aceptación y dependencias sin ciclos.
+
 ##### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
 ##### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
@@ -6038,6 +6173,35 @@ Organización Mundial de la Salud. (2025). *Ageing and health*. https://www.who.
 The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https://cucumber.io/docs/gherkin/reference/
 
 ---
+
+
+### Referencias técnicas incorporadas en AV2
+
+Android Developers. (s. f.). *Use Java 8 language features and APIs*. Recuperado el 8 de noviembre de 2026, de https://developer.android.com/studio/write/java8-support
+
+Better Stack. (s. f.). *Get started with monitoring*. Recuperado el 8 de noviembre de 2026, de https://betterstack.com/docs/uptime/monitoring-start/
+
+GitHub. (s. f.). *Understanding GitHub Actions*. Recuperado el 8 de noviembre de 2026, de https://docs.github.com/en/actions/get-started/understand-github-actions
+
+GitLab. (s. f.). *CI/CD for external repositories*. Recuperado el 8 de noviembre de 2026, de https://docs.gitlab.com/ci/ci_cd_for_external_repos/
+
+Google. (s. f.). *desugar_jdk_libs: Change log*. Recuperado el 8 de noviembre de 2026, de https://github.com/google/desugar_jdk_libs/blob/master/CHANGELOG.md
+
+Jenkins Project. (s. f.). *Using Jenkins agents*. Recuperado el 8 de noviembre de 2026, de https://www.jenkins.io/doc/book/using/using-agents/
+
+louislam. (s. f.). *Uptime Kuma [Repositorio de software]*. Recuperado el 8 de noviembre de 2026, de https://github.com/louislam/uptime-kuma
+
+Netlify. (s. f.). *Build configuration overview*. Recuperado el 8 de noviembre de 2026, de https://docs.netlify.com/build/configure-builds/overview/
+
+Railway. (s. f.). *Deploy a Spring Boot app*. Recuperado el 8 de noviembre de 2026, de https://railway.com/guides/spring-boot
+
+Render. (s. f.). *Deploy for free*. Recuperado el 8 de noviembre de 2026, de https://render.com/docs/free
+
+Render. (s. f.). *Deploy hooks*. Recuperado el 8 de noviembre de 2026, de https://render.com/docs/deploy-hooks
+
+UptimeRobot. (s. f.). *Plans & pricing*. Recuperado el 8 de noviembre de 2026, de https://uptimerobot.com/pricing/
+
+Vercel. (s. f.). *Deploying Git repositories with Vercel*. Recuperado el 8 de noviembre de 2026, de https://vercel.com/docs/git
 
 ## Anexos
 

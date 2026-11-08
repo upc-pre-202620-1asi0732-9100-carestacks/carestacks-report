@@ -1,0 +1,364 @@
+diff --git a/.env.example b/.env.example
+index 1139551..7268f37 100644
+--- a/.env.example
++++ b/.env.example
+@@ -3,6 +3,11 @@ DB_DRIVER_CLASS_NAME=org.h2.Driver
+ DB_USERNAME=sa
+ DB_PASSWORD=change-me
+ 
++# Comma-separated browser origins. Add the exact local Flutter origin for development.
++APP_CORS_ALLOWED_ORIGINS=https://carestacks-web.onrender.com,https://carestacks-landing-page.vercel.app
++# Disabled by default. Enable only in a local disposable development environment.
++APP_H2_CONSOLE_ENABLED=false
++
+ # Render PostgreSQL example:
+ # SPRING_DATASOURCE_URL=jdbc:postgresql://<host>:5432/<database>?sslmode=require
+ # SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+diff --git a/VERIFICATION.md b/VERIFICATION.md
+new file mode 100644
+index 0000000..3e56cdb
+--- /dev/null
++++ b/VERIFICATION.md
+@@ -0,0 +1,25 @@
++# Verificación local AV2 — 08/11/2026
++
++Esta revisión sobre `develop` restringe los orígenes del navegador, deshabilita por defecto la consola H2 y exige una sesión opaca emitida por IAM en las rutas privadas. No cambia el formato del token de los clientes.
++
++## Configuración
++
++- `APP_CORS_ALLOWED_ORIGINS`: lista separada por comas de orígenes exactos. Los valores por defecto son `https://carestacks-web.onrender.com` y `https://carestacks-landing-page.vercel.app`. Para Flutter web local debe añadirse su origen y puerto exactos. Los comodines se rechazan.
++- `APP_H2_CONSOLE_ENABLED`: `false` por defecto. La consola no forma parte del acceso público de producción.
++- La cadena de seguridad usa sesiones HTTP stateless y valida el Bearer con el servicio IAM: una sesión fabricada, expirada, revocada o de cuenta no válida no autentica.
++- Son públicos el POST de registro/login, Swagger/OpenAPI y el health check. `info` y `metrics` requieren autenticación.
++- Los controllers mantienen sus controles de propietario y consentimiento. La autenticación común no sustituye la autorización de cada recurso.
++
++## Reproducción
++
++Con JDK 25 y Maven:
++
++```text
++mvn -B clean verify
++```
++
++Las pruebas activan el perfil `test` con H2 desechable y `create-drop`, conservando los valores generales de la aplicación. No utilizan una base de producción.
++
++La suite anterior tenía 17 pruebas aprobadas. Se añadieron nueve pruebas de límites de seguridad: origen permitido/rechazado, consola deshabilitada, ausencia/fabricación de sesión, sesión emitida/revocada, ruta futura protegida, métricas privadas y documentación pública. Antes del arreglo, seis de esos nueve casos fallaban. La prueba de persistencia de Diario ahora utiliza una sesión real.
++
++El reporte del informe AV2 conserva los resultados finales, las versiones y los parches. El merge a `main` y la comprobación de la configuración desplegada se realizan en una etapa posterior; la verificación local no acredita ese despliegue ni una auditoría completa de permisos de todos los recursos.
+diff --git a/src/main/java/com/carestacks/careconnect/shared/infrastructure/CorsConfig.java b/src/main/java/com/carestacks/careconnect/shared/infrastructure/CorsConfig.java
+index 5547e6f..87d5014 100644
+--- a/src/main/java/com/carestacks/careconnect/shared/infrastructure/CorsConfig.java
++++ b/src/main/java/com/carestacks/careconnect/shared/infrastructure/CorsConfig.java
+@@ -2,11 +2,21 @@ package com.carestacks.careconnect.shared.infrastructure;
+ 
+ import org.springframework.context.annotation.Bean;
+ import org.springframework.context.annotation.Configuration;
++import org.springframework.beans.factory.annotation.Value;
+ import org.springframework.web.servlet.config.annotation.CorsRegistry;
+ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+ 
+ @Configuration
+ public class CorsConfig {
++    private final String[] allowedOrigins;
++
++    public CorsConfig(@Value("${app.cors.allowed-origins}") String[] allowedOrigins) {
++        this.allowedOrigins = java.util.Arrays.stream(allowedOrigins).map(String::trim)
++                .filter(origin -> !origin.isEmpty()).toArray(String[]::new);
++        if (java.util.Arrays.stream(this.allowedOrigins).anyMatch(origin -> origin.contains("*"))) {
++            throw new IllegalArgumentException("CORS origins must be explicit origins, without wildcards");
++        }
++    }
+ 
+     @Bean
+     public WebMvcConfigurer corsConfigurer() {
+@@ -14,11 +24,11 @@ public class CorsConfig {
+             @Override
+             public void addCorsMappings(CorsRegistry registry) {
+                 registry.addMapping("/api/**")
+-                        .allowedOriginPatterns("*")
++                        .allowedOrigins(allowedOrigins)
+                         .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+                         .allowedHeaders("*")
+                         .allowCredentials(false);
+             }
+         };
+     }
+-}
+\ No newline at end of file
++}
+diff --git a/src/main/java/com/carestacks/careconnect/shared/infrastructure/security/IssuedSessionFilter.java b/src/main/java/com/carestacks/careconnect/shared/infrastructure/security/IssuedSessionFilter.java
+new file mode 100644
+index 0000000..3658be3
+--- /dev/null
++++ b/src/main/java/com/carestacks/careconnect/shared/infrastructure/security/IssuedSessionFilter.java
+@@ -0,0 +1,43 @@
++package com.carestacks.careconnect.shared.infrastructure.security;
++
++import com.carestacks.careconnect.iam.application.abstractions.AuthService;
++import com.carestacks.careconnect.shared.domain.exceptions.BusinessRuleException;
++import com.carestacks.careconnect.shared.domain.exceptions.ResourceNotFoundException;
++import jakarta.servlet.FilterChain;
++import jakarta.servlet.ServletException;
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpServletResponse;
++import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
++import org.springframework.security.core.AuthenticationException;
++import org.springframework.security.core.authority.SimpleGrantedAuthority;
++import org.springframework.security.core.context.SecurityContextHolder;
++import org.springframework.web.filter.OncePerRequestFilter;
++import java.io.IOException;
++import java.util.List;
++
++final class IssuedSessionFilter extends OncePerRequestFilter {
++    private final AuthService authService;
++
++    IssuedSessionFilter(AuthService authService) {
++        this.authService = authService;
++    }
++
++    @Override
++    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
++            throws ServletException, IOException {
++        var header = request.getHeader("Authorization");
++        if (header != null && header.startsWith("Bearer ")) {
++            try {
++                var session = authService.validateSession(header.substring(7), null);
++                var authentication = new UsernamePasswordAuthenticationToken(session.userId(), null,
++                        List.of(new SimpleGrantedAuthority("ROLE_" + session.role().name())));
++                var context = SecurityContextHolder.createEmptyContext();
++                context.setAuthentication(authentication);
++                SecurityContextHolder.setContext(context);
++            } catch (BusinessRuleException | ResourceNotFoundException | AuthenticationException exception) {
++                SecurityContextHolder.clearContext();
++            }
++        }
++        chain.doFilter(request, response);
++    }
++}
+diff --git a/src/main/java/com/carestacks/careconnect/shared/infrastructure/security/SecurityConfig.java b/src/main/java/com/carestacks/careconnect/shared/infrastructure/security/SecurityConfig.java
+index 4932f42..cab5ea4 100644
+--- a/src/main/java/com/carestacks/careconnect/shared/infrastructure/security/SecurityConfig.java
++++ b/src/main/java/com/carestacks/careconnect/shared/infrastructure/security/SecurityConfig.java
+@@ -7,17 +7,36 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
+ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+ import org.springframework.security.crypto.password.PasswordEncoder;
+ import org.springframework.security.web.SecurityFilterChain;
++import org.springframework.security.config.Customizer;
++import org.springframework.security.config.http.SessionCreationPolicy;
++import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
++import org.springframework.http.HttpMethod;
++import com.carestacks.careconnect.iam.application.abstractions.AuthService;
+ import java.time.Clock;
+ 
+ @Configuration
+ public class SecurityConfig {
+ 
+     @Bean
+-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+-        // IAM, consent and Agenda endpoints enforce the issued bearer session explicitly.
++    public SecurityFilterChain securityFilterChain(HttpSecurity http, AuthService authService) throws Exception {
++        // Authentication is shared; controllers retain resource/consent authorization.
+         return http
++                .cors(Customizer.withDefaults())
+                 .csrf(AbstractHttpConfigurer::disable)
+-                .authorizeHttpRequests(authorize -> authorize.anyRequest().permitAll())
++                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
++                .addFilterBefore(new IssuedSessionFilter(authService), UsernamePasswordAuthenticationFilter.class)
++                .authorizeHttpRequests(authorize -> authorize
++                        .requestMatchers(HttpMethod.POST, "/api/auth/login", "/api/auth/register").permitAll()
++                        .requestMatchers("/actuator/health", "/actuator/health/**",
++                                "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs", "/v3/api-docs/**",
++                                "/error").permitAll()
++                        .anyRequest().authenticated())
++                .exceptionHandling(errors -> errors.authenticationEntryPoint((request, response, exception) -> {
++                    response.setStatus(401);
++                    response.setHeader("WWW-Authenticate", "Bearer");
++                    response.setContentType("application/json");
++                    response.getWriter().write("{\"message\":\"Authentication required\"}");
++                }))
+                 .build();
+     }
+ 
+diff --git a/src/main/resources/application.yml b/src/main/resources/application.yml
+index 0e0cadc..cb3779a 100644
+--- a/src/main/resources/application.yml
++++ b/src/main/resources/application.yml
+@@ -12,7 +12,7 @@ spring:
+     password: ${SPRING_DATASOURCE_PASSWORD:${DB_PASSWORD:}}
+   h2:
+     console:
+-      enabled: true
++      enabled: ${APP_H2_CONSOLE_ENABLED:false}
+       path: /h2-console
+   jpa:
+     open-in-view: false
+@@ -28,6 +28,10 @@ spring:
+ server:
+   port: ${PORT:8080}
+ 
++app:
++  cors:
++    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:https://carestacks-web.onrender.com,https://carestacks-landing-page.vercel.app}
++
+ supabase:
+   storage:
+     url: ${SUPABASE_URL:}
+diff --git a/src/test/java/com/carestacks/careconnect/CoreApiIntegrationTests.java b/src/test/java/com/carestacks/careconnect/CoreApiIntegrationTests.java
+index 29e307d..ba4cfdb 100644
+--- a/src/test/java/com/carestacks/careconnect/CoreApiIntegrationTests.java
++++ b/src/test/java/com/carestacks/careconnect/CoreApiIntegrationTests.java
+@@ -67,21 +67,23 @@ class CoreApiIntegrationTests {
+ 
+     @Test
+     void diaryPersistsEntryAndReturnsItForPatient() throws Exception {
+-        var patientId = UUID.randomUUID();
++        var patient = registerUser("PATIENT");
++        var patientId = patient.id();
++        var token = login(patient.email());
+         var body = """
+                 {"patientId":"%s","content":"  Dormí bien  "}
+                 """.formatted(patientId);
+ 
+-        var created = request("POST", "/api/diary", body, null);
++        var created = request("POST", "/api/diary", body, token);
+         assertEquals(201, created.statusCode(), created.body());
+         var entryId = json(created).get("id").asLong();
+ 
+-        var fetched = request("GET", "/api/diary/" + entryId, null, null);
++        var fetched = request("GET", "/api/diary/" + entryId, null, token);
+         assertEquals(200, fetched.statusCode(), fetched.body());
+         assertEquals(patientId.toString(), json(fetched).get("patientId").asText());
+         assertEquals("Dormí bien", json(fetched).get("content").asText());
+ 
+-        var patientEntries = request("GET", "/api/diary/patient/" + patientId, null, null);
++        var patientEntries = request("GET", "/api/diary/patient/" + patientId, null, token);
+         assertEquals(200, patientEntries.statusCode(), patientEntries.body());
+         assertEquals(entryId, json(patientEntries).get(0).get("id").asLong());
+     }
+diff --git a/src/test/java/com/carestacks/careconnect/SecurityBoundariesIntegrationTests.java b/src/test/java/com/carestacks/careconnect/SecurityBoundariesIntegrationTests.java
+new file mode 100644
+index 0000000..32983a8
+--- /dev/null
++++ b/src/test/java/com/carestacks/careconnect/SecurityBoundariesIntegrationTests.java
+@@ -0,0 +1,100 @@
++package com.carestacks.careconnect;
++
++import com.carestacks.careconnect.iam.application.abstractions.AuthService;
++import com.carestacks.careconnect.iam.application.iam.requests.RegisterUserRequest;
++import com.carestacks.careconnect.iam.domain.iam.enums.UserRole;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.beans.factory.annotation.Value;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.core.env.Environment;
++import java.net.URI;
++import java.net.http.HttpClient;
++import java.net.http.HttpRequest;
++import java.net.http.HttpResponse;
++import java.util.UUID;
++import static org.junit.jupiter.api.Assertions.*;
++import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
++
++@SpringBootTest(webEnvironment = RANDOM_PORT)
++class SecurityBoundariesIntegrationTests {
++    private final HttpClient client = HttpClient.newHttpClient();
++    @Value("${local.server.port}") private int port;
++    @Autowired private AuthService auth;
++    @Autowired private Environment environment;
++
++    @Test
++    void trustedFrontendCanPreflightAuthorizedRequests() throws Exception {
++        var response = preflight("https://carestacks-web.onrender.com");
++        assertEquals(200, response.statusCode());
++        assertEquals("https://carestacks-web.onrender.com",
++                response.headers().firstValue("Access-Control-Allow-Origin").orElse(""));
++    }
++
++    @Test
++    void arbitraryOriginCannotPreflight() throws Exception {
++        var response = preflight("https://untrusted.example");
++        assertEquals(403, response.statusCode());
++        assertTrue(response.headers().firstValue("Access-Control-Allow-Origin").isEmpty());
++    }
++
++    @Test
++    void h2ConsoleIsDisabledByDefault() {
++        assertFalse(environment.getProperty("spring.h2.console.enabled", Boolean.class, false));
++    }
++
++    @Test
++    void diaryRequiresAnIssuedSession() throws Exception {
++        assertEquals(401, get("/api/diary/patient/" + UUID.randomUUID(), null).statusCode());
++    }
++
++    @Test
++    void fabricatedBearerDoesNotAuthenticate() throws Exception {
++        assertEquals(401, get("/api/diary/patient/" + UUID.randomUUID(), "fabricated-session").statusCode());
++    }
++
++    @Test
++    void issuedSessionWorksAndLogoutRevokesItAtTheFilter() throws Exception {
++        var request = new RegisterUserRequest();
++        request.setEmail("security-" + UUID.randomUUID() + "@example.test");
++        request.setPassword("TestPass123");
++        request.setFullName("Security test user");
++        request.setRole(UserRole.PATIENT);
++        var session = auth.register(request);
++        var patientId = auth.getUserIdFromToken(session.token());
++        var endpoint = "/api/diary/patient/" + patientId;
++        assertEquals(200, get(endpoint, session.token()).statusCode());
++        auth.logout(session.token());
++        assertEquals(401, get(endpoint, session.token()).statusCode());
++    }
++
++    @Test
++    void evenAnUnmappedApiRouteRequiresAuthentication() throws Exception {
++        assertEquals(401, get("/api/future-private-resource", null).statusCode());
++    }
++
++    @Test
++    void internalMetricsAreNotAnonymous() throws Exception {
++        assertEquals(401, get("/actuator/metrics", null).statusCode());
++    }
++
++    @Test
++    void apiDocumentationRemainsPublic() throws Exception {
++        assertEquals(200, get("/v3/api-docs", null).statusCode());
++    }
++
++    private HttpResponse<String> get(String route, String token) throws Exception {
++        var request = HttpRequest.newBuilder(URI.create("http://localhost:" + port + route));
++        if (token != null) request.header("Authorization", "Bearer " + token);
++        return client.send(request.GET().build(), HttpResponse.BodyHandlers.ofString());
++    }
++
++    private HttpResponse<String> preflight(String origin) throws Exception {
++        return client.send(HttpRequest.newBuilder(URI.create("http://localhost:" + port + "/api/agenda"))
++                .header("Origin", origin)
++                .header("Access-Control-Request-Method", "PATCH")
++                .header("Access-Control-Request-Headers", "authorization,content-type")
++                .method("OPTIONS", HttpRequest.BodyPublishers.noBody()).build(),
++                HttpResponse.BodyHandlers.ofString());
++    }
++}
+diff --git a/src/test/resources/application.yml b/src/test/resources/application-test.yml
+similarity index 92%
+rename from src/test/resources/application.yml
+rename to src/test/resources/application-test.yml
+index 9ed7254..a1f300b 100644
+--- a/src/test/resources/application.yml
++++ b/src/test/resources/application-test.yml
+@@ -11,4 +11,5 @@ spring:
+     properties:
+       hibernate:
+         dialect: org.hibernate.dialect.H2Dialect
++        default_schema: PUBLIC
+         format_sql: false
+diff --git a/src/test/resources/application.properties b/src/test/resources/application.properties
+new file mode 100644
+index 0000000..759b720
+--- /dev/null
++++ b/src/test/resources/application.properties
+@@ -0,0 +1,2 @@
++# Load the real application defaults, then override only the disposable datasource.
++spring.profiles.active=test

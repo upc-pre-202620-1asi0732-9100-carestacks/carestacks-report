@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-08",
+  "all_success": true,
+  "records": [
+    {
+      "date": "2026-11-08",
+      "repository": "upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api",
+      "head": "4aa830b47128ffa179c65792df5b9f98a891daf2",
+      "runs": [
+        {
+          "id": 42519128328,
+          "name": "Backend CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/actions/runs/42519128328",
+          "head_sha": "4aa830b47128ffa179c65792df5b9f98a891daf2"
+        },
+        {
+          "id": 42519128519,
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/actions/runs/42519128519",
+          "head_sha": "4aa830b47128ffa179c65792df5b9f98a891daf2"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "repository": "upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend",
+      "head": "64308ced98cb66cac56c895a177f787a48c2eb8f",
+      "runs": [
+        {
+          "id": 42519491295,
+          "name": "Android verification",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend/actions/runs/42519491295",
+          "head_sha": "64308ced98cb66cac56c895a177f787a48c2eb8f"
+        }
+      ]
+    }
+  ]
+}
