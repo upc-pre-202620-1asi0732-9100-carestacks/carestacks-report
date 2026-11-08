@@ -3882,8 +3882,6 @@ El análisis estático de código se ejecutó por cada producto utilizando la he
 | Landing Page | `carestacks-landing-page` | TypeScript / React + Vite | ESLint (`npm run lint`) | Workflow de CI de la Landing Page (histórico) |
 | Mobile Application (paciente) | `carestacks-frontend` | Kotlin / Jetpack Compose (Gradle) | Android Lint (`./gradlew lint`) | No ejecutado; el repositorio no tiene workflow de CI |
  
-> **Nota sobre la evidencia.** Los resultados de `flutter analyze` y de Maven se obtuvieron de las ejecuciones de GitHub Actions asociadas a los Pull Requests y a la rama `develop`, y no de una corrida local. Los SDK locales del equipo no coinciden con los que exige el proyecto (Flutter 3.47.9 / Dart 3.12.1 y Java 25), por lo que el pipeline de CI es la fuente de verdad de la verificación.
- 
 ##### 6.2.1.1. Coding standard & Code conventions
  
 En esta sección se verifica que el código de cada producto cumpla con los estándares de codificación y convenciones de nomenclatura definidos por el equipo. Tal como se establece en la sección 5.1.3 (Source Code Style Guide & Conventions), los identificadores técnicos (clases, métodos, variables, endpoints, tablas y commits) se redactan en inglés y se adoptan las guías de estilo estándar de cada lenguaje.
@@ -4571,11 +4569,11 @@ En esta sección, se cronometran las principales actividades realizadas para el 
  
 | Actividad de auditoría realizada | Fecha/Hora | Realizado por |
 |---|---|---|
-| Solicitud de información al grupo auditado | [dd/mm/2026 hh:mm] | [Nombre] |
-| Envío de información solicitada por parte del grupo auditado a nuestro grupo para el desarrollo de la auditoría | [dd/mm/2026 hh:mm] | [Nombre] |
-| Ejecución de la auditoría | [dd/mm/2026 hh:mm] | [Integrante 1]<br>[Integrante 2]<br>[Integrante 3] |
-| Elaboración del informe de la auditoría | [dd/mm/2026 hh:mm] | [Integrante 1]<br>[Integrante 2]<br>[Integrante 3] |
-| Finalización y envío del informe de auditoría | [dd/mm/2026 hh:mm] | [Nombre] |
+| Solicitud de información al grupo auditado | [02/11/2026 13:00] | [Santiago Baldeon] |
+| Envío de información solicitada por parte del grupo auditado a nuestro grupo para el desarrollo de la auditoría | [07/11/2026 14:00] | [Santiago Baldeon] |
+| Ejecución de la auditoría | [07/11/2026 16:00] | [Percy Muñiz]<br>[Santiago Baldeon]<br>[Matias Salcedo] |
+| Elaboración del informe de la auditoría | [08/11/2026 13:00] | [Percy Muñiz]<br>[Santiago Baldeon]<br>[Matias Salcedo] |
+| Finalización y envío del informe de auditoría | [08/11/2026 16:00] | [Santiago Baldeon] |
  
 ##### 6.4.1.3. Contenido de auditoría realizada
  
