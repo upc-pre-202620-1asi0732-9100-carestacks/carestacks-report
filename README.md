@@ -4716,77 +4716,37 @@ Las historias y el backlog siguientes especifican los incrementos necesarios par
 
 #### 8.3.1. To-Be User Stories
 
-Se conservan los identificadores de las historias aportadas por el equipo y se ajustan sus condiciones al stack real, las métricas y la API actual. Las historias adicionales de cierre con motivo y auditoría común cubren capacidades que el diseño necesita para recolectar datos coherentes.
+Se conservan los identificadores de las historias aportadas por el equipo y se ajustan sus condiciones al stack real, las métricas y la API actual. Las historias adicionales de cierre con motivo y auditoría común cubren capacidades que el diseño necesita para recolectar datos coherentes. Cada historia incluye dos escenarios en formato Given, When, Then: uno que cubre el flujo principal de la Variante B y otro que cubre un comportamiento complementario ya descrito en las secciones anteriores, como el Control A o una condición de salvaguarda.
 
-##### US-01 — Confirmación reversible
-
-**Como** cuidador autorizado, **quiero** confirmar un evento desde su tarjeta con pulsación sostenida y opción de reversión, **para** corregir una acción accidental sin salir de Agenda.
-
-**Dado** un evento sintético pendiente en EXP-01/B, **cuando** el cuidador mantiene el botón durante un segundo, **entonces** el servidor acepta la confirmación autenticada, registra `MED_CONFIRMED` y el cliente muestra «Deshacer» durante diez segundos. En A se conserva el botón actual y la misma auditoría común.
-
-##### US-02 — Estado compartido visible
-
-**Como** co-cuidador con consentimiento vigente, **quiero** ver el estado actualizado de un evento, **para** coordinar el seguimiento sin recargar manualmente.
-
-**Dado** un círculo EXP-01/B con otra sesión autorizada activa, **cuando** se confirma o revierte un evento, **entonces** se propaga su estado a esa sesión y el verificador registra si coincide en ≤5 s. Una sesión sin permiso no recibe la actualización.
-
-##### US-03 — Recordatorio al minuto +15
-
-**Como** cuidador de un escenario de prueba, **quiero** recibir un recordatorio sobre un registro que sigue pendiente, **para** revisar su estado.
-
-**Dado** un evento EXP-02/B sin resolver en t0+15, **cuando** se cumple el umbral, **entonces** el planificador emite `ALERT_ESCALATED_15M` al cuidador autorizado y distingue envío de entrega. En A no se añade ese recordatorio.
-
-##### US-04 — Aviso a co-cuidadores al minuto +30
-
-**Como** co-cuidador autorizado, **quiero** recibir un aviso de registro sin resolver, **para** coordinar su revisión en el escenario.
-
-**Dado** un evento EXP-02/B aún sin resolver en t0+30, **cuando** el planificador comprueba el estado y los permisos, **entonces** registra `ALERT_ESCALATED_30M` y dirige el aviso únicamente a destinatarios autorizados, conservando la evidencia de entrega cuando exista.
-
-##### US-05 — Deshacer una confirmación
-
-**Como** cuidador, **quiero** revertir una confirmación accidental dentro de diez segundos, **para** conservar un historial de seguimiento correcto.
-
-**Dado** un `MED_CONFIRMED` de EXP-01/B dentro de esa ventana, **cuando** el cuidador solicita «Deshacer», **entonces** el servidor verifica autorización, registra `UNDO_TRIGGERED` vinculado a la acción original y propaga el estado corregido. La reversión no borra el historial ni se confunde con cancelar el evento de Agenda.
-
-##### US-06 — Preferencias de notificación
-
-**Como** participante, **quiero** gestionar los avisos y conservar el acceso a Agenda, **para** ajustar la carga de notificaciones del escenario.
-
-**Dado** un cambio observable de preferencia o permiso, **cuando** el cliente lo detecta, **entonces** registra `NOTIFICATION_PREFERENCE_CHANGED` con fecha y variante. Si el sistema operativo no permite observarlo, se registra como desconocido; no se presume que el permiso sigue habilitado ni se promete entregar push con el permiso desactivado.
-
-##### US-07 — Cierre explícito con motivo
-
-**Como** cuidador autorizado, **quiero** cerrar un registro del escenario con un motivo, **para** distinguir una resolución documentada de una confirmación de administración.
-
-**Dado** un evento elegible aún sin resolver, **cuando** el usuario registra un motivo permitido, **entonces** el servidor conserva `MED_RESOLVED_WITH_REASON` y su hora; la resolución alimenta LRMR/TNR sin incrementar TCOM. Esta capacidad se aplica por igual a A y B.
-
-##### TS-01 — Propagación de estados entre sesiones
-
-**Como** desarrollador, **quiero** un canal compatible con Spring Boot y Flutter, **para** difundir estados a sesiones autorizadas del mismo círculo.
-
-**Dado** un `PATCH /api/agenda/{id}/confirm` o una reversión aceptada, **cuando** se actualiza el registro del círculo EXP-01/B, **entonces** el canal difunde el estado tras comprobar consentimiento. El envío se audita sin declararlo por sí solo evidencia de visibilidad; TSC se obtiene con el verificador de US-02.
-
-##### TS-02 — Asignación y auditoría común
-
-**Como** responsable del experimento, **quiero** conservar la asignación y un historial reproducible de eventos en ambos grupos, **para** calcular las métricas sin depender de campos mutables ni duplicar reintentos.
-
-**Dado** un conjunto de eventos sintéticos preasignados, **cuando** se inicia el escenario, **entonces** cada círculo tiene una sola variante, cada participante pertenece a un único círculo experimental y se conserva `EXPERIMENT_EVENT_SCHEDULED`, horarios originales y acciones con ID único. Las pérdidas de seguimiento y denominadores no evaluables quedan identificados en la exportación.
+| To-Be User Story ID | User | Priority | Epic | Título | Descripción | Criterios de Aceptación |
+|:---:|---|:---:|---|---|---|---|
+| US-01 | Cuidador autorizado | Alta | Confirmación y Sincronización | Confirmación reversible | Como cuidador autorizado, deseo confirmar un evento desde su tarjeta con pulsación sostenida y opción de reversión, para corregir una acción accidental sin salir de Agenda. | Escenario 1: Confirmación reversible en la Variante B <br> **Given** un evento sintético pendiente en EXP-01/B <br> **When** el cuidador mantiene el botón durante un segundo <br> **Then** el servidor acepta la confirmación autenticada, registra `MED_CONFIRMED` y el cliente muestra «Deshacer» durante diez segundos <br><br> Escenario 2: Confirmación en el Control A <br> **Given** un evento sintético pendiente en EXP-01/A <br> **When** el cuidador confirma usando el botón actual <br> **Then** el servidor acepta la confirmación con la misma auditoría común, sin mostrar la opción de deshacer |
+| US-02 | Co-cuidador con consentimiento vigente | Media | Confirmación y Sincronización | Estado compartido visible | Como co-cuidador con consentimiento vigente, deseo ver el estado actualizado de un evento, para coordinar el seguimiento sin recargar manualmente. | Escenario 1: Propagación a una sesión autorizada <br> **Given** un círculo EXP-01/B con otra sesión autorizada activa <br> **When** se confirma o revierte un evento <br> **Then** se propaga su estado a esa sesión y el verificador registra si coincide en cinco segundos o menos <br><br> Escenario 2: Sesión sin permiso no recibe la actualización <br> **Given** una sesión del mismo círculo sin consentimiento vigente <br> **When** se confirma o revierte un evento <br> **Then** esa sesión no recibe la actualización de estado |
+| US-03 | Cuidador de un escenario de prueba | Baja | Protocolo de Avisos Escalonados | Recordatorio al minuto +15 | Como cuidador de un escenario de prueba, deseo recibir un recordatorio sobre un registro que sigue pendiente, para revisar su estado. | Escenario 1: Recordatorio en la Variante B <br> **Given** un evento EXP-02/B sin resolver en t0+15 <br> **When** se cumple el umbral de quince minutos <br> **Then** el planificador emite `ALERT_ESCALATED_15M` al cuidador autorizado y distingue envío de entrega <br><br> Escenario 2: Ausencia de recordatorio en el Control A <br> **Given** un evento EXP-02/A sin resolver en t0+15 <br> **When** se cumple el umbral de quince minutos <br> **Then** el sistema no añade ningún recordatorio adicional |
+| US-04 | Co-cuidador autorizado | Baja | Protocolo de Avisos Escalonados | Aviso a co-cuidadores al minuto +30 | Como co-cuidador autorizado, deseo recibir un aviso de registro sin resolver, para coordinar su revisión en el escenario. | Escenario 1: Aviso a destinatarios autorizados <br> **Given** un evento EXP-02/B aún sin resolver en t0+30 <br> **When** el planificador comprueba el estado y los permisos <br> **Then** registra `ALERT_ESCALATED_30M` y dirige el aviso únicamente a destinatarios autorizados <br><br> Escenario 2: Evidencia de entrega conservada <br> **Given** un aviso `ALERT_ESCALATED_30M` enviado a un co-cuidador autorizado <br> **When** el canal confirma la entrega <br> **Then** el sistema conserva esa evidencia de entrega junto al identificador del aviso |
+| US-05 | Cuidador | Media | Confirmación y Sincronización | Deshacer una confirmación | Como cuidador, deseo revertir una confirmación accidental dentro de diez segundos, para conservar un historial de seguimiento correcto. | Escenario 1: Reversión dentro de la ventana de gracia <br> **Given** un `MED_CONFIRMED` de EXP-01/B dentro de esa ventana <br> **When** el cuidador solicita «Deshacer» <br> **Then** el servidor verifica autorización, registra `UNDO_TRIGGERED` vinculado a la acción original y propaga el estado corregido <br><br> Escenario 2: La reversión conserva el historial <br> **Given** una reversión ya aplicada sobre una confirmación <br> **When** se revisa el historial del evento <br> **Then** la acción original permanece visible y no se confunde con la cancelación del evento de Agenda |
+| US-06 | Participante | Baja | Preferencias de Notificación | Preferencias de notificación | Como participante, deseo gestionar los avisos y conservar el acceso a Agenda, para ajustar la carga de notificaciones del escenario. | Escenario 1: Cambio de preferencia observable <br> **Given** un cambio observable de preferencia o permiso <br> **When** el cliente lo detecta <br> **Then** registra `NOTIFICATION_PREFERENCE_CHANGED` con fecha y variante <br><br> Escenario 2: Permiso no observable por el sistema operativo <br> **Given** un sistema operativo que no permite observar el permiso <br> **When** el cliente intenta detectar el cambio <br> **Then** el sistema registra el estado como desconocido, sin presumir que el permiso sigue habilitado |
+| US-07 | Cuidador autorizado | Alta | Auditoría y Cierre Común | Cierre explícito con motivo | Como cuidador autorizado, deseo cerrar un registro del escenario con un motivo, para distinguir una resolución documentada de una confirmación de administración. | Escenario 1: Cierre con motivo en la Variante B <br> **Given** un evento elegible aún sin resolver en EXP-01/B o EXP-02/B <br> **When** el usuario registra un motivo permitido <br> **Then** el servidor conserva `MED_RESOLVED_WITH_REASON` y su hora, alimentando LRMR y TNR sin incrementar TCOM <br><br> Escenario 2: La misma capacidad aplica al grupo de Control A <br> **Given** un evento elegible aún sin resolver en el grupo A <br> **When** el usuario registra un motivo permitido <br> **Then** el servidor aplica la misma regla de cierre que en el grupo B |
+| TS-01 | Developer | Media | Confirmación y Sincronización | Propagación de estados entre sesiones | Como desarrollador, deseo un canal compatible con Spring Boot y Flutter, para difundir estados a sesiones autorizadas del mismo círculo. | Escenario 1: Difusión tras una confirmación o reversión <br> **Given** un `PATCH /api/agenda/{id}/confirm` o una reversión aceptada <br> **When** se actualiza el registro del círculo EXP-01/B <br> **Then** el canal difunde el estado tras comprobar consentimiento <br><br> Escenario 2: La difusión por sí sola no es evidencia de visibilidad <br> **Given** un estado ya difundido por el canal <br> **When** no existe una verificación independiente de otra sesión <br> **Then** el envío queda auditado, pero la TSC solo se calcula con el verificador descrito en US-02 |
+| TS-02 | Developer | Alta | Auditoría y Cierre Común | Asignación y auditoría común | Como responsable del experimento, deseo conservar la asignación y un historial reproducible de eventos en ambos grupos, para calcular las métricas sin depender de campos mutables ni duplicar reintentos. | Escenario 1: Asignación única por círculo <br> **Given** un conjunto de eventos sintéticos preasignados <br> **When** se inicia el escenario <br> **Then** cada círculo tiene una sola variante, cada participante pertenece a un único círculo experimental y se conserva `EXPERIMENT_EVENT_SCHEDULED` con horarios originales y acciones con ID único <br><br> Escenario 2: Pérdidas de seguimiento identificadas <br> **Given** un círculo sin denominador evaluable <br> **When** se genera la exportación de datos <br> **Then** la pérdida queda identificada con su causa, en vez de excluirse silenciosamente |
 
 #### 8.3.2. To-Be Product Backlog
 
+Este backlog es específico del Capítulo VIII: solo incluye las historias nuevas que se necesitan para ejecutar EXP-01 y EXP-02, no el backlog general del producto completo que ya se presentó en el Capítulo III. Por eso aquí solo aparecen las nueve historias de la sección 8.3.1 y ninguna historia de otras áreas de CareConnect, como inicio de sesión o facturación, que no forman parte de estos dos experimentos.
+
 Se mantiene la estimación en Story Points con escala 1/2/3/5/8. La auditoría común y el cierre con motivo anteceden a ambos experimentos porque definen sus denominadores y resoluciones. EXP-01 conserva precedencia por su prioridad en el Question Backlog. Son estimaciones de planificación, no tareas ejecutadas.
 
-| Orden | Story ID | Incremento | Relación con el experimento | Story Points |
+| # Orden | User Story Id | Título | Descripción | Story Points (1/2/3/5/8) |
 |---:|---|---|---|---:|
-| 1 | TS-02 | Asignación por círculo, agenda congelada y auditoría común. | Datos reproducibles de EXP-01 y EXP-02. | 5 |
-| 2 | US-07 | Cierre explícito con motivo, común a A y B. | LRMR y TNR. | 3 |
-| 3 | US-01 | Confirmación con pulsación sostenida y ventana de reversión. | Variante EXP-01/B. | 3 |
-| 4 | TS-01 | Canal de propagación compatible con Spring Boot/Flutter. | Soporte de sincronización EXP-01/B. | 5 |
-| 5 | US-02 | Visualización en otra sesión y verificación de plazo. | TSC. | 3 |
-| 6 | US-05 | Reversión auditada de una confirmación. | UR y validez de TCOM. | 2 |
-| 7 | US-03 | Recordatorio a +15 con envío y entrega diferenciados. | Variante EXP-02/B. | 3 |
-| 8 | US-04 | Aviso a co-cuidadores a +30 con consentimiento vigente. | Variante EXP-02/B. | 3 |
-| 9 | US-06 | Registro observable de preferencias de notificación. | NOR. | 1 |
+| 1 | TS-02 | Asignación y auditoría común | Como responsable del experimento, deseo conservar la asignación y un historial reproducible de eventos en ambos grupos, para calcular las métricas sin depender de campos mutables ni duplicar reintentos. | 5 |
+| 2 | US-07 | Cierre explícito con motivo | Como cuidador autorizado, deseo cerrar un registro del escenario con un motivo, para distinguir una resolución documentada de una confirmación de administración. | 3 |
+| 3 | US-01 | Confirmación reversible | Como cuidador autorizado, deseo confirmar un evento desde su tarjeta con pulsación sostenida y opción de reversión, para corregir una acción accidental sin salir de Agenda. | 3 |
+| 4 | TS-01 | Propagación de estados entre sesiones | Como desarrollador, deseo un canal compatible con Spring Boot y Flutter, para difundir estados a sesiones autorizadas del mismo círculo. | 5 |
+| 5 | US-02 | Estado compartido visible | Como co-cuidador con consentimiento vigente, deseo ver el estado actualizado de un evento, para coordinar el seguimiento sin recargar manualmente. | 3 |
+| 6 | US-05 | Deshacer una confirmación | Como cuidador, deseo revertir una confirmación accidental dentro de diez segundos, para conservar un historial de seguimiento correcto. | 2 |
+| 7 | US-03 | Recordatorio al minuto +15 | Como cuidador de un escenario de prueba, deseo recibir un recordatorio sobre un registro que sigue pendiente, para revisar su estado. | 3 |
+| 8 | US-04 | Aviso a co-cuidadores al minuto +30 | Como co-cuidador autorizado, deseo recibir un aviso de registro sin resolver, para coordinar su revisión en el escenario. | 3 |
+| 9 | US-06 | Preferencias de notificación | Como participante, deseo gestionar los avisos y conservar el acceso a Agenda, para ajustar la carga de notificaciones del escenario. | 1 |
 
 El aviso común al minuto 0 y su entrega instrumentada son prerrequisitos técnicos de EXP-02, aplicados por igual a los dos grupos. Las historias de avisos los incluyen antes de habilitar los escalones adicionales. La decisión de ejecutar se toma con las condiciones de preparación y factibilidad documentadas, no por la mera existencia de estas historias en el backlog.
 
