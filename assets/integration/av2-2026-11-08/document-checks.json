@@ -1,0 +1,334 @@
+{
+  "date": "2026-11-08",
+  "technical_status": "passed",
+  "delivery_status": "incomplete_evidence_see_verification_md",
+  "scope": "report integration and documentary consistency; no experiment execution or production load test",
+  "base": "e38959f20dd721d8e7f792311de99ec2c6c11eec",
+  "tested_merge_head": "49b972a49fb9577e8007f40bc43c6d315c44b87e",
+  "main_unchanged": "8a4848f0a5eb99cda3b5bd263f08e82bea1d2898",
+  "sources": {
+    "chapter-1": "8a336ce6f3af64a3e08d089e969bfacac62de264",
+    "chapter-2": "b5d9d6f3cc847ccf7720aa4e45793cc07beceed7",
+    "chapter-3": "4d784d4018a9554cd4be285b5516652280ddabbf",
+    "chapter-4": "1bad9405a82756f7239a4e4aabc5dc1041df0005",
+    "chapter-5": "9c6d4315108640f9c666e800bb43bcd180baebba",
+    "chapter-6": "1bae3678b232120b1355cce0c0147786a9ff3f94",
+    "chapter-7": "d567d3a6d20b6caede36b7eb4b8682dd25461a37",
+    "chapter-8": "9d5568ec2fcb297e1be64d451ee494a63a8e5615"
+  },
+  "integrated_input_branches": 8,
+  "conflicts": 0,
+  "local_links_checked": 571,
+  "broken_local_links": 0,
+  "numbered_sections": 177,
+  "numbered_figures": 32,
+  "preserved_evidence_files": [
+    {
+      "file": "assets/CareConnect_DB_Agenda_v2.png",
+      "blob": "9f4675f35be8e39b958719732613ac12e4a9ec53",
+      "source": "chapter-4"
+    },
+    {
+      "file": "assets/CareConnect_DB_ConsentManagement_v2.png",
+      "blob": "4f9489ab5f29d6f5b5ae479fe8e263e6233f5d59",
+      "source": "chapter-4"
+    },
+    {
+      "file": "assets/CareConnect_DB_Diary_v2.png",
+      "blob": "c167838ca518fd8526976d8a3fa8571402641e17",
+      "source": "chapter-4"
+    },
+    {
+      "file": "assets/CareConnect_DB_Documents_v2.png",
+      "blob": "cb835bd11436718e3a0c22cb28fbec42fc3d0281",
+      "source": "chapter-4"
+    },
+    {
+      "file": "assets/CareConnect_DB_IdentityAccess_v2.png",
+      "blob": "5c24f7da74c7002a8d6613155db5ed0f5a3ad8d4",
+      "source": "chapter-4"
+    },
+    {
+      "file": "assets/CareConnect_DB_Notifications_v2.png",
+      "blob": "c405335b3389a023b87383c1edeec6198eb17fc9",
+      "source": "chapter-4"
+    },
+    {
+      "file": "assets/DBB.png",
+      "blob": "b7bcf7a66be6796e6089433e5fecca6d3a378024",
+      "source": "chapter-4"
+    },
+    {
+      "file": "assets/deployment/av2-landing-2026-11-07/browser-checks.json",
+      "blob": "ee2e765a8c0553b5bd306a7f8f9f1cbfd88f959b",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/deployment/av2-landing-2026-11-07/deployment.json",
+      "blob": "66308e93c58e2442aa13f7a368704b08205f4dbd",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/deployment/av2-landing-2026-11-07/landing-production.jpg",
+      "blob": "e9c570431db32d89d686b0a913385f221a356b8c",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/deployment/av2-landing-2026-11-07/verification.md",
+      "blob": "569d0b157541d40169512882050fdc54fdc01c61",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/experiments/av2-consolidation-2026-11-07/calculate_scale.py",
+      "blob": "aaff5500c211f286790e848c661339a2b708b027",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/experiments/av2-consolidation-2026-11-07/document-checks.json",
+      "blob": "2ebbdce0f8d5e4f5f5b2965de43079dbe953eb87",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/experiments/av2-consolidation-2026-11-07/verification.md",
+      "blob": "5cdae418dc2a099276b91d06124771fd54b9b66f",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/experiments/av2-d-2026-10-24/verification.md",
+      "blob": "1092bf38d62e259c25c42f30eee6843fc21f2eee",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/monitoring/actions-monitoring-pipeline.png",
+      "blob": "e853995c7f9b4f3e7a8be4713b81a827a96c630e",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/actuator-endpoints-local.png",
+      "blob": "6a55a627918ccc8b318114e7da7b80ded482055f",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/actuator-health-local.png",
+      "blob": "dcbf95e614600c56ce24b8bd872d0b8d45fb610b",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/actuator-health-production.png",
+      "blob": "b13ab57eefee9f89cca895c633c67cbc84ffafb1",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/actuator-metrics-local.png",
+      "blob": "0ed9f7f86b378e84f3d869f0a09ba42d90ba023b",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/cold-start-results.png",
+      "blob": "0e9712bd0e045d53e4c9084de34994fd68b61a79",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/email-monitor-down.png",
+      "blob": "afb1d5b127cba03e4d48cd9b992a436f862f3f20",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/email-monitor-up.png",
+      "blob": "6bfa9d6f06e0927d047df35cabdff58701a9586b",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/k6-health-results.png",
+      "blob": "e0bcfe58748965893cf0be3e4b54764f28959b05",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/lighthouse-landing-desktop.png",
+      "blob": "ca4bb90a373815d08e50f6415754e36e1ad4d23d",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/lighthouse-landing-mobile.png",
+      "blob": "f3cf7306c07addc572cd3c04d7b2de319fecf962",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/lighthouse-web-desktop.png",
+      "blob": "d4a2df5ee16244870ce10770c0b5421d574256d4",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/lighthouse-web-mobile.png",
+      "blob": "82545adb678437f1c0d22d439f7748f239b9e487",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/pr-develop-main-ci-passed.png",
+      "blob": "58c520fb3ed18b1aef6b2bd6a5cf2a75f1e9bb48",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/pr5-ci-checks-passed.png",
+      "blob": "f56468e5ea13f8bb8d7af760c5858790ff0510a5",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/render-db-suspended.png",
+      "blob": "3430fdc0a29f960d521a92728595ad58d64a49bb",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/render-deploy-failed-db-expired.png",
+      "blob": "e955531fc980f4251aa4d2e51645641f0901b526",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/render-deploy-live-actuator.png",
+      "blob": "55b5f8fd9759cbd1a2fe5681a33d74a9a43fc9dd",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/uptimerobot-api-down.png",
+      "blob": "130378c284d02218b09ed0caaf7d5da9aad71ab1",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/uptimerobot-api-paused.png",
+      "blob": "1d8d197afec0ea70a9b50a051f1fbfabe5024356",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/uptimerobot-api-recovered.png",
+      "blob": "30c3b0fc851bab465a4f06213ada1ab711f4eec4",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/uptimerobot-incidents.png",
+      "blob": "b7864a2c878f78380c9ffc02d0ea2ea63228c457",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/uptimerobot-monitor-api.png",
+      "blob": "f1b0c94e3ad1f63620fd30937e2521de8c4590ba",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/uptimerobot-monitor-landing.png",
+      "blob": "dd88336dab694d5b99f2e8d89b324cca3c5828a1",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/monitoring/uptimerobot-monitor-web.png",
+      "blob": "a02ecac74de2384d59b4792cd2a7bcd39c5d8615",
+      "source": "chapter-7"
+    },
+    {
+      "file": "assets/testing/landing-links-2026-11-07/browser-checks.json",
+      "blob": "6d0a03a91e62b3c936ca503aa22a6affe85688fa",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/testing/landing-links-2026-11-07/contact-destination-public.jpg",
+      "blob": "367bb414932e97304f688c18acc7c8651f29ccdc",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/testing/landing-links-2026-11-07/landing-contact-fixed.jpg",
+      "blob": "e9c570431db32d89d686b0a913385f221a356b8c",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/testing/landing-links-2026-11-07/landing-fix.patch",
+      "blob": "29d50666180ced88cf062a6685931aaf5a6a0e05",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/testing/landing-links-2026-11-07/verification.md",
+      "blob": "f852c865a9af8482c6cf8719a8c561381e9ad316",
+      "source": "chapter-8"
+    },
+    {
+      "file": "assets/ux-01-login.png",
+      "blob": "613c64e1664eeecbd8de4d5e0ee5da485e5f6a4a",
+      "source": "chapter-6"
+    },
+    {
+      "file": "assets/ux-02-registro-psicologo.png",
+      "blob": "928d8b6ad53cf1f3f8b51aef21538be4c46f2d7a",
+      "source": "chapter-6"
+    },
+    {
+      "file": "assets/ux-03-verificacion-cuenta.png",
+      "blob": "74858d1d1a963f5e39ef9cc301ab8106969e08a8",
+      "source": "chapter-6"
+    },
+    {
+      "file": "assets/ux-04-datos-opcionales.png",
+      "blob": "d4c9619962a34837c33bb538ab5be69064d57760",
+      "source": "chapter-6"
+    },
+    {
+      "file": "assets/ux-05-inicio.png",
+      "blob": "f0b2a6dc93a93a116a72b1b9f54d2f04ece279c7",
+      "source": "chapter-6"
+    },
+    {
+      "file": "assets/ux-06-reserva-profesional.png",
+      "blob": "5b181496feded0bc434a17ae5700aa4808873518",
+      "source": "chapter-6"
+    },
+    {
+      "file": "assets/ux-07-reserva-calendario.png",
+      "blob": "70f0c475a3ddf24df97b0007cb6f72fab2cd51be",
+      "source": "chapter-6"
+    },
+    {
+      "file": "assets/ux-08-configuracion.png",
+      "blob": "7226b8d7defbc9f3f768c51b411e8368d8b0272c",
+      "source": "chapter-6"
+    }
+  ],
+  "chapter_viii_preserved": true,
+  "monitoring_preserved": true,
+  "develop_conclusions_preserved": true,
+  "chapters_i_iii_preserved": true,
+  "question_scores": [
+    62.5,
+    50,
+    32,
+    18,
+    12
+  ],
+  "calculations": {
+    "status": "planning_scenarios_only_not_observed_data",
+    "EXP-01": {
+      "alpha_one_sided": 0.05,
+      "planning_power": 0.8,
+      "retention_assumption": 0.85,
+      "sigma_assumption": 0.5,
+      "delta": 0.15,
+      "normal_approximation_per_arm": 137.3901607115503,
+      "evaluable_per_arm": 138,
+      "recruit_per_arm": 163,
+      "recruit_total": 326,
+      "approximate_power_at_evaluable_n": 0.8015396516367695
+    },
+    "EXP-02": {
+      "alpha_one_sided": 0.05,
+      "planning_power": 0.8,
+      "retention_assumption": 0.85,
+      "sigma_assumption": 30,
+      "delta": 10,
+      "normal_approximation_per_arm": 111.28603017635574,
+      "evaluable_per_arm": 112,
+      "recruit_per_arm": 132,
+      "recruit_total": 264,
+      "approximate_power_at_evaluable_n": 0.8022219701621712
+    },
+    "EXP-02_reference_mean_assumption_minutes": 25,
+    "EXP-02_relative_improvement_target": 0.4,
+    "total_distinct_circles_recruitment_target": 590
+  },
+  "sha256_readme": "be59d2c189b2a9ae4dea8f0a72a750318a3f986b9fa6511540bd9aed8a69bbd8"
+}

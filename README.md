@@ -99,6 +99,7 @@ Noviembre, 2026
 | 2.1.0 | 21/10/2026 | Matias Salcedo | Desarrolló el Capítulo VIII: Experiment Planning (8.1) y Experiment Design inicial (8.2) con Question Backlog, Experiment Cards, Hipótesis Null/Alternative, Domain Metrics y Condiciones (`chapter-8`) |
 | 2.1.1 | 24/10/2026 | Matias Salcedo | Revisó el bloque D contra la guía AV2 y el enunciado: corrigió el As-Is, trazó preguntas y tarjetas, unificó hipótesis y métricas, explicitó condiciones y separó planificación de resultados (`chapter-8`) |
 | 2.2.0 | 07/11/2026 | Matias Salcedo | Consolidó D con los cuatro commits de Emy127: alineó escala, métodos, tracking e historias con el As-Is real; completó las tarjetas con cálculos reproducibles y documentó la corrección de enlaces de la landing en `chapter-8` |
+| 2.3.0 | 08/11/2026 | Matias Salcedo / equipo CareStacks | Integró los aportes AV2 de los capítulos IV, VI, VII y VIII en `develop`, conservando la carátula y conclusiones AV2; corrigió referencias y registró la [verificación y los vacíos de entrega](assets/integration/av2-2026-11-08/verification.md). |
 
 # Project Report Collaboration Insights
 
@@ -234,9 +235,6 @@ TB1:
         - [Resumen del Diccionario de Clases](#resumen-del-diccionario-de-clases)
     - [4.10. Database Design](#410-database-design)
       - [4.10.1. Relational/Non-Relational Database Diagram](#4101-relationalnon-relational-database-diagram)
-        - [Agrupación conceptual por bounded context](#agrupación-conceptual-por-bounded-context)
-        - [Persistencia relacional](#persistencia-relacional)
-        - [Persistencia de archivos](#persistencia-de-archivos)
   - [Capítulo V: Product Implementation](#capítulo-v-product-implementation)
     - [5.1. Software Configuration Management](#51-software-configuration-management)
       - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
@@ -303,6 +301,8 @@ TB1:
       - [Repositorio de la Aplicación Web (`carestacks-web`)](#repositorio-de-la-aplicación-web-carestacks-web)
       - [Interpretación](#interpretación)
       - [5.2.8. Acuerdo de Servicio - SaaS](#528-acuerdo-de-servicio---saas-saas-agreement)
+        - [5.2.8.17. Alineación ética y profesional](#52817-alineación-ética-y-profesional)
+        - [5.2.8.18. Claridad y accesibilidad](#52818-claridad-y-accesibilidad)
     - [5.3. Video About-the-Product](#53-video-about-the-product)
 - [Part II: Verification, Validation & Pipeline](#part-ii-verification-validation--pipeline)
   - [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
@@ -345,6 +345,7 @@ TB1:
       - [7.4.2. Monitoring Pipeline Components](#742-monitoring-pipeline-components)
       - [7.4.3. Alerting Pipeline Components](#743-alerting-pipeline-components)
       - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
+      - [7.4.5. Benchmark](#745-benchmark)
 - [Part III: Experiment-Driven Lifecycle](#part-iii-experiment-driven-lifecycle)
   - [Capítulo VIII: Experiment-Driven Development](#capítulo-viii-experiment-driven-development)
     - [8.1. Experiment Planning](#81-experiment-planning)
@@ -387,7 +388,8 @@ TB1:
       - [8.6.2. Resumen usando Gees Framework](#862-resumen-usando-gees-framework)
   - [Conclusiones](#conclusiones)
     - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-    - [Resultados y recomendaciones de TB1](#resultados-y-recomendaciones-de-tb1)
+      - [Conclusiones del AV2](#conclusiones-del-av2)
+      - [Recomendaciones](#recomendaciones)
   - [Bibliografía](#bibliografía)
   - [Anexos](#anexos)
     - [Anexo A: Archivo de Figma](#anexo-a-archivo-de-figma)
@@ -406,7 +408,7 @@ Cada participante del equipo debe sustentar evidencia de cómo las actividades r
 | Criterio específico | Acciones realizadas | Conclusiones |
 |----|----|----|
 |4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Al realizar el needfinding y las entrevistas a cuidadores de pacientes geriátricos, asumí la responsabilidad deontológica de proteger la privacidad y confidencialidad de la información clínica y personal recolectada, aplicando consentimiento informado y resguardando la dignidad del adulto mayor según los principios éticos de la ingeniería de software.<br><br>**TB1**<br>Al homogeneizar los criterios de aceptación bajo la estructura Gherkin, asumí el compromiso profesional de eliminar ambigüedades funcionales en los flujos de administración de medicamentos, anteponiendo la precisión operativa sobre la celeridad de entrega para prevenir fallas que afecten la salud del paciente.<br><br>**AV2**<br>En el diseño de las entrevistas de validación y la auditoría de experiencia de usuario, establecí protocolos para evaluar la interacción de cuidadores y adultos mayores sin generarles sobrecarga cognitiva ni estrés, garantizando un trato ético y una retroalimentación constructiva hacia el grupo auditado.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>En la especificación de requisitos y priorización del backlog, asumí la responsabilidad profesional de jerarquizar los componentes de seguridad y validación de dosis médicas antes que features accesorias, garantizando que el diseño del software responda a criterios de integridad asistencial.<br><br>**TB1**<br>Durante la verificación de pruebas del sistema, ejercí una estricta honestidad intelectual al documentar con transparencia los defectos reales y limitaciones encontradas en la autorización de rutas de Agenda y en la falta de sesiones persistentes en la API, rechazando ocultar o maquillar fallos ante el evaluador.<br><br>**AV2**<br>Al revisar la planificación experimental del Capítulo VIII, distinguí los antecedentes cualitativos de los resultados aún no recolectados y retiré cifras sin sustento. Propuse escenarios con datos sintéticos, consentimiento y métricas de corrección y silenciamiento para estudiar la coordinación sin modificar tratamientos reales ni presentar un registro del software como evidencia clínica.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>En el diseño de la arquitectura y el modelado de datos, asumí la responsabilidad profesional de aplicar Domain-Driven Design para aislar los datos clínicos y de identidad en Bounded Contexts independientes, asegurando el principio de mínimo privilegio en el acceso a historiales médicos sensibles.<br><br>**TB1**<br>Al rediseñar la base de datos por contextos delimitados, asumí el compromiso ético de corregir la persistencia de datos para garantizar la integridad referencial y confidencialidad clínica, estructurando la integración continua con pruebas automatizadas obligatorias para que ningún defecto crítico pase desapercibido a ramas productivas.<br><br>**AV2**<br>En la configuración de análisis estático de código y políticas de revisión por pares (Code Reviews), implementé reglas estrictas para detectar vulnerabilidades de seguridad, manejo indebido de credenciales y deuda técnica, asumiendo la responsabilidad de blindar la plataforma contra intrusiones que vulneren datos de salud.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>En la concepción visual de las interfaces móviles, asumí la responsabilidad ética de cumplir con los lineamientos de diseño inclusivo para adultos mayores, seleccionando contrastes, tamaños tipográficos y áreas de toque según la norma WCAG 2.2 para prevenir errores en la lectura de prescripciones médicas.<br><br>**TB1**<br>Al formular el Acuerdo de Servicio SaaS, reconocí el deber ético y legal de transparentar los niveles de servicio y las responsabilidades mutuas, evitando cláusulas abusivas y delimitando con absoluta claridad que la herramienta es un soporte de gestión que no reemplaza el criterio médico profesional.<br><br>**AV2**<br>En la ejecución de la auditoría de experiencia de usuario, evalué con imparcialidad y rigor técnico las barreras de accesibilidad del software evaluado, emitiendo recomendaciones sustentadas en normas internacionales para asegurar un impacto positivo en los usuarios finales.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>En la implementación del cliente móvil en Flutter, asumí la responsabilidad técnica de optimizar el consumo de batería y estabilidad en segundo plano, reconociendo que un fallo en el dispositivo móvil durante un turno nocturno puede dejar incomunicado al cuidador ante una emergencia médica.<br><br>**TB1**<br>En la construcción de los pipelines de entrega y despliegue continuo (CD), establecí compuertas de calidad automáticas que bloquean la creación de imágenes Docker ante cualquier fallo en las pruebas, asumiendo la responsabilidad de evitar que versiones inestables se liberen al entorno de producción.<br><br>**AV2**<br>En la instrumentación de telemetría y monitoreo operativo, aseguré que la recolección de eventos y analítica respete la privacidad del usuario, limitando el monitoreo a parámetros de salud del sistema y rendimiento sin exponer datos sensibles ni identificadores personales sin consentimiento.|**AV1**<br><br>Abordamos el inicio del ciclo de vida del software asumiendo una postura profesional y ética frente a la vulnerabilidad de nuestro público objetivo, evitando concebir el desarrollo como una mera tarea técnica. Nuestras decisiones en modelado y UX se fundamentaron en el respeto a la privacidad, la inclusión del adulto mayor y la comprensión profunda de la realidad asistencial del cuidado domiciliario.<br><br>**TB1**<br><br>Consolidamos nuestra responsabilidad profesional al priorizar la honestidad técnica y la transparencia en los reportes de verificación, corrigiendo la estructura de base de datos y garantizando que el pipeline de entrega proteja la calidad del producto. Asumimos con madurez el reporte de defectos reales y establecimos un acuerdo de servicio con delimitaciones éticas rigurosas.<br><br>**AV2**<br><br>En la fase de experimentación y verificación estática, reafirmamos nuestro compromiso deontológico al conducir el diseño experimental bajo estrictas salvaguardas éticas que protegen la salud del paciente geriátrico, evitando sesgos que alteren el tratamiento médico y transparentando los hallazgos en la auditoría cruzada.|
-|4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Emití juicios informados sobre el impacto social de la brecha en el cuidado informal en el Perú, analizando cómo la falta de herramientas accesibles genera sobrecarga física y emocional desproporcionada en las familias, sustentando la necesidad de un producto centrado en la coordinación colaborativa.<br><br>**TB1**<br>Juzgué el impacto económico de los modelos de precios del mercado frente al poder adquisitivo local, fundamentando que la monetización de CareConnect debe contemplar un esquema freemium con barreras mínimas para no excluir a familias de sectores socioeconómicos vulnerables.<br><br>**AV2**<br>Evalué el impacto sociocultural de la transición desde bitácoras en papel hacia un flujo digital, determinando que la solución debe respetar las costumbres de los cuidadores adultos mayores e incluir curvas de aprendizaje suaves que no profundicen la brecha digital.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Evalué el impacto social y global al diseñar la experiencia web multidispositivo, ponderando la necesidad de garantizar interfaces fluidas tanto en entornos urbanos con alta conectividad como en zonas con acceso intermitente a internet.<br><br>**TB1**<br>Evalué el impacto global y cultural de la solución al implementar la internacionalización bilingüe (i18n en español e inglés), fundamentando que el software debe ser accesible y comprensible para comunidades con diversas realidades sociolingüísticas.<br><br>**AV2**<br>Evalué el posible impacto social de ampliar los avisos a co-cuidadores: podría mejorar la coordinación y también aumentar la carga de supervisión. Por ello vinculé la propuesta a consentimiento vigente, recolección mínima de datos y una meta de silenciamiento de notificaciones, dejando su efecto pendiente de medición en lugar de asumir un beneficio ya demostrado.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Emití juicios fundamentados sobre el impacto económico del ciclo de vida del software, demostrando que una arquitectura desacoplada basada en Domain-Driven Design reduce drásticamente los costos de mantenimiento y facilita la escalabilidad del producto en la nube.<br><br>**TB1**<br>Evalué el impacto ambiental del software en términos de consumo energético y huella de carbono, optimizando los pasos de compilación y pruebas en el pipeline de GitHub Actions para reducir el consumo innecesario de cómputo en servidores cloud.<br><br>**AV2**<br>Ponderé el impacto global de la interoperabilidad en salud digital, juzgando la necesidad de alinear los endpoints de la API con estándares de comunicación que permitan una futura integración segura y eficiente con sistemas hospitalarios y de telemedicina.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Juzgué el impacto social de la exclusión digital en la tercera edad, sustentando que una interfaz adaptada a capacidades motrices y visuales reducidas fomenta la independencia del paciente geriátrico y promueve un envejecimiento activo.<br><br>**TB1**<br>Evalué el impacto económico y legal de los términos de servicio SaaS, analizando cómo la claridad en la propiedad de los datos clínicos y la protección ante interrupciones del servicio protegen la economía familiar y consolidan la confianza del consumidor.<br><br>**AV2**<br>Emití juicios informados sobre el impacto ambiental y social derivado de sustituir bitácoras físicas de papel por registros digitales compartidos, sopesando la reducción de residuos materiales frente a la demanda energética de almacenamiento en la nube.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Evalué el impacto socioeconómico al seleccionar Flutter como framework de desarrollo móvil, fundamentando que la compatibilidad con dispositivos Android de gama de entrada democratiza el acceso a la teleasistencia en estratos de menores recursos económicos.<br><br>**TB1**<br>Juzgué el impacto social y operativo de la alta disponibilidad en salud, determinando que los mecanismos de despliegue continuo en contenedores deben garantizar resiliencia y tiempos mínimos de inactividad (*downtime*) ante fallos imprevistos del servidor.<br><br>**AV2**<br>Evalué el impacto ambiental de la infraestructura de monitoreo continuo, seleccionando herramientas de telemetría livianas que optimizan la transferencia de datos y disminuyen la sobrecarga de procesamiento en los dispositivos móviles de los usuarios.|**AV1**<br><br>Incorporamos una visión sistémica de ingeniería que trasciende el código, evaluando el impacto de nuestras soluciones en contextos sociales reales: la sobrecarga de los cuidadores, la exclusión digital del adulto mayor y las limitaciones económicas familiares, asegurando un diseño tecnológico responsable y accesible.<br><br>**TB1**<br><br>Fundamentamos en el TB1 nuestras decisiones sobre pruebas, pipelines, arquitectura de datos, modelo SaaS e i18n considerando su impacto económico, social y ambiental, minimizando la huella energética en la nube y garantizando términos justos que construyen confianza en el mercado.<br><br>**AV2**<br><br>En este hito evaluamos integralmente las consecuencias sociales y ambientales de la experimentación y el monitoreo en producción. Comprobamos que medir el software mediante telemetría permite proteger la vida y salud del paciente geriátrico de manera medible y sostenible, mitigando riesgos de exclusión tecnológica y optimizando recursos de infraestructura.|
+|4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Emití juicios informados sobre el impacto social de la brecha en el cuidado informal en el Perú, analizando cómo la falta de herramientas accesibles genera sobrecarga física y emocional desproporcionada en las familias, sustentando la necesidad de un producto centrado en la coordinación colaborativa.<br><br>**TB1**<br>Juzgué el impacto económico de los modelos de precios del mercado frente al poder adquisitivo local, fundamentando que la monetización de CareConnect debe contemplar un esquema freemium con barreras mínimas para no excluir a familias de sectores socioeconómicos vulnerables.<br><br>**AV2**<br>Evalué el impacto sociocultural de la transición desde bitácoras en papel hacia un flujo digital, determinando que la solución debe respetar las costumbres de los cuidadores adultos mayores e incluir curvas de aprendizaje suaves que no profundicen la brecha digital.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Evalué el impacto social y global al diseñar la experiencia web multidispositivo, ponderando la necesidad de garantizar interfaces fluidas tanto en entornos urbanos con alta conectividad como en zonas con acceso intermitente a internet.<br><br>**TB1**<br>Evalué el impacto global y cultural de la solución al implementar la internacionalización bilingüe (i18n en español e inglés), fundamentando que el software debe ser accesible y comprensible para comunidades con diversas realidades sociolingüísticas.<br><br>**AV2**<br>Evalué el posible impacto social de ampliar los avisos a co-cuidadores: podría mejorar la coordinación y también aumentar la carga de supervisión. Por ello vinculé la propuesta a consentimiento vigente, recolección mínima de datos y una meta de silenciamiento de notificaciones, dejando su efecto pendiente de medición en lugar de asumir un beneficio ya demostrado.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Emití juicios fundamentados sobre el impacto económico del ciclo de vida del software, demostrando que una arquitectura desacoplada basada en Domain-Driven Design reduce drásticamente los costos de mantenimiento y facilita la escalabilidad del producto en la nube.<br><br>**TB1**<br>Evalué el impacto ambiental del software en términos de consumo energético y huella de carbono, optimizando los pasos de compilación y pruebas en el pipeline de GitHub Actions para reducir el consumo innecesario de cómputo en servidores cloud.<br><br>**AV2**<br>Ponderé el impacto global de la interoperabilidad en salud digital, juzgando la necesidad de alinear los endpoints de la API con estándares de comunicación que permitan una futura integración segura y eficiente con sistemas hospitalarios y de telemedicina.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Juzgué el impacto social de la exclusión digital en la tercera edad, sustentando que una interfaz adaptada a capacidades motrices y visuales reducidas fomenta la independencia del paciente geriátrico y promueve un envejecimiento activo.<br><br>**TB1**<br>Evalué el impacto económico y legal de los términos de servicio SaaS, analizando cómo la claridad en la propiedad de los datos clínicos y la protección ante interrupciones del servicio protegen la economía familiar y consolidan la confianza del consumidor.<br><br>**AV2**<br>Emití juicios informados sobre el impacto ambiental y social derivado de sustituir bitácoras físicas de papel por registros digitales compartidos, sopesando la reducción de residuos materiales frente a la demanda energética de almacenamiento en la nube.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Evalué el impacto socioeconómico al seleccionar Flutter como framework de desarrollo móvil, fundamentando que la compatibilidad con dispositivos Android de gama de entrada democratiza el acceso a la teleasistencia en estratos de menores recursos económicos.<br><br>**TB1**<br>Juzgué el impacto social y operativo de la alta disponibilidad en salud, determinando que los mecanismos de despliegue continuo en contenedores deben garantizar resiliencia y tiempos mínimos de inactividad (*downtime*) ante fallos imprevistos del servidor.<br><br>**AV2**<br>Evalué el impacto ambiental de la infraestructura de monitoreo continuo, seleccionando herramientas de telemetría livianas que optimizan la transferencia de datos y disminuyen la sobrecarga de procesamiento en los dispositivos móviles de los usuarios.|**AV1**<br><br>Incorporamos una visión sistémica de ingeniería que trasciende el código, evaluando el impacto de nuestras soluciones en contextos sociales reales: la sobrecarga de los cuidadores, la exclusión digital del adulto mayor y las limitaciones económicas familiares, asegurando un diseño tecnológico responsable y accesible.<br><br>**TB1**<br><br>Fundamentamos en el TB1 nuestras decisiones sobre pruebas, pipelines, arquitectura de datos, modelo SaaS e i18n considerando su impacto económico, social y ambiental, minimizando la huella energética en la nube y garantizando términos justos que construyen confianza en el mercado.<br><br>**AV2**<br><br>En este hito evaluamos integralmente las consecuencias sociales y ambientales de la experimentación y el monitoreo en producción. Relacionamos el monitoreo con la detección de fallos técnicos y la continuidad del servicio. El efecto sobre la salud del paciente, la inclusión y la sostenibilidad requiere evidencia adicional y no fue medido en esta entrega.|
 
 # Part I: As-Is Software Project
 
@@ -2276,7 +2278,7 @@ Este bounded context controla el ciclo de vida de los accesos compartidos entre 
 El bounded context Documentos administra la información asociada a documentos médicos y la referencia necesaria para acceder a los archivos almacenados externamente.
 
 
-![Class Diagram - Documentos](assets/CareConnect_DB_Documents_v2)
+![Class Diagram - Documentos](assets/careconnect-documents-class-diagram.png)
 
 *Figura 9. Diagrama de clases del bounded context Documentos.*
 
@@ -2288,7 +2290,7 @@ La entidad principal es `User`, que contiene información relacionada con el cor
 
 
 
-![Class Diagram - IAM](assets/CareConnect_DB_IdentityAccess_v2)
+![Class Diagram - IAM](assets/careconnect-iam-class-diagram.png)
 
 *Figura 10. Diagrama de clases del bounded context Autenticación / IAM.*
 
@@ -2456,7 +2458,6 @@ Los vínculos entre contextos representan dependencias de persistencia y no impl
 
 El siguiente diagrama presenta las **18 tablas** del diseño, agrupadas por *Bounded Context*, junto con sus atributos y relaciones internas y externas.
 
-<!-- REEMPLAZAR SOLAMENTE EL TEXTO ENTRE PARENTESIS POR EL LINK DE TU IMAGEN NUEVA -->
 ![CareConnect Integrated Database Diagram](assets/DBB.png)
 
 *Figura 11. Diagrama integrado de base de datos de CareConnect.*
@@ -3754,7 +3755,7 @@ La distribución de commits entre los cuatro repositorios refleja la división d
 
 **CareConnect – CareStacks** · Versión 1.0 · Septiembre de 2026
 
-**Nota del equipo.** El Acuerdo que sigue es la versión 1.0 (septiembre de 2026), enlazada desde la sección Términos y Condiciones de la Landing Page y disponible en español (es_419) e inglés (en_US). Describe el modelo SaaS propuesto para CareConnect; las cláusulas de suscripción y cobro describen ese modelo y no acreditan una integración de pagos ni una operación comercial en esta entrega.
+**Nota del equipo.** El Acuerdo que sigue es la versión 1.0 (septiembre de 2026), redactada en español y enlazada desde la sección Términos y Condiciones de la Landing Page. La interfaz de la landing está disponible en español e inglés; su selector no traduce este Acuerdo. Describe el modelo SaaS propuesto para CareConnect; las cláusulas de suscripción y cobro describen ese modelo y no acreditan una integración de pagos ni una operación comercial en esta entrega.
 
 Este documento explica, en lenguaje sencillo, los derechos, obligaciones y restricciones que aplican cuando usas CareConnect. Al crear una cuenta o usar la plataforma, aceptas este Acuerdo. Si no estás de acuerdo, te pedimos no usar el servicio.
 
@@ -3861,7 +3862,7 @@ Este Acuerdo se rige por las leyes de la República del Perú. Intentaremos reso
 
 ##### 5.2.8.16. Contacto
 
-Para consultas generales del proyecto: [canal público del equipo en GitHub](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues). Para ejercer tus derechos de acceso, rectificación, cancelación y oposición sobre tus datos personales, escribe a careconnect@gmail.com. No incluyas datos de salud ni otros datos personales en las consultas públicas.
+Para consultas generales del proyecto: [canal público del equipo en GitHub](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues). Para ejercer tus derechos de acceso, rectificación, cancelación y oposición sobre tus datos personales, escribe a careconnect@gmail.com. No incluyas datos de salud ni otros datos personales en las consultas públicas.
 
 ##### 5.2.8.17. Alineación ética y profesional
 
@@ -3883,7 +3884,7 @@ El Acuerdo se redactó pensando en personas cuidadoras y pacientes que no necesa
 - Secciones numeradas con títulos descriptivos, lo que permite ubicar cada tema.
 - Definiciones de los términos clave en una tabla.
 - Listas separadas para derechos, obligaciones y restricciones de uso.
-- Disponibilidad en español (es_419) e inglés (en_US) mediante el selector de idioma de la Landing Page, que actualiza el atributo `lang` del documento y las etiquetas accesibles (secciones 4.3.1 y 6.1.3).
+- Acceso desde el footer de la Landing Page, cuya interfaz cambia entre español e inglés y actualiza `lang` y las etiquetas accesibles (secciones 4.3.1 y 6.1.3). El texto de este Acuerdo permanece en español.
 
 
 
@@ -4048,7 +4049,7 @@ flutter build web --release / flutter build apk --debug -> success
 mvn -B clean verify    -> Build and run tests: success (CI, Pull Request #3 y develop)
 ```
  
-**Landing Page (React + TypeScript).** El pipeline de la Landing Page ejecuta `npm install`, `npm run lint` y `npm run build`, y la ejecución del commit `ab2d60e` fue aprobada (sección 7.1). Este resultado es histórico: el repositorio `carestacks-landing-page` no figura actualmente en la lista pública de la organización, por lo que no fue posible volver a ejecutar `npm run lint` ni consultar el log.
+**Landing Page (React + TypeScript).** La revisión del 07/11/2026 ejecutó `npm run lint` y `npm run build` sobre la corrección `62772ca`, ambas con salida 0. La [verificación de enlaces](assets/testing/landing-links-2026-11-07/verification.md) y la [publicación](assets/deployment/av2-landing-2026-11-07/verification.md) registran el resultado local y la ejecución CI aprobada. El repositorio requiere acceso autenticado; su ausencia de la lista pública no equivale a una falla del análisis. La ejecución de `ab2d60e` en §7.1 se conserva como evidencia histórica del TB1.
  
 **Aplicación Android del paciente (Kotlin).** El repositorio `carestacks-frontend` incluye `gradlew`, pero no cuenta con workflow de CI ni con Pull Requests. No se ejecutó `./gradlew lint`; esta verificación queda como mejora pendiente.
  
@@ -4067,7 +4068,7 @@ En esta sección se evalúa la calidad del código (errores, advertencias, confi
 | carestacks-web | `flutter analyze` (CI, PR #1) | 0 | 0 | 36 pruebas rápidas aprobadas | Aprobado |
 | carestacks-mobile-app | `flutter analyze` (CI, PR #1) | 0 | 0 | 9 pruebas rápidas aprobadas | Aprobado |
 | carestacks-backend-api | `mvn -B clean verify` (CI, PR #3) | 0 fallos de compilación ni de pruebas | No extraídas (el log de compilación no es público sin autenticación) | 16 pruebas del backend aprobadas | Build exitoso |
-| carestacks-landing-page | `npm run lint` (CI histórico, commit `ab2d60e`) | No disponible | No disponible | No aplica | Aprobado (histórico) |
+| carestacks-landing-page | `npm run lint` y build (`62772ca`, 07/11/2026) | 0 reportados | 0 reportadas por lint | No aplica | Aprobado; ver registros enlazados |
 | carestacks-frontend (Android) | No ejecutado | — | — | — | Sin verificación |
  
 El Pull Request #1 del backend documenta además una verificación local: `mvn -B -q test` con Java 25 y Spring Boot 4.0.6 ejecutó 10 pruebas con 0 fallos, 0 errores y 0 omitidas. Las métricas de duplicación de código, complejidad y cobertura no se midieron, porque el equipo no integra una plataforma de análisis continuo como SonarCloud.
@@ -4880,14 +4881,34 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 - Indicar un plazo estimado (por ejemplo, “Suele tomar 1 a 2 días hábiles”).
 - Informar que se enviará un correo cuando la cuenta esté activa.
 
+#### 6.4.2. Auditoría recibida
+
+La integración del 08/11/2026 contiene la auditoría realizada a NeuroDraw en §6.4.1, pero no incorpora un informe externo de auditoría de CareConnect. Esa evaluación no puede deducirse de la auditoría realizada a otro equipo.
+
+##### 6.4.2.1. Información del grupo auditor
+
+No se adjuntó la identificación del equipo que auditó CareConnect.
+
+##### 6.4.2.2. Cronograma de auditoría recibida
+
+No se adjuntaron fechas de recepción, revisión ni seguimiento de esa auditoría.
+
+##### 6.4.2.3. Contenido de auditoría recibida
+
+No se incorporó el informe recibido con hallazgos, severidades y capturas de CareConnect.
+
+##### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
+
+Sin el informe recibido y evidencias de corrección, no se acredita la subsanación de sus hallazgos. Las verificaciones propias de §6.1 y §6.2 se conservan con su alcance original.
+
 
 ## Capítulo VII: DevOps Practices
 
-Para el **Trabajo Parcial (TP)**, el alcance del Capítulo VII comprende **Continuous Integration, Continuous Delivery y Continuous Deployment**, correspondientes a las secciones **7.1, 7.2 y 7.3**. La sección **7.4 Continuous Monitoring** se mantiene únicamente como estructura del informe, ya que corresponde a una etapa posterior.
+Las secciones **7.1, 7.2 y 7.3** conservan la evidencia de **Continuous Integration, Continuous Delivery y Continuous Deployment** del Trabajo Parcial (04/10/2026). Para AV2 se incorpora **7.4 Continuous Monitoring**, con monitoreo, alertas, notificaciones y benchmark registrados en noviembre de 2026.
 
 La estrategia DevOps de CareConnect busca que los cambios realizados en los productos principales de la solución puedan ser verificados, preparados para entrega y desplegados mediante procesos repetibles y trazables. Para ello se emplea GitHub como plataforma de control de versiones y colaboración, y GitHub Actions como herramienta de automatización de los pipelines.
 
-Se integra aquí el contenido del equipo de `chapter-7` (`758ce96`) y se actualiza con los workflows y resultados de las ramas de revisión del 04/10/2026. Las capturas originales se conservan como evidencia histórica; los [registros CI actuales](assets/deployment/tb1-2026-10-04/verification.md) identifican las versiones aprobadas.
+La base del Trabajo Parcial proviene de `chapter-7` (`758ce96`), con los workflows y resultados del 04/10/2026 documentados en los [registros CI de TB1](assets/deployment/tb1-2026-10-04/verification.md). El aporte AV2 de `chapter-7` (`d567d3a`) completa §7.4. Cada evidencia conserva su fecha y versión; las capturas de octubre no se presentan como nuevas mediciones de noviembre.
 
 Los productos considerados en el pipeline del Trabajo Parcial son:
 
@@ -5087,7 +5108,7 @@ npm run lint
 npm run build
 ```
 
-La [ejecución CI de la landing actual](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/actions/runs/37244598095) aprobó el commit `ab2d60e`; el [registro de verificación](assets/testing/landing-product-2026-10-04/verification.md) documenta su publicación.
+La [ejecución CI de la landing en TB1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/actions/runs/37244598095) aprobó el commit `ab2d60e`; el [registro de verificación](assets/testing/landing-product-2026-10-04/verification.md) documenta su publicación. La corrección AV2 `62772ca` tiene una [ejecución CI aprobada del 07/11/2026](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/actions/runs/42403412775) y su [registro de publicación](assets/deployment/av2-landing-2026-11-07/verification.md).
 
 ##### Pipeline de la Native Mobile Application
 
