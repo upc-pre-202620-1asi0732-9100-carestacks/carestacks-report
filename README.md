@@ -3863,14 +3863,147 @@ Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-
 **Corrección posterior de Agenda — 04/10/2026.** El [backend PR #3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3) exige sesiones emitidas por IAM y propiedad o consentimiento AGENDA vigente en las diez rutas. Se sustituyeron los tokens fabricables por sesiones opacas de 30 minutos; logout las revoca. Web y móvil envían el token y eliminan la lista rechazada de caché ante 401/403. Pasan 16 pruebas del backend, 36 rápidas web, 9 rápidas móviles y los 9 escenarios de sistema por cliente: SYS-06 y SYS-07 ya no fallan. Ambos análisis estáticos y la compilación web release aprobaron. Las [versiones, logs y límites de esta corrección](assets/testing/agenda-auth-2026-10-04/verification.md) actualizan el resultado; las ejecuciones anteriores se conservan como historial. El defecto de Agenda queda corregido en las ramas publicadas, pero ST-03 sigue parcial hasta validar el cliente de paciente y los entornos desplegados/dispositivos. Las sesiones son locales a una instancia y requieren login después de reiniciar. Los cambios están en PRs; no se han fusionado ni desplegado.
 
 ### 6.2. Static testing & Verification
-
+ 
+El static testing comprende el conjunto de actividades de verificación que se realizan sin ejecutar el código fuente. A diferencia de las pruebas dinámicas descritas en la sección 6.1, su objetivo es detectar defectos, deudas técnicas y vulnerabilidades de forma temprana, analizando directamente el código, su estructura y el cumplimiento de las convenciones definidas por el equipo.
+ 
+Para los productos de CareConnect se aplicaron dos enfoques complementarios de verificación estática:
+ 
+- **Static Code Analysis:** ejecución de analizadores y del pipeline de compilación sobre cada repositorio (RESTful API en Java / Spring Boot, Frontend Web y aplicación móvil del cuidador en Flutter / Dart, Landing Page en React / TypeScript), para validar el cumplimiento de convenciones de codificación y medir la calidad y seguridad del código. Los resultados provienen de los workflows de GitHub Actions descritos en la sección 7.1 y de una revisión manual del código.
+- **Reviews:** revisión e integración de cambios mediante Pull Requests en GitHub, integrada al flujo de trabajo GitFlow.
 #### 6.2.1. Static Code Analysis
-
+ 
+El análisis estático de código se ejecutó por cada producto utilizando la herramienta adecuada para su lenguaje. La siguiente tabla resume las herramientas empleadas:
+ 
+| Producto | Repositorio | Lenguaje / Framework | Herramienta de análisis estático | Dónde se ejecuta |
+|---|---|---|---|---|
+| RESTful API (Backend) | `carestacks-backend-api` | Java 25 / Spring Boot 4 (Maven) | Compilación y verificación con Maven (`mvn -B clean verify`) | Workflow *Backend CI* de GitHub Actions |
+| Frontend Web Application | `carestacks-web` | Dart / Flutter (target Web) | `flutter analyze` con `flutter_lints` | Workflow *Web CI* de GitHub Actions |
+| Mobile Application (cuidador) | `carestacks-mobile-app` | Dart / Flutter (iOS / Android) | `flutter analyze` con `flutter_lints` | Workflow *Mobile CI* de GitHub Actions |
+| Landing Page | `carestacks-landing-page` | TypeScript / React + Vite | ESLint (`npm run lint`) | Workflow de CI de la Landing Page (histórico) |
+| Mobile Application (paciente) | `carestacks-frontend` | Kotlin / Jetpack Compose (Gradle) | Android Lint (`./gradlew lint`) | No ejecutado; el repositorio no tiene workflow de CI |
+ 
+> **Nota sobre la evidencia.** Los resultados de `flutter analyze` y de Maven se obtuvieron de las ejecuciones de GitHub Actions asociadas a los Pull Requests y a la rama `develop`, y no de una corrida local. Los SDK locales del equipo no coinciden con los que exige el proyecto (Flutter 3.47.9 / Dart 3.12.1 y Java 25), por lo que el pipeline de CI es la fuente de verdad de la verificación.
+ 
 ##### 6.2.1.1. Coding standard & Code conventions
-
+ 
+En esta sección se verifica que el código de cada producto cumpla con los estándares de codificación y convenciones de nomenclatura definidos por el equipo. Tal como se establece en la sección 5.1.3 (Source Code Style Guide & Conventions), los identificadores técnicos (clases, métodos, variables, endpoints, tablas y commits) se redactan en inglés y se adoptan las guías de estilo estándar de cada lenguaje.
+ 
+| Lenguaje / Tecnología | Convención adoptada | Mecanismo de verificación |
+|---|---|---|
+| Java / Spring Boot (Backend) | Clases e interfaces en PascalCase; métodos y variables en camelCase; constantes en UPPER_SNAKE_CASE; paquetes en minúsculas (por ejemplo, `com.carestacks.careconnect.agenda`). Estructura por bounded context con las capas `domain/`, `application/`, `infrastructure/` e `interfaces/`. | Compilación Maven en CI y revisión en Pull Requests |
+| Dart / Flutter (Web y móvil del cuidador) | Effective Dart mediante `package:flutter_lints/flutter.yaml`, incluido en el `analysis_options.yaml` de ambos repositorios; clases en PascalCase y funciones y variables en camelCase. | `flutter analyze` en CI |
+| Kotlin / Jetpack Compose (Android del paciente) | Clases en PascalCase; funciones y variables en camelCase; la UI no concentra reglas de negocio y los ViewModels administran el estado de presentación. | Revisión manual (sin workflow de CI) |
+| TypeScript / React (Landing Page) | Componentes en PascalCase; funciones y variables en camelCase; configuración por ambiente mediante variables de entorno (`import.meta.env.VITE_API_BASE_URL`), sin valores sensibles en el código. | ESLint (`npm run lint`) en CI |
+| Base de datos | Tablas en `snake_case` plural (`health_events`); columnas en `snake_case` (`created_at`); llaves foráneas con el formato `<entity>_id` (`patient_id`). | Revisión en Pull Requests |
+| API REST | Endpoints con sustantivos y semántica HTTP (por ejemplo, `GET /api/events`). | Pruebas de integración y de sistema (sección 6.1) y revisión en Pull Requests |
+ 
+Adicionalmente, el control de versiones aplica **GitFlow** (ramas `feature/*`, `test/*`, `release/*` y `hotfix/*`, integradas a `develop` y `main`), **Semantic Versioning** (`MAJOR.MINOR.PATCH`) y **Conventional Commits** (`<tipo>(<scope>): <descripción breve>`). Los Pull Requests del proyecto usan los tipos `feat`, `fix`, `test`, `docs` y `release`, por ejemplo `fix(agenda): enforce sessions and current consent` o `test(core): port verification tests`.
+ 
+**Frontend Web y aplicación móvil del cuidador (Flutter).** Ambos workflows ejecutan la misma secuencia: `flutter pub get`, `flutter analyze`, `flutter test` y la compilación (`flutter build web --release` en la web y `flutter build apk --debug` en la aplicación móvil). En el Pull Request #1 de cada repositorio, el paso *Analyze project* concluyó con éxito y las anotaciones de los check-runs no reportan ningún problema de código Dart (únicamente avisos de infraestructura de GitHub Actions, como la deprecación de Node 20, que no corresponden al código Flutter). El cuerpo del Pull Request #1 de la web indica que `flutter analyze` finalizó sin problemas.
+ 
+```text
+flutter pub get
+flutter analyze        -> Analyze project: success (CI, Pull Request #1)
+flutter test           -> success
+flutter build web --release / flutter build apk --debug -> success
+```
+ 
+**RESTful API (Java / Spring Boot).** El workflow *Backend CI* ejecuta `mvn -B clean verify` con Java 25. El repositorio no incluye Maven Wrapper (`mvnw`), por lo que se utiliza la instalación de Maven del runner. La verificación finalizó con éxito en el Pull Request #3 y en la última ejecución sobre `develop` (06/11/2026).
+ 
+```text
+mvn -B clean verify    -> Build and run tests: success (CI, Pull Request #3 y develop)
+```
+ 
+**Landing Page (React + TypeScript).** El pipeline de la Landing Page ejecuta `npm install`, `npm run lint` y `npm run build`, y la ejecución del commit `ab2d60e` fue aprobada (sección 7.1). Este resultado es histórico: el repositorio `carestacks-landing-page` no figura actualmente en la lista pública de la organización, por lo que no fue posible volver a ejecutar `npm run lint` ni consultar el log.
+ 
+**Aplicación Android del paciente (Kotlin).** El repositorio `carestacks-frontend` incluye `gradlew`, pero no cuenta con workflow de CI ni con Pull Requests. No se ejecutó `./gradlew lint`; esta verificación queda como mejora pendiente.
+ 
+**Referencias de la ejecución en CI:**
+ 
+- Workflow de la Frontend Web (Pull Request #1): [https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/actions/runs/37260341123](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/actions/runs/37260341123)
+- Workflow de la aplicación móvil del cuidador (Pull Request #1): [https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/actions/runs/37260341247](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/actions/runs/37260341247)
 ##### 6.2.1.2. Code Quality & Code Security
-
+ 
+En esta sección se evalúa la calidad del código (errores, advertencias, confiabilidad y mantenibilidad) y se identifican vulnerabilidades de seguridad (credenciales expuestas, configuraciones inseguras, validación insuficiente de datos). El equipo no utiliza SonarCloud ni SonarQube: no existe un `sonar-project.properties`, un workflow de Sonar ni un check de SonarCloud en los Pull Requests. Por ello, la calidad del código se verifica con `flutter analyze`, con Maven y con los workflows de GitHub Actions, y la seguridad se complementa con una revisión manual del código.
+ 
+###### A. Code Quality
+ 
+| Producto | Herramienta | Errores | Advertencias de código | Pruebas | Resultado |
+|---|---|---|---|---|---|
+| carestacks-web | `flutter analyze` (CI, PR #1) | 0 | 0 | 36 pruebas rápidas aprobadas | Aprobado |
+| carestacks-mobile-app | `flutter analyze` (CI, PR #1) | 0 | 0 | 9 pruebas rápidas aprobadas | Aprobado |
+| carestacks-backend-api | `mvn -B clean verify` (CI, PR #3) | 0 fallos de compilación ni de pruebas | No extraídas (el log de compilación no es público sin autenticación) | 16 pruebas del backend aprobadas | Build exitoso |
+| carestacks-landing-page | `npm run lint` (CI histórico, commit `ab2d60e`) | No disponible | No disponible | No aplica | Aprobado (histórico) |
+| carestacks-frontend (Android) | No ejecutado | — | — | — | Sin verificación |
+ 
+El Pull Request #1 del backend documenta además una verificación local: `mvn -B -q test` con Java 25 y Spring Boot 4.0.6 ejecutó 10 pruebas con 0 fallos, 0 errores y 0 omitidas. Las métricas de duplicación de código, complejidad y cobertura no se midieron, porque el equipo no integra una plataforma de análisis continuo como SonarCloud.
+ 
+La arquitectura por bounded contexts, con las capas `domain`, `application`, `infrastructure` e `interfaces`, favorece la mantenibilidad, ya que mantiene las reglas de negocio fuera de los controllers y desacopla los contextos entre sí.
+ 
+**Referencias de la ejecución en CI:**
+ 
+- Workflow *Backend CI* (Pull Request #3): [https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/actions/runs/37260376353](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/actions/runs/37260376353)
+###### B. Code Security
+ 
+El análisis de seguridad combinó las pruebas de sistema de la sección 6.1 con una revisión manual del código orientada a vulnerabilidades comunes (OWASP). Los hallazgos corresponden a **revisión manual**, no a la salida de una herramienta automatizada. Los principales hallazgos de la solución son los siguientes:
+ 
+| # | Hallazgo | Ubicación | Severidad | Referencia (CWE) | Estado |
+|---|---|---|---|---|---|
+| 1 | Las rutas de Agenda aceptaban sesiones con tokens fabricables y no verificaban la propiedad del recurso ni el consentimiento vigente. Las pruebas de sistema SYS-06 y SYS-07 fallaban. | Backend: módulo Agenda (diez rutas) | Alta | CWE-285: Improper Authorization | Corregido en el Pull Request #3 del backend |
+| 2 | Las listas rechazadas por el servidor (401/403) permanecían en la caché de los clientes. | Frontend Web y aplicación móvil del cuidador | Media | CWE-524: Use of Cache Containing Sensitive Information | Corregido en el Pull Request #1 de web y de móvil |
+| 3 | Las sesiones son locales a una instancia y se pierden al reiniciar el servicio, por lo que se requiere iniciar sesión nuevamente. | Backend: módulo IAM | Baja | — | Limitación conocida y documentada |
+| 4 | Política CORS permisiva: `allowedOriginPatterns("*")` sobre `/api/**`, con todos los encabezados permitidos. Cualquier origen puede invocar la API. | `carestacks-backend-api/src/main/java/com/carestacks/careconnect/shared/infrastructure/CorsConfig.java` | Media | CWE-942: Permissive Cross-domain Policy | Pendiente |
+ 
+**Observaciones adicionales de la revisión manual:**
+ 
+| # | Observación | Ubicación | Severidad | Referencia (CWE) |
+|---|---|---|---|---|
+| 5 | La cadena de filtros de Spring Security deshabilita CSRF y declara `anyRequest().permitAll()`. La autenticación de Agenda e IAM se valida manualmente por *Bearer token* en los controllers, por lo que un endpoint nuevo sin esa validación quedaría público. | `SecurityConfig.java` | Media | CWE-862: Missing Authorization |
+| 6 | La consola de H2 está habilitada (`spring.h2.console.enabled: true`, ruta `/h2-console`); debe desactivarse en el perfil de producción. | `application.yml` | Media | CWE-489: Active Debug Code |
+| 7 | Actuator expone los endpoints `health`, `info` y `metrics`; `health.show-details` está en `never`. | `application.yml` | Baja | CWE-200: Exposure of Sensitive Information |
+ 
+No se encontraron contraseñas ni claves reales versionadas en el repositorio: el archivo `.env.example` utiliza valores de ejemplo (por ejemplo, `DB_PASSWORD=change-me`) y `SUPABASE_SERVICE_ROLE_KEY` no está escrita en el código.
+ 
+**Medidas de mitigación aplicadas y recomendadas:**
+ 
+- **Hallazgo 1:** se reemplazaron los tokens fabricables por sesiones opacas de 30 minutos que el cierre de sesión revoca, y se exige una sesión emitida por IAM junto con propiedad o consentimiento `AGENDA` vigente en las diez rutas. Tras la corrección pasan las 16 pruebas del backend y los 9 escenarios de sistema por cliente.
+- **Hallazgo 2:** los clientes envían el token en cada solicitud y eliminan de la caché la lista rechazada ante una respuesta 401 o 403.
+- **Hallazgo 3:** como mejora futura, almacenar las sesiones en un repositorio compartido (base de datos o Redis) para que sobrevivan a reinicios y a múltiples instancias.
+- **Hallazgo 4:** restringir la política CORS a los orígenes conocidos (el origen HTTPS de la Frontend Web desplegada y el dominio de la Landing Page, `https://carestacks-landing-page.vercel.app`), tal como se plantea en la sección 7.2.2.
+- **Observación 5:** aplicar autorización por defecto en `SecurityFilterChain` (`anyRequest().authenticated()`) y declarar de forma explícita las rutas públicas.
+- **Observación 6:** deshabilitar la consola de H2 mediante el perfil de producción.
+- **Gestión de secretos:** las credenciales no se incluyen en el repositorio; se almacenan en GitHub Secrets o GitHub Environments y la configuración por ambiente se administra mediante variables de entorno (por ejemplo, `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` y `SPRING_DATASOURCE_PASSWORD`).
 #### 6.2.2. Reviews
+ 
+Las reviews constituyen la verificación manual del código realizada por los integrantes del equipo como parte del flujo de trabajo. El equipo gestiona la integración de los cambios mediante Pull Requests en GitHub, integrados al flujo de trabajo GitFlow: cada nueva funcionalidad o corrección se desarrolla en una rama de tipo `feature/*` o `test/*` y se integra a `develop`, y posteriormente a `main`, a través de un Pull Request. De esta manera, ningún cambio llega directamente a las ramas principales, sino que pasa primero por un Pull Request donde puede ser inspeccionado.
+ 
+El Pull Request centraliza en un solo lugar el conjunto de commits, los archivos modificados y las verificaciones automáticas del workflow de Integración Continua, de modo que cada ejecución queda asociada al commit y al Pull Request que la originó. Al revisar un Pull Request, el equipo toma en cuenta los siguientes aspectos:
+ 
+| Aspecto revisado | Descripción |
+|---|---|
+| Convenciones de código | El código respeta las guías de estilo y la nomenclatura en inglés definidas en la sección 6.2.1.1. |
+| Funcionalidad | El cambio cumple con la User Story y sus Acceptance Criteria (escritos en Gherkin) asociados. |
+| Calidad y seguridad | El cambio no introduce code smells ni vulnerabilidades evidentes, y no expone credenciales en el código. |
+| Pruebas | El cambio no rompe las pruebas existentes descritas en la sección 6.1 y el workflow de CI finaliza correctamente. |
+| Conventional Commits | Los mensajes de commit y los nombres de rama siguen las convenciones establecidas en la sección 5.1. |
+ 
+**Pull Requests revisados:**
+ 
+| Repositorio | PR | Título | Autor | Integrado (UTC) | Integrado por | Checks de CI |
+|---|---|---|---|---|---|---|
+| carestacks-backend-api | [#1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/1) | `test(core): port verification tests` | Matias Salcedo (`matiAAsc`) | 01/10/2026 22:16 | Percy Muñiz (`alomsoo`) | Sin checks de GitHub Actions: el workflow se agregó en el PR #2, el mismo día y después de este merge. El PR documenta una verificación local: `mvn -B -q test`, 10 pruebas, 0 fallos, 0 errores, 0 omitidas (Java 25, Spring Boot 4.0.6). |
+| carestacks-backend-api | [#3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3) | `fix(agenda): enforce sessions and current consent` | Matias Salcedo (`matiAAsc`) | 05/10/2026 19:26 | Percy Muñiz (`alomsoo`) | Aprobados: *Build and Test RESTful API*, *test* y *docker-build*. |
+| carestacks-web | [#1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/pull/1) | `fix(caregiver): enforce agenda sessions and validate TB1 flows` | Matias Salcedo (`matiAAsc`) | 05/10/2026 18:32 | Percy Muñiz (`alomsoo`) | Aprobado: *Build and Test Flutter Web* (`flutter analyze`, `flutter test` y `flutter build web --release`). |
+| carestacks-mobile-app | [#1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/pull/1) | `fix(caregiver): enforce agenda sessions and validate TB1 flows` | Matias Salcedo (`matiAAsc`) | 05/10/2026 19:42 | Percy Muñiz (`alomsoo`) | Aprobado: *Build and Validate Flutter Mobile App* (`flutter analyze`, `flutter test` y `flutter build apk --debug`). |
+ 
+En estos cuatro Pull Requests el autor y quien integra el cambio son integrantes distintos del equipo, y los checks automáticos de CI actúan como primera barrera de verificación. Sin embargo, ninguno registra reviews formales en GitHub (0 reviews), por lo que la revisión se realizó de forma informal entre los integrantes. Asimismo, el último run de CI de la aplicación móvil sobre un `push` a `main`, posterior al merge, finalizó en fallo; el check del Pull Request #1 sí estuvo en verde.
+ 
+**Oportunidades de mejora identificadas:**
+ 
+- Activar la regla de protección de ramas en `develop` y `main` para exigir al menos una *review* aprobada y los checks de CI antes de integrar.
+- Revisar y corregir el fallo del workflow *Mobile CI* sobre `main`.
+- Agregar un workflow de CI y Pull Requests al repositorio `carestacks-frontend` (Android).
+- Integrar una herramienta de análisis continuo (por ejemplo, SonarCloud) para medir duplicación, complejidad y cobertura.
 
 
 ### 6.3. Validation Interviews
@@ -4416,24 +4549,203 @@ La siguiente iteración deberá priorizar la comprobación de los hallazgos asoc
 - Nielsen, J. (1994). *Severity Ratings for Usability Problems*. Nielsen Norman Group. https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/
 
 ### 6.4. Auditoría de Experiencias de Usuario
-
+ 
 #### 6.4.1. Auditoría realizada
-
+ 
 ##### 6.4.1.1. Información del grupo auditado
-
+ 
+El grupo al que se le realizó la auditoría recibe el nombre de “NeuroDraw” y el producto que desarrollaron se llama “NeuroZen”. A continuación, se adjunta la lista de integrantes del grupo auditado.
+ 
+- Castro Picón, Manuel Fernando Joao (U20231G159)
+- Huaman De La Cruz, Jean Pool (U20201E781)
+- Paredes Chavez, Carlos Augusto (U202321613)
+- Requena Gutiérrez, Diego Gabriel (U20321774)
+- Vila Guillen, Miguel Angel (U20231G054)
+Inmediatamente, se adjuntan los enlaces de acceso al trabajo del grupo que desarrolló “NeuroZen”:
+ 
+- Aplicación web (producción): https://neurozen-web-frontend.vercel.app
+- Repositorio del informe: https://github.com/Proyecto-1ASI0732-2620-Experimentos/Report-NeuroZen-Experimento
 ##### 6.4.1.2. Cronograma de auditoría realizada
-
+ 
+En esta sección, se cronometran las principales actividades realizadas para el desarrollo de la auditoría hacia el trabajo del grupo “NeuroDraw”.
+ 
+| Actividad de auditoría realizada | Fecha/Hora | Realizado por |
+|---|---|---|
+| Solicitud de información al grupo auditado | [dd/mm/2026 hh:mm] | [Nombre] |
+| Envío de información solicitada por parte del grupo auditado a nuestro grupo para el desarrollo de la auditoría | [dd/mm/2026 hh:mm] | [Nombre] |
+| Ejecución de la auditoría | [dd/mm/2026 hh:mm] | [Integrante 1]<br>[Integrante 2]<br>[Integrante 3] |
+| Elaboración del informe de la auditoría | [dd/mm/2026 hh:mm] | [Integrante 1]<br>[Integrante 2]<br>[Integrante 3] |
+| Finalización y envío del informe de auditoría | [dd/mm/2026 hh:mm] | [Nombre] |
+ 
 ##### 6.4.1.3. Contenido de auditoría realizada
+ 
+**TAREAS A EVALUAR:**
+ 
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+ 
+1. Inicio de sesión de un usuario
+2. Creación de cuenta y elección del tipo de cuenta (usuario o psicólogo)
+3. Registro de psicólogo y verificación de colegiatura
+4. Configuración inicial opcional y test de autoevaluación de estrés
+5. Navegación y lectura del panel de Inicio (estadísticas y herramientas)
+6. Reserva de una sesión con un profesional
+7. Configuración de idioma y visualización de la aplicación
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+ 
+1. Perfil del usuario y suscripciones
+2. Ejercicios de respiración, pausas activas y biblioteca de recursos
+3. Registro de desencadenantes
+4. Aplicación móvil y pruebas de rendimiento o seguridad sobre la API
+**ESCALA DE SEVERIDAD:**
+ 
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+ 
+| Nivel | Descripción |
+|---|---|
+| 1 | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja y resolverlo de cara al siguiente release. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+ 
+**TABLA RESUMEN:**
+ 
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|---|---|---|
+| 1 | Los campos del inicio de sesión muestran el texto “null” en lugar de una guía de ingreso. | 3 | Relación entre el sistema y mundo real |
+| 2 | El panel de Inicio muestra datos de ejemplo con mensajes de tendencia que parecen reales. | 3 | Visibilidad del estado del sistema |
+| 3 | La selección de fecha no indica qué días tienen horarios disponibles. | 3 | Prevención de errores |
+| 4 | La tarjeta del profesional muestra datos de relleno: “$0”, “health” y valoración 0.0. | 2 | Relación entre el sistema y mundo real |
+| 5 | El pie de página muestra datos de contacto de relleno. | 2 | Relación entre el sistema y mundo real |
+| 6 | El paso “Último paso” del registro no es el último y deja opciones preseleccionadas. | 2 | Visibilidad del estado del sistema |
+| 7 | Los textos de ayuda del registro de psicólogo son muy pequeños y de bajo contraste. | 2 | Accessibility: Legibility and contrast |
+| 8 | Se usan “sesión” y “cita” de forma indistinta para la misma acción. | 1 | Consistencia y estándares |
+| 9 | Los controles de “Visualización” en Configuración son poco claros. | 1 | Visibilidad del estado del sistema |
+| 10 | La pantalla “Tu cuenta está en revisión” no indica cuánto demorará la verificación. | 1 | Visibilidad del estado del sistema |
+ 
+**DESCRIPCIÓN DE PROBLEMAS:**
+ 
+###### Problema 01:
+ 
+**Heurística violada:** Relación entre el sistema y mundo real
+**Severidad:** 3/4 - Problema mayor
+**Problema explicado:** En la pantalla de inicio de sesión, los campos “Correo Electrónico” y “Contraseña” muestran el texto “null”. Es un valor técnico que se filtra a la interfaz: el usuario puede interpretarlo como un dato precargado o como un error, y dudar si debe borrarlo antes de escribir. Al ser la primera pantalla que ve cualquier usuario, además transmite una impresión de producto inestable.
+ 
+![Problema 01: campos del login con el texto null](./assets/ux-01-login.png)
+ 
+**Recomendaciones:**
+ 
+- Reemplazar “null” por textos de ayuda comprensibles, por ejemplo “tucorreo@ejemplo.com” y “Ingresa tu contraseña”.
+- Revisar que ninguna variable sin inicializar se muestre en la interfaz.
+###### Problema 02:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 3/4 - Problema mayor
+**Problema explicado:** El panel de estadísticas incluye un aviso (“Aún no hay registros suficientes: se muestran datos de ejemplo”), pero igualmente presenta un nivel de estrés, un promedio, un gráfico semanal y un texto personalizado que habla de “tus niveles de estrés” y de “tus horas pico”, con una flecha roja de aumento del 5 %. Además, las señales se contradicen: el nivel actual aparece como “Bajo” y la curva termina descendiendo, mientras el texto sugiere contactar a un profesional por un aumento. En una aplicación de salud mental, un usuario nuevo puede tomar estos datos como resultados reales sobre sí mismo.
+ 
+![Problema 02: panel de Inicio con datos de ejemplo](./assets/ux-05-inicio.png)
+ 
+**Recomendaciones:**
+ 
+- Mostrar un estado vacío (ilustración y un botón como “Registra tu primer desencadenante” o “Hacer el test”) mientras no existan registros.
+- Si se mantienen datos demostrativos, atenuarlos visualmente, rotularlos como “Ejemplo” y no mostrar recomendaciones personalizadas ni alertas de tendencia.
+###### Problema 03:
+ 
+**Heurística violada:** Prevención de errores
+**Severidad:** 3/4 - Problema mayor
+**Problema explicado:** En el paso “Fecha y hora” de la reserva, todos los días desde hoy aparecen habilitados con el mismo aspecto. Al elegir el día 12, el sistema responde “No hay horarios disponibles para este día.” y el botón “Siguiente” queda deshabilitado sin explicación. El usuario debe probar día por día hasta encontrar uno con cupo, lo que puede llevarlo a abandonar la tarea principal del producto. Además, el título del mes se muestra como “Noviembre De 2026” (con “De” en mayúscula).
+ 
+![Problema 03: calendario de reserva sin indicar disponibilidad](./assets/ux-07-reserva-calendario.png)
+ 
+**Recomendaciones:**
+ 
+- Marcar visualmente los días con disponibilidad (por ejemplo, con un punto) y deshabilitar los que no tengan horarios.
+- Complementar el mensaje vacío con una acción útil, como “Próximo horario disponible: [fecha]”.
+- Corregir el formato del mes a “Noviembre de 2026”.
+###### Problema 04:
+ 
+**Heurística violada:** Relación entre el sistema y mundo real
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** En el primer paso de “Reservar Sesión”, el único profesional listado aparece con precio “$0 sesión”, especialidad “health” (en inglés, mientras la interfaz está en español), una valoración “0.0 (0)” y un avatar genérico. El precio en cero puede interpretarse como sesión gratuita o como un error, y la especialidad no ayuda a decidir. Asimismo, el botón “Siguiente” aparece deshabilitado sin indicar que primero hay que seleccionar un profesional.
+ 
+![Problema 04: tarjeta del profesional con datos de relleno](./assets/ux-06-reserva-profesional.png)
+ 
+**Recomendaciones:**
+ 
+- Mostrar “Tarifa por definir” o un precio real; no mostrar “$0” si no es una sesión gratuita.
+- Mostrar la especialidad en español y usar “Sin valoraciones aún” en lugar de “0.0 (0)”.
+- Agregar un texto de ayuda junto al botón deshabilitado, como “Selecciona un profesional para continuar”.
+###### Problema 05:
+ 
+**Heurística violada:** Relación entre el sistema y mundo real
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** El pie de página, presente en varias pantallas, muestra el teléfono “+1 (555) 123-4567” y la dirección “123 Wellness St, Health City, HC 12345”, que son datos de ejemplo. En una plataforma que trata salud mental, la confianza es clave: el usuario que necesite contactar a soporte (por ejemplo, desde la pantalla de verificación de cuenta) no tendrá un canal real.
+ 
+![Problema 05: pie de página con datos de contacto de relleno](./assets/ux-03-verificacion-cuenta.png)
+ 
+**Recomendaciones:**
+ 
+- Reemplazar los datos por información real de contacto (con código +51 si corresponde) o retirarlos hasta contar con ella.
+- Verificar que “Contactar soporte” lleve a un canal funcional.
+###### Problema 06:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** La pantalla “Cuéntanos un poco de ti” se presenta como “Último paso” y como opcional, pero el botón dice “Continuar al test” y a continuación aparece un test de 10 preguntas, por lo que el usuario no sabe cuánto falta. Además, “18-24” y “Formal” ya vienen seleccionados, de modo que quien continúe sin tocar nada registrará datos que no declaró. La opción “Omitir” es un enlace pequeño, alejado del botón principal.
+ 
+![Problema 06: paso opcional con opciones preseleccionadas](./assets/ux-04-datos-opcionales.png)
+ 
+**Recomendaciones:**
+ 
+- Cambiar el encabezado por “Paso opcional” o indicar la cantidad de pasos restantes.
+- No preseleccionar edad ni tipo de trabajo.
+- Colocar “Omitir” como botón secundario junto a “Continuar al test”.
+###### Problema 07:
+ 
+**Heurística violada:** Accessibility: Legibility and contrast
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** En el formulario “Registro de psicólogo”, las indicaciones importantes (“Debe coincidir con tu DNI y tu registro en el CPsP”, “Lo usaremos para verificar que estás habilitado para ejercer”, “Mínimo 8 caracteres, con al menos una letra y un número”) se muestran con una tipografía muy reducida y en gris claro sobre fondo crema. Son instrucciones que evitan errores que retrasarían la verificación de la colegiatura, por lo que deberían leerse con facilidad, sobre todo por personas con baja visión.
+ 
+![Problema 07: textos de ayuda pequeños en el registro de psicólogo](./assets/ux-02-registro-psicologo.png)
+ 
+**Recomendaciones:**
+ 
+- Aumentar el tamaño del texto de ayuda (mínimo 14 px) y usar un gris más oscuro que cumpla la relación de contraste 4.5:1 de WCAG.
+- Presentar los requisitos de la contraseña como una lista que se marca a medida que se cumplen.
+###### Problema 08:
+ 
+**Heurística violada:** Consistencia y estándares
+**Severidad:** 1/4 - Problema superficial
+**Problema explicado:** En el panel de Inicio la tarjeta se llama “Reservar Sesión” pero su descripción dice “Agendar cita con profesional”, y la consulta posterior se llama “Mis citas” (también en el pie de página). Además, la reserva se encuentra dentro del menú “Profesionales”, lo que no es evidente para quien busca “Reservar”. Esto obliga al usuario a deducir que se trata de la misma función.
+ 
+**Recomendaciones:**
+ 
+- Unificar el término en toda la aplicación (por ejemplo, “Reservar cita” y “Mis citas”).
+- Agregar un acceso directo visible a “Reservar cita” en la barra de navegación.
+###### Problema 09:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 1/4 - Problema superficial
+**Problema explicado:** El control deslizante “Tamaño de texto” muestra solo “16px”, sin marcas de mínimo y máximo ni una vista previa, y su control es un cuadrado negro que no sigue el estilo del resto de la interfaz. Los interruptores “Reducir animaciones” y “Alto contraste” aparecen en gris sobre gris, por lo que cuesta distinguir su estado. Estas opciones son de accesibilidad y deberían ser fáciles de usar.
+ 
+![Problema 09: controles de visualización en Configuración](./assets/ux-08-configuracion.png)
+ 
+**Recomendaciones:**
+ 
+- Agregar marcas “A-” y “A+” y una línea de texto de ejemplo que cambie de tamaño.
+- Reforzar el contraste de los interruptores y mostrar “Activado/Desactivado”.
+###### Problema 10:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 1/4 - Problema superficial
+**Problema explicado:** El psicólogo recién registrado ve los pasos de verificación, pero no se informa un plazo estimado; solo se dice “Te avisaremos cuando puedas recibir citas”. Sin un tiempo orientativo, el usuario no sabe si debe esperar horas o días, y debe usar “Comprobar estado” repetidamente.
+ 
+![Problema 10: pantalla de cuenta en revisión sin plazo estimado](./assets/ux-03-verificacion-cuenta.png)
+ 
+**Recomendaciones:**
+ 
+- Indicar un plazo estimado (por ejemplo, “Suele tomar 1 a 2 días hábiles”).
+- Informar que se enviará un correo cuando la cuenta esté activa.
 
-#### 6.4.2. Auditoría recibida
-
-##### 6.4.2.1. Información del grupo auditor
-
-##### 6.4.2.2. Cronograma de auditoría recibida
-
-##### 6.4.2.3. Contenido de auditoría recibida
-
-##### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
 ## Capítulo VII: DevOps Practices
 
