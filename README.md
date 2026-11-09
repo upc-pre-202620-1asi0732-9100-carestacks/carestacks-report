@@ -116,6 +116,12 @@ AV1:
 TB1:
 <img src="assets/insights_report_commitsTB1.png">
 <img src="assets/insights_report_branchsTB1.png">
+
+AV2:
+
+<img src="assets/Insights-report.png">
+<img src="assets/Insights-network.png">
+
 ## Tabla de Contenidos
 
 <!-- 4 niveles. Verificar los anclajes (#) antes de cada entrega: GitHub genera el ancla a partir del texto del título. -->
