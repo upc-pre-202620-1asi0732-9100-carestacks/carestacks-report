@@ -116,9 +116,12 @@ AV1:
 TB1:
 <img src="assets/insights_report_commitsTB1.png">
 <img src="assets/insights_report_branchsTB1.png">
+
 AV2:
+
 <img src="assets/Insights-report.png">
 <img src="assets/Insights-network.png">
+
 ## Tabla de Contenidos
 
 <!-- 4 niveles. Verificar los anclajes (#) antes de cada entrega: GitHub genera el ancla a partir del texto del título. -->
@@ -3766,7 +3769,7 @@ Las evidencias corresponden al período comprendido entre el 8 de octubre y el 8
 
 ![Backend AV2 Insights](assets/Insights-backend.png)
 
-*Figura X. Estadísticas de colaboración del repositorio Backend RESTful API durante el AV2.*
+*Figura 33. Estadísticas de colaboración del repositorio Backend RESTful API durante el AV2.*
 
 El repositorio del backend registró la participación de 2 autores, con 3 commits distribuidos entre las ramas y 1 commit en `main`, excluyendo merges.
 Asimismo, se registraron 3 Pull Requests fusionadas. En `main` se modificaron 3 archivos, con 41 líneas añadidas y 1 eliminada.
@@ -3777,7 +3780,7 @@ Estos resultados evidencian actividad de desarrollo e integración durante el pe
 
 ![Mobile AV2 Insights](assets/Insights-mobile.png)
 
-*Figura X. Estadísticas de colaboración del repositorio Native Mobile Application durante el AV2.*
+*Figura 34. Estadísticas de colaboración del repositorio Native Mobile Application durante el AV2.*
 
 El repositorio móvil registró la participación de 1 autor, con 2 commits en `main` y 2 commits en todas las ramas, excluyendo merges. También se registraron 2 Pull Requests fusionadas. En `main` se modificaron 2 archivos, con 90 líneas añadidas y 8 eliminadas.
 
@@ -3787,7 +3790,7 @@ La actividad registrada evidencia modificaciones e integración de cambios en el
 
 ![Report AV2 Insights](assets/Insights-report.png)
 
-*Figura X. Estadísticas de colaboración del repositorio Project Report durante el AV2.*
+*Figura 35. Estadísticas de colaboración del repositorio Project Report durante el AV2.*
 
 El repositorio del informe registró la participación de los 5 integrantes, con 36 commits tanto en `main` como en el conjunto de ramas, excluyendo merges. Durante el período se modificaron 80 archivos en `main`, con 10,282 líneas añadidas y 315 eliminadas.
 
@@ -3797,7 +3800,7 @@ Estos resultados evidencian una participación distribuida del equipo en la elab
 
 Los resultados muestran diferencias en la distribución de las contribuciones entre los repositorios. Mientras que el informe presenta actividad de los cinco integrantes, el backend registra dos autores y la aplicación móvil uno durante el período evaluado. Esta distribución puede relacionarse con la especialización de responsabilidades del equipo, aunque requiere contrastarse con el historial de commits y los Sprint Backlogs para identificar las contribuciones específicas de cada integrante.
 
-La evidencia de la aplicación web y de los demás productos correspondientes al alcance del AV2 deberá incorporarse para completar el análisis de colaboración de implementación.
+Las capturas AV2 aportadas cubren backend, aplicación móvil e informe. Este análisis se limita a esos repositorios y a la ventana temporal indicada; las capturas históricas de la web en la sección anterior corresponden a TB1 y no se utilizan para inferir su actividad en AV2. Los conteos de commits no equivalen por sí solos a horas de trabajo, calidad o valoración individual.
 
 #### Interpretación
 
@@ -6597,4 +6600,4 @@ Vercel. (s. f.). *Deploying Git repositories with Vercel*. Recuperado el 8 de no
 | AV1 | Video About-the-Product | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQD9H0d9sU4tQJuKV5PStHyuAYjfXdpoDfRe-xCc_R1401s |
 | AV1 | Video de exposición | [Ver exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQDFERAyGNqUSKYZ1N-h8J84AYT8Zt4YMgGvLYk0nFd1Aa4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=8V3uxF) |
 | TB1 | Video de exposición | [Ver exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQA9unyXf7GAS7Hj7D1HUpNHATNj-KI3ciqOrg7tZizpxVQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=OWQiRK) |
-|AV2|Video de exposición|[Ver exposicion AV2](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgC7KPYu8TJ6SrrG2tG5usNUAeOuP4rFB-8SVk8mlolF9l4?e=ebEBKn)|
+| AV2 | Video de exposición | [Ver exposición AV2 en Microsoft Stream](https://upcedupe-my.sharepoint.com/personal/u20221g099_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20221g099%5Fupc%5Fedu%5Fpe%2FDocuments%2FEXPOSICION%20AV2%2FCareConnect%5FAV2%5FFINAL%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E1f355e74%2D6a1d%2D43df%2D80a6%2Dffc4b34f62b5) |
