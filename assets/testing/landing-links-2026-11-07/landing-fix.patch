@@ -1,0 +1,38 @@
+diff --git a/.github/workflows/landing-ci.yml b/.github/workflows/landing-ci.yml
+index 9e71189..ae11c95 100644
+--- a/.github/workflows/landing-ci.yml
++++ b/.github/workflows/landing-ci.yml
+@@ -3,6 +3,7 @@ name: Landing CI
+ on:
+   push:
+     branches:
++      - chapter-8
+       - develop
+       - main
+ 
+diff --git a/README.md b/README.md
+index 1d39f13..ac3175c 100644
+--- a/README.md
++++ b/README.md
+@@ -4,6 +4,8 @@ enlace: https://carestacks-landing-page.vercel.app/
+ 
+ Despliegue de producción: `vercel deploy --prod --yes` desde este repositorio. La conexión automática de Vercel con GitHub aún no está configurada.
+ 
++La revisión AV2 se prepara en `chapter-8`. Los accesos de contacto en español e inglés usan el [canal público del informe](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues); la ruta de issues de este repositorio devuelve 404 a visitantes sin sesión. El CI también comprueba los pushes a `chapter-8`. La revisión se mantiene separada de la publicación de producción y del merge a `main`.
++
+ This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ 
+ Currently, two official plugins are available:
+diff --git a/src/content.ts b/src/content.ts
+index 7c691a6..5fc8b78 100644
+--- a/src/content.ts
++++ b/src/content.ts
+@@ -15,7 +15,7 @@ export const ICON_NAME = {
+ 
+ export type IconName = (typeof ICON_NAME)[keyof typeof ICON_NAME]
+ 
+-export const CONTACT_URL = 'https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues'
++export const CONTACT_URL = 'https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues'
+ const TERMS_URL = 'https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/blob/chapter-6/README.md#528-acuerdo-de-servicio---saas-saas-agreement'
+ 
+ export interface NavItem {

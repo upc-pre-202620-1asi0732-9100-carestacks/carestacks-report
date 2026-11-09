@@ -1,0 +1,480 @@
+{
+  "date": "2026-11-08",
+  "status": "proposed_planning_not_execution",
+  "capacity_assumption": "5 functional roles x 10 working days x 4 focused hours = 200 hours per sprint; not measured availability",
+  "roles": {
+    "BE-1": "Backend: asignación, auditoría y estados",
+    "BE-2": "Backend: permisos, contratos y avisos",
+    "FL-1": "Flutter web e integración compartida",
+    "FL-2": "Flutter móvil e integración compartida",
+    "QA-OPS": "Pruebas, pipeline y verificación de datos"
+  },
+  "sprints": [
+    {
+      "id": "S1",
+      "stories": [
+        "TS-02",
+        "US-07",
+        "US-01",
+        "TS-01",
+        "US-02",
+        "US-05"
+      ],
+      "task_count": 24,
+      "hours": 140,
+      "role_hours": {
+        "BE-1": 34,
+        "BE-2": 22,
+        "FL-1": 30,
+        "FL-2": 18,
+        "QA-OPS": 36
+      }
+    },
+    {
+      "id": "S2",
+      "stories": [
+        "US-03",
+        "US-04",
+        "US-06"
+      ],
+      "task_count": 13,
+      "hours": 74,
+      "role_hours": {
+        "BE-1": 20,
+        "BE-2": 12,
+        "FL-1": 10,
+        "FL-2": 18,
+        "QA-OPS": 14
+      }
+    }
+  ],
+  "total_tasks": 37,
+  "total_hours": 214,
+  "tasks": [
+    {
+      "id": "S1-01",
+      "story": "TS-02",
+      "owner_role": "BE-1",
+      "hours": 6,
+      "depends_on": [],
+      "task": "Definir el esquema de asignación por círculo y la agenda congelada.",
+      "acceptance": "Una variante por círculo; eventos elegibles conservan horarios originales."
+    },
+    {
+      "id": "S1-02",
+      "story": "TS-02",
+      "owner_role": "BE-1",
+      "hours": 8,
+      "depends_on": [
+        "S1-01"
+      ],
+      "task": "Implementar asignación persistente y separación de participantes entre experimentos.",
+      "acceptance": "Reinicios no alteran la asignación; un participante no integra círculos contrapuestos."
+    },
+    {
+      "id": "S1-03",
+      "story": "TS-02",
+      "owner_role": "BE-2",
+      "hours": 6,
+      "depends_on": [
+        "S1-01"
+      ],
+      "task": "Implementar auditoría común con IDs únicos y seudónimos.",
+      "acceptance": "A y B registran el mismo esquema; reintentos no duplican acciones ni incluyen texto clínico."
+    },
+    {
+      "id": "S1-04",
+      "story": "TS-02",
+      "owner_role": "QA-OPS",
+      "hours": 6,
+      "depends_on": [
+        "S1-02",
+        "S1-03"
+      ],
+      "task": "Preparar exportación y validación de denominadores y seguimiento.",
+      "acceptance": "La agenda exportada reconcilia eventos, pérdidas y ventanas hasta +90 minutos."
+    },
+    {
+      "id": "S1-05",
+      "story": "TS-02",
+      "owner_role": "QA-OPS",
+      "hours": 6,
+      "depends_on": [
+        "S1-04"
+      ],
+      "task": "Incorporar fixtures sintéticos y contratos de auditoría al CI.",
+      "acceptance": "El pipeline rechaza variantes mezcladas, IDs duplicados y campos sensibles."
+    },
+    {
+      "id": "S1-06",
+      "story": "US-07",
+      "owner_role": "BE-2",
+      "hours": 6,
+      "depends_on": [
+        "S1-03"
+      ],
+      "task": "Implementar cierre autenticado con motivo permitido.",
+      "acceptance": "Emite MED_RESOLVED_WITH_REASON y conserva usuario seudónimo y hora del servidor."
+    },
+    {
+      "id": "S1-07",
+      "story": "US-07",
+      "owner_role": "BE-1",
+      "hours": 6,
+      "depends_on": [
+        "S1-06"
+      ],
+      "task": "Asegurar exclusión entre cierre con motivo y confirmación.",
+      "acceptance": "El cierre alimenta LRMR/TNR y no incrementa TCOM; reintentos son idempotentes."
+    },
+    {
+      "id": "S1-08",
+      "story": "US-07",
+      "owner_role": "FL-1",
+      "hours": 6,
+      "depends_on": [
+        "S1-06"
+      ],
+      "task": "Integrar el formulario de cierre en ambos clientes Flutter.",
+      "acceptance": "Web y móvil muestran los motivos permitidos y el estado aceptado por el servidor."
+    },
+    {
+      "id": "S1-09",
+      "story": "US-07",
+      "owner_role": "QA-OPS",
+      "hours": 4,
+      "depends_on": [
+        "S1-07",
+        "S1-08"
+      ],
+      "task": "Verificar permisos y persistencia del cierre en A y B.",
+      "acceptance": "Casos sin sesión, acceso revocado y repetición cubiertos; no hay diferencia instrumental entre grupos."
+    },
+    {
+      "id": "S1-10",
+      "story": "US-01",
+      "owner_role": "FL-1",
+      "hours": 6,
+      "depends_on": [
+        "S1-03"
+      ],
+      "task": "Implementar pulsación sostenida accesible en Flutter web.",
+      "acceptance": "En B se exige un segundo; A conserva el botón actual y la auditoría común."
+    },
+    {
+      "id": "S1-11",
+      "story": "US-01",
+      "owner_role": "FL-2",
+      "hours": 6,
+      "depends_on": [
+        "S1-03"
+      ],
+      "task": "Implementar la interacción equivalente en Flutter móvil.",
+      "acceptance": "La interacción se cancela al soltar antes de un segundo y comunica el estado."
+    },
+    {
+      "id": "S1-12",
+      "story": "US-01",
+      "owner_role": "BE-2",
+      "hours": 4,
+      "depends_on": [
+        "S1-02",
+        "S1-03"
+      ],
+      "task": "Resolver la variante desde servidor y auditar MED_CONFIRMED.",
+      "acceptance": "El cliente no elige su grupo; el evento usa hora del servidor e ID idempotente."
+    },
+    {
+      "id": "S1-13",
+      "story": "US-01",
+      "owner_role": "QA-OPS",
+      "hours": 6,
+      "depends_on": [
+        "S1-10",
+        "S1-11",
+        "S1-12"
+      ],
+      "task": "Automatizar confirmación, cancelación y control de variante.",
+      "acceptance": "Casos de pulsación incompleta, reintento y variante A/B aprobados en ambos clientes."
+    },
+    {
+      "id": "S1-14",
+      "story": "TS-01",
+      "owner_role": "BE-1",
+      "hours": 8,
+      "depends_on": [
+        "S1-03"
+      ],
+      "task": "Implementar el canal de propagación compatible con Spring Boot.",
+      "acceptance": "Propaga confirmación y reversión del círculo B sin atribuir entrega observable al mero envío."
+    },
+    {
+      "id": "S1-15",
+      "story": "TS-01",
+      "owner_role": "BE-2",
+      "hours": 6,
+      "depends_on": [
+        "S1-14"
+      ],
+      "task": "Comprobar sesión y consentimiento en suscripción y difusión.",
+      "acceptance": "Una sesión ajena o revocada no recibe estados del círculo."
+    },
+    {
+      "id": "S1-16",
+      "story": "TS-01",
+      "owner_role": "FL-1",
+      "hours": 6,
+      "depends_on": [
+        "S1-14"
+      ],
+      "task": "Integrar recepción y reconexión en los clientes Flutter.",
+      "acceptance": "La reconexión recupera estado del servidor y no inventa nuevas acciones de auditoría."
+    },
+    {
+      "id": "S1-17",
+      "story": "TS-01",
+      "owner_role": "QA-OPS",
+      "hours": 6,
+      "depends_on": [
+        "S1-15",
+        "S1-16"
+      ],
+      "task": "Probar aislamiento y reconexión del canal.",
+      "acceptance": "La prueba cubre dos círculos, revocación, duplicados y caída del canal."
+    },
+    {
+      "id": "S1-18",
+      "story": "US-02",
+      "owner_role": "FL-1",
+      "hours": 6,
+      "depends_on": [
+        "S1-16",
+        "S1-12"
+      ],
+      "task": "Mostrar estado recibido y registrar observación en otra sesión web.",
+      "acceptance": "SYNC_STATE_OBSERVED compara estado esperado y observado con reloj común."
+    },
+    {
+      "id": "S1-19",
+      "story": "US-02",
+      "owner_role": "FL-2",
+      "hours": 6,
+      "depends_on": [
+        "S1-16",
+        "S1-12"
+      ],
+      "task": "Integrar el mismo verificador en otra sesión móvil.",
+      "acceptance": "Distingue recepción tardía de observación dentro de cinco segundos."
+    },
+    {
+      "id": "S1-20",
+      "story": "US-02",
+      "owner_role": "QA-OPS",
+      "hours": 4,
+      "depends_on": [
+        "S1-17",
+        "S1-18",
+        "S1-19"
+      ],
+      "task": "Verificar propagación y cómputo de TSC.",
+      "acceptance": "Los casos autorizados se observan en el plazo previsto; los no observados permanecen identificados."
+    },
+    {
+      "id": "S1-21",
+      "story": "US-05",
+      "owner_role": "BE-1",
+      "hours": 6,
+      "depends_on": [
+        "S1-12"
+      ],
+      "task": "Implementar reversión autenticada dentro de diez segundos.",
+      "acceptance": "Conserva acción original, registra UNDO_TRIGGERED y rechaza una reversión fuera de ventana."
+    },
+    {
+      "id": "S1-22",
+      "story": "US-05",
+      "owner_role": "FL-1",
+      "hours": 6,
+      "depends_on": [
+        "S1-21",
+        "S1-10"
+      ],
+      "task": "Integrar Deshacer y su vencimiento en Flutter web.",
+      "acceptance": "La tarjeta refleja el estado confirmado por el servidor y conserva errores de red."
+    },
+    {
+      "id": "S1-23",
+      "story": "US-05",
+      "owner_role": "FL-2",
+      "hours": 6,
+      "depends_on": [
+        "S1-21",
+        "S1-11"
+      ],
+      "task": "Integrar Deshacer y su vencimiento en Flutter móvil.",
+      "acceptance": "Mismo contrato temporal y semántica que web, sin borrar el historial."
+    },
+    {
+      "id": "S1-24",
+      "story": "US-05",
+      "owner_role": "QA-OPS",
+      "hours": 4,
+      "depends_on": [
+        "S1-22",
+        "S1-23",
+        "S1-20"
+      ],
+      "task": "Probar reversión, límites temporales y propagación.",
+      "acceptance": "Pruebas antes/después de diez segundos y actualización de TCOM/UR aprobadas."
+    },
+    {
+      "id": "S2-01",
+      "story": "US-03",
+      "owner_role": "BE-1",
+      "hours": 8,
+      "depends_on": [
+        "S1-05",
+        "S1-09"
+      ],
+      "task": "Implementar planificador común al minuto 0 y escalón +15 solo en B.",
+      "acceptance": "Consulta estado antes de enviar; A recibe solo el aviso común y no hay envíos duplicados."
+    },
+    {
+      "id": "S2-02",
+      "story": "US-03",
+      "owner_role": "BE-2",
+      "hours": 6,
+      "depends_on": [
+        "S2-01"
+      ],
+      "task": "Instrumentar envío y acuses observables del canal de avisos.",
+      "acceptance": "NOTIFICATION_DELIVERED requiere acuse; los envíos sin evidencia conservan estado desconocido."
+    },
+    {
+      "id": "S2-03",
+      "story": "US-03",
+      "owner_role": "FL-1",
+      "hours": 6,
+      "depends_on": [
+        "S2-02"
+      ],
+      "task": "Integrar recepción y apertura contextual de avisos en web.",
+      "acceptance": "El aviso lleva a Agenda y registra acuse únicamente cuando el canal lo permite."
+    },
+    {
+      "id": "S2-04",
+      "story": "US-03",
+      "owner_role": "FL-2",
+      "hours": 6,
+      "depends_on": [
+        "S2-02"
+      ],
+      "task": "Integrar el contrato de recepción y acuses en móvil.",
+      "acceptance": "Distingue permiso deshabilitado, envío y entrega observable."
+    },
+    {
+      "id": "S2-05",
+      "story": "US-03",
+      "owner_role": "QA-OPS",
+      "hours": 6,
+      "depends_on": [
+        "S2-03",
+        "S2-04"
+      ],
+      "task": "Verificar reloj controlado, reintentos y cancelación del escalón.",
+      "acceptance": "Las pruebas cubren 0/+15, resolución previa y aislamiento A/B sin esperar quince minutos reales."
+    },
+    {
+      "id": "S2-06",
+      "story": "US-04",
+      "owner_role": "BE-1",
+      "hours": 6,
+      "depends_on": [
+        "S2-01"
+      ],
+      "task": "Programar escalón +30 y consultar estado vigente.",
+      "acceptance": "Solo EXP-02/B sin resolución genera ALERT_ESCALATED_30M; no se activa EXP-01/B."
+    },
+    {
+      "id": "S2-07",
+      "story": "US-04",
+      "owner_role": "BE-2",
+      "hours": 6,
+      "depends_on": [
+        "S2-06"
+      ],
+      "task": "Resolver co-cuidadores y verificar consentimiento al emitir.",
+      "acceptance": "Revocación o expiración excluye al destinatario antes del envío."
+    },
+    {
+      "id": "S2-08",
+      "story": "US-04",
+      "owner_role": "FL-2",
+      "hours": 6,
+      "depends_on": [
+        "S2-07",
+        "S2-02"
+      ],
+      "task": "Integrar aviso de co-cuidador en ambos clientes.",
+      "acceptance": "La apertura respeta permisos; el acuse no acredita que una medicación fue administrada."
+    },
+    {
+      "id": "S2-09",
+      "story": "US-04",
+      "owner_role": "QA-OPS",
+      "hours": 4,
+      "depends_on": [
+        "S2-08",
+        "S2-05"
+      ],
+      "task": "Probar escalamiento +30 y revocación entre escalones.",
+      "acceptance": "Sin permisos no hay entrega; resolución previa cancela el aviso; exportación conserva seguimiento hasta +90."
+    },
+    {
+      "id": "S2-10",
+      "story": "US-06",
+      "owner_role": "FL-1",
+      "hours": 4,
+      "depends_on": [
+        "S2-03"
+      ],
+      "task": "Integrar observación de permisos y preferencias en web.",
+      "acceptance": "Registra cambios observables y usa desconocido cuando el navegador no informa."
+    },
+    {
+      "id": "S2-11",
+      "story": "US-06",
+      "owner_role": "FL-2",
+      "hours": 6,
+      "depends_on": [
+        "S2-04"
+      ],
+      "task": "Integrar el mismo contrato de preferencias en móvil.",
+      "acceptance": "La revocación del permiso no bloquea el acceso a Agenda ni se interpreta como entrega."
+    },
+    {
+      "id": "S2-12",
+      "story": "US-06",
+      "owner_role": "BE-1",
+      "hours": 6,
+      "depends_on": [
+        "S2-10",
+        "S2-11"
+      ],
+      "task": "Conservar cambios idempotentes y exposición para NOR.",
+      "acceptance": "Denominador usa destinatarios con aviso entregado y seguimiento observable."
+    },
+    {
+      "id": "S2-13",
+      "story": "US-06",
+      "owner_role": "QA-OPS",
+      "hours": 4,
+      "depends_on": [
+        "S2-12",
+        "S2-09"
+      ],
+      "task": "Validar exportación final y ensayo técnico de EXP-02.",
+      "acceptance": "Se reconcilian LRMR/TNR/NOR con datos sintéticos; no se reporta ese ensayo como experimento con usuarios."
+    }
+  ]
+}

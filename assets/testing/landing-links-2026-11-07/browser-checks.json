@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-07",
+  "checks": [
+    {
+      "contactLinks": [
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Contactar al equipo"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Contactar al equipo"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Consultas del proyecto"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Consultas del proyecto en GitHub"
+        }
+      ],
+      "failedImages": [],
+      "lang": "es",
+      "missingAnchors": [],
+      "stage": "local-es"
+    },
+    {
+      "contactLinks": [
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Contact the team"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Contact the team"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Project inquiries"
+        },
+        {
+          "href": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+          "label": "Project inquiries on GitHub"
+        }
+      ],
+      "lang": "en",
+      "missingAnchors": [],
+      "stage": "local-en"
+    }
+  ],
+  "languagePersistence": true,
+  "correctedDestination": {
+    "url": "https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues",
+    "observedTitle": "Issues · upc-pre-202620-1asi0732-9100-carestacks/carestacks-report · GitHub",
+    "is404": false
+  },
+  "productionChanged": false
+}

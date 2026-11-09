@@ -1,0 +1,96 @@
+{
+  "date": "2026-11-09",
+  "scope": "workspace inventory; downloaded instructions and audit; not a search of unconnected storage",
+  "guide_filename": "upc-pre-202610-1asi0732-activity-s12-assignment-av2_v1 (1).pdf",
+  "guide_sha256": "9b10353be7616ac17eee90c47c615619819238c052787350aaf2e454382699c8",
+  "same_as_previous_guide": true,
+  "required_formats_page": 3,
+  "structure_page": 2,
+  "rubric_planning_design_backlogs_page": 5,
+  "guide_filename_prefix": "upc-pre-202610-1asi0732",
+  "project_filename_prefix": "upc-pre-202620-1asi0732-9100-carestacks",
+  "naming_note": "La guía conserva 202610; el proyecto y las entregas anteriores usan 202620. Los nombres propuestos mantienen el periodo del proyecto.",
+  "available_files": [
+    {
+      "kind": "report_source",
+      "workspace_relative_path": "carestacks-report/README.md",
+      "bytes": 618732
+    },
+    {
+      "kind": "received_audit",
+      "workspace_relative_path": "carestacks-report/assets/audits/received-neurodraw-2026-11-09/auditoria-careconnect-neurodraw.txt",
+      "bytes": 30562
+    },
+    {
+      "kind": "prior_report_pdf",
+      "workspace_relative_path": "output/tb1-final/upc-pre-202620-1asi0732-9100-carestacks-report-tb1.pdf",
+      "bytes": 30700260
+    },
+    {
+      "kind": "prior_keynote_pptx",
+      "workspace_relative_path": "ENTREGA-TB1/upc-pre-202620-1asi0732-9100-carestacks-keynote-tb1-v3.pptx",
+      "bytes": 1435686,
+      "slide_count": 24,
+      "contains_av2_or_experiment_markers": false
+    },
+    {
+      "kind": "prior_keynote_pdf",
+      "workspace_relative_path": "ENTREGA-TB1/upc-pre-202620-1asi0732-9100-carestacks-keynote-tb1-v3.pdf",
+      "bytes": 4154847
+    },
+    {
+      "kind": "prior_performance_docx",
+      "workspace_relative_path": "output/tb1-final/upc-pre-202620-1asi0732-9100-carestacks-performance-tb1.docx",
+      "bytes": 39458
+    },
+    {
+      "kind": "prior_performance_pdf",
+      "workspace_relative_path": "output/tb1-final/upc-pre-202620-1asi0732-9100-carestacks-performance-tb1.pdf",
+      "bytes": 166913
+    },
+    {
+      "kind": "prior_video",
+      "workspace_relative_path": "output/upc-pre-202610-asi0732-9100-carestacks-expo-tb1.mp4",
+      "bytes": 120457908
+    },
+    {
+      "kind": "prior_zip",
+      "workspace_relative_path": "output/upc-pre-202620-1asi0732-9100-carestacks-entrega-tb1-actualizada.zip",
+      "bytes": 34499734
+    },
+    {
+      "kind": "general_deck",
+      "workspace_relative_path": "CareConnect_Exposicion_2026-20_v2.pptx",
+      "bytes": 3925111,
+      "slide_count": 15,
+      "contains_av2_or_experiment_markers": false
+    }
+  ],
+  "deliverables": [
+    {
+      "artifact": "report-av2.pdf",
+      "local_av2_export_found": false,
+      "can_prepare": "Exportar el README consolidado con revisión visual del PDF."
+    },
+    {
+      "artifact": "keynote-av2.pptx y keynote-av2.pdf",
+      "local_av2_export_found": false,
+      "can_prepare": "Crear presentación AV2 desde capítulos VI–VIII y evidencias; reutilizar identidad de las presentaciones anteriores."
+    },
+    {
+      "artifact": "performance-av2.docx y performance-av2.pdf",
+      "local_av2_export_found": false,
+      "can_prepare": "Preparar el reporte con aportes verificables; las valoraciones y datos no registrados corresponden al Team Leader."
+    },
+    {
+      "artifact": "expo-av2.mp4",
+      "local_av2_export_found": false,
+      "can_prepare": "Preparar guion y editar material existente; requiere grabaciones reales de AV2."
+    },
+    {
+      "artifact": "complementos-av2.zip",
+      "local_av2_export_found": false,
+      "can_prepare": "Empaquetar documentos y complementos cuando se generen los archivos AV2."
+    }
+  ]
+}

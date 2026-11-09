@@ -1,0 +1,90 @@
+{
+  "received_on": "2026-11-09",
+  "inspection_date_reported": "2026-11-08",
+  "source_filename": "auditoria CareConnect.txt",
+  "original_file": "auditoria-careconnect-neurodraw.txt",
+  "sha256_original": "090e8831eb164e9dafe6befe55008a0ad340eb57e6c356afbb7143f88d766ecb",
+  "review_base": "e45f8027edce96a0756edf90be84a1fe5d60c95b",
+  "authoring_team": "NeuroDraw",
+  "audited_team": "CareStacks",
+  "audited_product": "CareConnect",
+  "source_numbering": "6.4.1 from auditor perspective",
+  "report_numbering": "6.4.2 received audit",
+  "findings": [
+    {
+      "number": "01",
+      "source_id": "UX-01",
+      "title": "El CTA «Probar app» dirige a planes",
+      "severity": 3,
+      "closure": "not_evidenced"
+    },
+    {
+      "number": "02",
+      "source_id": "UX-02",
+      "title": "El canal de contacto exige acceder a GitHub",
+      "severity": 2,
+      "closure": "not_evidenced"
+    },
+    {
+      "number": "03",
+      "source_id": "UX-03",
+      "title": "La elección del plan no se conserva",
+      "severity": 2,
+      "closure": "not_evidenced"
+    },
+    {
+      "number": "04",
+      "source_id": "UX-04",
+      "title": "La vista previa no sigue el idioma inglés",
+      "severity": 1,
+      "closure": "not_evidenced"
+    },
+    {
+      "number": "05",
+      "source_id": "UX-05",
+      "title": "Inconsistencias editoriales en la versión española",
+      "severity": 1,
+      "closure": "not_evidenced"
+    },
+    {
+      "number": "06",
+      "source_id": "UX-06",
+      "title": "El acceso Web muestra un mensaje técnico en inglés",
+      "severity": 2,
+      "closure": "not_evidenced"
+    },
+    {
+      "number": "07",
+      "source_id": "UX-07",
+      "title": "El idioma elegido en la Landing no continúa en la Web App",
+      "severity": 2,
+      "closure": "not_evidenced"
+    },
+    {
+      "number": "08",
+      "source_id": "UX-MOB-01",
+      "title": "El registro de la App Móvil muestra «Request validation failed» ante contraseñas simples",
+      "severity": 2,
+      "closure": "not_evidenced"
+    }
+  ],
+  "severity_counts": {
+    "3": 1,
+    "2": 5,
+    "1": 2
+  },
+  "task_counts": {
+    "LP": 10,
+    "WEB": 16,
+    "MOB": 11
+  },
+  "images_attached": 0,
+  "fixes_applied_in_this_change": [],
+  "limits": [
+    "no deployment commit SHA provided by auditor",
+    "test caregiver accounts had no linked patients",
+    "no screenshots in the supplied file",
+    "product correction and revalidation not evidenced"
+  ],
+  "outbound_audit_preserved": true
+}

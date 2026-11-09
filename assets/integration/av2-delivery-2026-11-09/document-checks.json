@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-09",
+  "source_commit": "52d377f32aa7131231e4964f4aa823cc7c44036a",
+  "chapter8_preserved_from": "6702216",
+  "four_chapter8_commits_integrated": [
+    "1f62368",
+    "fbb369b",
+    "2c85a5d",
+    "c911799"
+  ],
+  "received_audit_preserved": true,
+  "local_references": 269,
+  "broken_local_references": [],
+  "benchmark_primary_evidence": {
+    "file": "assets/monitoring/k6-health-results.png",
+    "requests": 246,
+    "p95_ms": 541.34,
+    "checks_passed": 492,
+    "errors_percent": 0
+  },
+  "main_before_merge": "8a4848f0a5eb99cda3b5bd263f08e82bea1d2898",
+  "scope": "AV2 report source only. Presentation and individual participation files are delivered locally. No ZIP or video created."
+}

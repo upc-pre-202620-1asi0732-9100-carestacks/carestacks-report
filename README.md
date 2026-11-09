@@ -8,7 +8,9 @@
 =====================================================================
 -->
 
+
 <!-- CARÁTULA -->
+
 <div align="center">
 
 <img src="assets/UPC_logo_transparente.png" alt="Logo UPC" width="180"/>
@@ -21,15 +23,15 @@
 
 ---
 
-1ASI0732
+**1ASI0732**
 
-Diseño de Experimentos de Ingeniería de Software
+**Diseño de Experimentos de Ingeniería de Software**
 
 **NRC**
 
 9100
 
-**Informe del Trabajo Parcial**
+## Informe del Avance 2 (AV2)
 
 **Docente**
 
@@ -45,8 +47,9 @@ CareConnect
 
 **Integrantes**
 
-<center>
-
+</div>
+<div align="center">
+ 
 | Código | Apellidos y Nombres |
 |---|---|
 | U202319881 | Baldeon Armas, Santiago Armando |
@@ -55,15 +58,16 @@ CareConnect
 | U20221G099 | Nikaido Vargas, Javier Masaru |
 | U202319698 | Salcedo Champi, Matias Rodolfo |
 
-</center>
+
 
 **Período 2026-20**
 
-Octubre, 2026
+Noviembre, 2026
 
 </div>
 
 ---
+
 # REGISTRO DE VERSIONES DEL INFORME
 
 | **Versión** | **Fecha** | **Autor** | **Descripción de modificación** |
@@ -92,6 +96,13 @@ Octubre, 2026
 | 1.7.0 | 01/10/2026 | Angela Espinoza | Actualizó la carátula, el Student Outcome y el Team Collaboration Insights del TB1 (`develop`) |
 | 1.8.0 | 04/10/2026 | Santiago Baldeon | Desarrolló el Acuerdo de Servicio SaaS y las conclusiones, y elaboró el guion y el video de exposición del TB1 (`develop`) |
 | 2.0.0 | 04/10/2026 | Matias Salcedo | Consolidó la verificación TB1, corrigió los resultados y conclusiones, e incorporó el capítulo 7 y el acuerdo SaaS con evidencia y límites de entrega |
+| 2.1.0 | 21/10/2026 | Matias Salcedo | Desarrolló el Capítulo VIII: Experiment Planning (8.1) y Experiment Design inicial (8.2) con Question Backlog, Experiment Cards, Hipótesis Null/Alternative, Domain Metrics y Condiciones (`chapter-8`) |
+| 2.1.1 | 24/10/2026 | Matias Salcedo | Revisó el bloque D contra la guía AV2 y el enunciado: corrigió el As-Is, trazó preguntas y tarjetas, unificó hipótesis y métricas, explicitó condiciones y separó planificación de resultados (`chapter-8`) |
+| 2.2.0 | 07/11/2026 | Matias Salcedo | Consolidó D con los cuatro commits de Emy127: alineó escala, métodos, tracking e historias con el As-Is real; completó las tarjetas con cálculos reproducibles y documentó la corrección de enlaces de la landing en `chapter-8` |
+| 2.3.0 | 08/11/2026 | Matias Salcedo / equipo CareStacks | Integró los aportes AV2 de los capítulos IV, VI, VII y VIII en `develop`, conservando la carátula y conclusiones AV2; corrigió referencias y registró la [verificación y los vacíos de entrega](assets/integration/av2-2026-11-08/verification.md). |
+| 2.3.1 | 08/11/2026 | Matias Salcedo | Completó la planificación del Sprint Backlog To-Be y la comparación de herramientas DevOps; corrigió compatibilidad Android y controles del backend, con [resultados y faltantes actualizados](assets/experiments/av2-completion-2026-11-08/verification.md). |
+| 2.3.2 | 09/11/2026 | Matias Salcedo | Incorporó la auditoría recibida de NeuroDraw en §6.4.2, conservó el documento original y registró ocho hallazgos con seguimiento de correcciones y límites de evidencia. |
+| 2.3.3 | 09/11/2026 | Matias Salcedo / Emy127 | Integró los cuatro commits nuevos de chapter-8, revisó la precisión de escala y métricas, conservó el Sprint Backlog y contrastó los archivos de entrega con la guía AV2 ([verificación e inventario](assets/integration/av2-chapter8-2026-11-09/verification.md)). |
 
 # Project Report Collaboration Insights
 
@@ -227,9 +238,6 @@ TB1:
         - [Resumen del Diccionario de Clases](#resumen-del-diccionario-de-clases)
     - [4.10. Database Design](#410-database-design)
       - [4.10.1. Relational/Non-Relational Database Diagram](#4101-relationalnon-relational-database-diagram)
-        - [Agrupación conceptual por bounded context](#agrupación-conceptual-por-bounded-context)
-        - [Persistencia relacional](#persistencia-relacional)
-        - [Persistencia de archivos](#persistencia-de-archivos)
   - [Capítulo V: Product Implementation](#capítulo-v-product-implementation)
     - [5.1. Software Configuration Management](#51-software-configuration-management)
       - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
@@ -296,6 +304,8 @@ TB1:
       - [Repositorio de la Aplicación Web (`carestacks-web`)](#repositorio-de-la-aplicación-web-carestacks-web)
       - [Interpretación](#interpretación)
       - [5.2.8. Acuerdo de Servicio - SaaS](#528-acuerdo-de-servicio---saas-saas-agreement)
+        - [5.2.8.17. Alineación ética y profesional](#52817-alineación-ética-y-profesional)
+        - [5.2.8.18. Claridad y accesibilidad](#52818-claridad-y-accesibilidad)
     - [5.3. Video About-the-Product](#53-video-about-the-product)
 - [Part II: Verification, Validation & Pipeline](#part-ii-verification-validation--pipeline)
   - [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
@@ -338,6 +348,9 @@ TB1:
       - [7.4.2. Monitoring Pipeline Components](#742-monitoring-pipeline-components)
       - [7.4.3. Alerting Pipeline Components](#743-alerting-pipeline-components)
       - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
+      - [7.4.5. Benchmark](#745-benchmark)
+        - [7.4.5.1. Selección de herramientas para el pipeline](#7451-selección-de-herramientas-para-el-pipeline)
+        - [7.4.5.2. Mediciones del software frente a metas](#7452-mediciones-del-software-frente-a-metas)
 - [Part III: Experiment-Driven Lifecycle](#part-iii-experiment-driven-lifecycle)
   - [Capítulo VIII: Experiment-Driven Development](#capítulo-viii-experiment-driven-development)
     - [8.1. Experiment Planning](#81-experiment-planning)
@@ -348,13 +361,15 @@ TB1:
       - [8.1.5. Experiment Cards](#815-experiment-cards)
     - [8.2. Experiment Design](#82-experiment-design)
       - [8.2.1. Hypotheses](#821-hypotheses)
-      - [8.2.2. Domain Business Metrics](#822-domain-business-metrics)
-      - [8.2.3. Measures](#823-measures)
-      - [8.2.4. Conditions](#824-conditions)
-      - [8.2.5. Scale Calculations and Decisions](#825-scale-calculations-and-decisions)
-      - [8.2.6. Methods Selection](#826-methods-selection)
-      - [8.2.7. Data Analytics: Goals, KPIs and Metrics Selection](#827-data-analytics-goals-kpis-and-metrics-selection)
-      - [8.2.8. Web and Mobile Tracking Plan](#828-web-and-mobile-tracking-plan)
+      - [8.2.2. Measures](#822-measures)
+        - [8.2.2.1. Domain Business Metrics](#8221-domain-business-metrics)
+        - [8.2.2.2. Variables y selección de medidas](#8222-variables-y-selección-de-medidas)
+        - [8.2.2.3. Instrumentos, trazabilidad y calidad de datos](#8223-instrumentos-trazabilidad-y-calidad-de-datos)
+      - [8.2.3. Conditions](#823-conditions)
+      - [8.2.4. Scale Calculations and Decisions](#824-scale-calculations-and-decisions)
+      - [8.2.5. Methods Selection](#825-methods-selection)
+      - [8.2.6. Data Analytics: Goals, KPIs and Metrics Selection](#826-data-analytics-goals-kpis-and-metrics-selection)
+      - [8.2.7. Web and Mobile Tracking Plan](#827-web-and-mobile-tracking-plan)
     - [8.3. Experimentation](#83-experimentation)
       - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
       - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
@@ -378,7 +393,8 @@ TB1:
       - [8.6.2. Resumen usando Gees Framework](#862-resumen-usando-gees-framework)
   - [Conclusiones](#conclusiones)
     - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-    - [Resultados y recomendaciones de TB1](#resultados-y-recomendaciones-de-tb1)
+      - [Conclusiones del AV2](#conclusiones-del-av2)
+      - [Recomendaciones](#recomendaciones)
   - [Bibliografía](#bibliografía)
   - [Anexos](#anexos)
     - [Anexo A: Archivo de Figma](#anexo-a-archivo-de-figma)
@@ -396,8 +412,8 @@ Cada participante del equipo debe sustentar evidencia de cómo las actividades r
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |----|----|----|
-|4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Redacté la descripción de la startup, los perfiles del equipo, el problema y la problemática, el proceso completo de Lean UX (Problem Statements, Assumptions, Hypothesis Statements y Canvas) y los segmentos objetivo en el Capítulo I. En el Capítulo II, desarrollé el análisis competitivo, el diseño y registro de entrevistas, los User Personas, User Task Matrix, Journey Maps, Empathy Maps, As-Is Scenario Mapping y el glosario de Ubiquitous Language.<br><br>**TB1**<br>Homogeneicé los criterios de aceptación en formato Gherkin de todas las User Stories y completé los precios faltantes del análisis competitivo, atendiendo el feedback del docente. Actualicé la carátula, el Student Outcome, el Team Collaboration Insights, el registro de versiones y las conclusiones del informe parcial.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Configuré la plantilla inicial del informe y la carátula del equipo. En el Capítulo III, redacté el To-Be Scenario Mapping, las User Stories, el Product Backlog y el Impact Mapping. En el Capítulo IV, completé la sección de Web Applications UX/UI Design.<br><br>**TB1**<br>Desarrollé en el Capítulo VI los Core Entities Unit Tests, los Core Integration Tests, el Core Behavior Driven Development y los Core System Tests. Corregí además la Landing Page implementando el i18n en español e inglés, corregí el enlace de About the Product y documenté que About the Team sigue pendiente. Verifiqué la landing bilingüe ES/EN y registré el alcance real de las pruebas, incluidas la autorización de Agenda y sus limitaciones de despliegue.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Elaboré en el Capítulo IV los diagramas de arquitectura (Context, Container y Components), los diagramas y diccionario de clases, y el diagrama de base de datos. En el Capítulo V, documenté la Software Configuration Management, la evidencia de despliegue del Landing Page y la configuración de despliegue de los productos de CareConnect.<br><br>**TB1**<br>Desarrollé en el Capítulo VII la sección 7.1 Continuous Integration, con sus herramientas, prácticas y componentes del pipeline de build y test. Rediseñé la base de datos pasando del formato C4 a diagramas UML normalizados por Bounded Context, atendiendo el feedback del docente.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Colaboré en la documentación de los perfiles de integrantes del equipo en el Capítulo I y en contenido del Capítulo IV.<br><br>**TB1**<br>Redacté el Acuerdo de Servicio SaaS y las conclusiones y recomendaciones del informe. Elaboré el guion para los cinco integrantes y edité el video de exposición del TB1.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Documenté en el Capítulo IV el prototipado de la aplicación móvil (iOS con Flutter) y adapté la base Flutter del segmento cuidador a un prototipo funcional de escritorio para el Capítulo IV.7. En el Capítulo V, documenté la evidencia de implementación del Frontend-Web, la evidencia Native-Mobile, la evidencia del backend RESTful y su documentación en Swagger, y actualicé los Sprint Backlogs con el detalle técnico de cada tarea.<br><br>**TB1**<br>Desarrollé en el Capítulo VII las secciones 7.2 Continuous Delivery y 7.3 Continuous Deployment, con sus herramientas, prácticas y componentes de los pipelines de staging y producción.|**AV1**<br><br>Abordamos de manera efectiva los retos de los capítulos desarrollados hasta esta entrega gracias a la actualización constante de conceptos y conocimientos en ingeniería de software, aplicando metodologías actuales como Lean UX, Domain Driven Design, arquitectura C4 y mejores prácticas de implementación para el desarrollo del proyecto y nuestro crecimiento profesional.<br><br>**TB1**<br><br>Asumimos durante el TB1 nuestra responsabilidad profesional atendiendo el feedback del AV1 y cumpliendo cada uno los entregables asignados. Corregimos lo observado en la landing, la base de datos, los criterios de aceptación y los precios, y dejamos evidencia verificable en pruebas y pipelines.|
-|4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Investigué metodologías de validación temprana de producto y herramientas de análisis de mercado que no había aplicado antes al elaborar el Lean UX Canvas y el análisis competitivo. Reforcé con el diseño y análisis de entrevistas la importancia de la empatía y el aprendizaje continuo sobre experiencia de usuario en un dominio sensible como el cuidado de adultos mayores.<br><br>**TB1**<br>Comparé soluciones reales al completar los precios del análisis competitivo y juzgué el impacto económico de nuestra propuesta. Comprendí al escribir los criterios en Gherkin cómo una especificación clara reduce errores que afectarían a cuidadores y pacientes.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Profundicé en técnicas de priorización de historias de usuario al redactar el Product Backlog y el Impact Mapping. Aprendí a adaptar un sistema de diseño pensado originalmente para móvil hacia un contexto de escritorio al completar el diseño UX/UI web.<br><br>**TB1**<br>Comprendí al diseñar las pruebas del Capítulo VI que verificar el sistema es una forma de proteger a los usuarios en un dominio sensible. Consideré el alcance global y el acceso a la información en más de un idioma al implementar el i18n.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Profundicé en Domain Driven Design y en la representación formal de bounded contexts al elaborar los diagramas C4 y el diccionario de clases. Investigué buenas prácticas de gestión de variables de entorno y separación de ambientes al documentar la configuración de despliegue.<br><br>**TB1**<br>Colaboré en la documentación de la integración continua y comprobé su impacto en la calidad y mantenibilidad del producto. Evalué cómo el diseño de datos afecta la integridad de la información clínica al normalizar la base de datos por Bounded Context.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Revisé cómo estructurar información técnica de forma clara para distintos lectores del informe al colaborar en la documentación del equipo y del Capítulo IV.<br><br>**TB1**<br>Investigué las implicaciones económicas y legales de ofrecer el producto como servicio al redactar el Acuerdo SaaS. Valoré con criterio el impacto social y los alcances reales del proyecto al preparar las conclusiones y el guion.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Aprendí sobre sistemas de layout responsive y jerarquía visual en Flutter Web, algo que no había trabajado antes, al adaptar la aplicación móvil Flutter a un prototipo web funcional. Profundicé en configuración de CORS, gestión de variables de entorno y buenas prácticas de control de versiones Git que no dominaba con este nivel de detalle al levantar y documentar el backend con Swagger.<br><br>**TB1**<br>Colaboré en la documentación de los pipelines de entrega y despliegue, y evalué el impacto de las decisiones de despliegue en la disponibilidad y confiabilidad del servicio para los usuarios.|**AV1**<br><br>Incorporamos nuevas metodologías, herramientas y enfoques en el desarrollo del proyecto gracias al aprendizaje permanente, que nos permitió adaptarnos a los retos técnicos y metodológicos de los capítulos desarrollados hasta esta entrega y nos preparó para un desempeño profesional competente y actualizado en ingeniería de software.<br><br>**TB1**<br><br>Fundamentamos en el TB1 nuestras decisiones sobre pruebas, pipelines, base de datos, modelo SaaS e i18n considerando su impacto económico, social y global, y no solo su viabilidad técnica.|
+|4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Realicé el needfinding y las entrevistas a cuidadores de pacientes geriátricos asumiendo la responsabilidad deontológica de proteger la privacidad y confidencialidad de la información clínica y personal recolectada. Comprendí que indagar en la intimidad del cuidado de un adulto mayor sin resguardos adecuados podía vulnerar su dignidad en nombre de la investigación. Apliqué entonces consentimiento informado en cada entrevista y me comprometí a sostener ese principio ético en toda recolección de datos sensibles.<br><br>**TB1**<br>Homogeneicé los criterios de aceptación bajo la estructura Gherkin para eliminar ambigüedades funcionales en los flujos de administración de medicamentos. Comprendí que una especificación imprecisa en el dominio de salud no es solo un defecto técnico, sino un riesgo directo para el paciente, por lo que antepuse la precisión operativa sobre la celeridad de entrega. Me comprometí a mantener ese estándar de rigor en cada iteración futura del producto.<br><br>**AV2**<br>Diseñé las entrevistas de validación y la auditoría de experiencia de usuario estableciendo protocolos para evaluar la interacción de cuidadores y adultos mayores. Comprendí que un protocolo mal calibrado podía generarles sobrecarga cognitiva o estrés innecesario, precisamente a la población más vulnerable que buscábamos proteger. Me comprometí a garantizar siempre un trato ético y una retroalimentación constructiva hacia el grupo auditado.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Especifiqué los requisitos y prioricé el backlog asumiendo la responsabilidad profesional de jerarquizar los componentes de seguridad y validación de dosis médicas antes que features accesorias. Entendí que anteponer funcionalidades vistosas a la integridad asistencial podía poner en riesgo directo la salud del paciente. Me comprometí a que todo criterio de priorización técnica respondiera primero a la seguridad del usuario final.<br><br>**TB1**<br>Verifiqué las pruebas del sistema y documenté con transparencia los defectos reales encontrados en la autorización de rutas de Agenda y en la falta de sesiones persistentes en la API. Reconocí que ocultar o maquillar esos hallazgos ante el evaluador habría comprometido la confiabilidad del producto y mi propia formación como ingeniero. Asumí entonces la honestidad intelectual como un principio no negociable en la verificación de software crítico para la salud.<br><br>**AV2**<br>Revisé la planificación experimental del Capítulo VIII y distinguí los antecedentes cualitativos de los resultados aún no recolectados, retirando cifras sin sustento. Reconocí que presentar una estimación como si fuera evidencia ya medida habría comprometido la integridad del reporte y la confianza del evaluador. Propuse entonces escenarios con datos sintéticos, consentimiento y métricas de corrección y silenciamiento para estudiar la coordinación sin modificar tratamientos reales ni presentar un registro del software como evidencia clínica.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Diseñé la arquitectura y el modelado de datos aplicando Domain-Driven Design para aislar los datos clínicos y de identidad en Bounded Contexts independientes. Reconocí que mezclar esos dominios habría violado el principio de mínimo privilegio en el acceso a historiales médicos sensibles. Asumí la responsabilidad profesional de sostener esa separación como una decisión ética de diseño, no solo técnica.<br><br>**TB1**<br>Rediseñé la base de datos por contextos delimitados para corregir la persistencia de datos y garantizar la integridad referencial y confidencialidad clínica. Estructuré la integración continua con pruebas automatizadas obligatorias al identificar que un defecto crítico podía pasar desapercibido hacia ramas productivas si dependía solo de la revisión manual. Entendí que la responsabilidad ética sobre datos sensibles se traduce en decisiones concretas de arquitectura, no solo en declaraciones de intención.<br><br>**AV2**<br>Configuré el análisis estático de código y las políticas de revisión por pares (Code Reviews) implementando reglas estrictas para detectar vulnerabilidades de seguridad, manejo indebido de credenciales y deuda técnica. Entendí que una sola vulnerabilidad no detectada en este tipo de plataforma podía traducirse en la exposición de datos de salud de personas vulnerables. Asumí la responsabilidad de blindar la plataforma contra intrusiones bajo ese estándar de exigencia.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Concebí visualmente las interfaces móviles cumpliendo los lineamientos de diseño inclusivo para adultos mayores, seleccionando contrastes, tamaños tipográficos y áreas de toque según la norma WCAG 2.2. Comprendí que un detalle visual descuidado podía traducirse en un error real de lectura de una prescripción médica. Asumí la responsabilidad ética de priorizar la accesibilidad sobre la estética en cada decisión de interfaz.<br><br>**TB1**<br>Formulé el Acuerdo de Servicio SaaS reconociendo el deber ético y legal de transparentar los niveles de servicio y las responsabilidades mutuas entre CareConnect y sus usuarios. Evité cláusulas abusivas y delimité con claridad que la herramienta es un soporte de gestión que no reemplaza el criterio médico profesional, pues comprendí que una redacción ambigua podría inducir a los cuidadores a sustituir decisiones clínicas por la aplicación. Aprendí que la ética profesional también se ejerce en la letra de un contrato, no únicamente en el código.<br><br>**AV2**<br>Ejecuté la auditoría de experiencia de usuario evaluando con imparcialidad y rigor técnico las barreras de accesibilidad del software evaluado. Comprendí que una recomendación poco fundamentada podía inducir a otro equipo a priorizar cambios equivocados, por lo que sustenté cada observación en normas internacionales de accesibilidad. Me propuse mantener ese mismo rigor técnico en toda auditoría futura, priorizando el impacto real sobre los usuarios finales.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Implementé el cliente móvil en Flutter optimizando el consumo de batería y la estabilidad en segundo plano. Reconocí que un fallo en el dispositivo móvil durante un turno nocturno podía dejar incomunicado al cuidador ante una emergencia médica real. Asumí la responsabilidad técnica de tratar la estabilidad de la aplicación como una condición de seguridad del paciente, no como un detalle de rendimiento.<br><br>**TB1**<br>Construí los pipelines de entrega y despliegue continuo estableciendo compuertas de calidad automáticas que bloquean la creación de imágenes Docker ante cualquier fallo en las pruebas. Asumí la responsabilidad de evitar que versiones inestables se liberaran al entorno de producción, al identificar que un despliegue fallido en un sistema de cuidado geriátrico podía traducirse en una interrupción real del seguimiento médico de un paciente. Reforcé mi compromiso de tratar cada compuerta de calidad como una salvaguarda ética, no solo como un requisito técnico.<br><br>**AV2**<br>Instrumenté la telemetría y el monitoreo operativo asegurando que la recolección de eventos y analítica respetara la privacidad del usuario. Reconocí que ampliar el alcance del monitoreo sin límites claros podía convertirse en una forma de vigilancia no consentida sobre personas vulnerables. Limité entonces el monitoreo a parámetros de salud del sistema y rendimiento, sin exponer datos sensibles ni identificadores personales sin consentimiento.|**AV1**<br><br>Como equipo, abordamos el inicio del ciclo de vida del software asumiendo una postura profesional y ética frente a la vulnerabilidad de nuestro público objetivo. Comprendimos que concebir el desarrollo como una mera tarea técnica nos habría hecho pasar por alto la realidad asistencial de los cuidadores y el riesgo de desatender la dignidad del adulto mayor. Nos comprometimos a fundamentar nuestras decisiones de modelado y UX en el respeto a la privacidad y en la comprensión profunda del cuidado domiciliario.<br><br>**TB1**<br><br>Como equipo, consolidamos nuestra responsabilidad profesional al priorizar la honestidad técnica y la transparencia en los reportes de verificación, al corregir la estructura de base de datos y garantizar que el pipeline de entrega protegiera la calidad del producto. Reconocimos que ocultar defectos o suavizar un acuerdo de servicio habría trasladado el riesgo ético hacia nuestros usuarios, por lo que asumimos con madurez el reporte de defectos reales y establecimos delimitaciones contractuales rigurosas. Nos comprometemos a sostener este mismo estándar de transparencia en las entregas siguientes del proyecto.<br><br>**AV2**<br><br>En la fase de experimentación y verificación estática, reafirmamos como equipo nuestro compromiso deontológico al conducir el diseño experimental bajo estrictas salvaguardas éticas que protegen la salud del paciente geriátrico. Reconocimos que la presión por mostrar resultados podía tentarnos a forzar conclusiones o sesgar el tratamiento de los datos, por lo que evitamos sesgos que alteraran el tratamiento médico y transparentamos los hallazgos en la auditoría cruzada. Nos comprometemos a sostener ese mismo rigor ético en cualquier experimentación futura con usuarios reales.|
+|4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Emití juicios informados sobre el impacto social de la brecha en el cuidado informal en el Perú, analizando cómo la falta de herramientas accesibles genera sobrecarga física y emocional desproporcionada en las familias. Comprendí que ignorar esa realidad social nos habría llevado a construir un producto técnicamente correcto pero socialmente irrelevante. Sustenté entonces la necesidad de un producto centrado en la coordinación colaborativa entre cuidadores.<br><br>**TB1**<br>Juzgué el impacto económico de los modelos de precios del mercado frente al poder adquisitivo local y fundamenté que la monetización de CareConnect debía contemplar un esquema freemium con barreras mínimas. Comprendí que replicar sin cuestionamiento los modelos de suscripción de la competencia excluiría a familias de sectores socioeconómicos vulnerables, que son precisamente nuestro público objetivo. Me comprometí a mantener este criterio de accesibilidad económica en las decisiones de negocio futuras del producto.<br><br>**AV2**<br>Evalué el impacto sociocultural de la transición desde bitácoras en papel hacia un flujo digital. Comprendí que imponer un cambio tecnológico abrupto podía chocar con las costumbres de los cuidadores adultos mayores y profundizar la brecha digital en lugar de reducirla. Determiné entonces que la solución debía incluir curvas de aprendizaje suaves que respetaran esas costumbres.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Evalué el impacto social y global al diseñar la experiencia web multidispositivo, ponderando la necesidad de garantizar interfaces fluidas tanto en entornos urbanos con alta conectividad como en zonas con acceso intermitente a internet. Reconocí que optimizar solo para el mejor escenario de red excluiría a cuidadores en zonas con conectividad limitada. Prioricé entonces un diseño resiliente que no dependiera de una conexión constante.<br><br>**TB1**<br>Evalué el impacto global y cultural de la solución al implementar la internacionalización bilingüe en español e inglés, y fundamenté que el software debía ser accesible para comunidades con diversas realidades sociolingüísticas. Identifiqué que limitar el idioma a uno solo reduciría artificialmente el alcance social de CareConnect y excluiría a cuidadores migrantes o familias transnacionales. Asumí el compromiso de seguir evaluando barreras lingüísticas y culturales en cada expansión futura del producto.<br><br>**AV2**<br>Evalué el posible impacto social de ampliar los avisos a co-cuidadores, reconociendo que podría mejorar la coordinación pero también aumentar la carga de supervisión sobre las familias. Entendí que asumir un beneficio aún no demostrado habría sido una conclusión apresurada, por lo que vinculé la propuesta a consentimiento vigente, recolección mínima de datos y una meta de silenciamiento de notificaciones. Dejé su efecto pendiente de medición en lugar de presentarlo como un resultado ya comprobado.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Emití juicios fundamentados sobre el impacto económico del ciclo de vida del software al aplicar una arquitectura desacoplada basada en Domain-Driven Design. Demostré que esa decisión reduce drásticamente los costos de mantenimiento y facilita la escalabilidad del producto en la nube. Comprendí que una arquitectura mal planificada desde el inicio se traduce en sobrecostos económicos difíciles de revertir más adelante.<br><br>**TB1**<br>Evalué el impacto ambiental del software en términos de consumo energético y huella de carbono, y optimicé los pasos de compilación y pruebas en el pipeline de GitHub Actions. Reconocí que cada minuto innecesario de cómputo en servidores cloud representa un costo ambiental acumulativo poco visible pero real para un producto que se ejecutará de forma continua. Me propuse incorporar la eficiencia energética como un criterio permanente de diseño técnico, y no solo como una optimización puntual.<br><br>**AV2**<br>Ponderé el impacto global de la interoperabilidad en salud digital y juzgué la necesidad de alinear los endpoints de la API con estándares de comunicación. Reconocí que una integración mal estandarizada hoy podía convertirse en una barrera costosa para conectar el sistema con hospitales y servicios de telemedicina en el futuro. Prioricé entonces esos estándares para permitir una futura integración segura y eficiente con sistemas hospitalarios y de telemedicina.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Juzgué el impacto social de la exclusión digital en la tercera edad, sustentando que una interfaz adaptada a capacidades motrices y visuales reducidas fomenta la independencia del paciente geriátrico. Comprendí que una interfaz diseñada sin considerar esas limitaciones perpetuaría la dependencia del adulto mayor hacia terceros. Determiné que ese diseño inclusivo debía promover un envejecimiento activo en lugar de solo facilitar una tarea puntual.<br><br>**TB1**<br>Evalué el impacto económico y legal de los términos de servicio SaaS, analizando cómo la claridad en la propiedad de los datos clínicos y la protección ante interrupciones del servicio protegen la economía familiar de nuestros usuarios. Comprendí que un contrato ambiguo trasladaría el riesgo económico y legal del proveedor hacia las familias que menos capacidad tienen de asumirlo. Me comprometí a revisar los términos de servicio bajo ese mismo criterio de equidad en cada actualización contractual.<br><br>**AV2**<br>Emití juicios informados sobre el impacto ambiental y social derivado de sustituir bitácoras físicas de papel por registros digitales compartidos. Sopesé la reducción de residuos materiales frente a la demanda energética de almacenamiento en la nube, reconociendo que digitalizar no es automáticamente más sostenible si no se mide su consumo real. Me comprometí a considerar ese balance ambiental en cada decisión de digitalización futura.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Evalué el impacto socioeconómico al seleccionar Flutter como framework de desarrollo móvil. Reconocí que elegir un framework con requisitos de hardware elevados habría excluido a usuarios con dispositivos Android de gama de entrada. Fundamenté entonces que esa elección democratiza el acceso a la teleasistencia en estratos de menores recursos económicos.<br><br>**TB1**<br>Juzgué el impacto social y operativo de la alta disponibilidad en un sistema de salud, y determiné que los mecanismos de despliegue continuo en contenedores debían garantizar resiliencia y tiempos mínimos de inactividad (*downtime*) ante fallos imprevistos del servidor. Entendí que una caída del servicio, por breve que fuera, podía traducirse en la pérdida de un recordatorio de medicación crítico para un paciente geriátrico. Me comprometí a priorizar la continuidad del servicio como un requisito social, no solo como una métrica de infraestructura.<br><br>**AV2**<br>Evalué el impacto ambiental de la infraestructura de monitoreo continuo y seleccioné herramientas de telemetría livianas. Reconocí que una telemetría sobredimensionada incrementaría innecesariamente la transferencia de datos y la sobrecarga de procesamiento en los dispositivos móviles de los usuarios, muchos de ellos con equipos de gama baja. Prioricé entonces la eficiencia del monitoreo sobre la cantidad de datos recolectados.|**AV1**<br><br>Como equipo, incorporamos una visión sistémica de ingeniería que trasciende el código, evaluando el impacto de nuestras soluciones en contextos sociales reales: la sobrecarga de los cuidadores, la exclusión digital del adulto mayor y las limitaciones económicas familiares. Reconocimos que diseñar sin considerar esas dimensiones habría producido un software funcional pero inequitativo. Nos comprometimos a sostener un diseño tecnológico responsable y accesible en cada decisión posterior del proyecto.<br><br>**TB1**<br><br>Como equipo, fundamentamos en el TB1 nuestras decisiones sobre pruebas, pipelines, arquitectura de datos, modelo SaaS e i18n considerando su impacto económico, social y ambiental. Reconocimos que cada decisión técnica —desde un pipeline hasta un contrato— tiene consecuencias que trascienden el código y alcanzan directamente la economía familiar y el bienestar del paciente geriátrico. Nos comprometemos a seguir evaluando el impacto de nuestras soluciones en contextos reales antes de priorizar la velocidad de entrega.<br><br>**AV2**<br><br>En este hito evaluamos integralmente, como equipo, las consecuencias sociales y ambientales de la experimentación y el monitoreo en producción, relacionando el monitoreo con la detección de fallos técnicos y la continuidad del servicio. Reconocimos que el efecto sobre la salud del paciente, la inclusión y la sostenibilidad aún requiere evidencia adicional y no fue medido en esta entrega. Nos comprometemos a diseñar, en la siguiente fase, mecanismos de medición que permitan sustentar ese impacto en lugar de asumirlo.|
 
 # Part I: As-Is Software Project
 
@@ -2425,47 +2441,58 @@ De esta forma, el diseño mantiene coherencia entre la arquitectura basada en Do
 
 ### 4.10. Database Design
 
-CareConnect utiliza una arquitectura de persistencia relacional para almacenar la información estructurada correspondiente a los distintos bounded contexts.
+CareConnect utiliza **PostgreSQL** como base de datos relacional para almacenar la información estructurada de sus seis *Bounded Contexts*: Identity & Access Management, Agenda, Notifications, Diary, Consent Management y Documents. El modelo propuesto contiene **18 tablas**, organizadas de acuerdo con las responsabilidades de cada contexto.
 
-La base de datos central utiliza **PostgreSQL**. Los archivos médicos no se almacenan directamente dentro de la base relacional; estos se mantienen en **Supabase Storage**, mientras PostgreSQL conserva la metadata y referencias necesarias para localizarlos.
+El diseño separa la identidad y autenticación (`users`) de los perfiles de negocio (`patients` y `caregivers`). De esta manera, los datos comunes de la cuenta se administran en una única tabla y los atributos propios de pacientes y cuidadores se almacenan por separado. Esta decisión también permite expresar las relaciones de negocio con mayor precisión.
 
-La separación conceptual establecida mediante Domain-Driven Design también se conserva en el diseño de persistencia. Cada bounded context mantiene responsabilidad conceptual sobre sus propias estructuras de datos.
+Los archivos médicos se conservan en **Supabase Storage**, mientras que PostgreSQL almacena sus metadatos y las referencias necesarias para recuperarlos. La separación de responsabilidades sigue los principios de *Domain-Driven Design (DDD)*, aunque los contextos comparten una base relacional y mantienen relaciones referenciales explícitas.
+
+El esquema mostrado representa el **diseño objetivo**. Las restricciones, claves foráneas y reglas de autorización deberán implementarse y comprobarse en la aplicación y en las migraciones de PostgreSQL.
 
 ---
 
 #### 4.10.1. Relational/Non-Relational Database Diagram
 
-El diseño de base de datos de CareConnect se representa mediante un modelo relacional organizado según los Bounded Contexts definidos para el producto. Esta organización permite visualizar las tablas responsables de cada área funcional sin perder las relaciones necesarias entre los diferentes contextos.
+El modelo de persistencia integra las tablas de los seis *Bounded Contexts* y sus relaciones. Se utilizan claves primarias (`PK`), claves foráneas (`FK`), restricciones de unicidad (`UQ`), nulabilidad y cardinalidades para expresar la estructura de los datos.
 
-El esquema utiliza `users`, perteneciente al Bounded Context **Identity & Access Management**, como punto principal de referencia para la identidad de pacientes y cuidadores. Los demás contextos almacenan identificadores como `patient_id`, `caregiver_id` y `recipient_id` para relacionar sus registros con un usuario determinado.
+En **Identity & Access Management**, `users` centraliza las credenciales y la información común de autenticación, mientras que `patients` y `caregivers` especializan los perfiles. Los contextos funcionales referencian estas entidades según corresponda: por ejemplo, Agenda relaciona eventos con pacientes, cuidadores y creadores; Notifications identifica destinatarios; Diary registra pacientes y autores; Consent Management administra la relación de acceso entre pacientes y cuidadores; y Documents identifica propietarios y usuarios que suben archivos.
 
-Asimismo, existen relaciones entre otros contextos cuando estas se encuentran respaldadas por el modelo de persistencia. Por ejemplo, los eventos de salud pueden estar relacionados con recordatorios, notificaciones y alertas, mientras que las notificaciones pueden estar asociadas con alertas.
-
-Para facilitar la lectura, primero se presenta un diagrama integrado de la base de datos y posteriormente se muestran vistas individuales correspondientes a cada Bounded Context.
+Los vínculos entre contextos representan dependencias de persistencia y no implican que compartan sus reglas de negocio. Los permisos de acceso deben ser validados por los componentes responsables antes de consultar o modificar información de los pacientes.
 
 ##### Integrated Database Diagram
 
-El siguiente diagrama presenta una vista general del modelo de persistencia de CareConnect, incluyendo las tablas principales, sus atributos y las relaciones existentes entre los diferentes Bounded Contexts.
+El siguiente diagrama presenta las **18 tablas** del diseño, agrupadas por *Bounded Context*, junto con sus atributos y relaciones internas y externas.
 
-![CareConnect Integrated Database Diagram](assets/DBDiagram.png)
+![CareConnect Integrated Database Diagram](assets/DBB.png)
 
 *Figura 11. Diagrama integrado de base de datos de CareConnect.*
 
-En esta representación se puede observar que `users` constituye la principal referencia de identidad del sistema. Desde esta tabla se relacionan registros pertenecientes a Agenda, Notifications, Diary, Consent Management y Documents.
+La vista integrada permite observar la relación entre la identidad centralizada, los perfiles de paciente y cuidador, los eventos de salud, las confirmaciones, los recordatorios, las notificaciones, los permisos, las entradas del diario y los documentos.
 
-Las relaciones se representan mediante sus respectivas cardinalidades. Los atributos marcados como `PK` identifican las Primary Keys, mientras que `FK` identifica Foreign Keys físicas y `REF` representa campos utilizados como referencia a identificadores pertenecientes a otras entidades.
+| Notación | Significado |
+|---|---|
+| `PK` | Clave primaria de la tabla. |
+| `FK` | Clave foránea propuesta hacia otra tabla. |
+| `UQ` | Restricción de unicidad. |
+| `NN` | Atributo obligatorio (`NOT NULL`). |
+| `NULL` | Atributo que admite valores nulos. |
+| `1`, `0..1`, `0..*` | Cardinalidades de la relación. |
 
 ---
 
 ##### Identity & Access Management
 
-El Bounded Context **Identity & Access Management** administra la información necesaria para identificar y autenticar a los usuarios de CareConnect.
+Este *Bounded Context* administra la autenticación, el estado de las cuentas y los perfiles de los usuarios mediante tres tablas:
 
-La tabla principal es `users`, cuya clave primaria es un identificador `UUID`. Además de los datos de identificación, almacena información relacionada con las credenciales, rol, estado de cuenta, intentos fallidos de autenticación y bloqueo temporal.
+- **`users`**: contiene `id`, correo electrónico, contraseña protegida mediante hash, nombre, rol, estado de la cuenta, intentos fallidos, bloqueo temporal y datos de auditoría temporal.
+- **`patients`**: representa el perfil del paciente, con información propia de ese segmento, como su fecha de nacimiento y nivel de asistencia.
+- **`caregivers`**: representa el perfil del cuidador y su clasificación como formal o informal.
 
-El atributo `email` posee una restricción `UNIQUE`, evitando el registro de múltiples cuentas con la misma dirección de correo electrónico.
+`patients.user_id` y `caregivers.user_id` identifican la cuenta correspondiente y funcionan como clave primaria y foránea. Cada cuenta puede tener, como máximo, un perfil de cada tipo a nivel estructural. Dado que el modelo propone **un único rol por cuenta**, se requieren restricciones complementarias para evitar perfiles incompatibles con `users.role`.
 
-![Identity Database Diagram](assets/IdentityDB.png)
+Asimismo, `users.email` posee una restricción de unicidad para impedir cuentas duplicadas.
+
+![Identity Database Diagram](assets/CareConnect_DB_IdentityAccess_v2.png)
 
 *Figura 12. Diagrama de base de datos del Bounded Context Identity & Access Management.*
 
@@ -2473,87 +2500,100 @@ El atributo `email` posee una restricción `UNIQUE`, evitando el registro de mú
 
 ##### Agenda
 
-El Bounded Context **Agenda** almacena los eventos de salud programados y los recordatorios asociados a dichos eventos.
+Este contexto administra la planificación de actividades de cuidado, la programación de medicamentos, las ocurrencias de eventos, sus recordatorios y sus confirmaciones. Se compone de cinco tablas:
 
-La tabla `health_events` contiene los eventos correspondientes a un paciente y, cuando aplica, al cuidador responsable. Para ello utiliza `patient_id` y `caregiver_id` como referencias a la identidad administrada por `users`.
+- **`medication_schedules`**: contiene el medicamento indicado, dosis, unidad, instrucciones, zona horaria y vigencia de su programación.
+- **`medication_schedule_times`**: almacena los horarios diarios asociados a una programación.
+- **`health_events`**: representa eventos concretos, incluidas citas y ocurrencias individuales de medicación. Registra al paciente, el cuidador asociado cuando exista, el creador, el tipo, el estado y las fechas previstas.
+- **`event_confirmations`**: registra el evento confirmado, el usuario que realizó la confirmación y el momento de la acción.
+- **`reminders`**: registra los recordatorios asociados a cada evento.
 
-Cada evento puede poseer múltiples registros en `reminders`, los cuales permiten representar los recordatorios programados para el evento de salud correspondiente mediante `health_event_id`.
+Una programación de medicación puede tener varios horarios y originar múltiples eventos individuales. Cada ocurrencia se identifica mediante un registro en `health_events`, lo que permite diferenciar las tomas sucesivas de un mismo medicamento. La restricción de unicidad de `event_confirmations.health_event_id` limita el modelo a una confirmación por ocurrencia.
 
-![Agenda Database Diagram](assets/AgendaDB.png)
+![Agenda Database Diagram](assets/CareConnect_DB_Agenda_v2.png)
 
 *Figura 13. Diagrama de base de datos del Bounded Context Agenda.*
 
-La tabla `users` representada dentro de esta vista mediante `<<external reference>>` no corresponde a una duplicación de la tabla. Su presencia permite mostrar de manera local la dependencia del Bounded Context Agenda con la identidad gestionada por IAM.
+La generación de ocurrencias, las validaciones temporales y la autorización del usuario que confirma deben implementarse en la lógica del backend. El diseño de horarios diarios no debe interpretarse como soporte automático para cualquier régimen de medicación sin ampliar sus reglas.
 
 ---
 
 ##### Notifications
 
-El Bounded Context **Notifications** contiene las estructuras responsables de almacenar notificaciones, alertas y preferencias de comunicación de los usuarios.
+Este contexto gestiona las alertas y las comunicaciones individuales enviadas a usuarios. Está compuesto por cuatro tablas:
 
-La tabla `notifications` almacena las comunicaciones generadas para un destinatario mediante `recipient_id`. Cuando una notificación se origina a partir de un evento de salud, `health_event_id` permite mantener la referencia hacia el evento correspondiente.
+- **`alerts`**: registra situaciones que requieren atención, vinculadas a eventos de salud, con prioridad, estado y datos de resolución.
+- **`notifications`**: representa cada comunicación enviada o programada para un destinatario (`recipient_id`). Puede relacionarse con una alerta o un recordatorio.
+- **`notification_delivery_attempts`**: registra los intentos de entrega, sus resultados y, cuando corresponde, el código de error del proveedor.
+- **`notification_preferences`**: conserva las preferencias del usuario respecto a canales de envío y prioridad mínima.
 
-La tabla `alerts` puede relacionarse tanto con un usuario como con un evento de salud. Asimismo, `notification_id` permite asociar una alerta con una notificación cuando dicha relación existe.
+Esta estructura distingue el hecho que origina una alerta de las notificaciones enviadas a múltiples destinatarios. Así, una alerta puede generar varias comunicaciones sin duplicar su registro de origen. Los intentos de entrega permiten realizar seguimiento individual del envío.
 
-Por otro lado, `notification_preferences` mantiene la configuración personal de comunicación de cada usuario, incluyendo la habilitación de notificaciones push, correo electrónico, mensajes dentro de la aplicación y la prioridad mínima aceptada.
-
-![Notifications Database Diagram](assets/NotificationsDB.png)
+![Notifications Database Diagram](assets/CareConnect_DB_Notifications_v2.png)
 
 *Figura 14. Diagrama de base de datos del Bounded Context Notifications.*
 
-En esta vista, `users` y `health_events` se muestran como `<<external reference>>` para representar las dependencias con los Bounded Contexts IAM y Agenda sin duplicar físicamente dichas tablas.
-
-No se establece una relación directa entre `notification_preferences` y `notifications`, debido a que ambas estructuras se relacionan mediante el identificador del usuario y no mediante una referencia directa entre ellas.
+El acceso a las notificaciones y la selección de sus destinatarios deben respetar los permisos vigentes y las preferencias configuradas por cada usuario.
 
 ---
 
 ##### Diary
 
-El Bounded Context **Diary** administra las entradas de seguimiento registradas para cada paciente.
+El *Bounded Context* **Diary** administra las observaciones registradas sobre la evolución del paciente mediante la tabla `diary_entries`.
 
-La tabla `diary_entries` almacena el contenido de cada entrada junto con su fecha correspondiente. El atributo `patient_id` identifica al usuario al cual pertenece la entrada.
+Cada entrada contiene `patient_id`, que identifica al paciente al que pertenece la información, y `author_id`, que identifica al usuario que la registró. También conserva el contenido de la observación, su fecha de referencia y las marcas temporales de creación y actualización.
 
-![Diary Database Diagram](assets/DairyDB.png)
+Esta distinción permite mantener la trazabilidad cuando una observación es registrada por el propio paciente o por un cuidador autorizado.
+
+![Diary Database Diagram](assets/CareConnect_DB_Diary_v2.png)
 
 *Figura 15. Diagrama de base de datos del Bounded Context Diary.*
 
-La representación de `users` como `<<external reference>>` indica que la identidad pertenece al Bounded Context IAM y únicamente es referenciada desde Diary.
+La validez de la relación entre autor y paciente debe verificarse mediante las reglas de acceso de Consent Management cuando el autor sea un cuidador.
 
 ---
 
 ##### Consent Management
 
-El Bounded Context **Consent Management** administra las autorizaciones que permiten compartir información entre pacientes y cuidadores.
+Este contexto controla las solicitudes y autorizaciones para compartir información entre pacientes y cuidadores. Se compone de tres tablas:
 
-La tabla `profile_share_consents` registra la relación entre el paciente y el cuidador utilizando `patient_id` y `caregiver_id`. El modelo establece restricciones de unicidad para evitar duplicidades incompatibles dentro del mismo esquema de consentimiento.
+- **`access_requests`**: registra las solicitudes, sus participantes, estado y fecha de decisión.
+- **`profile_share_consents`**: representa el consentimiento otorgado, su estado, fechas de vigencia, revocación o expiración y, cuando aplique, la solicitud que lo originó.
+- **`profile_share_consent_views`**: especifica las áreas de información autorizadas y el nivel de permiso concedido.
 
-La tabla `profile_share_consent_views` contiene las vistas o áreas de información autorizadas para un consentimiento determinado y se relaciona con `profile_share_consents` mediante `consent_id`.
+Las relaciones entre pacientes y cuidadores admiten que un paciente autorice a varios cuidadores y que un cuidador atienda a distintos pacientes. La unicidad compuesta sobre `patient_id` y `caregiver_id` evita registrar dos consentimientos para la misma pareja bajo el esquema propuesto.
 
-![Consent Management Database Diagram](assets/ConsentDB.png)
+En `profile_share_consent_views`, la combinación de `consent_id` y `view_name` identifica cada permiso específico. La autorización efectiva no depende solo de que exista la relación: también deben verificarse su estado, expiración y alcance de acceso.
+
+![Consent Management Database Diagram](assets/CareConnect_DB_ConsentManagement_v2.png)
 
 *Figura 16. Diagrama de base de datos del Bounded Context Consent Management.*
 
-Al igual que en otros contextos, `users` se presenta únicamente como referencia externa para mostrar la relación del consentimiento con las identidades administradas por IAM.
+Los contextos Agenda, Diary y Documents deben aplicar estas autorizaciones desde la capa de aplicación. No es necesario crear una clave foránea desde cada registro hacia una fila de consentimiento para realizar esa validación.
 
 ---
 
 ##### Documents
 
-El Bounded Context **Documents** gestiona la metadata correspondiente a los documentos médicos asociados a cada paciente.
+El *Bounded Context* **Documents** administra los metadatos de documentos médicos y los archivos asociados. Se compone de dos tablas:
 
-La tabla `medical_documents` representa el conjunto de documentos pertenecientes a un usuario mediante `patient_id`. Cada registro puede contener múltiples elementos almacenados en `document_items`, relacionados mediante `medical_document_id`.
+- **`medical_documents`**: representa el documento lógico asociado a un paciente; contiene sus datos descriptivos, categoría, fecha y el usuario que lo creó.
+- **`document_items`**: representa los archivos vinculados a cada documento, con nombre, tipo MIME, tamaño, estado de sincronización, usuario que lo subió y referencias de almacenamiento.
 
-`document_items` conserva información como el tipo de documento, título, descripción, tipo MIME, tamaño del archivo y datos necesarios para localizarlo en el sistema de almacenamiento.
+La relación entre ambas tablas permite que un documento lógico contenga uno o varios archivos. Esta separación evita repetir metadatos generales de un mismo documento para cada archivo adjunto.
 
-![Documents Database Diagram](assets/DocumentsDB.png)
+![Documents Database Diagram](assets/CareConnect_DB_Documents_v2.png)
 
 *Figura 17. Diagrama de base de datos del Bounded Context Documents.*
 
-Los archivos físicos no se almacenan directamente como contenido binario dentro de PostgreSQL. La tabla `document_items` mantiene campos como `file_url`, `storage_bucket` y `storage_path`, que permiten conservar la referencia correspondiente al archivo almacenado en **Supabase Storage**.
+Los archivos se almacenan en **Supabase Storage**. PostgreSQL conserva referencias estables mediante `storage_bucket` y `storage_path` en `document_items`, en lugar de almacenar el archivo binario o depender de una URL pública permanente. La entrega efectiva de los archivos debe estar protegida por mecanismos de autorización.
 
 ---
 
-En conjunto, estos diagramas permiten analizar tanto la estructura interna de cada Bounded Context como las dependencias necesarias entre ellos. La separación mantiene la responsabilidad de cada contexto, mientras que las referencias mediante identificadores permiten relacionar información compartida sin duplicar entidades pertenecientes a otros dominios.
+En conjunto, los diagramas describen una arquitectura de persistencia compuesta por **18 tablas distribuidas en seis Bounded Contexts**, con identidad centralizada y perfiles diferenciados para pacientes y cuidadores. El modelo conserva la trazabilidad de eventos, confirmaciones, comunicaciones, observaciones, consentimientos y documentos.
+
+Las relaciones referenciales proporcionan la estructura para mantener consistencia entre los datos compartidos. Sin embargo, las restricciones declaradas en el diagrama deben implementarse en PostgreSQL y complementarse con validaciones del backend, especialmente para garantizar la autorización de acceso a la información clínica.
+
 
 ## Capítulo V: Product Implementation
 
@@ -2569,7 +2609,7 @@ CareConnect se encuentra compuesto por diferentes productos de software que evol
 - Backend RESTful API.
 - Frontend Web Application requerida para 1ASI0732.
 
-La solución actual mantiene repositorios separados para el informe, backend, aplicación móvil y Landing Page. La Frontend Web Application forma parte del alcance requerido por el curso, pero su repositorio y evidencia de despliegue deben incorporarse cuando su implementación sea confirmada.
+La solución actual mantiene repositorios separados para el informe, backend, clientes y Landing Page. La web del cuidador está implementada en Flutter en [carestacks-web](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web) y publicada en [Render](https://carestacks-web.onrender.com/), con evidencia en §7.4. El móvil Flutter del cuidador y el cliente Kotlin del paciente son productos distintos; sus versiones y verificaciones se identifican por separado.
 
 ---
 
@@ -2591,7 +2631,7 @@ La selección de herramientas busca mantener una separación clara entre cada pr
 | Mobile Development | Kotlin | Lenguaje de programación de la aplicación Android. | `CareStacks/FrontEnd` |
 | Mobile UI | Jetpack Compose | Construir la interfaz declarativa de la aplicación Android. | `CareStacks/FrontEnd` |
 | Mobile Build | Gradle | Gestionar dependencias y compilación de Android. | `CareStacks/FrontEnd` |
-| Backend Development | Java 21 | Lenguaje utilizado actualmente por el backend. | `CareStacks/BackEnd` |
+| Backend Development | Java 25 | Lenguaje del backend revisado para AV2. | `carestacks-backend-api` |
 | Backend Framework | Spring Boot | Implementar y exponer los servicios RESTful actuales. | `CareStacks/BackEnd` |
 | Backend Build | Maven | Gestionar dependencias y construir el backend. | `CareStacks/BackEnd/pom.xml` |
 | Persistence | Spring Data JPA / Hibernate | Gestionar el mapeo objeto-relacional del backend. | `CareStacks/BackEnd` |
@@ -2605,7 +2645,7 @@ La selección de herramientas busca mantener una separación clara entre cada pr
 | Email | SendGrid | Enviar correos electrónicos transaccionales. | Configuración privada del backend |
 | Landing Page Development | React + Vite + TypeScript | Implementación actual de la Landing Page. | `upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page` |
 | Landing Page Deployment | Vercel | Publicar la Landing Page. | Proyecto Vercel desplegado con CLI; integración automática con GitHub pendiente |
-| Frontend Web Application | Flutter | Stack requerido por 1ASI0732 para la aplicación web funcional. | Pendiente de repositorio/implementación confirmada |
+| Frontend Web Application | Flutter | Aplicación web del cuidador implementada y publicada. | `carestacks-web`; https://carestacks-web.onrender.com/ |
 | Documentation | Markdown | Elaborar el informe principal del proyecto. | `upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/README.md` |
 
 ##### Configuración de la Native Mobile Application
@@ -2708,7 +2748,7 @@ Package Manager: Flutter / Dart Pub
 Communication: REST over HTTPS/JSON
 ```
 
-La aplicación deberá consumir los servicios expuestos por el backend y contar con un repositorio independiente. Mientras no exista evidencia de implementación, no debe documentarse como un producto ya desplegado.
+La aplicación consume los servicios REST del backend y cuenta con el repositorio independiente [carestacks-web](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web). Su publicación en https://carestacks-web.onrender.com/ está documentada en §7.4. Esta evidencia no acredita que las intervenciones y la telemetría de los experimentos del Capítulo VIII ya estén implementadas.
 
 ##### Consideración sobre el stack del curso
 
@@ -3531,6 +3571,8 @@ La tabla se organiza por los User Stories definidos en la sección 3.2, descompu
 
 #### 5.2.2. Implemented Landing Page Evidence
 
+**Revisión AV2 — 07/11/2026.** La [verificación de enlaces de la landing](assets/testing/landing-links-2026-11-07/verification.md) registra cuatro accesos de contacto con 404 y la corrección común para ES/EN. La corrección se [publicó y verificó en Vercel](assets/deployment/av2-landing-2026-11-07/verification.md) directamente desde `chapter-8`, conservando el merge a `main` para la integración final.
+
 La Landing Page de **CareConnect** fue implementada utilizando **React, TypeScript y Vite** y se encuentra desplegada mediante **Vercel**.
 
 **Repositorio:** `https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page`
@@ -3718,7 +3760,7 @@ La distribución de commits entre los cuatro repositorios refleja la división d
 
 **CareConnect – CareStacks** · Versión 1.0 · Septiembre de 2026
 
-Texto del acuerdo elaborado por el equipo en `chapter-5`. Describe el modelo SaaS propuesto; las cláusulas de suscripción y cobro no acreditan una integración de pagos ni una operación comercial en esta entrega.
+**Nota del equipo.** El Acuerdo que sigue es la versión 1.0 (septiembre de 2026), redactada en español y enlazada desde la sección Términos y Condiciones de la Landing Page. La interfaz de la landing está disponible en español e inglés; su selector no traduce este Acuerdo. Describe el modelo SaaS propuesto para CareConnect; las cláusulas de suscripción y cobro describen ese modelo y no acreditan una integración de pagos ni una operación comercial en esta entrega.
 
 Este documento explica, en lenguaje sencillo, los derechos, obligaciones y restricciones que aplican cuando usas CareConnect. Al crear una cuenta o usar la plataforma, aceptas este Acuerdo. Si no estás de acuerdo, te pedimos no usar el servicio.
 
@@ -3825,7 +3867,30 @@ Este Acuerdo se rige por las leyes de la República del Perú. Intentaremos reso
 
 ##### 5.2.8.16. Contacto
 
-Para consultas generales del proyecto: [canal público del equipo en GitHub](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/issues). El canal privado para reclamos relativos a datos personales queda pendiente de definir; no se deben incluir esos datos en consultas públicas.
+Para consultas generales del proyecto: [canal público del equipo en GitHub](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/issues). Para ejercer tus derechos de acceso, rectificación, cancelación y oposición sobre tus datos personales, escribe a careconnect@gmail.com. No incluyas datos de salud ni otros datos personales en las consultas públicas.
+
+##### 5.2.8.17. Alineación ética y profesional
+
+La redacción del Acuerdo se orientó por el Código de Ética y Práctica Profesional de la Ingeniería de Software de ACM/IEEE-CS (ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices, 1999) y por el código de ética del Colegio de Ingenieros del Perú (Colegio de Ingenieros del Perú, s.f.). La siguiente tabla relaciona las cláusulas del Acuerdo con los principios aplicados.
+
+| Cláusula del Acuerdo | Principio | Cómo se refleja |
+|---|---|---|
+| 5.2.8.3 y 5.2.8.12 (descripción del servicio y limitación de responsabilidad) | Público; Producto | Declara que CareConnect no reemplaza el criterio de un profesional de la salud ni atiende emergencias, y no promete más de lo que el producto hace. |
+| 5.2.8.6 y 5.2.8.9 (derechos y datos personales) | Público | Trata la información de salud como dato sensible conforme a la Ley N.° 29733 (Ley 29733, 2011) y exige un consentimiento que puede revocarse en cualquier momento. |
+| 5.2.8.4, 5.2.8.7 y 5.2.8.8 (cuenta, obligaciones y restricciones) | Juicio | Solicita información veraz y prohíbe el acceso a perfiles sin consentimiento y el uso fraudulento del servicio. |
+| 5.2.8.5 y 5.2.8.14 (planes y cambios al Acuerdo) | Público | Informa precios, renovación y cancelación antes de contratar, y avisa los cambios importantes. |
+| 5.2.8.11 (disponibilidad y soporte) | Producto; Juicio | Reconoce que el servicio puede interrumpirse y que las alertas no deben ser la única forma de controlar medicamentos críticos. |
+
+##### 5.2.8.18. Claridad y accesibilidad
+
+El Acuerdo se redactó pensando en personas cuidadoras y pacientes que no necesariamente tienen formación legal. Las decisiones de claridad y accesibilidad que pueden comprobarse en el propio texto son:
+
+- Lenguaje sencillo y trato directo en segunda persona.
+- Secciones numeradas con títulos descriptivos, lo que permite ubicar cada tema.
+- Definiciones de los términos clave en una tabla.
+- Listas separadas para derechos, obligaciones y restricciones de uso.
+- Acceso desde el footer de la Landing Page, cuya interfaz cambia entre español e inglés y actualiza `lang` y las etiquetas accesibles (secciones 4.3.1 y 6.1.3). El texto de este Acuerdo permanece en español.
+
 
 
 ### 5.3. Video About-the-Product
@@ -3940,50 +4005,1232 @@ Las pruebas de sistema revisan el recorrido visible para el usuario. ST-01 y ST-
 **Corrección posterior de Agenda — 04/10/2026.** El [backend PR #3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3) exige sesiones emitidas por IAM y propiedad o consentimiento AGENDA vigente en las diez rutas. Se sustituyeron los tokens fabricables por sesiones opacas de 30 minutos; logout las revoca. Web y móvil envían el token y eliminan la lista rechazada de caché ante 401/403. Pasan 16 pruebas del backend, 36 rápidas web, 9 rápidas móviles y los 9 escenarios de sistema por cliente: SYS-06 y SYS-07 ya no fallan. Ambos análisis estáticos y la compilación web release aprobaron. Las [versiones, logs y límites de esta corrección](assets/testing/agenda-auth-2026-10-04/verification.md) actualizan el resultado; las ejecuciones anteriores se conservan como historial. El defecto de Agenda queda corregido en las ramas publicadas, pero ST-03 sigue parcial hasta validar el cliente de paciente y los entornos desplegados/dispositivos. Las sesiones son locales a una instancia y requieren login después de reiniciar. Los cambios están en PRs; no se han fusionado ni desplegado.
 
 ### 6.2. Static testing & Verification
-
+ 
+El static testing comprende el conjunto de actividades de verificación que se realizan sin ejecutar el código fuente. A diferencia de las pruebas dinámicas descritas en la sección 6.1, su objetivo es detectar defectos, deudas técnicas y vulnerabilidades de forma temprana, analizando directamente el código, su estructura y el cumplimiento de las convenciones definidas por el equipo.
+ 
+Para los productos de CareConnect se aplicaron dos enfoques complementarios de verificación estática:
+ 
+- **Static Code Analysis:** ejecución de analizadores y del pipeline de compilación sobre cada repositorio (RESTful API en Java / Spring Boot, Frontend Web y aplicación móvil del cuidador en Flutter / Dart, Landing Page en React / TypeScript), para validar el cumplimiento de convenciones de codificación y medir la calidad y seguridad del código. Los resultados provienen de los workflows de GitHub Actions descritos en la sección 7.1 y de una revisión manual del código.
+- **Reviews:** revisión e integración de cambios mediante Pull Requests en GitHub, integrada al flujo de trabajo GitFlow.
 #### 6.2.1. Static Code Analysis
-
+ 
+El análisis estático de código se ejecutó por cada producto utilizando la herramienta adecuada para su lenguaje. La siguiente tabla resume las herramientas empleadas:
+ 
+| Producto | Repositorio | Lenguaje / Framework | Herramienta de análisis estático | Dónde se ejecuta |
+|---|---|---|---|---|
+| RESTful API (Backend) | `carestacks-backend-api` | Java 25 / Spring Boot 4 (Maven) | Compilación y verificación con Maven (`mvn -B clean verify`) | Workflow *Backend CI* de GitHub Actions |
+| Frontend Web Application | `carestacks-web` | Dart / Flutter (target Web) | `flutter analyze` con `flutter_lints` | Workflow *Web CI* de GitHub Actions |
+| Mobile Application (cuidador) | `carestacks-mobile-app` | Dart / Flutter (iOS / Android) | `flutter analyze` con `flutter_lints` | Workflow *Mobile CI* de GitHub Actions |
+| Landing Page | `carestacks-landing-page` | TypeScript / React + Vite | ESLint (`npm run lint`) | Workflow de CI de la Landing Page (histórico) |
+| Mobile Application (paciente) | `carestacks-frontend` | Kotlin / Jetpack Compose (Gradle) | Android Lint (`lintDebug`) | Ejecutado el 08/11/2026: 0 errores, 46 advertencias; workflow en `develop` |
+ 
 ##### 6.2.1.1. Coding standard & Code conventions
-
+ 
+En esta sección se verifica que el código de cada producto cumpla con los estándares de codificación y convenciones de nomenclatura definidos por el equipo. Tal como se establece en la sección 5.1.3 (Source Code Style Guide & Conventions), los identificadores técnicos (clases, métodos, variables, endpoints, tablas y commits) se redactan en inglés y se adoptan las guías de estilo estándar de cada lenguaje.
+ 
+| Lenguaje / Tecnología | Convención adoptada | Mecanismo de verificación |
+|---|---|---|
+| Java / Spring Boot (Backend) | Clases e interfaces en PascalCase; métodos y variables en camelCase; constantes en UPPER_SNAKE_CASE; paquetes en minúsculas (por ejemplo, `com.carestacks.careconnect.agenda`). Estructura por bounded context con las capas `domain/`, `application/`, `infrastructure/` e `interfaces/`. | Compilación Maven en CI y revisión en Pull Requests |
+| Dart / Flutter (Web y móvil del cuidador) | Effective Dart mediante `package:flutter_lints/flutter.yaml`, incluido en el `analysis_options.yaml` de ambos repositorios; clases en PascalCase y funciones y variables en camelCase. | `flutter analyze` en CI |
+| Kotlin / Jetpack Compose (Android del paciente) | Clases en PascalCase; funciones y variables en camelCase; la UI no concentra reglas de negocio y los ViewModels administran el estado de presentación. | Revisión manual (sin workflow de CI) |
+| TypeScript / React (Landing Page) | Componentes en PascalCase; funciones y variables en camelCase; configuración por ambiente mediante variables de entorno (`import.meta.env.VITE_API_BASE_URL`), sin valores sensibles en el código. | ESLint (`npm run lint`) en CI |
+| Base de datos | Tablas en `snake_case` plural (`health_events`); columnas en `snake_case` (`created_at`); llaves foráneas con el formato `<entity>_id` (`patient_id`). | Revisión en Pull Requests |
+| API REST | Endpoints con sustantivos y semántica HTTP (por ejemplo, `GET /api/events`). | Pruebas de integración y de sistema (sección 6.1) y revisión en Pull Requests |
+ 
+Adicionalmente, el control de versiones aplica **GitFlow** (ramas `feature/*`, `test/*`, `release/*` y `hotfix/*`, integradas a `develop` y `main`), **Semantic Versioning** (`MAJOR.MINOR.PATCH`) y **Conventional Commits** (`<tipo>(<scope>): <descripción breve>`). Los Pull Requests del proyecto usan los tipos `feat`, `fix`, `test`, `docs` y `release`, por ejemplo `fix(agenda): enforce sessions and current consent` o `test(core): port verification tests`.
+ 
+**Frontend Web y aplicación móvil del cuidador (Flutter).** Ambos workflows ejecutan la misma secuencia: `flutter pub get`, `flutter analyze`, `flutter test` y la compilación (`flutter build web --release` en la web y `flutter build apk --debug` en la aplicación móvil). En el Pull Request #1 de cada repositorio, el paso *Analyze project* concluyó con éxito y las anotaciones de los check-runs no reportan ningún problema de código Dart (únicamente avisos de infraestructura de GitHub Actions, como la deprecación de Node 20, que no corresponden al código Flutter). El cuerpo del Pull Request #1 de la web indica que `flutter analyze` finalizó sin problemas.
+ 
+```text
+flutter pub get
+flutter analyze        -> Analyze project: success (CI, Pull Request #1)
+flutter test           -> success
+flutter build web --release / flutter build apk --debug -> success
+```
+ 
+**RESTful API (Java / Spring Boot).** El workflow *Backend CI* ejecuta `mvn -B clean verify` con Java 25. La revisión local AV2 del commit `4aa830b` aprobó las 26 pruebas y el empaquetado. Las dos ejecuciones CI del mismo commit también aprobaron; la [verificación local AV2](assets/testing/av2-local-2026-11-08/verification.md) conserva resultados y URLs. El repositorio no incluye Maven Wrapper y utiliza Maven instalado en el runner.
+ 
+```text
+mvn -B clean verify    -> Build and run tests: success (CI, Pull Request #3 y develop)
+```
+ 
+**Landing Page (React + TypeScript).** La revisión del 07/11/2026 ejecutó `npm run lint` y `npm run build` sobre la corrección `62772ca`, ambas con salida 0. La [verificación de enlaces](assets/testing/landing-links-2026-11-07/verification.md) y la [publicación](assets/deployment/av2-landing-2026-11-07/verification.md) registran el resultado local y la ejecución CI aprobada. El repositorio requiere acceso autenticado; su ausencia de la lista pública no equivale a una falla del análisis. La ejecución de `ab2d60e` en §7.1 se conserva como evidencia histórica del TB1.
+ 
+**Aplicación Android del paciente (Kotlin).** La revisión del 08/11/2026 detectó 55 errores `NewApi` por usar `java.time` con `minSdk=24` sin core library desugaring. Se habilitó esa compatibilidad y se declaró `desugar_jdk_libs:2.1.5` en el catálogo. En `64308ce`, `lintDebug` finalizó con 0 errores y 46 advertencias; `testDebugUnitTest` y `assembleDebug` aprobaron. La única prueba unitaria existente es un ejemplo aritmético; no acredita el flujo del paciente. Se añadió el workflow `Android verification` a `develop`. Véase la [verificación local AV2](assets/testing/av2-local-2026-11-08/verification.md).
+ 
+**Referencias de la ejecución en CI:**
+ 
+- Workflow de la Frontend Web (Pull Request #1): [https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/actions/runs/37260341123](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/actions/runs/37260341123)
+- Workflow de la aplicación móvil del cuidador (Pull Request #1): [https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/actions/runs/37260341247](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/actions/runs/37260341247)
 ##### 6.2.1.2. Code Quality & Code Security
+ 
+En esta sección se evalúa la calidad del código (errores, advertencias, confiabilidad y mantenibilidad) y se identifican vulnerabilidades de seguridad (credenciales expuestas, configuraciones inseguras, validación insuficiente de datos). El equipo no utiliza SonarCloud ni SonarQube: no existe un `sonar-project.properties`, un workflow de Sonar ni un check de SonarCloud en los Pull Requests. Por ello, la calidad del código se verifica con `flutter analyze`, con Maven y con los workflows de GitHub Actions, y la seguridad se complementa con una revisión manual del código.
+ 
+###### A. Code Quality
+ 
+| Producto | Herramienta | Errores | Advertencias de código | Pruebas | Resultado |
+|---|---|---|---|---|---|
+| carestacks-web | `flutter analyze` (CI, PR #1) | 0 | 0 | 36 pruebas rápidas aprobadas | Aprobado |
+| carestacks-mobile-app | `flutter analyze` (CI, PR #1) | 0 | 0 | 9 pruebas rápidas aprobadas | Aprobado |
+| carestacks-backend-api | `mvn -B clean verify` (`4aa830b`, 08/11/2026) | 0 fallos de compilación/pruebas | No cuantificadas; hay avisos de API obsoleta en tests | 26 pruebas aprobadas | Build y CI aprobados; aún sin publicar a producción |
+| carestacks-landing-page | `npm run lint` y build (`62772ca`, 07/11/2026) | 0 reportados | 0 reportadas por lint | No aplica | Aprobado; ver registros enlazados |
+| carestacks-frontend (Android) | Android Lint (`64308ce`) | 0 | 46 | 1 ejemplo aprobado; flujo no probado | Lint y APK debug aprobados localmente |
+ 
+El Pull Request #1 del backend documenta además una verificación local: `mvn -B -q test` con Java 25 y Spring Boot 4.0.6 ejecutó 10 pruebas con 0 fallos, 0 errores y 0 omitidas. Las métricas de duplicación de código, complejidad y cobertura no se midieron, porque el equipo no integra una plataforma de análisis continuo como SonarCloud.
+ 
+La arquitectura por bounded contexts, con las capas `domain`, `application`, `infrastructure` e `interfaces`, favorece la mantenibilidad, ya que mantiene las reglas de negocio fuera de los controllers y desacopla los contextos entre sí.
+ 
+**Referencias de la ejecución en CI:**
+ 
+- Workflow *Backend CI* (Pull Request #3): [https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/actions/runs/37260376353](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/actions/runs/37260376353)
+###### B. Code Security
+ 
+El análisis de seguridad combinó las pruebas de sistema de la sección 6.1 con una revisión manual del código orientada a vulnerabilidades comunes (OWASP). Los hallazgos corresponden a **revisión manual**, no a la salida de una herramienta automatizada. Los principales hallazgos de la solución son los siguientes:
+ 
+| # | Hallazgo | Ubicación | Severidad | Referencia (CWE) | Estado |
+|---|---|---|---|---|---|
+| 1 | Las rutas de Agenda aceptaban sesiones con tokens fabricables y no verificaban la propiedad del recurso ni el consentimiento vigente. Las pruebas de sistema SYS-06 y SYS-07 fallaban. | Backend: módulo Agenda (diez rutas) | Alta | CWE-285: Improper Authorization | Corregido en el Pull Request #3 del backend |
+| 2 | Las listas rechazadas por el servidor (401/403) permanecían en la caché de los clientes. | Frontend Web y aplicación móvil del cuidador | Media | CWE-524: Use of Cache Containing Sensitive Information | Corregido en el Pull Request #1 de web y de móvil |
+| 3 | Las sesiones son locales a una instancia y se pierden al reiniciar el servicio, por lo que se requiere iniciar sesión nuevamente. | Backend: módulo IAM | Baja | — | Limitación conocida y documentada |
+| 4 | La revisión inicial encontró orígenes arbitrarios en `/api/**`. En `4aa830b` se usan orígenes exactos configurables, sin comodines. | `CorsConfig.java` | Media | CWE-942: Permissive Cross-domain Policy | Corregido en `develop` y probado localmente/CI; publicación y comprobación del entorno aún no realizadas |
+ 
+**Observaciones adicionales de la revisión manual:**
+ 
+| # | Observación | Ubicación | Severidad | Referencia (CWE) |
+|---|---|---|---|---|
+| 5 | La configuración anterior utilizaba `anyRequest().permitAll()`. En `4aa830b` la cadena valida sesiones opacas de IAM y exige autenticación por defecto; registro/login, documentación y health son públicos explícitos. La autorización del recurso permanece en los controllers. | `SecurityConfig.java` y `IssuedSessionFilter.java` | Media | CWE-862: Missing Authorization |
+| 6 | En `4aa830b` la consola H2 está deshabilitada por defecto con `APP_H2_CONSOLE_ENABLED=false`. El perfil de pruebas carga la configuración real y sustituye solo su base desechable. | `application.yml` | Media | CWE-489: Active Debug Code |
+| 7 | Health permanece público y sin detalle; `info` y `metrics` requieren sesión emitida por IAM desde `4aa830b`. | `application.yml` / `SecurityConfig.java` | Baja | CWE-200: Exposure of Sensitive Information |
+ 
+No se encontraron contraseñas ni claves reales versionadas en el repositorio: el archivo `.env.example` utiliza valores de ejemplo (por ejemplo, `DB_PASSWORD=change-me`) y `SUPABASE_SERVICE_ROLE_KEY` no está escrita en el código.
+ 
+**Medidas de mitigación aplicadas y recomendadas:**
+ 
+- **Hallazgo 1:** se reemplazaron los tokens fabricables por sesiones opacas de 30 minutos que el cierre de sesión revoca, y se exige una sesión emitida por IAM junto con propiedad o consentimiento `AGENDA` vigente en las diez rutas. Tras la corrección pasan las 16 pruebas del backend y los 9 escenarios de sistema por cliente.
+- **Hallazgo 2:** los clientes envían el token en cada solicitud y eliminan de la caché la lista rechazada ante una respuesta 401 o 403.
+- **Hallazgo 3:** como mejora futura, almacenar las sesiones en un repositorio compartido (base de datos o Redis) para que sobrevivan a reinicios y a múltiples instancias.
+- **Hallazgo 4:** se restringió CORS a los orígenes HTTPS de web y landing; `APP_CORS_ALLOWED_ORIGINS` permite añadir orígenes exactos de desarrollo. La prueba acepta el frontend conocido y rechaza un origen arbitrario.
+- **Observación 5:** se incorporó autenticación común con la sesión opaca vigente de IAM. Las pruebas rechazan ausencia de sesión, token fabricado y sesión revocada, y mantienen login/registro, Swagger y health accesibles. Esto no sustituye la revisión de propiedad y consentimiento de cada recurso.
+- **Observación 6:** se deshabilitó la consola H2 por defecto. La configuración aplicada en producción debe comprobarse después del merge y despliegue final.
+- **Gestión de secretos:** las credenciales no se incluyen en el repositorio; se almacenan en GitHub Secrets o GitHub Environments y la configuración por ambiente se administra mediante variables de entorno (por ejemplo, `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` y `SPRING_DATASOURCE_PASSWORD`).
+**Cierre de la revisión local — 08/11/2026.** Los cambios `4aa830b` (backend) y `64308ce` (Kotlin) están en `develop`. La [verificación local AV2](assets/testing/av2-local-2026-11-08/verification.md) incluye resultados antes/después, parches, límites y estado de CI. No se hizo merge a `main` ni despliegue de estos productos. ST-03 sigue requiriendo el recorrido integrado en los entornos y dispositivos objetivo.
 
 #### 6.2.2. Reviews
+ 
+Las reviews constituyen la verificación manual del código realizada por los integrantes del equipo como parte del flujo de trabajo. El equipo gestiona la integración de los cambios mediante Pull Requests en GitHub, integrados al flujo de trabajo GitFlow: cada nueva funcionalidad o corrección se desarrolla en una rama de tipo `feature/*` o `test/*` y se integra a `develop`, y posteriormente a `main`, a través de un Pull Request. De esta manera, ningún cambio llega directamente a las ramas principales, sino que pasa primero por un Pull Request donde puede ser inspeccionado.
+ 
+El Pull Request centraliza en un solo lugar el conjunto de commits, los archivos modificados y las verificaciones automáticas del workflow de Integración Continua, de modo que cada ejecución queda asociada al commit y al Pull Request que la originó. Al revisar un Pull Request, el equipo toma en cuenta los siguientes aspectos:
+ 
+| Aspecto revisado | Descripción |
+|---|---|
+| Convenciones de código | El código respeta las guías de estilo y la nomenclatura en inglés definidas en la sección 6.2.1.1. |
+| Funcionalidad | El cambio cumple con la User Story y sus Acceptance Criteria (escritos en Gherkin) asociados. |
+| Calidad y seguridad | El cambio no introduce code smells ni vulnerabilidades evidentes, y no expone credenciales en el código. |
+| Pruebas | El cambio no rompe las pruebas existentes descritas en la sección 6.1 y el workflow de CI finaliza correctamente. |
+| Conventional Commits | Los mensajes de commit y los nombres de rama siguen las convenciones establecidas en la sección 5.1. |
+ 
+**Pull Requests revisados:**
+ 
+| Repositorio | PR | Título | Autor | Integrado (UTC) | Integrado por | Checks de CI |
+|---|---|---|---|---|---|---|
+| carestacks-backend-api | [#1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/1) | `test(core): port verification tests` | Matias Salcedo (`matiAAsc`) | 01/10/2026 22:16 | Percy Muñiz (`alomsoo`) | Sin checks de GitHub Actions: el workflow se agregó en el PR #2, el mismo día y después de este merge. El PR documenta una verificación local: `mvn -B -q test`, 10 pruebas, 0 fallos, 0 errores, 0 omitidas (Java 25, Spring Boot 4.0.6). |
+| carestacks-backend-api | [#3](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-backend-api/pull/3) | `fix(agenda): enforce sessions and current consent` | Matias Salcedo (`matiAAsc`) | 05/10/2026 19:26 | Percy Muñiz (`alomsoo`) | Aprobados: *Build and Test RESTful API*, *test* y *docker-build*. |
+| carestacks-web | [#1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web/pull/1) | `fix(caregiver): enforce agenda sessions and validate TB1 flows` | Matias Salcedo (`matiAAsc`) | 05/10/2026 18:32 | Percy Muñiz (`alomsoo`) | Aprobado: *Build and Test Flutter Web* (`flutter analyze`, `flutter test` y `flutter build web --release`). |
+| carestacks-mobile-app | [#1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/pull/1) | `fix(caregiver): enforce agenda sessions and validate TB1 flows` | Matias Salcedo (`matiAAsc`) | 05/10/2026 19:42 | Percy Muñiz (`alomsoo`) | Aprobado: *Build and Validate Flutter Mobile App* (`flutter analyze`, `flutter test` y `flutter build apk --debug`). |
+ 
+En estos cuatro Pull Requests el autor y quien integra el cambio son integrantes distintos del equipo, y los checks automáticos de CI actúan como primera barrera de verificación. Sin embargo, ninguno registra reviews formales en GitHub (0 reviews), por lo que la revisión se realizó de forma informal entre los integrantes. Asimismo, el último run de CI de la aplicación móvil sobre un `push` a `main`, posterior al merge, finalizó en fallo; el check del Pull Request #1 sí estuvo en verde.
+ 
+**Oportunidades de mejora identificadas:**
+ 
+- Activar la regla de protección de ramas en `develop` y `main` para exigir al menos una *review* aprobada y los checks de CI antes de integrar.
+- Revisar y corregir el fallo del workflow *Mobile CI* sobre `main`.
+- Agregar un workflow de CI y Pull Requests al repositorio `carestacks-frontend` (Android).
+- Integrar una herramienta de análisis continuo (por ejemplo, SonarCloud) para medir duplicación, complejidad y cobertura.
+
 
 ### 6.3. Validation Interviews
 
+Esta sección reúne las entrevistas de validación de CareConnect documentadas previamente por CareStacks y organiza sus resultados para el análisis de la experiencia de usuario. La validación se centra en la comprensión de la interfaz, la utilidad percibida y las oportunidades de mejora para los segmentos de cuidadores y pacientes geriátricos.
+
+**Procedencia de la evidencia:** Los seis registros y las valoraciones heurísticas provienen del informe del curso 1ACC0238 - Aplicaciones para Dispositivos Móviles (2026-10). Se incorporan como evidencia previa reutilizada para la AV2 de Diseño de Experimentos, no como entrevistas nuevas realizadas durante la semana 12. El producto evaluado fue la Landing Page / prototipo de CareConnect.
+
 #### 6.3.1. Diseño de Entrevistas
+
+**Objetivo:** Validar la facilidad de uso, comprensión y utilidad de las principales funcionalidades de CareConnect mediante entrevistas breves de aproximadamente 5 minutos.
+
+**Participantes:** Se cuenta con seis entrevistas previas, distribuidas en cuatro cuidadores de pacientes geriátricos y dos pacientes geriátricos. Las sesiones documentadas tuvieron una duración aproximada de tres a cuatro minutos.
+
+**Tareas de validación propuestas**
+
+**Segmento 1: Cuidadores**
+
+1. Encontrar la próxima actividad del paciente en la Agenda.
+2. Consultar una notificación o alerta del paciente.
+
+**Segmento 2: Pacientes geriátricos**
+
+1. Consultar la siguiente actividad programada del día.
+2. Confirmar una actividad ficticia como realizada.
+
+**Preguntas finales**
+
+1. Del 1 al 5, ¿qué tan fácil te pareció utilizar CareConnect?
+2. ¿Hubo alguna parte que te resultó difícil o confusa?
+3. ¿Qué mejorarías de la aplicación?
+
+**Registro de resultados:** Se documentarán las tareas completadas, las dificultades observadas y las respuestas de los participantes. Las entrevistas anteriores aportan comentarios sobre el prototipo, pero no registran resultados individuales de las tareas anteriores ni puntuaciones numéricas de facilidad de uso.
 
 #### 6.3.2. Registro de Entrevistas
 
+Se recuperaron seis entrevistas de validación realizadas previamente sobre el prototipo de CareConnect. Los registros permiten analizar la utilidad percibida, la comprensión de las funcionalidades y las principales oportunidades de mejora.
+
+Los campos sin información disponible se mantienen vacíos.
+
+##### Segmento 1: Cuidadores de pacientes geriátricos
+
+###### Entrevista de validación 1 — Daniel Rodríguez
+
+| Campo | Información |
+|---|---|
+| **Entrevistado** | Daniel Rodríguez |
+| **Segmento** | Cuidador de pacientes geriátricos |
+| **Experiencia** | Cuidador de varios pacientes geriátricos |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+
+**Resumen:**
+
+Daniel Rodríguez indicó que CareConnect le parece una herramienta útil para organizar el cuidado de pacientes geriátricos. Considera que disponer de una agenda centralizada para medicación, citas y terapias ayudaría a mantener la información organizada y reducir olvidos durante el cuidado diario.
+
+Respecto a la pantalla principal, señaló que permite identificar rápidamente las actividades pendientes. También destacó la utilidad de confirmar actividades realizadas, especialmente cuando varias personas participan en el cuidado del mismo paciente.
+
+En relación con las alertas, mencionó que son claras y oportunas. Asimismo, valoró el diario de seguimiento y la consulta de documentos médicos como funcionalidades que permitirían mejorar la coordinación entre cuidadores y familiares.
+
+**Aspectos de mejora identificados:**
+
+El entrevistado mencionó que algunas funcionalidades no son fáciles de encontrar durante el primer uso, por lo que considera necesario mejorar la navegación entre las secciones principales.
+
+**Oportunidades de mejora:**
+
+- Mejorar la visibilidad de las secciones principales.
+- Incorporar accesos rápidos a Agenda, Alertas y Diario.
+- Facilitar la navegación inicial de nuevos usuarios.
+
+**Funcionalidad más valorada:** Agenda, especialmente los recordatorios de medicación.
+
+**Intención de uso:** El entrevistado afirmó que utilizaría CareConnect en una rutina real de cuidado.
+
+---
+
+###### Entrevista de validación 2 — Valeria Dobbertin
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Valeria Dobbertin |
+| **Edad** | 20 años |
+| **Segmento** | Cuidadora informal de pacientes geriátricos |
+| **Experiencia** | Cuida a sus abuelos en sus tiempos libres |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+**Resumen:**
+
+Valeria Dobbertin señaló que CareConnect sería útil para organizar el cuidado de sus abuelos, ya que permitiría centralizar medicamentos, citas y terapias en una sola aplicación.
+
+Consideró que la pantalla principal presenta la información de forma clara y organizada, facilitando la identificación de actividades pendientes y completadas.
+
+También valoró positivamente la confirmación de actividades, porque ayudaría a evitar confusiones entre familiares que participan en el cuidado. Asimismo, destacó la utilidad de las alertas, el diario de seguimiento y la consulta de documentos médicos.
+
+**Aspectos de mejora identificados:**
+
+La entrevistada sugirió aumentar la visibilidad de algunos textos e íconos para que las funcionalidades principales puedan identificarse con mayor rapidez.
+
+**Oportunidades de mejora:**
+
+- Mejorar el tamaño y la visibilidad de textos e íconos.
+- Reforzar la jerarquía visual de la pantalla principal.
+- Destacar las funciones utilizadas con mayor frecuencia.
+
+**Funcionalidad más valorada:** Agenda y Alertas.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para organizar actividades y coordinar el cuidado con sus familiares.
+
+---
+
+###### Entrevista de validación 3 — Sofía
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Sofía |
+| **Edad** | 22 años |
+| **Segmento** | Cuidadora informal de pacientes geriátricos |
+| **Experiencia** | Cuida a su abuela junto con su madre |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+
+**Resumen:**
+
+Sofía indicó que CareConnect le parece una solución útil para organizar el cuidado de su abuela. Actualmente utiliza notas del celular y un cuaderno compartido con su madre, lo que puede generar diferencias en los registros y dudas sobre las actividades realizadas.
+
+Por ello, considera que una agenda centralizada ayudaría a evitar confusiones relacionadas con medicamentos, citas y terapias.
+
+También destacó la confirmación de actividades, debido a que en su familia varias personas participan en el cuidado y necesitan saber si una medicación ya fue administrada.
+
+Respecto a las alertas, señaló que son directas y comprensibles. Asimismo, valoró el diario de seguimiento como una alternativa para organizar información que actualmente se comparte mediante WhatsApp.
+
+**Aspectos de mejora identificados:**
+
+La entrevistada mencionó que la opción de compartir perfil resultó confusa al inicio, especialmente por su ubicación y por la explicación de los permisos.
+
+También sugirió permitir la configuración del tiempo de anticipación de las alertas.
+
+**Oportunidades de mejora:**
+
+- Hacer más visible la función de compartir perfil.
+- Explicar claramente el funcionamiento de los permisos.
+- Incorporar orientación inicial para funciones menos evidentes.
+- Permitir configurar la anticipación de los recordatorios.
+
+**Funcionalidad más valorada:** Diario de seguimiento y confirmación de actividades.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para mejorar la coordinación entre los familiares encargados del cuidado de su abuela.
+
+---
+
+###### Entrevista de validación 4 — Alonso
+
+| Campo | Información |
+|---|---|
+| **Entrevistado** | Alonso |
+| **Edad** | 20 años |
+| **Segmento** | Cuidador informal de pacientes geriátricos |
+| **Experiencia** | Apoya a distancia el cuidado de su abuelo, asistido en casa por su madre |
+| **Modalidad** | Virtual |
+| **Duración aproximada** | 4 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+**Resumen:**
+
+Alonso indicó que CareConnect sería útil para organizar el cuidado de su abuelo, especialmente porque este utiliza varios medicamentos en diferentes horarios.
+
+Consideró que la pantalla principal está organizada y facilita la identificación de actividades pendientes. Sin embargo, sugirió destacar más las tareas urgentes mediante indicadores visuales.
+
+También valoró la confirmación de actividades porque le permitiría verificar a distancia si su madre ya administró un medicamento, evitando tener que llamar o enviar mensajes constantemente.
+
+Respecto a las alertas, destacó la utilidad de recibir avisos cuando una actividad no ha sido confirmada. Asimismo, consideró prácticos el diario de seguimiento y la consulta de documentos médicos.
+
+**Aspectos de mejora identificados:**
+
+El entrevistado señaló que la sección de notificaciones puede verse demasiado cargada cuando existen varias alertas, lo que dificulta distinguir las más importantes.
+
+**Oportunidades de mejora:**
+
+- Permitir filtrar notificaciones por prioridad y estado.
+- Diferenciar visualmente las alertas pendientes de las anteriores.
+- Resaltar las actividades más urgentes.
+- Mantener visible la información de confirmación para el seguimiento a distancia.
+
+**Funcionalidad más valorada:** Alertas y confirmación de actividades.
+
+**Intención de uso:** El entrevistado afirmó que utilizaría CareConnect para dar seguimiento al cuidado de su abuelo cuando no se encuentra en casa.
+
+---
+
+###### Síntesis del segmento cuidador
+
+A partir de las cuatro entrevistas de validación se identificó una percepción favorable hacia CareConnect.
+
+Los participantes destacaron la utilidad de centralizar información relacionada con medicamentos, citas, terapias y actividades pendientes.
+
+La confirmación de actividades también fue una de las funcionalidades más valoradas, especialmente cuando varias personas participan en el cuidado de un mismo paciente.
+
+| Aspecto evaluado | Resultado documentado |
+|---|---|
+| **Agenda y recordatorios** | Los participantes los consideran útiles para organizar medicamentos, citas y terapias. |
+| **Confirmación de actividades** | Se valora porque puede reducir dudas cuando participan varios cuidadores. |
+| **Diario de seguimiento** | Facilitaría registrar observaciones y compartir información entre familiares. |
+| **Documentos médicos** | Permitiría centralizar archivos y consultarlos fácilmente. |
+| **Navegación** | Algunas funciones no resultan evidentes durante el primer uso. |
+| **Notificaciones** | Se sugieren filtros, indicadores de prioridad y configuración de anticipación. |
+| **Intención de uso** | Los 4 cuidadores declararon que utilizarían CareConnect. |
+
+**Conclusión del segmento:**
+
+Las entrevistas muestran que los cuidadores perciben CareConnect como una herramienta útil para organizar las actividades de cuidado y mejorar la coordinación familiar.
+
+Sin embargo, se identificaron oportunidades de mejora relacionadas con la navegación inicial, la visibilidad de funciones, la gestión de permisos y la presentación de las notificaciones.
+
+---
+
+##### Segmento 2: Pacientes geriátricos
+
+###### Entrevista de validación 5 — Nelly Ramírez
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Nelly Ramírez |
+| **Edad** | 70 años |
+| **Segmento** | Paciente geriátrica |
+| **Modalidad** | Virtual / Presencial (no precisada) |
+| **Duración aproximada** | 3 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect |
+
+**Resumen:**
+
+Nelly Ramírez indicó que pudo comprender las actividades pendientes mostradas en el prototipo, aunque algunas acciones no resultaron completamente claras desde el primer momento.
+
+Señaló que los textos, botones e íconos eran comprensibles en su mayoría. También destacó que los recordatorios de medicamentos y citas le parecen útiles para evitar olvidos.
+
+La entrevistada valoró la posibilidad de centralizar información médica y permitir que familiares, cuidadores o médicos consulten sus datos con autorización.
+
+La pantalla de inicio fue la que consideró más útil por presentar información relevante de manera resumida.
+
+**Aspectos de mejora identificados:**
+
+Nelly mencionó que no logró identificar claramente cómo confirmar una actividad realizada.
+
+También propuso incorporar una guía mediante voz o sonidos para facilitar el uso de la aplicación por parte de adultos mayores.
+
+**Oportunidades de mejora:**
+
+- Hacer más visible la confirmación de actividades.
+- Incorporar instrucciones breves para acciones importantes.
+- Evaluar una guía asistida por voz o sonidos.
+- Reforzar la accesibilidad de la interfaz para adultos mayores.
+
+**Funcionalidad más valorada:** Pantalla de inicio y recordatorios.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para organizar su cuidado diario.
+
+---
+
+###### Entrevista de validación 6 — Lucila Nakamura
+
+| Campo | Información |
+|---|---|
+| **Entrevistada** | Lucila Nakamura |
+| **Edad** | 75 años |
+| **Segmento** | Paciente geriátrica |
+| **Modalidad** | Virtual / Presencial (no precisada) |
+| **Duración aproximada** | 3 minutos |
+| **Producto evaluado** | Landing Page / prototipo de CareConnect ||
+
+**Resumen:**
+
+Lucila Nakamura indicó que pudo comprender las actividades pendientes y que los textos y botones del prototipo le parecieron claros.
+
+Sin embargo, señaló que algunos íconos eran demasiado pequeños, lo que podría dificultar su reconocimiento.
+
+La entrevistada destacó la utilidad de los recordatorios de medicamentos y citas médicas, así como la posibilidad de organizar documentos y actividades en una sola aplicación.
+
+También consideró positivo que familiares o cuidadores puedan consultar su información cuando ella lo autorice.
+
+La pantalla de inicio fue la más valorada, porque permite revisar información importante de manera rápida.
+
+**Aspectos de mejora identificados:**
+
+Lucila mencionó que la sección de notificaciones le resultó menos clara que otras pantallas.
+
+Además, recomendó diferenciar las funciones mediante colores y aumentar el tamaño de los íconos para facilitar la navegación.
+
+**Oportunidades de mejora:**
+
+- Aumentar el tamaño de los íconos.
+- Diferenciar visualmente las secciones de la aplicación.
+- Mejorar la claridad de las notificaciones.
+- Utilizar elementos gráficos fáciles de reconocer.
+
+**Funcionalidad más valorada:** Pantalla de inicio y recordatorios.
+
+**Intención de uso:** La entrevistada afirmó que utilizaría CareConnect para organizar sus actividades y recordatorios de salud.
+
+---
+
+###### Síntesis del segmento paciente geriátrico
+
+Las dos entrevistas del segmento paciente geriátrico reflejan una valoración positiva de las funciones de recordatorios, visualización de actividades e información centralizada.
+
+Ambas entrevistadas destacaron la pantalla de inicio como una de las partes más útiles del prototipo.
+
+No obstante, se identificaron dificultades relacionadas con la confirmación de actividades, el tamaño de los íconos y la comprensión de las notificaciones.
+
+| Aspecto evaluado | Resultado documentado |
+|---|---|
+| **Actividades pendientes** | Las participantes comprendieron la información general, aunque se recomendó mejorar su claridad. |
+| **Recordatorios** | Ambas participantes consideraron útiles los avisos de medicamentos y citas. |
+| **Pantalla de inicio** | Fue la pantalla más valorada por las dos entrevistadas. |
+| **Confirmación de actividades** | Una participante señaló dificultades para identificar esta función. |
+| **Íconos** | Se recomendó aumentar su tamaño. |
+| **Notificaciones** | Se identificó la necesidad de mejorar su presentación. |
+| **Intención de uso** | Las 2 pacientes declararon que utilizarían CareConnect. |
+
+**Conclusión del segmento:**
+
+Las entrevistas sugieren que CareConnect puede resultar útil para apoyar la organización de las actividades de cuidado de adultos mayores.
+
+Sin embargo, las siguientes iteraciones deberían prestar especial atención a la accesibilidad visual, la comprensión de acciones y la simplicidad de la navegación.
+
+---
+
+##### Evidencias de las entrevistas
+
+Las grabaciones de las entrevistas de validación se encuentran organizadas en la carpeta de evidencias del proyecto anterior.
+
+[Acceder a las entrevistas de validación en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgCmr6IQ2FadRYjjkZ3dTDyRAYRDnvqex5WaYepc0P0cXj8?e=rs21EW)
+
+##### Conclusión general del registro de entrevistas
+
+Las seis entrevistas documentadas reflejan una percepción positiva del prototipo de CareConnect entre los dos segmentos evaluados.
+
+Los cuidadores valoraron especialmente la agenda, las alertas y la confirmación de actividades, mientras que las pacientes geriátricas destacaron la pantalla de inicio, los recordatorios y la centralización de información.
+
+Asimismo, se identificaron oportunidades de mejora relacionadas con la navegación, la visibilidad de las funciones, el tamaño de los íconos y la claridad de las notificaciones.
+
+Estos resultados corresponden a percepciones declaradas durante entrevistas sobre el prototipo y no constituyen evidencia de adopción real o de mediciones de desempeño de la versión actual.
+
+
 #### 6.3.3. Evaluaciones según heurísticas
 
+La evaluación según heurísticas permite identificar problemas de usabilidad en CareConnect mediante principios reconocidos de diseño de interfaces. Para este análisis se consideran las diez heurísticas de Jakob Nielsen, con especial atención a la claridad de las acciones, la navegación, la retroalimentación del sistema y la accesibilidad para cuidadores y pacientes geriátricos.
+
+La presente sección desarrolla un análisis secundario de las seis entrevistas de validación documentadas en la sección 6.3.2, correspondientes a cuatro cuidadores y dos pacientes geriátricos. Estas entrevistas provienen del proyecto realizado previamente en el curso 1ACC0238 - Aplicaciones para Dispositivos Móviles (2026-10), donde se evaluó la Landing Page y el prototipo de CareConnect.
+
+Los comentarios de los participantes permiten asociar problemas y oportunidades de mejora con las heurísticas de Nielsen. Sin embargo, esta asociación no equivale a una nueva inspección heurística realizada por especialistas. Del mismo modo, las severidades anteriores no representan una evaluación de la versión actualmente implementada.
+
+##### Objetivo y alcance de la evaluación
+
+El objetivo es identificar y priorizar los problemas de usabilidad que podrían dificultar la interacción de los usuarios con las funcionalidades principales de CareConnect.
+
+Se consideran los siguientes aspectos:
+
+- Comprensión de las actividades pendientes y confirmadas.
+- Facilidad para identificar y ejecutar acciones frecuentes.
+- Claridad de la navegación y los accesos principales.
+- Legibilidad de textos, íconos y elementos visuales.
+- Comprensión de notificaciones y alertas.
+- Facilidad para compartir perfiles y comprender los permisos.
+- Disponibilidad de orientación para usuarios con menor experiencia tecnológica.
+
+La evaluación documental utiliza los comentarios registrados durante las entrevistas anteriores. La comprobación de estos hallazgos en las aplicaciones actuales constituye una actividad independiente y requiere evidencia de ejecución.
+
+##### Escala de severidad utilizada
+
+Se adopta la escala de severidad de Nielsen, que permite priorizar problemas considerando su frecuencia, impacto y persistencia.
+
+| Nivel | Severidad | Descripción |
+|:---:|---|---|
+| 0 | Sin problema | La situación evaluada no constituye un problema de usabilidad. |
+| 1 | Cosmético | Problema de bajo impacto que puede corregirse si existen recursos disponibles. |
+| 2 | Menor | Problema que genera dificultades limitadas y cuya corrección tiene prioridad baja. |
+| 3 | Mayor | Problema importante que afecta la experiencia y requiere atención prioritaria. |
+| 4 | Crítico | Problema grave de usabilidad que debe corregirse antes de publicar el producto. |
+
+La severidad debe asignarse a problemas concretos y no automáticamente a cada heurística. Cuando no existe evidencia suficiente para determinar un problema, se utiliza la indicación "No evaluado" en lugar de asignar el nivel 0.
+
+##### Análisis según las diez heurísticas de Nielsen
+
+| Heurística | Evidencia identificada en las entrevistas | Interpretación y oportunidad de mejora |
+|---|---|---|
+| **H1. Visibilidad del estado del sistema** | Nelly Ramírez no identificó claramente cómo confirmar una actividad. Alonso sugirió destacar las tareas urgentes. | Es necesario reforzar la visibilidad de las acciones y de los estados pendiente, confirmado y vencido, así como ofrecer retroalimentación después de completar una actividad. |
+| **H2. Relación entre el sistema y el mundo real** | Los participantes comprendieron conceptos como medicamentos, citas, agenda y documentos. | No se documentó un incumplimiento concreto. Se recomienda conservar términos cotidianos y evitar lenguaje técnico innecesario. |
+| **H3. Control y libertad del usuario** | Las entrevistas no registran pruebas específicas de cancelación, retroceso o reversión de acciones. | No existe evidencia suficiente para calificar esta heurística. Se requiere comprobar si el usuario puede cancelar o corregir acciones realizadas por error. |
+| **H4. Consistencia y estándares** | Los participantes describieron elementos comprensibles, aunque algunos solicitaron mayor claridad visual. | No se demostró una inconsistencia específica. Se recomienda revisar que botones, estados e íconos mantengan significados y estilos consistentes entre pantallas. |
+| **H5. Prevención de errores** | Los cuidadores valoraron la confirmación de actividades porque permitiría reducir dudas sobre la administración de medicamentos. | La funcionalidad presenta valor preventivo, pero no se comprobó experimentalmente que evite errores. Se debe verificar que las confirmaciones sean claras y que el sistema advierta ante acciones potencialmente duplicadas. |
+| **H6. Reconocimiento antes que memoria** | Daniel tuvo dificultades para localizar funciones durante el primer uso. Nelly no encontró fácilmente la confirmación de actividades y Sofía manifestó confusión al compartir perfiles. | Es necesario mejorar la visibilidad de funciones y permisos, reducir la necesidad de recordar rutas y utilizar etiquetas reconocibles. |
+| **H7. Flexibilidad y eficiencia de uso** | Daniel solicitó accesos rápidos a Agenda, Alertas y Diario. Los cuidadores valoraron las funciones utilizadas frecuentemente. | Se recomienda facilitar el acceso a tareas habituales y reducir los pasos necesarios para completarlas. No se dispone de mediciones de tiempo de ejecución. |
+| **H8. Diseño estético y minimalista** | Lucila señaló que algunos íconos eran pequeños. Alonso indicó que las notificaciones podían resultar visualmente sobrecargadas. | Se requiere mejorar la legibilidad, la jerarquía visual y la organización de información para evitar dificultades de reconocimiento. |
+| **H9. Ayuda para reconocer, diagnosticar y recuperarse de errores** | No se documentaron pruebas específicas sobre mensajes de error o recuperación ante acciones fallidas. | No existe evidencia suficiente para asignar una severidad. Se recomienda evaluar los mensajes presentados ante datos incorrectos, operaciones fallidas o acciones no permitidas. |
+| **H10. Ayuda y documentación** | Nelly propuso orientación mediante voz o sonidos. Sofía solicitó mayor claridad al explicar los permisos de acceso. | Se identifica una oportunidad para incorporar instrucciones contextuales, especialmente en acciones poco frecuentes o complejas. La ausencia de ayuda efectiva debe confirmarse en la versión implementada. |
+
+El análisis permite identificar problemas relacionados principalmente con la visibilidad, el reconocimiento de elementos, la eficiencia de navegación y la presentación de información.
+
+Las heurísticas H3, H4 y H9 requieren una inspección específica antes de determinar si existen incumplimientos. La ausencia de comentarios negativos en las entrevistas no demuestra por sí sola que una heurística se cumpla.
+
+##### Registro de hallazgos de usabilidad
+
+Los siguientes hallazgos se obtienen de la tabla de problemas previamente documentada y de los comentarios individuales de la sección 6.3.2. Se conservan las severidades históricas existentes y se distingue el hallazgo adicional que no contaba con calificación.
+
+| ID | Hallazgo identificado | Heurísticas relacionadas | Evidencia previa | Severidad previa |
+|---|---|---|---|:---:|
+| HU-01 | Confirmación de actividades poco evidente. | H1, H6 | Nelly Ramírez indicó que no identificaba claramente cómo confirmar una actividad realizada. | 3 |
+| HU-02 | Íconos pequeños o difíciles de reconocer. | H6, H8 | Lucila Nakamura recomendó aumentar el tamaño de los íconos. | 3 |
+| HU-03 | Dificultad para localizar funciones durante el primer uso. | H6, H7 | Daniel Rodríguez solicitó mejorar la navegación y los accesos principales. | 2 |
+| HU-04 | Notificaciones poco claras o visualmente sobrecargadas. | H1, H8 | Alonso señaló dificultades para distinguir alertas importantes y Lucila manifestó confusión con las notificaciones. | 3 |
+| HU-05 | Diferenciación visual insuficiente entre funciones. | H6, H8 | Lucila recomendó diferenciar las secciones mediante elementos visuales y colores. | 3 |
+| HU-06 | Necesidad de orientación accesible para realizar determinadas acciones. | H10 | Nelly sugirió implementar asistencia mediante voz o sonidos. | 3 |
+| HU-07 | Dificultad inicial para localizar y comprender la función de compartir perfil. | H6, H10 | Sofía señaló confusión respecto a la ubicación de la función y el significado de los permisos. | No registrada |
+
+**Interpretación de las severidades:** Los niveles de HU-01 a HU-06 proceden del registro anterior de problemas de usabilidad. No se dispone de información suficiente sobre frecuencia, impacto y persistencia para recalcularlos. HU-07 se incorpora por trazabilidad con la entrevista de Sofía y queda pendiente de calificación.
+
+En particular, HU-06 representa una necesidad de apoyo expresada por una participante. Su severidad histórica no demuestra por sí misma que la versión actual carezca de mecanismos de ayuda.
+
+##### Priorización de mejoras
+
+Las mejoras se organizan considerando la severidad histórica, la importancia de las funcionalidades y las características de los segmentos objetivo.
+
+| Prioridad | Hallazgos | Mejora propuesta | Justificación |
+|---|---|---|---|
+| Alta | HU-01 | Incorporar una acción de confirmación claramente identificable, con retroalimentación y actualización visible del estado. | La confirmación de medicación es una funcionalidad central para ambos segmentos. |
+| Alta | HU-02, HU-05 | Aumentar la legibilidad de íconos y mejorar la diferenciación visual de los módulos. | Los pacientes geriátricos necesitan reconocer funciones sin depender de instrucciones complejas. |
+| Alta | HU-04 | Organizar las notificaciones por prioridad y estado, destacando las alertas que requieren atención. | Ayuda a distinguir información importante y reduce la sobrecarga visual. |
+| Media | HU-03 | Incorporar accesos directos a Agenda, Notificaciones y Diario. | Facilita la navegación de cuidadores que ejecutan actividades frecuentes. |
+| Media | HU-06 | Incorporar orientación contextual para funciones principales y evaluar la necesidad de asistencia sonora. | Puede facilitar el aprendizaje de usuarios con menor experiencia digital. |
+| Por determinar | HU-07 | Mejorar la ubicación de compartir perfil y explicar claramente los permisos de acceso. | La función permite la coordinación entre cuidadores y debe comprenderse antes de autorizar el acceso a información personal. |
+
+La prioridad de HU-07 deberá establecerse después de verificar la dificultad en el flujo actual y asignarle una severidad sustentada.
+
+##### Comprobación de hallazgos en la versión actual
+
+La comprobación tiene como propósito determinar si los problemas identificados en el prototipo anterior persisten, fueron corregidos o requieren mejoras adicionales.
+
+Para cada hallazgo se debe registrar la versión o commit evaluado, la pantalla o flujo revisado, el resultado observado, la evidencia correspondiente y la severidad actual.
+
+La sección 6.1.4 documenta pruebas funcionales de los clientes web y móvil, incluyendo algunos recorridos de Agenda. Sin embargo, dichas pruebas no constituyen una reevaluación heurística de los siete hallazgos aquí identificados. Por ello, no se consideran suficientes para declarar que estos problemas de usabilidad han sido corregidos.
+
+| ID | Versión o pantalla por revisar | Criterio de comprobación | Resultado actual | Evidencia de versión actual | Severidad actual |
+|---|---|---|---|---|:---:|
+| HU-01 | Agenda / Confirmación de actividades | Comprobar que el usuario identifica la acción de confirmar y reconoce el estado resultante. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-02 | Pantalla principal / Agenda | Comprobar que los íconos son legibles, reconocibles y suficientemente grandes para las interacciones previstas. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-03 | Navegación principal | Comprobar que el cuidador encuentra Agenda, Notificaciones y Diario sin indicaciones adicionales. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-04 | Notificaciones | Comprobar que el usuario distingue notificaciones pendientes, urgentes y anteriores sin confusión. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-05 | Pantalla principal / Módulos | Comprobar que los módulos se reconocen mediante etiquetas e indicadores visuales consistentes. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-06 | Orientación inicial / Ayuda contextual | Comprobar si el usuario dispone de instrucciones comprensibles para completar acciones que desconoce. | Pendiente de verificación. | No registrada. | No evaluada |
+| HU-07 | Perfil / Gestión de accesos | Comprobar que el usuario encuentra la función de compartir perfil y comprende los permisos antes de concederlos. | Pendiente de verificación. | No registrada. | No evaluada |
+
+**Estado de la comprobación:** El informe disponible no contiene registros de una nueva inspección heurística de estas pantallas. Por tanto, no es posible asignar severidades actuales ni afirmar que los hallazgos fueron corregidos.
+
+La escala de severidad debe aplicarse nuevamente cuando se disponga de resultados observados. Una severidad 0 solo corresponde a un problema descartado o inexistente después de la revisión, y no debe utilizarse para representar evaluaciones pendientes.
+
+##### Métricas e indicadores de evaluación
+
+Se establecen indicadores para organizar los resultados disponibles y permitir una comprobación cuantitativa en futuras iteraciones.
+
+Los indicadores se proponen como criterios internos de seguimiento y no como resultados ya obtenidos ni como umbrales obligatorios del enunciado del curso.
+
+| Indicador | Definición | Resultado disponible |
+|---|---|---|
+| Entrevistas de validación documentadas | Número de entrevistas previas utilizadas como fuente. | 6 entrevistas: 4 cuidadores y 2 pacientes geriátricos. |
+| Heurísticas consideradas | Número de principios de Nielsen incluidos en el análisis documental. | 10 de 10 heurísticas. |
+| Hallazgos registrados | Número de problemas u oportunidades de mejora identificados. | 7 hallazgos. |
+| Hallazgos con severidad histórica | Número de hallazgos que ya tenían calificación en el informe anterior. | 6 de 7. |
+| Hallazgos históricos de severidad mayor | Hallazgos que recibieron una calificación previa de nivel 3. | 5 hallazgos. |
+| Hallazgos históricos de severidad menor | Hallazgos que recibieron una calificación previa de nivel 2. | 1 hallazgo. |
+| Hallazgos corregidos y comprobados | Número de problemas cuya solución fue demostrada mediante una reevaluación de la versión actual. | Sin información disponible. |
+| Facilidad de uso percibida | Calificación individual de 1 a 5 prevista en el diseño de entrevistas de la sección 6.3.1. | No disponible: las entrevistas anteriores no registran puntuaciones individuales. |
+| Tasa de éxito de tareas | Porcentaje de intentos completados correctamente por los participantes durante la evaluación. | No disponible: no se documentaron los resultados individuales de las tareas propuestas. |
+
+Para una siguiente evaluación se recomienda registrar los siguientes indicadores:
+
+**1. Tasa de éxito de tareas**
+
+Permite determinar qué proporción de tareas evaluadas fue completada correctamente.
+
+`Tasa de éxito (%) = (Tareas completadas correctamente / Total de intentos válidos) × 100`
+
+Se considerarán tareas como consultar la próxima actividad, confirmar una actividad, identificar una notificación prioritaria y compartir el perfil con un cuidador.
+
+**2. Tiempo de ejecución**
+
+Permite medir el tiempo necesario para completar cada tarea, expresado en segundos. Los resultados podrán compararse entre segmentos o entre versiones de la aplicación cuando se utilicen tareas equivalentes.
+
+**3. Facilidad de uso percibida**
+
+Se utilizará la escala de 1 a 5 definida en la sección 6.3.1, donde 1 representa una experiencia muy difícil y 5 una experiencia muy fácil.
+
+`Promedio de facilidad = Suma de calificaciones obtenidas / Número de respuestas válidas`
+
+**4. Porcentaje de hallazgos corregidos y verificados**
+
+Permite medir el avance de las acciones de mejora a partir de los hallazgos registrados.
+
+`Corrección verificada (%) = (Hallazgos corregidos con evidencia / Total de hallazgos registrados) × 100`
+
+Este indicador solo deberá calcularse una vez que los hallazgos hayan sido revisados y exista evidencia suficiente para determinar su estado.
+
+**5. Severidad residual**
+
+Representa la severidad asignada a un problema después de evaluar la versión actual. Se utilizará la misma escala de 0 a 4 para facilitar la comparación con las valoraciones históricas, sin asumir que estas constituyen una línea base cuantitativa experimental.
+
+No se establecen resultados ni porcentajes de cumplimiento para las métricas que todavía no cuentan con mediciones.
+
+##### Hallazgos positivos
+
+Las entrevistas también permitieron identificar aspectos favorables de la experiencia de CareConnect.
+
+| Aspecto | Evidencia documentada |
+|---|---|
+| Organización centralizada | Los participantes valoraron que las actividades de salud pudieran consultarse desde una misma plataforma. |
+| Pantalla principal | Nelly y Lucila identificaron esta pantalla como una de las más útiles por reunir información relevante. |
+| Agenda y recordatorios | Daniel destacó su utilidad para organizar la medicación y las actividades programadas. |
+| Confirmación compartida | Valeria, Sofía y Alonso valoraron la posibilidad de comprobar las actividades realizadas por otras personas. |
+| Alertas | Los cuidadores identificaron valor en recibir avisos relacionados con actividades pendientes. |
+| Acceso autorizado | Las pacientes valoraron la posibilidad de compartir información con familiares y cuidadores mediante autorización. |
+
+Estos resultados corresponden a percepciones declaradas durante las entrevistas y no demuestran por sí mismos la eficacia de las funcionalidades implementadas.
+
+##### Conclusión de la evaluación heurística
+
+El análisis de las entrevistas previas permitió relacionar los comentarios de los participantes con las diez heurísticas de Nielsen e identificar siete hallazgos relevantes para la experiencia de usuario de CareConnect.
+
+Los problemas de mayor atención se relacionan con la visibilidad de la confirmación de actividades, la legibilidad de los íconos, la presentación de notificaciones y el reconocimiento de las funcionalidades principales. Estos aspectos son especialmente importantes para los pacientes geriátricos, quienes pueden presentar distintos niveles de familiaridad con la tecnología.
+
+Asimismo, el análisis permitió reconocer oportunidades de mejora en los accesos rápidos, la orientación inicial y la comprensión de los permisos para compartir perfiles.
+
+Las valoraciones históricas sirven para organizar las prioridades de revisión, pero no permiten concluir que los problemas persistan o se hayan solucionado en la versión actual. Una nueva inspección, acompañada de capturas, versiones identificadas y resultados observados, será necesaria para establecer severidades actuales y calcular las métricas de cumplimiento.
+
+La siguiente iteración deberá priorizar la comprobación de los hallazgos asociados con actividades esenciales de cuidado y registrar datos que permitan evaluar las mejoras de manera objetiva.
+
+**Referencias metodológicas**
+
+- Nielsen, J. (1994). *10 Usability Heuristics for User Interface Design*. Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/
+- Nielsen, J. (1994). *Severity Ratings for Usability Problems*. Nielsen Norman Group. https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/
+
 ### 6.4. Auditoría de Experiencias de Usuario
-
+ 
 #### 6.4.1. Auditoría realizada
-
+ 
 ##### 6.4.1.1. Información del grupo auditado
-
+ 
+El grupo al que se le realizó la auditoría recibe el nombre de “NeuroDraw” y el producto que desarrollaron se llama “NeuroZen”. A continuación, se adjunta la lista de integrantes del grupo auditado.
+ 
+- Castro Picón, Manuel Fernando Joao (U20231G159)
+- Huaman De La Cruz, Jean Pool (U20201E781)
+- Paredes Chavez, Carlos Augusto (U202321613)
+- Requena Gutiérrez, Diego Gabriel (U20321774)
+- Vila Guillen, Miguel Angel (U20231G054)
+Inmediatamente, se adjuntan los enlaces de acceso al trabajo del grupo que desarrolló “NeuroZen”:
+ 
+- Aplicación web (producción): https://neurozen-web-frontend.vercel.app
+- Repositorio del informe: https://github.com/Proyecto-1ASI0732-2620-Experimentos/Report-NeuroZen-Experimento
 ##### 6.4.1.2. Cronograma de auditoría realizada
-
+ 
+En esta sección, se cronometran las principales actividades realizadas para el desarrollo de la auditoría hacia el trabajo del grupo “NeuroDraw”.
+ 
+| Actividad de auditoría realizada | Fecha/Hora | Realizado por |
+|---|---|---|
+| Solicitud de información al grupo auditado | [02/11/2026 13:00] | [Santiago Baldeon] |
+| Envío de información solicitada por parte del grupo auditado a nuestro grupo para el desarrollo de la auditoría | [07/11/2026 14:00] | [Santiago Baldeon] |
+| Ejecución de la auditoría | [07/11/2026 16:00] | [Percy Muñiz]<br>[Santiago Baldeon]<br>[Matias Salcedo] |
+| Elaboración del informe de la auditoría | [08/11/2026 13:00] | [Percy Muñiz]<br>[Santiago Baldeon]<br>[Matias Salcedo] |
+| Finalización y envío del informe de auditoría | [08/11/2026 16:00] | [Santiago Baldeon] |
+ 
 ##### 6.4.1.3. Contenido de auditoría realizada
+ 
+**TAREAS A EVALUAR:**
+ 
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+ 
+1. Inicio de sesión de un usuario
+2. Creación de cuenta y elección del tipo de cuenta (usuario o psicólogo)
+3. Registro de psicólogo y verificación de colegiatura
+4. Configuración inicial opcional y test de autoevaluación de estrés
+5. Navegación y lectura del panel de Inicio (estadísticas y herramientas)
+6. Reserva de una sesión con un profesional
+7. Configuración de idioma y visualización de la aplicación
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+ 
+1. Perfil del usuario y suscripciones
+2. Ejercicios de respiración, pausas activas y biblioteca de recursos
+3. Registro de desencadenantes
+4. Aplicación móvil y pruebas de rendimiento o seguridad sobre la API
+**ESCALA DE SEVERIDAD:**
+ 
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+ 
+| Nivel | Descripción |
+|---|---|
+| 1 | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja y resolverlo de cara al siguiente release. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+ 
+**TABLA RESUMEN:**
+ 
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|---|---|---|
+| 1 | Los campos del inicio de sesión muestran el texto “null” en lugar de una guía de ingreso. | 3 | Relación entre el sistema y mundo real |
+| 2 | El panel de Inicio muestra datos de ejemplo con mensajes de tendencia que parecen reales. | 3 | Visibilidad del estado del sistema |
+| 3 | La selección de fecha no indica qué días tienen horarios disponibles. | 3 | Prevención de errores |
+| 4 | La tarjeta del profesional muestra datos de relleno: “$0”, “health” y valoración 0.0. | 2 | Relación entre el sistema y mundo real |
+| 5 | El pie de página muestra datos de contacto de relleno. | 2 | Relación entre el sistema y mundo real |
+| 6 | El paso “Último paso” del registro no es el último y deja opciones preseleccionadas. | 2 | Visibilidad del estado del sistema |
+| 7 | Los textos de ayuda del registro de psicólogo son muy pequeños y de bajo contraste. | 2 | Accessibility: Legibility and contrast |
+| 8 | Se usan “sesión” y “cita” de forma indistinta para la misma acción. | 1 | Consistencia y estándares |
+| 9 | Los controles de “Visualización” en Configuración son poco claros. | 1 | Visibilidad del estado del sistema |
+| 10 | La pantalla “Tu cuenta está en revisión” no indica cuánto demorará la verificación. | 1 | Visibilidad del estado del sistema |
+ 
+**DESCRIPCIÓN DE PROBLEMAS:**
+ 
+###### Problema 01:
+ 
+**Heurística violada:** Relación entre el sistema y mundo real
+**Severidad:** 3/4 - Problema mayor
+**Problema explicado:** En la pantalla de inicio de sesión, los campos “Correo Electrónico” y “Contraseña” muestran el texto “null”. Es un valor técnico que se filtra a la interfaz: el usuario puede interpretarlo como un dato precargado o como un error, y dudar si debe borrarlo antes de escribir. Al ser la primera pantalla que ve cualquier usuario, además transmite una impresión de producto inestable.
+ 
+![Problema 01: campos del login con el texto null](./assets/ux-01-login.png)
+ 
+**Recomendaciones:**
+ 
+- Reemplazar “null” por textos de ayuda comprensibles, por ejemplo “tucorreo@ejemplo.com” y “Ingresa tu contraseña”.
+- Revisar que ninguna variable sin inicializar se muestre en la interfaz.
+###### Problema 02:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 3/4 - Problema mayor
+**Problema explicado:** El panel de estadísticas incluye un aviso (“Aún no hay registros suficientes: se muestran datos de ejemplo”), pero igualmente presenta un nivel de estrés, un promedio, un gráfico semanal y un texto personalizado que habla de “tus niveles de estrés” y de “tus horas pico”, con una flecha roja de aumento del 5 %. Además, las señales se contradicen: el nivel actual aparece como “Bajo” y la curva termina descendiendo, mientras el texto sugiere contactar a un profesional por un aumento. En una aplicación de salud mental, un usuario nuevo puede tomar estos datos como resultados reales sobre sí mismo.
+ 
+![Problema 02: panel de Inicio con datos de ejemplo](./assets/ux-05-inicio.png)
+ 
+**Recomendaciones:**
+ 
+- Mostrar un estado vacío (ilustración y un botón como “Registra tu primer desencadenante” o “Hacer el test”) mientras no existan registros.
+- Si se mantienen datos demostrativos, atenuarlos visualmente, rotularlos como “Ejemplo” y no mostrar recomendaciones personalizadas ni alertas de tendencia.
+###### Problema 03:
+ 
+**Heurística violada:** Prevención de errores
+**Severidad:** 3/4 - Problema mayor
+**Problema explicado:** En el paso “Fecha y hora” de la reserva, todos los días desde hoy aparecen habilitados con el mismo aspecto. Al elegir el día 12, el sistema responde “No hay horarios disponibles para este día.” y el botón “Siguiente” queda deshabilitado sin explicación. El usuario debe probar día por día hasta encontrar uno con cupo, lo que puede llevarlo a abandonar la tarea principal del producto. Además, el título del mes se muestra como “Noviembre De 2026” (con “De” en mayúscula).
+ 
+![Problema 03: calendario de reserva sin indicar disponibilidad](./assets/ux-07-reserva-calendario.png)
+ 
+**Recomendaciones:**
+ 
+- Marcar visualmente los días con disponibilidad (por ejemplo, con un punto) y deshabilitar los que no tengan horarios.
+- Complementar el mensaje vacío con una acción útil, como “Próximo horario disponible: [fecha]”.
+- Corregir el formato del mes a “Noviembre de 2026”.
+###### Problema 04:
+ 
+**Heurística violada:** Relación entre el sistema y mundo real
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** En el primer paso de “Reservar Sesión”, el único profesional listado aparece con precio “$0 sesión”, especialidad “health” (en inglés, mientras la interfaz está en español), una valoración “0.0 (0)” y un avatar genérico. El precio en cero puede interpretarse como sesión gratuita o como un error, y la especialidad no ayuda a decidir. Asimismo, el botón “Siguiente” aparece deshabilitado sin indicar que primero hay que seleccionar un profesional.
+ 
+![Problema 04: tarjeta del profesional con datos de relleno](./assets/ux-06-reserva-profesional.png)
+ 
+**Recomendaciones:**
+ 
+- Mostrar “Tarifa por definir” o un precio real; no mostrar “$0” si no es una sesión gratuita.
+- Mostrar la especialidad en español y usar “Sin valoraciones aún” en lugar de “0.0 (0)”.
+- Agregar un texto de ayuda junto al botón deshabilitado, como “Selecciona un profesional para continuar”.
+###### Problema 05:
+ 
+**Heurística violada:** Relación entre el sistema y mundo real
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** El pie de página, presente en varias pantallas, muestra el teléfono “+1 (555) 123-4567” y la dirección “123 Wellness St, Health City, HC 12345”, que son datos de ejemplo. En una plataforma que trata salud mental, la confianza es clave: el usuario que necesite contactar a soporte (por ejemplo, desde la pantalla de verificación de cuenta) no tendrá un canal real.
+ 
+![Problema 05: pie de página con datos de contacto de relleno](./assets/ux-03-verificacion-cuenta.png)
+ 
+**Recomendaciones:**
+ 
+- Reemplazar los datos por información real de contacto (con código +51 si corresponde) o retirarlos hasta contar con ella.
+- Verificar que “Contactar soporte” lleve a un canal funcional.
+###### Problema 06:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** La pantalla “Cuéntanos un poco de ti” se presenta como “Último paso” y como opcional, pero el botón dice “Continuar al test” y a continuación aparece un test de 10 preguntas, por lo que el usuario no sabe cuánto falta. Además, “18-24” y “Formal” ya vienen seleccionados, de modo que quien continúe sin tocar nada registrará datos que no declaró. La opción “Omitir” es un enlace pequeño, alejado del botón principal.
+ 
+![Problema 06: paso opcional con opciones preseleccionadas](./assets/ux-04-datos-opcionales.png)
+ 
+**Recomendaciones:**
+ 
+- Cambiar el encabezado por “Paso opcional” o indicar la cantidad de pasos restantes.
+- No preseleccionar edad ni tipo de trabajo.
+- Colocar “Omitir” como botón secundario junto a “Continuar al test”.
+###### Problema 07:
+ 
+**Heurística violada:** Accessibility: Legibility and contrast
+**Severidad:** 2/4 - Problema menor
+**Problema explicado:** En el formulario “Registro de psicólogo”, las indicaciones importantes (“Debe coincidir con tu DNI y tu registro en el CPsP”, “Lo usaremos para verificar que estás habilitado para ejercer”, “Mínimo 8 caracteres, con al menos una letra y un número”) se muestran con una tipografía muy reducida y en gris claro sobre fondo crema. Son instrucciones que evitan errores que retrasarían la verificación de la colegiatura, por lo que deberían leerse con facilidad, sobre todo por personas con baja visión.
+ 
+![Problema 07: textos de ayuda pequeños en el registro de psicólogo](./assets/ux-02-registro-psicologo.png)
+ 
+**Recomendaciones:**
+ 
+- Aumentar el tamaño del texto de ayuda (mínimo 14 px) y usar un gris más oscuro que cumpla la relación de contraste 4.5:1 de WCAG.
+- Presentar los requisitos de la contraseña como una lista que se marca a medida que se cumplen.
+###### Problema 08:
+ 
+**Heurística violada:** Consistencia y estándares
+**Severidad:** 1/4 - Problema superficial
+**Problema explicado:** En el panel de Inicio la tarjeta se llama “Reservar Sesión” pero su descripción dice “Agendar cita con profesional”, y la consulta posterior se llama “Mis citas” (también en el pie de página). Además, la reserva se encuentra dentro del menú “Profesionales”, lo que no es evidente para quien busca “Reservar”. Esto obliga al usuario a deducir que se trata de la misma función.
+ 
+**Recomendaciones:**
+ 
+- Unificar el término en toda la aplicación (por ejemplo, “Reservar cita” y “Mis citas”).
+- Agregar un acceso directo visible a “Reservar cita” en la barra de navegación.
+###### Problema 09:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 1/4 - Problema superficial
+**Problema explicado:** El control deslizante “Tamaño de texto” muestra solo “16px”, sin marcas de mínimo y máximo ni una vista previa, y su control es un cuadrado negro que no sigue el estilo del resto de la interfaz. Los interruptores “Reducir animaciones” y “Alto contraste” aparecen en gris sobre gris, por lo que cuesta distinguir su estado. Estas opciones son de accesibilidad y deberían ser fáciles de usar.
+ 
+![Problema 09: controles de visualización en Configuración](./assets/ux-08-configuracion.png)
+ 
+**Recomendaciones:**
+ 
+- Agregar marcas “A-” y “A+” y una línea de texto de ejemplo que cambie de tamaño.
+- Reforzar el contraste de los interruptores y mostrar “Activado/Desactivado”.
+###### Problema 10:
+ 
+**Heurística violada:** Visibilidad del estado del sistema
+**Severidad:** 1/4 - Problema superficial
+**Problema explicado:** El psicólogo recién registrado ve los pasos de verificación, pero no se informa un plazo estimado; solo se dice “Te avisaremos cuando puedas recibir citas”. Sin un tiempo orientativo, el usuario no sabe si debe esperar horas o días, y debe usar “Comprobar estado” repetidamente.
+ 
+![Problema 10: pantalla de cuenta en revisión sin plazo estimado](./assets/ux-03-verificacion-cuenta.png)
+ 
+**Recomendaciones:**
+ 
+- Indicar un plazo estimado (por ejemplo, “Suele tomar 1 a 2 días hábiles”).
+- Informar que se enviará un correo cuando la cuenta esté activa.
 
 #### 6.4.2. Auditoría recibida
 
+**Recepción e incorporación: 09/11/2026.** CareStacks recibió el informe de NeuroDraw sobre CareConnect, inspeccionado el 08/11/2026. El documento original está escrito desde la perspectiva del equipo auditor como «auditoría realizada»; en este informe se registra como **auditoría recibida** y se conserva la auditoría que CareStacks realizó a NeuroZen en §6.4.1.
+
+El equipo NeuroDraw, desarrollador de NeuroZen, evaluó la experiencia de usuario de CareConnect, producto de CareStacks. La auditoría siguió el Anexo D del Final Project Statement 2026-20 y sus tres pilares: Usability, Inclusive Design e Information Architecture. Se revisaron tareas visibles para el usuario, la consistencia entre superficies y la comunicación de los estados y errores.
+
+El [documento original recibido](assets/audits/received-neurodraw-2026-11-09/auditoria-careconnect-neurodraw.txt) se conserva íntegro. La [trazabilidad de incorporación](assets/audits/received-neurodraw-2026-11-09/provenance.json) registra su hash, fecha, alcance y hallazgos. Los resultados siguientes se atribuyen a la inspección de NeuroDraw del 08/11; no se presentan como pruebas nuevas ejecutadas por CareStacks el 09/11.
+
 ##### 6.4.2.1. Información del grupo auditor
+
+| Elemento | Información |
+|---|---|
+| Equipo auditor | NeuroDraw |
+| Producto del equipo auditor | NeuroZen |
+| Equipo y producto evaluados | CareStacks / CareConnect; NRC 9100 |
+| Fecha de inspección reportada | 08/11/2026 |
+| Fecha de recepción e incorporación al informe | 09/11/2026 |
+| Autoría | Atribuida al equipo NeuroDraw; el documento no individualiza la participación de cada integrante. La composición del grupo se referencia en [6.4.1.1](#6411-información-del-grupo-auditado). |
+| Versiones evaluadas | Despliegues públicos disponibles el 08/11 y APK `careconnect-v1.0.0.apk`; el auditor no vinculó cada despliegue a un commit específico. |
+
+**Superficies y condiciones reportadas por el auditor:**
+
+| Superficie | Estado de la auditoría |
+| :--- | :--- |
+| **Landing Page** — https://carestacks-landing-page.vercel.app/ | Disponible y auditada funcionalmente en las tareas accesibles durante la inspección de escritorio. |
+| **Frontend Web Application** — https://carestacks-web.onrender.com/ | Disponible y auditada funcionalmente con una cuenta de prueba de cuidador. Los flujos que requieren un paciente vinculado quedaron pendientes de validación. |
+| **Mobile Application** — https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-mobile-app/releases/tag/v1.0.0 | **Disponible y auditada funcionalmente.** Ejecutada mediante el archivo `careconnect-v1.0.0.apk` en emulador Android Studio. Se inspeccionaron los flujos de registro, autenticación, navegación principal (Inicio, Agenda, Documentos, Diario, Perfil) y manejo de estados vacíos. |
+
+La cuenta empleada en las aplicaciones se creó exclusivamente para la auditoría. Durante la inspección no tenía pacientes vinculados ni invitaciones pendientes. La disponibilidad de documentación de las superficies no se tomó como prueba de ejecución funcional.
 
 ##### 6.4.2.2. Cronograma de auditoría recibida
 
+El cronograma siguiente corresponde a las actividades reportadas por NeuroDraw. La recepción del archivo por CareStacks se registra el 09/11/2026; no se inventan horas ni responsables individuales.
+
+No se registraron horas exactas ni se atribuyeron actividades a integrantes individuales.
+
+| Actividad efectivamente realizada | Fecha | Responsable |
+| :--- | :--- | :--- |
+| Revisión del Final Project Statement, el Anexo D y las referencias proporcionadas para delimitar la auditoría | 08/11/2026 | Equipo NeuroDraw |
+| Inspección funcional de la Landing Page: contenido, navegación, CTA, planes, contacto, ES/EN y recorrido básico por teclado | 08/11/2026 | Equipo NeuroDraw |
+| Acceso con la cuenta de prueba e inspección funcional de Home, Agenda, Documentos, Diario, Notificaciones y Perfil de la Web App | 08/11/2026 | Equipo NeuroDraw |
+| Inspección funcional de la Mobile Application: registro de usuario, autenticación, menú de navegación inferior, agenda, documentos, diario y perfil en emulador Android | 08/11/2026 | Equipo NeuroDraw |
+| Pruebas de campos vacíos, correo inválido, formato de contraseña, estados sin paciente, navegación por teclado y recarga de sesión | 08/11/2026 | Equipo NeuroDraw |
+| Consolidación de tareas, hallazgos confirmados, limitaciones y comparación entre superficies | 08/11/2026 | Equipo NeuroDraw |
+| Elaboración de la presente sección de auditoría realizada | 08/11/2026 | Equipo NeuroDraw |
+
 ##### 6.4.2.3. Contenido de auditoría recibida
+
+Se incorporan los ocho problemas confirmados por el auditor: uno de severidad 3, cinco de severidad 2 y dos de severidad 1. El archivo entregado contiene texto, tablas y pasos de reproducción; no adjunta capturas ni referencias a imágenes. Las capturas originales deben incorporarse como evidencia cuando se reciban.
+
+###### Objetivo, alcance y criterio de evaluación
+
+La evaluación buscó identificar problemas observables que afectaran la comprensión de CareConnect, la navegación, la realización de tareas y la accesibilidad de las experiencias disponibles. Se prestó atención al lenguaje, la legibilidad y la claridad de las acciones debido a que el producto se dirige a cuidadores y familias.
+
+La auditoría funcional abarcó la Landing Page, la Frontend Web Application y la Mobile Application (ejecutada mediante el APK publicado v1.0.0).
+
+El backend, la base de datos, la arquitectura interna, la seguridad del código y los pipelines no se evaluaron directamente. Únicamente se consideró un error procedente de una solicitud cuando su texto apareció en la interfaz para el usuario.
+
+Se registró como hallazgo confirmado solo un problema reproducido mediante interacción directa. Las observaciones sin impacto suficiente, las tareas limitadas por el estado de la cuenta y los aspectos revisados sin problemas se presentan por separado.
+
+###### TAREAS A EVALUAR
+
+**Landing Page**
+
+| Código | Tarea | Resultado de la evaluación |
+| :--- | :--- | :--- |
+| **LP-01** | Comprender el problema que resuelve CareConnect | Ejecutada. Se revisaron la portada y la descripción del problema. |
+| **LP-02** | Identificar los segmentos objetivo | Ejecutada. Se identificaron referencias a pacientes, cuidadores y familias. |
+| **LP-03** | Consultar las funciones principales | Ejecutada mediante la navegación y la sección Funciones. |
+| **LP-04** | Consultar los beneficios | Ejecutada mediante la navegación y la sección Beneficios. |
+| **LP-05** | Consultar planes y precios | Ejecutada. Se observaron planes de $15/mes y $150/año; la acción de elegirlos presenta el Problema 03. |
+| **LP-06** | Encontrar información de contacto | Ejecutada. El recorrido hacia el canal de consultas presenta el Problema 02. |
+| **LP-07** | Utilizar el CTA principal | Ejecutada. Su destino presenta el Problema 01. |
+| **LP-08** | Cambiar entre ES y EN | Ejecutada en ambas opciones. Se observaron los Problemas 04 y 05. |
+| **LP-09** | Navegar mediante el menú principal | Ejecutada. Los enlaces internos probados llegaron a sus secciones. |
+| **LP-10** | Identificar cómo acceder al producto | Intentada desde la Landing. El Problema 01 afecta esta tarea. |
+
+**Frontend Web Application — cuenta de cuidador**
+
+| Código | Tarea | Resultado de la evaluación |
+| :--- | :--- | :--- |
+| **WEB-01** | Iniciar sesión | Ejecutada. Se observó Home con el saludo «Hola, Carlos» y el rol Cuidador. |
+| **WEB-02** | Revisar Home | Ejecutada. Se revisaron el estado sin pacientes, los accesos rápidos y la actividad reciente. |
+| **WEB-03** | Comprender el estado del paciente en el dashboard | Evaluada parcialmente. La cuenta mostró «Aún no tienes pacientes activos»; no había información de un paciente que evaluar. |
+| **WEB-04** | Consultar Agenda | Ejecutada. Se abrió el calendario y se seleccionó otro día. |
+| **WEB-05** | Registrar un evento en Agenda | No ejecutable bajo las condiciones disponibles: no había paciente vinculado ni acción de creación visible en ese estado. |
+| **WEB-06** | Consultar eventos existentes | Evaluada parcialmente. El acceso rápido indicó cero eventos; no existía un evento para abrir. |
+| **WEB-07** | Consultar Documentos | Ejecutada. Se abrió la sección, que mostró búsqueda y estado sin paciente activo. |
+| **WEB-08** | Subir o registrar un documento | No ejecutable bajo las condiciones disponibles: no se ofreció la acción sin paciente vinculado. |
+| **WEB-09** | Consultar Diario | Ejecutada. Se observó el estado que requiere una invitación para leer y escribir. |
+| **WEB-10** | Registrar información en el Diario | No ejecutable bajo las condiciones disponibles: no se ofreció la acción sin paciente vinculado. |
+| **WEB-11** | Consultar Notificaciones | Ejecutada. El panel mostró «Avisos 0» y su estado vacío. |
+| **WEB-12** | Resolver una notificación | No ejecutable bajo las condiciones disponibles: no había avisos sobre los cuales actuar. |
+| **WEB-13** | Consultar y gestionar Perfil | Evaluada parcialmente. Se revisaron rol, estado, pacientes vinculados y resumen; no había pacientes ni invitaciones que gestionar. |
+| **WEB-14** | Revisar opciones de configuración | Se revisaron el menú y el Perfil disponibles. No se encontró una opción visible de Configuración; no se presupone que deba existir. |
+| **WEB-15** | Cerrar sesión | Ejecutada. La aplicación volvió al formulario de inicio de sesión. |
+| **WEB-16** | Volver a iniciar sesión | Ejecutada. Tras el nuevo ingreso se observó nuevamente Home con «Hola, Carlos». |
+
+**Mobile Application — ejecutable APK v1.0.0**
+
+| Código | Tarea | Resultado de la evaluación |
+| :--- | :--- | :--- |
+| **MOB-01** | Registrar nueva cuenta en la app móvil | Ejecutada. Rechazó inicialmente claves simples con el mensaje `Request validation failed` (Problema 08); se completó exitosamente con formato complejo. |
+| **MOB-02** | Iniciar sesión en la app móvil | Ejecutada tras la creación de la cuenta de cuidador. |
+| **MOB-03** | Revisar Inicio / Dashboard en móvil | Ejecutada. Se observó el saludo «Hola, Miguel», la tarjeta de pacientes asignados y los accesos rápidos a las funciones. |
+| **MOB-04** | Comprender el estado del paciente en el dashboard móvil | Evaluada. La interfaz desplegó «Aún no tienes pacientes activos» indicando la necesidad de recibir una invitación. |
+| **MOB-05** | Consultar Agenda en móvil | Ejecutada. Se desplegó la vista mensual del calendario. |
+| **MOB-06** | Consultar eventos en Agenda móvil | Evaluada parcialmente. Indico «No hay paciente activo» y requirió vincular un paciente para cargar actividades. |
+| **MOB-07** | Consultar Documentos en móvil | Ejecutada. Se abrió la vista con buscador y mensaje de estado sin paciente activo. |
+| **MOB-08** | Consultar Diario en móvil | Ejecutada. Se desplegó la vista «Registro del bienestar diario» en estado inicial. |
+| **MOB-09** | Consultar y gestionar Perfil en móvil | Ejecutada. Se verificaron la credencial «Cuidador verificado», resumen de métricas (0 pacientes, 0 invitaciones, 0 avisos) y botón de cierre de sesión. |
+| **MOB-10** | Navegar mediante la barra de navegación inferior (BottomNav) | Ejecutada. Transición fluida entre Inicio, Agenda, Documentos, Diario y Perfil. |
+| **MOB-11** | Cerrar sesión en la app móvil | Ejecutada. Retornó al formulario de inicio de sesión. |
+
+###### ESCALA DE SEVERIDAD
+
+Se utiliza exclusivamente la escala del Anexo D del Final Project Statement:
+
+| Nivel | Clasificación y criterio |
+| :--- | :--- |
+| **1** | **Problema superficial:** el usuario puede superarlo fácilmente o se presenta con muy poca frecuencia. |
+| **2** | **Problema menor:** ocurre con mayor frecuencia o resulta algo más difícil de superar; corresponde una prioridad baja de corrección. |
+| **3** | **Problema mayor:** ocurre frecuentemente o el usuario no logra resolverlo; requiere prioridad alta de corrección. |
+| **4** | **Problema muy grave:** impide continuar con el uso de la herramienta y debe corregirse antes del lanzamiento. |
+
+###### TABLA RESUMEN DE PROBLEMAS CONFIRMADOS
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+| :--- | :--- | :--- | :--- |
+| **01** | «Probar app» dirige a los planes y no proporciona acceso a la Web App. | 3 | Usability: correspondencia entre la acción anunciada y su resultado. |
+| **02** | El contacto general conduce a GitHub Issues, donde iniciar una consulta requiere una cuenta de GitHub. | 2 | Inclusive Design: ofrecer vías de uso accesibles para distintos usuarios. |
+| **03** | Ambos botones «Elegir plan» llevan al mismo contacto sin conservar la elección. | 2 | Usability: visibilidad del resultado de la acción. |
+| **04** | La vista previa del teléfono permanece en español cuando la Landing está en inglés. | 1 | Inclusive Design: experiencia comprensible y consistente con el idioma elegido. |
+| **05** | La versión española mezcla rótulos en inglés y formas de tratamiento distintas. | 1 | Usability: consistencia y estándares. |
+| **06** | El acceso Web muestra «Request validation failed» ante un correo con formato inválido. | 2 | Usability: ayudar a reconocer y recuperarse de errores. |
+| **07** | La Landing permite seleccionar inglés, pero las pantallas examinadas de la Web App solo se mostraron en español. | 2 | Inclusive Design: experiencia comparable entre superficies. |
+| **08** | El registro de la App Móvil muestra «Request validation failed» al ingresar una contraseña que no cumple las reglas del backend. | 2 | Usability: ayudar a reconocer, diagnosticar y recuperarse de errores. |
+
+---
+
+###### DESCRIPCIÓN DE PROBLEMAS
+
+**Problema 01: El CTA «Probar app» dirige a planes (UX-01)**
+* **Producto:** CareConnect Landing Page.
+* **Pantalla o sección:** Header y portada.
+* **Tarea afectada:** LP-07, utilizar el CTA principal; LP-10, acceder al producto.
+* **Pilar:** Usability.
+* **Heurística/Principio violada(o):** Correspondencia entre la acción anunciada y su resultado.
+* **Severidad:** 3/4 - Problema mayor.
+* **Problema explicado:** El botón «Probar app» del header y «Comienza ahora» de la portada dirigen a la sección de precios (#precio). En la inspección de los enlaces visibles de la Landing no se encontró un acceso a la Frontend Web Application, aunque esta estaba disponible públicamente y se ejecutó por separado durante la auditoría.
+* **Impacto en el usuario:** Quien intenta ingresar o probar CareConnect desde su página pública termina comparando planes y no completa la tarea de acceso por ese recorrido.
+* **Pasos para reproducir el problema:**
+  1. Abrir https://carestacks-landing-page.vercel.app/.
+  2. Pulsar «Probar app» en el header.
+  3. Observar que la URL termina en #precio y aparece la sección de planes.
+  4. Volver a Inicio y repetir con «Comienza ahora», que tiene el mismo destino.
+* **Recomendaciones:**
+  - Enlazar «Probar app» con el acceso ejecutable de CareConnect.
+  - Si la intención del botón es presentar precios, cambiar su etiqueta a «Ver planes» y ofrecer por separado un acceso explícito al producto.
+
+**Problema 02: El canal de contacto exige acceder a GitHub (UX-02)**
+* **Producto:** CareConnect Landing Page.
+* **Pantalla o sección:** Contacto y enlace «Contactar al equipo».
+* **Tarea afectada:** LP-06, encontrar y utilizar el contacto.
+* **Pilar:** Inclusive Design.
+* **Heurística/Principio violada(o):** Ofrecer vías de uso accesibles para visitantes con distintos niveles de familiaridad digital.
+* **Severidad:** 2/4 - Problema menor.
+* **Problema explicado:** «Contactar al equipo» dirige a la página de Issues del repositorio del informe. En esa página, la acción «New issue» conduce al inicio de sesión de GitHub. El destino no se presenta en la llamada principal como un canal que requiere una cuenta externa.
+* **Impacto en el usuario:** Una persona sin cuenta de GitHub debe crearla o iniciar sesión antes de plantear una consulta. Este requisito añade esfuerzo a una tarea que la Landing presenta como contacto general.
+* **Pasos para reproducir el problema:**
+  1. Abrir la Landing y pulsar «Contacto».
+  2. Pulsar «Contactar al equipo».
+  3. Observar la página de Issues del repositorio carestacks-report.
+  4. Pulsar «New issue» y observar que conduce al inicio de sesión de GitHub.
+* **Recomendaciones:**
+  - Ofrecer un canal de consulta utilizable por visitantes sin cuenta de GitHub.
+  - Si se mantiene Issues, nombrar el enlace «Consultas del proyecto en GitHub» e indicar el requisito de cuenta antes de salir de la Landing.
+
+**Problema 03: La elección del plan no se conserva (UX-03)**
+* **Producto:** CareConnect Landing Page.
+* **Pantalla o sección:** Planes y Contacto.
+* **Tarea afectada:** LP-05, consultar planes; LP-07, continuar desde una acción de conversión.
+* **Pilar:** Usability.
+* **Heurística/Principio violada(o):** Visibilidad del resultado de la acción.
+* **Severidad:** 2/4 - Problema menor.
+* **Problema explicado:** Los botones «Elegir plan» del plan mensual y del anual llevan al mismo ancla #contacto. La sección de destino no muestra cuál fue seleccionado ni ofrece un paso específico para continuar con esa elección.
+* **Impacto en el usuario:** La decisión tomada en la tarjeta se pierde al avanzar. Si el visitante contacta al equipo, debe recordar y volver a comunicar el plan que le interesaba.
+* **Pasos para reproducir el problema:**
+  1. Abrir la sección «Precio».
+  2. Pulsar «Elegir plan» en la tarjeta mensual y observar la sección Contacto.
+  3. Regresar a Precio y pulsar «Elegir plan» en la tarjeta anual.
+  4. Comprobar que se llega a la misma sección sin identificación del plan elegido.
+* **Recomendaciones:**
+  - Conservar el plan seleccionado en el siguiente paso y mostrarlo de forma visible.
+  - Si todavía no existe un flujo de contratación, usar acciones específicas como «Consultar por el plan mensual» y «Consultar por el plan anual».
+
+**Problema 04: La vista previa no sigue el idioma inglés (UX-04)**
+* **Producto:** CareConnect Landing Page.
+* **Pantalla o sección:** Portada con EN seleccionado.
+* **Tarea afectada:** LP-08, cambiar entre ES y EN.
+* **Pilar:** Inclusive Design.
+* **Heurística/Principio violada(o):** Mantener una experiencia comprensible y consistente con el idioma elegido.
+* **Severidad:** 1/4 - Problema superficial.
+* **Problema explicado:** Al activar EN, el titular, la descripción y los botones de la portada cambian a inglés. La imagen principal del teléfono conserva textos en español, entre ellos «Hola, Mariana» y «Confirmar toma». Se trata de una representación visual de la aplicación, no de controles interactivos de la Landing.
+* **Impacto en el usuario:** La muestra visual más destacada del producto no corresponde al idioma que acaba de elegir el visitante.
+* **Pasos para reproducir el problema:**
+  1. Abrir la Landing.
+  2. Seleccionar EN en el header.
+  3. Volver a Inicio.
+  4. Comparar los textos de la portada con los que aparecen dentro del teléfono.
+* **Recomendaciones:**
+  - Utilizar una vista previa correspondiente al idioma seleccionado.
+  - Si solo se dispone de la versión en español, señalar brevemente que la representación corresponde a esa versión.
+
+**Problema 05: Inconsistencias editoriales en la versión española (UX-05)**
+* **Producto:** CareConnect Landing Page.
+* **Pantalla o sección:** Secciones de videos, Inicio y Planes.
+* **Tarea afectada:** LP-08, verificar la consistencia de la versión española; LP-01 y LP-05, comprender los mensajes.
+* **Pilar:** Usability.
+* **Heurística/Principio violada(o):** Consistencia y estándares en idioma y tratamiento.
+* **Severidad:** 1/4 - Problema superficial.
+* **Problema explicado:** Con ES seleccionado, los rótulos de las secciones de video permanecen como «ABOUT THE TEAM» y «ABOUT THE PRODUCT», junto a títulos y descripciones en español. Además, la redacción alterna imperativos como «Gestiona» y «Comienza» con «elegí el ritmo de pago». Estos elementos no impidieron completar la navegación.
+* **Impacto en el usuario:** La mezcla de idiomas y formas de tratamiento reduce la uniformidad del tono de una página dirigida a familias y cuidadores.
+* **Pasos para reproducir el problema:**
+  1. Seleccionar ES en la Landing.
+  2. Desplazarse a las secciones «Conoce al equipo detrás de CareConnect» y «Mira cómo CareConnect organiza el cuidado diario».
+  3. Leer sus rótulos superiores en inglés.
+  4. Comparar «Gestiona» y «Comienza ahora» en Inicio con «elegí el ritmo de pago» en Planes.
+* **Recomendaciones:**
+  - Traducir los rótulos de las secciones de video para ES y mantener sus equivalentes en EN.
+  - Definir una pauta de tratamiento para la versión española y revisar los verbos dirigidos al visitante.
+
+**Problema 06: El acceso Web muestra un mensaje técnico en inglés (UX-06)**
+* **Producto:** CareConnect Frontend Web Application.
+* **Pantalla o sección:** Inicio de sesión.
+* **Tarea afectada:** Iniciar sesión y recuperarse de un dato inválido.
+* **Pilar:** Usability.
+* **Heurística/Principio violada(o):** Ayudar al usuario a reconocer el error y corregirlo.
+* **Severidad:** 2/4 - Problema menor.
+* **Problema explicado:** Al intentar ingresar con un correo ficticio sin formato de dirección electrónica y una contraseña ficticia, la interfaz mostró literalmente «Request validation failed». El mensaje no señala el campo que debe corregirse y aparece en inglés mientras el formulario está en español. La auditoría registra el efecto visible; no atribuye una causa técnica concreta al backend.
+* **Impacto en el usuario:** La persona puede reconocer que algo falló, pero no recibe una instrucción específica para corregir el correo y reintentar.
+* **Pasos para reproducir el problema:**
+  1. Abrir https://carestacks-web.onrender.com/ sin sesión.
+  2. Introducir un texto ficticio que no tenga formato de correo en «Correo electrónico».
+  3. Introducir una contraseña ficticia y pulsar «Ingresar».
+  4. Observar «Request validation failed» debajo de los campos.
+* **Recomendaciones:**
+  - Validar el formato del correo junto al campo y mostrar una indicación específica antes de enviar el formulario.
+  - Presentar en español los errores visibles de la solicitud, con una acción de corrección comprensible.
+
+**Problema 07: El idioma elegido en la Landing no continúa en la Web App (UX-07)**
+* **Producto:** CareConnect Landing Page y Frontend Web Application.
+* **Pantalla o sección:** Selector ES/EN de la Landing; acceso, Home y Perfil de la Web App.
+* **Tarea afectada:** LP-08, seleccionar idioma; WEB-01, iniciar sesión; WEB-02 y WEB-13, consultar Home y Perfil.
+* **Pilar:** Inclusive Design.
+* **Heurística/Principio violada(o):** Proporcionar una experiencia comparable entre superficies para quienes eligen otro idioma.
+* **Severidad:** 2/4 - Problema menor.
+* **Problema explicado:** La Landing permite seleccionar EN y presenta sus textos principales en inglés. Durante la inspección, el inicio de sesión, Home y Perfil de la Web App se mostraron en español y no ofrecieron un selector de idioma visible. Esta constatación se limita a las pantallas examinadas; no afirma el estado de funciones que no pudieron abrirse con la cuenta disponible.
+* **Impacto en el usuario:** Una persona que comprendió la propuesta en inglés encuentra el acceso y las pantallas Web revisadas en otro idioma, sin una indicación previa de esa diferencia.
+* **Pasos para reproducir el problema:**
+  1. Abrir la Landing y seleccionar EN.
+  2. Comprobar que la navegación y la portada se presentan en inglés.
+  3. Abrir por separado la Frontend Web Application.
+  4. Revisar el inicio de sesión y, con una cuenta de cuidador, Home y Perfil; observar el idioma y las opciones visibles.
+* **Recomendaciones:**
+  - Ofrecer una opción de idioma en la Web App para las pantallas dirigidas a visitantes que llegan desde EN.
+  - Mientras exista la diferencia, informar en la Landing qué superficies están disponibles en cada idioma.
+
+**Problema 08: El registro de la App Móvil muestra «Request validation failed» ante contraseñas simples (UX-MOB-01)**
+* **Producto:** CareConnect Mobile Application.
+* **Pantalla o sección:** Formulario de registro («Crear cuenta cuidador»).
+* **Tarea afectada:** MOB-01, registrar nueva cuenta en la app móvil.
+* **Pilar:** Usability.
+* **Heurística/Principio violada(o):** Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de los errores.
+* **Severidad:** 2/4 - Problema menor.
+* **Problema explicado:** Al ingresar una contraseña que no cumple con las reglas del servidor (por ejemplo, `vila12345`), la aplicación despliega únicamente el mensaje en rojo `Request validation failed` en inglés. No especifica el campo que falla ni indica los requisitos de formato para la clave (uso de mayúsculas, números o caracteres especiales).
+* **Impacto en el usuario:** El usuario desconoce la razón del rechazo del registro y debe intentar distintas combinaciones de contraseña por ensayo y error.
+* **Pasos para reproducir el problema:**
+  1. Abrir la APK de CareConnect en el emulador.
+  2. Completar los campos *Nombres y apellidos* y *Correo electrónico*.
+  3. Introducir una contraseña simple (ejemplo: `vila12345`) y presionar «Crear cuenta».
+  4. Observar el texto `Request validation failed` en rojo debajo de los campos del formulario.
+* **Recomendaciones:**
+  - Implementar validaciones en el cliente (frontend móvil) que indiquen los requisitos de la contraseña antes de realizar el envío.
+  - Traducir y personalizar los mensajes de error devueltos por el backend al idioma español.
+
+---
+
+###### Observaciones y aspectos que requieren validación adicional
+
+Las siguientes observaciones no integran la tabla de problemas confirmados:
+- En Home de la Web App, los nombres de dos accesos rápidos aparecieron recortados visualmente como «Documentos médi…» y «Diario de segui…» en la ventana de escritorio examinada. El menú lateral mostraba los nombres completos y los accesos podían utilizarse. Se requiere comprobar otras anchuras antes de calificar su impacto.
+- Perfil en la Web App mostró un «Identificador» técnico. No se comprobó que impidiera una tarea del cuidador.
+- Al enviar vacío el formulario de creación de cuenta en Web, el mensaje solicitó correo y contraseña sin mencionar el campo «Nombres y apellidos». No se completaron variantes suficientes del formulario para determinar si esto dificulta una corrección posterior.
+- En las pantallas de cuidador disponibles no apareció una opción de Configuración. No se presupone su obligatoriedad ni la existencia de otras pantallas.
+- No se pudieron evaluar el contenido y las acciones de un paciente en profundidad, debido a que las cuentas utilizadas tenían cero pacientes vinculados y cero invitaciones pendientes. Tampoco había eventos, documentos, notas o avisos previos creados para consultar o editar. Esta condición no se calificó como defecto.
+- La inspección en emulador y escritorio no permite afirmar resultados de responsive móvil en dispositivos físicos de distintas gamas ni relaciones de contraste medidas formalmente.
+- El video del equipo cargó un reproductor de YouTube. La disponibilidad del video del producto enlazado a Microsoft Stream no se comprobó durante esta auditoría.
+
+---
+
+###### Comparación entre superficies (Landing Page, Frontend Web y Mobile App)
+
+La marca CareConnect y el uso de violeta sobre fondos claros aparecen en las tres superficies evaluadas. Se observó una ligera diferencia entre el símbolo del logotipo de la Landing y el icono de corazón de la Web y Mobile App, pero no se demostró un impacto suficiente para elevarla a problema.
+
+Los nombres Agenda, Documentos y Diario permiten reconocer en los menús de la Web App y de la Mobile App las funciones descritas en la Landing Page. La navegación evoluciona coherentemente desde enlaces de secciones en la página pública hacia un menú lateral en la Web App y una barra de navegación inferior (*Bottom Navigation Bar*) en la Mobile App, adaptada a la interacción táctil.
+
+Las diferencias con impacto se documentaron en los Problemas 01 y 07: el CTA público no conduce al producto y la opción EN de la Landing no tuvo continuidad visible en las superficies de la aplicación. La Landing comunica coordinación entre familiares y cuidadores; las aplicaciones explicaron que las cuentas auditadas debían recibir una invitación para gestionar la información de un paciente. Sin un paciente vinculado, no se concluye que las funciones anunciadas estén ausentes o fallen.
+
+---
+
+###### Aspectos positivos comprobados
+
+- **Landing Page:** Presentó de forma identificable su propuesta, segmentos, funciones, beneficios y dos alternativas de precio. Los enlaces internos del header probados llegaron a sus secciones. El selector ES/EN actualizó los textos principales de la Landing. El enlace «Saltar al contenido principal» apareció con foco visible y se activó con Enter.
+- **Frontend Web Application:** Identificó el estado de la cuenta sin paciente y explicó la necesidad de aceptar una invitación en Home, Agenda, Documentos, Diario y Perfil. Los módulos accesibles conservaron un menú lateral reconocible; un acceso rápido de Home llevó a Agenda. La selección de otro día actualizó el encabezado del calendario. Tab enfocó controles de la Web App y Enter permitió volver a Inicio desde el menú. La sesión permaneció activa tras recargar la Web App. «Cerrar sesión» devolvió al acceso y un nuevo inicio de sesión mostró nuevamente Home con la cuenta de prueba. El panel de Notificaciones indicó expresamente que había cero avisos, evitando interpretar su espacio vacío como una carga pendiente.
+- **Mobile Application (APK v1.0.0):** Mantiene una consistente identidad de marca y paleta cromática con el resto del ecosistema CareConnect. Ofrece una estructura de navegación inferior (*Bottom Navigation Bar*) cómoda para dispositivos táctiles, permitiendo conmutar entre Inicio, Agenda, Documentos, Diario y Perfil. En todas las pantallas con estados vacíos (sin paciente activo), la interfaz comunica con claridad la razón por la cual no hay datos visibles y orienta sobre cómo desbloquear las tareas. La sección de Perfil integra adecuadamente la etiqueta de «Cuidador verificado», el resumen numérico de actividades y una vía rápida para cerrar sesión.
 
 ##### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
+**Estado al 09/11/2026.** Se incorporaron el informe recibido, su cronograma, tareas, hallazgos y recomendaciones. Este cambio documental no acredita una corrección de producto ni una revalidación de los ocho problemas. Las correcciones técnicas del 08/11 en backend y Kotlin cubren otros controles; el APK auditado aquí es el **Flutter del cuidador** de `carestacks-mobile-app`, no el cliente Kotlin del paciente.
+
+La siguiente matriz define el seguimiento y la evidencia de cierre. No se atribuyen capturas, commits de corrección ni resultados que no hayan sido aportados.
+
+| Código del auditor | Severidad | Superficie | Acción y verificación de cierre | Estado |
+|---|---|---|---|---|
+| UX-01 | 3/4 | Landing: acceso al producto | Dirigir el CTA de prueba al acceso ejecutable; diferenciarlo de Ver planes. **Verificación:** Probar header y portada en ES/EN y teclado; registrar destino, versión y captura. | Sin evidencia de cierre |
+| UX-02 | 2/4 | Landing: contacto | Ofrecer un canal controlado por el equipo utilizable sin cuenta de GitHub; identificar el canal técnico si se conserva. **Verificación:** Comprobar acceso sin cuenta externa y titularidad del canal; no publicar un correo inferido. | Sin evidencia de cierre |
+| UX-03 | 2/4 | Landing: elección de plan | Conservar y mostrar la opción mensual/anual en el siguiente paso o usar consultas específicas por plan. **Verificación:** Probar ambas tarjetas y demostrar que la elección permanece visible, sin atribuir un cobro implementado. | Sin evidencia de cierre |
+| UX-04 | 1/4 | Landing: vista previa EN | Usar una vista previa del idioma elegido o indicar visiblemente que la imagen corresponde a la versión española. **Verificación:** Capturar la portada EN y comprobar la correspondencia o la aclaración visible. | Sin evidencia de cierre |
+| UX-05 | 1/4 | Landing: textos ES | Traducir rótulos de videos y unificar el tratamiento dirigido al visitante. **Verificación:** Revisar Inicio, Planes y videos en ES/EN; conservar evidencia de los textos publicados. | Sin evidencia de cierre |
+| UX-06 | 2/4 | Flutter Web: acceso | Validar correo y mostrar mensajes específicos, comprensibles y en el idioma del formulario. **Verificación:** Repetir entradas inválidas; demostrar orientación de campo y recuperación, sin exponer un error técnico genérico. | Sin evidencia de cierre |
+| UX-07 | 2/4 | Landing y Flutter Web: idioma | Comunicar el alcance real por idioma e incorporar una opción de idioma en las pantallas web alcanzadas por la propuesta. **Verificación:** Recorrer EN desde landing hasta acceso/Home/Perfil y registrar la experiencia resultante; no dar por implementado i18n completo. | Sin evidencia de cierre |
+| UX-MOB-01 | 2/4 | Flutter móvil del cuidador, APK v1.0.0 | Alinear la validación de contraseña con las reglas reales del backend y presentar errores claros en español. **Verificación:** Probar registros válidos/inválidos en una nueva versión del APK; conservar versión, casos y capturas. | Sin evidencia de cierre |
+
+Las tareas de paciente vinculado, creación/edición de eventos y documentos y resolución de avisos quedaron fuera del alcance ejecutable de las cuentas auditadas. Esta limitación no se convierte en un defecto ni se considera cubierta por la inspección de menús y estados vacíos. El cierre requiere capturas, versión identificable y repetición de los casos aplicables; la recepción del documento por sí sola no acredita esa subsanación.
+
 ## Capítulo VII: DevOps Practices
 
-Para el **Trabajo Parcial (TP)**, el alcance del Capítulo VII comprende **Continuous Integration, Continuous Delivery y Continuous Deployment**, correspondientes a las secciones **7.1, 7.2 y 7.3**. La sección **7.4 Continuous Monitoring** se mantiene únicamente como estructura del informe, ya que corresponde a una etapa posterior.
+Las secciones **7.1, 7.2 y 7.3** conservan la evidencia de **Continuous Integration, Continuous Delivery y Continuous Deployment** del Trabajo Parcial (04/10/2026). Para AV2 se incorpora **7.4 Continuous Monitoring**, con monitoreo, alertas, notificaciones y benchmark registrados en noviembre de 2026.
 
 La estrategia DevOps de CareConnect busca que los cambios realizados en los productos principales de la solución puedan ser verificados, preparados para entrega y desplegados mediante procesos repetibles y trazables. Para ello se emplea GitHub como plataforma de control de versiones y colaboración, y GitHub Actions como herramienta de automatización de los pipelines.
 
-Se integra aquí el contenido del equipo de `chapter-7` (`758ce96`) y se actualiza con los workflows y resultados de las ramas de revisión del 04/10/2026. Las capturas originales se conservan como evidencia histórica; los [registros CI actuales](assets/deployment/tb1-2026-10-04/verification.md) identifican las versiones aprobadas.
+La base del Trabajo Parcial proviene de `chapter-7` (`758ce96`), con los workflows y resultados del 04/10/2026 documentados en los [registros CI de TB1](assets/deployment/tb1-2026-10-04/verification.md). El aporte AV2 de `chapter-7` (`d567d3a`) completa §7.4. Cada evidencia conserva su fecha y versión; las capturas de octubre no se presentan como nuevas mediciones de noviembre.
 
 Los productos considerados en el pipeline del Trabajo Parcial son:
 
@@ -4183,7 +5430,7 @@ npm run lint
 npm run build
 ```
 
-La [ejecución CI de la landing actual](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/actions/runs/37244598095) aprobó el commit `ab2d60e`; el [registro de verificación](assets/testing/landing-product-2026-10-04/verification.md) documenta su publicación.
+La [ejecución CI de la landing en TB1](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/actions/runs/37244598095) aprobó el commit `ab2d60e`; el [registro de verificación](assets/testing/landing-product-2026-10-04/verification.md) documenta su publicación. La corrección AV2 `62772ca` tiene una [ejecución CI aprobada del 07/11/2026](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page/actions/runs/42403412775) y su [registro de publicación](assets/deployment/av2-landing-2026-11-07/verification.md).
 
 ##### Pipeline de la Native Mobile Application
 
@@ -4277,7 +5524,7 @@ flutter test
 flutter build apk --debug --dart-define=API_BASE_URL=https://carestacks-backend-api.onrender.com
 ```
 
-Instalar y probar ese APK en un dispositivo o emulador antes de considerarlo una entrega funcional. La distribución release requiere la configuración de firma del equipo y una compilación release; no se incluyen claves en el repositorio. Una entrega iOS exige el entorno Apple y su firma. El cliente Android del paciente está en [carestacks-frontend](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend), rama `main` (`922361d`), dentro de la organización del curso. `develop` solo contiene el README. Su compatibilidad con la corrección de Agenda requiere verificación propia; el repositorio histórico `CareStacks/FrontEnd` no pertenece a esta sección.
+Instalar y probar ese APK en un dispositivo o emulador antes de considerarlo una entrega funcional. La distribución release requiere la configuración de firma del equipo y una compilación release; no se incluyen claves en el repositorio. Una entrega iOS exige el entorno Apple y su firma. El cliente Android del paciente está en [carestacks-frontend](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend), dentro de la organización del curso. Al 08/11/2026, `develop` (`64308ce`) contiene el código Kotlin, la corrección de desugaring, lint sin errores y el APK debug compilado; `main` conserva la referencia anterior `922361d`. La [verificación técnica AV2](assets/testing/av2-local-2026-11-08/verification.md) registra los límites: el único test unitario es un ejemplo aritmético y falta comprobar el recorrido del paciente contra el backend elegido. El repositorio histórico `CareStacks/FrontEnd` no pertenece a esta sección.
 
 **Backend y persistencia.** El servicio recibe `PORT` y las variables `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_DRIVER_CLASS_NAME`, `SPRING_DATASOURCE_USERNAME`, `SPRING_DATASOURCE_PASSWORD` y `SPRING_JPA_HIBERNATE_DDL_AUTO`. Para PostgreSQL usar su URL JDBC y `org.postgresql.Driver`. La evidencia visual del servicio no expone secretos ni permite certificar los valores de esas variables. El código tiene H2 como valor por defecto; por ello la persistencia PostgreSQL requiere comprobar la configuración del entorno y no se infiere solo por la existencia de una URL pública.
 
@@ -4311,18 +5558,350 @@ Para el backend, Render obtiene el código de la rama configurada, construye el 
 Para cerrar la entrega conjunta se requiere integrar las versiones compatibles, comprobar el cliente de paciente, definir las URLs/archivos de distribución de los clientes, validar CORS y repetir ST-03 en esos entornos. Este informe registra los pasos y la evidencia disponible; no atribuye despliegues ni instalaciones que no se realizaron.
 
 ### 7.4. Continuous Monitoring
-
+ 
+El **Continuous Monitoring** permite conocer el estado de los productos en producción sin depender de que un usuario reporte una falla. En CareConnect, su objetivo es detectar caídas del RESTful API, de la Frontend Web Application y de la Landing Page, generar una alerta cuando el servicio deja de responder correctamente y notificar al equipo para iniciar la recuperación.
+ 
+La implementación combina dos componentes: **Spring Boot Actuator**, que expone el estado interno del backend, y **UptimeRobot**, que consulta periódicamente los productos publicados desde fuera de la infraestructura. Los cambios del backend se integraron siguiendo el mismo flujo GitFlow y los mismos pipelines de las secciones 7.1 a 7.3. Todas las evidencias se registraron el 05/11/2026.
+ 
 #### 7.4.1. Tools and Practices
-
+ 
+| Herramienta | Producto | Propósito en CareConnect |
+|---|---|---|
+| Spring Boot Actuator | RESTful API | Expone `/actuator/health`, `/actuator/info` y `/actuator/metrics` para conocer el estado del servicio y sus métricas de ejecución |
+| UptimeRobot (plan gratuito) | RESTful API, Frontend Web, Landing Page | Consulta cada producto por HTTPS cada 5 minutos, registra disponibilidad, tiempo de respuesta e incidentes |
+| Correo electrónico | Equipo | Canal de notificación de las alertas de UptimeRobot |
+| GitHub Actions | RESTful API | Verifica en CI que el endpoint de salud responda `UP` antes de integrar el cambio |
+| Render (logs y eventos de deploy) | RESTful API, Frontend Web | Registra el resultado de cada despliegue y los errores de arranque |
+ 
+Las prácticas aplicadas son:
+ 
+| Práctica | Aplicación en CareConnect |
+|---|---|
+| Health check como contrato | El backend expone un único endpoint de salud que resume el estado de la aplicación y de su conexión a la base de datos |
+| Exposición mínima | Solo se exponen `health`, `info` y `metrics`; el detalle de los componentes de salud permanece oculto (`show-details: never`) para no revelar información de la infraestructura |
+| Monitoreo externo (black-box) | La disponibilidad se mide desde fuera de Render y Vercel, tal como la percibe un usuario |
+| Monitoreo verificado en CI | Una prueba de integración comprueba que `/actuator/health` responde `200` y `UP` |
+| Cambios trazables | La incorporación de Actuator siguió `feature/continuous-monitoring` → `develop` → `main`, con CI aprobado en cada Pull Request |
+| Gestión de secretos | Las credenciales de la base de datos solo se registran como variables de entorno en Render |
+ 
+**Configuración del backend.** Se agregó la dependencia `spring-boot-starter-actuator` en `pom.xml` y la siguiente configuración en `src/main/resources/application.yml`:
+ 
+```yaml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: never
+```
+ 
+La prueba `ActuatorHealthIntegrationTests` levanta la aplicación en un puerto aleatorio y verifica la respuesta del endpoint de salud. Con ella, la suite del backend pasó de 16 a 17 pruebas, todas aprobadas.
+ 
+![Endpoints de Actuator en local](assets/monitoring/actuator-endpoints-local.png)
+ 
+*Endpoints expuestos por Actuator en ejecución local: `health`, `info` y `metrics`.*
+ 
+![Health check en local](assets/monitoring/actuator-health-local.png)
+ 
+*Respuesta `UP` del endpoint de salud en ejecución local.*
+ 
+![Métricas disponibles](assets/monitoring/actuator-metrics-local.png)
+ 
+*Métricas disponibles en `/actuator/metrics`, entre ellas `http.server.requests`, `jvm.memory.used` y `hikaricp.connections.active`.*
+ 
+**Integración y despliegue del cambio.** El commit `3882ac6` (`feat(monitoring): add spring boot actuator health endpoint`) se integró a `develop` mediante el PR #5, con 3 checks aprobados. Luego se promovió a `main` mediante el PR #6, con 6 checks aprobados: los ejecutados por `pull_request` y por `push`. Render desplegó el commit `fae0f42` y el log de arranque confirmó `Exposing 3 endpoints beneath base path '/actuator'`.
+ 
+![CI del PR #5](assets/monitoring/pr5-ci-checks-passed.png)
+ 
+*PR #5 (`feature/continuous-monitoring` → `develop`) con los checks de CI aprobados.*
+ 
+![CI del PR #6](assets/monitoring/pr-develop-main-ci-passed.png)
+ 
+*PR #6 (`develop` → `main`) con 6 checks aprobados.*
+ 
+![Ejecuciones de GitHub Actions](assets/monitoring/actions-monitoring-pipeline.png)
+ 
+*Ejecuciones de GitHub Actions del cambio, desde la rama de feature hasta `main`.*
+ 
+![Deploy de Render con Actuator](assets/monitoring/render-deploy-live-actuator.png)
+ 
+*Deploy exitoso en Render con los endpoints de Actuator expuestos.*
+ 
+![Health check en producción](assets/monitoring/actuator-health-production.png)
+ 
+*Endpoint de salud en producción: `https://carestacks-backend-api.onrender.com/actuator/health`.*
+ 
 #### 7.4.2. Monitoring Pipeline Components
-
+ 
+El pipeline de monitoreo sigue el siguiente flujo:
+ 
+```text
+UptimeRobot (cada 5 minutos)
+    |
+    v
+Petición HTTPS al producto
+    |
+    +---- RESTful API ----> /actuator/health ----> estado de la app + conexión a PostgreSQL
+    +---- Frontend Web ---> página principal
+    +---- Landing Page ---> página principal
+    |
+    v
+Evaluación de la respuesta
+    |
+    +---- 2xx a tiempo -------------> Up: se registra el tiempo de respuesta
+    |
+    +---- error HTTP o timeout -----> Down: se abre un incidente (sección 7.4.3)
+```
+ 
+Los monitores configurados son:
+ 
+| Monitor | URL monitoreada | Tipo | Intervalo |
+|---|---|---|---|
+| RESTful API | `https://carestacks-backend-api.onrender.com/actuator/health` | HTTP(s) | 5 minutos |
+| Frontend Web Application | `https://carestacks-web.onrender.com/` | HTTP(s) | 5 minutos |
+| Landing Page | `https://carestacks-landing-page.vercel.app` | HTTP(s) | 5 minutos |
+ 
+| Componente | Responsabilidad |
+|---|---|
+| Fuente de datos (backend) | Actuator calcula el estado agregado de la aplicación, incluida la conexión a PostgreSQL. Si la base de datos no responde, el endpoint devuelve `DOWN` con HTTP `503` |
+| Fuente de datos (frontends) | La respuesta HTTP de la página publicada en Render y Vercel |
+| Recolector | UptimeRobot realiza la petición desde sus servidores en el intervalo configurado |
+| Almacenamiento | UptimeRobot conserva el historial de disponibilidad, tiempos de respuesta e incidentes |
+| Visualización | El dashboard de UptimeRobot muestra el estado actual, el porcentaje de disponibilidad y el gráfico de tiempo de respuesta de cada monitor |
+ 
+El monitor del backend apunta a `/actuator/health` y no a la raíz del servicio. De esa forma, un `Up` confirma que el servidor responde **y** que la aplicación tiene acceso a su base de datos.
+ 
+![Monitor del RESTful API](assets/monitoring/uptimerobot-monitor-api.png)
+ 
+*Monitor del RESTful API en estado `Up`.*
+ 
+![Monitor de la Frontend Web](assets/monitoring/uptimerobot-monitor-web.png)
+ 
+*Monitor de la Frontend Web Application en estado `Up`.*
+ 
+![Monitor de la Landing Page](assets/monitoring/uptimerobot-monitor-landing.png)
+ 
+*Monitor de la Landing Page en estado `Up`.*
+ 
+**Limitaciones.** En el plan gratuito, el intervalo mínimo es de 5 minutos, por lo que una caída puede tardar hasta 5 minutos en detectarse. Las métricas de `/actuator/metrics` están disponibles para consulta, pero no se recolectan de forma continua ni se grafican en una herramienta como Prometheus o Grafana.
+ 
 #### 7.4.3. Alerting Pipeline Components
-
+ 
+UptimeRobot evalúa cada respuesta y abre un incidente cuando un monitor deja de responder correctamente. Las reglas de alerta definidas son:
+ 
+| Regla | Condición | Severidad | Acción |
+|---|---|---|---|
+| RESTful API caído | `/actuator/health` responde un código distinto de 2xx (incluye `503` por `DOWN`) o no responde | Alta | Incidente en UptimeRobot y correo de alerta |
+| Frontend Web caída | La página principal responde error o no responde | Alta | Incidente en UptimeRobot y correo de alerta |
+| Landing Page caída | La página principal responde error o no responde | Media | Incidente en UptimeRobot y correo de alerta |
+| Recuperación | El monitor vuelve a responder 2xx | Informativa | Cierre del incidente, registro de su duración y correo de recuperación |
+| Falla de CI | Un check de GitHub Actions falla en un Pull Request | Media | El PR queda bloqueado para revisión hasta corregir el cambio |
+| Falla de despliegue | La aplicación no arranca en Render | Alta | Render conserva la versión anterior y registra el error en los logs del deploy |
+ 
+**Incidente real: expiración de la base de datos.** Al desplegar el commit `fae0f42`, Render marcó el deploy como fallido. El log mostró `java.net.UnknownHostException: dpg-davf89mk1f9s73a3ncdg-a`: la base de datos PostgreSQL gratuita de Render había expirado y estaba suspendida, por lo que su host interno había dejado de existir. La aplicación no podía iniciar Hibernate sin una base de datos disponible. El incidente se resolvió migrando la persistencia a **Neon** (PostgreSQL serverless, región AWS us-west-2) y actualizando las variables `SPRING_DATASOURCE_*` en Render. Después de ese cambio, el deploy terminó en estado `Live`.
+ 
+La nueva base se creó vacía, por lo que los datos de prueba anteriores se perdieron. Durante la corrección, una credencial quedó impresa en un log de error de Render; se rotó de inmediato en Neon y la evidencia de este informe no la incluye.
+ 
+Este incidente ocurrió antes de que existiera el monitoreo y no se detectó hasta un nuevo despliegue, cuatro días después de la suspensión. Con el monitor actual, la misma situación habría respondido `DOWN` en `/actuator/health` y generado una alerta en el siguiente chequeo.
+ 
+![Base de datos suspendida](assets/monitoring/render-db-suspended.png)
+ 
+*Base de datos `careconnect-db` suspendida por Render al expirar el plan gratuito.*
+ 
+![Deploy fallido](assets/monitoring/render-deploy-failed-db-expired.png)
+ 
+*Deploy fallido por `UnknownHostException` al intentar conectarse a la base de datos suspendida.*
+ 
+**Incidente simulado: verificación del ciclo de alerta.** Para comprobar el pipeline de alerta sin afectar a los usuarios, se cambió temporalmente la URL del monitor del backend a `/actuator/health-test`, una ruta inexistente que responde con error. UptimeRobot marcó el monitor como `Down` y abrió un incidente. Al restaurar la URL correcta, el monitor volvió a `Up` y el incidente se cerró con una duración registrada de **1 minuto y 8 segundos**. El porcentaje de disponibilidad del monitor incluye este incidente controlado.
+ 
+![Monitor en Down](assets/monitoring/uptimerobot-api-down.png)
+ 
+*Monitor del backend en estado `Down` durante la caída simulada.*
+ 
+![Monitor recuperado](assets/monitoring/uptimerobot-api-recovered.png)
+ 
+*Monitor del backend recuperado, con el incidente de 1 minuto y 8 segundos registrado.*
+ 
+![Registro de incidentes](assets/monitoring/uptimerobot-incidents.png)
+ 
+*Registro del incidente en UptimeRobot, con inicio, fin y duración.*
+ 
 #### 7.4.4. Notification Pipeline Components
+ 
+```text
+Incidente abierto (Down)
+    |
+    v
+UptimeRobot ----> correo "Monitor is DOWN" ----> responsable revisa logs de Render
+                                                      |
+                                                      v
+                                            corrección / redeploy / rollback
+                                                      |
+                                                      v
+Incidente cerrado (Up) ----> correo "Monitor is UP" con la duración de la caída
+```
+ 
+| Componente | Configuración actual |
+|---|---|
+| Canal | Correo electrónico configurado como alert contact en UptimeRobot |
+| Destinatario | Responsable del monitoreo (Muñiz Huayanca, Percy Alonso) |
+| Contenido | Monitor afectado, URL, motivo de la falla y, en la recuperación, duración del incidente |
+| Escalamiento | El responsable comunica el incidente al equipo por el canal de coordinación del grupo |
+| Respuesta | Revisar logs y eventos de Render; corregir y volver a desplegar, o redesplegar el commit anterior desde el historial de deploys |
+ 
+Durante el incidente simulado se recibieron los dos correos del ciclo: el aviso de caída y el aviso de recuperación.
+ 
+![Correo de caída](assets/monitoring/email-monitor-down.png)
+ 
+*Notificación de UptimeRobot al detectar la caída del backend.*
+ 
+![Correo de recuperación](assets/monitoring/email-monitor-up.png)
+ 
+*Notificación de UptimeRobot al recuperarse el backend.*
+ 
+**Mejora propuesta.** Las notificaciones llegan a un único destinatario. Se recomienda agregar los correos de los demás integrantes como alert contacts, o integrar un canal compartido del equipo, para que la respuesta no dependa de una sola persona.
+ 
+#### 7.4.5. Benchmark
 
-La sección 7.4 queda fuera del alcance TB1. No se presenta el logging de consola como un sistema de monitoreo, alertas o notificaciones operativas.
+##### 7.4.5.1. Selección de herramientas para el pipeline
 
----
+**Evaluación documental — 08/11/2026.** Se comparan alternativas para fundamentar la continuidad de las herramientas del pipeline existente. Esta evaluación se añade después de su implementación; no se atribuye retrospectivamente una comparación al despliegue del 05/11. Las capacidades se contrastaron en documentación oficial; el costo de adopción y la decisión son juicios del equipo para este proyecto, no resultados de un ensayo de rendimiento entre proveedores.
+
+**Criterios de selección.** C1: cubrir el stage requerido con el stack Java 25/Spring Boot, Flutter o React/Vite; C2: trazabilidad desde GitHub y configuración reproducible; C3: carga de administración y migración para cinco integrantes; C4: compatibilidad con la evidencia ya disponible; C5: límites operativos relevantes, en particular arranque en frío, secretos y monitoreo independiente. Se comparan opciones que cubren la función; se prefiere la de menor cambio operativo cuando no hay una mejora demostrada que justifique migrar. No se asignan tiempos, precios ni puntuaciones experimentales sin medición.
+
+**A. Integración, build y testing.**
+
+| Alternativa | Capacidades y límites comprobados | Evaluación para CareConnect |
+|---|---|---|
+| GitHub Actions | Workflows por eventos de PR/push, jobs y runners administrados o propios; automatiza build, test y despliegue. [Fuente oficial](https://docs.github.com/en/actions/get-started/understand-github-actions). | **Seleccionada para CI.** C1–C4: los comandos Maven, Flutter y npm ya están versionados en los repositorios y sus resultados se vinculan al commit. Conserva el control de versiones y revisión actuales sin operar un servidor de CI. |
+| GitLab CI/CD con repositorio GitHub externo | Conecta un repositorio externo mediante mirroring y puede ejecutar pipelines de PR; la funcionalidad documentada corresponde a Premium/Ultimate y tiene restricciones con forks. [Fuente oficial](https://docs.gitlab.com/ci/ci_cd_for_external_repos/). | C1–C2: alternativa funcional. C3–C4: introduce un proyecto espejo, otra integración y condiciones de plan que no están acreditadas en el entorno del equipo. No se selecciona para esta iteración. |
+| Jenkins | El controller organiza jobs y agentes; los agentes requieren Java y conectividad con el controller. [Fuente oficial](https://www.jenkins.io/doc/book/using/using-agents/). | C1–C2: permite ejecutar las herramientas del proyecto. C3: exige administrar controller/agentes, actualizaciones y disponibilidad. No se identificó una necesidad de infraestructura propia que compense esa carga en AV2. |
+
+**Decisión y gate.** Se mantiene GitHub Actions para build/test. Los comandos deben finalizar correctamente antes de integrar; disponer de un workflow no demuestra por sí solo que el despliegue esté condicionado a ese resultado. La configuración histórica y la evidencia de ejecución se detallan en §7.1–7.3.
+
+**B. Delivery y deployment del API.**
+
+| Alternativa | Capacidades y límites comprobados | Evaluación para CareConnect |
+|---|---|---|
+| Render | Permite despliegues mediante hooks invocables desde CI y servicios web. Su plan Free suspende el servicio tras quince minutos sin tráfico; no garantiza ausencia de arranque en frío. [Deploy hooks](https://render.com/docs/deploy-hooks), [límites del plan](https://render.com/docs/free). | **Se mantiene para el entorno académico.** C1–C4: API y evidencia existentes. C5: el arranque medido de 166.30 s incumple la meta de §7.4.5.2; la selección no declara resuelto ese incumplimiento. Los hooks son secretos y deben almacenarse en el servicio de CI. |
+| Railway | Documenta despliegue de Spring Boot desde un repositorio GitHub o mediante Docker. [Guía oficial](https://railway.com/guides/spring-boot). | C1–C2: alternativa compatible que merece evaluación si se decide cambiar el alojamiento. C3–C5: no se incorporó una configuración ni medición equivalente del proyecto que demuestre una mejora de latencia o costo; no se migra basándose solo en la disponibilidad de la guía. |
+
+**Decisión.** Mantener Render conserva una ruta de entrega ya acreditada, con el incumplimiento de arranque visible. Para exigir una disponibilidad sostenida debe evaluarse una instancia sin suspensión y repetir la medición; el ping periódico no sustituye esa garantía. Esta comparación no ejecuta una contratación ni una migración.
+
+**C. Delivery y deployment de la landing.**
+
+| Alternativa | Capacidades comprobadas | Evaluación para CareConnect |
+|---|---|---|
+| Vercel | Integración Git con previews por rama y despliegue de la rama de producción; permite rollback del dominio. [Fuente oficial](https://vercel.com/docs/git). | **Se mantiene para la landing React/Vite.** C1–C4: ya existe alias público y [publicación verificada](assets/deployment/av2-landing-2026-11-07/verification.md). La revisión AV2 se publicó desde `chapter-8` por CLI; no se presenta como merge a `main`. |
+| Netlify | Configura comando de build, directorio publicado, variables y configuración versionada; puede construir al recibir cambios del proveedor Git. [Fuente oficial](https://docs.netlify.com/build/configure-builds/overview/). | C1–C2: puede publicar el bundle estático. C3–C4: requeriría configurar y volver a verificar rutas, idiomas y dominio; no hay un problema acreditado del alojamiento actual que justifique esa migración. |
+
+El frontend Flutter Web conserva su alojamiento documentado en Render. Esta selección de la landing no acredita una migración ni una nueva publicación del frontend, y los builds móviles generan artefactos distribuidos mediante su flujo propio.
+
+**D. Operation: monitoreo, incidentes y alertas.**
+
+| Alternativa | Capacidades y límites comprobados | Evaluación para CareConnect |
+|---|---|---|
+| UptimeRobot | El plan Free documenta comprobación cada cinco minutos y monitores HTTP/puerto/ping, con límites de integraciones y usuarios. [Plan oficial](https://uptimerobot.com/pricing/). | **Se mantiene para monitoreo externo.** C1, C3 y C4: hay monitores, correos e incidentes documentados en §7.4.2–7.4.4 sin administrar un servidor adicional. C5: el intervalo no garantiza detección inmediata. |
+| Better Stack | Monitorea códigos HTTP, crea incidentes y notifica mediante responsable de guardia o política de escalamiento. [Fuente oficial](https://betterstack.com/docs/uptime/monitoring-start/). | C1–C2: alternativa cuando el proyecto requiera un esquema formal de guardias/escalamiento. C3–C4: ese proceso y su configuración no están acreditados en AV2; no se atribuye una mayor eficacia sin probarlo. |
+| Uptime Kuma | Solución de monitoreo autohospedada con instalación propia. [Repositorio oficial](https://github.com/louislam/uptime-kuma). | C1: alternativa controlada por el equipo. C3 y C5: añade operación y persistencia del monitor; ubicarlo en el mismo host que el API reduce la independencia frente a una caída. No se selecciona para esta etapa. |
+
+**Resultado de selección.** GitHub Actions + Render para API + Vercel para landing + UptimeRobot forman la combinación mantenida. Actuator complementa al monitor externo con el estado interno del backend; no compite con él. Se conservan las evidencias existentes y se explicitan sus límites. La comparación documental justifica el ajuste al proyecto; la sección siguiente conserva por separado las mediciones reales del software y sus metas.
+
+##### 7.4.5.2. Mediciones del software frente a metas
+ 
+El benchmark mide el rendimiento de los productos en producción y lo compara con metas definidas por el equipo. Se realizaron tres pruebas el 05/11/2026 desde Lima, Perú. El backend está alojado en Render (Oregón, Estados Unidos), por lo que las latencias del API incluyen esa distancia de red.
+ 
+**A. Prueba de carga del RESTful API.** Se utilizó **k6 v2.3.0** con el script `benchmark/k6-health.js`, versionado en el repositorio del backend: 10 usuarios virtuales concurrentes durante 30 segundos contra `/actuator/health`, con una pausa de 1 segundo entre iteraciones. La carga se limitó a propósito para no afectar una instancia gratuita.
+ 
+| Métrica | Resultado | Meta | Estado |
+|---|---|---|---|
+| Peticiones totales | 246 | — | — |
+| Throughput | 7.916051 req/s | — | — |
+| Latencia promedio | 235.04 ms | — | — |
+| Mediana | 193.38 ms | — | — |
+| p90 | 348.85 ms | — | — |
+| p95 | 541.34 ms | < 800 ms | ✅ |
+| Máximo | 696.28 ms | — | — |
+| Tasa de errores | 0.00 % | < 1 % | ✅ |
+| Checks (`200` y `UP`) | 492 de 492 | 100 % | ✅ |
+ 
+![Resultado de k6](assets/monitoring/k6-health-results.png)
+ 
+*Resumen de k6 con los thresholds de latencia y errores aprobados. La revisión final del 09/11/2026 transcribe los valores de esta captura: 246 peticiones, p95 de 541.34 ms y 492 checks aprobados.*
+ 
+**B. Arranque en frío del RESTful API.** El plan gratuito de Render suspende el servicio tras un periodo sin tráfico. Para medir su efecto, se pausó el monitor de UptimeRobot durante más de 20 minutos sin realizar peticiones. Luego se midió con `curl` la primera respuesta y las siguientes.
+ 
+| Medición | Estado del servicio | HTTP | Tiempo total |
+|---|---|---|---|
+| 1 | Suspendido (arranque en frío) | 200 | 166.30 s |
+| 2 | Activo | 200 | 0.24 s |
+| 3 | Activo | 200 | 0.24 s |
+| 4 | Activo | 200 | 0.25 s |
+| 5 | Activo | 200 | 0.56 s |
+ 
+La meta de responder en menos de 5 segundos no se cumple en frío: la primera petición tardó unas 690 veces más que una petición con el servicio activo. El valor coincide con el tiempo de arranque de Spring Boot registrado en Render (169.79 s). Mientras UptimeRobot consulta el backend cada 5 minutos, el servicio no llega a suspenderse; este efecto es secundario y no reemplaza a una instancia sin suspensión por inactividad.
+ 
+![Monitor pausado](assets/monitoring/uptimerobot-api-paused.png)
+ 
+*Monitor pausado durante la ventana sin tráfico de la prueba de arranque en frío.*
+ 
+![Resultado de arranque en frío](assets/monitoring/cold-start-results.png)
+ 
+*Tiempos de respuesta medidos con `curl`: primera petición en frío y peticiones posteriores.*
+ 
+**C. Rendimiento y calidad de los frontends.** Se ejecutó **Lighthouse** desde Chrome DevTools en una ventana de incógnito, en modo Navigation, para dispositivos Desktop y Mobile.
+ 
+| Producto | Dispositivo | Performance | Accessibility | Best Practices | SEO |
+|---|---|---|---|---|---|
+| Landing Page | Desktop | 99 | 100 | 100 | 100 |
+| Landing Page | Mobile | 73 | 100 | 100 | 100 |
+| Frontend Web | Desktop | 85 | 100 | 81 | 100 |
+| Frontend Web | Mobile | 39 | 100 | 81 | 100 |
+ 
+| Producto | Dispositivo | FCP | LCP | TBT | CLS |
+|---|---|---|---|---|---|
+| Landing Page | Desktop | 0.6 s | 0.8 s | 0 ms | 0.009 |
+| Landing Page | Mobile | 2.9 s | 4.1 s | 0 ms | 0 |
+| Frontend Web | Desktop | 0.5 s | 2.6 s | 50 ms | 0 |
+| Frontend Web | Mobile | 5.9 s | 14.5 s | 980 ms | 0 |
+ 
+![Lighthouse Landing Desktop](assets/monitoring/lighthouse-landing-desktop.png)
+ 
+*Lighthouse de la Landing Page en Desktop.*
+ 
+![Lighthouse Landing Mobile](assets/monitoring/lighthouse-landing-mobile.png)
+ 
+*Lighthouse de la Landing Page en Mobile.*
+ 
+![Lighthouse Web Desktop](assets/monitoring/lighthouse-web-desktop.png)
+ 
+*Lighthouse de la Frontend Web Application en Desktop.*
+ 
+![Lighthouse Web Mobile](assets/monitoring/lighthouse-web-mobile.png)
+ 
+*Lighthouse de la Frontend Web Application en Mobile.*
+ 
+**Resumen frente a las metas.**
+ 
+| Prueba | Meta | Resultado | Estado |
+|---|---|---|---|
+| Carga del API | p95 < 800 ms y errores < 1 % | p95 = 541.34 ms, errores = 0 % | ✅ |
+| Arranque en frío del API | < 5 s | 166.30 s | ❌ |
+| Landing Page | Performance ≥ 90 en Desktop y ≥ 50 en Mobile | 99 y 73 | ✅ |
+| Frontend Web | Performance ≥ 90 en Desktop y ≥ 50 en Mobile | 85 y 39 | ❌ |
+| Accesibilidad de los frontends | ≥ 90 | 100 en los cuatro casos | ✅ |
+| LCP | ≤ 2.5 s | Solo la Landing en Desktop lo cumple | ❌ |
+ 
+**Interpretación y recomendaciones.**
+ 
+- Con el servicio activo, el RESTful API responde con holgura frente a su meta y sin errores bajo carga concurrente.
+- El principal riesgo para la experiencia del usuario es el arranque en frío del plan gratuito de Render. Para producción real se recomienda una instancia sin suspensión por inactividad; mientras tanto, el monitoreo cada 5 minutos atenúa el problema.
+- La Landing Page cumple sus metas y obtiene la puntuación máxima en Accessibility y SEO, en línea con los requisitos de accesibilidad del proyecto.
+- La Frontend Web en Mobile obtiene la puntuación más baja: Flutter Web descarga su motor de renderizado antes de mostrar contenido, lo que eleva el LCP a 14.5 s y el TBT a 980 ms. Se recomienda evaluar la carga diferida de módulos, la optimización de recursos y el uso de caché, y repetir la medición después de cada cambio.
+- La puntuación de 81 en Best Practices de la Frontend Web debe revisarse con el detalle del reporte de Lighthouse para corregir los ítems observados.
+
 
 
 # Part III: Experiment-Driven Lifecycle
@@ -4331,43 +5910,505 @@ La sección 7.4 queda fuera del alcance TB1. No se presenta el logging de consol
 
 ### 8.1. Experiment Planning
 
+La planificación parte de una incertidumbre de negocio: ¿el registro compartido de actividades ayuda a coordinar el cuidado sin añadir trabajo a los cuidadores? Las entrevistas de needfinding, las hipótesis Lean UX y la plataforma As-Is permiten convertir esa incertidumbre en preguntas medibles, priorizarlas y preparar dos experimentos para las aplicaciones web y móvil de CareConnect.
+
+**Alcance y estado documental al 07/11/2026.** Este bloque define el diseño y consolida los aportes de planificación, escala, tracking y backlogs. No incorpora resultados de experimentación con usuarios ni una línea base medida de confirmaciones, latencias o abandono de notificaciones. Los umbrales son metas fijadas antes de la ejecución y §8.2.4 calcula la escala bajo supuestos explícitos. La evidencia de pruebas funcionales de TB1 no equivale a resultados experimentales.
+
+Para AV2 se sigue la numeración de la actividad de Semana 12: §8.2.1 Hypotheses, §8.2.2 Measures y §8.2.3 Conditions. El catálogo **Domain Business Metrics** requerido por el enunciado general se incorpora en §8.2.2.1. Los cálculos de escala, la selección de métodos, el tracking plan y los backlogs To-Be se desarrollan en los apartados siguientes.
+
+La [revisión inicial del bloque D](assets/experiments/av2-d-2026-10-24/verification.md) registra sus fuentes. La [consolidación del 07/11/2026](assets/experiments/av2-consolidation-2026-11-07/verification.md) documenta la compatibilidad con los aportes nuevos del equipo, los cálculos y los límites de ejecución.
+
 #### 8.1.1. As-Is Summary
+
+##### Plataforma y evidencia de referencia
+
+El As-Is se describe a partir de las versiones de código y la evidencia de TB1 disponibles, distinguiendo el comportamiento implementado de su publicación en producción.
+
+| Componente | Estado comprobable | Fuente |
+|---|---|---|
+| RESTful API | Java 25 y Spring Boot 4. Contextos IAM, Agenda, Notificaciones, Diario, Documentos y Gestión de Consentimiento. Configuración H2 por defecto y soporte configurable de PostgreSQL. | [Arquitectura implementada](#48-domain-driven-software-architecture), [configuración y publicación TB1](assets/deployment/tb1-2026-10-04/verification.md) |
+| Web del cuidador | Flutter compilado para navegador; incluye agenda, confirmación de eventos y acceso condicionado por consentimiento. | [Prototipo web](#47-web-applications-prototyping), [pruebas de Agenda](assets/testing/agenda-auth-2026-10-04/verification.md) |
+| Móvil del cuidador | Flutter. La evidencia TB1 acredita pruebas y compilación de APK debug; no acredita distribución en tiendas ni ejecución nativa completa del experimento. | [Evidencia de entrega TB1](assets/deployment/tb1-2026-10-04/verification.md) |
+| Landing Page | React, TypeScript y Vite; versión bilingüe publicada en Vercel. No es la superficie de intervención de EXP-01 ni EXP-02. | [Evidencia de landing y publicación](assets/deployment/tb1-2026-10-04/verification.md) |
+
+La evidencia de TB1 distingue la API de revisión `734f869`, los clientes web `42d50ac` y móvil `2409893`, y la versión histórica publicada en Render `51decbd`. Estas referencias describen la base documental; antes de ejecutar se registrarán los commits efectivamente desplegados y su compatibilidad. La existencia de Swagger público no acredita la configuración PostgreSQL ni el recorrido completo entre dispositivos.
+
+##### Flujo actual y límites observados
+
+El cuidador autorizado selecciona un paciente, consulta su agenda y confirma un evento pendiente desde su tarjeta. La app móvil ya ofrece **«Confirmar evento»** y la web **«Confirmar»**. La acción utiliza `PATCH /api/agenda/{id}/confirm`, cambia el estado a `CONFIRMED` y vuelve a consultar el dashboard del cliente que realizó la acción. El estado confirmado es un registro del software; por sí solo no demuestra que una medicación fue administrada.
+
+En las fuentes revisadas no se identificó un canal WebSocket de propagación a otras sesiones ni una opción de deshacer esa confirmación durante diez segundos. Agenda calcula metadatos de recordatorio y Notificaciones permite programar y consultar avisos; esto no acredita entrega push efectiva, alarmas locales al minuto cero ni escalamiento automático a los minutos +15 y +30.
+
+El DTO de Agenda contiene `startAt`, `status`, `createdAt` y `updatedAt`, pero no un historial inmutable de confirmaciones. `updatedAt` cambia con varias operaciones y no debe tratarse como la hora de una confirmación original. La auditoría experimental descrita en §8.2.2.3 deberá implementarse para ambos grupos antes de recolectar evidencia.
+
+##### Problemas y oportunidades de investigación
+
+1. **Coordinación entre cuidadores.** El análisis de §2.2.3 recoge dificultades de coordinación y pérdida de información en tres entrevistas a cuidadores. Sus solicitudes de registro compartido motivan investigar si la actualización visible en otros dispositivos mejora el registro oportuno. Esta muestra cualitativa no permite estimar la frecuencia del problema en toda la población.
+2. **Seguimiento de actividades sin confirmar.** Se desconoce si avisos adicionales facilitan resolver registros pendientes o producen saturación. La falta de confirmación puede deberse a conectividad, demora de registro u otros motivos; no se interpretará automáticamente como una dosis omitida.
+3. **Relevo de turno.** Las entrevistas mencionan información dispersa en cuadernos y WhatsApp. No se ha cronometrado el relevo ni cuantificado una reducción atribuible a un resumen digital.
+
+La evidencia cualitativa se encuentra en el [análisis de entrevistas](#223-análisis-de-entrevistas); el estado técnico y sus límites, en la [verificación de Agenda](assets/testing/agenda-auth-2026-10-04/verification.md). Estas fuentes aportan antecedentes para formular preguntas. La línea base cuantitativa requiere una medición instrumentada propia.
 
 #### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 
+La materia prima procede del proceso Lean UX del Capítulo I, de las entrevistas del Capítulo II y del código y las pruebas del Capítulo VI. Cada elemento se identifica para poder rastrear su transformación en una pregunta. Las ideas y afirmaciones siguientes son propuestas del equipo por contrastar; no se presentan como citas de los entrevistados ni como funcionalidades implementadas.
+
+| Tipo | ID | Elemento por investigar | Procedencia y estado de evidencia |
+|---|---|---|---|
+| Assumption | AS-01 | Una confirmación breve, reversible y visible para los demás cuidadores favorecerá el registro oportuno. | Feature Assumptions de Lean UX y solicitud cualitativa de registro compartido. Efecto sin medir. |
+| Assumption | AS-02 | Ver el estado actualizado reducirá la necesidad de consultar por otros canales. | Problemas de coordinación descritos en §2.2.3. Frecuencia de consultas sin medir. |
+| Assumption | AS-03 | Un resumen de entrega de turno reducirá el tiempo de búsqueda de información. | Necesidad de notas y relevo identificada en entrevistas. Tiempo de relevo sin medir. |
+| Assumption | AS-04 | Los avisos sobre registros pendientes aportarán más valor que añadir reportes estáticos. | Priorización propuesta por el equipo; requiere evidencia de uso. |
+| Knowledge Gap | KG-01 | ¿Qué proporción de eventos se confirma oportunamente con el flujo actual? | No existe línea base experimental instrumentada. |
+| Knowledge Gap | KG-02 | ¿Los avisos adicionales reducen la demora de registro sin aumentar el silenciamiento? | No se ha ejecutado un protocolo de escalamiento. |
+| Knowledge Gap | KG-03 | ¿Cuánto tiempo se dedica a reconstruir la información durante el relevo? | Las entrevistas identifican la dificultad, pero no la cronometran. |
+| Knowledge Gap | KG-04 | ¿Cómo varían las correcciones de registro según edad y experiencia digital? | La muestra actual de cuidadores tiene 25, 26 y 28 años; no permite describir a los de mayor edad. |
+| Idea | ID-01 | Extender el botón existente con pulsación sostenida de un segundo, deshacer durante diez segundos y sincronización entre sesiones autorizadas. | Propuesta To-Be para probar AS-01. |
+| Idea | ID-02 | Incorporar propagación de estados con WebSockets compatibles con Spring Boot y clientes Flutter. | Propuesta To-Be ajustada al stack implementado. |
+| Idea | ID-03 | Comparar un aviso simple con avisos a los minutos 0, +15 y +30. | Propuesta To-Be para escenarios de prueba, con los mismos horarios en ambos grupos. |
+| Idea | ID-04 | Mostrar un resumen de relevo y explorar un indicador de continuidad del registro. | Dos propuestas de presentación que requieren investigación posterior. |
+| Claim | CL-01 | Más avisos siempre producen una respuesta más rápida. | Afirmación del equipo sometida a crítica; podría existir fatiga de avisos. |
+| Claim | CL-02 | Añadir confirmaciones adicionales evita los errores sin aumentar la fricción. | Afirmación del equipo sometida a crítica; requiere medir correcciones y esfuerzo. |
+| Claim | CL-03 | Una herramienta digital sustituirá inmediatamente cuadernos y WhatsApp. | Afirmación del equipo sometida a crítica; los hábitos y la conectividad pueden impedirlo. |
+
 #### 8.1.3. Experiment-Ready Questions
+
+Se distinguen las preguntas **impulsadas por creencias**, que comparan una expectativa con su hipótesis nula, y las **exploratorias**, que buscan describir una situación sin anticipar una respuesta. La técnica 5W+1H ayuda a delimitar quién participa, qué se observa, dónde y cuándo ocurre y por qué importa.
+
+| ID / tipo | Pregunta lista para investigar | Origen | Delimitación 5W+1H y motivación |
+|---|---|---|---|
+| **ERQ-01 / Belief-led** | ¿Qué efecto tiene añadir confirmación reversible y sincronización entre sesiones al botón existente sobre la TCOM, frente al flujo actual instrumentado? | AS-01, AS-02, KG-01, ID-01, ID-02, CL-02 | **Who:** cuidadores vinculados a un paciente de prueba; **What:** TCOM; **Where:** web y móvil; **When:** ventana de registro de cada evento; **How:** grupos A/B separados por círculo; **Why:** investigar coordinación y registro oportuno. |
+| **ERQ-02 / Belief-led** | ¿Qué efecto tiene un protocolo de avisos a los minutos 0, +15 y +30 sobre la LRMR y el silenciamiento, frente a un aviso único al minuto 0? | AS-04, KG-02, ID-03, CL-01 | **Who:** cuidadores y co-cuidadores autorizados; **What:** demora y opt-out; **Where:** web y móvil; **When:** eventos de prueba con seguimiento hasta +90 min; **How:** igual interfaz con distinto protocolo; **Why:** equilibrar seguimiento y carga de avisos. |
+| **ERQ-03 / Exploratoria** | ¿Cuánto tiempo dedican los cuidadores a localizar y comunicar la información necesaria para un relevo usando sus herramientas habituales? | AS-03, KG-03, ID-04, CL-03 | **Who:** cuidadores saliente y entrante; **What:** tiempo y pasos de búsqueda; **Where:** escenario de relevo; **When:** tarea estandarizada; **How:** observación y cronometraje; **Why:** obtener una línea base antes de diseñar un resumen. |
+| **ERQ-04 / Exploratoria** | ¿Cómo varía la tasa de correcciones de confirmación entre cuidadores de 25–40 y 41–60 años, considerando su experiencia digital? | KG-04, ID-01, CL-02 | **Who:** ambos grupos etarios, si se reclutan; **What:** correcciones; **Where:** misma tarea web/móvil; **When:** diez segundos posteriores al registro; **How:** descripción por grupo; **Why:** detectar barreras de interacción sin atribuir causalidad a la edad. |
+| **ERQ-05 / Belief-led** | ¿Un indicador de continuidad del registro aumenta la retención de uso a siete días frente a una vista sin ese indicador? | AS-04, ID-04 | **Who:** cuidadores activos; **What:** retención de uso; **Where:** panel web/móvil; **When:** cohorte de siete días; **How:** comparación futura de variantes; **Why:** investigar hábito de registro. No se interpretará como adherencia clínica. |
 
 #### 8.1.4. Question Backlog
 
+El **backlog amplio (broad)** contiene ERQ-01 a ERQ-05 y abarca coordinación, avisos, relevo, accesibilidad y continuidad de uso. El **backlog profundo (deep)** desarrolla ERQ-01 y ERQ-02 en tarjetas, hipótesis, medidas y condiciones. Las preguntas restantes permanecen como investigación posterior y no amplían el alcance de las dos tarjetas seleccionadas.
+
+Cada pregunta recibe una valoración del equipo de 1 a 5: **Confianza (C)** en la evidencia disponible, **Riesgo (R)** de tomar una decisión equivocada, **Impacto (I)** esperado en el objetivo de negocio e **Interés (In)** para el producto. Son juicios de priorización; no son resultados estadísticos ni respuestas de una encuesta.
+
+$$\text{Score} = \frac{R \times I \times In}{C}$$
+
+La fórmula da más prioridad a incertidumbres de alto riesgo e impacto cuando existe poca evidencia. En un empate se prioriza el mayor riesgo; si persiste, el mayor impacto y luego el menor ID para mantener una decisión reproducible.
+
+| ID | Por qué investigar | C | R | I | In | Score | Prioridad / profundidad |
+|---|---|:---:|:---:|:---:|:---:|---:|---|
+| **ERQ-01** | La coordinación depende de que los registros sean oportunos y compartidos. | 2 | 5 | 5 | 5 | 62.5 | 1 / deep, EXP-01 |
+| **ERQ-02** | Un aviso útil puede facilitar seguimiento; uno insistente puede provocar silenciamiento. | 2 | 5 | 4 | 5 | 50.0 | 2 / deep, EXP-02 |
+| **ERQ-03** | Hace falta medir el relevo antes de invertir en un resumen. | 2 | 4 | 4 | 4 | 32.0 | 3 / broad |
+| **ERQ-04** | Deben describirse barreras de interacción en edades que no cubre la muestra inicial. | 2 | 4 | 3 | 3 | 18.0 | 4 / broad |
+| **ERQ-05** | El valor del indicador de continuidad depende primero de que el registro básico funcione. | 2 | 2 | 3 | 4 | 12.0 | 5 / broad |
+
+La confianza se mantiene baja porque no hay medición experimental. ERQ-01 y ERQ-02 tienen respaldo cualitativo sobre la necesidad de coordinación y avisos, pero ese respaldo no permite anticipar el tamaño del efecto. ERQ-03 y ERQ-04 requieren datos adicionales; ERQ-05 es una propuesta del equipo. Al obtener nueva evidencia se revisarán las puntuaciones en el análisis posterior, conservando esta versión inicial para comparación.
+
 #### 8.1.5. Experiment Cards
+
+Las dos tarjetas comparten el catálogo de métricas de §8.2.2.1 y la escala calculada en §8.2.4. Sus metas son decisiones de diseño; la muestra calculada es un objetivo de reclutamiento, no una muestra ya conseguida. Si la ejecución alcanza solo una escala de piloto, se limita la conclusión a factibilidad y calidad de datos.
+
+##### Experiment Card EXP-01: Confirmación reversible y sincronización
+
+**Anverso — Front**
+
+| Campo | Definición |
+|---|---|
+| Pregunta | ERQ-01: efecto de extender el botón existente con reversión y sincronización sobre la TCOM. |
+| Por qué | Las entrevistas describen incertidumbre entre cuidadores. Se necesita comprobar si el paquete propuesto mejora el registro oportuno y la consulta compartida. |
+| Hipótesis de trabajo | La variante B aumentará la TCOM al menos **15 puntos porcentuales** frente a A y alcanzará **TCOM ≥80 %**, manteniendo **UR ≤4 %** y **TNR ≤3 %**. Todos son umbrales iniciales de diseño. |
+| Simplest Useful Thing | Extender la tarjeta de Agenda con pulsación de un segundo, reversión durante diez segundos y actualización de otras sesiones autorizadas. Utilizar la API Spring Boot y clientes Flutter, con auditoría común a A y B. |
+| Alcance de la conclusión | Se evalúa el paquete completo. Este diseño no permite atribuir un efecto por separado a pulsación, reversión o sincronización. |
+
+**Reverso — Back**
+
+| Campo | Configuración propuesta |
+|---|---|
+| Medidas | Primaria: **TCOM**. Secundaria: **TSC**, para comprobar que el estado llega a otra sesión. Salvaguardas: **UR** y **TNR**. Definiciones, fórmulas y metas en §8.2.2.1. |
+| Control A | Botón actual de confirmación mediante REST y recarga del dashboard del emisor; otras sesiones consultan o actualizan su vista. Se añade únicamente la auditoría común. |
+| Variante B | Mismo contenido y agenda; añade pulsación sostenida, reversión y propagación de estados a otras sesiones con consentimiento vigente. |
+| Escala preliminar | Unidad: círculo de cuidado/paciente de prueba. Asignación 1:1; ventana de **14 días** por grupo. Objetivo calculado en §8.2.4: **138 círculos evaluables por grupo; reclutar 163 por grupo** con reserva de pérdida del 15 %. Exposición web/móvil registrada. Una ejecución con menor muestra se presenta como piloto y no acredita potencia confirmatoria. |
+| Regla de decisión | Proponer adopción solo si la diferencia B−A es positiva con **p<0.05**, alcanza ≥15 puntos porcentuales, TCOM de B ≥80 %, TSC de B ≥95 %, UR de B ≤4 % y TNR de B ≤3 %. La prueba debe respetar la asignación por círculo. |
+| Descarte / resultado inconcluso | Un efecto nulo o adverso y las correcciones observadas motivarán rediseño. Si falta muestra, seguimiento o calidad de auditoría, el resultado será **inconcluso**. Un resultado no significativo no demuestra igualdad ni confirma H0. |
+
+##### Experiment Card EXP-02: Avisos escalonados sobre registros pendientes
+
+**Anverso — Front**
+
+| Campo | Definición |
+|---|---|
+| Pregunta | ERQ-02: efecto de avisos 0/+15/+30 sobre LRMR y silenciamiento frente a un aviso único al minuto 0. |
+| Por qué | Se desconoce si insistir y avisar a otro cuidador ayuda a resolver registros pendientes sin saturar a los usuarios. Un registro pendiente no demuestra una omisión clínica. |
+| Hipótesis de trabajo | La variante B reducirá la **LRMR al menos 40 %** frente a A, con **TNR ≤3 %** y **NOR ≤5 %**. Son metas iniciales por contrastar. |
+| Simplest Useful Thing | En un entorno de prueba, incorporar un aviso común al minuto 0 y habilitar solo en B un recordatorio al +15 y un aviso a co-cuidadores autorizados al +30 si el evento sigue sin resolverse. El emisor de avisos y su entrega efectiva son prerrequisitos por implementar y verificar. |
+| Límite de interpretación | Se mide la resolución de registros del software. No se demostrará una mejora de adherencia médica ni una reducción de daños clínicos mediante estas métricas. |
+
+**Reverso — Back**
+
+| Campo | Configuración propuesta |
+|---|---|
+| Medidas | Primaria: **LRMR**. Secundaria: **TNR**. Salvaguarda: **NOR**. Catálogo y tratamiento de eventos sin resolución en §8.2.2.1. |
+| Control A | Mismo cliente y contenido de Agenda; aviso instrumentado único en t0. Este control es una configuración experimental propuesta, no una afirmación de entrega push ya implementada en el As-Is. |
+| Variante B | Mismo aviso inicial; si sigue pendiente, aviso al cuidador a t0+15 min y a co-cuidadores con autorización vigente a t0+30 min. No incluye el paquete de EXP-01. |
+| Escala preliminar | Círculos y cuidadores distintos de EXP-01; asignación 1:1, ventana de **14 días** y seguimiento hasta t0+90 min. Objetivo condicional de §8.2.4: **112 círculos evaluables por grupo; reclutar 132 por grupo**, bajo el escenario supuesto de LRMR 25→15 min y reserva de pérdida del 15 %. Una muestra menor se informa como piloto. |
+| Regla de decisión | Proponer adopción si la LRMR de B es menor con **p<0.05**, la reducción relativa es ≥40 %, TNR de B ≤3 % y NOR de B ≤5 %. Si LRMR de A es cero, la reducción relativa no está definida y no se declara cumplida la meta. |
+| Descarte / resultado inconcluso | Si NOR supera 5 %, la propuesta no cumple su salvaguarda y requiere rediseño, aunque la latencia mejore. Si faltan eventos, entrega verificada o seguimiento, el resultado será inconcluso. No se extenderán umbrales clínicos a partir de esta prueba. |
 
 ### 8.2. Experiment Design
 
+El diseño vincula cada pregunta prioritaria con hipótesis contrastables, un catálogo común de métricas y condiciones comparables. La línea base será la medición del grupo A instrumentado; no se asigna un porcentaje histórico sin datos. La implementación, el piloto y la ejecución se documentarán como actividades posteriores, con sus versiones y resultados propios.
+
 #### 8.2.1. Hypotheses
 
-#### 8.2.2. Domain Business Metrics
+Las hipótesis estadísticas contrastan la dirección del efecto. Los mínimos de valor práctico se evalúan por separado para evitar confundir ausencia de efecto, significancia y magnitud útil. Se propone **α=0.05 por experimento**, unilateral y fijado antes de analizar. Cada experimento sustenta su propia decisión; no se combinarán sus valores p para declarar un éxito conjunto.
 
-#### 8.2.3. Measures
+##### EXP-01: Registro oportuno y coordinación
 
-#### 8.2.4. Conditions
+Sea $p_A$ la media de las proporciones de confirmación oportuna de los círculos asignados a A y $p_B$ la media correspondiente a B. El promedio da el mismo peso a cada círculo elegible.
 
-#### 8.2.5. Scale Calculations and Decisions
+$$H_{0,1}: p_B - p_A \le 0 \qquad H_{1,1}: p_B - p_A > 0$$
 
-#### 8.2.6. Methods Selection
+**Expectativa de negocio:** $100(p_B-p_A) \ge 15$ puntos porcentuales y $p_B \ge 0.80$, junto con las metas TSC, UR y TNR de la tarjeta. Por ejemplo, pasar de 60 % a 75 % representa 15 puntos porcentuales, no un aumento relativo de 15 %. Este ejemplo es ilustrativo y no representa una línea base observada.
 
-#### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
+La hipótesis de trabajo queda cuestionada si el efecto estimado no alcanza el mínimo práctico o incumple una salvaguarda. Para recomendar adopción se requieren conjuntamente evidencia estadística, magnitud útil y condiciones de calidad. No se afirmará que una hipótesis ha sido demostrada como verdadera.
 
-#### 8.2.8. Web and Mobile Tracking Plan
+##### EXP-02: Demora de resolución de registros
+
+Sean $\mu_A$ y $\mu_B$ las medias por círculo de la LRMR definida en §8.2.2.1, bajo control y variante respectivamente.
+
+$$H_{0,2}: \mu_B - \mu_A \ge 0 \qquad H_{1,2}: \mu_B - \mu_A < 0$$
+
+**Expectativa de negocio:** para $\mu_A>0$, $(\mu_A-\mu_B)/\mu_A \ge 0.40$, manteniendo TNR ≤3 % y NOR ≤5 %. Una reducción estadísticamente detectable inferior a 40 % no alcanza la meta práctica propuesta.
+
+**Unidad de análisis.** Los registros de un mismo círculo no son muestras independientes. La estimación, los intervalos y el contraste respetan la aleatorización por círculo. §8.2.4 especifica los objetivos de muestra bajo supuestos y §8.2.5 fija Welch sobre los agregados por círculo. El piloto permite comprobar factibilidad y variabilidad; no se cambia de prueba después de observar qué opción arroja significancia. Se reportarán estimaciones e intervalos de confianza del 95 % y el contraste unilateral predefinido.
+
+#### 8.2.2. Measures
+
+##### 8.2.2.1. Domain Business Metrics
+
+Este catálogo reúne **todas** las métricas de las tarjetas. Las metas son propuestas de diseño, no referencias clínicas ni resultados obtenidos. TCOM y LRMR describen registros del sistema; no verifican ingesta, dosis, eficacia del tratamiento ni seguridad de un intervalo médico.
+
+**Convenciones de medición.** Cada evento elegible es de tipo `MEDICATION`, pertenece a un círculo de prueba y tiene un horario t0 fijado antes de la asignación. La ventana operativa de confirmación es [t0−30 min, t0+30 min] y el seguimiento cierra en t0+90 min. Estos tiempos delimitan escenarios de software con datos sintéticos; no son recomendaciones para administrar medicación.
+
+Se considera confirmación válida un registro aceptado por el servidor y no revertido dentro de los diez segundos siguientes. Se conserva el historial de reversiones; se usa la primera confirmación que permanezca válida. La resolución incluye esa confirmación o un cierre explícito con motivo. Registrar un motivo resuelve el seguimiento, pero no cuenta como confirmación para TCOM. El cierre con motivo es una capacidad To-Be por implementar.
+
+Para cada círculo $c$, $N_c$ es el total de eventos elegibles preasignados con seguimiento completo. Los eventos sin confirmar permanecen en el denominador. Los mismos eventos y reglas se aplican a ambos grupos; no se eliminan registros por no haber respondido a un aviso.
+
+| Código / objetivo | Fórmula por círculo y unidad | Técnica de recolección propuesta | Meta inicial / uso |
+|---|---|---|---|
+| **TCOM — Tasa de Confirmación Oportuna de Medicación.** Evaluar registro oportuno. | $100\times O_c/N_c$, donde $O_c$ cuenta eventos con confirmación válida en [t0−30, t0+30]. **%**. | Horario congelado y evento de confirmación del servidor. Cuenta cada evento una sola vez; un cierre con motivo no entra en $O_c$. | EXP-01: B ≥80 % y diferencia B−A ≥15 puntos porcentuales. |
+| **LRMR — Latencia de Resolución de Medicación Retrasada.** Medir demora adicional de seguimiento. | $\frac{1}{N_c}\sum_i L_i$, donde $L_i=\min(\max(t_{res,i}-(t0_i+30),0),60)$ en **minutos**. Si no se resuelve hasta +90, $L_i=60$. | Auditoría de confirmación/cierre con motivo y corte común en t0+90. Incluye todos los eventos elegibles: una resolución hasta +30 aporta cero. | EXP-02: reducción de la media B frente a A ≥40 %. No tiene una meta absoluta contradictoria con la ventana. |
+| **TNR — Tasa de No Resolución.** Evitar mejoras aparentes de latencia. | $100\times U_c/N_c$, con $U_c$ = eventos aún sin resolver en t0+90. **%**. | Cruce de agenda preasignada con historial de resolución al cierre. | ≤3 % en B; salvaguarda EXP-01 y secundaria EXP-02. |
+| **UR — Undo Rate.** Observar fricción de corrección. | $100\times C_c/Q_c$, con $C_c$ = acciones de confirmación revertidas en ≤10 s y $Q_c$ = acciones de confirmación aceptadas. **%**. | Eventos de confirmación y reversión vinculados por ID de acción. La falta de reversión en A se declara como limitación de comparabilidad. | B ≤4 % en EXP-01. Una reversión no demuestra por sí sola un error de medicación. |
+| **TSC — Tasa de Sincronización Compartida.** Comprobar visibilidad entre sesiones. | $100\times V_c/S_c$, con $S_c$ = confirmaciones válidas con otra sesión autorizada activa y $V_c$ = aquellas cuyo estado coincide allí en ≤5 s. **%**. | Verificador de prueba que consulta una sesión distinta y mide el plazo con un reloj monotónico común. Una sesión no autorizada nunca es receptora elegible. | B ≥95 % en EXP-01. Informar también $S_c$; si es cero no se calcula TSC. |
+| **NOR — Notification Opt-out Rate.** Detectar saturación de avisos. | $100\times D_c/E_c$, con $E_c$ = usuarios del círculo con al menos un aviso entregado y $D_c$ = quienes luego desactivan o silencian los avisos durante la ventana. **%**. | Entrega acreditada y cambio de preferencia de aplicación/sistema, cuando sea observable. Registrar indisponibilidad de permisos como dato faltante. | B ≤5 % en EXP-02. No se deduce fatiga de una ausencia de clics. |
+
+Los tiempos de las fórmulas se expresan en minutos. Por ejemplo, para LRMR una resolución en t0+20 aporta 0; en t0+45 aporta 15; y la ausencia de resolución en t0+90 aporta 60. Asignar cero a los eventos resueltos antes del umbral permite comparar todos los eventos preasignados y evita seleccionar solo retrasos que la propia variante pudo haber evitado.
+
+La métrica de grupo será la media de los valores por círculo, con igual peso y su número de círculos informado. Si un denominador es cero, la métrica se reporta **no calculable**, nunca como 0 %. Los registros con pérdida de telemetría se distinguen de los casos realmente pendientes; se reportarán faltantes por grupo y la conclusión quedará inconclusa si no se puede reconstruir el seguimiento común. La lista de eventos se cierra con margen suficiente para observar hasta +90 min y verificar la ventana de reversión.
+
+##### 8.2.2.2. Variables y selección de medidas
+
+| Experimento | Variable independiente | Variable primaria | Evidencia secundaria | Salvaguarda / interpretación |
+|---|---|---|---|---|
+| EXP-01 | Paquete de confirmación reversible y sincronización habilitado o deshabilitado. | TCOM por círculo. Cada evento aporta un indicador binario; el agregado es una proporción. | TSC: comprueba propagación a otra sesión. | UR y TNR. UR mide correcciones, sin inferir incidentes clínicos. |
+| EXP-02 | Aviso único o protocolo 0/+15/+30 con entrega instrumentada. | LRMR por círculo, variable temporal acotada entre 0 y 60 min. | TNR: muestra eventos sin resolver al cierre. | NOR: detecta desactivación/silenciamiento observado. |
+
+Se eligieron estas medidas porque responden al registro, la coordinación y la carga de avisos que motivan las preguntas. No se incluyen descargas, visitas a la landing ni cantidad total de avisos como evidencia de éxito. Las consultas por WhatsApp, la ansiedad y el tiempo de relevo requieren instrumentos propios y no se añaden como criterios ad-hoc a EXP-01 o EXP-02.
+
+##### 8.2.2.3. Instrumentos, trazabilidad y calidad de datos
+
+La instrumentación siguiente queda **especificada para la fase de ejecución** y se detalla en el tracking plan de §8.2.7. Este documento no acredita su despliegue. Se aplicará por igual a A y B y se comprobará en un piloto antes de la cohorte confirmatoria:
+
+1. **Registro del servidor.** Guardar ID seudónimo de círculo/participante, experimento, variante, `eventId`, tipo, t0 original, ID de acción y fecha UTC de confirmación, reversión o cierre con motivo. Separar estas marcas del `updatedAt` mutable de Agenda. Mantener una única fuente de horario y registrar su zona de presentación.
+2. **Visibilidad y entrega.** En EXP-01, verificar el estado desde otra sesión autorizada y registrar los elegibles para TSC. En EXP-02, distinguir aviso programado, enviado, entregado e interacción; crear una fila en Notificaciones no demuestra entrega al dispositivo.
+3. **Controles de integridad.** Deduplicar reintentos por ID de acción; conservar el historial de reversiones; comprobar permisos en cada acción y en cada difusión; registrar pérdidas de conexión y telemetría por grupo. No convertir una revocación de consentimiento en una dosis omitida ni continuar recolectando tras el retiro del participante.
+4. **Piloto y reproducibilidad.** Verificar confirmación válida, reversión, cierre con motivo, fallo de entrega y ausencia de resolución. Guardar commits de API/clientes, configuración no secreta, lista seudónima de asignación y exportación mínima de eventos. Comprobar que TCOM, LRMR y TNR concuerdan entre un cálculo manual y la agregación del servidor.
+
+Se recogerán únicamente los datos necesarios durante la ventana predefinida. No se enviarán nombres, diagnósticos ni detalles de medicación a un colector analítico. Los escenarios iniciales usarán pacientes y actividades sintéticas; no se presentarán sus resultados como validación clínica o de uso domiciliario.
+
+#### 8.2.3. Conditions
+
+##### Condiciones específicas de cada experimento
+
+| Experimento | Control A | Variante B | Factores que deben permanecer iguales |
+|---|---|---|---|
+| EXP-01 | Botón actual, confirmación REST y recarga del dashboard del emisor. La otra sesión consulta o refresca su vista. | Añade pulsación de 1 s, reversión durante 10 s y difusión a sesiones autorizadas. | Versión base, datos, horarios, contenido de la tarjeta, tareas, auditoría y soporte. No añadir avisos escalonados en B. |
+| EXP-02 | Aviso instrumentado al minuto 0 y ausencia de avisos adicionales. | Mismo aviso al 0; si sigue pendiente, recordatorio al +15 y aviso a co-cuidadores autorizados al +30. | Interfaz de confirmación, agenda y canal de entrega; auditoría y seguimiento hasta +90. No habilitar el paquete de EXP-01. |
+
+##### Ejemplo ilustrativo por experimento
+
+Para EXP-01, imaginemos un evento sintético de medicación programado a las 8:00 a. m. En el Control A, el cuidador confirma el evento desde su tarjeta y el estado se guarda en el servidor; otro cuidador autorizado del mismo círculo consulta o refresca su propia vista para observar el cambio. En la Variante B, el mismo cuidador mantiene presionado el botón durante un segundo, puede deshacer la acción durante los diez segundos siguientes y el estado se propaga a la otra sesión autorizada. Su visibilidad dentro de cinco segundos se comprueba con el verificador de TSC; el mero envío no la demuestra.
+
+Para EXP-02, imaginemos un evento sintético programado a las 9:00 a. m. En el Control A se envía un único aviso al cuidador a esa hora y no se añaden escalones posteriores. En la Variante B se envía el mismo aviso inicial; si a las 9:15 el evento sigue sin resolver, se envía un recordatorio adicional, y si a las 9:30 continúa sin resolver, se avisa a los co-cuidadores autorizados. Una confirmación o un cierre con motivo resuelve el registro y evita los avisos posteriores. El seguimiento de ambos grupos termina a las 10:30, noventa minutos después del horario original.
+
+##### Asignación, comparabilidad y no contaminación
+
+La unidad de asignación será el **círculo de cuidado de un paciente de prueba**. Todos sus cuidadores y sesiones web/móvil compartirán variante. Se propone una asignación aleatoria 1:1, equilibrando experiencia digital y uso de web/móvil cuando el reclutamiento lo permita. El dispositivo utilizado se registrará como contexto de exposición, no como una muestra independiente.
+
+Los círculos de EXP-01 y EXP-02 serán disjuntos. Un cuidador que participe en varios círculos no podrá recibir variantes distintas ni participar a la vez en ambos experimentos; se le asignará un único círculo experimental. No se cambiará de variante durante la ventana ni se introducirán cambios funcionales entre grupos sin documentar y reiniciar el diseño afectado.
+
+Se utilizarán eventos `MEDICATION` sintéticos preasignados con seguimiento completo. La conectividad y los fallos de entrega se registrarán, conservando la asignación original al analizar. Un círculo sin exposición o sin denominador evaluable se informará con su causa; no se reemplazará silenciosamente para favorecer un resultado. El horario, los criterios de elegibilidad y las reglas de retiro se fijarán antes de asignar participantes.
+
+##### Entorno y condiciones para iniciar
+
+La ejecución inicial propuesta es una prueba de software con usuarios que realizan tareas sobre datos sintéticos, consentimiento de participación y posibilidad de retirarse. Los intervalos 0/+15/+30/+90 pertenecen al escenario de prueba y no modifican horarios de medicación reales. No se retendrán avisos asistenciales reales para crear un control ni se atribuirá seguridad clínica a estos umbrales.
+
+La ejecución requiere versiones compatibles de API y clientes web/móvil, permisos y revocación verificados, auditoría común funcionando y entrega observable de avisos para EXP-02. La escala, duración, método y reglas de factibilidad están especificados en las secciones 8.2.4 y 8.2.5; el tracking y las historias identifican cómo implementar y comprobar sus capacidades. Estos son requisitos de entrada a la ejecución, sin afirmar que ya se hayan desplegado. La decisión se vinculará a los datos recolectados y a las reglas fijadas en las tarjetas.
+
+#### 8.2.4. Scale Calculations and Decisions
+
+La escala se calcula para las métricas por círculo definidas en la sección 8.2.2.1. Un mismo círculo puede tener varios eventos de medicación, pero eso no cuenta como observaciones independientes adicionales; cada círculo aporta un solo valor promedio. Los números de esta sección son cálculos de diseño hechos antes de ejecutar el experimento; no describen participantes ya reclutados ni una línea base ya medida.
+
+##### Supuestos del cálculo
+
+Para decidir cuántos círculos de cuidado se necesitan por grupo se fijaron, antes de calcular, los siguientes puntos de partida.
+
+- Nivel de significancia unilateral de 5 % por experimento. Fija el riesgo de rechazar la hipótesis nula cuando es verdadera, bajo los supuestos del contraste.
+- Potencia de planificación de 80 % por experimento para el MDE elegido, bajo la variabilidad y los demás supuestos del cálculo.
+- Reserva de pérdida del 15 % de los círculos reclutados. Se divide la muestra evaluable por 0.85; esta reserva es un supuesto de planificación, no una tasa de pérdida observada.
+- Asignación 1 a 1 entre el grupo de control y el grupo de variante.
+
+Con esos cuatro puntos de partida se aplica la fórmula estándar de tamaño de muestra para comparar dos grupos independientes de igual tamaño.
+
+$$n_0 = \frac{2(z_{1-\alpha}+z_{1-\beta})^2\sigma^2}{\delta^2}, \qquad n=\lceil n_0\rceil, \qquad n_{reclutar}=\left\lceil\frac{n}{0.85}\right\rceil$$
+
+En la fórmula, $z_{1-\alpha}$ y $z_{1-\beta}$ son valores fijos que corresponden al nivel de significancia y a la potencia elegidos (1.644854 y 0.841621 respectivamente), $\sigma$ es la variabilidad esperada de la métrica y $\delta$ es el Efecto Mínimo Detectable, es decir la diferencia mínima que se quiere poder detectar. El procedimiento sigue la guía de tamaño de muestra del [NIST](https://www.itl.nist.gov/div898/handbook/prc/section2/prc222.htm), una referencia pública de estadística aplicada.
+
+El nivel de significancia y la potencia expresan los riesgos estadísticos fijados para el diseño. El Efecto Mínimo Detectable, o MDE por sus siglas en inglés, expresa la magnitud que se busca detectar con esa potencia y bajo los supuestos indicados. La precisión de las estimaciones se describe mediante sus intervalos de confianza y depende también de la muestra y la variabilidad, como explica [NIST sobre límites de confianza](https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm). Ninguno de estos parámetros garantiza por sí solo una conclusión.
+
+| Parámetro | EXP-01, métrica TCOM | EXP-02, métrica LRMR |
+|---|---|---|
+| Qué representa cada observación | La proporción de confirmaciones oportunas de un círculo, entre 0 y 1. | El promedio de minutos de demora de un círculo, entre 0 y 60. |
+| Diferencia mínima a detectar | 0.15, es decir 15 puntos porcentuales. La meta final de la variante B es llegar a 80 % o más. | Reducción relativa del 40 % frente al grupo de control, coherente con la tarjeta del experimento y con la hipótesis de la sección 8.2.1. |
+| Variabilidad asumida | Desviación estándar conservadora de 0.50 para una variable acotada entre 0 y 1. | Desviación estándar conservadora de 30 minutos para una variable acotada entre 0 y 60 minutos. |
+| Supuesto adicional usado solo para calcular | No se asume ningún porcentaje histórico de TCOM. | Se asume un escenario de planificación donde el control tarda 25 minutos en promedio y la variante 15 minutos; esto da una diferencia de 10 minutos. Este escenario es un supuesto para poder calcular, no un dato ya medido. |
+| Resultado antes de redondear | 137.39 | 111.29 |
+| Círculos necesarios por grupo | 138, o 276 en total entre los dos grupos. | 112, o 224 en total entre los dos grupos. |
+| Círculos a reclutar con la reserva del 15 % | 163 por grupo, 326 en total. | 132 por grupo, 264 en total. |
+
+**En palabras simples.** Para EXP-01 se proyecta reclutar 163 círculos por grupo para obtener 138 evaluables; para EXP-02, reclutar 132 por grupo para obtener 112 evaluables. Los primeros números incluyen la reserva de pérdida y no sustituyen a los mínimos evaluables del cálculo. Alcanzarlos no garantiza la validez del resultado: también se requieren asignación y seguimiento correctos, datos de calidad y cumplimiento de los supuestos del análisis.
+
+Se eligieron cotas conservadoras de desviación estándar porque todavía no existe una medición real de la variabilidad de estas métricas en CareConnect. Para una variable acotada en [a,b], la desviación estándar no supera (b−a)/2. Estas cotas reducen el riesgo de subestimar la variabilidad en la aproximación de planificación; no garantizan la potencia real si el diseño, la independencia o los demás supuestos cambian.
+
+##### Decisión de escala operativa y factibilidad
+
+La ventana propuesta es de 14 días consecutivos por experimento, contados desde que estén listas las variantes, la auditoría y los participantes. EXP-01 y EXP-02 usan círculos y cuidadores distintos entre sí y se ejecutan uno después del otro, no al mismo tiempo. Juntar los 326 círculos de EXP-01 y los 264 de EXP-02 significaría conseguir 590 círculos de cuidado en total, y todavía no hay evidencia de que esa cantidad esté disponible para el equipo.
+
+**Regla de ejecución.** Si no se alcanza la muestra evaluable prevista por grupo, el trabajo se presenta como un piloto de factibilidad para comprobar tareas e instrumentación, sin atribuirle la potencia de planificación del 80 %. Los datos del piloto no se reutilizan como si pertenecieran a una cohorte confirmatoria preespecificada. Tampoco se extiende la ventana de 14 días después de mirar los resultados para perseguir significancia.
+
+El [cálculo reproducible de escala](assets/experiments/av2-consolidation-2026-11-07/calculate_scale.py) permite repetir estos números con un script en vez de depender de un cálculo manual.
+
+#### 8.2.5. Methods Selection
+
+##### Objeto de investigación versus método
+
+Antes de elegir la técnica conviene separar dos cosas que suelen confundirse: la pregunta que se quiere responder y la herramienta que se usa para responderla. La siguiente tabla hace esa separación para cada experimento.
+
+| Experimento | Objeto de investigación, la pregunta | Método, la técnica elegida para responderla |
+|---|---|---|
+| EXP-01 | ERQ-01, si la confirmación reversible y sincronizada mejora la TCOM frente al flujo actual. | Experimento controlado A/B, aleatorizado por círculo de cuidado, con la prueba estadística de Welch descrita más abajo. |
+| EXP-02 | ERQ-02, si el protocolo de avisos a los 0, +15 y +30 minutos reduce la LRMR frente a un aviso único. | Experimento controlado A/B, aleatorizado por círculo de cuidado, con la misma prueba estadística de Welch. |
+
+El incremento de software que se construye para cada experimento es, en ambos casos, el mínimo necesario para generar el evento que se mide, el llamado Simplest Useful Thing ya descrito en el Anverso de cada Experiment Card de la sección 8.1.5. No se agrega funcionalidad adicional que no sea indispensable para contrastar la hipótesis correspondiente.
+
+##### Diseño y recolección
+
+Se selecciona una comparación A/B aleatorizada por círculo de cuidado, independiente para EXP-01 y EXP-02. Los mismos instrumentos de auditoría se aplican a ambos grupos; solo varían los componentes definidos en la sección 8.2.3. La plataforma de referencia usa Spring Boot y Flutter web/móvil. Los escenarios iniciales usan actividades y pacientes sintéticos con usuarios que consienten participar, precisamente para que ningún paciente real quede expuesto a un cambio todavía no validado.
+
+La recolección combina el historial de servidor con verificaciones de visibilidad/entrega y preferencias del cliente. Las marcas `createdAt` o `updatedAt` de una entidad no sustituyen el historial de confirmaciones, reversiones y resoluciones. La ausencia de un clic no equivale a fatiga ni una notificación persistida acredita entrega.
+
+Por último, ningún círculo de cuidado participa a la vez en EXP-01 y en EXP-02, tal como se definió en la sección 8.2.3. Esto evita que un mismo cuidador reciba dos tratamientos experimentales superpuestos y, de paso, evita que el experimento dependa de alterar las alarmas asistenciales reales del paciente para construir el grupo de control.
+
+##### Contraste preespecificado
+
+| Experimento | Dato analizado | Método primario | Dirección y decisión |
+|---|---|---|---|
+| EXP-01 | Una TCOM por círculo evaluable, con igual peso por círculo. | Prueba t de **Welch** para diferencia entre medias independientes. | Contraste unilateral B>A, α=0.05; además diferencia ≥15 puntos, TCOM de B ≥80 % y cumplimiento de las métricas de la tarjeta. |
+| EXP-02 | Una LRMR por círculo evaluable, con seguimiento común y eventos no resueltos incluidos. | Prueba t de **Welch** para diferencia entre medias independientes. | Contraste unilateral B<A, α=0.05; además reducción relativa ≥40 % y cumplimiento de TNR y NOR. |
+
+Welch permite comparar medias sin imponer igualdad de varianzas; se reportan diferencia, denominadores, intervalo bilateral del 95 % y valor p unilateral predefinido. La [formulación de NIST](https://www.itl.nist.gov/div898/handbook/eda/section3/eda353.htm) describe el estadístico y los grados de libertad de Welch-Satterthwaite. Esta aplicación usa agregados independientes por círculo, no cuenta dosis o dispositivos como sujetos adicionales.
+
+El método se fija antes de recolectar datos confirmatorios. No se cambia a Mann-Whitney después de observar una prueba de normalidad, porque eso alteraría el análisis y el parámetro contrastado. Si el piloto revela que el diseño o la aproximación no son adecuados, se registra un protocolo nuevo antes de iniciar la cohorte confirmatoria. Si solo se alcanza escala de piloto, se informa descripción y factibilidad, sin una decisión confirmatoria de adopción.
+
+##### Salvaguardas, exclusión mutua e interpretación
+
+UR, TSC, TNR y NOR se describen por círculo y por grupo con sus denominadores. Se aplican los límites predefinidos de las tarjetas; un promedio favorable de la primaria no compensa incumplir una salvaguarda. No se aplican pruebas de proporciones a todas las acciones como si fueran independientes. Los fallos de telemetría se distinguen de registros realmente no resueltos y pueden hacer el resultado inconcluso.
+
+Cada cuidador participa en un único círculo experimental y no comparte los dos experimentos. Se mantienen permisos y revocación en todas las sesiones. La investigación se limita al comportamiento del software; los horarios del escenario no constituyen recomendaciones clínicas. El objeto de investigación es la pregunta ERQ-01 o ERQ-02; la prueba A/B es el método para responderla.
+
+#### 8.2.6. Data Analytics: Goals, KPIs and Metrics Selection
+
+Antes de la tabla, un recordatorio rápido de qué significa cada sigla que aparece en esta sección, ya que todas se definen con su fórmula completa en la sección 8.2.2.1.
+
+- **TCOM**, Tasa de Confirmación Oportuna de Medicación, qué porcentaje de registros se confirma dentro del tiempo esperado.
+- **TSC**, Tasa de Sincronización Compartida, qué porcentaje de confirmaciones aparece a tiempo en la sesión de otro cuidador autorizado.
+- **UR**, Undo Rate, qué porcentaje de confirmaciones se revierte dentro de diez segundos; el registro de la reversión no demuestra por sí solo su causa.
+- **LRMR**, Latencia de Resolución de Medicación Retrasada, demora media adicional a partir de t0+30, con corte en t0+90; un evento resuelto antes de +30 aporta cero.
+- **TNR**, Tasa de No Resolución, qué porcentaje de registros queda sin resolver al cierre del seguimiento.
+- **NOR**, Notification Opt-out Rate, qué porcentaje de usuarios desactiva o silencia las notificaciones después de recibirlas.
+
+Con esas siglas ya explicadas, la tabla siguiente conecta cada objetivo de negocio con la señal que se observa y la métrica que la traduce en un número, siguiendo el enfoque Goals → Signals → Metrics y el catálogo unificado de la sección 8.2.2.1.
+
+| Objetivo | Señal observable | Métrica | Experimento |
+|---|---|---|---|
+| Facilitar el registro oportuno de actividades. | Confirmación válida dentro de la ventana operativa predefinida. | TCOM, primaria. | EXP-01 |
+| Hacer visible el registro a otros cuidadores autorizados. | Otra sesión activa muestra el mismo estado en 5 segundos o menos. | TSC, secundaria. | EXP-01 |
+| Vigilar la fricción de la confirmación reversible. | Acciones aceptadas que se revierten en 10 segundos o menos. | UR, salvaguarda. | EXP-01 |
+| Reducir la demora de seguimiento de registros. | Menor demora adicional después de los 30 minutos de retraso, con corte a los 90. | LRMR, primaria. | EXP-02 |
+| Conservar visibilidad de los eventos sin resolver. | Eventos que continúan sin confirmación o cierre con motivo al corte. | TNR, salvaguarda en EXP-01 y secundaria en EXP-02. | Ambos |
+| Evitar saturación de avisos. | Desactivación o silenciamiento observados tras recibir un aviso. | NOR, salvaguarda. | EXP-02 |
+
+TCOM y LRMR son las métricas primarias de sus respectivos experimentos. La decisión exige además cumplir las metas de las métricas secundarias y salvaguardas fijadas en cada tarjeta; una mejora primaria no compensa incumplirlas. Al ser registros del propio software, estos datos no permiten afirmar que la medicación se administró ni demostrar un efecto clínico. Por ello, las métricas antiguas TEMR, TAD y AFR no forman parte de esta decisión.
+
+La información se agrupa usando la asignación original de cada círculo, su horario fijado desde el inicio y el historial guardado en el servidor. Por cada grupo se informa cuántos círculos fueron asignados, cuántos resultaron evaluables y cuántos eventos quedaron sin dato. Un registro sin dato nunca se cuenta como si fuera un cero. Solo se recolecta la información necesaria para estas seis métricas durante la ventana ya definida; cosas como las visitas a la landing page no se usan para este cálculo.
+
+#### 8.2.7. Web and Mobile Tracking Plan
+
+El tracking plan es una **especificación de implementación**, no una afirmación de telemetría ya desplegada. Usa un vocabulario común para Spring Boot y Flutter web/móvil. Se distingue la acción del cliente del registro aceptado por el servidor para evitar duplicaciones.
+
+| Evento | Origen y disparador | Datos específicos mínimos | Métricas |
+|---|---|---|---|
+| `EXPERIMENT_EVENT_SCHEDULED` | Servidor: congela el evento elegible antes de la asignación. | `eventId`, `type=MEDICATION`, `scheduledAt`, `followUpEndsAt`. | Denominadores TCOM, LRMR y TNR. |
+| `MED_CONFIRMED` | Servidor: acepta una confirmación autenticada. | `actionId`, `eventId`, `confirmedAt`; vigencia tras la ventana de reversión. | TCOM, LRMR, TNR y UR. |
+| `UNDO_TRIGGERED` | Servidor: acepta la reversión en ≤10 s. | `actionId`, `originalActionId`, `undoneAt`. | UR; validez de confirmación. |
+| `MED_RESOLVED_WITH_REASON` | Servidor: acepta un cierre con motivo del escenario. | `eventId`, `resolvedAt`, código mínimo de motivo. | LRMR y TNR; nunca suma una confirmación a TCOM. |
+| `SYNC_STATE_OBSERVED` | Verificador: consulta otra sesión autorizada activa y observa el estado. | ID seudónimo de sesión, estado esperado/observado y plazo medido con reloj común. | TSC. |
+| `ALERT_ESCALATED_15M` | Servidor: evento aún pendiente al +15 en EXP-02/B. | `notificationId`, `eventId`, `sentAt`, nivel de escalamiento. | Trazabilidad del protocolo LRMR. |
+| `ALERT_ESCALATED_30M` | Servidor: sigue pendiente al +30 en EXP-02/B. | `notificationId`, `eventId`, `sentAt`; comprobación de consentimiento de cada destinatario. | Trazabilidad del protocolo LRMR. |
+| `NOTIFICATION_DELIVERED` | Acuse observable del canal/cliente, también para el aviso común al minuto 0. | `notificationId`, destinatario seudónimo, `deliveredAt`. | Exposición y denominador NOR. |
+| `NOTIFICATION_PREFERENCE_CHANGED` | Cliente: cambio observable de preferencia o permiso. | Usuario seudónimo, preferencia anterior/nueva y `observedAt`; estado desconocido cuando no es observable. | NOR. |
+
+Propiedades comunes: `experimentId`, `variantGroup`, identificador seudónimo de círculo y participante, ID único de evento de auditoría, fecha UTC y versión de software; añadir `platform` en los eventos originados en web/móvil. No se incluyen nombres, diagnósticos ni texto de medicación en el colector. Los reintentos conservan el ID de acción y no incrementan dos veces las métricas.
+
+La asignación se configura en servidor y se propaga a las sesiones del círculo; no depende de la preferencia local de idioma ni puede alternarse desde un dispositivo. Crear una notificación o despachar un mensaje no emite automáticamente `NOTIFICATION_DELIVERED` ni `SYNC_STATE_OBSERVED`. La entrega y la visibilidad requieren su propia evidencia observable.
 
 ### 8.3. Experimentation
 
+Las historias y el backlog siguientes especifican los incrementos necesarios para implementar el diseño. Su inclusión en el informe acredita planificación; la ejecución y los resultados requieren evidencia separada de código, pipeline y datos.
+
 #### 8.3.1. To-Be User Stories
 
+Se conservan los identificadores de las historias aportadas por el equipo y se ajustan sus condiciones al stack real, las métricas y la API actual. Las historias adicionales de cierre con motivo y auditoría común cubren capacidades que el diseño necesita para recolectar datos coherentes. Cada historia incluye dos escenarios en formato Given, When, Then: uno que cubre el flujo principal de la Variante B y otro que cubre un comportamiento complementario ya descrito en las secciones anteriores, como el Control A o una condición de salvaguarda.
+
+| To-Be User Story ID | User | Priority | Epic | Título | Descripción | Criterios de Aceptación |
+|:---:|---|:---:|---|---|---|---|
+| US-01 | Cuidador autorizado | Alta | Confirmación y Sincronización | Confirmación reversible | Como cuidador autorizado, deseo confirmar un evento desde su tarjeta con pulsación sostenida y opción de reversión, para corregir una acción accidental sin salir de Agenda. | Escenario 1: Confirmación reversible en la Variante B <br> **Given** un evento sintético pendiente en EXP-01/B <br> **When** el cuidador mantiene el botón durante un segundo <br> **Then** el servidor acepta la confirmación autenticada, registra `MED_CONFIRMED` y el cliente muestra «Deshacer» durante diez segundos <br><br> Escenario 2: Confirmación en el Control A <br> **Given** un evento sintético pendiente en EXP-01/A <br> **When** el cuidador confirma usando el botón actual <br> **Then** el servidor acepta la confirmación con la misma auditoría común, sin mostrar la opción de deshacer |
+| US-02 | Co-cuidador con consentimiento vigente | Media | Confirmación y Sincronización | Estado compartido visible | Como co-cuidador con consentimiento vigente, deseo ver el estado actualizado de un evento, para coordinar el seguimiento sin recargar manualmente. | Escenario 1: Propagación a una sesión autorizada <br> **Given** un círculo EXP-01/B con otra sesión autorizada activa <br> **When** se confirma o revierte un evento <br> **Then** se propaga su estado a esa sesión y el verificador registra si coincide en cinco segundos o menos <br><br> Escenario 2: Sesión sin permiso no recibe la actualización <br> **Given** una sesión del mismo círculo sin consentimiento vigente <br> **When** se confirma o revierte un evento <br> **Then** esa sesión no recibe la actualización de estado |
+| US-03 | Cuidador de un escenario de prueba | Baja | Protocolo de Avisos Escalonados | Recordatorio al minuto +15 | Como cuidador de un escenario de prueba, deseo recibir un recordatorio sobre un registro que sigue pendiente, para revisar su estado. | Escenario 1: Recordatorio en la Variante B <br> **Given** un evento EXP-02/B sin resolver en t0+15 <br> **When** se cumple el umbral de quince minutos <br> **Then** el planificador emite `ALERT_ESCALATED_15M` al cuidador autorizado y distingue envío de entrega <br><br> Escenario 2: Ausencia de recordatorio en el Control A <br> **Given** un evento EXP-02/A sin resolver en t0+15 <br> **When** se cumple el umbral de quince minutos <br> **Then** el sistema no añade ningún recordatorio adicional |
+| US-04 | Co-cuidador autorizado | Baja | Protocolo de Avisos Escalonados | Aviso a co-cuidadores al minuto +30 | Como co-cuidador autorizado, deseo recibir un aviso de registro sin resolver, para coordinar su revisión en el escenario. | Escenario 1: Aviso a destinatarios autorizados <br> **Given** un evento EXP-02/B aún sin resolver en t0+30 <br> **When** el planificador comprueba el estado y los permisos <br> **Then** registra `ALERT_ESCALATED_30M` y dirige el aviso únicamente a destinatarios autorizados <br><br> Escenario 2: Evidencia de entrega conservada <br> **Given** un aviso `ALERT_ESCALATED_30M` enviado a un co-cuidador autorizado <br> **When** el canal confirma la entrega <br> **Then** el sistema conserva esa evidencia de entrega junto al identificador del aviso |
+| US-05 | Cuidador | Media | Confirmación y Sincronización | Deshacer una confirmación | Como cuidador, deseo revertir una confirmación accidental dentro de diez segundos, para conservar un historial de seguimiento correcto. | Escenario 1: Reversión dentro de la ventana de gracia <br> **Given** un `MED_CONFIRMED` de EXP-01/B dentro de esa ventana <br> **When** el cuidador solicita «Deshacer» <br> **Then** el servidor verifica autorización, registra `UNDO_TRIGGERED` vinculado a la acción original y propaga el estado corregido <br><br> Escenario 2: La reversión conserva el historial <br> **Given** una reversión ya aplicada sobre una confirmación <br> **When** se revisa el historial del evento <br> **Then** la acción original permanece visible y no se confunde con la cancelación del evento de Agenda |
+| US-06 | Participante | Baja | Preferencias de Notificación | Preferencias de notificación | Como participante, deseo gestionar los avisos y conservar el acceso a Agenda, para ajustar la carga de notificaciones del escenario. | Escenario 1: Cambio de preferencia observable <br> **Given** un cambio observable de preferencia o permiso <br> **When** el cliente lo detecta <br> **Then** registra `NOTIFICATION_PREFERENCE_CHANGED` con fecha y variante <br><br> Escenario 2: Permiso no observable por el sistema operativo <br> **Given** un sistema operativo que no permite observar el permiso <br> **When** el cliente intenta detectar el cambio <br> **Then** el sistema registra el estado como desconocido, sin presumir que el permiso sigue habilitado |
+| US-07 | Cuidador autorizado | Alta | Auditoría y Cierre Común | Cierre explícito con motivo | Como cuidador autorizado, deseo cerrar un registro del escenario con un motivo, para distinguir una resolución documentada de una confirmación de administración. | Escenario 1: Cierre con motivo en la Variante B <br> **Given** un evento elegible aún sin resolver en EXP-01/B o EXP-02/B <br> **When** el usuario registra un motivo permitido <br> **Then** el servidor conserva `MED_RESOLVED_WITH_REASON` y su hora, alimentando LRMR y TNR sin incrementar TCOM <br><br> Escenario 2: La misma capacidad aplica al grupo de Control A <br> **Given** un evento elegible aún sin resolver en el grupo A <br> **When** el usuario registra un motivo permitido <br> **Then** el servidor aplica la misma regla de cierre que en el grupo B |
+| TS-01 | Developer | Media | Confirmación y Sincronización | Propagación de estados entre sesiones | Como desarrollador, deseo un canal compatible con Spring Boot y Flutter, para difundir estados a sesiones autorizadas del mismo círculo. | Escenario 1: Difusión tras una confirmación o reversión <br> **Given** un `PATCH /api/agenda/{id}/confirm` o una reversión aceptada <br> **When** se actualiza el registro del círculo EXP-01/B <br> **Then** el canal difunde el estado tras comprobar consentimiento <br><br> Escenario 2: La difusión por sí sola no es evidencia de visibilidad <br> **Given** un estado ya difundido por el canal <br> **When** no existe una verificación independiente de otra sesión <br> **Then** el envío queda auditado, pero la TSC solo se calcula con el verificador descrito en US-02 |
+| TS-02 | Developer | Alta | Auditoría y Cierre Común | Asignación y auditoría común | Como responsable del experimento, deseo conservar la asignación y un historial reproducible de eventos en ambos grupos, para calcular las métricas sin depender de campos mutables ni duplicar reintentos. | Escenario 1: Asignación única por círculo <br> **Given** un conjunto de eventos sintéticos preasignados <br> **When** se inicia el escenario <br> **Then** cada círculo tiene una sola variante, cada participante pertenece a un único círculo experimental y se conserva `EXPERIMENT_EVENT_SCHEDULED` con horarios originales y acciones con ID único <br><br> Escenario 2: Pérdidas de seguimiento identificadas <br> **Given** un círculo sin denominador evaluable <br> **When** se genera la exportación de datos <br> **Then** la pérdida queda identificada con su causa, en vez de excluirse silenciosamente |
+
 #### 8.3.2. To-Be Product Backlog
+
+Este backlog es específico del Capítulo VIII: solo incluye las historias nuevas que se necesitan para ejecutar EXP-01 y EXP-02, no el backlog general del producto completo que ya se presentó en el Capítulo III. Por eso aquí solo aparecen las nueve historias de la sección 8.3.1 y ninguna historia de otras áreas de CareConnect, como inicio de sesión o facturación, que no forman parte de estos dos experimentos.
+
+Se mantiene la estimación en Story Points con escala 1/2/3/5/8. La auditoría común y el cierre con motivo anteceden a ambos experimentos porque definen sus denominadores y resoluciones. EXP-01 conserva precedencia por su prioridad en el Question Backlog. Son estimaciones de planificación, no tareas ejecutadas.
+
+| # Orden | User Story Id | Título | Descripción | Story Points (1/2/3/5/8) |
+|---:|---|---|---|---:|
+| 1 | TS-02 | Asignación y auditoría común | Como responsable del experimento, deseo conservar la asignación y un historial reproducible de eventos en ambos grupos, para calcular las métricas sin depender de campos mutables ni duplicar reintentos. | 5 |
+| 2 | US-07 | Cierre explícito con motivo | Como cuidador autorizado, deseo cerrar un registro del escenario con un motivo, para distinguir una resolución documentada de una confirmación de administración. | 3 |
+| 3 | US-01 | Confirmación reversible | Como cuidador autorizado, deseo confirmar un evento desde su tarjeta con pulsación sostenida y opción de reversión, para corregir una acción accidental sin salir de Agenda. | 3 |
+| 4 | TS-01 | Propagación de estados entre sesiones | Como desarrollador, deseo un canal compatible con Spring Boot y Flutter, para difundir estados a sesiones autorizadas del mismo círculo. | 5 |
+| 5 | US-02 | Estado compartido visible | Como co-cuidador con consentimiento vigente, deseo ver el estado actualizado de un evento, para coordinar el seguimiento sin recargar manualmente. | 3 |
+| 6 | US-05 | Deshacer una confirmación | Como cuidador, deseo revertir una confirmación accidental dentro de diez segundos, para conservar un historial de seguimiento correcto. | 2 |
+| 7 | US-03 | Recordatorio al minuto +15 | Como cuidador de un escenario de prueba, deseo recibir un recordatorio sobre un registro que sigue pendiente, para revisar su estado. | 3 |
+| 8 | US-04 | Aviso a co-cuidadores al minuto +30 | Como co-cuidador autorizado, deseo recibir un aviso de registro sin resolver, para coordinar su revisión en el escenario. | 3 |
+| 9 | US-06 | Preferencias de notificación | Como participante, deseo gestionar los avisos y conservar el acceso a Agenda, para ajustar la carga de notificaciones del escenario. | 1 |
+
+El aviso común al minuto 0 y su entrega instrumentada son prerrequisitos técnicos de EXP-02, aplicados por igual a los dos grupos. Las historias de avisos los incluyen antes de habilitar los escalones adicionales. La decisión de ejecutar se toma con las condiciones de preparación y factibilidad documentadas, no por la mera existencia de estas historias en el backlog.
 
 #### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
 
 ##### 8.3.3.1. To-Be Sprint Backlogs
+
+**Plan propuesto — 08/11/2026.** Se descompone el Product Backlog de §8.3.2 en dos sprints de diez días laborables. Las estimaciones son horas de esfuerzo, no duración transcurrida ni horas ya trabajadas. El día 1 de cada sprint es relativo a su inicio autorizado; no se atribuyen fechas, asignaciones personales ni implementación realizadas.
+
+La prioridad conserva ERQ-01 antes de ERQ-02 y la dependencia de auditoría/cierre común. La trazabilidad con [Impact Mapping](#34-impact-mapping) se concreta en el actor cuidador/co-cuidador: registrar y compartir estados para coordinar el cuidado (EXP-01), y resolver registros con avisos sin saturación (EXP-02). TCOM, TSC y UR evalúan el primer impacto; LRMR, TNR y NOR, el segundo.
+
+**Capacidad de referencia.** Cinco roles funcionales × diez días × cuatro horas de foco = 200 h por sprint, con límite de 40 h por rol. Es un supuesto para comprobar factibilidad; los roles no representan una asignación personal confirmada. Si la disponibilidad real es menor, se reduce el alcance manteniendo dependencias y controles comunes. Los Story Points del Product Backlog no se convierten mediante una tasa fija a horas.
+
+| Rol propuesto | Responsabilidad |
+|---|---|
+| BE-1 | Backend: asignación, auditoría y estados |
+| BE-2 | Backend: permisos, contratos y avisos |
+| FL-1 | Flutter web e integración compartida |
+| FL-2 | Flutter móvil e integración compartida |
+| QA-OPS | Pruebas, pipeline y verificación de datos |
+
+| Sprint | Objetivo | Historias | SP de referencia | Tareas | Horas | Holgura sobre 200 h |
+|---|---|---|---|---|---|---|
+| S1 | Auditoría común y variante EXP-01 listas para ensayo técnico. | TS-02, US-07, US-01, TS-01, US-02, US-05 | 21 | 24 | 140 | 60 |
+| S2 | Aviso común y variante EXP-02 listas para ensayo técnico independiente. | US-03, US-04, US-06 | 7 | 13 | 74 | 126 |
+
+| Rol | Horas S1 | Horas S2 | Capacidad por sprint |
+|---|---|---|---|
+| BE-1 | 34 | 20 | 40 h |
+| BE-2 | 22 | 12 | 40 h |
+| FL-1 | 30 | 10 | 40 h |
+| FL-2 | 18 | 18 | 40 h |
+| QA-OPS | 36 | 14 | 40 h |
+
+###### Sprint S1 — desglose de ingeniería
+
+| Tarea | Historia | Rol | Horas | Dependencias | Trabajo y criterio de aceptación |
+|---|---|---|---|---|---|
+| S1-01 | TS-02 | BE-1 | 6 | Sin predecesora | Definir el esquema de asignación por círculo y la agenda congelada. **Aceptación:** Una variante por círculo; eventos elegibles conservan horarios originales. |
+| S1-02 | TS-02 | BE-1 | 8 | S1-01 | Implementar asignación persistente y separación de participantes entre experimentos. **Aceptación:** Reinicios no alteran la asignación; un participante no integra círculos contrapuestos. |
+| S1-03 | TS-02 | BE-2 | 6 | S1-01 | Implementar auditoría común con IDs únicos y seudónimos. **Aceptación:** A y B registran el mismo esquema; reintentos no duplican acciones ni incluyen texto clínico. |
+| S1-04 | TS-02 | QA-OPS | 6 | S1-02, S1-03 | Preparar exportación y validación de denominadores y seguimiento. **Aceptación:** La agenda exportada reconcilia eventos, pérdidas y ventanas hasta +90 minutos. |
+| S1-05 | TS-02 | QA-OPS | 6 | S1-04 | Incorporar fixtures sintéticos y contratos de auditoría al CI. **Aceptación:** El pipeline rechaza variantes mezcladas, IDs duplicados y campos sensibles. |
+| S1-06 | US-07 | BE-2 | 6 | S1-03 | Implementar cierre autenticado con motivo permitido. **Aceptación:** Emite MED_RESOLVED_WITH_REASON y conserva usuario seudónimo y hora del servidor. |
+| S1-07 | US-07 | BE-1 | 6 | S1-06 | Asegurar exclusión entre cierre con motivo y confirmación. **Aceptación:** El cierre alimenta LRMR/TNR y no incrementa TCOM; reintentos son idempotentes. |
+| S1-08 | US-07 | FL-1 | 6 | S1-06 | Integrar el formulario de cierre en ambos clientes Flutter. **Aceptación:** Web y móvil muestran los motivos permitidos y el estado aceptado por el servidor. |
+| S1-09 | US-07 | QA-OPS | 4 | S1-07, S1-08 | Verificar permisos y persistencia del cierre en A y B. **Aceptación:** Casos sin sesión, acceso revocado y repetición cubiertos; no hay diferencia instrumental entre grupos. |
+| S1-10 | US-01 | FL-1 | 6 | S1-03 | Implementar pulsación sostenida accesible en Flutter web. **Aceptación:** En B se exige un segundo; A conserva el botón actual y la auditoría común. |
+| S1-11 | US-01 | FL-2 | 6 | S1-03 | Implementar la interacción equivalente en Flutter móvil. **Aceptación:** La interacción se cancela al soltar antes de un segundo y comunica el estado. |
+| S1-12 | US-01 | BE-2 | 4 | S1-02, S1-03 | Resolver la variante desde servidor y auditar MED_CONFIRMED. **Aceptación:** El cliente no elige su grupo; el evento usa hora del servidor e ID idempotente. |
+| S1-13 | US-01 | QA-OPS | 6 | S1-10, S1-11, S1-12 | Automatizar confirmación, cancelación y control de variante. **Aceptación:** Casos de pulsación incompleta, reintento y variante A/B aprobados en ambos clientes. |
+| S1-14 | TS-01 | BE-1 | 8 | S1-03 | Implementar el canal de propagación compatible con Spring Boot. **Aceptación:** Propaga confirmación y reversión del círculo B sin atribuir entrega observable al mero envío. |
+| S1-15 | TS-01 | BE-2 | 6 | S1-14 | Comprobar sesión y consentimiento en suscripción y difusión. **Aceptación:** Una sesión ajena o revocada no recibe estados del círculo. |
+| S1-16 | TS-01 | FL-1 | 6 | S1-14 | Integrar recepción y reconexión en los clientes Flutter. **Aceptación:** La reconexión recupera estado del servidor y no inventa nuevas acciones de auditoría. |
+| S1-17 | TS-01 | QA-OPS | 6 | S1-15, S1-16 | Probar aislamiento y reconexión del canal. **Aceptación:** La prueba cubre dos círculos, revocación, duplicados y caída del canal. |
+| S1-18 | US-02 | FL-1 | 6 | S1-16, S1-12 | Mostrar estado recibido y registrar observación en otra sesión web. **Aceptación:** SYNC_STATE_OBSERVED compara estado esperado y observado con reloj común. |
+| S1-19 | US-02 | FL-2 | 6 | S1-16, S1-12 | Integrar el mismo verificador en otra sesión móvil. **Aceptación:** Distingue recepción tardía de observación dentro de cinco segundos. |
+| S1-20 | US-02 | QA-OPS | 4 | S1-17, S1-18, S1-19 | Verificar propagación y cómputo de TSC. **Aceptación:** Los casos autorizados se observan en el plazo previsto; los no observados permanecen identificados. |
+| S1-21 | US-05 | BE-1 | 6 | S1-12 | Implementar reversión autenticada dentro de diez segundos. **Aceptación:** Conserva acción original, registra UNDO_TRIGGERED y rechaza una reversión fuera de ventana. |
+| S1-22 | US-05 | FL-1 | 6 | S1-21, S1-10 | Integrar Deshacer y su vencimiento en Flutter web. **Aceptación:** La tarjeta refleja el estado confirmado por el servidor y conserva errores de red. |
+| S1-23 | US-05 | FL-2 | 6 | S1-21, S1-11 | Integrar Deshacer y su vencimiento en Flutter móvil. **Aceptación:** Mismo contrato temporal y semántica que web, sin borrar el historial. |
+| S1-24 | US-05 | QA-OPS | 4 | S1-22, S1-23, S1-20 | Probar reversión, límites temporales y propagación. **Aceptación:** Pruebas antes/después de diez segundos y actualización de TCOM/UR aprobadas. |
+
+###### Sprint S2 — desglose de ingeniería
+
+| Tarea | Historia | Rol | Horas | Dependencias | Trabajo y criterio de aceptación |
+|---|---|---|---|---|---|
+| S2-01 | US-03 | BE-1 | 8 | S1-05, S1-09 | Implementar planificador común al minuto 0 y escalón +15 solo en B. **Aceptación:** Consulta estado antes de enviar; A recibe solo el aviso común y no hay envíos duplicados. |
+| S2-02 | US-03 | BE-2 | 6 | S2-01 | Instrumentar envío y acuses observables del canal de avisos. **Aceptación:** NOTIFICATION_DELIVERED requiere acuse; los envíos sin evidencia conservan estado desconocido. |
+| S2-03 | US-03 | FL-1 | 6 | S2-02 | Integrar recepción y apertura contextual de avisos en web. **Aceptación:** El aviso lleva a Agenda y registra acuse únicamente cuando el canal lo permite. |
+| S2-04 | US-03 | FL-2 | 6 | S2-02 | Integrar el contrato de recepción y acuses en móvil. **Aceptación:** Distingue permiso deshabilitado, envío y entrega observable. |
+| S2-05 | US-03 | QA-OPS | 6 | S2-03, S2-04 | Verificar reloj controlado, reintentos y cancelación del escalón. **Aceptación:** Las pruebas cubren 0/+15, resolución previa y aislamiento A/B sin esperar quince minutos reales. |
+| S2-06 | US-04 | BE-1 | 6 | S2-01 | Programar escalón +30 y consultar estado vigente. **Aceptación:** Solo EXP-02/B sin resolución genera ALERT_ESCALATED_30M; no se activa EXP-01/B. |
+| S2-07 | US-04 | BE-2 | 6 | S2-06 | Resolver co-cuidadores y verificar consentimiento al emitir. **Aceptación:** Revocación o expiración excluye al destinatario antes del envío. |
+| S2-08 | US-04 | FL-2 | 6 | S2-07, S2-02 | Integrar aviso de co-cuidador en ambos clientes. **Aceptación:** La apertura respeta permisos; el acuse no acredita que una medicación fue administrada. |
+| S2-09 | US-04 | QA-OPS | 4 | S2-08, S2-05 | Probar escalamiento +30 y revocación entre escalones. **Aceptación:** Sin permisos no hay entrega; resolución previa cancela el aviso; exportación conserva seguimiento hasta +90. |
+| S2-10 | US-06 | FL-1 | 4 | S2-03 | Integrar observación de permisos y preferencias en web. **Aceptación:** Registra cambios observables y usa desconocido cuando el navegador no informa. |
+| S2-11 | US-06 | FL-2 | 6 | S2-04 | Integrar el mismo contrato de preferencias en móvil. **Aceptación:** La revocación del permiso no bloquea el acceso a Agenda ni se interpreta como entrega. |
+| S2-12 | US-06 | BE-1 | 6 | S2-10, S2-11 | Conservar cambios idempotentes y exposición para NOR. **Aceptación:** Denominador usa destinatarios con aviso entregado y seguimiento observable. |
+| S2-13 | US-06 | QA-OPS | 4 | S2-12, S2-09 | Validar exportación final y ensayo técnico de EXP-02. **Aceptación:** Se reconcilian LRMR/TNR/NOR con datos sintéticos; no se reporta ese ensayo como experimento con usuarios. |
+
+**Secuencia y límites de trabajo.** En S1, días 1–3: contrato/asignación/auditoría; días 3–6: cierre común, canal y controles de variante; días 6–9: interacción, observación y reversión; día 10: integración y ensayo técnico. En S2, días 1–4: aviso común y +15; días 4–7: +30 y permisos; días 7–9: preferencias/exportación; día 10: integración. Las dependencias de la tabla prevalecen sobre estas ventanas: una tarea no se inicia sin su predecesora aceptada. Cada rol mantiene una tarea activa como máximo; las estimaciones no implican que todo el esfuerzo sea secuencial.
+
+**Definition of Ready.** Historia con criterio Gherkin, contratos de API/eventos acordados, escenarios sintéticos y consentimiento de acceso definidos; canal de entrega observable identificado. EXP-02 requiere instrumentar el aviso común al minuto 0 por igual en A y B. EXP-01/B solo se habilita cuando confirmación, sincronización y reversión están integradas; EXP-02 no incorpora ese paquete.
+
+**Definition of Done por historia.** Código revisado y pipeline aprobado; criterios de aceptación verificados en los clientes incluidos; sesión/consentimiento y reintentos comprobados; eventos y exportación reconciliados; enlace a commit/PR y evidencia técnica conservados al ejecutar. Una tarea planificada no se marca como terminada por aparecer en esta tabla.
+
+**Gate de ensayo y ejecución.** Un build, un acuse de envío o una captura no acredita entrega/visibilidad ni resultados de usuarios. El ensayo técnico usa fixtures sintéticos y comprueba relojes, asignación, denominadores y salvaguardas. Antes de reclutar se aplica la factibilidad de §8.2.4 y se cierran los controles de §8.2.3. La ventana de catorce días de cada experimento comienza después de este gate; no es la duración de los sprints. EXP-01 y EXP-02 conservan círculos distintos. Los datos y conclusiones de usuarios se incorporan en §8.4–8.5 cuando exista ejecución real.
+
+El [desglose verificable](assets/experiments/av2-completion-2026-11-08/planning-tasks.json) contiene 37 tareas y 214 h propuestas. Todas las tareas están estimadas entre 4 y 8 h, cubren las nueve historias y tienen rol, aceptación y dependencias sin ciclos.
 
 ##### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
@@ -4405,34 +6446,41 @@ La sección 7.4 queda fuera del alcance TB1. No se presenta el logging de consol
 
 ## Conclusiones
 
+
 ### Conclusiones y recomendaciones
 
-El Problem Statement planteado en la sección de Lean UX Problem Statements identificaba como brecha central la falta de coordinación entre cuidadores que atienden a un mismo paciente geriátrico, con tres consecuencias concretas: la imposibilidad de confirmar si otra persona ya administró una dosis, la omisión de dosis por parte del paciente ante la duda, y la reconstrucción manual del historial de evolución. Las entrevistas realizadas en el capítulo de Requirements Elicitation & Analysis confirman esta brecha con evidencia directa: la totalidad de los cuidadores entrevistados señaló la falta de coordinación en los cambios de turno como su principal problema, y la totalidad de los pacientes entrevistados reportó dudas sobre si ya había tomado una dosis. Esta evidencia valida el vacío declarado en el Problem Statement y respalda que la propuesta de valor de CareConnect apunta al problema correcto.
+#### Conclusiones del AV2
 
-Respecto a las Lean UX Assumptions, la evidencia recogida valida de forma consistente las suposiciones referidas a los usuarios y a los beneficios que estos obtendrían del producto: los cuidadores entrevistados emplean el teléfono móvil como herramienta principal de su jornada, confirmando la suposición de negocio correspondiente, y combinan pastilleros o cuadernos con alarmas del celular sin que ninguna herramienta esté integrada, lo cual coincide con los puntos de dolor declarados. Sin embargo, dos supuestos permanecen sin evidencia propia en esta entrega: la suposición de negocio sobre el modelo freemium no fue explorada con los cuidadores ni con los pacientes entrevistados, y las entrevistas del primer segmento cubrieron únicamente a cuidadores informales, de modo que queda pendiente validar las suposiciones de negocio asociadas a los cuidadores formales, tales como enfermeros o técnicos de salud en atención domiciliaria.
+El desarrollo de CareConnect permitió profundizar en la problemática de la coordinación del cuidado geriátrico, identificada inicialmente mediante el proceso Lean UX. Las entrevistas realizadas respaldan la necesidad de centralizar la información sobre medicación, actividades y evolución del paciente, especialmente cuando participan varios cuidadores. Sin embargo, los resultados obtenidos representan principalmente evidencia cualitativa sobre las necesidades y percepciones de los usuarios, por lo que todavía no permiten demostrar una reducción efectiva de errores de medicación o del tiempo empleado durante los cambios de turno.
 
-En cuanto a los seis Hypothesis Statements formulados, ninguno ha sido sometido todavía a un experimento formal, dado que el capítulo de Experiment-Driven Development corresponde a una entrega posterior dentro del ciclo de vida del proyecto. No obstante, el análisis cualitativo de las entrevistas ofrece evidencia de plausibilidad para las primeras tres hipótesis: la totalidad de los cuidadores solicitó de manera espontánea contar con un registro compartido en tiempo real y con la confirmación de la medicación administrada, funcionalidades que corresponden directamente a las suposiciones de características sobre las cuales se construyen dichas hipótesis. Las tres hipótesis restantes cuentan con un respaldo menor en esta entrega, pues solo uno de los cuidadores entrevistados mencionó explícitamente la falta de apoyo profesional inmediato, y ninguno de los participantes se refirió de forma espontánea a la posibilidad de compartir el perfil del paciente con otros cuidadores; por ello, estas hipótesis requieren una validación específica antes de poder considerarse confirmadas.
+En relación con las Lean UX Assumptions y los Hypothesis Statements, la validación del prototipo permitió identificar una percepción favorable hacia funcionalidades como la agenda compartida, los recordatorios y la confirmación de actividades. Al mismo tiempo, se reconocieron dificultades relacionadas con la visibilidad de determinadas acciones, la navegación, la legibilidad de los íconos y la comprensión de las notificaciones. Estos hallazgos evidencian que la utilidad percibida de una funcionalidad no garantiza su facilidad de uso, especialmente en un producto dirigido también a adultos mayores con distintos niveles de experiencia tecnológica.
 
-Como recomendación para el roadmap del proyecto, se propone priorizar durante la fase de Experiment-Driven Development los experimentos asociados a las tres primeras hipótesis, dado que cuentan con la evidencia cualitativa más sólida obtenida en esta entrega, y diseñar un experimento adicional dirigido específicamente a cuidadores formales con el fin de cerrar la brecha de validación de las suposiciones de negocio correspondientes. Asimismo, se recomienda incorporar en una futura ronda de entrevistas una pregunta explícita sobre la disposición de los participantes a compartir el perfil del paciente y a pagar por funcionalidades avanzadas, de manera que la hipótesis relacionada con la compartición de perfil y la suposición de negocio sobre el modelo freemium cuenten con evidencia propia antes de invertir en su desarrollo.
+Desde la perspectiva técnica, la revisión del diseño de base de datos permitió mejorar la representación de pacientes y cuidadores mediante entidades diferenciadas, fortalecer las relaciones entre Bounded Contexts y ampliar la trazabilidad de eventos, consentimientos y documentos. Estas correcciones contribuyen a que el modelo arquitectónico represente con mayor precisión las responsabilidades del dominio. No obstante, su incorporación al diseño no constituye por sí misma evidencia de que todas las restricciones y reglas de negocio hayan sido implementadas y verificadas en el backend.
 
+Finalmente, el AV2 permite orientar el proyecto hacia un proceso de mejora basado en evidencia, relacionando la calidad del software, la experiencia del usuario, las prácticas DevOps y la planificación experimental. Los criterios de éxito establecidos para CareConnect, como la reducción de errores de medicación, la disminución del tiempo de relevo y la retención de usuarios, requieren mediciones adicionales antes de determinar el cumplimiento de las hipótesis del producto. Por ello, resulta fundamental mantener una distinción clara entre funcionalidades diseñadas, pruebas ejecutadas y resultados efectivamente demostrados.
 
-### Resultados y recomendaciones de TB1
+#### Recomendaciones
 
-TB1 añade evidencia técnica a la propuesta desarrollada en AV1. La landing bilingüe se verificó publicada y el enlace de About the Product se corrigió; el video About the Team sigue pendiente. El backend y los clientes del cuidador incorporan pruebas reproducibles de registro, login, eventos y consentimiento. Tras corregir Agenda, pasan 16 pruebas backend, 36 rápidas web, 9 rápidas móviles y 9 escenarios HTTP por cliente. Los checks CI de los tres productos aprobaron sus commits de revisión.
+Como primera recomendación, se propone fortalecer la validación con participantes de ambos segmentos objetivo, utilizando tareas observables y métricas comparables. En particular, se deben evaluar los flujos de confirmación de medicación, consulta de actividades, recepción de alertas y compartición de perfiles. Se recomienda medir la tasa de éxito, el tiempo de ejecución, los errores cometidos y la facilidad de uso percibida. Asimismo, debe completarse la cantidad mínima de entrevistas requerida por segmento y acompañar los resultados con sus respectivas evidencias.
 
-La verificación mostró una diferencia relevante entre ocultar información en la interfaz y impedir su consulta en el servidor. La primera ejecución aún devolvía eventos sin sesión y después de revocar. El arreglo exige sesiones emitidas por IAM y propietario o consentimiento AGENDA vigente en cada ruta, y los clientes rechazan la caché tras 401/403. Esto aporta evidencia de funcionamiento de Agenda en el entorno probado; no demuestra la protección de todos los módulos ni una mejora clínica o de adherencia.
+En cuanto a la evolución del producto, se recomienda priorizar las mejoras de usabilidad identificadas durante las evaluaciones heurísticas, especialmente la visibilidad de las acciones, la claridad de las notificaciones y la legibilidad de los elementos de interfaz. Posteriormente, estas modificaciones deberán someterse a una nueva evaluación para comprobar si los problemas identificados fueron efectivamente corregidos, evitando asumir mejoras únicamente a partir de cambios visuales.
 
-El capítulo 7 documenta los builds y la entrega de cada producto. Existe evidencia de publicación de la landing y de un backend anterior en Render; las correcciones siguen en PRs. El APK debug de CI acredita compilación Android del cuidador, mientras la distribución release, iOS y la ejecución del paciente requieren verificaciones propias. Por eso ST-03 se mantiene parcial y no se presenta toda la solución como validada en producción.
+Desde el enfoque de arquitectura y calidad, se recomienda mantener la consistencia entre los diagramas de clases, el modelo de base de datos y la implementación de los servicios. Asimismo, deben verificarse las restricciones referenciales, las autorizaciones entre pacientes y cuidadores y la trazabilidad de las actividades de cuidado. Estas verificaciones deberán complementarse con pruebas automatizadas, análisis estático y mecanismos de monitoreo que permitan identificar fallos de manera oportuna.
 
-La siguiente iteración debe integrar versiones compatibles, comprobar que la app oficial Kotlin de paciente (`carestacks-frontend/main`) envía el token a Agenda, publicar los clientes con el backend HTTPS configurado y ejecutar desde sus interfaces la concesión, retirada de vistas y revocación. El contacto público y el enlace al acuerdo quedaron corregidos y publicados; queda sustituir About the Team y definir el canal privado para consultas relativas a datos personales. Después corresponde evaluar las hipótesis Lean UX con usuarios y métricas: las pruebas de software de TB1 no miden todavía retención, disposición a pagar, reducción de errores de medicación ni tiempo de relevo.
+Finalmente, para las siguientes iteraciones del roadmap, se recomienda priorizar experimentos vinculados con las hipótesis de mayor relevancia para la propuesta de valor, particularmente la confirmación compartida de actividades y la coordinación entre cuidadores. Cada experimento debe establecer previamente sus condiciones, métricas, criterios de éxito y mecanismos de recopilación de datos. De esta manera, CareConnect podrá evolucionar a partir de resultados verificables y no únicamente de supuestos, favoreciendo decisiones fundamentadas sobre el desarrollo de nuevas funcionalidades y la mejora continua de la plataforma.
 
----
 
 ## Bibliografía
 
+ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (Version 5.2). Association for Computing Machinery. https://www.acm.org/code-of-ethics/software-engineering-code
+
 Beard, J. R., Officer, A., de Carvalho, I. A., et al. (2016). The World report on ageing and health: A policy framework for healthy ageing. *The Lancet*, *387*(10033), 2145–2154. https://doi.org/10.1016/S0140-6736(15)00516-4
 
+Colegio de Ingenieros del Perú. (s.f.). *Código de ética del Colegio de Ingenieros del Perú*. https://cdcallao.cip.org.pe/wp-content/uploads/2024/09/codigo_de_etica_del_cip.pdf
+
 Instituto Nacional de Estadística e Informática. (2024). *Situación de la población adulta mayor: Informe técnico N.° 01*. https://www.inei.gob.pe/media/MenuRecursivo/boletines/informe-tecnico-poblacion-adulta-mayor.pdf
+
+Ley 29733. (2011). *Ley de protección de datos personales*. Congreso de la República del Perú. https://www.congreso.gob.pe/Docs/DGP/DIDP/files/ley_29733.pdf
 
 Microsoft. (s.f.). *REST API guidelines*. GitHub. https://github.com/microsoft/api-guidelines
 
@@ -4441,6 +6489,39 @@ Organización Mundial de la Salud. (2025). *Ageing and health*. https://www.who.
 The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https://cucumber.io/docs/gherkin/reference/
 
 ---
+
+
+NeuroDraw. (2026, 8 de noviembre). *Auditoría de experiencias de usuario de CareConnect* [Informe recibido por CareStacks el 9 de noviembre de 2026]. [Documento original](assets/audits/received-neurodraw-2026-11-09/auditoria-careconnect-neurodraw.txt).
+
+National Institute of Standards and Technology. (s. f.). *Confidence limits for the mean*. https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm
+
+### Referencias técnicas incorporadas en AV2
+
+Android Developers. (s. f.). *Use Java 8 language features and APIs*. Recuperado el 8 de noviembre de 2026, de https://developer.android.com/studio/write/java8-support
+
+Better Stack. (s. f.). *Get started with monitoring*. Recuperado el 8 de noviembre de 2026, de https://betterstack.com/docs/uptime/monitoring-start/
+
+GitHub. (s. f.). *Understanding GitHub Actions*. Recuperado el 8 de noviembre de 2026, de https://docs.github.com/en/actions/get-started/understand-github-actions
+
+GitLab. (s. f.). *CI/CD for external repositories*. Recuperado el 8 de noviembre de 2026, de https://docs.gitlab.com/ci/ci_cd_for_external_repos/
+
+Google. (s. f.). *desugar_jdk_libs: Change log*. Recuperado el 8 de noviembre de 2026, de https://github.com/google/desugar_jdk_libs/blob/master/CHANGELOG.md
+
+Jenkins Project. (s. f.). *Using Jenkins agents*. Recuperado el 8 de noviembre de 2026, de https://www.jenkins.io/doc/book/using/using-agents/
+
+louislam. (s. f.). *Uptime Kuma [Repositorio de software]*. Recuperado el 8 de noviembre de 2026, de https://github.com/louislam/uptime-kuma
+
+Netlify. (s. f.). *Build configuration overview*. Recuperado el 8 de noviembre de 2026, de https://docs.netlify.com/build/configure-builds/overview/
+
+Railway. (s. f.). *Deploy a Spring Boot app*. Recuperado el 8 de noviembre de 2026, de https://railway.com/guides/spring-boot
+
+Render. (s. f.). *Deploy for free*. Recuperado el 8 de noviembre de 2026, de https://render.com/docs/free
+
+Render. (s. f.). *Deploy hooks*. Recuperado el 8 de noviembre de 2026, de https://render.com/docs/deploy-hooks
+
+UptimeRobot. (s. f.). *Plans & pricing*. Recuperado el 8 de noviembre de 2026, de https://uptimerobot.com/pricing/
+
+Vercel. (s. f.). *Deploying Git repositories with Vercel*. Recuperado el 8 de noviembre de 2026, de https://vercel.com/docs/git
 
 ## Anexos
 
@@ -4467,5 +6548,5 @@ The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https:/
 | Entrega | Título | Enlace (Microsoft Stream) |
 |---------|--------|---------------------------|
 | AV1 | Video About-the-Product | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQD9H0d9sU4tQJuKV5PStHyuAYjfXdpoDfRe-xCc_R1401s |
-| AV1 | Video de exposición | \<url> |
+| AV1 | Video de exposición | [Ver exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQDFERAyGNqUSKYZ1N-h8J84AYT8Zt4YMgGvLYk0nFd1Aa4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=8V3uxF) |
 | TB1 | Video de exposición | [Ver exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQA9unyXf7GAS7Hj7D1HUpNHATNj-KI3ciqOrg7tZizpxVQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=OWQiRK) |

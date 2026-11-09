@@ -1,0 +1,261 @@
+{
+  "date": "2026-11-08",
+  "scope": "local automated verification; not user validation or production deployment",
+  "backend": {
+    "base": "5e78755a163e146dafb64d42e80f34a5956aa1d6",
+    "fixed_commit": "4aa830b47128ffa179c65792df5b9f98a891daf2",
+    "baseline_tests": 17,
+    "baseline_failures": 0,
+    "security_regression_before": {
+      "tests": 9,
+      "failures": 6,
+      "errors": 0,
+      "skipped": 0
+    },
+    "after": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.carestacks.careconnect.ActuatorHealthIntegrationTests"
+        },
+        {
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.carestacks.careconnect.agenda.domain.agenda.entities.HealthEventTest"
+        },
+        {
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.carestacks.careconnect.AgendaAuthorizationIntegrationTests"
+        },
+        {
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.carestacks.careconnect.CareConnectBackendApplicationTests"
+        },
+        {
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.carestacks.careconnect.consents.domain.consents.entities.ProfileShareConsentTest"
+        },
+        {
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.carestacks.careconnect.CoreApiIntegrationTests"
+        },
+        {
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.carestacks.careconnect.iam.infrastructure.AuthSessionTests"
+        },
+        {
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.carestacks.careconnect.SecurityBoundariesIntegrationTests"
+        }
+      ]
+    },
+    "command": "mvn -B clean verify",
+    "jdk": "25",
+    "closed_locally": [
+      "explicit CORS origins",
+      "H2 console disabled by default",
+      "issued-session authentication required by default",
+      "Actuator info/metrics private"
+    ],
+    "limits": [
+      "not deployed to production",
+      "resource ownership/consent beyond tested flows is not a complete security audit"
+    ]
+  },
+  "kotlin": {
+    "base": "922361d1db33251415481ed592227006c453e316",
+    "fixed_commit": "64308ced98cb66cac56c895a177f787a48c2eb8f",
+    "before": {
+      "errors": 55,
+      "warnings": 46,
+      "by_issue": [
+        {
+          "severity": "Error",
+          "id": "NewApi",
+          "count": 55
+        },
+        {
+          "severity": "Warning",
+          "id": "AndroidGradlePluginVersion",
+          "count": 1
+        },
+        {
+          "severity": "Warning",
+          "id": "ConstantLocale",
+          "count": 2
+        },
+        {
+          "severity": "Warning",
+          "id": "GradleDependency",
+          "count": 10
+        },
+        {
+          "severity": "Warning",
+          "id": "IconLocation",
+          "count": 7
+        },
+        {
+          "severity": "Warning",
+          "id": "ModifierParameter",
+          "count": 1
+        },
+        {
+          "severity": "Warning",
+          "id": "MonochromeLauncherIcon",
+          "count": 2
+        },
+        {
+          "severity": "Warning",
+          "id": "NewerVersionAvailable",
+          "count": 5
+        },
+        {
+          "severity": "Warning",
+          "id": "OldTargetApi",
+          "count": 1
+        },
+        {
+          "severity": "Warning",
+          "id": "RedundantLabel",
+          "count": 1
+        },
+        {
+          "severity": "Warning",
+          "id": "StaticFieldLeak",
+          "count": 1
+        },
+        {
+          "severity": "Warning",
+          "id": "UnusedResources",
+          "count": 10
+        },
+        {
+          "severity": "Warning",
+          "id": "UseKtx",
+          "count": 5
+        }
+      ]
+    },
+    "after": {
+      "errors": 0,
+      "warnings": 46,
+      "by_issue": [
+        {
+          "severity": "Warning",
+          "id": "AndroidGradlePluginVersion",
+          "count": 1
+        },
+        {
+          "severity": "Warning",
+          "id": "ConstantLocale",
+          "count": 2
+        },
+        {
+          "severity": "Warning",
+          "id": "GradleDependency",
+          "count": 10
+        },
+        {
+          "severity": "Warning",
+          "id": "IconLocation",
+          "count": 7
+        },
+        {
+          "severity": "Warning",
+          "id": "ModifierParameter",
+          "count": 1
+        },
+        {
+          "severity": "Warning",
+          "id": "MonochromeLauncherIcon",
+          "count": 2
+        },
+        {
+          "severity": "Warning",
+          "id": "NewerVersionAvailable",
+          "count": 5
+        },
+        {
+          "severity": "Warning",
+          "id": "OldTargetApi",
+          "count": 1
+        },
+        {
+          "severity": "Warning",
+          "id": "RedundantLabel",
+          "count": 1
+        },
+        {
+          "severity": "Warning",
+          "id": "StaticFieldLeak",
+          "count": 1
+        },
+        {
+          "severity": "Warning",
+          "id": "UnusedResources",
+          "count": 10
+        },
+        {
+          "severity": "Warning",
+          "id": "UseKtx",
+          "count": 5
+        }
+      ]
+    },
+    "unit_tests": {
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "pe.edu.upc.careconnect.ExampleUnitTest"
+        }
+      ]
+    },
+    "unit_test_scope": "existing arithmetic example; not a patient workflow test",
+    "command": "gradlew --no-daemon lintDebug testDebugUnitTest assembleDebug",
+    "jdk": "21",
+    "gradle": "9.4.1",
+    "compile_sdk": "36.1",
+    "min_sdk": 24,
+    "apk_generated": true,
+    "apk_sha256": "2309279cdc50b7eb2a538bfdef6ec1472667622e21c851730afa58ce087ae1f9",
+    "limits": [
+      "46 warnings remain",
+      "not installed/validated on an Android 7 device",
+      "full deployed patient flow not verified"
+    ]
+  }
+}
