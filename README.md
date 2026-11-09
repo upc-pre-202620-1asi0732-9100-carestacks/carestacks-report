@@ -102,6 +102,7 @@ Noviembre, 2026
 | 2.3.0 | 08/11/2026 | Matias Salcedo / equipo CareStacks | Integró los aportes AV2 de los capítulos IV, VI, VII y VIII en `develop`, conservando la carátula y conclusiones AV2; corrigió referencias y registró la [verificación y los vacíos de entrega](assets/integration/av2-2026-11-08/verification.md). |
 | 2.3.1 | 08/11/2026 | Matias Salcedo | Completó la planificación del Sprint Backlog To-Be y la comparación de herramientas DevOps; corrigió compatibilidad Android y controles del backend, con [resultados y faltantes actualizados](assets/experiments/av2-completion-2026-11-08/verification.md). |
 | 2.3.2 | 09/11/2026 | Matias Salcedo | Incorporó la auditoría recibida de NeuroDraw en §6.4.2, conservó el documento original y registró ocho hallazgos con seguimiento de correcciones y límites de evidencia. |
+| 2.3.3 | 09/11/2026 | Matias Salcedo / Emy127 | Integró los cuatro commits nuevos de chapter-8, revisó la precisión de escala y métricas, conservó el Sprint Backlog y contrastó los archivos de entrega con la guía AV2 ([verificación e inventario](assets/integration/av2-chapter8-2026-11-09/verification.md)). |
 
 # Project Report Collaboration Insights
 
@@ -6136,9 +6137,9 @@ Se recogerán únicamente los datos necesarios durante la ventana predefinida. N
 
 ##### Ejemplo ilustrativo por experimento
 
-Para EXP-01, imaginemos un evento de medicación programado a las 8:00 a. m. En el Control A, el cuidador confirma el evento desde su tarjeta y el estado se guarda en el servidor; si un familiar revisa Agenda desde otro dispositivo, solo verá el cambio si recarga su propia vista. En la Variante B, el mismo cuidador mantiene presionado el botón durante un segundo, puede deshacer la acción si se equivocó durante los diez segundos siguientes, y el estado se propaga automáticamente a la sesión del familiar sin que este tenga que recargar nada.
+Para EXP-01, imaginemos un evento sintético de medicación programado a las 8:00 a. m. En el Control A, el cuidador confirma el evento desde su tarjeta y el estado se guarda en el servidor; otro cuidador autorizado del mismo círculo consulta o refresca su propia vista para observar el cambio. En la Variante B, el mismo cuidador mantiene presionado el botón durante un segundo, puede deshacer la acción durante los diez segundos siguientes y el estado se propaga a la otra sesión autorizada. Su visibilidad dentro de cinco segundos se comprueba con el verificador de TSC; el mero envío no la demuestra.
 
-Para EXP-02, imaginemos un evento que vence a las 9:00 a. m. y nadie lo confirma. En el Control A se envía un único aviso al cuidador a las 9:00 y, si no hay respuesta, no ocurre nada más. En la Variante B se envía ese mismo aviso a las 9:00; si a las 9:15 sigue sin confirmarse, se envía un recordatorio adicional al cuidador; y si a las 9:30 sigue pendiente, se avisa también a los co-cuidadores autorizados del mismo círculo. El seguimiento de ambos grupos se cierra a las 10:30, es decir noventa minutos después del horario original.
+Para EXP-02, imaginemos un evento sintético programado a las 9:00 a. m. En el Control A se envía un único aviso al cuidador a esa hora y no se añaden escalones posteriores. En la Variante B se envía el mismo aviso inicial; si a las 9:15 el evento sigue sin resolver, se envía un recordatorio adicional, y si a las 9:30 continúa sin resolver, se avisa a los co-cuidadores autorizados. Una confirmación o un cierre con motivo resuelve el registro y evita los avisos posteriores. El seguimiento de ambos grupos termina a las 10:30, noventa minutos después del horario original.
 
 ##### Asignación, comparabilidad y no contaminación
 
@@ -6162,9 +6163,9 @@ La escala se calcula para las métricas por círculo definidas en la sección 8.
 
 Para decidir cuántos círculos de cuidado se necesitan por grupo se fijaron, antes de calcular, los siguientes puntos de partida.
 
-- Nivel de significancia de 5 % por experimento. Es el riesgo que se acepta de detectar una diferencia que en realidad no existe.
-- Potencia de planificación de 80 % por experimento. Es la probabilidad que se busca de detectar la diferencia si esta realmente existe.
-- Reserva de pérdida del 15 % sobre el número mínimo de círculos. Esto previene que la muestra quede corta si algunos círculos no completan el seguimiento.
+- Nivel de significancia unilateral de 5 % por experimento. Fija el riesgo de rechazar la hipótesis nula cuando es verdadera, bajo los supuestos del contraste.
+- Potencia de planificación de 80 % por experimento para el MDE elegido, bajo la variabilidad y los demás supuestos del cálculo.
+- Reserva de pérdida del 15 % de los círculos reclutados. Se divide la muestra evaluable por 0.85; esta reserva es un supuesto de planificación, no una tasa de pérdida observada.
 - Asignación 1 a 1 entre el grupo de control y el grupo de variante.
 
 Con esos cuatro puntos de partida se aplica la fórmula estándar de tamaño de muestra para comparar dos grupos independientes de igual tamaño.
@@ -6173,27 +6174,27 @@ $$n_0 = \frac{2(z_{1-\alpha}+z_{1-\beta})^2\sigma^2}{\delta^2}, \qquad n=\lceil 
 
 En la fórmula, $z_{1-\alpha}$ y $z_{1-\beta}$ son valores fijos que corresponden al nivel de significancia y a la potencia elegidos (1.644854 y 0.841621 respectivamente), $\sigma$ es la variabilidad esperada de la métrica y $\delta$ es el Efecto Mínimo Detectable, es decir la diferencia mínima que se quiere poder detectar. El procedimiento sigue la guía de tamaño de muestra del [NIST](https://www.itl.nist.gov/div898/handbook/prc/section2/prc222.htm), una referencia pública de estadística aplicada.
 
-La Certeza del cálculo queda fijada por el Nivel de Significación y la Potencia Estadística ya mencionados, mientras que la Precisión queda fijada por el Efecto Mínimo Detectable, llamado MDE por sus siglas en inglés, de cada experimento.
+El nivel de significancia y la potencia expresan los riesgos estadísticos fijados para el diseño. El Efecto Mínimo Detectable, o MDE por sus siglas en inglés, expresa la magnitud que se busca detectar con esa potencia y bajo los supuestos indicados. La precisión de las estimaciones se describe mediante sus intervalos de confianza y depende también de la muestra y la variabilidad, como explica [NIST sobre límites de confianza](https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm). Ninguno de estos parámetros garantiza por sí solo una conclusión.
 
 | Parámetro | EXP-01, métrica TCOM | EXP-02, métrica LRMR |
 |---|---|---|
 | Qué representa cada observación | La proporción de confirmaciones oportunas de un círculo, entre 0 y 1. | El promedio de minutos de demora de un círculo, entre 0 y 60. |
 | Diferencia mínima a detectar | 0.15, es decir 15 puntos porcentuales. La meta final de la variante B es llegar a 80 % o más. | Reducción relativa del 40 % frente al grupo de control, coherente con la tarjeta del experimento y con la hipótesis de la sección 8.2.1. |
-| Variabilidad asumida | 0.50, el valor máximo posible para una proporción entre 0 y 1. | 30 minutos, el valor máximo posible para una variable entre 0 y 60 minutos. |
+| Variabilidad asumida | Desviación estándar conservadora de 0.50 para una variable acotada entre 0 y 1. | Desviación estándar conservadora de 30 minutos para una variable acotada entre 0 y 60 minutos. |
 | Supuesto adicional usado solo para calcular | No se asume ningún porcentaje histórico de TCOM. | Se asume un escenario de planificación donde el control tarda 25 minutos en promedio y la variante 15 minutos; esto da una diferencia de 10 minutos. Este escenario es un supuesto para poder calcular, no un dato ya medido. |
 | Resultado antes de redondear | 137.39 | 111.29 |
 | Círculos necesarios por grupo | 138, o 276 en total entre los dos grupos. | 112, o 224 en total entre los dos grupos. |
 | Círculos a reclutar con la reserva del 15 % | 163 por grupo, 326 en total. | 132 por grupo, 264 en total. |
 
-**En palabras simples.** Para EXP-01 se necesita reunir evidencia de al menos 163 círculos de cuidado por cada grupo antes de poder confiar en el resultado. Para EXP-02 el número equivalente es 132 círculos por grupo. Mientras no se alcancen esas cifras, cualquier diferencia observada entre el grupo de control y el grupo de variante se trata como una señal preliminar, no como una conclusión confirmada.
+**En palabras simples.** Para EXP-01 se proyecta reclutar 163 círculos por grupo para obtener 138 evaluables; para EXP-02, reclutar 132 por grupo para obtener 112 evaluables. Los primeros números incluyen la reserva de pérdida y no sustituyen a los mínimos evaluables del cálculo. Alcanzarlos no garantiza la validez del resultado: también se requieren asignación y seguimiento correctos, datos de calidad y cumplimiento de los supuestos del análisis.
 
-Se usó el valor máximo posible de variabilidad a propósito, en vez de un valor observado, porque todavía no existe una medición real de cuánto varían estas métricas en CareConnect. Usar el máximo evita calcular una muestra más pequeña de la que realmente se necesitaría.
+Se eligieron cotas conservadoras de desviación estándar porque todavía no existe una medición real de la variabilidad de estas métricas en CareConnect. Para una variable acotada en [a,b], la desviación estándar no supera (b−a)/2. Estas cotas reducen el riesgo de subestimar la variabilidad en la aproximación de planificación; no garantizan la potencia real si el diseño, la independencia o los demás supuestos cambian.
 
 ##### Decisión de escala operativa y factibilidad
 
 La ventana propuesta es de 14 días consecutivos por experimento, contados desde que estén listas las variantes, la auditoría y los participantes. EXP-01 y EXP-02 usan círculos y cuidadores distintos entre sí y se ejecutan uno después del otro, no al mismo tiempo. Juntar los 326 círculos de EXP-01 y los 264 de EXP-02 significaría conseguir 590 círculos de cuidado en total, y todavía no hay evidencia de que esa cantidad esté disponible para el equipo.
 
-**Regla de ejecución.** Si al momento de ejecutar no se alcanza el número de círculos calculado, el trabajo se presenta como un piloto de factibilidad, es decir una prueba para saber si el experimento funciona en la práctica y si los datos se pueden recolectar correctamente, en vez de un experimento confirmatorio con el 80 % de potencia buscado. Los datos del piloto no se reutilizan después como si hubieran sido parte de una muestra ya validada. Tampoco se extiende la ventana de 14 días simplemente para intentar que un resultado se vuelva significativo.
+**Regla de ejecución.** Si no se alcanza la muestra evaluable prevista por grupo, el trabajo se presenta como un piloto de factibilidad para comprobar tareas e instrumentación, sin atribuirle la potencia de planificación del 80 %. Los datos del piloto no se reutilizan como si pertenecieran a una cohorte confirmatoria preespecificada. Tampoco se extiende la ventana de 14 días después de mirar los resultados para perseguir significancia.
 
 El [cálculo reproducible de escala](assets/experiments/av2-consolidation-2026-11-07/calculate_scale.py) permite repetir estos números con un script en vez de depender de un cálculo manual.
 
@@ -6241,8 +6242,8 @@ Antes de la tabla, un recordatorio rápido de qué significa cada sigla que apar
 
 - **TCOM**, Tasa de Confirmación Oportuna de Medicación, qué porcentaje de registros se confirma dentro del tiempo esperado.
 - **TSC**, Tasa de Sincronización Compartida, qué porcentaje de confirmaciones aparece a tiempo en la sesión de otro cuidador autorizado.
-- **UR**, Undo Rate, qué porcentaje de confirmaciones se deshacen por error en los diez segundos siguientes.
-- **LRMR**, Latencia de Resolución de Medicación Retrasada, cuántos minutos en promedio tarda en resolverse un registro una vez que ya venció su horario.
+- **UR**, Undo Rate, qué porcentaje de confirmaciones se revierte dentro de diez segundos; el registro de la reversión no demuestra por sí solo su causa.
+- **LRMR**, Latencia de Resolución de Medicación Retrasada, demora media adicional a partir de t0+30, con corte en t0+90; un evento resuelto antes de +30 aporta cero.
 - **TNR**, Tasa de No Resolución, qué porcentaje de registros queda sin resolver al cierre del seguimiento.
 - **NOR**, Notification Opt-out Rate, qué porcentaje de usuarios desactiva o silencia las notificaciones después de recibirlas.
 
@@ -6257,7 +6258,7 @@ Con esas siglas ya explicadas, la tabla siguiente conecta cada objetivo de negoc
 | Conservar visibilidad de los eventos sin resolver. | Eventos que continúan sin confirmación o cierre con motivo al corte. | TNR, salvaguarda en EXP-01 y secundaria en EXP-02. | Ambos |
 | Evitar saturación de avisos. | Desactivación o silenciamiento observados tras recibir un aviso. | NOR, salvaguarda. | EXP-02 |
 
-Solo TCOM y LRMR se usan para decidir si cada experimento tuvo éxito. Las demás métricas son de apoyo, como señales de salvaguarda que no deben empeorar aunque la métrica principal mejore. Al ser registros del propio software, estos datos no permiten afirmar nada sobre si la medicación realmente se administró o sobre un incidente clínico; por eso las métricas antiguas TEMR, TAD y AFR, pensadas para ese fin, ya no forman parte de esta decisión.
+TCOM y LRMR son las métricas primarias de sus respectivos experimentos. La decisión exige además cumplir las metas de las métricas secundarias y salvaguardas fijadas en cada tarjeta; una mejora primaria no compensa incumplirlas. Al ser registros del propio software, estos datos no permiten afirmar que la medicación se administró ni demostrar un efecto clínico. Por ello, las métricas antiguas TEMR, TAD y AFR no forman parte de esta decisión.
 
 La información se agrupa usando la asignación original de cada círculo, su horario fijado desde el inicio y el historial guardado en el servidor. Por cada grupo se informa cuántos círculos fueron asignados, cuántos resultaron evaluables y cuántos eventos quedaron sin dato. Un registro sin dato nunca se cuenta como si fuera un cero. Solo se recolecta la información necesaria para estas seis métricas durante la ventana ya definida; cosas como las visitas a la landing page no se usan para este cálculo.
 
@@ -6491,6 +6492,8 @@ The Cucumber Open Source Project. (s.f.). *Gherkin reference*. Cucumber. https:/
 
 
 NeuroDraw. (2026, 8 de noviembre). *Auditoría de experiencias de usuario de CareConnect* [Informe recibido por CareStacks el 9 de noviembre de 2026]. [Documento original](assets/audits/received-neurodraw-2026-11-09/auditoria-careconnect-neurodraw.txt).
+
+National Institute of Standards and Technology. (s. f.). *Confidence limits for the mean*. https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm
 
 ### Referencias técnicas incorporadas en AV2
 

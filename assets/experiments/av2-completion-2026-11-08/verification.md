@@ -12,7 +12,7 @@ Estado actualizado: 09/11/2026. Las pruebas y correcciones técnicas corresponde
 | [Backend](../../testing/av2-local-2026-11-08/verification.md#backend) | CORS restringido, autenticación por defecto, consola H2 apagada por defecto y métricas no anónimas. 26 pruebas aprobadas y CI acreditado en `develop`. |
 | [Kotlin](../../testing/av2-local-2026-11-08/verification.md#kotlin) | 55 errores de compatibilidad Android corregidos, lint sin errores, APK generado y workflow añadido en `develop`. Las 46 advertencias permanecen visibles. |
 | [Auditoría recibida](../../../README.md#642-auditoría-recibida) | Incorporada el 09/11: documento de NeuroDraw, cronograma y ocho hallazgos. Se conserva la [fuente y la trazabilidad](../../audits/received-neurodraw-2026-11-09/verification.md). Las capturas y el cierre de hallazgos siguen sin acreditarse. |
-| Informe | Registro 2.3.1, evidencias, bibliografía técnica y referencias de §6.2 actualizadas. D y el diseño previo conservados; no se añadieron resultados ficticios. |
+| Informe | Registro hasta 2.3.3, evidencias, bibliografía técnica y referencias de §6.2 actualizadas. D y el diseño previo conservados; no se añadieron resultados ficticios. |
 
 El [manifiesto de tareas](planning-tasks.json) permite recalcular los totales y las dependencias. El [verificador](verify.mjs) y su [resultado](document-checks.json) comprueban esos datos, la conservación del contenido previo y los enlaces locales.
 
@@ -20,8 +20,8 @@ El [manifiesto de tareas](planning-tasks.json) permite recalcular los totales y 
 
 1. **Seguimiento de la auditoría recibida (§6.4.2):** el documento ya está incorporado. Faltan sus capturas y la evidencia de corrección/revalidación de los ocho hallazgos.
 2. **Video de exposición AV2:** incorporar el enlace y las evidencias exigidas en el anexo.
-3. **Implementación y ejecución experimental (§8.3.3.2–8.3.3.6):** las 37 tareas están planificadas; todavía se requiere implementar/integrar las variantes y auditoría, pasar el ensayo técnico y recolectar datos con el alcance declarado.
-4. **Análisis y aprendizaje (§8.4–8.5):** resultados reales, interpretación, Question Backlog repriorizado y Shareback, derivados de la ejecución; no se completan con los supuestos de escala.
+3. **Archivos AV2:** exportar el reporte PDF, crear la presentación PPTX/PDF y el informe de participación DOCX/PDF, y consolidar el ZIP. Existen fuentes y archivos previos, no esas exportaciones AV2.
+4. **Alcance experimental:** la estructura de la guía AV2 llega a §8.3.2 y su rúbrica pide también Sprint Backlog. La introducción menciona ejecución/análisis/aprendizaje, pero no corresponde tratar §8.4–8.5 como un bloqueo confirmado para el MR. El [contraste de alcance y archivos](../../integration/av2-chapter8-2026-11-09/verification.md) registra esta distinción.
 5. **Validación UX actual (§6.3):** documentar versión y resultados observados de las tareas, verificar HU-01–HU-07 y resolver la severidad de HU-07. Los registros históricos de entrevistas no demuestran por sí solos esas comprobaciones actuales.
 6. **Recorrido completo ST-03:** conciliar la URL/API del cliente de paciente, instalar/probar en los entornos objetivo y comprobar sesiones, permisos y flujos integrados. El test aritmético Kotlin y el APK no cierran este punto.
 7. **Landing:** sustituir el video About the Team de otro proyecto y confirmar un canal de contacto privado controlado por el equipo. Es distinto del video de exposición AV2.
@@ -38,3 +38,5 @@ node assets/experiments/av2-completion-2026-11-08/verify.mjs --marked <ruta-a-ma
 ```
 
 El alcance es documental y técnico local/CI. El contenido de §8.1–8.2 y §8.3.1–8.3.2 se preserva, así como las mediciones de rendimiento del 05/11/2026. Las ampliaciones de §7.4.5 y §8.3.3.1 son las declaradas en esta revisión. Las fuentes y la rúbrica son documentos de referencia; no sustituyen los datos de ejecución ni una calificación del docente.
+
+**Integración posterior del 09/11.** Los cuatro commits de actualización de `chapter-8` se incorporaron conservando el Sprint Backlog y la auditoría recibida. La [verificación de integración](../../integration/av2-chapter8-2026-11-09/verification.md) actualiza el contenido revisado y el inventario de entregables.

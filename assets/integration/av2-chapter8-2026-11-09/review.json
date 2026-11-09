@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-09",
+  "before_integration": "1e4ee036ec3bffbca635595171a4e4d086a71936",
+  "incoming": "c9117992f860922471c42a610cb87059b4ec6933",
+  "merge_commit": "e3cfa548627dd70182a5272a9ad1d89d0a724e94",
+  "commits": [
+    "1f62368b2fafc878f6e1c2bb72ab5e6c6f33c456 docs(chapter-8): add illustrative examples to experiment conditions",
+    "fbb369bebb13174831114e6e82a59907c32ffcc3 docs(chapter-8): simplify scale calculations explanation and name MDE",
+    "2c85a5d853e2cf3e76a1c97484a45490844545f2 docs(chapter-8): clarify methods selection and define metric acronyms",
+    "c9117992f860922471c42a610cb87059b4ec6933 docs(chapter-8): rework user stories and backlog table formats"
+  ],
+  "reviewed_line_changes": [
+    {
+      "old_sha256": "d8d40442f1d6974dc851ce3669f0101563561dcca41c7577000131b2a58d9564",
+      "new_sha256": "baca1b3fbe035861a45b669d273970c3ae9e6c25a6a205a83f58462d4383d2e4"
+    },
+    {
+      "old_sha256": "4f17b3b6823f597b04bb4e2866eee70cf46b5c3384293d092ff5e96f856e6a93",
+      "new_sha256": "6ec14a3a0d559bbbf8948efe1c4f638a5731f3ea8ec8e84f88d13aa6ac879635"
+    },
+    {
+      "old_sha256": "78bd4aec8d2ca47c78fc2fa5ad91119595a40e29d2c900e4c1900f8c8385f0d5",
+      "new_sha256": "40dbe29fbc840ea70fc9b471f40456c61c59ef48bc50ed22ec80655d0c27be89"
+    },
+    {
+      "old_sha256": "6370a595241698ec54c89c1e7a79ba55d8a2303e87ac491a3227557be192a55f",
+      "new_sha256": "7ee415e249c1cf12b39a8b7df9330337ae38e71724898854b9e493ea2384441e"
+    },
+    {
+      "old_sha256": "282f300d9c050d7a416a05bc990c5cc89b826d3fce4b2cc1d1f6045b2ebe0021",
+      "new_sha256": "b28462ce95c5e1054d42563ca9ac8cb2ad74bc2c87f7b475ebb9edfc9be972a5"
+    },
+    {
+      "old_sha256": "8df815351f8da6e8d5b950aaf03b2bd6ce6c361864957f11676ed94002e20565",
+      "new_sha256": "78487f90f77dffd79ab25aa29ad541aab8056385b3fb7657326caebc57bb28f5"
+    },
+    {
+      "old_sha256": "d4d90cece173e8e5ff70aaa367b411bc5bc0dcf6a5e012dbd64237092f12b4d8",
+      "new_sha256": "4e5819539892df4d641a6fdebcec3108d161d69531b99db30683fdae40821c86"
+    },
+    {
+      "old_sha256": "ee54bb7db0be2af6a5ba22d140c9fd65fbe1d3019e36246ad6a6be3a5c87f2d7",
+      "new_sha256": "9df9d0ed535c15608d8240aa7c124c7fbbff765fe23ac84655f5705fcbfaae07"
+    },
+    {
+      "old_sha256": "faa7a291082d88734c13cea08956743ba9b133ab6ca72cc6355e951cc6439c94",
+      "new_sha256": "34f1091743065dec35e02562279a1b2151971cfe88529d1682b342c30c1792aa"
+    },
+    {
+      "old_sha256": "da3da351baf3738a8acec75d1f927a52fdeb05799f64e1bd8aa04ddccb0c79a5",
+      "new_sha256": "a1be5529101b930d0d04f2988932927ba38c71b5bdb69d1e08e9edcd292ed75c"
+    },
+    {
+      "old_sha256": "9c358789ea66acf9fc6d6913fc0870f6bd7f8432bac563e21d68111bd508ac6e",
+      "new_sha256": "bcc2ad962cad3f3203ae2daca17c04ce84f272038b4a9a308c31cc4e0264601e"
+    },
+    {
+      "old_sha256": "a397884efec228fa2855e1be2e137170eba1905b1a6c604660e03ef52abe5bc7",
+      "new_sha256": "c7164a5159d595943698d67e8d9045496149f5015e0c1dfd93158a5fda32c4aa"
+    },
+    {
+      "old_sha256": "0159ac8d9c1bc199a3f1354c6936e980cc1d10817e5d86b8400c6d7cfec88621",
+      "new_sha256": "5fde54653006d91e238950f37e56bb576c77c8250ae1c558c788db55172a5424"
+    }
+  ],
+  "review_notes": [
+    "distinguish recruitment from evaluable sample",
+    "unilateral significance and MDE-specific power",
+    "MDE is sensitivity, not confidence interval precision",
+    "bounded standard deviation is a conservative assumption",
+    "LRMR starts at t0+30",
+    "undo does not establish cause",
+    "secondary and safeguard targets remain required",
+    "resolved-with-reason prevents later escalation"
+  ],
+  "table_separator": "verified as valid: seven header and separator cells",
+  "source_references": [
+    "https://www.itl.nist.gov/div898/handbook/prc/section2/prc222.htm",
+    "https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm",
+    "https://www.itl.nist.gov/div898/handbook/eda/section3/eda353.htm"
+  ]
+}
