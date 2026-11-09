@@ -5817,19 +5817,19 @@ El benchmark mide el rendimiento de los productos en producción y lo compara co
  
 | Métrica | Resultado | Meta | Estado |
 |---|---|---|---|
-| Peticiones totales | 249 | — | — |
-| Throughput | 8 req/s | — | — |
-| Latencia promedio | 225.41 ms | — | — |
-| Mediana | 199.91 ms | — | — |
-| p90 | 297.21 ms | — | — |
-| p95 | 323.40 ms | < 800 ms | ✅ |
-| Máximo | 956.15 ms | — | — |
+| Peticiones totales | 246 | — | — |
+| Throughput | 7.916051 req/s | — | — |
+| Latencia promedio | 235.04 ms | — | — |
+| Mediana | 193.38 ms | — | — |
+| p90 | 348.85 ms | — | — |
+| p95 | 541.34 ms | < 800 ms | ✅ |
+| Máximo | 696.28 ms | — | — |
 | Tasa de errores | 0.00 % | < 1 % | ✅ |
-| Checks (`200` y `UP`) | 498 de 498 | 100 % | ✅ |
+| Checks (`200` y `UP`) | 492 de 492 | 100 % | ✅ |
  
 ![Resultado de k6](assets/monitoring/k6-health-results.png)
  
-*Resumen de k6 con los thresholds de latencia y errores aprobados.*
+*Resumen de k6 con los thresholds de latencia y errores aprobados. La revisión final del 09/11/2026 transcribe los valores de esta captura: 246 peticiones, p95 de 541.34 ms y 492 checks aprobados.*
  
 **B. Arranque en frío del RESTful API.** El plan gratuito de Render suspende el servicio tras un periodo sin tráfico. Para medir su efecto, se pausó el monitor de UptimeRobot durante más de 20 minutos sin realizar peticiones. Luego se midió con `curl` la primera respuesta y las siguientes.
  
@@ -5887,7 +5887,7 @@ La meta de responder en menos de 5 segundos no se cumple en frío: la primera pe
  
 | Prueba | Meta | Resultado | Estado |
 |---|---|---|---|
-| Carga del API | p95 < 800 ms y errores < 1 % | p95 = 323 ms, errores = 0 % | ✅ |
+| Carga del API | p95 < 800 ms y errores < 1 % | p95 = 541.34 ms, errores = 0 % | ✅ |
 | Arranque en frío del API | < 5 s | 166.30 s | ❌ |
 | Landing Page | Performance ≥ 90 en Desktop y ≥ 50 en Mobile | 99 y 73 | ✅ |
 | Frontend Web | Performance ≥ 90 en Desktop y ≥ 50 en Mobile | 85 y 39 | ❌ |
