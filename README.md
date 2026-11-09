@@ -2609,7 +2609,7 @@ CareConnect se encuentra compuesto por diferentes productos de software que evol
 - Backend RESTful API.
 - Frontend Web Application requerida para 1ASI0732.
 
-La solución actual mantiene repositorios separados para el informe, backend, aplicación móvil y Landing Page. La Frontend Web Application forma parte del alcance requerido por el curso, pero su repositorio y evidencia de despliegue deben incorporarse cuando su implementación sea confirmada.
+La solución actual mantiene repositorios separados para el informe, backend, clientes y Landing Page. La web del cuidador está implementada en Flutter en [carestacks-web](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web) y publicada en [Render](https://carestacks-web.onrender.com/), con evidencia en §7.4. El móvil Flutter del cuidador y el cliente Kotlin del paciente son productos distintos; sus versiones y verificaciones se identifican por separado.
 
 ---
 
@@ -2631,7 +2631,7 @@ La selección de herramientas busca mantener una separación clara entre cada pr
 | Mobile Development | Kotlin | Lenguaje de programación de la aplicación Android. | `CareStacks/FrontEnd` |
 | Mobile UI | Jetpack Compose | Construir la interfaz declarativa de la aplicación Android. | `CareStacks/FrontEnd` |
 | Mobile Build | Gradle | Gestionar dependencias y compilación de Android. | `CareStacks/FrontEnd` |
-| Backend Development | Java 21 | Lenguaje utilizado actualmente por el backend. | `CareStacks/BackEnd` |
+| Backend Development | Java 25 | Lenguaje del backend revisado para AV2. | `carestacks-backend-api` |
 | Backend Framework | Spring Boot | Implementar y exponer los servicios RESTful actuales. | `CareStacks/BackEnd` |
 | Backend Build | Maven | Gestionar dependencias y construir el backend. | `CareStacks/BackEnd/pom.xml` |
 | Persistence | Spring Data JPA / Hibernate | Gestionar el mapeo objeto-relacional del backend. | `CareStacks/BackEnd` |
@@ -2645,7 +2645,7 @@ La selección de herramientas busca mantener una separación clara entre cada pr
 | Email | SendGrid | Enviar correos electrónicos transaccionales. | Configuración privada del backend |
 | Landing Page Development | React + Vite + TypeScript | Implementación actual de la Landing Page. | `upc-pre-202620-1asi0732-9100-carestacks/carestacks-landing-page` |
 | Landing Page Deployment | Vercel | Publicar la Landing Page. | Proyecto Vercel desplegado con CLI; integración automática con GitHub pendiente |
-| Frontend Web Application | Flutter | Stack requerido por 1ASI0732 para la aplicación web funcional. | Pendiente de repositorio/implementación confirmada |
+| Frontend Web Application | Flutter | Aplicación web del cuidador implementada y publicada. | `carestacks-web`; https://carestacks-web.onrender.com/ |
 | Documentation | Markdown | Elaborar el informe principal del proyecto. | `upc-pre-202620-1asi0732-9100-carestacks/carestacks-report/README.md` |
 
 ##### Configuración de la Native Mobile Application
@@ -2748,7 +2748,7 @@ Package Manager: Flutter / Dart Pub
 Communication: REST over HTTPS/JSON
 ```
 
-La aplicación deberá consumir los servicios expuestos por el backend y contar con un repositorio independiente. Mientras no exista evidencia de implementación, no debe documentarse como un producto ya desplegado.
+La aplicación consume los servicios REST del backend y cuenta con el repositorio independiente [carestacks-web](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-web). Su publicación en https://carestacks-web.onrender.com/ está documentada en §7.4. Esta evidencia no acredita que las intervenciones y la telemetría de los experimentos del Capítulo VIII ya estén implementadas.
 
 ##### Consideración sobre el stack del curso
 
@@ -5524,7 +5524,7 @@ flutter test
 flutter build apk --debug --dart-define=API_BASE_URL=https://carestacks-backend-api.onrender.com
 ```
 
-Instalar y probar ese APK en un dispositivo o emulador antes de considerarlo una entrega funcional. La distribución release requiere la configuración de firma del equipo y una compilación release; no se incluyen claves en el repositorio. Una entrega iOS exige el entorno Apple y su firma. El cliente Android del paciente está en [carestacks-frontend](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend), rama `main` (`922361d`), dentro de la organización del curso. `develop` solo contiene el README. Su compatibilidad con la corrección de Agenda requiere verificación propia; el repositorio histórico `CareStacks/FrontEnd` no pertenece a esta sección.
+Instalar y probar ese APK en un dispositivo o emulador antes de considerarlo una entrega funcional. La distribución release requiere la configuración de firma del equipo y una compilación release; no se incluyen claves en el repositorio. Una entrega iOS exige el entorno Apple y su firma. El cliente Android del paciente está en [carestacks-frontend](https://github.com/upc-pre-202620-1asi0732-9100-carestacks/carestacks-frontend), dentro de la organización del curso. Al 08/11/2026, `develop` (`64308ce`) contiene el código Kotlin, la corrección de desugaring, lint sin errores y el APK debug compilado; `main` conserva la referencia anterior `922361d`. La [verificación técnica AV2](assets/testing/av2-local-2026-11-08/verification.md) registra los límites: el único test unitario es un ejemplo aritmético y falta comprobar el recorrido del paciente contra el backend elegido. El repositorio histórico `CareStacks/FrontEnd` no pertenece a esta sección.
 
 **Backend y persistencia.** El servicio recibe `PORT` y las variables `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_DRIVER_CLASS_NAME`, `SPRING_DATASOURCE_USERNAME`, `SPRING_DATASOURCE_PASSWORD` y `SPRING_JPA_HIBERNATE_DDL_AUTO`. Para PostgreSQL usar su URL JDBC y `org.postgresql.Driver`. La evidencia visual del servicio no expone secretos ni permite certificar los valores de esas variables. El código tiene H2 como valor por defecto; por ello la persistencia PostgreSQL requiere comprobar la configuración del entorno y no se infiere solo por la existencia de una URL pública.
 
