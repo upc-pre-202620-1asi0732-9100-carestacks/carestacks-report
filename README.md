@@ -103,6 +103,8 @@ Noviembre, 2026
 | 2.3.1 | 08/11/2026 | Matias Salcedo | Completó la planificación del Sprint Backlog To-Be y la comparación de herramientas DevOps; corrigió compatibilidad Android y controles del backend, con [resultados y faltantes actualizados](assets/experiments/av2-completion-2026-11-08/verification.md). |
 | 2.3.2 | 09/11/2026 | Matias Salcedo | Incorporó la auditoría recibida de NeuroDraw en §6.4.2, conservó el documento original y registró ocho hallazgos con seguimiento de correcciones y límites de evidencia. |
 | 2.3.3 | 09/11/2026 | Matias Salcedo / Emy127 | Integró los cuatro commits nuevos de chapter-8, revisó la precisión de escala y métricas, conservó el Sprint Backlog y contrastó los archivos de entrega con la guía AV2 ([verificación e inventario](assets/integration/av2-chapter8-2026-11-09/verification.md)). |
+| 2.3.4 | 09/11/2026 | Javier Nikaido | Actualizó el Project Report Collaboration Insights y las evidencias de colaboración del AV2. Incorporó estadísticas de commits, contribuciones y Pull Requests de los repositorios del informe, backend y aplicación móvil, así como el Network Graph del repositorio. Actualizó el README y agregó las capturas correspondientes en `assets/`.|
+| 2.3.5 | 09/11/2026 | Matias Salcedo | Consolidó en `main` los insights y las versiones nuevos de ambas ramas, verificó sus cuatro capturas, corrigió las figuras 33–35 e incorporó en anexos el enlace del video final AV2 de Microsoft Stream. |
 
 # Project Report Collaboration Insights
 
