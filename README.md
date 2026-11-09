@@ -99,10 +99,12 @@ Noviembre, 2026
 | 2.1.0 | 21/10/2026 | Matias Salcedo | Desarrolló el Capítulo VIII: Experiment Planning (8.1) y Experiment Design inicial (8.2) con Question Backlog, Experiment Cards, Hipótesis Null/Alternative, Domain Metrics y Condiciones (`chapter-8`) |
 | 2.1.1 | 24/10/2026 | Matias Salcedo | Revisó el bloque D contra la guía AV2 y el enunciado: corrigió el As-Is, trazó preguntas y tarjetas, unificó hipótesis y métricas, explicitó condiciones y separó planificación de resultados (`chapter-8`) |
 | 2.2.0 | 07/11/2026 | Matias Salcedo | Consolidó D con los cuatro commits de Emy127: alineó escala, métodos, tracking e historias con el As-Is real; completó las tarjetas con cálculos reproducibles y documentó la corrección de enlaces de la landing en `chapter-8` |
-| 2.3.0 | 08/11/2026 | Matias Salcedo / equipo CareStacks | Integró los aportes AV2 de los capítulos IV, VI, VII y VIII en `develop`, conservando la carátula y conclusiones AV2; corrigió referencias y registró la [verificación y los vacíos de entrega](assets/integration/av2-2026-11-08/verification.md). |
+| 2.3.0 | 08/11/2026 | Matias Salcedo / equipo CareStacks | Integró los aportes AV2 de los capítulos IV, VI, VII y VIII en `develop`, conservando la carátula y conclusiones AV2; corrigió referencias y registró la [verificación y los vacíos de entrega]
+(assets/integration/av2-2026-11-08/verification.md). |
 | 2.3.1 | 08/11/2026 | Matias Salcedo | Completó la planificación del Sprint Backlog To-Be y la comparación de herramientas DevOps; corrigió compatibilidad Android y controles del backend, con [resultados y faltantes actualizados](assets/experiments/av2-completion-2026-11-08/verification.md). |
 | 2.3.2 | 09/11/2026 | Matias Salcedo | Incorporó la auditoría recibida de NeuroDraw en §6.4.2, conservó el documento original y registró ocho hallazgos con seguimiento de correcciones y límites de evidencia. |
 | 2.3.3 | 09/11/2026 | Matias Salcedo / Emy127 | Integró los cuatro commits nuevos de chapter-8, revisó la precisión de escala y métricas, conservó el Sprint Backlog y contrastó los archivos de entrega con la guía AV2 ([verificación e inventario](assets/integration/av2-chapter8-2026-11-09/verification.md)). |
+| 2.3.4 | 09/11/2026 | Javier Nikaido | Actualizó el Project Report Collaboration Insights y las evidencias de colaboración del AV2. Incorporó estadísticas de commits, contribuciones y Pull Requests de los repositorios del informe, backend y aplicación móvil, así como el Network Graph del repositorio. Actualizó el README y agregó las capturas correspondientes en `assets/`.|
 
 # Project Report Collaboration Insights
 
@@ -117,6 +119,7 @@ TB1:
 <img src="assets/insights_report_commitsTB1.png">
 <img src="assets/insights_report_branchsTB1.png">
 AV2:
+
 <img src="assets/Insights-report.png">
 <img src="assets/Insights-network.png">
 ## Tabla de Contenidos
