@@ -116,6 +116,9 @@ AV1:
 TB1:
 <img src="assets/insights_report_commitsTB1.png">
 <img src="assets/insights_report_branchsTB1.png">
+AV2:
+<img src="assets/Insights-report.png">
+<img src="assets/Insights-network.png">
 ## Tabla de Contenidos
 
 <!-- 4 niveles. Verificar los anclajes (#) antes de cada entrega: GitHub genera el ancla a partir del texto del título. -->
@@ -3752,6 +3755,50 @@ Esta sección presenta la evidencia de colaboración del equipo a lo largo de lo
 
 *Figura 32. Gráfico de contribuciones del repositorio `carestacks-web`, correspondiente a la adaptación de la base Flutter al segmento cuidador para escritorio.*
 
+
+##### AV2 - Team Collaboration Insights
+
+Durante el AV2, el equipo CareStacks continuó el trabajo colaborativo de CareConnect mediante los repositorios de GitHub utilizados para el desarrollo y documentación del producto.
+
+Las evidencias corresponden al período comprendido entre el 8 de octubre y el 8 de noviembre de 2026.
+
+###### Backend RESTful API
+
+![Backend AV2 Insights](assets/Insights-backend.png)
+
+*Figura X. Estadísticas de colaboración del repositorio Backend RESTful API durante el AV2.*
+
+El repositorio del backend registró la participación de 2 autores, con 3 commits distribuidos entre las ramas y 1 commit en `main`, excluyendo merges.
+Asimismo, se registraron 3 Pull Requests fusionadas. En `main` se modificaron 3 archivos, con 41 líneas añadidas y 1 eliminada.
+
+Estos resultados evidencian actividad de desarrollo e integración durante el período evaluado.
+
+###### Native Mobile Application
+
+![Mobile AV2 Insights](assets/Insights-mobile.png)
+
+*Figura X. Estadísticas de colaboración del repositorio Native Mobile Application durante el AV2.*
+
+El repositorio móvil registró la participación de 1 autor, con 2 commits en `main` y 2 commits en todas las ramas, excluyendo merges. También se registraron 2 Pull Requests fusionadas. En `main` se modificaron 2 archivos, con 90 líneas añadidas y 8 eliminadas.
+
+La actividad registrada evidencia modificaciones e integración de cambios en el repositorio móvil, aunque la participación directa durante este período estuvo concentrada en un integrante.
+
+###### Project Report
+
+![Report AV2 Insights](assets/Insights-report.png)
+
+*Figura X. Estadísticas de colaboración del repositorio Project Report durante el AV2.*
+
+El repositorio del informe registró la participación de los 5 integrantes, con 36 commits tanto en `main` como en el conjunto de ramas, excluyendo merges. Durante el período se modificaron 80 archivos en `main`, con 10,282 líneas añadidas y 315 eliminadas.
+
+Estos resultados evidencian una participación distribuida del equipo en la elaboración y actualización de la documentación del proyecto.
+
+###### Collaboration Analysis
+
+Los resultados muestran diferencias en la distribución de las contribuciones entre los repositorios. Mientras que el informe presenta actividad de los cinco integrantes, el backend registra dos autores y la aplicación móvil uno durante el período evaluado. Esta distribución puede relacionarse con la especialización de responsabilidades del equipo, aunque requiere contrastarse con el historial de commits y los Sprint Backlogs para identificar las contribuciones específicas de cada integrante.
+
+La evidencia de la aplicación web y de los demás productos correspondientes al alcance del AV2 deberá incorporarse para completar el análisis de colaboración de implementación.
+
 #### Interpretación
 
 La distribución de commits entre los cuatro repositorios refleja la división de trabajo definida en el Sprint Backlog (§5.2.1): mientras el repositorio del informe concentra la participación distribuida de los cinco integrantes según la sección del reporte a su cargo, los repositorios de backend, móvil y web muestran una concentración de commits en los integrantes directamente responsables de esas capas de implementación durante este sprint, consistente con la asignación de tareas técnicas del equipo.
@@ -6550,3 +6597,4 @@ Vercel. (s. f.). *Deploying Git repositories with Vercel*. Recuperado el 8 de no
 | AV1 | Video About-the-Product | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQD9H0d9sU4tQJuKV5PStHyuAYjfXdpoDfRe-xCc_R1401s |
 | AV1 | Video de exposición | [Ver exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQDFERAyGNqUSKYZ1N-h8J84AYT8Zt4YMgGvLYk0nFd1Aa4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=8V3uxF) |
 | TB1 | Video de exposición | [Ver exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319881_upc_edu_pe/IQA9unyXf7GAS7Hj7D1HUpNHATNj-KI3ciqOrg7tZizpxVQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=OWQiRK) |
+|AV2|Video de exposición|[Ver exposicion AV2](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgC7KPYu8TJ6SrrG2tG5usNUAeOuP4rFB-8SVk8mlolF9l4?e=ebEBKn)|
