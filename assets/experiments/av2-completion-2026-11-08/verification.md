@@ -1,6 +1,6 @@
 # Cierre documental y revisión local — AV2
 
-Fecha: 08/11/2026. Este registro actualiza los faltantes encontrados durante la [integración en develop](../../integration/av2-2026-11-08/verification.md).
+Estado actualizado: 09/11/2026. Las pruebas y correcciones técnicas corresponden al 08/11/2026. Este registro actualiza los faltantes encontrados durante la [integración en develop](../../integration/av2-2026-11-08/verification.md).
 
 ## Completado
 
@@ -11,13 +11,14 @@ Fecha: 08/11/2026. Este registro actualiza los faltantes encontrados durante la 
 | [Comparación de herramientas](../../../README.md#7451-selección-de-herramientas-para-el-pipeline) | Cuatro matrices para CI/build/testing, deployment del API, deployment de landing y operation. Diez alternativas, criterios C1–C5, fuentes primarias y decisión justificada. Se identifica como evaluación documental posterior, sin inventar pruebas comparativas de proveedores. |
 | [Backend](../../testing/av2-local-2026-11-08/verification.md#backend) | CORS restringido, autenticación por defecto, consola H2 apagada por defecto y métricas no anónimas. 26 pruebas aprobadas y CI acreditado en `develop`. |
 | [Kotlin](../../testing/av2-local-2026-11-08/verification.md#kotlin) | 55 errores de compatibilidad Android corregidos, lint sin errores, APK generado y workflow añadido en `develop`. Las 46 advertencias permanecen visibles. |
+| [Auditoría recibida](../../../README.md#642-auditoría-recibida) | Incorporada el 09/11: documento de NeuroDraw, cronograma y ocho hallazgos. Se conserva la [fuente y la trazabilidad](../../audits/received-neurodraw-2026-11-09/verification.md). Las capturas y el cierre de hallazgos siguen sin acreditarse. |
 | Informe | Registro 2.3.1, evidencias, bibliografía técnica y referencias de §6.2 actualizadas. D y el diseño previo conservados; no se añadieron resultados ficticios. |
 
 El [manifiesto de tareas](planning-tasks.json) permite recalcular los totales y las dependencias. El [verificador](verify.mjs) y su [resultado](document-checks.json) comprueban esos datos, la conservación del contenido previo y los enlaces locales.
 
 ## Faltantes que permanecen
 
-1. **Auditoría recibida (§6.4.2):** grupo auditor, cronograma, informe y evidencia de subsanación.
+1. **Seguimiento de la auditoría recibida (§6.4.2):** el documento ya está incorporado. Faltan sus capturas y la evidencia de corrección/revalidación de los ocho hallazgos.
 2. **Video de exposición AV2:** incorporar el enlace y las evidencias exigidas en el anexo.
 3. **Implementación y ejecución experimental (§8.3.3.2–8.3.3.6):** las 37 tareas están planificadas; todavía se requiere implementar/integrar las variantes y auditoría, pasar el ensayo técnico y recolectar datos con el alcance declarado.
 4. **Análisis y aprendizaje (§8.4–8.5):** resultados reales, interpretación, Question Backlog repriorizado y Shareback, derivados de la ejecución; no se completan con los supuestos de escala.
