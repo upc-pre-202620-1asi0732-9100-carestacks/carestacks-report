@@ -1,0 +1,154 @@
+{
+  "javaVersion": "25.0.1",
+  "springBootVersion": "4.0.6",
+  "totalTests": 33,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "totalTimeSeconds": 38.115,
+  "suites": [
+    {
+      "class": "com.carestacks.careconnect.ActuatorHealthIntegrationTests",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 16.106,
+      "cases": [
+        "healthEndpointReportsUp"
+      ]
+    },
+    {
+      "class": "com.carestacks.careconnect.agenda.domain.agenda.entities.HealthEventTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 0.031,
+      "cases": [
+        "schedulesValidEventAsPending",
+        "confirmsReschedulesAndCancelsEvent",
+        "doesNotConfirmCancelledEvent",
+        "rejectsAnEndAtOrBeforeStart"
+      ]
+    },
+    {
+      "class": "com.carestacks.careconnect.AgendaAuthorizationIntegrationTests",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 5.702,
+      "cases": [
+        "rejectsMissingInvalidAndForgedSessionsOnEveryAgendaRoute",
+        "logoutRevokesOnlyTheIssuedSessionAndCreationCannotSpoofCaregiver",
+        "agendaViewRemovalAndConsentRevocationImmediatelyDenyAllRoutes",
+        "patientAndCaregiverListsNeverExposeAnotherPatientsEvents",
+        "authorizedCaregiverCanReadCreateUpdateConfirmRescheduleCancelAndDelete"
+      ]
+    },
+    {
+      "class": "com.carestacks.careconnect.CareConnectBackendApplicationTests",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 2.038,
+      "cases": [
+        "contextLoads"
+      ]
+    },
+    {
+      "class": "com.carestacks.careconnect.consents.domain.consents.entities.ProfileShareConsentTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 0.014,
+      "cases": [
+        "grantsOnlySelectedViewsAndUpdatesThem",
+        "rejectsSelfSharingAndEmptyPermissions"
+      ]
+    },
+    {
+      "class": "com.carestacks.careconnect.CoreApiIntegrationTests",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 1.331,
+      "cases": [
+        "agendaPersistsCreationConfirmationAndRescheduling",
+        "diaryPersistsEntryAndReturnsItForPatient",
+        "consentRestrictsViewsAndRevocationRemovesAccess"
+      ]
+    },
+    {
+      "class": "com.carestacks.careconnect.ExperimentationLifecycleIntegrationTests",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 9.833,
+      "cases": [
+        "exp02CoversSteppedAlertsLiveConsentCheckReasonClosureDeliveryAckAndPreferenceTracking",
+        "exp01CoversPressHoldIdempotencyUndoWindowSsePropagationConsentRevocationAndTsc",
+        "ts02EnforcesImmutableVariantParticipantIsolationExplicitLossesAndPiiFreeExport"
+      ]
+    },
+    {
+      "class": "com.carestacks.careconnect.experiments.WelchStatisticsAndPseudonymizerTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 0.08,
+      "cases": [
+        "welchComparisonComputesExpectedDirectionDegreesOfFreedomAndPValue",
+        "pseudonymizerProducesDeterministicNonReversibleIdentifiersWithoutExposingUuid",
+        "healthEventRevertConfirmationRequiresConfirmedStatusAndReturnsToPending"
+      ]
+    },
+    {
+      "class": "com.carestacks.careconnect.iam.infrastructure.AuthSessionTests",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 0.677,
+      "cases": [
+        "issuedSessionExpiresAtThirtyMinutesAndCannotBeReconstructed"
+      ]
+    },
+    {
+      "class": "com.carestacks.careconnect.NotificationAuthorizationIntegrationTests",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 0.876,
+      "cases": [
+        "notificationRoutesEnforceSessionOwnershipAndConsentIsolation"
+      ]
+    },
+    {
+      "class": "com.carestacks.careconnect.SecurityBoundariesIntegrationTests",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 1.427,
+      "cases": [
+        "arbitraryOriginCannotPreflight",
+        "trustedFrontendCanPreflightAuthorizedRequests",
+        "h2ConsoleIsDisabledByDefault",
+        "issuedSessionWorksAndLogoutRevokesItAtTheFilter",
+        "diaryRequiresAnIssuedSession",
+        "internalMetricsAreNotAnonymous",
+        "apiDocumentationRemainsPublic",
+        "fabricatedBearerDoesNotAuthenticate",
+        "evenAnUnmappedApiRouteRequiresAuthentication"
+      ]
+    }
+  ]
+}

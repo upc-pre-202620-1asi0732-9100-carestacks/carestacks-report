@@ -6470,6 +6470,54 @@ El [desglose verificable](assets/experiments/av2-completion-2026-11-08/planning-
 
 ##### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
+Para soportar la ejecución controlada de `EXP-01` y `EXP-02` sin comprometer los seis bounded contexts existentes (`iam`, `agenda`, `notifications`, `consents`, `diary` y `documents`), se implementó en `carestacks-backend-api` (Spring Boot 4.0.6, Java 25, rama `feature/tb2-experimentation`) un séptimo bounded context dedicado —**`experiments`** (`com.carestacks.careconnect.experiments`)— acompañado del endurecimiento de autorización por recurso y consentimiento en Notificaciones (`NotificationAccess`).
+
+###### Arquitectura e invariantes implementados en el Backend To-Be
+
+1. **Asignación inmutable, aislamiento entre experimentos y privacidad por diseño (`TS-02`):**
+   - Las entidades JPA `experiment_assignments`, `experiment_participant_locks`, `experiment_scheduled_events` y `experiment_audit_events` garantizan una única variante por círculo (`EXP-01/A`, `EXP-01/B`, `EXP-02/A` o `EXP-02/B`), impiden que un participante integre dos círculos o experimentos simultáneos y congelan los horarios originales (`t0`, ventana operativa `[t0−30m, t0+30m]` y cierre de seguimiento `t0+90m`) con independencia del campo mutable `updatedAt` de Agenda.
+   - `Pseudonymizer` aplica `HMAC-SHA256` determinista con sal configurable para emitir identificadores seudónimos de círculo (`cir_...`), participante (`usr_...`) y sesión (`ses_...`), excluyendo nombres reales, UUIDs directos y descripciones clínicas del colector y de las exportaciones JSON/CSV.
+   - Toda mutación experimental exige `actionId` único por tipo de evento (`uk_experiment_audit_type_action`), haciendo idempotentes los reintentos de red, y conserva explícitamente las causas de pérdida de seguimiento (`NO_ELIGIBLE_EVENTS`, `TELEMETRY_INCOMPLETE`, `CONSENT_REVOKED_DURING_WINDOW`, `PARTICIPANT_WITHDRAWN`) sin descartar círculos silenciosamente ni reemplazar `null` por `0 %`.
+2. **Confirmación reversible, ventana de gracia de 10 s y cierre con motivo (`US-01`, `US-05`, `US-07`):**
+   - `GET /api/experiments/circles/{patientId}/context` resuelve desde el servidor las reglas activas del círculo (`holdDurationMsRequired = 1000` y `undoWindowSeconds = 10` únicamente en `EXP-01/B`), evitando que los clientes web o móviles elijan su propio grupo.
+   - Tanto `PATCH /api/agenda/{id}/confirm` (retrocompatible mediante cabeceras `X-Action-Id`, `X-Hold-Duration-Ms` y `X-Client-Platform`) como `POST /api/experiments/events/{eventId}/confirm` validan sesión y consentimiento `AGENDA`, rechazan pulsaciones incompletas (`< 1000 ms`) en `EXP-01/B` y registran `MED_CONFIRMED` con reloj UTC del servidor (`Clock`).
+   - `POST /api/agenda/{id}/undo` (y `/api/experiments/events/{eventId}/undo`) valida la ventana estricta de diez segundos, revierte `HealthEvent` al estado `PENDING` —sin confundirlo con `CANCELLED`— y agrega `UNDO_TRIGGERED` enlazado a `originalActionId`, preservando el registro original en la pista de auditoría.
+   - `POST /api/agenda/{id}/resolve-with-reason` aplica la misma regla en Control `A` y Variante `B` usando motivos codificados (`ResolutionReason`), en exclusión mutua con `MED_CONFIRMED`, alimentando `LRMR` y `TNR` sin incrementar `TCOM`.
+3. **Propagación en tiempo real mediante Server-Sent Events y verificación de `TSC` (`TS-01`, `US-02`):**
+   - Se seleccionó **Server-Sent Events (`SseEmitter`)** sobre HTTP/HTTPS (`GET /api/experiments/circles/{patientId}/stream`) por su compatibilidad nativa con Spring MVC, proxies cloud (Render) y clientes Flutter/Web sin sobrecarga de brokers externos.
+   - `ExperimentSyncHub` emite una instantánea inicial (`CIRCLE_SNAPSHOT`) al suscribirse o reconectarse, desduplica reconexiones de una misma sesión y **revalida en cada difusión** tanto la vigencia de la sesión opaca IAM como el consentimiento `ConsentView.AGENDA` del paciente; si el paciente revoca el acceso o la sesión cierra, el suscriptor es desalojado antes de enviar el evento.
+   - El despacho SSE no acredita visibilidad por sí solo: `POST /api/experiments/events/{eventId}/sync-observed` contrasta el estado esperado y el observado desde otra sesión activa con el reloj común del servidor para computar `TSC` ($\le 5000\text{ ms}$).
+4. **Planificador escalonado `0 / +15 / +30`, acuses de entrega y preferencias (`US-03`, `US-04`, `US-06`):**
+   - `POST /api/experiments/scheduler/evaluate` evalúa los eventos pendientes de `EXP-02` frente al `Clock` inyectado: emite el recordatorio común en `t0` para `A` y `B` (`NOTIFICATION_SENT_T0`), habilita el recordatorio `+15m` (`ALERT_ESCALATED_15M`) únicamente en `EXP-02/B` y escala en `+30m` (`ALERT_ESCALATED_30M`) exclusivamente hacia co-cuidadores cuyo consentimiento (`AGENDA` o `NOTIFICATIONS`) permanezca activo al instante del envío.
+   - `POST /api/experiments/notifications/{notificationId}/delivered` registra `NOTIFICATION_DELIVERED` solo ante acuse observable del destinatario sin confirmar el evento médico subyacente, mientras que `POST /api/experiments/preferences/observe` registra `NOTIFICATION_PREFERENCE_CHANGED` diferenciando `ENABLED`, `DISABLED` (que alimenta `NOR` sin bloquear el acceso a Agenda) y `UNKNOWN` cuando el sistema operativo o navegador no informa el permiso.
+5. **Reconciliación automática de métricas y contraste de Welch (`TS-02` / apoyo a §8.4.1):**
+   - `GET /api/experiments/export` y `GET /api/experiments/export/csv` reconcilian la agenda congelada y el historial inmutable hasta `t0+90m`, calculando por círculo `TCOM`, `LRMR`, `TNR`, `UR`, `TSC` y `NOR`, además del estadístico $t$ de Welch, grados de libertad de Welch-Satterthwaite, intervalo de confianza del 95 % e indicador `pilotScaleOnly` cuando la muestra evaluable es inferior a los mínimos de §8.2.4 (138 círculos por brazo en `EXP-01`; 112 en `EXP-02`).
+
+###### Catálogo de endpoints To-Be y documentación OpenAPI 3.0
+
+La especificación OpenAPI generada automáticamente en `/v3/api-docs` ([`openapi-tb2.json`](assets/experiments/tb2-backend-2026-11-25/openapi-tb2.json)) incorpora **18 operaciones nuevas o extendidas** distribuidas entre `/api/experiments`, `/api/agenda` y `/api/notifications`:
+
+![Operaciones OpenAPI 3.0 To-Be verificadas](assets/experiments/tb2-backend-2026-11-25/openapi-tobe-endpoints.png)
+
+*Evidencia de endpoints To-Be exportada desde `/v3/api-docs` en `carestacks-backend-api`: asignación por círculo, stream SSE autenticado, confirmación reversible, cierre con motivo, planificador escalonado y exportación estadística.*
+
+###### Gate de verificación automatizada y ensayo técnico sintético
+
+Se ejecutó el pipeline local completo mediante `mvn -B clean verify` con **JDK 25.0.1**, **Maven 3.9.11** y **H2 en memoria (`MODE=PostgreSQL`)**, pasando de las 26 pruebas de AV2 a **33 pruebas automatizadas aprobadas (0 fallos, 0 errores, 0 omitidas)** y generando el artefacto ejecutable `careconnect-backend-0.0.1-SNAPSHOT.jar`:
+
+![Gate de pruebas Maven Surefire en TB2](assets/experiments/tb2-backend-2026-11-25/surefire-tb2-gate.png)
+
+*Evidencia de ejecución de `mvn -B clean verify` ([`surefire-results.json`](assets/experiments/tb2-backend-2026-11-25/surefire-results.json)): suites de dominio, fronteras de seguridad, aislamiento de Notificaciones, cálculos de Welch y ciclo de vida experimental con reloj controlado.*
+
+| Suite incorporada o ampliada | Historias / controles verificados | Resultado comprobable |
+|---|---|---|
+| `WelchStatisticsAndPseudonymizerTest` (3 pruebas) | Seudonimización HMAC-SHA256 sin fuga de UUID, prueba $t$ de Welch bilateral/unilateral y reversión de dominio `HealthEvent.revertConfirmation()`. | 3/3 aprobadas |
+| `NotificationAuthorizationIntegrationTests` (1 prueba multiflujo) | Cierre de observación de AV2 sobre `/api/notifications/**`: rechazo 401 sin sesión, 403 ante acceso cruzado de terceros y lectura condicionada por `ConsentView.NOTIFICATIONS`. | 1/1 aprobada |
+| `ExperimentationLifecycleIntegrationTests` (3 pruebas integrales con `MutableClock`) | Escenarios Gherkin completos de `TS-02`, `US-07`, `US-01`, `US-05`, `TS-01`, `US-02`, `US-03`, `US-04` y `US-06` sin esperas reales: pulsación `<1000 ms` rechazada, reversión a `+6 s` aprobada y a `+15 s` rechazada, desalojo inmediato tras revocar consentimiento en SSE y `+30m`, reconciliación exacta de `TCOM`, `LRMR` (`15.0 min` vs `60.0 min`), `TNR`, `UR`, `TSC`, `NOR` y permisos `UNKNOWN`. | 3/3 aprobadas |
+| Regresión de suites previas (26 pruebas) | `SecurityBoundariesIntegrationTests` (9), `AgendaAuthorizationIntegrationTests` (5), `CoreApiIntegrationTests` (3), `HealthEventTest` (4), `ProfileShareConsentTest` (2), `ActuatorHealthIntegrationTests` (1), `AuthSessionTests` (1) y `CareConnectBackendApplicationTests` (1). | 26/26 aprobadas |
+
+Los artefactos del ensayo técnico sintético —[`exp01-synthetic-rehearsal.json`](assets/experiments/tb2-backend-2026-11-25/exp01-synthetic-rehearsal.json), [`exp01-synthetic-rehearsal.csv`](assets/experiments/tb2-backend-2026-11-25/exp01-synthetic-rehearsal.csv), [`exp02-synthetic-rehearsal.json`](assets/experiments/tb2-backend-2026-11-25/exp02-synthetic-rehearsal.json), [`exp02-synthetic-rehearsal.csv`](assets/experiments/tb2-backend-2026-11-25/exp02-synthetic-rehearsal.csv) y el [registro detallado de verificación](assets/experiments/tb2-backend-2026-11-25/verification.md)— acreditan el cumplimiento del **Gate de ensayo técnico** definido en §8.3.3.1 sobre datos sintéticos y reloj determinista, manteniendo explícita su distinción respecto de las sesiones con usuarios reales documentadas en §8.3.4 y §8.4.
+
 ##### 8.3.3.6. Team Collaboration Insights
 
 #### 8.3.4. To-Be Validation Interviews

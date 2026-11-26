@@ -1,0 +1,3 @@
+circlePseudonym,experimentId,variantGroup,evaluable,followUpLossReason,eligibleEventsCount,telemetryLostEventsCount,tcomPercent,lrmrMinutes,tnrPercent,urPercent,tscPercent,tscEligibleConfirmations,norPercent,norExposedRecipients,unknownPermissionObservations
+cir_f2fb4cab579987f904f82f63,EXP-01,A,true,NONE,1,0,100.0,0.0,0.0,0.0,,0,,0,0
+cir_c4d2a1cd15fde360be2a9e56,EXP-01,B,true,NONE,1,0,100.0,0.0,0.0,50.0,100.0,1,,0,0
