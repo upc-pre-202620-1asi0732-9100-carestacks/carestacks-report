@@ -6956,92 +6956,159 @@ R es riesgo, I impacto, In interés y C confianza. Cada factor usa una escala de
 
 #### 8.5.1. Shareback Session Artifacts: Learning Workflow
 
-**Estado del Shareback.** Sesión planificada, pendiente de ejecución. El objetivo del Shareback es contrastar los hallazgos con las preguntas y los criterios de éxito, decidir qué revisar del Product Backlog y asignar el seguimiento. Se registrarán las razones, sus fuentes y las dudas abiertas.
+**Estado del Shareback.** Sesión planificada, pendiente de ejecución. El material de esta sección queda preparado para la deliberación y el registro posterior de acuerdos.
 
-| Participación propuesta | Responsabilidad |
+##### Objetivo y fuentes
+
+El Shareback busca reunir los aprendizajes de la validación To-Be de CareConnect, contrastarlos con ERQ-01 a ERQ-05 y definir qué mejoras conviene validar primero antes de incorporarlas al Product Backlog. El responsable reportó cuatro entrevistas realizadas con dos cuidadoras geriátricas (TB2-01 y TB2-02) y dos pacientes geriátricas (TB2-05 y TB2-06). Sus comentarios orientan mejoras en la visibilidad de las confirmaciones, la recuperación de errores, la accesibilidad, los recordatorios y la coordinación. Los efectos de las propuestas requieren tareas observables y, cuando corresponda, comprobaciones técnicas.
+
+**Insumos disponibles.** Las [fichas y la carpeta común de respaldos](#evidencias-audiovisuales-de-las-entrevistas-to-be), el análisis cualitativo de §8.4.1, las propuestas M01–M08b y el Question Backlog de §8.4.2 son la base de la sesión. Las secciones 2.2 y 6.3 aportan antecedentes cualitativos. Las secciones 8.1–8.3 aportan preguntas, instrumentos y las historias del Product Backlog To-Be.
+
+**Verificaciones pendientes.** Cotejar los archivos originales con las síntesis, documentar la fecha y duración de cada entrevista y el consentimiento para usar las grabaciones, identificar las pantallas o la versión presentada y confirmar si la sesión de TB2-02 en Google Meet fue grabada.
+
+##### Roles previstos y agenda propuesta
+
+| Rol previsto | Responsabilidad |
 |---|---|
-| Responsable de validación | Facilitar la sesión, presentar observaciones junto con sus limitaciones y comprobar el consentimiento de materiales compartidos. |
-| Responsable de análisis | Revisar denominadores, faltantes, contraste preespecificado y alcance de cada estimación. |
-| Responsables de web, móvil y backend | Confirmar versiones, reproducir problemas y proponer cambios comprobables de interfaz, permisos o auditoría. |
-| Responsable de Product Backlog | Moderar la decisión de priorización, vincularla a las historias de §8.3.2 y acordar fechas y responsables. |
-| Relator designado por el equipo | Registrar acuerdos, discrepancias, acciones, fechas y evidencia de cierre. |
+| Facilitador de validación | Presentar los resultados y las limitaciones de las entrevistas, verificar el consentimiento de los materiales que se compartan y conducir la discusión. |
+| Representante UX | Analizar navegación, accesibilidad e interacción y proponer cómo observar las dificultades. |
+| Responsable de análisis | Revisar la procedencia y el alcance de los hallazgos, identificar faltantes y distinguir la evidencia formativa de los datos experimentales. |
+| Responsable de producto | Evaluar las propuestas y su relación con el Product Backlog y facilitar la priorización. |
+| Relator | Registrar decisiones, discrepancias, responsables, fechas y acciones posteriores. |
 
-**Insumos disponibles.** Las secciones 2.2 y 6.3 aportan antecedentes cualitativos. Las secciones 8.1–8.3 aportan preguntas, tarjetas, instrumentos y Product Backlog To-Be. Las cuatro síntesis To-Be, la matriz H01–H08 y las propuestas M01–M08b de §8.4.1 sirven como insumos preliminares. La carpeta común de respaldos está referenciada en §8.3.4.2. Se incorporarán los resultados del cotejo y los metadatos, los registros de tareas, la verificación de instrumentación y las métricas conforme estén disponibles.
+Los responsables de web, móvil y backend podrán apoyar la revisión técnica de versiones, permisos e instrumentación cuando se requiera.
 
-| Tiempo propuesto | Agenda |
+| Tiempo | Actividad |
 |---|---|
-| 5 min | Revisar objetivo, fuentes y estado de la evidencia. |
-| 10 min | Contrastar H01–H08 por segmento con las fichas y discutir los matices sobre Deshacer. |
-| 10 min | Revisar la evidencia pendiente y las incertidumbres de ERQ-01 a ERQ-05. Identificar qué requiere una prueba formativa y qué requiere datos A/B. |
-| 15 min | Revisar D01–D08b, aplicar el criterio de desempate y registrar qué propuestas aprueba, ajusta, aplaza o descarta el equipo. |
-| 5 min | Completar el acta con las decisiones y acordar responsables, acciones, fechas y criterios de cierre. |
+| 0–5 minutos | Presentar el objetivo y las fuentes disponibles. |
+| 5–15 minutos | Revisar H01–H08 y contrastar las observaciones por segmento. |
+| 15–25 minutos | Discutir ERQ-01 a ERQ-05 y la evidencia que aún requiere cada pregunta. |
+| 25–40 minutos | Evaluar y priorizar D01–D08b según los criterios de decisión. |
+| 40–45 minutos | Registrar acuerdos, responsables y criterios de seguimiento. |
 
-**Presentación y decisión.** Para cada hallazgo, mostrar la observación, su fuente, denominador cuando corresponda, versión, modo y limitación, seguidos de la interpretación y la pregunta asociada. Revisar los casos que no encajen en la interpretación inicial. Vincular cada decisión al hallazgo y a la historia relacionada del Capítulo III o de §8.3.2, según corresponda. Registrar el alcance por definir cuando la historia cubra solo parte de la propuesta. El equipo podrá mantener, corregir, volver a probar, proponer adopción según la tarjeta o aplazar por falta de evidencia. Si aún faltan datos al reunirse, usar la sesión para revisar preparación y asignar su recolección.
+##### Puntos de discusión para el equipo
 
-**Matriz de aprendizajes**
+Intervenciones preparadas para orientar la sesión.
 
-Las síntesis por código de §8.3.4.2 son el insumo disponible. Los aprendizajes propuestos indican qué investigar. ERQ-05 queda para una comparación de retención, ya que las entrevistas no evaluaron el indicador.
+**Facilitador de validación**
 
-| ID | Hallazgo | Evidencia disponible | Interpretación | Aprendizaje propuesto | Pregunta ERQ |
+> Trabajamos con las síntesis de cuatro entrevistas To-Be reportadas, dos de cuidadoras y dos de pacientes geriátricas. Los comentarios señalan oportunidades en confirmación, recordatorios y accesibilidad. Revisemos qué conviene validar primero.
+
+**Representante UX**
+
+> TB2-01 y TB2-05 cuestionaron los diez segundos de Deshacer. TB2-02 consideró adecuado el plazo si el control se ve y TB2-06 pidió mostrar el tiempo restante. Revisemos por separado la visibilidad del control y la duración.
+
+**Responsable de análisis**
+
+> Todavía queda por comprobar si ampliar el plazo reduce errores. Propongo evaluar primero el botón y la cuenta regresiva con los diez segundos vigentes y estudiar otra duración en una prueba aparte.
+
+**Representante UX**
+
+> TB2-02 pidió una señal de guardado y distinguir una actividad pendiente de una no realizada. Probemos si las etiquetas permiten reconocer tres resultados distintos: pendiente, confirmada y cerrada con motivo.
+
+**Responsable de producto**
+
+> Podemos ordenar la revisión por impacto en la tarea, fuerza de la evidencia y dependencias. Propongo empezar por Deshacer y seguir con la confirmación visible. El equipo decidirá el orden definitivo.
+
+**Facilitador de validación**
+
+> Las pacientes señalaron botones o íconos difíciles de reconocer. Veamos cómo comprobar el tamaño de los controles, la claridad de sus etiquetas y los apoyos opcionales, respetando los permisos y capacidades de cada rol.
+
+**Responsable de análisis**
+
+> Las entrevistas orientan las pruebas formativas. Para responder las hipótesis de EXP-01 y EXP-02 hacen falta los datos previstos en sus diseños. Mantengamos los puntajes y el orden del Question Backlog hasta que haya evidencia pertinente para revisarlos.
+
+**Relator**
+
+> Registraré las propuestas junto con la evidencia necesaria para validarlas. Los acuerdos, sus responsables y sus fechas se completarán cuando el equipo tome las decisiones.
+
+##### Matriz de aprendizajes
+
+| ID | Hallazgo | Evidencia disponible | Interpretación | Validación propuesta | Pregunta ERQ |
 |---|---|---|---|---|---|
-| H01 | Visibilidad de confirmación | TB2-02, TB2-05 y TB2-06 pidieron una señal de guardado. | Se necesita una indicación legible del resultado en la misma vista. | Probar si el estado nuevo se reconoce después de confirmar. | ERQ-01, ERQ-04 |
-| H02 | Deshacer y diez segundos | TB2-01 y TB2-05 cuestionaron el plazo. TB2-02 lo aceptó si el control está visible. TB2-06 pidió ver el tiempo restante. | Visibilidad y duración plantean preguntas de usabilidad distintas. | Comprobar la visibilidad con el plazo vigente y estudiar alternativas por separado. | ERQ-01, ERQ-04 |
-| H03 | Coordinación y sincronización | TB2-01 valoró el apoyo al relevo y TB2-02 el estado sincronizado. | La consulta compartida puede ayudar a saber qué resta por hacer. | Observar si otra sesión autorizada reconoce el cambio y estudiar el relevo con herramientas habituales. | ERQ-01, ERQ-03 |
-| H04 | Accesibilidad de controles | TB2-05 señaló botones difíciles de identificar y sugirió una guía por voz. TB2-06 señaló íconos pequeños. | El tamaño y los rótulos son candidatos a mejorar la identificación. | Comparar alternativas con los apoyos habituales de ambos segmentos. | ERQ-04 |
-| H05 | Claridad y frecuencia de avisos | TB2-01 y TB2-02 hablaron de frecuencia o saturación. TB2-05 pidió claridad y poca repetición. TB2-06 pidió identificar la actividad. | El contenido de un aviso y su frecuencia requieren validaciones distintas. | Probar comprensión y preferencias, manteniendo separado el protocolo A/B. | ERQ-02 |
-| H06 | Consulta de pendientes | TB2-01 pidió acceso directo en Agenda y TB2-06 identificar la actividad en el aviso. | Agenda y avisos son rutas complementarias para localizar pendientes. | Observar cómo se llega al registro desde cada ruta. | ERQ-01, ERQ-02, ERQ-03 |
-| H07 | Valor percibido del cierre con motivo | TB2-01 y TB2-02 valoraron registrar un motivo. TB2-02 pidió distinguirlo de pendiente. | La etiqueta podría aclarar qué estado deja el cierre. | En T4, pedir que se explique el estado resultante y se distinga de una confirmación. | ERQ-01, ERQ-02 |
-| H08 | Interés en el acceso autorizado | TB2-05 y TB2-06 valoraron la consulta por personas autorizadas. TB2-05 pidió identificar quién tiene acceso. | Mostrar el alcance de los permisos podría facilitar su comprensión. | Pedir a la paciente que identifique quién tiene acceso a partir de la vista de permisos. | ERQ-01 (contexto de acceso) |
+| H01 | Visibilidad de confirmación | TB2-02, TB2-05 y TB2-06 pidieron una señal de guardado. | El resultado de confirmar debe poder reconocerse en la misma vista. | En T1, observar si la persona identifica el nuevo estado después de confirmar. | ERQ-01, ERQ-04 |
+| H02 | Deshacer y diez segundos | TB2-01 y TB2-05 cuestionaron el plazo. TB2-02 lo consideró adecuado si el control se ve. TB2-06 pidió ver el tiempo restante. | Visibilidad y duración plantean preguntas de usabilidad distintas. | Evaluar en T2 la visibilidad y la cuenta regresiva con el plazo vigente. Estudiar alternativas de duración por separado. | ERQ-01, ERQ-04 |
+| H03 | Coordinación y sincronización | TB2-01 valoró la Agenda compartida para el relevo y TB2-02 destacó la sincronización. | El estado actualizado podría ayudar a saber qué queda por hacer durante el cambio de turno. | En T3, comprobar qué estado se muestra en una segunda sesión autorizada y registrar aparte la latencia técnica. Para ERQ-03, estudiar el relevo con las herramientas habituales. | ERQ-01, ERQ-03 |
+| H04 | Accesibilidad de controles | TB2-05 señaló botones difíciles de identificar y sugirió guía por voz. TB2-06 señaló íconos pequeños. | El tamaño y la legibilidad de los controles podrían afectar el reconocimiento de acciones. | Evaluar tamaños, etiquetas y orientación auditiva opcional con los roles correspondientes y sus apoyos habituales. | ERQ-04 (contexto de accesibilidad) |
+| H05 | Claridad y frecuencia de avisos | TB2-01 y TB2-02 hablaron de frecuencia o saturación. TB2-05 pidió claridad y poca repetición. TB2-06 pidió identificar la actividad. | El contenido de un aviso y su frecuencia requieren comprobaciones distintas. | Comprobar comprensión en T5 y explorar preferencias en T6 sin modificar las condiciones A/B. | ERQ-02 |
+| H06 | Consulta de pendientes | TB2-01 pidió acceso directo en Agenda y TB2-06 identificar la actividad en el aviso. | Agenda y avisos son vías complementarias para localizar un pendiente. | Probar cómo se localiza el registro desde Agenda y desde el aviso correspondiente. | ERQ-01, ERQ-02, ERQ-03 |
+| H07 | Valor percibido del cierre con motivo | TB2-01 y TB2-02 valoraron registrar un motivo. TB2-02 pidió distinguirlo de pendiente. | El cierre con motivo requiere una etiqueta que lo distinga de pendiente y confirmada. | En T4, pedir que se identifique el estado resultante y se explique cómo se diferencia de una confirmación. | ERQ-01, ERQ-02 |
+| H08 | Interés en el acceso autorizado | TB2-05 y TB2-06 valoraron la consulta por familiares o cuidadores autorizados. TB2-05 pidió saber quién tiene acceso. | Mostrar el alcance de los permisos podría ayudar a la paciente a reconocer quién puede consultar la información. | Presentar una vista de permisos apropiada para el rol paciente y registrar qué personas identifica como autorizadas. | ERQ-01 (contexto de acceso) |
 
-**Criterio de desempate propuesto.** Entre acciones con la misma prioridad sugerida, contrastar sucesivamente:
+##### Question Backlog
 
-1. **Impacto en la tarea.** Revisar primero lo que pueda impedir completar una acción principal, interpretar su resultado o entender quién puede acceder.
-2. **Fuerza de la evidencia.** Con impacto similar, considerar qué códigos respaldan la propuesta, con qué grado de especificidad y qué diferencias o dudas permanecen. Registrar si el respaldo procede de síntesis reconstruidas o de observaciones verificadas.
-3. **Dependencias.** Con respaldo similar, revisar primero la acción que habilite otras pruebas o que pueda validarse con la versión, el rol y el escenario disponibles. Anotar los prerrequisitos de las demás.
+Se conservan los puntajes y el orden de §8.4.2. ERQ-01 mantiene **62.5**, ERQ-02 **50.0**, ERQ-03 **32.0**, ERQ-04 **18.0** y ERQ-05 **12.0**. Las entrevistas aportan evidencia cualitativa exploratoria para orientar las próximas validaciones. La oportunidad del registro, la sincronización y la resolución de pendientes requieren los datos de sus diseños de evaluación. El tiempo de relevo y las diferencias entre perfiles requieren sus propios registros, y ERQ-05 exige observar la retención con y sin el indicador de continuidad.
 
-Si persiste el empate, dejar las opciones y el motivo en el acta. El orden y las prioridades definitivas se acuerdan durante la sesión.
+##### Criterios de decisión y seguimiento de propuestas
 
-**Matriz de decisiones propuestas**
+Para cada hallazgo, presentar su fuente, versión y modo de exposición cuando consten, junto con la interpretación, sus límites y la ERQ asociada. Revisar las observaciones discordantes. Vincular cada decisión con el hallazgo y con la historia del Capítulo III o de §8.3.2, según corresponda. Registrar qué alcance queda por definir cuando una historia cubra solo parte de la propuesta. Cuando falte evidencia, el equipo podrá acordar su recolección o aplazar la decisión.
 
-Las prioridades corresponden a las sugerencias de §8.4.1. El equipo podrá aceptar, ajustar, aplazar o descartar cada acción durante el Shareback. El acta conservará la decisión, su fundamento y el responsable asignado.
+Entre propuestas de igual prioridad sugerida se aplican estos criterios en orden:
 
-| ID | Aprendizaje | Acción recomendada | Historia de usuario | Prioridad | Estado |
+1. **Impacto en la tarea.** Revisar primero lo que pueda impedir una acción principal, interpretar su resultado o entender quién tiene acceso.
+2. **Fuerza de la evidencia.** Considerar qué códigos respaldan la propuesta, cuán específicas son las observaciones y qué diferencias siguen abiertas.
+3. **Dependencias.** Dar precedencia a lo que habilite otras pruebas o pueda observarse con la versión y el rol disponibles. Anotar los prerrequisitos que falten.
+
+Si persiste el empate, registrar las opciones y la razón en el acta. El equipo podrá aprobar, ajustar, aplazar o descartar propuestas durante la sesión. Los criterios de cierre indican qué evidencia se necesita para decidir si corresponde aceptar el cambio o ajustar y volver a probar.
+
+| ID | Hallazgo | Acción propuesta e historia relacionada | Prioridad sugerida | Justificación | Evidencia de validación y criterio de cierre | Responsable | Fecha objetivo | Estado de aprobación |
+|---|---|---|---|---|---|---|---|---|
+| D02 | H02 | Evaluar el botón Deshacer y una cuenta regresiva con el plazo vigente de diez segundos (M02, US-05). | Alta, primera a revisar | Las participantes expresaron dudas distintas sobre visibilidad y duración. | Registro de T2 con versión, modo de interacción, ayuda, errores y comprensión del resultado. Registrar el plazo observado si hubo interacción. | Por asignar | Por acordar | Propuesta pendiente de decisión del equipo |
+| D01 | H01 | Evaluar una señal visible de guardado y una etiqueta clara del nuevo estado (M01, US-01). | Alta, segunda a revisar | Tres entrevistas pidieron una señal explícita después de guardar. | Registro de T1 que indique si la persona reconoce el cambio de estado y si necesitó ayuda. | Por asignar | Por acordar | Propuesta pendiente de decisión del equipo |
+| D04 | H07 | Evaluar etiquetas y señales distintas para pendiente, confirmada y cerrada con motivo (M04, US-07 y US-02). | Alta | El cierre con motivo puede requerir una señal diferente a la de confirmación o pendiente. | Registro de T4 con explicación que distinga correctamente el estado resultante de una confirmación. Si hay confusión, documentar el ajuste y repetir la observación. | Por asignar | Por acordar | Propuesta pendiente de decisión del equipo |
+| D06 | H05 y H06 | Evaluar avisos que nombren la actividad pendiente y den acceso a Agenda (M06, US-03 y US-04). | Alta | Las síntesis señalan que el mensaje debería ayudar a identificar el pendiente. | Evaluación de comprensión de T5. Registrar si la persona reconoce la actividad y, cuando el enlace sea interactivo, si llega a su ficha en Agenda. | Por asignar | Por acordar | Propuesta pendiente de decisión del equipo |
+| D08b | H08 | Comprobar la comprensión de permisos desde el rol paciente con una vista y cuentas ficticias (M08b, US14 y US16 del Capítulo III). | Alta | Las pacientes valoraron compartir con personas autorizadas y TB2-05 pidió reconocer quién tiene acceso. | Respuesta documentada que identifique quién tiene permiso y qué puede consultar, con modo de exposición y ayuda registrados. | Por asignar | Por acordar | Propuesta pendiente de decisión del equipo |
+| D03 | H06 | Probar el acceso directo a pendientes desde Agenda (M03, US-01 y US-07). | Media | TB2-01 pidió localizar pendientes sin pasos innecesarios. | Registro de si la persona llega al pendiente correcto y de los pasos o ayudas que requirió. | Por asignar | Por acordar | Propuesta pendiente de decisión del equipo |
+| D05 | H04 | Evaluar tamaño de controles, rótulos y orientación auditiva opcional (M05, US-01 y US-05). | Alta | Las pacientes reportaron dificultades para reconocer algunos controles. | Registro por rol de los controles identificados, barreras y apoyos utilizados. | Por asignar | Por acordar | Propuesta pendiente de decisión del equipo |
+| D07 | H05 | Explorar preferencias por actividad sin modificar el protocolo A/B en evaluación (M07, US-06). | Media | Los relatos plantean preferencias distintas sobre frecuencia y saturación. | Registro de T6 que indique si se entiende el alcance del ajuste y se conserva el acceso a Agenda. | Por asignar | Por acordar | Propuesta pendiente de decisión del equipo |
+| D08a | H03 | Comprobar qué estado recibe la segunda sesión autorizada tras confirmar y revertir y si queda excluida la cuenta sin permiso (M08a, US-02). | Alta | Las cuidadoras valoraron consultar estados compartidos para coordinarse. | Registro técnico de T3 con estado esperado y recibido, latencia y control de acceso. Registrar aparte la comprensión de la persona. | Por asignar | Por acordar | Propuesta pendiente de decisión del equipo |
+
+D03, D05, D07 y D08a quedan disponibles para deliberación. El orden sugerido de D02 y D01 se revisará junto con las demás propuestas durante el Shareback.
+
+##### Estado y criterios de validación de T1–T6
+
+Las cuatro entrevistas se reportaron como realizadas. La documentación actual no acredita ejecución interactiva de T1–T6. Los comentarios orientan las pruebas formativas. Cada modo se registra según §8.3.4.1 y §8.3.4.2, y una tarea sin ejecutar se clasifica como «no ejecutada». En modo conceptual se registra comprensión. Para acreditar ejecución funcional se necesita una prueba interactiva. Los registros deberán identificar versión o material mostrado, modo, rol, primer intento y ayuda, según corresponda.
+
+| Tarea y objetivo | Rol | Modalidad posible | Resultado verificable disponible | Evidencia específica pendiente | Criterio para darla por validada |
 |---|---|---|---|---|---|
-| D01 | H01. Confirmación visible | Probar señal de guardado y etiqueta de estado (M01). | US-01 | Alta | Propuesta pendiente de revisión del equipo |
-| D02 | H02. Recuperación de errores | Probar Deshacer con cuenta regresiva (M02). Mantener diez segundos en el protocolo vigente y documentar cualquier alternativa por separado. | US-05 | Alta | Propuesta pendiente de revisión del equipo |
-| D03 | H06. Localización de pendientes | Probar acceso directo a pendientes desde Agenda (M03). | US-01, US-07 | Media | Propuesta pendiente de revisión del equipo |
-| D04 | H07. Diferenciación de estados | Probar etiquetas y señales para distinguir confirmación, pendiente y cierre con motivo (M04). | US-07, US-02 | Alta | Propuesta pendiente de revisión del equipo |
-| D05 | H04. Accesibilidad | Evaluar tamaño de controles, rótulos y orientación auditiva opcional (M05). | US-01, US-05 | Alta | Propuesta pendiente de revisión del equipo |
-| D06 | H05–H06. Comprensión de avisos | Probar avisos que identifiquen la actividad y enlacen a Agenda (M06). | US-03, US-04 | Alta | Propuesta pendiente de revisión del equipo |
-| D07 | H05. Control de avisos | Explorar preferencias por actividad sin modificar el protocolo A/B en evaluación (M07). | US-06 | Media | Propuesta pendiente de revisión del equipo |
-| D08a | H03. Consulta del estado compartido | Tras confirmar y revertir, comprobar qué estado recibe la segunda sesión autorizada, en qué tiempo y si la cuenta sin permiso queda excluida (M08a). | US-02 (Capítulo VIII) | Alta | Propuesta pendiente de revisión del equipo |
-| D08b | H08. Comprensión de permisos desde el rol paciente | Presentar la vista de permisos con cuentas ficticias y pedir a la paciente que identifique quién tiene acceso y qué puede consultar. Registrar su explicación y la ayuda (M08b). | US14 y US16 (Capítulo III, historias relacionadas) | Alta | Propuesta pendiente de revisión del equipo |
+| T1. Confirmar una actividad de prueba e identificar el nuevo estado. | Cuidador. | Interactiva con pulsación sostenida disponible o conceptual con pantallas. | Sin registro verificable. | Registro de pulsación, señal de guardado, respuesta y ayuda. | En interacción, mantiene el control 1 s y reconoce el cambio y la opción Deshacer. En modo conceptual, identifica el estado que se muestra. |
+| T2. Revertir una confirmación errónea. | Cuidador. | Interactiva con reversión funcional o conceptual con una secuencia de pantallas. | Sin registro verificable. | Registro de localización de Deshacer, tiempo si hay interacción, errores y explicación del estado corregido. | En interacción, revierte dentro de 10 s y reconoce el estado corregido. En modo conceptual, identifica el alcance de Deshacer y el resultado esperado. |
+| T3. Consultar y explicar un estado compartido. | Cuidador o co-cuidador. Consulta adaptada al adulto mayor según permisos. | Interactiva con dos sesiones activas o conceptual con pantallas. | Sin registro verificable. | Registro de la respuesta al estado mostrado. En interacción, registrar por separado estado y latencia en la segunda sesión y el control de acceso. | La persona identifica y explica el estado. El verificador documenta por separado si la actualización coincide en ≤5 s y si la cuenta sin permiso queda excluida. Si una condición técnica impide completar la tarea, registrar la interrupción con su causa. |
+| T4. Cerrar con motivo una actividad de prueba. | Cuidador. | Interactiva si el motivo queda registrado o conceptual en otro caso. | Sin registro verificable. | Registro del motivo seleccionado y explicación del estado resultante. | En interacción, elige un motivo permitido y reconoce que el cierre resuelve el pendiente. En modo conceptual, distingue ese cierre de una confirmación. |
+| T5. Interpretar los avisos y sus destinatarios. | Ambos segmentos, según su rol. | Interactiva con programación y entrega verificadas o conceptual con tarjetas secuenciales. | Sin registro verificable. | Registro de la comprensión del momento, destinatario y condiciones de cada aviso. | Distingue el aviso único de A de los avisos de B, identifica cuándo y quién recibe los avisos adicionales y explica que se detienen al resolver el registro. |
+| T6. Ajustar preferencias y volver a consultar Agenda. | Ambos segmentos, según su rol. | Interactiva con preferencias operativas o conceptual en otro caso. | Sin registro verificable. | Registro de la acción o explicación del ajuste, su alcance y el acceso a Agenda. | En interacción, cambia la preferencia y vuelve a consultar Agenda. En modo conceptual, explica qué afecta el ajuste y qué acceso conserva. |
 
-**Registro de acciones pendientes.** Responsables por rol, sujetos a asignación en la sesión. Las acciones correctivas derivadas de hallazgos se registrarán con el mismo formato cuando se acuerden.
+##### Registro de Shareback y seguimiento de acuerdos
 
-| Acción propuesta | Vínculo | Rol propuesto | Criterio de cierre | Fecha / estado |
+**Acciones pendientes.** Los roles de apoyo están propuestos. Los responsables nominales se incorporarán cuando el equipo los asigne.
+
+| Acción de seguimiento | Vínculo | Rol propuesto | Criterio de cierre | Fecha / estado |
 |---|---|---|---|---|
-| Comprobar versiones, cierres, revocación y permisos antes de las sesiones. | US-02, US-07, TS-01, TS-02 | Ingeniería de web, móvil y backend | Lista de verificaciones con versión y evidencia técnica para determinar qué tareas son ejecutables. | Por acordar / pendiente |
-| Completar los dos cupos de cuidador y documentar respaldos, consentimientos y observaciones de tareas. | T1–T6, §8.3.4 | Validación | Fichas con metadatos y referencias autorizadas, y matriz con observaciones, modo y faltantes. | Por acordar / pendiente |
+| Comprobar versiones, cierres, revocación y permisos antes de las sesiones. | US-02, US-07, TS-01, TS-02 | Ingeniería de web, móvil y backend | Lista de comprobaciones con versión y evidencia técnica que identifique las tareas ejecutables. | Por acordar / pendiente |
+| Completar los dos cupos de cuidador y documentar respaldos, consentimientos y observaciones de tareas. | T1–T6, §8.3.4 | Facilitador de validación | Fichas con metadatos y referencias autorizadas y matriz con observaciones, modo y faltantes. | Por acordar / pendiente |
 | Verificar auditoría común, sincronización y entrega en piloto. | TS-02, TS-01, US-03, US-04, US-06 | Ingeniería y análisis | Exportación reproducible y concordancia con el cálculo manual en casos de prueba. | Por acordar / pendiente |
-| Revisar los resultados y actualizar prioridades cuando corresponda. | ERQ-01–ERQ-05, §8.4.2 | Análisis y Product Backlog | Acta con fundamento, acción, responsable y fecha de revisión. | Por acordar / pendiente |
+| Revisar los resultados y las prioridades cuando corresponda. | ERQ-01–ERQ-05, §8.4.2 | Análisis y producto | Acta con decisión, fundamento, acción, responsable y fecha de revisión. | Por acordar / pendiente |
 
-**Criterios para nuevos experimentos.** Considerarlos cuando quede una incertidumbre relevante que no pueda resolverse con revisión técnica o una prueba formativa, exista una decisión de producto asociada y se cuente con una hipótesis, comparación, métrica, salvaguardas, instrumentación, consentimiento y escala factibles. Las exploraciones de relevo y accesibilidad requieren primero sus instrumentos específicos. Para iniciativas nuevas o ajustes tras el piloto, acordar el protocolo antes de iniciar la cohorte confirmatoria.
+**Criterios para nuevos experimentos.** Considerarlos cuando quede una incertidumbre relevante que requiera evidencia más allá de una revisión técnica o prueba formativa y exista una decisión de producto asociada. Comprobar que la hipótesis, comparación, métrica, salvaguardas, instrumentación, consentimiento y escala sean factibles. Las exploraciones de relevo y accesibilidad requieren instrumentos propios. Acordar cualquier protocolo nuevo o ajuste tras el piloto antes de iniciar la cohorte confirmatoria.
 
-**Plantilla de acta y seguimiento**
+**Plantilla de acta.** Los insumos preparados quedan referenciados en las tablas anteriores. Completar los campos de sesión y aprobación con los acuerdos reales.
 
-| Campo | Registro |
+| Campo | Preparación o registro por completar |
 |---|---|
-| Fecha y modalidad | Pendiente |
-| Participantes, facilitador y relator | Pendiente |
-| Hallazgos revisados, fuentes, versiones y datos faltantes | Pendiente |
-| Decisiones, razones y cambios acordados en los backlogs | Pendiente |
-| Responsables asignados | Pendiente |
-| Acciones y criterios de cierre | Pendiente |
-| Fechas de seguimiento y próxima revisión | Pendiente |
-| Validación del acta por el equipo | Pendiente |
+| Objetivo | Contrastar los aprendizajes To-Be con las ERQ y acordar qué propuestas validar. |
+| Fecha, modalidad y asistentes efectivos | Pendientes de registrar. |
+| Hallazgos y fuentes | H01–H08, fichas TB2-01, TB2-02, TB2-05 y TB2-06, §8.4.1 y carpeta común de §8.3.4.2. Registrar qué se revisó y con qué versiones o limitaciones. |
+| Agenda de trabajo | Agenda propuesta de 45 minutos. Registrar los cambios acordados en la sesión. |
+| Propuestas y criterios de decisión | D01–D08b y los criterios de impacto, evidencia y dependencias. Registrar qué propuestas se discutieron y el fundamento por ID. |
+| Acuerdos y aprobación del equipo | Pendientes. Registrar por ID la decisión, su justificación y quién la valida. |
+| Acciones, responsables nominales y fechas | Por asignar y acordar. Registrar por acción el responsable, fecha objetivo, criterio de cierre y fecha de revisión. |
+| Seguimiento y validación del acta | Pendientes. Registrar quién valida el acta, cuándo y qué asuntos siguen abiertos. |
 
-En la siguiente planificación de sprint, el responsable del backlog revisará cada acción con su asignado. En cada revisión se registrará estado, impedimentos y evidencia de aceptación. Los asuntos abiertos se trasladarán al próximo Shareback hasta su cierre o aplazamiento explícito. Se conservará el historial de decisiones y versiones de los artefactos.
+En la siguiente planificación de sprint, el responsable de producto revisará cada acción con su asignado y registrará el estado, los impedimentos y la evidencia de cierre. Los asuntos abiertos pasarán al próximo Shareback hasta que el equipo los cierre o aplace. El acta conservará el historial de decisiones y de versiones de los artefactos.
+
+##### Conclusión del Shareback
+
+Las entrevistas To-Be permitieron identificar oportunidades para que las personas reconozcan qué se registró, corrijan errores y encuentren la información que les corresponde. Deshacer y la confirmación visible son las primeras propuestas sugeridas para revisión. Los hallazgos también orientan mejoras de accesibilidad, claridad de avisos, diferenciación de estados y comprensión de permisos. La sesión permitirá acordar qué probar y qué evidencia se necesita para cerrar cada acción. Las conclusiones experimentales y la aprobación definitiva de cambios requieren evidencia adicional.
 
 Material de preparación para la entrega en los guiones de [About-the-Team](assets/experiments/tb2-block-4/about-the-team.md) y [exposición del Bloque 4](assets/experiments/tb2-block-4/exposicion.md).
 
