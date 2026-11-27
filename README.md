@@ -422,7 +422,7 @@ Cada participante del equipo debe sustentar evidencia de cómo las actividades r
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |----|----|----|
-|4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Realicé el needfinding y las entrevistas a cuidadores de pacientes geriátricos asumiendo la responsabilidad deontológica de proteger la privacidad y confidencialidad de la información clínica y personal recolectada. Comprendí que indagar en la intimidad del cuidado de un adulto mayor sin resguardos adecuados podía vulnerar su dignidad en nombre de la investigación. Apliqué entonces consentimiento informado en cada entrevista y me comprometí a sostener ese principio ético en toda recolección de datos sensibles.<br><br>**TB1**<br>Homogeneicé los criterios de aceptación bajo la estructura Gherkin para eliminar ambigüedades funcionales en los flujos de administración de medicamentos. Comprendí que una especificación imprecisa en el dominio de salud no es solo un defecto técnico, sino un riesgo directo para el paciente, por lo que antepuse la precisión operativa sobre la celeridad de entrega. Me comprometí a mantener ese estándar de rigor en cada iteración futura del producto.<br><br>**AV2**<br>Diseñé las entrevistas de validación y la auditoría de experiencia de usuario estableciendo protocolos para evaluar la interacción de cuidadores y adultos mayores. Comprendí que un protocolo mal calibrado podía generarles sobrecarga cognitiva o estrés innecesario, precisamente a la población más vulnerable que buscábamos proteger. Me comprometí a garantizar siempre un trato ético y una retroalimentación constructiva hacia el grupo auditado.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Especifiqué los requisitos y prioricé el backlog asumiendo la responsabilidad profesional de jerarquizar los componentes de seguridad y validación de dosis médicas antes que features accesorias. Entendí que anteponer funcionalidades vistosas a la integridad asistencial podía poner en riesgo directo la salud del paciente. Me comprometí a que todo criterio de priorización técnica respondiera primero a la seguridad del usuario final.<br><br>**TB1**<br>Verifiqué las pruebas del sistema y documenté con transparencia los defectos reales encontrados en la autorización de rutas de Agenda y en la falta de sesiones persistentes en la API. Reconocí que ocultar o maquillar esos hallazgos ante el evaluador habría comprometido la confiabilidad del producto y mi propia formación como ingeniero. Asumí entonces la honestidad intelectual como un principio no negociable en la verificación de software crítico para la salud.<br><br>**AV2**<br>Revisé la planificación experimental del Capítulo VIII y distinguí los antecedentes cualitativos de los resultados aún no recolectados, retirando cifras sin sustento. Reconocí que presentar una estimación como si fuera evidencia ya medida habría comprometido la integridad del reporte y la confianza del evaluador. Propuse entonces escenarios con datos sintéticos, consentimiento y métricas de corrección y silenciamiento para estudiar la coordinación sin modificar tratamientos reales ni presentar un registro del software como evidencia clínica.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Diseñé la arquitectura y el modelado de datos aplicando Domain-Driven Design para aislar los datos clínicos y de identidad en Bounded Contexts independientes. Reconocí que mezclar esos dominios habría violado el principio de mínimo privilegio en el acceso a historiales médicos sensibles. Asumí la responsabilidad profesional de sostener esa separación como una decisión ética de diseño, no solo técnica.<br><br>**TB1**<br>Rediseñé la base de datos por contextos delimitados para corregir la persistencia de datos y garantizar la integridad referencial y confidencialidad clínica. Estructuré la integración continua con pruebas automatizadas obligatorias al identificar que un defecto crítico podía pasar desapercibido hacia ramas productivas si dependía solo de la revisión manual. Entendí que la responsabilidad ética sobre datos sensibles se traduce en decisiones concretas de arquitectura, no solo en declaraciones de intención.<br><br>**AV2**<br>Configuré el análisis estático de código y las políticas de revisión por pares (Code Reviews) implementando reglas estrictas para detectar vulnerabilidades de seguridad, manejo indebido de credenciales y deuda técnica. Entendí que una sola vulnerabilidad no detectada en este tipo de plataforma podía traducirse en la exposición de datos de salud de personas vulnerables. Asumí la responsabilidad de blindar la plataforma contra intrusiones bajo ese estándar de exigencia.<br><br>**TB2 (borrador)**<br>Diseñé el protocolo de validación To-Be con escenarios ficticios, participación voluntaria y permiso separado para grabar. Definí qué datos mínimos registrar, cómo separar los consentimientos de las observaciones y cómo documentar retiros y faltantes. Apliqué al trabajo de validación el principio de mínimo privilegio que orientó mis aportes previos de arquitectura y pruebas, e incorporé la verificación del consentimiento de acceso en estados y avisos compartidos. Las sesiones y sus resultados están pendientes.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Concebí visualmente las interfaces móviles cumpliendo los lineamientos de diseño inclusivo para adultos mayores, seleccionando contrastes, tamaños tipográficos y áreas de toque según la norma WCAG 2.2. Comprendí que un detalle visual descuidado podía traducirse en un error real de lectura de una prescripción médica. Asumí la responsabilidad ética de priorizar la accesibilidad sobre la estética en cada decisión de interfaz.<br><br>**TB1**<br>Formulé el Acuerdo de Servicio SaaS reconociendo el deber ético y legal de transparentar los niveles de servicio y las responsabilidades mutuas entre CareConnect y sus usuarios. Evité cláusulas abusivas y delimité con claridad que la herramienta es un soporte de gestión que no reemplaza el criterio médico profesional, pues comprendí que una redacción ambigua podría inducir a los cuidadores a sustituir decisiones clínicas por la aplicación. Aprendí que la ética profesional también se ejerce en la letra de un contrato, no únicamente en el código.<br><br>**AV2**<br>Ejecuté la auditoría de experiencia de usuario evaluando con imparcialidad y rigor técnico las barreras de accesibilidad del software evaluado. Comprendí que una recomendación poco fundamentada podía inducir a otro equipo a priorizar cambios equivocados, por lo que sustenté cada observación en normas internacionales de accesibilidad. Me propuse mantener ese mismo rigor técnico en toda auditoría futura, priorizando el impacto real sobre los usuarios finales.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Implementé el cliente móvil en Flutter optimizando el consumo de batería y la estabilidad en segundo plano. Reconocí que un fallo en el dispositivo móvil durante un turno nocturno podía dejar incomunicado al cuidador ante una emergencia médica real. Asumí la responsabilidad técnica de tratar la estabilidad de la aplicación como una condición de seguridad del paciente, no como un detalle de rendimiento.<br><br>**TB1**<br>Construí los pipelines de entrega y despliegue continuo estableciendo compuertas de calidad automáticas que bloquean la creación de imágenes Docker ante cualquier fallo en las pruebas. Asumí la responsabilidad de evitar que versiones inestables se liberaran al entorno de producción, al identificar que un despliegue fallido en un sistema de cuidado geriátrico podía traducirse en una interrupción real del seguimiento médico de un paciente. Reforcé mi compromiso de tratar cada compuerta de calidad como una salvaguarda ética, no solo como un requisito técnico.<br><br>**AV2**<br>Instrumenté la telemetría y el monitoreo operativo asegurando que la recolección de eventos y analítica respetara la privacidad del usuario. Reconocí que ampliar el alcance del monitoreo sin límites claros podía convertirse en una forma de vigilancia no consentida sobre personas vulnerables. Limité entonces el monitoreo a parámetros de salud del sistema y rendimiento, sin exponer datos sensibles ni identificadores personales sin consentimiento.|**AV1**<br><br>Como equipo, abordamos el inicio del ciclo de vida del software asumiendo una postura profesional y ética frente a la vulnerabilidad de nuestro público objetivo. Comprendimos que concebir el desarrollo como una mera tarea técnica nos habría hecho pasar por alto la realidad asistencial de los cuidadores y el riesgo de desatender la dignidad del adulto mayor. Nos comprometimos a fundamentar nuestras decisiones de modelado y UX en el respeto a la privacidad y en la comprensión profunda del cuidado domiciliario.<br><br>**TB1**<br><br>Como equipo, consolidamos nuestra responsabilidad profesional al priorizar la honestidad técnica y la transparencia en los reportes de verificación, al corregir la estructura de base de datos y garantizar que el pipeline de entrega protegiera la calidad del producto. Reconocimos que ocultar defectos o suavizar un acuerdo de servicio habría trasladado el riesgo ético hacia nuestros usuarios, por lo que asumimos con madurez el reporte de defectos reales y establecimos delimitaciones contractuales rigurosas. Nos comprometemos a sostener este mismo estándar de transparencia en las entregas siguientes del proyecto.<br><br>**AV2**<br><br>En la fase de experimentación y verificación estática, reafirmamos como equipo nuestro compromiso deontológico al conducir el diseño experimental bajo estrictas salvaguardas éticas que protegen la salud del paciente geriátrico. Reconocimos que la presión por mostrar resultados podía tentarnos a forzar conclusiones o sesgar el tratamiento de los datos, por lo que evitamos sesgos que alteraran el tratamiento médico y transparentamos los hallazgos en la auditoría cruzada. Nos comprometemos a sostener ese mismo rigor ético en cualquier experimentación futura con usuarios reales.|
+|4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Realicé el needfinding y las entrevistas a cuidadores de pacientes geriátricos asumiendo la responsabilidad deontológica de proteger la privacidad y confidencialidad de la información clínica y personal recolectada. Comprendí que indagar en la intimidad del cuidado de un adulto mayor sin resguardos adecuados podía vulnerar su dignidad en nombre de la investigación. Apliqué entonces consentimiento informado en cada entrevista y me comprometí a sostener ese principio ético en toda recolección de datos sensibles.<br><br>**TB1**<br>Homogeneicé los criterios de aceptación bajo la estructura Gherkin para eliminar ambigüedades funcionales en los flujos de administración de medicamentos. Comprendí que una especificación imprecisa en el dominio de salud no es solo un defecto técnico, sino un riesgo directo para el paciente, por lo que antepuse la precisión operativa sobre la celeridad de entrega. Me comprometí a mantener ese estándar de rigor en cada iteración futura del producto.<br><br>**AV2**<br>Diseñé las entrevistas de validación y la auditoría de experiencia de usuario estableciendo protocolos para evaluar la interacción de cuidadores y adultos mayores. Comprendí que un protocolo mal calibrado podía generarles sobrecarga cognitiva o estrés innecesario, precisamente a la población más vulnerable que buscábamos proteger. Me comprometí a garantizar siempre un trato ético y una retroalimentación constructiva hacia el grupo auditado.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Especifiqué los requisitos y prioricé el backlog asumiendo la responsabilidad profesional de jerarquizar los componentes de seguridad y validación de dosis médicas antes que features accesorias. Entendí que anteponer funcionalidades vistosas a la integridad asistencial podía poner en riesgo directo la salud del paciente. Me comprometí a que todo criterio de priorización técnica respondiera primero a la seguridad del usuario final.<br><br>**TB1**<br>Verifiqué las pruebas del sistema y documenté con transparencia los defectos reales encontrados en la autorización de rutas de Agenda y en la falta de sesiones persistentes en la API. Reconocí que ocultar o maquillar esos hallazgos ante el evaluador habría comprometido la confiabilidad del producto y mi propia formación como ingeniero. Asumí entonces la honestidad intelectual como un principio no negociable en la verificación de software crítico para la salud.<br><br>**AV2**<br>Revisé la planificación experimental del Capítulo VIII y distinguí los antecedentes cualitativos de los resultados aún no recolectados, retirando cifras sin sustento. Reconocí que presentar una estimación como si fuera evidencia ya medida habría comprometido la integridad del reporte y la confianza del evaluador. Propuse entonces escenarios con datos sintéticos, consentimiento y métricas de corrección y silenciamiento para estudiar la coordinación sin modificar tratamientos reales ni presentar un registro del software como evidencia clínica.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Diseñé la arquitectura y el modelado de datos aplicando Domain-Driven Design para aislar los datos clínicos y de identidad en Bounded Contexts independientes. Reconocí que mezclar esos dominios habría violado el principio de mínimo privilegio en el acceso a historiales médicos sensibles. Asumí la responsabilidad profesional de sostener esa separación como una decisión ética de diseño, no solo técnica.<br><br>**TB1**<br>Rediseñé la base de datos por contextos delimitados para corregir la persistencia de datos y garantizar la integridad referencial y confidencialidad clínica. Estructuré la integración continua con pruebas automatizadas obligatorias al identificar que un defecto crítico podía pasar desapercibido hacia ramas productivas si dependía solo de la revisión manual. Entendí que la responsabilidad ética sobre datos sensibles se traduce en decisiones concretas de arquitectura, no solo en declaraciones de intención.<br><br>**AV2**<br>Configuré el análisis estático de código y las políticas de revisión por pares (Code Reviews) implementando reglas estrictas para detectar vulnerabilidades de seguridad, manejo indebido de credenciales y deuda técnica. Entendí que una sola vulnerabilidad no detectada en este tipo de plataforma podía traducirse en la exposición de datos de salud de personas vulnerables. Asumí la responsabilidad de blindar la plataforma contra intrusiones bajo ese estándar de exigencia.<br><br>**TB2 (borrador)**<br>Diseñé el protocolo de validación To-Be con escenarios ficticios, participación voluntaria y permiso separado para grabar. Definí qué datos mínimos registrar, cómo separar los consentimientos de las observaciones y cómo documentar retiros y faltantes. Apliqué al trabajo de validación el principio de mínimo privilegio que orientó mis aportes previos de arquitectura y pruebas, e incorporé la verificación del consentimiento de acceso en estados y avisos compartidos. El responsable del proyecto reportó cuatro entrevistas. Preparé su síntesis mediante códigos y dejé pendientes la documentación del consentimiento, el cotejo con los respaldos y la verificación de resultados de tareas.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Concebí visualmente las interfaces móviles cumpliendo los lineamientos de diseño inclusivo para adultos mayores, seleccionando contrastes, tamaños tipográficos y áreas de toque según la norma WCAG 2.2. Comprendí que un detalle visual descuidado podía traducirse en un error real de lectura de una prescripción médica. Asumí la responsabilidad ética de priorizar la accesibilidad sobre la estética en cada decisión de interfaz.<br><br>**TB1**<br>Formulé el Acuerdo de Servicio SaaS reconociendo el deber ético y legal de transparentar los niveles de servicio y las responsabilidades mutuas entre CareConnect y sus usuarios. Evité cláusulas abusivas y delimité con claridad que la herramienta es un soporte de gestión que no reemplaza el criterio médico profesional, pues comprendí que una redacción ambigua podría inducir a los cuidadores a sustituir decisiones clínicas por la aplicación. Aprendí que la ética profesional también se ejerce en la letra de un contrato, no únicamente en el código.<br><br>**AV2**<br>Ejecuté la auditoría de experiencia de usuario evaluando con imparcialidad y rigor técnico las barreras de accesibilidad del software evaluado. Comprendí que una recomendación poco fundamentada podía inducir a otro equipo a priorizar cambios equivocados, por lo que sustenté cada observación en normas internacionales de accesibilidad. Me propuse mantener ese mismo rigor técnico en toda auditoría futura, priorizando el impacto real sobre los usuarios finales.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Implementé el cliente móvil en Flutter optimizando el consumo de batería y la estabilidad en segundo plano. Reconocí que un fallo en el dispositivo móvil durante un turno nocturno podía dejar incomunicado al cuidador ante una emergencia médica real. Asumí la responsabilidad técnica de tratar la estabilidad de la aplicación como una condición de seguridad del paciente, no como un detalle de rendimiento.<br><br>**TB1**<br>Construí los pipelines de entrega y despliegue continuo estableciendo compuertas de calidad automáticas que bloquean la creación de imágenes Docker ante cualquier fallo en las pruebas. Asumí la responsabilidad de evitar que versiones inestables se liberaran al entorno de producción, al identificar que un despliegue fallido en un sistema de cuidado geriátrico podía traducirse en una interrupción real del seguimiento médico de un paciente. Reforcé mi compromiso de tratar cada compuerta de calidad como una salvaguarda ética, no solo como un requisito técnico.<br><br>**AV2**<br>Instrumenté la telemetría y el monitoreo operativo asegurando que la recolección de eventos y analítica respetara la privacidad del usuario. Reconocí que ampliar el alcance del monitoreo sin límites claros podía convertirse en una forma de vigilancia no consentida sobre personas vulnerables. Limité entonces el monitoreo a parámetros de salud del sistema y rendimiento, sin exponer datos sensibles ni identificadores personales sin consentimiento.|**AV1**<br><br>Como equipo, abordamos el inicio del ciclo de vida del software asumiendo una postura profesional y ética frente a la vulnerabilidad de nuestro público objetivo. Comprendimos que concebir el desarrollo como una mera tarea técnica nos habría hecho pasar por alto la realidad asistencial de los cuidadores y el riesgo de desatender la dignidad del adulto mayor. Nos comprometimos a fundamentar nuestras decisiones de modelado y UX en el respeto a la privacidad y en la comprensión profunda del cuidado domiciliario.<br><br>**TB1**<br><br>Como equipo, consolidamos nuestra responsabilidad profesional al priorizar la honestidad técnica y la transparencia en los reportes de verificación, al corregir la estructura de base de datos y garantizar que el pipeline de entrega protegiera la calidad del producto. Reconocimos que ocultar defectos o suavizar un acuerdo de servicio habría trasladado el riesgo ético hacia nuestros usuarios, por lo que asumimos con madurez el reporte de defectos reales y establecimos delimitaciones contractuales rigurosas. Nos comprometemos a sostener este mismo estándar de transparencia en las entregas siguientes del proyecto.<br><br>**AV2**<br><br>En la fase de experimentación y verificación estática, reafirmamos como equipo nuestro compromiso deontológico al conducir el diseño experimental bajo estrictas salvaguardas éticas que protegen la salud del paciente geriátrico. Reconocimos que la presión por mostrar resultados podía tentarnos a forzar conclusiones o sesgar el tratamiento de los datos, por lo que evitamos sesgos que alteraran el tratamiento médico y transparentamos los hallazgos en la auditoría cruzada. Nos comprometemos a sostener ese mismo rigor ético en cualquier experimentación futura con usuarios reales.|
 |4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales|**Espinoza Cruz, Angela Milagros**<br>**AV1**<br>Emití juicios informados sobre el impacto social de la brecha en el cuidado informal en el Perú, analizando cómo la falta de herramientas accesibles genera sobrecarga física y emocional desproporcionada en las familias. Comprendí que ignorar esa realidad social nos habría llevado a construir un producto técnicamente correcto pero socialmente irrelevante. Sustenté entonces la necesidad de un producto centrado en la coordinación colaborativa entre cuidadores.<br><br>**TB1**<br>Juzgué el impacto económico de los modelos de precios del mercado frente al poder adquisitivo local y fundamenté que la monetización de CareConnect debía contemplar un esquema freemium con barreras mínimas. Comprendí que replicar sin cuestionamiento los modelos de suscripción de la competencia excluiría a familias de sectores socioeconómicos vulnerables, que son precisamente nuestro público objetivo. Me comprometí a mantener este criterio de accesibilidad económica en las decisiones de negocio futuras del producto.<br><br>**AV2**<br>Evalué el impacto sociocultural de la transición desde bitácoras en papel hacia un flujo digital. Comprendí que imponer un cambio tecnológico abrupto podía chocar con las costumbres de los cuidadores adultos mayores y profundizar la brecha digital en lugar de reducirla. Determiné entonces que la solución debía incluir curvas de aprendizaje suaves que respetaran esas costumbres.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Evalué el impacto social y global al diseñar la experiencia web multidispositivo, ponderando la necesidad de garantizar interfaces fluidas tanto en entornos urbanos con alta conectividad como en zonas con acceso intermitente a internet. Reconocí que optimizar solo para el mejor escenario de red excluiría a cuidadores en zonas con conectividad limitada. Prioricé entonces un diseño resiliente que no dependiera de una conexión constante.<br><br>**TB1**<br>Evalué el impacto global y cultural de la solución al implementar la internacionalización bilingüe en español e inglés, y fundamenté que el software debía ser accesible para comunidades con diversas realidades sociolingüísticas. Identifiqué que limitar el idioma a uno solo reduciría artificialmente el alcance social de CareConnect y excluiría a cuidadores migrantes o familias transnacionales. Asumí el compromiso de seguir evaluando barreras lingüísticas y culturales en cada expansión futura del producto.<br><br>**AV2**<br>Evalué el posible impacto social de ampliar los avisos a co-cuidadores, reconociendo que podría mejorar la coordinación pero también aumentar la carga de supervisión sobre las familias. Entendí que asumir un beneficio aún no demostrado habría sido una conclusión apresurada, por lo que vinculé la propuesta a consentimiento vigente, recolección mínima de datos y una meta de silenciamiento de notificaciones. Dejé su efecto pendiente de medición en lugar de presentarlo como un resultado ya comprobado.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Emití juicios fundamentados sobre el impacto económico del ciclo de vida del software al aplicar una arquitectura desacoplada basada en Domain-Driven Design. Demostré que esa decisión reduce drásticamente los costos de mantenimiento y facilita la escalabilidad del producto en la nube. Comprendí que una arquitectura mal planificada desde el inicio se traduce en sobrecostos económicos difíciles de revertir más adelante.<br><br>**TB1**<br>Evalué el impacto ambiental del software en términos de consumo energético y huella de carbono, y optimicé los pasos de compilación y pruebas en el pipeline de GitHub Actions. Reconocí que cada minuto innecesario de cómputo en servidores cloud representa un costo ambiental acumulativo poco visible pero real para un producto que se ejecutará de forma continua. Me propuse incorporar la eficiencia energética como un criterio permanente de diseño técnico, y no solo como una optimización puntual.<br><br>**AV2**<br>Ponderé el impacto global de la interoperabilidad en salud digital y juzgué la necesidad de alinear los endpoints de la API con estándares de comunicación. Reconocí que una integración mal estandarizada hoy podía convertirse en una barrera costosa para conectar el sistema con hospitales y servicios de telemedicina en el futuro. Prioricé entonces esos estándares para permitir una futura integración segura y eficiente con sistemas hospitalarios y de telemedicina.<br><br>**TB2 (borrador)**<br>Preparé criterios para ponderar evidencia al revisar el backlog. En el plano social, propuse observar barreras de legibilidad y destreza en ambos segmentos. En el económico, planteé ajustar la inversión de desarrollo y reclutamiento a la factibilidad y al valor observado. En el ambiental, identifiqué la entrega de avisos, la retención de datos y el cómputo de la instrumentación como costos operativos por evaluar. En el global, consideré la trazabilidad y la compatibilidad de los registros entre web, móvil y API como bases para una futura interoperabilidad. Dejé las decisiones condicionadas a evidencia verificable y a los límites del diseño experimental.<br><br>**Baldeon Armas, Santiago Armando**<br>**AV1**<br>Juzgué el impacto social de la exclusión digital en la tercera edad, sustentando que una interfaz adaptada a capacidades motrices y visuales reducidas fomenta la independencia del paciente geriátrico. Comprendí que una interfaz diseñada sin considerar esas limitaciones perpetuaría la dependencia del adulto mayor hacia terceros. Determiné que ese diseño inclusivo debía promover un envejecimiento activo en lugar de solo facilitar una tarea puntual.<br><br>**TB1**<br>Evalué el impacto económico y legal de los términos de servicio SaaS, analizando cómo la claridad en la propiedad de los datos clínicos y la protección ante interrupciones del servicio protegen la economía familiar de nuestros usuarios. Comprendí que un contrato ambiguo trasladaría el riesgo económico y legal del proveedor hacia las familias que menos capacidad tienen de asumirlo. Me comprometí a revisar los términos de servicio bajo ese mismo criterio de equidad en cada actualización contractual.<br><br>**AV2**<br>Emití juicios informados sobre el impacto ambiental y social derivado de sustituir bitácoras físicas de papel por registros digitales compartidos. Sopesé la reducción de residuos materiales frente a la demanda energética de almacenamiento en la nube, reconociendo que digitalizar no es automáticamente más sostenible si no se mide su consumo real. Me comprometí a considerar ese balance ambiental en cada decisión de digitalización futura.<br><br>**Muñiz Huayanca, Percy Alonso**<br>**AV1**<br>Evalué el impacto socioeconómico al seleccionar Flutter como framework de desarrollo móvil. Reconocí que elegir un framework con requisitos de hardware elevados habría excluido a usuarios con dispositivos Android de gama de entrada. Fundamenté entonces que esa elección democratiza el acceso a la teleasistencia en estratos de menores recursos económicos.<br><br>**TB1**<br>Juzgué el impacto social y operativo de la alta disponibilidad en un sistema de salud, y determiné que los mecanismos de despliegue continuo en contenedores debían garantizar resiliencia y tiempos mínimos de inactividad (*downtime*) ante fallos imprevistos del servidor. Entendí que una caída del servicio, por breve que fuera, podía traducirse en la pérdida de un recordatorio de medicación crítico para un paciente geriátrico. Me comprometí a priorizar la continuidad del servicio como un requisito social, no solo como una métrica de infraestructura.<br><br>**AV2**<br>Evalué el impacto ambiental de la infraestructura de monitoreo continuo y seleccioné herramientas de telemetría livianas. Reconocí que una telemetría sobredimensionada incrementaría innecesariamente la transferencia de datos y la sobrecarga de procesamiento en los dispositivos móviles de los usuarios, muchos de ellos con equipos de gama baja. Prioricé entonces la eficiencia del monitoreo sobre la cantidad de datos recolectados.|**AV1**<br><br>Como equipo, incorporamos una visión sistémica de ingeniería que trasciende el código, evaluando el impacto de nuestras soluciones en contextos sociales reales: la sobrecarga de los cuidadores, la exclusión digital del adulto mayor y las limitaciones económicas familiares. Reconocimos que diseñar sin considerar esas dimensiones habría producido un software funcional pero inequitativo. Nos comprometimos a sostener un diseño tecnológico responsable y accesible en cada decisión posterior del proyecto.<br><br>**TB1**<br><br>Como equipo, fundamentamos en el TB1 nuestras decisiones sobre pruebas, pipelines, arquitectura de datos, modelo SaaS e i18n considerando su impacto económico, social y ambiental. Reconocimos que cada decisión técnica —desde un pipeline hasta un contrato— tiene consecuencias que trascienden el código y alcanzan directamente la economía familiar y el bienestar del paciente geriátrico. Nos comprometemos a seguir evaluando el impacto de nuestras soluciones en contextos reales antes de priorizar la velocidad de entrega.<br><br>**AV2**<br><br>En este hito evaluamos integralmente, como equipo, las consecuencias sociales y ambientales de la experimentación y el monitoreo en producción, relacionando el monitoreo con la detección de fallos técnicos y la continuidad del servicio. Reconocimos que el efecto sobre la salud del paciente, la inclusión y la sostenibilidad aún requiere evidencia adicional y no fue medido en esta entrega. Nos comprometemos a diseñar, en la siguiente fase, mecanismos de medición que permitan sustentar ese impacto en lugar de asumirlo.|
 
 # Part I: As-Is Software Project
@@ -6489,7 +6489,7 @@ El [desglose verificable](assets/experiments/av2-completion-2026-11-08/planning-
 
 **Segmentos y selección.** Se propone reclutar **seis personas** por conveniencia con diversidad intencional. Se prevén cuatro cuidadores familiares o profesionales que participen en el seguimiento o relevo de un adulto mayor y dos personas adultas mayores del segmento paciente, con distintos niveles de autonomía y experiencia digital. Se procurará incluir cuidadores de 25–40 y 41–60 años para observar barreras exploratorias de ERQ-04, junto con distintos niveles de familiaridad digital y uso habitual de web o móvil. Se requiere participación voluntaria, capacidad de comprender y otorgar el consentimiento con apoyos de comunicación si se necesitan, y disponibilidad para una sesión. Puede usarse un dispositivo de prueba y tecnología de apoyo habitual. Se excluyen integrantes del equipo de producto y personas que no otorguen consentimiento. La cantidad permite explorar obstáculos de ambos segmentos con los recursos del bloque y distribuir las tareas por rol. La muestra es formativa y de conveniencia. Sus observaciones no estiman prevalencia, diferencias por edad ni potencia experimental.
 
-**Metodología y duración.** Entrevista individual semiestructurada con prueba moderada y verbalización voluntaria, presencial o remota, de **35–45 minutos**. Se dedicarán 5 minutos al consentimiento y contexto, 5 a la familiarización, 20–25 a las tareas aplicables y 5–10 a las preguntas y el cierre. El moderador lee los objetivos de las tareas sin adelantar el gesto ni la ruta. El observador registra el primer intento y solo después entrega una ayuda neutral si se requiere. Para T3, una segunda persona del equipo opera la cuenta ficticia cuando haga falta. Las personas adultas mayores revisan la comprensión de estados, avisos y preferencias con su rol y permisos verificados. Las acciones reservadas al cuidador se presentan conceptualmente a ese segmento.
+**Metodología y duración.** Entrevista individual semiestructurada con prueba moderada y verbalización voluntaria, presencial o remota, de **35–45 minutos**. Se dedicarán 5 minutos al consentimiento y contexto, 5 a la familiarización, 20–25 a las tareas aplicables y 5–10 a las preguntas y el cierre. El moderador lee los objetivos de las tareas sin adelantar el gesto ni la ruta. El observador registra el primer intento y aplica la pauta de ayuda descrita debajo de las tareas. Para T3, una segunda persona del equipo opera la cuenta ficticia cuando haga falta. Las personas adultas mayores revisan la comprensión de estados, avisos y preferencias con su rol y permisos verificados. Las acciones reservadas al cuidador se presentan conceptualmente a ese segmento.
 
 **Consentimiento y cuidado de los datos.** Antes de la sesión, entregar una hoja de información comprensible con propósito, actividad, duración, posibles molestias, acceso a datos, contacto del equipo y derecho a omitir preguntas, hacer una pausa o retirarse sin consecuencias. Confirmar comprensión y registrar el consentimiento de participación. Solicitar aparte permiso voluntario para grabar pantalla o audio, indicando qué se capturará y quién tendrá acceso. Si se rechaza la grabación, usar notas seudonimizadas. Detener la grabación o recolección cuando se solicite y tramitar el retiro según los términos informados. Utilizar cuentas de prueba, evitar notificaciones personales y recoger únicamente los datos del instrumento. Guardar consentimientos, contactos y correspondencia de códigos por separado de las observaciones, en un espacio institucional con acceso restringido. Antes de reclutar, informar y registrar una fecha de eliminación de contactos, notas identificables y grabaciones acorde con el plazo de evaluación del curso. El informe conserva solo síntesis y referencias de acceso restringido cuando exista autorización. El repositorio contiene instrumentos vacíos y resultados desidentificados. Si se comparte una cita, redactar detalles identificables y comprobar que su uso esté cubierto por el consentimiento.
 
@@ -6501,7 +6501,7 @@ El [desglose verificable](assets/experiments/av2-completion-2026-11-08/planning-
 |---|---|---|---|
 | **T1. Confirmar.** «Registra como confirmada esta actividad ficticia desde Agenda». | US-01 / ERQ-01 | Cuidador. Interactiva si la pulsación sostenida está disponible, conceptual en otro caso. | Mantiene el control 1 s, identifica el cambio de estado y la opción «Deshacer». Registrar toques breves, liberación anticipada, ayuda y barreras de interacción. |
 | **T2. Revertir.** «Acabas de confirmar el registro equivocado. Corrígelo». | US-05, US-01 / ERQ-01. ERQ-04, observación exploratoria. | Cuidador. Interactiva con reversión funcional, conceptual con secuencia de pantallas. | Activa «Deshacer» dentro de 10 s desde la confirmación aceptada y reconoce el estado corregido. Si existe auditoría, comprobar el vínculo con la acción original. Registrar si confunde reversión con cancelación de Agenda. |
-| **T3. Consultar estado compartido.** «Desde la otra cuenta autorizada, revisa el registro y explica qué figura pendiente o confirmado». | US-02 / ERQ-01. El contexto de relevo orienta ERQ-03. | Cuidador o co-cuidador. Consulta adaptada al adulto mayor según permisos. Interactiva con dos sesiones activas, conceptual en otro caso. | Identifica el estado tras confirmar y revertir. Con verificador, registrar coincidencia en ≤5 s y comprobar que la cuenta sin consentimiento no recibe la actualización. En la demostración, preguntar quién podría ver el estado. |
+| **T3. Consultar estado compartido.** «Revisa este registro y explica qué estado muestra y qué significa». | US-02 / ERQ-01. El contexto de relevo orienta ERQ-03. | Cuidador o co-cuidador. Consulta adaptada al adulto mayor según permisos. Interactiva con dos sesiones activas, conceptual con pantallas. | **Participante:** identifica el estado mostrado y explica qué significa después de confirmar y revertir. **Sincronización:** el verificador contrasta el estado esperado con el de la segunda sesión autorizada y registra el tiempo desde la acción y si coincide en ≤5 s. **Acceso:** el verificador comprueba por separado que la cuenta sin permiso no recibe la actualización. En modo conceptual se valora la interpretación del estado con pantallas. Las dos comprobaciones técnicas quedan sin ejecutar. |
 | **T4. Cerrar con motivo.** «El escenario indica que esta actividad ficticia no se realizó. Documenta el motivo permitido y deja el registro resuelto». | US-07 / ERQ-01 y ERQ-02, capacidad común de cierre. | Cuidador. Interactiva si hay persistencia de motivo, conceptual en otro caso. | Elige un código de escenario, por ejemplo «No realizada en la simulación», y reconoce que el estado queda resuelto con motivo. Registrar cualquier confirmación por error. |
 | **T5. Interpretar avisos.** «Revisa esta secuencia y explica qué ocurre si el registro sigue pendiente y qué cambia si se resuelve». | US-03, US-04 / ERQ-02 | Ambos segmentos, según su rol. Interactiva con programación y entrega verificadas, conceptual mediante tarjetas secuenciales en otro caso. | Identifica aviso en t0, recordatorio al cuidador en +15 y aviso a co-cuidadores autorizados en +30 si sigue pendiente en B. Identifica que A solo avisa en t0 y que una resolución detiene los escalones. Registrar a quién cree que llega cada aviso y qué entiende por «pendiente». |
 | **T6. Ajustar preferencias.** «Silencia los avisos del escenario y vuelve a consultar Agenda». | US-06 / ERQ-02 | Ambos segmentos, según su rol. Interactiva con preferencias operativas, conceptual en otro caso. | Localiza y cambia la preferencia, identifica su alcance y conserva acceso a Agenda. Registrar tipo de permiso y estado desconocido cuando el sistema operativo impida observarlo. |
@@ -6518,163 +6518,352 @@ ERQ-03 se aborda con una pregunta abierta sobre cómo se prepara un relevo y qu�
 
 **Preguntas cerradas.** Tras cada tarea interactiva, «¿Qué tan fácil fue realizarla?» (1 = muy difícil, 2 = difícil, 3 = ni fácil ni difícil, 4 = fácil, 5 = muy fácil). Para T3 y T5, «¿Quién puede ver o recibir este estado o aviso?» (cuidador asignado / co-cuidadores autorizados / ambos, según el caso / no sé). Para T4, «¿El cierre con motivo equivale a confirmar la actividad?» (sí / no / no sé). En T6, «¿Silenciar avisos cambia tu acceso a Agenda?» (sí / no / no sé). Registrar comprensión por elemento al observar demostraciones y reservar el tiempo y la escala de facilidad para las tareas ejecutadas.
 
-**Instrumento y criterios de registro.** Usar una ficha de sesión según §8.3.4.2 y una fila por tarea. En modo interactivo, registrar **completada sin ayuda**, **completada con ayuda**, **fallida**, **interrumpida** o **no ejecutada**. El resultado se evalúa contra el criterio observable de la tabla. Una acción incorrecta corregida se registra como error aunque el resultado final sea satisfactorio. Cronometrar desde el fin de la consigna hasta el resultado observable o la interrupción, conservar el punto de inicio y fin, y anotar pausas y su causa. El plazo técnico de T2 se mide aparte desde la confirmación y el de T3 desde la acción correspondiente. En demostraciones, consignar **comprensión correcta, parcial o incorrecta** con la explicación observada. Distinguir «no aplica» de «dato faltante» e indicar la causa. La grabación, cuando esté autorizada, es un respaldo opcional.
+**Instrumento y criterios de registro.** Usar la ficha de sesión y la tabla de observación de §8.3.4.2. En modo interactivo registrar **completada sin ayuda**, **completada con ayuda**, **fallida**, **interrumpida** o **no ejecutada**. Registrar el primer intento, incluso si después hay una corrección. Cronometrar desde el fin de la consigna hasta el resultado o la interrupción e indicar pausas y su causa. Medir aparte el plazo técnico de T2 desde la confirmación y el de T3 desde la acción correspondiente.
+
+**T3 y condiciones técnicas.** Registrar la comprensión del estado mostrado, el resultado de sincronización y el resultado del control de acceso en campos distintos. Si la actualización llega tarde y la participante puede interpretar el estado cuando aparece, calificar su respuesta y registrar la demora por separado. Si la condición técnica impide completar la tarea, registrar **interrumpida por condición técnica** e indicar la causa. Una prueba con pantallas permite recoger comprensión conceptual y se registra por separado.
+
+**Comprensión.** Aplicar las categorías a la explicación observada. Dejar como dato faltante una respuesta que no pudo recogerse por interrupción o retiro.
+
+| Nivel | Regla | Ejemplo T3 | Ejemplo T5 |
+|---|---|---|---|
+| Correcta | Identifica los elementos esenciales y explica su significado sin errores. | Distingue el estado tras confirmar y revertir, y explica qué significa el estado que ve. | Distingue el aviso único de A de los avisos de B, identifica cuándo y quién recibe los adicionales y explica que se detienen al resolver el registro. |
+| Parcial | Reconoce parte de la información, con omisiones y sin invertir el estado o la regla central. | Identifica el estado que ve, pero omite qué cambia al revertir. | Reconoce que los avisos adicionales dependen del estado pendiente, pero omite un destinatario o un momento. |
+| Incorrecta | Confunde el estado o la regla central, o responde que desconoce su significado. | Interpreta un estado pendiente como confirmación. | Interpreta que los avisos adicionales siguen después de resolver el registro. |
+
+**Ayuda neutral.** Dar primero la consigna completa y dejar que la participante intente responder o actuar. Ofrecer ayuda después del primer intento si la solicita, indica que está bloqueada o llega al límite de observación fijado para esa consigna antes de la sesión. Repetir la consigna o preguntar «¿Qué buscarías ahora?» sin señalar un control ni dar la respuesta. Registrar motivo, momento, ayuda exacta y resultado antes y después. Distinguir la ayuda de moderación de las tecnologías de apoyo habituales. Si el moderador muestra la ruta o aporta la respuesta para continuar, registrar esa intervención como demostración. Distinguir «no aplica» de «dato faltante» e indicar la causa. La grabación, cuando esté autorizada, es un respaldo opcional.
 
 **Limitaciones.** La muestra pequeña de conveniencia, el entorno de prueba, la intervención del moderador, el aprendizaje por orden de tareas y la variación de dispositivo, conectividad, ayudas y fidelidad del prototipo limitan la generalización. Registrar esas condiciones y mantener las consignas comparables. Los resultados de sesión describen interacción o comprensión en el escenario. La respuesta a las hipótesis de las tarjetas requiere la asignación, el seguimiento y la auditoría de §8.2.
 
 ##### 8.3.4.2. Registro de Entrevistas
 
-**Estado del registro TB2.** Pendiente de ejecución. Los códigos reservan cupos y se asignarán al realizar las sesiones. Los guiones (—) indican campos pendientes de registro. Las seis entrevistas previas de §6.3 se conservan como antecedente cualitativo. Sus enlaces y observaciones pertenecen a esa entrega.
+**Estado del registro TB2.** El responsable del proyecto reportó cuatro entrevistas To-Be, dos con cuidadoras y dos con pacientes geriátricas. Los resúmenes reconstruyen aproximadamente las respuestas a partir de la información facilitada. Quedan por contrastar con los originales y completar sus metadatos. Las seis entrevistas de §6.3.2 corresponden a una validación anterior.
 
-Registrar fecha, modalidad, plataforma, rol y versión exacta del prototipo o build. Consignar tareas interactivas y demostraciones por separado y vincular las fichas a la matriz mediante el código reservado. Mantener la constancia de consentimiento en el registro protegido. Si existe grabación autorizada, incorporar una referencia de acceso restringido en la copia de trabajo y registrar «sin grabación» cuando corresponda.
+Se usan códigos TB2 y se reservan las edades exactas en esta versión del informe. La correspondencia con nombres y edades queda en la fuente privada facilitada. Cualquier publicación de esos datos requiere consentimiento documentado para identificarlas públicamente. Los respaldos y consentimientos se documentarán en una ubicación de acceso autorizado.
 
-**Ficha TB2-01**
+###### Segmento 1. Cuidadoras de pacientes geriátricos
 
-| Campo | Registro |
+###### Entrevista de validación To-Be 1
+
+| Campo | Información |
 |---|---|
-| Identificador seudónimo | TB2-01 (código reservado) |
-| Segmento | Cuidador (cupo propuesto) |
-| Estado | Pendiente de ejecución |
-| Fecha de entrevista | — |
-| Modalidad | — |
-| Prototipo o versión utilizada | — |
-| Tareas realizadas | — |
-| Tareas completadas | — |
-| Tiempo observado | — |
-| Dificultades identificadas | — |
-| Valoración de facilidad de uso | — |
-| Comentarios relevantes | — |
-| Enlace a evidencia de video | — |
+| **Entrevistada** | TB2-01 (código seudónimo) |
+| **Edad** | Reservada en esta versión |
+| **Segmento** | Cuidadora de pacientes geriátricos |
+| **Experiencia** | Cuidadora geriátrica, tiempo de experiencia no especificado |
+| **Modalidad** | No precisada |
+| **Formato de evidencia** | Grabación de audio reportada |
+| **Duración aproximada** | Pendiente de confirmar |
+| **Producto evaluado** | CareConnect, propuesta To-Be |
+| **Código TB2** | TB2-01 |
+| **Qué se presentó** | Propuesta To-Be. La síntesis no precisa si el apoyo fue una pantalla, un prototipo o una explicación. |
+| **Acción observada** | Sin registro de una acción observada. |
+| **Opinión reportada** | Valoró centralizar las actividades y pidió acceso directo a pendientes y opciones de frecuencia. |
 
-**Ficha TB2-02**
+**Resumen:**
 
-| Campo | Registro |
+TB2-01 valoró la posibilidad de organizar las actividades de los pacientes desde una sola aplicación. Consideró comprensible la Agenda y sugirió mostrar los pendientes directamente para consultarlos con rapidez durante la jornada.
+
+Al comentar la confirmación, señaló que mantener presionado un botón podría resultar poco intuitivo al principio. Le pareció útil poder deshacer una confirmación equivocada y expresó preocupación por el límite de diez segundos.
+
+Destacó la agenda compartida para los cambios de turno y consideró necesario registrar un motivo cuando no se realiza una actividad. Valoró los recordatorios escalonados si se puede ajustar su frecuencia al tipo de actividad.
+
+**Aspectos de mejora identificados:**
+
+Señaló que los pasos adicionales dificultarían el registro rápido y que la ventana de corrección podría ser corta. Sugirió facilitar la consulta de pendientes y del historial de turnos, y dar más control sobre los avisos.
+
+**Oportunidades de mejora:**
+
+- Mostrar las actividades pendientes al abrir la Agenda y reducir los pasos del registro.
+- Añadir una indicación para la pulsación sostenida y una cuenta regresiva visible en Deshacer.
+- Dar acceso directo al historial de turnos y estudiar la frecuencia de avisos por tipo de actividad.
+
+**Funcionalidad más valorada:** La agenda compartida para dar seguimiento a las actividades durante los cambios de turno.
+
+**Intención de uso:** No registrada en la síntesis disponible.
+
+**Evidencia de entrevista:**
+
+- Tipo de evidencia. Grabación de audio reportada.
+- Enlace al archivo de audio. Pendiente y de acceso autorizado.
+- Fecha. Pendiente.
+- Duración. Pendiente de confirmar.
+- Consentimiento para uso de evidencia. Pendiente de documentar.
+- Versión o pantallas evaluadas. Pendiente de precisar.
+
+---
+
+###### Entrevista de validación To-Be 2
+
+| Campo | Información |
 |---|---|
-| Identificador seudónimo | TB2-02 (código reservado) |
-| Segmento | Cuidador (cupo propuesto) |
-| Estado | Pendiente de ejecución |
-| Fecha de entrevista | — |
-| Modalidad | — |
-| Prototipo o versión utilizada | — |
-| Tareas realizadas | — |
-| Tareas completadas | — |
-| Tiempo observado | — |
-| Dificultades identificadas | — |
-| Valoración de facilidad de uso | — |
-| Comentarios relevantes | — |
-| Enlace a evidencia de video | — |
+| **Entrevistada** | TB2-02 (código seudónimo) |
+| **Edad** | Reservada en esta versión |
+| **Segmento** | Cuidadora de pacientes geriátricos |
+| **Experiencia** | Cuidadora geriátrica, tiempo de experiencia no especificado |
+| **Modalidad** | Virtual mediante Google Meet |
+| **Formato de evidencia** | Sesión de Google Meet, grabación sin confirmar |
+| **Duración aproximada** | Pendiente de confirmar |
+| **Producto evaluado** | CareConnect, propuesta To-Be |
+| **Código TB2** | TB2-02 |
+| **Qué se presentó** | Propuesta To-Be. La síntesis no precisa si el apoyo fue una pantalla, un prototipo o una explicación. |
+| **Acción observada** | Sin registro de una acción observada. |
+| **Opinión reportada** | Consideró fácil de identificar la Agenda y pidió una señal de guardado y estados más visibles. |
 
-**Ficha TB2-03**
+**Resumen:**
 
-| Campo | Registro |
+TB2-02 valoró la organización general de CareConnect y la posibilidad de centralizar las actividades de cuidado. Indicó que la Agenda le pareció fácil de identificar y sugirió dar mayor visibilidad a algunas opciones.
+
+Consideró útil la confirmación y pidió una señal visual clara de que el registro se guardó. Le pareció adecuado el plazo de diez segundos para deshacer la acción si el control permanece visible.
+
+Destacó la sincronización entre cuidadores para coordinar tareas y evitar confusiones. También valoró registrar el motivo de una actividad no realizada y señaló que demasiados recordatorios podrían resultar molestos.
+
+**Aspectos de mejora identificados:**
+
+Planteó distinguir visualmente una actividad pendiente de otra registrada como no realizada, facilitar la consulta del historial y ofrecer control sobre la cantidad de avisos.
+
+**Oportunidades de mejora:**
+
+- Hacer más visibles los controles y mostrar una señal explícita de guardado.
+- Diferenciar los estados pendiente y no realizada con etiquetas claras.
+- Facilitar el acceso al historial y a las preferencias de notificación.
+
+**Funcionalidad más valorada:** La sincronización de actividades entre cuidadores autorizados.
+
+**Intención de uso:** No registrada en la síntesis disponible.
+
+**Evidencia de entrevista:**
+
+- Tipo de evidencia. Sesión de Google Meet reportada. Existencia de grabación pendiente de confirmar.
+- Enlace al respaldo de la sesión, si se confirma. Pendiente y de acceso autorizado.
+- Fecha. Pendiente.
+- Duración. Pendiente de confirmar.
+- Consentimiento para uso de evidencia. Pendiente de documentar.
+- Versión o pantallas evaluadas. Pendiente de precisar.
+
+---
+
+###### Síntesis del segmento cuidador
+
+En las dos entrevistas reportadas, las cuidadoras valoraron una Agenda centralizada y el registro compartido. Sus comentarios se centraron en reconocer con rapidez qué queda pendiente y qué se registró durante el turno.
+
+| Aspecto evaluado | Resultado documentado |
 |---|---|
-| Identificador seudónimo | TB2-03 (código reservado) |
-| Segmento | Cuidador (cupo propuesto) |
-| Estado | Pendiente de ejecución |
-| Fecha de entrevista | — |
-| Modalidad | — |
-| Prototipo o versión utilizada | — |
-| Tareas realizadas | — |
-| Tareas completadas | — |
-| Tiempo observado | — |
-| Dificultades identificadas | — |
-| Valoración de facilidad de uso | — |
-| Comentarios relevantes | — |
-| Enlace a evidencia de video | — |
+| **Agenda y actividades** | TB2-01 consideró comprensible la Agenda y propuso mostrar los pendientes al abrirla. TB2-02 comentó que le pareció fácil de identificar. |
+| **Confirmación de actividades** | TB2-01 señaló que la pulsación sostenida podría ser poco intuitiva. TB2-02 pidió una señal clara de guardado. |
+| **Corrección de registros** | Ambas valoraron Deshacer. TB2-01 cuestionó el plazo y TB2-02 lo consideró adecuado si el control es visible. |
+| **Coordinación entre cuidadores** | TB2-01 destacó la Agenda compartida en los relevos. TB2-02 valoró la sincronización entre cuidadores autorizados. |
+| **Cierre con motivo** | Ambas valoraron dejar constancia del motivo. TB2-02 sugirió distinguir pendiente de no realizada. |
+| **Notificaciones** | TB2-01 propuso configurar la frecuencia por actividad. TB2-02 expresó preocupación por el exceso de avisos. |
+| **Facilidad de uso** | Se mencionaron la necesidad de registrar con rapidez, reducir pasos y visibilizar opciones e historial. La síntesis recoge percepciones. |
+| **Intención de uso** | No registrada en la síntesis disponible. |
 
-**Ficha TB2-04**
+**Conclusión del segmento:**
 
-| Campo | Registro |
+La agenda compartida y la sincronización respondieron a necesidades percibidas de coordinación. Los relatos señalan controles, estados y preferencias que conviene revisar en pruebas de tareas. TB2-03 y TB2-04 siguen pendientes de ejecución.
+
+---
+
+###### Segmento 2. Pacientes geriátricas
+
+###### Entrevista de validación To-Be 5
+
+| Campo | Información |
 |---|---|
-| Identificador seudónimo | TB2-04 (código reservado) |
-| Segmento | Cuidador (cupo propuesto) |
-| Estado | Pendiente de ejecución |
-| Fecha de entrevista | — |
-| Modalidad | — |
-| Prototipo o versión utilizada | — |
-| Tareas realizadas | — |
-| Tareas completadas | — |
-| Tiempo observado | — |
-| Dificultades identificadas | — |
-| Valoración de facilidad de uso | — |
-| Comentarios relevantes | — |
-| Enlace a evidencia de video | — |
+| **Entrevistada** | TB2-05 (código seudónimo) |
+| **Edad** | Reservada en esta versión |
+| **Segmento** | Paciente geriátrica |
+| **Experiencia** | No precisada en la síntesis de TB2 |
+| **Modalidad** | No precisada |
+| **Formato de evidencia** | Grabación de audio reportada |
+| **Duración aproximada** | Pendiente de confirmar |
+| **Producto evaluado** | CareConnect, propuesta To-Be |
+| **Código TB2** | TB2-05 |
+| **Qué se presentó** | Propuesta To-Be. La síntesis no precisa si el apoyo fue una pantalla, un prototipo o una explicación. |
+| **Acción observada** | Sin registro de una acción observada. |
+| **Opinión reportada** | Valoró Inicio y los recordatorios. Pidió controles más claros y saber quién tiene acceso. |
 
-**Ficha TB2-05**
+**Resumen:**
 
-| Campo | Registro |
+TB2-05 valoró organizar las actividades y sus recordatorios en una aplicación. Consideró comprensible la pantalla de inicio, aunque mencionó que algunos botones eran difíciles de identificar.
+
+Pidió que se indique dónde presionar para confirmar una actividad y cómo reconocer que quedó registrada. Le pareció útil Deshacer y señaló que diez segundos podrían ser insuficientes.
+
+Valoró compartir información con familiares y cuidadores autorizados si puede reconocer quién tiene acceso. Consideró útiles los recordatorios claros y poco repetitivos y propuso una guía por voz.
+
+**Aspectos de mejora identificados:**
+
+La identificación de los botones, la claridad de los textos y el tiempo para corregir un registro fueron sus principales preocupaciones. También sugirió simplificar la pantalla de inicio.
+
+**Oportunidades de mejora:**
+
+- Aumentar el tamaño de los botones y simplificar textos y controles de inicio.
+- Evaluar instrucciones auditivas o una guía por voz.
+- Hacer más visible Deshacer y explorar cuánto tiempo se necesita para usarlo.
+
+**Funcionalidad más valorada:** La pantalla de inicio y los recordatorios.
+
+**Intención de uso:** No registrada en la síntesis disponible.
+
+**Evidencia de entrevista:**
+
+- Tipo de evidencia. Grabación de audio reportada.
+- Enlace al archivo de audio. Pendiente y de acceso autorizado.
+- Fecha. Pendiente.
+- Duración. Pendiente de confirmar.
+- Consentimiento para uso de evidencia. Pendiente de documentar.
+- Versión o pantallas evaluadas. Pendiente de precisar.
+
+---
+
+###### Entrevista de validación To-Be 6
+
+| Campo | Información |
 |---|---|
-| Identificador seudónimo | TB2-05 (código reservado) |
-| Segmento | Paciente geriátrico (cupo propuesto) |
-| Estado | Pendiente de ejecución |
-| Fecha de entrevista | — |
-| Modalidad | — |
-| Prototipo o versión utilizada | — |
-| Tareas realizadas | — |
-| Tareas completadas | — |
-| Tiempo observado | — |
-| Dificultades identificadas | — |
-| Valoración de facilidad de uso | — |
-| Comentarios relevantes | — |
-| Enlace a evidencia de video | — |
+| **Entrevistada** | TB2-06 (código seudónimo) |
+| **Edad** | Reservada en esta versión |
+| **Segmento** | Paciente geriátrica |
+| **Experiencia** | No precisada en la síntesis de TB2 |
+| **Modalidad** | No precisada |
+| **Formato de evidencia** | Grabación de audio reportada |
+| **Duración aproximada** | Pendiente de confirmar |
+| **Producto evaluado** | CareConnect, propuesta To-Be |
+| **Código TB2** | TB2-06 |
+| **Qué se presentó** | Propuesta To-Be. La síntesis no precisa si el apoyo fue una pantalla, un prototipo o una explicación. |
+| **Acción observada** | Sin registro de una acción observada. |
+| **Opinión reportada** | Valoró Inicio y los recordatorios. Pidió íconos más grandes y que el aviso identifique la actividad. |
 
-**Ficha TB2-06**
+**Resumen:**
 
-| Campo | Registro |
+TB2-06 valoró reunir actividades, citas y recordatorios en una aplicación. Consideró comprensible la navegación general y sugirió aumentar el tamaño de algunos íconos.
+
+Propuso una señal visible que indique que la actividad quedó registrada. Valoró la opción Deshacer y sugirió indicar cuánto tiempo queda para usarla.
+
+Manifestó interés en que sus familiares o cuidadores autorizados puedan consultar las actividades. También pidió que los avisos identifiquen claramente la actividad pendiente y sugirió distinguir secciones y alertas mediante colores e íconos reconocibles.
+
+**Aspectos de mejora identificados:**
+
+Señaló que algunos íconos pequeños y avisos con poca información dificultan identificar rápidamente una función o una actividad pendiente.
+
+**Oportunidades de mejora:**
+
+- Aumentar el tamaño de los íconos y combinar colores con rótulos reconocibles.
+- Mostrar el estado al confirmar y el tiempo restante para deshacer.
+- Identificar la actividad pendiente en el texto de la notificación.
+
+**Funcionalidad más valorada:** La pantalla de inicio y los recordatorios.
+
+**Intención de uso:** No registrada en la síntesis disponible.
+
+**Evidencia de entrevista:**
+
+- Tipo de evidencia. Grabación de audio reportada.
+- Enlace al archivo de audio. Pendiente y de acceso autorizado.
+- Fecha. Pendiente.
+- Duración. Pendiente de confirmar.
+- Consentimiento para uso de evidencia. Pendiente de documentar.
+- Versión o pantallas evaluadas. Pendiente de precisar.
+
+---
+
+###### Síntesis del segmento paciente geriátrico
+
+Las dos pacientes valoraron la pantalla de inicio y los recordatorios. Consideraron comprensible la organización general y señalaron controles y avisos que podrían ser más claros.
+
+| Aspecto evaluado | Resultado documentado |
 |---|---|
-| Identificador seudónimo | TB2-06 (código reservado) |
-| Segmento | Paciente geriátrico (cupo propuesto) |
-| Estado | Pendiente de ejecución |
-| Fecha de entrevista | — |
-| Modalidad | — |
-| Prototipo o versión utilizada | — |
-| Tareas realizadas | — |
-| Tareas completadas | — |
-| Tiempo observado | — |
-| Dificultades identificadas | — |
-| Valoración de facilidad de uso | — |
-| Comentarios relevantes | — |
-| Enlace a evidencia de video | — |
+| **Pantalla de inicio** | Ambas la valoraron para consultar la información centralizada. TB2-05 sugirió simplificarla. |
+| **Actividades pendientes** | TB2-06 propuso identificar explícitamente la actividad pendiente en cada aviso. |
+| **Confirmación de actividades** | Ambas sugirieron una señal visible de registro. TB2-05 pidió indicar también dónde presionar. |
+| **Recordatorios** | Ambas los valoraron. TB2-05 pidió mensajes claros y con poca repetición. |
+| **Deshacer** | TB2-05 consideró que diez segundos podrían ser insuficientes. TB2-06 propuso mostrar el tiempo restante. |
+| **Accesibilidad visual** | Se señalaron botones o íconos pequeños, textos mejorables y la conveniencia de diferenciar las secciones. TB2-05 sugirió también una guía por voz. |
+| **Notificaciones** | Se pidió claridad en los mensajes y en la identificación de la actividad correspondiente. |
+| **Intención de uso** | No registrada en la síntesis disponible. La intención favorable documentada en §6.3.2 corresponde a la validación previa. |
 
-**Registro de observación por tarea.** Añadir una fila por código y tarea asignada. En «observación» anotar la dificultad, error, ayuda, comentario o referencia de evidencia. Registrar el rango etario del cuidador, la familiaridad digital y los apoyos utilizados solo en categorías necesarias para el análisis.
+**Conclusión del segmento:**
 
-| Código | Tarea | Rol / plataforma | Modo | Resultado o comprensión | Inicio / fin / duración | Facilidad (1–5) | Observación |
-|---|---|---|---|---|---|---|---|
-| — | — | — | — | — | — | — | — |
+Los relatos orientan mejoras de legibilidad y comprensión en Inicio, confirmación y avisos. Las participantes también valoraron la consulta por familiares o cuidadores autorizados, y TB2-05 pidió poder reconocer quién tiene acceso.
 
-**Matriz de consolidación.** En T1–T6 registrar modo y resultado, o «no aplica» con su motivo. El campo de evidencia remite a notas o grabaciones autorizadas. La matriz queda pendiente de observaciones reales.
+---
 
-| Código reservado | Cupo propuesto | Estado | T1 | T2 | T3 | T4 | T5 | T6 | Evidencia |
+**Registro de observación por tarea.** Añadir una fila por código y tarea cuando se disponga de observación directa. Registrar el resultado del primer intento, la comprensión cuando corresponda y el apoyo según §8.3.4.1. Para T3, consignar los controles técnicos en la tabla aparte. Una interrupción por condición técnica queda fuera de los intentos clasificables de usabilidad y se reporta con su causa.
+
+| Código | Tarea | Rol / plataforma | Modo | Resultado de tarea | Comprensión y explicación | Inicio / fin / duración | Ayuda y resultado posterior | Facilidad (1–5) | Observación y fuente |
 |---|---|---|---|---|---|---|---|---|---|
-| TB2-01 | Cuidador | Pendiente de ejecución | — | — | — | — | — | — | — |
-| TB2-02 | Cuidador | Pendiente de ejecución | — | — | — | — | — | — | — |
-| TB2-03 | Cuidador | Pendiente de ejecución | — | — | — | — | — | — | — |
-| TB2-04 | Cuidador | Pendiente de ejecución | — | — | — | — | — | — | — |
-| TB2-05 | Paciente geriátrico | Pendiente de ejecución | — | — | — | — | — | — | — |
-| TB2-06 | Paciente geriátrico | Pendiente de ejecución | — | — | — | — | — | — | — |
+| — | — | — | — | — | — | — | — | — | — |
+
+**Comprobaciones técnicas de T3.** Registrar una fila por acción comprobada. En demostraciones conceptuales, indicar que estas comprobaciones no se ejecutaron.
+
+| Código / versión | Acción y estado esperado | Segunda sesión autorizada: estado observado, tiempo y resultado ≤5 s | Cuenta sin permiso: recepción o bloqueo observado | Causa de interrupción o dato faltante / fuente |
+|---|---|---|---|---|
+| — | — | — | — | — |
+
+**Matriz de consolidación.** El guion (—) en T1–T6 indica ausencia de un resultado documentado en la información disponible. Registrar modo y resultado cuando se obtenga evidencia de la tarea, o «no aplica» con su motivo.
+
+| Código | Segmento | Estado de entrevista | T1 | T2 | T3 | T4 | T5 | T6 | Evidencia |
+|---|---|---|---|---|---|---|---|---|---|
+| TB2-01 | Cuidadora | Realizada según responsable | — | — | — | — | — | — | Audio reportado, enlace pendiente |
+| TB2-02 | Cuidadora | Realizada según responsable | — | — | — | — | — | — | Google Meet, grabación por confirmar |
+| TB2-03 | Cuidador/a | Pendiente de ejecución | — | — | — | — | — | — | — |
+| TB2-04 | Cuidador/a | Pendiente de ejecución | — | — | — | — | — | — | — |
+| TB2-05 | Paciente geriátrica | Realizada según responsable | — | — | — | — | — | — | Audio reportado, enlace pendiente |
+| TB2-06 | Paciente geriátrica | Realizada según responsable | — | — | — | — | — | — | Audio reportado, enlace pendiente |
 
 ### 8.4. Experiment Aftermath & Analysis
 
 #### 8.4.1. Analysis and Interpretation of Results
 
-**Estado de la evidencia.** §2.2 describe necesidades de coordinación y registro, mientras que las seis entrevistas de §6.3 aportan percepciones previas sobre Agenda, alertas, visibilidad y legibilidad. Las [pruebas de Agenda de TB1](assets/testing/agenda-auth-2026-10-04/verification.md) acreditan verificaciones técnicas del flujo As-Is en su alcance documentado. Los [artefactos de AV2](assets/experiments/av2-completion-2026-11-08/verification.md) respaldan el diseño y la planificación. En el repositorio revisado no consta evidencia nueva de entrevistas To-Be, tareas observadas ni ejecución de EXP-01 o EXP-02. Las tablas siguientes son instrumentos de reporte. «Pendiente» significa que aún se requiere recolectar o comprobar el dato.
+**Estado de la evidencia.** §2.2 describe necesidades de coordinación y registro. Las seis entrevistas de §6.3.2 aportan antecedentes sobre Agenda, alertas, visibilidad y legibilidad. Para TB2, el responsable del proyecto reportó cuatro entrevistas To-Be. Se dispone de reconstrucciones aproximadas de lo expresado y siguen pendientes las transcripciones exactas, los metadatos y las referencias autorizadas a los respaldos. Las [pruebas de Agenda de TB1](assets/testing/agenda-auth-2026-10-04/verification.md) documentan verificaciones técnicas del flujo As-Is. Los [artefactos de AV2](assets/experiments/av2-completion-2026-11-08/verification.md) respaldan el diseño experimental. La ejecución de T1–T6 y los resultados de EXP-01 y EXP-02 siguen sin registro verificable.
 
 ##### A. Resultados cualitativos de entrevistas
 
-Al disponer de notas o transcripciones autorizadas, asociar cada observación con un código de sesión, tarea y fuente. Codificar temas iniciales de coordinación, confianza en el estado, recuperación de errores, legibilidad, acceso y carga de avisos, y agregar temas emergentes. Distinguir comportamiento observado, percepción declarada e interpretación del equipo. Una segunda persona revisará la codificación y registrará cómo se resolvieron discrepancias. Registrar casos discordantes y contar personas únicas por tema solo si se conoce cuántas respondieron. Las citas autorizadas deberán quedar desidentificadas. Comparar con §2.2 y §6.3 para identificar coincidencias o nuevas preguntas, conservando la procedencia de cada evidencia.
+**Cuidadoras.** TB2-01 puso énfasis en registrar con rapidez, consultar los pendientes y disponer de la Agenda compartida para los relevos. También señaló que la pulsación sostenida podría ser poco intuitiva. TB2-02 destacó la sincronización y pidió una señal de guardado y estados diferenciados. Ambas valoraron dejar constancia de los motivos y plantearon necesidades de configuración o control de avisos.
 
-| ID de hallazgo | Segmento / modo | Tema | Observación o cita desidentificada | Fuente trazable | Personas que lo mencionaron / consultadas | Interpretación y caso discordante |
-|---|---|---|---|---|---|---|
-| Pendiente | — | — | — | — | — | — |
+**Pacientes geriátricas.** TB2-05 y TB2-06 valoraron Inicio y los recordatorios. La primera pidió claridad sobre dónde presionar, quién puede consultar la información y la posibilidad de una guía por voz. La segunda señaló el tamaño de los íconos, el tiempo restante para deshacer y la necesidad de identificar la actividad pendiente en cada aviso.
+
+**Coincidencias entre segmentos.** En ambos segmentos se valoró centralizar las actividades, reconocer cuándo se guarda una confirmación, poder corregirla y contar con avisos que puedan entenderse y gestionarse.
+
+**Diferencias entre segmentos.** Las cuidadoras se centraron en la rapidez, el relevo, la distinción de estados y la carga de avisos. Las pacientes enfatizaron la facilidad de reconocer controles, la claridad de Inicio y las notificaciones y la consulta por personas autorizadas. Las opiniones sobre los diez segundos incluyeron preocupación por el plazo y aceptación condicionada a que Deshacer se vea.
+
+**Construcción e interpretación de los temas.** Se revisaron las síntesis disponibles de §8.3.4.2 y se agruparon los comentarios por funcionalidad y problema. Se contrastaron coincidencias y diferencias dentro de cada segmento y entre segmentos, incluida la discrepancia sobre el plazo de Deshacer. Cada hallazgo H01–H08 se vinculó con los códigos de las fichas que lo respaldan. Las síntesis reconstruidas requieren cotejo posterior con los respaldos autorizados. La matriz distingue la evidencia reportada, la interpretación preliminar y la validación futura.
+
+| ID | Hallazgo | Participantes | Segmento | Funcionalidad | Evidencia reportada | Interpretación preliminar | Validación futura |
+|---|---|---|---|---|---|---|---|
+| H01 | Visibilidad de las confirmaciones | TB2-02, TB2-05, TB2-06 | Cuidadoras y pacientes | Confirmación | Pidieron una señal visible de que se guardó el registro. | El cambio de estado debe poder reconocerse al confirmar. | M01. Mostrar una señal de guardado y comprobar qué estado reconoce la participante. |
+| H02 | Percepciones sobre Deshacer y el límite de diez segundos | TB2-01, TB2-02, TB2-05, TB2-06 | Cuidadoras y pacientes | Deshacer | TB2-01 y TB2-05 cuestionaron el plazo. TB2-02 lo consideró adecuado si el control se ve. TB2-06 pidió mostrar el tiempo restante. | La visibilidad del control y la duración plantean preguntas distintas. | M02. Probar una cuenta regresiva con el plazo vigente y evaluar un plazo alternativo en una prueba aparte. |
+| H03 | Coordinación y sincronización entre cuidadores | TB2-01, TB2-02 | Cuidadoras | Agenda compartida y sincronización | TB2-01 valoró la Agenda para el relevo. TB2-02 destacó la sincronización para coordinar tareas y evitar confusiones. | El estado actualizado podría ayudar a saber qué queda pendiente. | M08a. Comprobar qué estado recibe otra sesión autorizada tras confirmar y revertir. |
+| H04 | Accesibilidad de botones e íconos | TB2-05, TB2-06 | Pacientes | Inicio y controles de confirmación | TB2-05 señaló botones difíciles de identificar y propuso una guía por voz. TB2-06 señaló íconos pequeños. | El tamaño y la legibilidad podrían afectar la identificación de acciones. | M05. Probar controles más grandes, rótulos claros y orientación auditiva opcional. |
+| H05 | Claridad y frecuencia de notificaciones | TB2-01, TB2-02, TB2-05, TB2-06 | Cuidadoras y pacientes | Avisos y preferencias | TB2-01 propuso personalizar la frecuencia por actividad. TB2-02 expresó preocupación por el exceso de avisos. TB2-05 prefirió mensajes claros y poco repetitivos. TB2-06 pidió identificar la actividad. | El contenido y la frecuencia requieren comprobaciones diferentes. | M06 y M07. Evaluar si se reconoce la actividad en el aviso y si se entiende el alcance del ajuste de frecuencia. |
+| H06 | Consulta de actividades pendientes | TB2-01, TB2-06 | Cuidadoras y pacientes | Agenda y avisos de pendientes | TB2-01 pidió consultar pendientes directamente en Agenda. TB2-06 pidió reconocer la actividad pendiente desde el aviso. | Agenda y avisos son dos vías para localizar el mismo registro. | M03 y M06. Comprobar si se localiza una actividad pendiente desde cada vía. |
+| H07 | Valor percibido del cierre con motivo y de distinguir estados | TB2-01, TB2-02 | Cuidadoras | Cierre explícito con motivo | Ambas valoraron registrar el motivo cuando la actividad no se realiza. TB2-02 pidió distinguir ese estado de pendiente. | Las etiquetas pueden aclarar la diferencia entre pendiente, confirmada y cerrada con motivo. | M04. En T4, pedir que expliquen el estado resultante y comprobar si lo distinguen de una confirmación. |
+| H08 | Interés en compartir con personas autorizadas y saber quién tiene acceso | TB2-05, TB2-06 | Pacientes | Consulta compartida y autorización | Ambas valoraron la consulta por personas autorizadas. TB2-05 pidió identificar quién tiene acceso. | Hacer visible el alcance de un permiso podría ayudar a interpretarlo. La comprensión de los controles queda por observar. | M08b. Pedir a la paciente que identifique quién puede ver la información en la vista de permisos. |
+
+**Limitaciones metodológicas.** El responsable reportó cuatro entrevistas con dos cuidadoras y dos pacientes. Las paráfrasis quedan pendientes de cotejo con los respaldos autorizados y faltan metadatos y versiones exactas. La cobertura por segmento es limitada y las dos cuidadoras quedan fuera de los rangos previstos para ERQ-04. Las síntesis recogen percepciones sobre la propuesta. La comprensión en demostraciones y el desempeño en T1–T6 requieren sus propios registros. TCOM, TSC, UR, TNR, LRMR, NOR, valores p e intervalos de confianza requieren datos del diseño experimental de §8.2. Los dos experimentos siguen pendientes de evidencia verificable.
+
+###### Matriz de mejoras propuestas
+
+Las prioridades se sugieren según la importancia del problema para completar una acción, distinguir su resultado o consultar información de forma autorizada. Las referencias a §8.3.2 identifican historias relacionadas. Agenda transversal y la orientación por voz son alcances por discutir con el equipo.
+
+| ID | Problema identificado | Mejora propuesta | Historia relacionada | Prioridad sugerida | Estado |
+|---|---|---|---|---|---|
+| M01 | H01. Se pidió una señal clara de que la actividad quedó guardada. | Mostrar una señal visible de guardado y el nuevo estado junto al registro. | US-01 | Alta, porque el resultado de la acción debe quedar claro. | Propuesta pendiente de revisión del equipo |
+| M02 | H02. El control de reversión y el plazo generan dudas. | Mostrar Deshacer y el tiempo restante. Evaluar otro plazo mediante una prueba aparte. | US-05 | Alta, porque la corrección depende de una ventana breve. | Propuesta pendiente de revisión del equipo |
+| M03 | H06. Consultar pendientes requiere encontrarlos con rapidez. | Mostrar pendientes al abrir Agenda y facilitar el acceso a su ficha. | US-01, US-07 (tarjeta y estado en Agenda) | Media, por su valor para la consulta diaria. | Propuesta pendiente de revisión del equipo |
+| M04 | H07. Pendiente y no realizada pueden confundirse. | Diferenciar pendiente, confirmada y cerrada con motivo mediante texto y señal visual. | US-07, US-02 | Alta, porque afecta la interpretación del registro propio y compartido. | Propuesta pendiente de revisión del equipo |
+| M05 | H04. Botones e íconos pequeños dificultan reconocer acciones. | Aumentar el tamaño de controles e íconos, acompañarlos con rótulos y explorar ayuda por voz. | US-01, US-05 (controles de confirmación y reversión) | Alta, porque la legibilidad condiciona el acceso a acciones centrales. | Propuesta pendiente de revisión del equipo |
+| M06 | H05 y H06. Se pidió identificar con claridad la actividad en el aviso. | Mostrar la actividad, su estado y una ruta a Agenda con rótulos e íconos distinguibles. | US-03, US-04 | Alta, porque el aviso debe permitir reconocer qué revisar. | Propuesta pendiente de revisión del equipo |
+| M07 | H05. La frecuencia de avisos puede resultar excesiva. | Explorar preferencias por tipo de actividad y mostrar su alcance. Conservar el protocolo de EXP-02 durante su evaluación. | US-06 | Media, hasta observar el uso de preferencias y la entrega de avisos. | Propuesta pendiente de revisión del equipo |
+| M08a | H03. Las cuidadoras valoran consultar un estado actualizado para coordinarse. | Facilitar que el co-cuidador autorizado consulte el estado actualizado. | US-02 (Capítulo VIII) | Alta sugerida, por su relación con la coordinación. | Propuesta pendiente de revisión del equipo |
+| M08b | H08. Las pacientes valoran la consulta autorizada y TB2-05 pidió identificar quién tiene acceso. | Hacer visible el alcance del acceso en la vista de permisos de la paciente. | US14 y US16 (Capítulo III, historias relacionadas de Gestión de Consentimiento) | Alta sugerida, por su relación con la comprensión de permisos. | Propuesta pendiente de revisión del equipo |
 
 ##### B. Resultados de pruebas de usabilidad
 
-La muestra evaluable de una tarea incluye los intentos interactivos con resultado clasificable. Informar aparte interrupciones, tareas no ejecutadas y demostraciones. Usar como unidad persona–tarea, con el primer intento como base y reintentos documentados aparte. Reportar finalizaciones sin ayuda, con ayuda y fallos como conteos y proporciones sobre los intentos clasificables. Para tiempo, informar el número con tiempos válidos, mediana y rango en segundos por tarea y resultado. Para facilidad de uso, informar número de respuestas, distribución de 1 a 5 y mediana. Registrar intentos incorrectos incluso cuando se recuperen. Codificar la comprensión de las demostraciones por separado y preservar las diferencias por rol, modalidad, plataforma y versión. Los tiempos y calificaciones de sesión describen usabilidad formativa.
+La muestra evaluable de una tarea incluye los intentos interactivos con resultado clasificable. Informar aparte interrupciones, tareas no ejecutadas y demostraciones. En T3, distinguir la interrupción por condición técnica de la clasificación de comprensión y consultar el registro separado de sincronización y acceso de §8.3.4.2. Usar como unidad persona–tarea, con el primer intento como base y reintentos documentados aparte. Reportar finalizaciones sin ayuda, con ayuda y fallos como conteos y proporciones sobre los intentos clasificables. Para tiempo, informar el número con tiempos válidos, mediana y rango en segundos por tarea y resultado. Para facilidad de uso, informar número de respuestas, distribución de 1 a 5 y mediana. Registrar intentos incorrectos incluso cuando se recuperen. Codificar la comprensión de las demostraciones por separado y preservar las diferencias por rol, modalidad, plataforma y versión. Los tiempos y calificaciones de sesión describen usabilidad formativa. Los conteos de entrevista que siguen provienen del reporte del responsable. Para T1–T6 siguen pendientes las observaciones de ejecución, los tiempos, los errores y las calificaciones de facilidad. Las puntuaciones hipotéticas del ensayo quedan fuera del análisis.
 
-| Segmento | Cupos propuestos | Invitados / consentidos | Sesiones realizadas | Personas evaluables en ≥1 tarea interactiva | Retiros o faltantes y causa |
+| Segmento | Cupos propuestos | Invitados / consentidos | Entrevistas reportadas | Personas evaluables en ≥1 tarea interactiva | Retiros o faltantes y causa |
 |---|---:|---|---|---|---|
-| Cuidadores | 4 | Pendiente | Pendiente | Pendiente | Pendiente |
-| Pacientes geriátricos | 2 | Pendiente | Pendiente | Pendiente | Pendiente |
+| Cuidadores | 4 | Pendiente de documentar | 2 | Pendiente de determinar | 2 cupos de entrevista pendientes |
+| Pacientes geriátricos | 2 | Pendiente de documentar | 2 | Pendiente de determinar | Pendiente de documentar |
 
 | Tarea | Intentos clasificables | Completadas sin ayuda | Completadas con ayuda | Fallidas | Interrumpidas / no ejecutadas | Tiempo por resultado (n, mediana, rango) | Facilidad (n, distribución, mediana) |
 |---|---|---|---|---|---|---|---|
@@ -6741,19 +6930,19 @@ Una recomendación de adopción requiere evidencia estadística, magnitud práct
 
 #### 8.4.2. Re-scored and Re-prioritized Question Backlog
 
-La línea base reproduce las preguntas de §8.1.3 y las valoraciones de §8.1.4. No se ha incorporado evidencia nueva de TB2 que justifique cambiar los factores. Las columnas revisadas muestran los valores vigentes y la prioridad conserva el alcance broad/deep.
+La línea base reproduce las preguntas de §8.1.3 y las valoraciones de §8.1.4. Las cuatro entrevistas reportadas aportan indicios cualitativos para orientar la validación. La evidencia disponible todavía es insuficiente para recalificar las preguntas. Las columnas revisadas muestran los valores vigentes y la prioridad conserva el alcance broad/deep.
 
 $$\text{Score} = \frac{R \times I \times In}{C}$$
 
 R es riesgo, I impacto, In interés y C confianza. Cada factor usa una escala de 1 a 5. Para desempatar, se usa el mayor riesgo, el mayor impacto y luego el menor ID, en ese orden.
 
-| ID | Pregunta | Score original | Evidencia nueva | C revisada | R revisado | I revisado | In revisado | Nuevo score | Nueva prioridad | Justificación |
-|---|---|---:|---|---:|---:|---:|---:|---:|---|---|
-| ERQ-01 | ¿Qué efecto tiene añadir confirmación reversible y sincronización entre sesiones al botón existente sobre la TCOM, frente al flujo actual instrumentado? | 62.5 | Pendiente | 2 | 5 | 5 | 5 | 62.5 | 1 / deep, EXP-01 | Se mantiene hasta contar con evidencia de registro oportuno y sincronización en las variantes instrumentadas. |
-| ERQ-02 | ¿Qué efecto tiene un protocolo de avisos a los minutos 0, +15 y +30 sobre la LRMR y el silenciamiento, frente a un aviso único al minuto 0? | 50.0 | Pendiente | 2 | 5 | 4 | 5 | 50.0 | 2 / deep, EXP-02 | Se mantiene hasta observar resolución, entrega y preferencias en el protocolo comparado. |
-| ERQ-03 | ¿Cuánto tiempo dedican los cuidadores a localizar y comunicar la información necesaria para un relevo usando sus herramientas habituales? | 32.0 | Pendiente | 2 | 4 | 4 | 4 | 32.0 | 3 / broad | Se mantiene hasta cronometrar un relevo estandarizado con las herramientas habituales. |
-| ERQ-04 | ¿Cómo varía la tasa de correcciones de confirmación entre cuidadores de 25–40 y 41–60 años, considerando su experiencia digital? | 18.0 | Pendiente | 2 | 4 | 3 | 3 | 18.0 | 4 / broad | Se mantiene hasta reunir observaciones suficientes de ambos rangos etarios y documentar su experiencia digital. |
-| ERQ-05 | ¿Un indicador de continuidad del registro aumenta la retención de uso a siete días frente a una vista sin ese indicador? | 12.0 | Pendiente | 2 | 2 | 3 | 4 | 12.0 | 5 / broad | Se mantiene hasta contar con un diseño y una cohorte de siete días para esa comparación. |
+| ID | Pregunta original | Score original | Hallazgos y aporte nuevo | Incertidumbre abierta | C | R | I | In | Score revisado | Prioridad resultante | Criterio para revisar C, R o I |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| ERQ-01 | ¿Qué efecto tiene añadir confirmación reversible y sincronización entre sesiones al botón existente sobre la TCOM, frente al flujo actual instrumentado? | 62.5 | Directa para el diseño, no confirmatoria. H01–H03 recogen las señales de guardado, las discrepancias sobre Deshacer y el valor percibido de la sincronización. H06–H08 aportan contexto de estados y permisos. | Efecto del paquete sobre TCOM y comportamiento de la sincronización y reversión en las variantes instrumentadas. | 2 | 5 | 5 | 5 | 62.5 | 1 / deep, EXP-01 | C se revisaría con tareas comparables que comprueben el flujo y datos por círculo que permitan estimar el efecto sobre TCOM. R o I podrían revisarse si se observa que los estados desactualizados o las confirmaciones erróneas cambian decisiones de coordinación. |
+| ERQ-02 | ¿Qué efecto tiene un protocolo de avisos a los minutos 0, +15 y +30 sobre la LRMR y el silenciamiento, frente a un aviso único al minuto 0? | 50.0 | Directa para el diseño, no confirmatoria. H05 aborda claridad, frecuencia y preocupación por exceso de avisos. H06 aporta contexto sobre cómo se localiza el pendiente. | Efecto del escalamiento en LRMR y silenciamiento, con entrega y cambios de preferencia observables. | 2 | 5 | 4 | 5 | 50.0 | 2 / deep, EXP-02 | C se revisaría con registros comparables de resolución, entrega y silenciamiento entre variantes. R o I podrían revisarse si se documenta que la saturación interrumpe el seguimiento o que el escalamiento resulta importante para resolver registros. |
+| ERQ-03 | ¿Cuánto tiempo dedican los cuidadores a localizar y comunicar la información necesaria para un relevo usando sus herramientas habituales? | 32.0 | Contextual. H03 y H06 muestran que TB2-01 valoró la Agenda compartida para relevos y pidió acceso a pendientes e historial. TB2-02 valoró los estados sincronizados. | Tiempo y pasos de un relevo con las herramientas habituales, medidos en una tarea estandarizada. | 2 | 4 | 4 | 4 | 32.0 | 3 / broad | C se revisaría con relevos observados y cronometrados de forma comparable usando herramientas habituales. R o I podrían revisarse si se comprueba que buscar y comunicar la información representa una parte relevante del relevo o causa pérdidas de información. |
+| ERQ-04 | ¿Cómo varía la tasa de correcciones de confirmación entre cuidadores de 25–40 y 41–60 años, considerando su experiencia digital? | 18.0 | Contextual para la comparación etaria. H01 y H02 orientan qué observar para guardado y reversión. H04 aporta señales de accesibilidad del segmento paciente. | Tasa de correcciones en los dos rangos de cuidadores previstos y relación con su experiencia digital. Las cuidadoras entrevistadas quedan fuera de ambos rangos. | 2 | 4 | 3 | 3 | 18.0 | 4 / broad | C se revisaría con observaciones de la misma tarea en ambos rangos, registrando experiencia digital y correcciones. R o I podrían revisarse si las dificultades generan errores reiterados o impiden completar la confirmación en un perfil de uso. |
+| ERQ-05 | ¿Un indicador de continuidad del registro aumenta la retención de uso a siete días frente a una vista sin ese indicador? | 12.0 | Contextual. H03 y H06 aportan indicios de utilidad percibida al consultar estados y pendientes. Las síntesis no evalúan un indicador de continuidad. | Uso a siete días y efecto de mostrar el indicador frente a la vista de control. | 2 | 2 | 3 | 4 | 12.0 | 5 / broad | C se revisaría con datos de retorno activo de una cohorte seguida durante siete días y una comparación con y sin indicador. R o I podrían revisarse si se observa que la caída de uso compromete la continuidad del registro o que el indicador tiene escaso valor para esa decisión. |
 
 **Reevaluación definitiva pendiente.** En Shareback, registrar por ERQ la evidencia nueva, su calidad y alcance, el factor que justifica revisar, los valores anterior y propuesto, el cálculo y la decisión aprobada. Cuando la evidencia sea insuficiente se conserva la línea base y se documenta qué falta para revisarla.
 
@@ -6771,36 +6960,63 @@ R es riesgo, I impacto, In interés y C confianza. Cada factor usa una escala de
 | Responsable de Product Backlog | Moderar la decisión de priorización, vincularla a las historias de §8.3.2 y acordar fechas y responsables. |
 | Relator designado por el equipo | Registrar acuerdos, discrepancias, acciones, fechas y evidencia de cierre. |
 
-**Insumos disponibles.** Las secciones 2.2 y 6.3 aportan antecedentes cualitativos. Las secciones 8.1–8.3 aportan preguntas, tarjetas, instrumentos y Product Backlog To-Be. Los registros de sesiones, el exporte seudonimizado, las validaciones de instrumentación, las métricas y los enlaces autorizados se incorporarán conforme estén disponibles.
+**Insumos disponibles.** Las secciones 2.2 y 6.3 aportan antecedentes cualitativos. Las secciones 8.1–8.3 aportan preguntas, tarjetas, instrumentos y Product Backlog To-Be. Las cuatro síntesis To-Be, la matriz H01–H08 y las propuestas M01–M08b de §8.4.1 sirven como insumos preliminares. Se incorporarán los respaldos autorizados y metadatos, los registros de tareas, la verificación de instrumentación y las métricas conforme estén disponibles.
 
 | Tiempo propuesto | Agenda |
 |---|---|
 | 5 min | Revisar objetivo, fuentes y estado de la evidencia. |
-| 10 min | Presentar hallazgos cualitativos y de usabilidad con modo, contexto, dificultad y caso discordante. |
-| 10 min | Revisar exposición, calidad de datos, escalas y métricas de cada experimento cuando existan. |
-| 15 min | Discutir qué se sostiene, qué debe corregirse y si procede revisar ERQ y Product Backlog. |
-| 5 min | Acordar responsables, fechas, criterio de cierre y próxima revisión. |
+| 10 min | Contrastar H01–H08 por segmento con las fichas y discutir los matices sobre Deshacer. |
+| 10 min | Revisar la evidencia pendiente y las incertidumbres de ERQ-01 a ERQ-05. Identificar qué requiere una prueba formativa y qué requiere datos A/B. |
+| 15 min | Revisar D01–D08b, aplicar el criterio de desempate y registrar qué propuestas aprueba, ajusta, aplaza o descarta el equipo. |
+| 5 min | Completar el acta con las decisiones y acordar responsables, acciones, fechas y criterios de cierre. |
 
-**Presentación y decisión.** Para cada hallazgo, mostrar la observación, su fuente, denominador cuando corresponda, versión, modo y limitación, seguidos de la interpretación y la pregunta asociada. Revisar los casos que no encajen en la interpretación inicial. Vincular cada decisión al hallazgo y a una historia de §8.3.2, o registrar la necesidad de una historia nueva si el hallazgo la justifica. El equipo podrá mantener, corregir, volver a probar, proponer adopción según la tarjeta o aplazar por falta de evidencia. Si aún faltan datos al reunirse, usar la sesión para revisar preparación y asignar su recolección.
+**Presentación y decisión.** Para cada hallazgo, mostrar la observación, su fuente, denominador cuando corresponda, versión, modo y limitación, seguidos de la interpretación y la pregunta asociada. Revisar los casos que no encajen en la interpretación inicial. Vincular cada decisión al hallazgo y a la historia relacionada del Capítulo III o de §8.3.2, según corresponda. Registrar el alcance por definir cuando la historia cubra solo parte de la propuesta. El equipo podrá mantener, corregir, volver a probar, proponer adopción según la tarjeta o aplazar por falta de evidencia. Si aún faltan datos al reunirse, usar la sesión para revisar preparación y asignar su recolección.
 
 **Matriz de aprendizajes**
 
-| ID | ERQ / tarea / historia | Fuente y versión | Observación y alcance | Interpretación y confianza | Evidencia adicional necesaria |
-|---|---|---|---|---|---|
-| Pendiente | — | — | — | — | — |
+Las síntesis por código de §8.3.4.2 son el insumo disponible. Los aprendizajes propuestos indican qué investigar. ERQ-05 queda para una comparación de retención, ya que las entrevistas no evaluaron el indicador.
 
-**Matriz de decisiones**
-
-| ID | Aprendizaje y fuente | Opciones consideradas | Decisión y justificación | Historia o cambio propuesto | Responsable, fecha y revisión |
+| ID | Hallazgo | Evidencia disponible | Interpretación | Aprendizaje propuesto | Pregunta ERQ |
 |---|---|---|---|---|---|
-| Pendiente | — | — | — | — | — |
+| H01 | Visibilidad de confirmación | TB2-02, TB2-05 y TB2-06 pidieron una señal de guardado. | Se necesita una indicación legible del resultado en la misma vista. | Probar si el estado nuevo se reconoce después de confirmar. | ERQ-01, ERQ-04 |
+| H02 | Deshacer y diez segundos | TB2-01 y TB2-05 cuestionaron el plazo. TB2-02 lo aceptó si el control está visible. TB2-06 pidió ver el tiempo restante. | Visibilidad y duración plantean preguntas de usabilidad distintas. | Comprobar la visibilidad con el plazo vigente y estudiar alternativas por separado. | ERQ-01, ERQ-04 |
+| H03 | Coordinación y sincronización | TB2-01 valoró el apoyo al relevo y TB2-02 el estado sincronizado. | La consulta compartida puede ayudar a saber qué resta por hacer. | Observar si otra sesión autorizada reconoce el cambio y estudiar el relevo con herramientas habituales. | ERQ-01, ERQ-03 |
+| H04 | Accesibilidad de controles | TB2-05 señaló botones difíciles de identificar y sugirió una guía por voz. TB2-06 señaló íconos pequeños. | El tamaño y los rótulos son candidatos a mejorar la identificación. | Comparar alternativas con los apoyos habituales de ambos segmentos. | ERQ-04 |
+| H05 | Claridad y frecuencia de avisos | TB2-01 y TB2-02 hablaron de frecuencia o saturación. TB2-05 pidió claridad y poca repetición. TB2-06 pidió identificar la actividad. | El contenido de un aviso y su frecuencia requieren validaciones distintas. | Probar comprensión y preferencias, manteniendo separado el protocolo A/B. | ERQ-02 |
+| H06 | Consulta de pendientes | TB2-01 pidió acceso directo en Agenda y TB2-06 identificar la actividad en el aviso. | Agenda y avisos son rutas complementarias para localizar pendientes. | Observar cómo se llega al registro desde cada ruta. | ERQ-01, ERQ-02, ERQ-03 |
+| H07 | Valor percibido del cierre con motivo | TB2-01 y TB2-02 valoraron registrar un motivo. TB2-02 pidió distinguirlo de pendiente. | La etiqueta podría aclarar qué estado deja el cierre. | En T4, pedir que se explique el estado resultante y se distinga de una confirmación. | ERQ-01, ERQ-02 |
+| H08 | Interés en el acceso autorizado | TB2-05 y TB2-06 valoraron la consulta por personas autorizadas. TB2-05 pidió identificar quién tiene acceso. | Mostrar el alcance de los permisos podría facilitar su comprensión. | Pedir a la paciente que identifique quién tiene acceso a partir de la vista de permisos. | ERQ-01 (contexto de acceso) |
+
+**Criterio de desempate propuesto.** Entre acciones con la misma prioridad sugerida, contrastar sucesivamente:
+
+1. **Impacto en la tarea.** Revisar primero lo que pueda impedir completar una acción principal, interpretar su resultado o entender quién puede acceder.
+2. **Fuerza de la evidencia.** Con impacto similar, considerar qué códigos respaldan la propuesta, con qué grado de especificidad y qué diferencias o dudas permanecen. Registrar si el respaldo procede de síntesis reconstruidas o de observaciones verificadas.
+3. **Dependencias.** Con respaldo similar, revisar primero la acción que habilite otras pruebas o que pueda validarse con la versión, el rol y el escenario disponibles. Anotar los prerrequisitos de las demás.
+
+Si persiste el empate, dejar las opciones y el motivo en el acta. El orden y las prioridades definitivas se acuerdan durante la sesión.
+
+**Matriz de decisiones propuestas**
+
+Las prioridades corresponden a las sugerencias de §8.4.1. El equipo podrá aceptar, ajustar, aplazar o descartar cada acción durante el Shareback. El acta conservará la decisión, su fundamento y el responsable asignado.
+
+| ID | Aprendizaje | Acción recomendada | Historia de usuario | Prioridad | Estado |
+|---|---|---|---|---|---|
+| D01 | H01. Confirmación visible | Probar señal de guardado y etiqueta de estado (M01). | US-01 | Alta | Propuesta pendiente de revisión del equipo |
+| D02 | H02. Recuperación de errores | Probar Deshacer con cuenta regresiva (M02). Mantener diez segundos en el protocolo vigente y documentar cualquier alternativa por separado. | US-05 | Alta | Propuesta pendiente de revisión del equipo |
+| D03 | H06. Localización de pendientes | Probar acceso directo a pendientes desde Agenda (M03). | US-01, US-07 | Media | Propuesta pendiente de revisión del equipo |
+| D04 | H07. Diferenciación de estados | Probar etiquetas y señales para distinguir confirmación, pendiente y cierre con motivo (M04). | US-07, US-02 | Alta | Propuesta pendiente de revisión del equipo |
+| D05 | H04. Accesibilidad | Evaluar tamaño de controles, rótulos y orientación auditiva opcional (M05). | US-01, US-05 | Alta | Propuesta pendiente de revisión del equipo |
+| D06 | H05–H06. Comprensión de avisos | Probar avisos que identifiquen la actividad y enlacen a Agenda (M06). | US-03, US-04 | Alta | Propuesta pendiente de revisión del equipo |
+| D07 | H05. Control de avisos | Explorar preferencias por actividad sin modificar el protocolo A/B en evaluación (M07). | US-06 | Media | Propuesta pendiente de revisión del equipo |
+| D08a | H03. Consulta del estado compartido | Tras confirmar y revertir, comprobar qué estado recibe la segunda sesión autorizada, en qué tiempo y si la cuenta sin permiso queda excluida (M08a). | US-02 (Capítulo VIII) | Alta | Propuesta pendiente de revisión del equipo |
+| D08b | H08. Comprensión de permisos desde el rol paciente | Presentar la vista de permisos con cuentas ficticias y pedir a la paciente que identifique quién tiene acceso y qué puede consultar. Registrar su explicación y la ayuda (M08b). | US14 y US16 (Capítulo III, historias relacionadas) | Alta | Propuesta pendiente de revisión del equipo |
 
 **Registro de acciones pendientes.** Responsables por rol, sujetos a asignación en la sesión. Las acciones correctivas derivadas de hallazgos se registrarán con el mismo formato cuando se acuerden.
 
 | Acción propuesta | Vínculo | Rol propuesto | Criterio de cierre | Fecha / estado |
 |---|---|---|---|---|
 | Comprobar versiones, cierres, revocación y permisos antes de las sesiones. | US-02, US-07, TS-01, TS-02 | Ingeniería de web, móvil y backend | Lista de verificaciones con versión y evidencia técnica para determinar qué tareas son ejecutables. | Por acordar / pendiente |
-| Reclutar, confirmar consentimiento y recoger observaciones. | T1–T6, §8.3.4 | Validación | Fichas y matriz con observaciones, modo y faltantes registrados, y referencias autorizadas cuando existan. | Por acordar / pendiente |
+| Completar los dos cupos de cuidador y documentar respaldos, consentimientos y observaciones de tareas. | T1–T6, §8.3.4 | Validación | Fichas con metadatos y referencias autorizadas, y matriz con observaciones, modo y faltantes. | Por acordar / pendiente |
 | Verificar auditoría común, sincronización y entrega en piloto. | TS-02, TS-01, US-03, US-04, US-06 | Ingeniería y análisis | Exportación reproducible y concordancia con el cálculo manual en casos de prueba. | Por acordar / pendiente |
 | Revisar los resultados y actualizar prioridades cuando corresponda. | ERQ-01–ERQ-05, §8.4.2 | Análisis y Product Backlog | Acta con fundamento, acción, responsable y fecha de revisión. | Por acordar / pendiente |
 
@@ -6810,13 +7026,14 @@ R es riesgo, I impacto, In interés y C confianza. Cada factor usa una escala de
 
 | Campo | Registro |
 |---|---|
-| Fecha, modalidad y próxima revisión | — |
-| Facilitador, relator y roles presentes | — |
-| Versiones, fuentes y faltantes discutidos | — |
-| IDs de aprendizajes, decisiones y asuntos abiertos | — |
-| Cambios de Product Backlog y Question Backlog acordados | — |
-| Acciones asignadas, responsables, plazos y criterio de cierre | — |
-| Validación del acta por el equipo | — |
+| Fecha y modalidad | Pendiente |
+| Participantes, facilitador y relator | Pendiente |
+| Hallazgos revisados, fuentes, versiones y datos faltantes | Pendiente |
+| Decisiones, razones y cambios acordados en los backlogs | Pendiente |
+| Responsables asignados | Pendiente |
+| Acciones y criterios de cierre | Pendiente |
+| Fechas de seguimiento y próxima revisión | Pendiente |
+| Validación del acta por el equipo | Pendiente |
 
 En la siguiente planificación de sprint, el responsable del backlog revisará cada acción con su asignado. En cada revisión se registrará estado, impedimentos y evidencia de aceptación. Los asuntos abiertos se trasladarán al próximo Shareback hasta su cierre o aplazamiento explícito. Se conservará el historial de decisiones y versiones de los artefactos.
 
@@ -6858,18 +7075,25 @@ Finalmente, para las siguientes iteraciones del roadmap, se recomienda priorizar
 
 #### Conclusiones del TB2
 
-El Bloque 4 especifica cómo evaluar la confirmación sostenida, la reversión, los estados compartidos, el cierre con motivo y los avisos de CareConnect. Las entrevistas previas identificaron necesidades de coordinación y oportunidades de legibilidad y navegación. Su aporte orienta las consignas y los criterios de observación de TB2. Las sesiones To-Be y sus mediciones siguen pendientes, por lo que queda abierta la valoración de facilidad, accesibilidad y comprensión de estos flujos.
+**Hallazgos de las entrevistas reportadas.** Las cuidadoras valoraron la Agenda compartida y la sincronización para coordinar el relevo. TB2-02 pidió una señal de guardado y diferenciar el registro pendiente del cerrado con motivo. Las pacientes valoraron Inicio y los recordatorios y señalaron dificultades para reconocer botones o íconos. Ambos segmentos aportaron observaciones para hacer los avisos más claros o configurables. TB2-01 y TB2-05 expresaron preocupación por los diez segundos de Deshacer. TB2-02 condicionó su aceptación a la visibilidad del control y TB2-06 sugirió mostrar el tiempo restante.
 
-EXP-01 y EXP-02 definen comparaciones sobre la oportunidad del registro y la demora de resolución. Su interpretación depende de comprobar el estado desde otra sesión autorizada, verificar la entrega y conservar un historial reproducible con marcas de tiempo. La evidencia experimental disponible en el repositorio corresponde al diseño. La efectividad de las variantes y las salvaguardas queda por determinar. Los indicadores describen el comportamiento del software con registros ficticios.
+**Interpretaciones preliminares.** Mostrar el estado tras confirmar o cerrar, destacar pendientes y hacer visible Deshacer son cambios candidatos a validación. En la vista compartida, conviene comprobar que se reconozca el estado y se entienda quién puede consultarlo. La retroalimentación sobre avisos justifica probar por separado la claridad del mensaje y las preferencias de frecuencia.
 
-El Question Backlog conserva las prioridades originales hasta disponer de evidencia nueva. El Shareback propuesto vincula cada decisión futura con una fuente, una historia, un responsable y una fecha. La muestra formativa, la fidelidad de los prototipos y la factibilidad de reclutar círculos delimitan el alcance de las conclusiones de próximas iteraciones.
+**Hipótesis experimentales aún no comprobadas.** EXP-01 y EXP-02 requieren datos verificables bajo el diseño de §8.2. Las entrevistas aportan información exploratoria sobre la propuesta. Siguen pendientes los resultados observados de T1–T6, los datos comparativos y la decisión del Shareback. Las prioridades ERQ conservan la línea base.
 
 #### Recomendaciones del TB2
 
-1. Verificar los flujos ejecutables y convocar a los dos segmentos previstos. Registrar apoyos, legibilidad, comprensión de estados y barreras visuales o motrices al mantener la pulsación y activar «Deshacer». Revisar la claridad de los avisos y las preferencias con ambos perfiles.
-2. Validar la aplicación y revocación del consentimiento de acceso antes de observar estados compartidos. Usar cuentas sintéticas y separar la autorización de grabación de la participación, con acceso restringido y un plazo de eliminación informado.
-3. Ejecutar el piloto de instrumentación con auditoría común, atribución de acciones, verificación de estado y entrega observable. Conciliar manualmente denominadores, reversiones, cierres y faltantes antes de analizar una cohorte experimental.
-4. Usar el Shareback para comparar antecedentes, observaciones To-Be y métricas, acordar cambios con evidencia rastreable y programar su validación. Aplicar las reglas de escala y decisión de §8.2 al valorar la adopción de cada variante.
+| Problema | Cambio propuesto | Funcionalidad afectada | Validación posterior |
+|---|---|---|---|
+| Confirmación y cierre (H01, H07) | Mostrar confirmación de guardado y etiquetas diferenciadas para pendiente, confirmada y cerrada con motivo (M01, M04). | Agenda, confirmación y cierre con motivo | En T1 y T4, observar si se identifica el resultado y se distingue el cierre de la confirmación. |
+| Recuperación de errores (H02) | Mostrar Deshacer y el tiempo restante (M02). | Confirmación reversible | En T2, registrar si se localiza el control y se revierte dentro del plazo. Evaluar un plazo alternativo en una prueba aparte. |
+| Consulta de pendientes (H06) | Mostrar pendientes al abrir Agenda y enlazar la actividad desde el aviso (M03, M06). | Agenda y avisos | Observar si se localiza el registro desde Agenda y desde el aviso, y qué pasos generan dudas. |
+| Legibilidad de controles (H04) | Aumentar tamaños, añadir rótulos y explorar orientación auditiva opcional (M05). | Inicio y controles de confirmación y reversión | Probar con ambos segmentos, usando sus apoyos habituales, y registrar qué acciones se identifican y comprenden. |
+| Claridad y frecuencia de avisos (H05) | Nombrar la actividad en el mensaje y explorar preferencias por tipo de actividad (M06, M07). | Notificaciones y preferencias | En T5 y T6, comprobar qué actividad y estado se entienden y si se reconoce el alcance del ajuste. Verificar entrega en el piloto de EXP-02. |
+| Coordinación (H03) | Facilitar la consulta del estado sincronizado en la segunda sesión autorizada (M08a). | Agenda compartida, US-02 | Usar el registro técnico de T3 para comprobar el estado recibido, el tiempo y el bloqueo de la cuenta sin permiso. |
+| Visibilidad de permisos (H08) | Indicar quién tiene acceso y a qué información (M08b). | Vista de permisos de la paciente, relacionada con US14 y US16 del Capítulo III | Con cuentas ficticias, pedir a la paciente que indique quién puede acceder y qué puede consultar. Registrar su explicación y la ayuda, con el modo de exposición identificado. |
+
+Completar TB2-03 y TB2-04 y preparar observaciones de tareas con ambos segmentos. Incorporar referencias de acceso autorizado a los audios reportados y confirmar si existe un respaldo de Google Meet. Documentar fecha, duración, consentimiento y versión exacta del prototipo, y cotejar las síntesis con los respaldos cuando estén disponibles. Para EXP-01 y EXP-02, verificar la instrumentación en piloto y aplicar las reglas de escala y decisión de §8.2 antes de analizar una cohorte experimental. Llevar H01–H08 al Shareback y registrar acuerdos y seguimiento después de la sesión.
 
 ## Bibliografía
 
