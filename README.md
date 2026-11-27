@@ -6536,9 +6536,9 @@ ERQ-03 se aborda con una pregunta abierta sobre cómo se prepara un relevo y qu�
 
 ##### 8.3.4.2. Registro de Entrevistas
 
-**Estado del registro TB2.** El responsable del proyecto reportó cuatro entrevistas To-Be, dos con cuidadoras y dos con pacientes geriátricas. Los resúmenes reconstruyen aproximadamente las respuestas a partir de la información facilitada. Quedan por contrastar con los originales y completar sus metadatos. Las seis entrevistas de §6.3.2 corresponden a una validación anterior.
+**Estado del registro TB2.** El responsable del proyecto reportó como realizadas cuatro entrevistas To-Be, dos con cuidadoras y dos con pacientes geriátricas, y proporcionó una carpeta compartida en Microsoft SharePoint para reunir los respaldos del TB2. Los resúmenes reconstruyen aproximadamente las respuestas a partir de la información facilitada. Quedan por contrastar con los originales y completar sus metadatos. Las seis entrevistas de §6.3.2 corresponden a una validación anterior.
 
-Se usan códigos TB2 y se reservan las edades exactas en esta versión del informe. La correspondencia con nombres y edades queda en la fuente privada facilitada. Cualquier publicación de esos datos requiere consentimiento documentado para identificarlas públicamente. Los respaldos y consentimientos se documentarán en una ubicación de acceso autorizado.
+Se usan códigos TB2 y se reservan las edades exactas en esta versión del informe. La correspondencia con nombres y edades queda en la fuente privada facilitada. Cualquier publicación de esos datos requiere consentimiento documentado para identificarlas públicamente. Los respaldos se referencian mediante la carpeta común. La documentación del consentimiento para usar las evidencias sigue pendiente.
 
 ###### Segmento 1. Cuidadoras de pacientes geriátricos
 
@@ -6584,7 +6584,7 @@ Señaló que los pasos adicionales dificultarían el registro rápido y que la v
 **Evidencia de entrevista:**
 
 - Tipo de evidencia. Grabación de audio reportada.
-- Enlace al archivo de audio. Pendiente y de acceso autorizado.
+- Referencia del respaldo. Véase la [carpeta común](#evidencias-audiovisuales-de-las-entrevistas-to-be).
 - Fecha. Pendiente.
 - Duración. Pendiente de confirmar.
 - Consentimiento para uso de evidencia. Pendiente de documentar.
@@ -6634,7 +6634,7 @@ Planteó distinguir visualmente una actividad pendiente de otra registrada como 
 **Evidencia de entrevista:**
 
 - Tipo de evidencia. Sesión de Google Meet reportada. Existencia de grabación pendiente de confirmar.
-- Enlace al respaldo de la sesión, si se confirma. Pendiente y de acceso autorizado.
+- Referencia del respaldo. Véase la [carpeta común](#evidencias-audiovisuales-de-las-entrevistas-to-be). La existencia de una grabación de la sesión sigue por confirmar.
 - Fecha. Pendiente.
 - Duración. Pendiente de confirmar.
 - Consentimiento para uso de evidencia. Pendiente de documentar.
@@ -6707,7 +6707,7 @@ La identificación de los botones, la claridad de los textos y el tiempo para co
 **Evidencia de entrevista:**
 
 - Tipo de evidencia. Grabación de audio reportada.
-- Enlace al archivo de audio. Pendiente y de acceso autorizado.
+- Referencia del respaldo. Véase la [carpeta común](#evidencias-audiovisuales-de-las-entrevistas-to-be).
 - Fecha. Pendiente.
 - Duración. Pendiente de confirmar.
 - Consentimiento para uso de evidencia. Pendiente de documentar.
@@ -6757,7 +6757,7 @@ Señaló que algunos íconos pequeños y avisos con poca información dificultan
 **Evidencia de entrevista:**
 
 - Tipo de evidencia. Grabación de audio reportada.
-- Enlace al archivo de audio. Pendiente y de acceso autorizado.
+- Referencia del respaldo. Véase la [carpeta común](#evidencias-audiovisuales-de-las-entrevistas-to-be).
 - Fecha. Pendiente.
 - Duración. Pendiente de confirmar.
 - Consentimiento para uso de evidencia. Pendiente de documentar.
@@ -6802,18 +6802,24 @@ Los relatos orientan mejoras de legibilidad y comprensión en Inicio, confirmaci
 
 | Código | Segmento | Estado de entrevista | T1 | T2 | T3 | T4 | T5 | T6 | Evidencia |
 |---|---|---|---|---|---|---|---|---|---|
-| TB2-01 | Cuidadora | Realizada según responsable | — | — | — | — | — | — | Audio reportado, enlace pendiente |
-| TB2-02 | Cuidadora | Realizada según responsable | — | — | — | — | — | — | Google Meet, grabación por confirmar |
+| TB2-01 | Cuidadora | Realizada según responsable | — | — | — | — | — | — | Audio reportado, véase la carpeta común |
+| TB2-02 | Cuidadora | Realizada según responsable | — | — | — | — | — | — | Google Meet, véase la carpeta común. Grabación por confirmar |
 | TB2-03 | Cuidador/a | Pendiente de ejecución | — | — | — | — | — | — | — |
 | TB2-04 | Cuidador/a | Pendiente de ejecución | — | — | — | — | — | — | — |
-| TB2-05 | Paciente geriátrica | Realizada según responsable | — | — | — | — | — | — | Audio reportado, enlace pendiente |
-| TB2-06 | Paciente geriátrica | Realizada según responsable | — | — | — | — | — | — | Audio reportado, enlace pendiente |
+| TB2-05 | Paciente geriátrica | Realizada según responsable | — | — | — | — | — | — | Audio reportado, véase la carpeta común |
+| TB2-06 | Paciente geriátrica | Realizada según responsable | — | — | — | — | — | — | Audio reportado, véase la carpeta común |
+
+###### Evidencias audiovisuales de las entrevistas To-Be
+
+Las cuatro entrevistas de validación To-Be se reportaron como realizadas. Se informó el registro de tres mediante audio y la realización de una por Google Meet. La carpeta compartida de Microsoft SharePoint reúne los respaldos proporcionados por el responsable para el TB2. Quedan pendientes el cotejo de cada archivo con su ficha y la confirmación de si la sesión de Google Meet fue grabada.
+
+[Carpeta de evidencias de las entrevistas To-Be — TB2](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgC9ZK4jwiRgS6_W0PTSlB3mASoJN_NfPc2ij6q4D7IvQcs?e=j2GXoK)
 
 ### 8.4. Experiment Aftermath & Analysis
 
 #### 8.4.1. Analysis and Interpretation of Results
 
-**Estado de la evidencia.** §2.2 describe necesidades de coordinación y registro. Las seis entrevistas de §6.3.2 aportan antecedentes sobre Agenda, alertas, visibilidad y legibilidad. Para TB2, el responsable del proyecto reportó cuatro entrevistas To-Be. Se dispone de reconstrucciones aproximadas de lo expresado y siguen pendientes las transcripciones exactas, los metadatos y las referencias autorizadas a los respaldos. Las [pruebas de Agenda de TB1](assets/testing/agenda-auth-2026-10-04/verification.md) documentan verificaciones técnicas del flujo As-Is. Los [artefactos de AV2](assets/experiments/av2-completion-2026-11-08/verification.md) respaldan el diseño experimental. La ejecución de T1–T6 y los resultados de EXP-01 y EXP-02 siguen sin registro verificable.
+**Estado de la evidencia.** §2.2 describe necesidades de coordinación y registro. Las seis entrevistas de §6.3.2 aportan antecedentes sobre Agenda, alertas, visibilidad y legibilidad. Para TB2, el responsable del proyecto reportó cuatro entrevistas To-Be. Se dispone de reconstrucciones aproximadas de lo expresado y de una carpeta común de respaldos en §8.3.4.2. Siguen pendientes el cotejo de los archivos con sus fichas, las transcripciones exactas y los metadatos. Las [pruebas de Agenda de TB1](assets/testing/agenda-auth-2026-10-04/verification.md) documentan verificaciones técnicas del flujo As-Is. Los [artefactos de AV2](assets/experiments/av2-completion-2026-11-08/verification.md) respaldan el diseño experimental. La ejecución de T1–T6 y los resultados de EXP-01 y EXP-02 siguen sin registro verificable.
 
 ##### A. Resultados cualitativos de entrevistas
 
@@ -6960,7 +6966,7 @@ R es riesgo, I impacto, In interés y C confianza. Cada factor usa una escala de
 | Responsable de Product Backlog | Moderar la decisión de priorización, vincularla a las historias de §8.3.2 y acordar fechas y responsables. |
 | Relator designado por el equipo | Registrar acuerdos, discrepancias, acciones, fechas y evidencia de cierre. |
 
-**Insumos disponibles.** Las secciones 2.2 y 6.3 aportan antecedentes cualitativos. Las secciones 8.1–8.3 aportan preguntas, tarjetas, instrumentos y Product Backlog To-Be. Las cuatro síntesis To-Be, la matriz H01–H08 y las propuestas M01–M08b de §8.4.1 sirven como insumos preliminares. Se incorporarán los respaldos autorizados y metadatos, los registros de tareas, la verificación de instrumentación y las métricas conforme estén disponibles.
+**Insumos disponibles.** Las secciones 2.2 y 6.3 aportan antecedentes cualitativos. Las secciones 8.1–8.3 aportan preguntas, tarjetas, instrumentos y Product Backlog To-Be. Las cuatro síntesis To-Be, la matriz H01–H08 y las propuestas M01–M08b de §8.4.1 sirven como insumos preliminares. La carpeta común de respaldos está referenciada en §8.3.4.2. Se incorporarán los resultados del cotejo y los metadatos, los registros de tareas, la verificación de instrumentación y las métricas conforme estén disponibles.
 
 | Tiempo propuesto | Agenda |
 |---|---|
@@ -7093,7 +7099,7 @@ Finalmente, para las siguientes iteraciones del roadmap, se recomienda priorizar
 | Coordinación (H03) | Facilitar la consulta del estado sincronizado en la segunda sesión autorizada (M08a). | Agenda compartida, US-02 | Usar el registro técnico de T3 para comprobar el estado recibido, el tiempo y el bloqueo de la cuenta sin permiso. |
 | Visibilidad de permisos (H08) | Indicar quién tiene acceso y a qué información (M08b). | Vista de permisos de la paciente, relacionada con US14 y US16 del Capítulo III | Con cuentas ficticias, pedir a la paciente que indique quién puede acceder y qué puede consultar. Registrar su explicación y la ayuda, con el modo de exposición identificado. |
 
-Completar TB2-03 y TB2-04 y preparar observaciones de tareas con ambos segmentos. Incorporar referencias de acceso autorizado a los audios reportados y confirmar si existe un respaldo de Google Meet. Documentar fecha, duración, consentimiento y versión exacta del prototipo, y cotejar las síntesis con los respaldos cuando estén disponibles. Para EXP-01 y EXP-02, verificar la instrumentación en piloto y aplicar las reglas de escala y decisión de §8.2 antes de analizar una cohorte experimental. Llevar H01–H08 al Shareback y registrar acuerdos y seguimiento después de la sesión.
+Completar TB2-03 y TB2-04 y preparar observaciones de tareas con ambos segmentos. Cotejar las síntesis con los respaldos de la carpeta común de §8.3.4.2 y confirmar si existe una grabación de la sesión de Google Meet. Documentar fecha, duración, consentimiento y versión exacta del prototipo. Para EXP-01 y EXP-02, verificar la instrumentación en piloto y aplicar las reglas de escala y decisión de §8.2 antes de analizar una cohorte experimental. Llevar H01–H08 al Shareback y registrar acuerdos y seguimiento después de la sesión.
 
 ## Bibliografía
 
