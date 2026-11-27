@@ -31,7 +31,7 @@
 
 9100
 
-## Informe del Avance 2 (AV2)
+## Informe de Trabajo Final (TB2)
 
 **Docente**
 
