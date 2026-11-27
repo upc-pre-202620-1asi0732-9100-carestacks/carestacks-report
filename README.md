@@ -403,6 +403,7 @@ AV2:
     - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
       - [Conclusiones del AV2](#conclusiones-del-av2)
       - [Recomendaciones](#recomendaciones)
+    - [Video About-the-Team](#video-about-the-team)
   - [Bibliografía](#bibliografía)
   - [Anexos](#anexos)
     - [Anexo A: Archivo de Figma](#anexo-a-archivo-de-figma)
@@ -6521,6 +6522,61 @@ Desde el enfoque de arquitectura y calidad, se recomienda mantener la consistenc
 
 Finalmente, para las siguientes iteraciones del roadmap, se recomienda priorizar experimentos vinculados con las hipótesis de mayor relevancia para la propuesta de valor, particularmente la confirmación compartida de actividades y la coordinación entre cuidadores. Cada experimento debe establecer previamente sus condiciones, métricas, criterios de éxito y mecanismos de recopilación de datos. De esta manera, CareConnect podrá evolucionar a partir de resultados verificables y no únicamente de supuestos, favoreciendo decisiones fundamentadas sobre el desarrollo de nuevas funcionalidades y la mejora continua de la plataforma.
 
+### Video About-the-Team
+
+#### Descripción General
+
+Esta sección presenta el Video About-the-Team, en el que el equipo CareStacks resume el proceso de desarrollo de CareConnect: la organización del trabajo, la investigación, el diseño, la construcción, la verificación y la experimentación, además de los aprendizajes y competencias desarrolladas por cada integrante en relación con el Student Outcome 4.
+
+#### Video
+
+**Captura del Video:**
+
+#### Información del Video
+
+| Atributo | Contenido |
+|---|---|
+| **Duración** | |
+| **Microsoft Stream** | |
+| **YouTube** | |
+
+#### Pauta de Secuencias de Contenido
+
+Tiempos estimados, sujetos al video editado.
+
+| Sección | Inicio (hh:mm:ss) |
+|---|---|
+| Introducción | 00:00:00 |
+| Contexto del proyecto | 00:00:58 |
+| Proceso de trabajo | 00:01:58 |
+| Testimonio – Javier Nikaido | 00:04:49 |
+| Testimonio – Angela Espinoza | 00:05:49 |
+| Testimonio – Matias Salcedo | 00:06:50 |
+| Testimonio – Alonso Muñiz | 00:07:51 |
+| Testimonio – Santiago Baldeon | 00:08:50 |
+| Cierre | 00:09:50 |
+
+#### Resumen del Video
+
+El video inicia con el origen de CareConnect: la necesidad de reunir la medicación, las actividades y el seguimiento de un adulto mayor, que suelen estar dispersos entre cuadernos, alarmas y mensajería. El equipo explica cómo organizó su trabajo mediante una organización de GitHub, repositorios separados, ramas y Conventional Commits.
+
+Luego se presentan las etapas de investigación y requisitos: la aplicación de Lean UX, las entrevistas a cuidadores y pacientes geriátricos, las User Personas, los Journey Maps, los Empathy Maps, el lenguaje ubicuo, las historias de usuario, el Product Backlog y el Impact Mapping.
+
+Después se aborda el diseño y la construcción de la solución con Domain-Driven Design: la Landing Page, los servicios en Spring Boot, las experiencias web y móvil en Flutter, la aplicación Android en Kotlin y las prácticas DevOps de integración, entrega y monitoreo.
+
+La etapa de verificación y experimentación muestra las pruebas, el análisis estático, las auditorías de experiencia de usuario y el diseño de dos experimentos sobre confirmación reversible con estados compartidos y avisos escalonados, junto con las funciones implementadas en el backend para ambos. El video cierra con una reflexión sobre responsabilidad ética, privacidad, accesibilidad, impacto económico y ambiental, y trabajo en equipo.
+
+#### Presentación de Integrantes
+
+**Javier Masaru Nikaido Vargas:** Elaboró los diagramas de arquitectura, de clases y de base de datos, que luego reorganizó por contextos delimitados. Trabajó en la documentación y el despliegue de la Landing Page, configuró flujos de integración continua para los productos y documentó las entrevistas de validación, la evaluación heurística y los indicadores de colaboración. En TB2 diseñó el protocolo de validación To-Be y planteó cómo analizar los experimentos y compartir lo aprendido.
+
+**Angela Milagros Espinoza Cruz:** Se encargó de la investigación inicial: Lean UX, análisis competitivo, entrevistas, User Personas, Journey Maps, Empathy Maps, escenario actual y lenguaje ubicuo. Homogeneizó los criterios de aceptación en Gherkin y completó secciones del informe y sus referencias. En la experimentación trabajó el cálculo de escala, la selección de métodos, el plan de seguimiento, las historias To-Be y su Product Backlog. En TB2 tiene a su cargo la presentación, los videos y la integración de la entrega final.
+
+**Matias Rodolfo Salcedo Champi (líder):** Preparó la plantilla del informe, especificó las historias de usuario, el Product Backlog y el Impact Mapping, y trabajó en el diseño de la experiencia web. Implementó el soporte bilingüe de la Landing Page, documentó pruebas y corrigió problemas de autorización. Desarrolló la planificación y el diseño de los experimentos y, en TB2, implementó en el backend las funciones de experimentación con pruebas automatizadas.
+
+**Percy Alonso Muñiz Huayanca:** Preparó la base de código a partir de un desarrollo previo de CareConnect, rediseñó el portal web para cuidadores y documentó las aplicaciones, la API y la configuración de despliegue. Construyó flujos de integración y entrega continua, documentó la internacionalización de la Landing Page e incorporó el monitoreo del backend y una prueba de carga.
+
+**Santiago Armando Baldeon Armas:** Elaboró los wireframes y mock-ups de la aplicación móvil y propuestas visuales de la Landing Page, documentó los perfiles del equipo, incorporó el video de entrevistas y redactó el Acuerdo de Servicio SaaS. Preparó el guion y el video de exposición del TB1, y trabajó en las pruebas estáticas y la auditoría de experiencia de usuario.
 
 ## Bibliografía
 
